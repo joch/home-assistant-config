@@ -9,19 +9,8 @@
 #      media_content_type: 'playlist'
 #      media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DWSkkUxEhrBdF'
 
-#- alias: Lead light when arriving late
-#  trigger:
-#    platform: state
-#    entity_id: device_tracker.johnnysiphone
-#    to: 'home'
-#  condition:
-#    condition: state
-#    
-#  action:
-#    service: homeassistant.turn_on
-#    entity_id: light.dining_room_lamp
-
 - alias: Fluxer switch on by default
+  initial_state: 'on'
   trigger: 
     platform: homeassistant
     event: start
@@ -30,6 +19,7 @@
     entity_id: switch.fluxer
 
 - alias: Lights on in the evening if home
+  initial_state: 'on'
   trigger:
     - platform: sun
       event: sunset
@@ -49,6 +39,7 @@
     entity_id: scene.evening
 
 - alias: Turn off lights when everone is away
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.all_devices
@@ -57,3 +48,16 @@
     - service: light.turn_off
       entity_id: group.all_lights
 
+- alias: Lead lights when arriving late
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: sun
+    after: sunset
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.dining_room_lamp
