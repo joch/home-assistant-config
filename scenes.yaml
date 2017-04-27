@@ -1,0 +1,91 @@
+- name: Good Morning
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 85
+    light.dining_room_lamp:
+      state: off
+    light.living_room_lamp:
+      state: off
+    #service: media_player.play_media
+    #  data_template:
+    #    - entity_id: media_player.spotify
+    #    - media_content_id: 'spotify:user:spotify:playlist:70uOuPx4DyXq1R222Ac3Ma'
+    #    - media_content_type: playlist
+
+- name: Day
+  entities:
+    light.bedroom_lamp:
+      state: off
+    light.dining_room_lamp:
+      state: off
+    light.living_room_lamp:
+      state: off
+
+- name: Dinner
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 85
+    light.dining_room_lamp:
+      state: on
+      brightness: 127
+    light.living_room_lamp:
+      state: on
+      brightness: 85
+
+- name: Evening
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 85
+    light.dining_room_lamp:
+      state: on
+      brightness: 85
+    light.living_room_lamp:
+      state: on
+      brightness: 127
+
+- name: Good Night
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 1
+    light.dining_room_lamp:
+      state: off
+    light.living_room_lamp:
+      state: off
+
+- name: Night
+  entities:
+    light.bedroom_lamp:
+      state: off
+    light.dining_room_lamp:
+      state: off
+    light.living_room_lamp:
+      state: off
+
+- name: Bright
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 255
+    light.dining_room_lamp:
+      state: on
+      brightness: 255
+    light.living_room_lamp:
+      state: on
+      brightness: 255
+
+- name: Movie
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 40
+    light.dining_room_lamp:
+      state: on
+      brightness: 40
+    light.living_room_lamp:
+      state: on
+      brightness: 40
+

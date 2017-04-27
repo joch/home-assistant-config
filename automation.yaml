@@ -1,0 +1,59 @@
+#- alias: 'Play music for dinner'
+#  trigger:
+#    plaform: state
+#    entity_id: scene.dinner
+#    to_state: on
+#  action:
+#    service: media_player.play_media
+#    data:
+#      media_content_type: 'playlist'
+#      media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DWSkkUxEhrBdF'
+
+#- alias: Lead light when arriving late
+#  trigger:
+#    platform: state
+#    entity_id: device_tracker.johnnysiphone
+#    to: 'home'
+#  condition:
+#    condition: state
+#    
+#  action:
+#    service: homeassistant.turn_on
+#    entity_id: light.dining_room_lamp
+
+- alias: Fluxer switch on by default
+  trigger: 
+    platform: homeassistant
+    event: start
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.fluxer
+
+- alias: Lights on in the evening if home
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-01:00:00'
+    - platform: state
+      entity_id: group.all_devices
+      state: 'home'
+  condition:
+    - condition: state
+      entity_id: group.all_devices
+      state: 'home'
+    - condition: time
+      after: '16:00:00'
+      before: '23:00:00'
+  action:
+    service: scene.turn_on
+    entity_id: scene.evening
+
+- alias: Turn off lights when everone is away
+  trigger:
+    - platform: state
+      entity_id: group.all_devices
+      state: 'not_home'
+  action:
+    - service: light.turn_off
+      entity_id: group.all_lights
+

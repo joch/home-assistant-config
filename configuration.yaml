@@ -1,0 +1,109 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 20
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Stockholm
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+#discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+apcupsd:
+  host: localhost
+
+# Weather Prediction
+sensor:
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+  # - platform: apcupsd
+  #   resources:
+  #     - status
+  #     - linev
+  #     - loadpct
+  #     - bcharge
+  #     - timeleft
+  #     - itemp
+
+binary_sensor:
+  - platform: apcupsd
+
+tts:
+  - platform: google
+
+media_player:
+  # - platform: spotify
+  #   client_id: !secret spotify_client_id
+  #   client_secret: !secret spotify_client_secret
+  - platform: samsungtv
+    host: !secret samsungtv_host
+    mac: !secret samsungtv_mac
+
+tradfri:
+  host: !secret tradfri_host
+  api_key: !secret tradfri_api_key
+
+switch:
+  platform: flux
+  lights:
+    - light.bedroom_lamp
+    - light.dining_room_lamp
+    - light.living_room_lamp
+  name: Fluxer
+  start_time: '7:00'
+  stop_time: '22:00'
+  start_colortemp: 4000
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
+  disable_brightness_adjust: True
+  mode: mired
+
+device_tracker:
+  - platform: asuswrt
+    host: !secret asuswrt_host
+    protocol: telnet
+    username: !secret asuswrt_username
+    password: !secret asuswrt_password
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+automation: !include automation.yaml
