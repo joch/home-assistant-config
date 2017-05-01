@@ -9,8 +9,8 @@
     - service: notify.telegram
       data:
         message: >-
-          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }} 
- 
+          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }}
+
 - alias: 'Telegram - Reply with pong on ping command'
   hide_entity: true
   trigger:
@@ -43,10 +43,10 @@
       command: '/home'
   action:
     - service: notify.johnny
-      data: 
+      data:
         message: >-
-          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }} 
- 
+          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }}
+
 - alias: 'Telegram - Play Spotify playlist'
   hide_entity: true
   trigger:
