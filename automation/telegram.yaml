@@ -21,7 +21,7 @@
   action:
     - service: notify.johnny
       data_template:
-        message: 'pong {{ trigger.event.args }} plong'
+        message: "pong {{ trigger.event.data.args|join(' ') }} plong"
 
 # - alias: 'Telegram bot scene managmement'
 #   hide_entity: true

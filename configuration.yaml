@@ -120,6 +120,10 @@ notify:
     platform: telegram
     api_key: !secret telegram_api_key
     chat_id: !secret telegram_id_kajsa
+  # - name: testfile
+  #   platform: file
+  #   filename: debug.log
+  #   timestamp: True
 
 group: !include groups.yaml
 scene: !include scenes.yaml
