@@ -1,3 +1,27 @@
+### VIEWS ###
+
+# default_view:
+#     view: yes
+#     icon: mdi:home
+#     entities:
+#       - scene.bright
+#       - scene.day
+#       - scene.dinner
+#       - scene.evening
+#       - scene.good_morning
+#       - scene.good_night
+#       - scene.movie
+#       - scene.night
+#       - scene.working_late
+
+infra:
+  view: yes
+  icon: mdi:server
+  entities:
+    - binary_sensor.ups_online_status
+
+### GROUPS ###
+
 Living Room:
     - light.dining_room_lamp
     - light.living_room_lamp
