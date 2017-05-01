@@ -70,6 +70,8 @@ binary_sensor:
 tts:
   - platform: google
 
+ios:
+
 media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
