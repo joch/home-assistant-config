@@ -56,6 +56,6 @@
       command: '/spotify'
   action:
     service: media_player.play_media
-    data:
+    data_template:
       media_content_type: 'playlist'
-      media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DWSkkUxEhrBdF'
+      media_content_id: "{{ trigger.event.data.args|join(' ') }}"
