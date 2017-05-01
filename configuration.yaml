@@ -23,7 +23,7 @@ config:
 
 http:
   # Uncomment this to add a password (recommended!)
-  # api_password: PASSWORD
+  # api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
 
@@ -103,6 +103,23 @@ device_tracker:
     protocol: telnet
     username: !secret asuswrt_username
     password: !secret asuswrt_password
+
+telegram_bot:
+  platform: polling
+  api_key: !secret telegram_api_key
+  allowed_chat_ids:
+    - !secret telegram_id_johnny
+    - !secret telegram_id_kajsa
+
+notify:
+  - name: johnny
+    platform: telegram
+    api_key: !secret telegram_api_key
+    chat_id: !secret telegram_id_johnny
+  - name: kajsa 
+    platform: telegram
+    api_key: !secret telegram_api_key
+    chat_id: !secret telegram_id_kajsa
 
 group: !include groups.yaml
 scene: !include scenes.yaml

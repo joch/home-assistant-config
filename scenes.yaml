@@ -89,3 +89,13 @@
       state: on
       brightness: 40
 
+- name: Working Late
+  entities:
+    light.bedroom_lamp:
+      state: off
+    light.dining_room_lamp:
+      state: on
+      brightness: 40
+    light.living_room_lamp:
+      state: on
+      brightness: 1

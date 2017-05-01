@@ -23,7 +23,7 @@
   trigger:
     - platform: sun
       event: sunset
-      offset: '-01:00:00'
+      offset: '-02:00:00'
     - platform: state
       entity_id: group.all_devices
       state: 'home'
@@ -55,9 +55,76 @@
     entity_id: group.all_devices
     from: 'not_home'
     to: 'home'
+    for:
+      minutes: 10
   condition:
-    condition: sun
-    after: sunset
+    - condition: time
+      after: '23:00:00'
+      before: '06:00:00'
   action:
     service: homeassistant.turn_on
     entity_id: light.dining_room_lamp
+
+## Telegram test ##
+
+- alias: 'Telegram bot reply with help'
+  hide_entity: true
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/help'
+  action:
+    - service: notify.telegram
+      data:
+        message: >-
+          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }} 
+ 
+- alias: 'Telegram bot that replies pong to ping'
+  hide_entity: true
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/ping'
+  action:
+    - service: notify.johnny
+      data_template:
+        message: 'pong {{ trigger.event.args }} plong'
+
+# - alias: 'Telegram bot scene managmement'
+#   hide_entity: true
+#   trigger:
+#     platform: event
+#     event_type: telegram_command
+#     event_data:
+#       command: '/scene'
+#   action:
+#     service: scene.turn_on
+#     entity_id: scene.{{ trigger.event.telegram_command.event_data.args }}
+
+- alias: 'Telegram bot reply with who is home'
+  hide_entity: true
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/home'
+  action:
+    - service: notify.johnny
+      data: 
+        message: >-
+          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }} 
+ 
+- alias: 'Telegram bot play Spotify playlist'
+  hide_entity: true
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/spotify'
+  action:
+    service: media_player.play_media
+    data:
+      media_content_type: 'playlist'
+      media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DWSkkUxEhrBdF'
