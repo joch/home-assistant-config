@@ -1,4 +1,4 @@
-### VIEWS ###
+### GROUPS:VIEWS ###
 
 # default_view:
 #     view: yes
@@ -19,6 +19,7 @@ home:
   view: yes
   icon: mdi:home
   entities:
+    - group.household
     - group.living_room
     - group.bedroom
 
@@ -47,16 +48,31 @@ bed:
   entities:
     - group.bedroom_lights
 
-tech:
+automation:
+  name: Automation
   view: yes
   icon: mdi:robot
   entities:
-    - binary_sensor.ups_online_status
-    - sensor.johnnys_iphone_battery_level
-    - sensor.johnnys_iphone_battery_state
+    - group.automations
+    - group.scenes
 
+devices:
+  name: Devices
+  view: yes
+  icon: mdi:cellphone-link
+  entities:
+    - group.household
+    - group.ups_status
+    - group.phone_status
 
-### VIEW-GROUPS ###
+weatherdash:
+  name: Weather
+  view: yes
+  icon: mdi:weather-sunset
+  entities:
+    - group.weather
+
+### GROUPS:COLLECTIONS ###
 
 Interior Lights:
   - group.living_room_lights
@@ -68,13 +84,58 @@ Living Room:
 Bedroom:
   - group.bedroom_lights
 
-### GROUPS ###
+### GROUPS:ROOMS ###
 
 Living Room Lights:
   icon: mdi:sofa
   entities:
-  - light.dining_room_lamp
-  - light.living_room_lamp
+    - light.dining_room_lamp
+    - light.living_room_lamp
 
 Bedroom Lights:
-  - light.bedroom_lamp
+  icon: mdi:hotel
+  entities:
+    - light.bedroom_lamp
+
+### GROUPS:SPECIAL ###
+
+Automations:
+  - automation.fluxer_switch_on_by_default
+  - automation.lights__lead_lights_when_arriving_late
+  - automation.lights__turn_off_lights_when_everyone_are_away
+  - automation.lights__turn_off_lights_when_going_to_bed
+  - automation.lights__turn_on_lights_in_the_evening_if_home
+
+Household:
+  - device_tracker.johnnysiphone
+  - device_tracker.kajsasiphone
+
+Scenes:
+  - scene.bright
+  - scene.day
+  - scene.dinner
+  - scene.evening
+  - scene.good_morning
+  - scene.good_night
+  - scene.movie
+  - scene.night
+  - scene.working_late
+
+Phone Status:
+  - sensor.johnnys_iphone_battery_level
+  - sensor.johnnys_iphone_battery_state
+
+UPS Status:
+  - binary_sensor.ups_online_status
+  - sensor.ups_battery
+  - sensor.ups_input_voltage
+  - sensor.ups_internal_temperature
+  - sensor.ups_load
+  - sensor.ups_status
+  - sensor.ups_time_left
+
+Weather:
+  - sensor.yr_precipitation
+  - sensor.yr_symbol
+  - sensor.yr_temperature
+  - sun.sun
