@@ -14,6 +14,14 @@
 #       - scene.night
 #       - scene.working_late
 
+home:
+  name: New Home View
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.living_room
+    - group.bedroom
+
 lights:
   name: Lights
   view: yes
@@ -21,6 +29,23 @@ lights:
   entities:
     - group.interior_lights
     # - group.exterior_lights
+    - switch.fluxer
+
+living:
+  name: Living Room
+  view: yes
+  icon: mdi:sofa
+  entities:
+    - group.living_room
+    - media_player.samsung_tv_remote
+    - media_player.spotify
+
+bed:
+  name: Bedroom
+  view: yes
+  icon: mdi:hotel
+  entities:
+    - group.bedroom_lights
 
 tech:
   view: yes
@@ -30,16 +55,26 @@ tech:
     - sensor.johnnys_iphone_battery_level
     - sensor.johnnys_iphone_battery_state
 
-### GROUPS ###
+
+### VIEW-GROUPS ###
 
 Interior Lights:
-  - light.dining_room_lamp
-  - light.living_room_lamp
-  - light.bedroom_lamp
+  - group.living_room_lights
+  - group.bedroom_lights
 
 Living Room:
+  - group.living_room_lights
+
+Bedroom:
+  - group.bedroom_lights
+
+### GROUPS ###
+
+Living Room Lights:
+  icon: mdi:sofa
+  entities:
   - light.dining_room_lamp
   - light.living_room_lamp
 
-Bedroom:
+Bedroom Lights:
   - light.bedroom_lamp
