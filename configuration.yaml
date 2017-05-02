@@ -11,6 +11,7 @@ homeassistant:
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Stockholm
+  customize: !include customize.yaml
 
 # Show links to resources in log and frontend
 #introduction:
@@ -50,11 +51,34 @@ apcupsd:
 
 # Weather Prediction
 sensor:
-  - platform: yr
+  # - platform: yr
+  #   monitored_conditions:
+  #     - temperature
+  #     - symbol
+  #     - precipitation
+  - platform: darksky
+    api_key: !secret darksky_api_key
     monitored_conditions:
+      - summary
+      - minutely_summary
+      - hourly_summary
+      - daily_summary
+      - icon
+      - nearest_storm_distance
+      - nearest_storm_bearing
+      - precip_type
+      - precip_intensity
+      - precip_probability
       - temperature
-      - symbol
-      - precipitation
+      - apparent_temperature
+      - dew_point
+      - wind_speed
+      - wind_bearing
+      - cloud_cover
+      - humidity
+      - pressure
+      - visibility
+      - ozone
   - platform: apcupsd
     resources:
       - status
