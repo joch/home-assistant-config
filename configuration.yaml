@@ -55,14 +55,14 @@ sensor:
       - temperature
       - symbol
       - precipitation
-  # - platform: apcupsd
-  #   resources:
-  #     - status
-  #     - linev
-  #     - loadpct
-  #     - bcharge
-  #     - timeleft
-  #     - itemp
+  - platform: apcupsd
+    resources:
+      - status
+      - linev
+      - loadpct
+      - bcharge
+      - timeleft
+      - itemp
 
 binary_sensor:
   - platform: apcupsd
