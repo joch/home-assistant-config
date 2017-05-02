@@ -15,24 +15,31 @@
 #       - scene.working_late
 
 lights:
+  name: Lights
   view: yes
   icon: mdi:lightbulb-outline
   entities:
-    - group.living_room
-    - group.bedroom
+    - group.interior_lights
+    # - group.exterior_lights
 
-infra:
+tech:
   view: yes
-  icon: mdi:server
+  icon: mdi:robot
   entities:
     - binary_sensor.ups_online_status
+    - sensor.johnnys_iphone_battery_level
+    - sensor.johnnys_iphone_battery_state
 
 ### GROUPS ###
 
+Interior Lights:
+  - light.dining_room_lamp
+  - light.living_room_lamp
+  - light.bedroom_lamp
+
 Living Room:
-    - light.dining_room_lamp
-    - light.living_room_lamp
+  - light.dining_room_lamp
+  - light.living_room_lamp
 
 Bedroom:
-    - light.bedroom_lamp
-
+  - light.bedroom_lamp
