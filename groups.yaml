@@ -1,21 +1,6 @@
 ### GROUPS:VIEWS ###
 
-# default_view:
-#     view: yes
-#     icon: mdi:home
-#     entities:
-#       - scene.bright
-#       - scene.day
-#       - scene.dinner
-#       - scene.evening
-#       - scene.good_morning
-#       - scene.good_night
-#       - scene.movie
-#       - scene.night
-#       - scene.working_late
-
-home:
-  name: New Home View
+default_view:
   view: yes
   icon: mdi:home
   entities:
@@ -70,6 +55,7 @@ weatherdash:
   view: yes
   icon: mdi:weather-sunset
   entities:
+    - group.weather_summary
     - group.weather
 
 ### GROUPS:COLLECTIONS ###
@@ -141,12 +127,9 @@ Weather:
   - sun.sun
   - sensor.dark_sky_apparent_temperature
   - sensor.dark_sky_cloud_coverage
-  - sensor.dark_sky_daily_summary
   - sensor.dark_sky_dew_point
-  - sensor.dark_sky_hourly_summary
   - sensor.dark_sky_humidity
   - sensor.dark_sky_icon
-  - sensor.dark_sky_minutely_summary
   - sensor.dark_sky_nearest_storm_bearing
   - sensor.dark_sky_nearest_storm_distance
   - sensor.dark_sky_ozone
@@ -154,8 +137,13 @@ Weather:
   - sensor.dark_sky_precip_intensity
   - sensor.dark_sky_precip_probability
   - sensor.dark_sky_pressure
-  - sensor.dark_sky_summary
   - sensor.dark_sky_temperature
   - sensor.dark_sky_visibility
   - sensor.dark_sky_wind_bearing
   - sensor.dark_sky_wind_speed
+
+Weather Summary:
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_minutely_summary
+  - sensor.dark_sky_hourly_summary
+  - sensor.dark_sky_daily_summary
