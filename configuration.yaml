@@ -23,10 +23,12 @@ frontend:
 config:
 
 http:
-  # Uncomment this to add a password (recommended!)
-  # api_password: !secret http_password
-  # Uncomment this if you are using SSL or running in Docker etc
+  api_password: !secret http_password
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
   # base_url: example.duckdns.org:8123
+  # ssl_certificate: /tbd
+  # ssl_key: /tbd
 
 # Checks for available updates
 updater:
