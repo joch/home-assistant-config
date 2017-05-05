@@ -48,7 +48,7 @@ devices:
   entities:
     - group.household
     - group.ups_status
-    - group.phone_status
+    - group.device_status
 
 weatherdash:
   name: Weather
@@ -108,9 +108,11 @@ Scenes:
   - scene.night
   - scene.working_late
 
-Phone Status:
+Device Status:
   - sensor.johnnys_iphone_battery_level
   - sensor.johnnys_iphone_battery_state
+  - sensor.johnnys_ipadminiretina_battery_level
+  - sensor.johnnys_macbookpro_battery_level
 
 UPS Status:
   - binary_sensor.ups_online_status
