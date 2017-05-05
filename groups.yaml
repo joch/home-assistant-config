@@ -66,6 +66,7 @@ Interior Lights:
 
 Living Room:
   - group.living_room_lights
+  - switch.__switch_2_0
 
 Bedroom:
   - group.bedroom_lights

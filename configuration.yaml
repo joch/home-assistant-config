@@ -110,6 +110,9 @@ tradfri:
   host: !secret tradfri_host
   api_key: !secret tradfri_api_key
 
+zwave:
+  usb_path: /dev/ttyACM1
+
 switch:
   platform: flux
   lights:
