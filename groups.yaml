@@ -65,8 +65,10 @@ Interior Lights:
   - group.bedroom_lights
 
 Living Room:
-  - group.living_room_lights
-  - switch.__switch_2_0
+  - light.dining_room_lamp
+  - light.living_room_lamp
+  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
+  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
 
 Bedroom:
   - group.bedroom_lights

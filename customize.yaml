@@ -45,5 +45,3 @@ sensor.dark_sky_dew_point:
   friendly_name: 'Dew Point'
 sensor.dark_sky_visibility:
   friendly_name: 'Visibility'
-switch.__switch_2_0:
-  friendly_name: 'Test switch'
