@@ -119,7 +119,7 @@ binary_sensor:
 tts:
   - platform: google
 
-ios:
+# ios:
 
 media_player:
   - platform: spotify
