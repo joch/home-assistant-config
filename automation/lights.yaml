@@ -77,18 +77,20 @@
       from: 'Unplugged'
       to: 'Charging'
   condition:
-    - condition: time
-      after: '21:00:00'
-      before: '06:00:00'
-    - condition: state
-      entity_id: device_tracker.johnnysiphone
-      state: 'home'
-    - condition: state
-      entity_id: sensor.johnnys_iphone_battery_state
-      state: 'Unplugged'
-    - condition: state
-      entity_id: light.bedroom_light
-      state: 'on'
+    condition: and
+    conditions:
+      - condition: time
+        after: '21:00:00'
+        before: '06:00:00'
+      - condition: state
+        entity_id: device_tracker.johnnysiphone
+        state: 'home'
+      - condition: state
+        entity_id: sensor.johnnys_iphone_battery_state
+        state: 'Unplugged'
+      - condition: state
+        entity_id: light.bedroom_light
+        state: 'on'
   action:
     service: scene.turn_on
     entity_id: scene.bedroom_dimmed
@@ -101,18 +103,20 @@
       from: 'Unplugged'
       to: 'Charging'
   condition:
-    - condition: time
-      after: '21:00:00'
-      before: '06:00:00'
-    - condition: state
-      entity_id: device_tracker.kajsasiphone
-      state: 'home'
-    - condition: state
-      entity_id: sensor.kajsas_iphone_battery_state
-      state: 'Unplugged'
-    - condition: state
-      entity_id: light.bedroom_light
-      state: 'on'
+    condition: and
+    conditions:
+      - condition: time
+        after: '21:00:00'
+        before: '06:00:00'
+      - condition: state
+        entity_id: device_tracker.kajsasiphone
+        state: 'home'
+      - condition: state
+        entity_id: sensor.kajsas_iphone_battery_state
+        state: 'Unplugged'
+      - condition: state
+        entity_id: light.bedroom_light
+        state: 'on'
   action:
     service: scene.turn_on
     entity_id: scene.bedroom_dimmed
@@ -124,15 +128,20 @@
 #     entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
 #     from: 'off'
 #     to: 'on'
-#     for:
-#       minutes: 5
 #   condition:
-#     - condition: time
-#       after: '23:00:00'
-#       before: '06:00:00'
-#     - condition: state
-#       entity_id: group.all_devices
-#       state: 'home'
+#     condition: and
+#     conditions:
+#       - condition: time
+#         after: '22:00:00'
+#         before: '06:00:00'
+#       - condition: or
+#         conditions:
+#           - condition: state
+#             entity_id: device_tracker.johnnysiphone
+#             state: 'home'
+#           - condition: state
+#             entity_id: device_tracker.kajsasiphone
+#             state: 'home'
 #   action:
 #     service: homeassistant.turn_on
 #     entity_id: light.dining_room_lamp
