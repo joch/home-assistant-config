@@ -6,14 +6,9 @@
       from: 'off'
       to: 'on'
   condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.johnnysiphone
-        state: 'not_home'
-      - condition: state
-        entity_id: device_tracker.kajsasiphone
-        state: 'not_home'
+    - condition: state
+      entity_id: group.household
+      state: 'not_home'
   action:
     - service: notify.all_phones
       data:
