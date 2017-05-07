@@ -1,0 +1,23 @@
+- alias: Alarm - Notify movement if no one is home
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.johnnysiphone
+        state: 'not_home'
+      - condition: state
+        entity_id: device_tracker.kajsasiphone
+        state: 'not_home'
+  action:
+    - service: notify.all_phones
+      data:
+        message: "Movement detected at home!"
+        data:
+          push:
+            badge: 1
