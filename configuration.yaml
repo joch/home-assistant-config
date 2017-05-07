@@ -24,11 +24,13 @@ config:
 
 http:
   api_password: !secret http_password
+  server_port: !secret http_server_port
   ip_ban_enabled: true
   login_attempts_threshold: 5
-  # base_url: example.duckdns.org:8123
-  # ssl_certificate: /tbd
-  # ssl_key: /tbd
+  use_x_forwarded_for: True
+  base_url: !secret http_base_url
+  ssl_certificate: !secret http_ssl_certificate
+  ssl_key: !secret http_ssl_key
 
 # Checks for available updates
 updater:
@@ -119,7 +121,7 @@ binary_sensor:
 tts:
   - platform: google
 
-# ios:
+ios:
 
 media_player:
   - platform: spotify
@@ -134,7 +136,7 @@ tradfri:
   api_key: !secret tradfri_api_key
 
 zwave:
-  usb_path: /dev/ttyACM1
+  usb_path: /dev/ttyACM10
 
 switch:
   platform: flux
@@ -157,10 +159,10 @@ device_tracker:
     protocol: telnet
     username: !secret asuswrt_username
     password: !secret asuswrt_password
-  - platform: icloud
-    username: !secret icloud_username
-    password: !secret icloud_password
-    account_name: !secret icloud_account_name
+  # - platform: icloud
+  #   username: !secret icloud_username
+  #   password: !secret icloud_password
+  #   account_name: !secret icloud_account_name
 
 telegram_bot:
   platform: polling

@@ -45,3 +45,14 @@ sensor.dark_sky_dew_point:
   friendly_name: 'Dew Point'
 sensor.dark_sky_visibility:
   friendly_name: 'Visibility'
+binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0:
+  friendly_name: 'Living Room Motion'
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1:
+  friendly_name: 'Living Room Temperature'
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3:
+  friendly_name: 'Living Room Luminance'
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
+  friendly_name: 'Bedroom Globe Light'
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
+  friendly_name: 'Unused switch'
+
