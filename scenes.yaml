@@ -89,21 +89,10 @@
       state: on
       brightness: 40
 
-- name: Working Late
-  entities:
-    light.bedroom_lamp:
-      state: off
-    light.dining_room_lamp:
-      state: on
-      brightness: 40
-    light.living_room_lamp:
-      state: on
-      brightness: 1
-
-- name: Bedroom Dim
+- name: Bedroom Dimmed
   entities:
     light.bedroom_lamp:
       state: on
       brightness: 1
     switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
-      state: on
+      state: off

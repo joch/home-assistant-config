@@ -111,7 +111,7 @@ Scenes:
   - scene.good_night
   - scene.movie
   - scene.night
-  - scene.working_late
+  - scene.bedroom_dimmed
 
 Device Status:
   - sensor.johnnys_iphone_battery_level
