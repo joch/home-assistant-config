@@ -56,9 +56,8 @@ sensors:
     view: yes
     icon: mdi:gauge
     entities:
-      - group.household
       - group.battery_levels
-      - group.weather
+      - group.indoor_temperature
 
 weatherdash:
   name: Weather
@@ -141,6 +140,9 @@ UPS Status:
 
 Battery Levels:
   - sensor.living_room_motion_sensor_battery
+
+Indoor Temperature:
+  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
 
 Weather:
   - sun.sun

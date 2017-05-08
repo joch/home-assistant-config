@@ -109,6 +109,11 @@ sensor:
 
 binary_sensor:
   - platform: apcupsd
+  - platform: template
+    sensors:
+      living_room_motion_sensor_battery_low:
+        entity_id: zwave.fibaro_system_fgms001zw5_motion_sensor_5
+        value_template: '{{ states.zwave.fibaro_system_fgms001zw5_motion_sensor_5.attributes.battery_level < 10 }}'
 
 tts:
   - platform: google
@@ -185,6 +190,15 @@ notify:
   #   platform: file
   #   filename: debug.log
   #   timestamp: True
+
+alert:
+  living_room_motion_sensor_battery_low:
+    name: Living Room Motion Sensor Battery Low
+    entity_id: binary_sensor.living_room_motion_sensor_battery_low
+    repeat: 0
+    notifiers:
+      - all_phones
+
 
 group: !include groups.yaml
 scene: !include scenes.yaml
