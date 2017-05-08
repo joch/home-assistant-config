@@ -44,6 +44,10 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
+recorder:
+  db_url: !secret recorder_db_url
+  purge_days: 7
+
 # View all events in a logbook
 logbook:
 
