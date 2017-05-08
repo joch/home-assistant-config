@@ -57,7 +57,6 @@ sun:
 apcupsd:
   host: localhost
 
-# Weather Prediction
 sensor:
   - platform: darksky
     api_key: !secret darksky_api_key
@@ -96,26 +95,17 @@ sensor:
     password: !secret plex_password
   - platform: template
     sensors:
-      johnnys_ipadminiretina_battery_level:
-        friendly_name: Johnnys iPad Mini Retina Battery Level
+      living_room_motion_sensor_battery:
+        friendly_name: Living Room Motion Sensor
+        entity_id: zwave.fibaro_system_fgms001zw5_motion_sensor_5
         icon_template: mdi:battery
-        unit_of_measurement: '%'
         value_template: >-
-            {%- if states.device_tracker.johnnysipadminiretina.attributes.battery %}
-                {{ states.device_tracker.johnnysipadminiretina.attributes.battery|round }}
-            {% else %}
-                {{ states.sensor.johnnys_ipadminiretina_battery_level.state }}
-            {%- endif %}
-      johnnys_macbookpro_battery_level:
-        friendly_name: Johnnys Macbook Pro Battery Level
-        icon_template: mdi:laptop-mac
+          {%- if states.zwave.fibaro_system_fgms001zw5_motion_sensor_5 -%}
+            {{ states.zwave.fibaro_system_fgms001zw5_motion_sensor_5.attributes.battery_level }}
+          {%- else -%}
+            n/a
+          {%- endif -%}
         unit_of_measurement: '%'
-        value_template: >-
-            {%- if states.device_tracker.johnnysmacbookpro.attributes.battery %}
-                {{ states.device_tracker.johnnysmacbookpro.attributes.battery|round }}
-            {% else %}
-                {{ states.sensor.johnnys_macbookpro_battery_level.state }}
-            {%- endif %}
 
 binary_sensor:
   - platform: apcupsd

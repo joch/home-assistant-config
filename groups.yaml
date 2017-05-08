@@ -51,6 +51,15 @@ devices:
     - group.ups_status
     - group.device_status
 
+sensors:
+    name: Sensors
+    view: yes
+    icon: mdi:gauge
+    entities:
+      - group.household
+      - group.battery_levels
+      - group.weather
+
 weatherdash:
   name: Weather
   view: yes
@@ -130,10 +139,10 @@ UPS Status:
   - sensor.ups_status
   - sensor.ups_time_left
 
+Battery Levels:
+  - sensor.living_room_motion_sensor_battery
+
 Weather:
-  # - sensor.yr_precipitation
-  # - sensor.yr_symbol
-  # - sensor.yr_temperature
   - sun.sun
   - sensor.dark_sky_apparent_temperature
   - sensor.dark_sky_cloud_coverage
