@@ -1,26 +1,31 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
-
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 20
-  # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Stockholm
   customize: !include customize.yaml
 
-# Show links to resources in log and frontend
 #introduction:
 
-# Enables the frontend
+#discovery:
+
 frontend:
 
-# Enables configuration UI
 config:
+
+updater:
+
+conversation:
+
+history:
+
+logbook:
+
+sun:
+
+ios:
 
 http:
   api_password: !secret http_password
@@ -32,35 +37,15 @@ http:
   ssl_certificate: !secret http_ssl_certificate
   ssl_key: !secret http_ssl_key
 
-# Checks for available updates
-updater:
-
-# Discover some devices automatically
-#discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
-# Enables support for tracking state changes over time.
-history:
-
 recorder:
   db_url: !secret recorder_db_url
   purge_days: 7
-
-# View all events in a logbook
-logbook:
-
-# Track the sun
-sun:
 
 apcupsd:
   host: localhost
 
 tts:
   - platform: google
-
-ios:
 
 media_player:
   - platform: spotify
