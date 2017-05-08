@@ -139,6 +139,7 @@ UPS Status:
   - sensor.ups_time_left
 
 Battery Levels:
+  - sensor.ups_battery
   - sensor.living_room_motion_sensor_battery
 
 Indoor Temperature:
