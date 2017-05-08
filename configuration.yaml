@@ -59,11 +59,6 @@ apcupsd:
 
 # Weather Prediction
 sensor:
-  # - platform: yr
-  #   monitored_conditions:
-  #     - temperature
-  #     - symbol
-  #     - precipitation
   - platform: darksky
     api_key: !secret darksky_api_key
     update_interval: '00:30:00'
@@ -96,6 +91,9 @@ sensor:
       - bcharge
       - timeleft
       - itemp
+  - platform: plex
+    username: !secret plex_username
+    password: !secret plex_password
   - platform: template
     sensors:
       johnnys_ipadminiretina_battery_level:
@@ -134,6 +132,10 @@ media_player:
   - platform: samsungtv
     host: !secret samsungtv_host
     mac: !secret samsungtv_mac
+  - platform: plex
+    include_non_clients: true
+    scan_interval: 10
+    use_episode_art: true
 
 tradfri:
   host: !secret tradfri_host
