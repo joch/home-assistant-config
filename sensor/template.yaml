@@ -1,0 +1,13 @@
+- platform: template
+  sensors:
+    living_room_motion_sensor_battery:
+      friendly_name: Living Room Motion Sensor
+      entity_id: zwave.fibaro_system_fgms001zw5_motion_sensor_5
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.zwave.fibaro_system_fgms001zw5_motion_sensor_5 -%}
+          {{ states.zwave.fibaro_system_fgms001zw5_motion_sensor_5.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'

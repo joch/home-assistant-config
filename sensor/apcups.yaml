@@ -1,0 +1,8 @@
+- platform: apcupsd
+  resources:
+    - status
+    - linev
+    - loadpct
+    - bcharge
+    - timeleft
+    - itemp

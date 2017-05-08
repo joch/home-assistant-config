@@ -57,56 +57,6 @@ sun:
 apcupsd:
   host: localhost
 
-sensor:
-  - platform: darksky
-    api_key: !secret darksky_api_key
-    update_interval: '00:30:00'
-    monitored_conditions:
-      - summary
-      - minutely_summary
-      - hourly_summary
-      - daily_summary
-      - icon
-      - nearest_storm_distance
-      - nearest_storm_bearing
-      - precip_type
-      - precip_intensity
-      - precip_probability
-      - temperature
-      - apparent_temperature
-      - dew_point
-      - wind_speed
-      - wind_bearing
-      - cloud_cover
-      - humidity
-      - pressure
-      - visibility
-      - ozone
-  - platform: apcupsd
-    resources:
-      - status
-      - linev
-      - loadpct
-      - bcharge
-      - timeleft
-      - itemp
-  - platform: plex
-    username: !secret plex_username
-    password: !secret plex_password
-  - platform: template
-    sensors:
-      living_room_motion_sensor_battery:
-        friendly_name: Living Room Motion Sensor
-        entity_id: zwave.fibaro_system_fgms001zw5_motion_sensor_5
-        icon_template: mdi:battery
-        value_template: >-
-          {%- if states.zwave.fibaro_system_fgms001zw5_motion_sensor_5 -%}
-            {{ states.zwave.fibaro_system_fgms001zw5_motion_sensor_5.attributes.battery_level }}
-          {%- else -%}
-            n/a
-          {%- endif -%}
-        unit_of_measurement: '%'
-
 binary_sensor:
   - platform: apcupsd
   - platform: template
@@ -199,7 +149,7 @@ alert:
     notifiers:
       - all_phones
 
-
+sensor: !include_dir_merge_list sensor
 group: !include groups.yaml
 scene: !include scenes.yaml
 automation: !include_dir_merge_list automation
