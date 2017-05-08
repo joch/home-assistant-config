@@ -13,6 +13,6 @@
     - service: notify.all_phones
       data:
         message: "Movement detected at home!"
-        data:
-          push:
-            badge: 1
+        # data:
+        #   push:
+        #     badge: 1
