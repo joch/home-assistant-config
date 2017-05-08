@@ -57,14 +57,6 @@ sun:
 apcupsd:
   host: localhost
 
-binary_sensor:
-  - platform: apcupsd
-  - platform: template
-    sensors:
-      living_room_motion_sensor_battery_low:
-        entity_id: zwave.fibaro_system_fgms001zw5_motion_sensor_5
-        value_template: '{{ states.zwave.fibaro_system_fgms001zw5_motion_sensor_5.attributes.battery_level < 10 }}'
-
 tts:
   - platform: google
 
@@ -150,6 +142,7 @@ alert:
       - all_phones
 
 sensor: !include_dir_merge_list sensor
+binary_sensor: !include_dir_merge_list binary_sensor
 group: !include groups.yaml
 scene: !include scenes.yaml
 automation: !include_dir_merge_list automation
