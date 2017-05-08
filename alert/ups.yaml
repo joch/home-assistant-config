@@ -1,0 +1,7 @@
+ups_power_fail:
+  name: UPS detected power failure
+  entity_id: binary_sensor.ups_online_status
+  state: 'off'
+  repeat: 0
+  notifiers:
+    - all_phones
