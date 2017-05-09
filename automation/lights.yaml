@@ -13,8 +13,8 @@
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
       below: 40
-      for:
-        minutes: 10
+      # for:
+      #   minutes: 10
     - platform: state
       entity_id: group.all_devices
       from: 'not_home'
@@ -34,6 +34,22 @@
   action:
     service: scene.turn_on
     entity_id: scene.evening
+
+- alias: Lights - Turn off lights when bright
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
+      above: 40
+      # for:
+      #   minutes: 10
+  condition:
+        - condition: time
+          after: '06:00:00'
+          before: '23:00:00'
+  action:
+    service: scene.turn_on
+    entity_id: scene.day
 
 - alias: Lights - Turn off lights when everyone are away
   initial_state: 'on'
