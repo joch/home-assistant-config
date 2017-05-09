@@ -163,6 +163,11 @@ Weather:
   - sensor.dark_sky_visibility
   - sensor.dark_sky_wind_bearing
   - sensor.dark_sky_wind_speed
+  - sensor.dark_sky_temperature_max
+  - sensor.dark_sky_temperature_min
+  - sensor.dark_sky_apparent_temperature_max
+  - sensor.dark_sky_apparent_temperature_min
+  - sensor.dark_sky_precip_intensity_max
 
 Weather Summary:
   - sensor.dark_sky_summary
