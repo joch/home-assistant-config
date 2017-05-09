@@ -14,6 +14,9 @@
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
       value_template: '{{ sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3.state }}'
       below: 40
+    - platform: state
+      entity_id: group.all_devices
+      state: 'home'
   condition:
     - condition: and
       conditions:
@@ -23,6 +26,10 @@
         - condition: time
           after: '06:00:00'
           before: '23:00:00'
+        - condition: numeric_state
+          entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
+          value_template: '{{ sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3.state }}'
+          below: 40
   action:
     service: scene.turn_on
     entity_id: scene.evening
