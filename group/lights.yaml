@@ -1,0 +1,10 @@
+Living Room Lights:
+  icon: mdi:sofa
+  entities:
+    - light.dining_room_lamp
+    - light.living_room_lamp
+
+Bedroom Lights:
+  icon: mdi:hotel
+  entities:
+    - light.bedroom_lamp
