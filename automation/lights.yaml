@@ -1,22 +1,22 @@
-- alias: Fluxer switch on by default
-  initial_state: 'on'
-  trigger: 
-    platform: event
-    event: zwave.network_ready
-  action:
-    service: homeassistant.turn_on
-    entity_id: switch.fluxer
+# - alias: Fluxer switch on by default
+#   initial_state: 'on'
+#   trigger: 
+#     platform: event
+#     event: zwave.network_ready
+#   action:
+#     service: homeassistant.turn_on
+#     entity_id: switch.fluxer
 
 - alias: Lights - Turn on lights if home and dark
   initial_state: 'on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
-      value_template: '{{ sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3.state }}'
       below: 40
     - platform: state
       entity_id: group.all_devices
-      state: 'home'
+      from: 'not_home'
+      to: 'home'
   condition:
     - condition: and
       conditions:
@@ -28,7 +28,6 @@
           before: '23:00:00'
         - condition: numeric_state
           entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
-          value_template: '{{ sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3.state }}'
           below: 40
   action:
     service: scene.turn_on
@@ -51,8 +50,6 @@
     entity_id: group.all_devices
     from: 'not_home'
     to: 'home'
-    for:
-      minutes: 10
   condition:
     - condition: time
       after: '23:00:00'
