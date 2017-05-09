@@ -49,6 +49,16 @@ sensor.dark_sky_dew_point:
   friendly_name: 'Dew Point'
 sensor.dark_sky_visibility:
   friendly_name: 'Visibility'
+sensor.dark_sky_temperature_max:
+  friendly_name: 'Daily Maximum Temperature'
+sensor.dark_sky_temperature_min:
+  friendly_name: 'Daily Minimum Temperature'
+sensor.dark_sky_apparent_temperature_max:
+  friendly_name: 'Daily Maximum Apparent Temperature'
+sensor.dark_sky_apparent_temperature_min:
+  friendly_name: 'Daily Minimum Apparent Temperature'
+sensor.dark_sky_precip_intensity_max:
+  friendly_name: 'Daily Maximum Percipitation'
 binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0:
   friendly_name: 'Living Room Motion'
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1:

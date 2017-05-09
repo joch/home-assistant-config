@@ -22,3 +22,8 @@
     - pressure
     - visibility
     - ozone
+    - temperature_max
+    - temperature_min
+    - apparent_temperature_max
+    - apparent_temperature_min
+    - precip_intensity_max
