@@ -13,6 +13,8 @@
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
       below: 40
+      for:
+        minutes: 10
     - platform: state
       entity_id: group.all_devices
       from: 'not_home'
