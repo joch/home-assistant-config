@@ -10,6 +10,7 @@ Living Room:
   - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
   - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
   - sensor.plex
+  - sensor.jochad
 
 Bedroom:
   - light.bedroom_lamp

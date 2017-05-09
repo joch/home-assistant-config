@@ -69,4 +69,6 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
   friendly_name: 'Bedroom Globe Light'
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
   friendly_name: 'Unused switch'
-
+sensor.jochad:
+  icon: mdi:xbox
+  friendly_name: 'XboxOne'
