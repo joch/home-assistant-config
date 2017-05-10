@@ -79,7 +79,7 @@
           after: '23:00:00'
           before: '06:00:00'
         - condition: state
-          entity_id: group.all_devices
+          entity_id: group.household
           state: 'home'
   action:
     service: homeassistant.turn_on
@@ -100,9 +100,13 @@
     service: scene.turn_on
     entity_id: scene.night
 
-- alias: Lights - Dim bedroom lights when K going to bed but J up
+- alias: Lights - Dim bedroom lights when one person goes to bed
   initial_state: 'on'
   trigger:
+    - platform: state
+      entity_id: sensor.johnnys_iphone_battery_state
+      from: 'Unplugged'
+      to: 'Charging'
     - platform: state
       entity_id: sensor.kajsas_iphone_battery_state
       from: 'Unplugged'
@@ -114,40 +118,26 @@
         after: '21:00:00'
         before: '06:00:00'
       - condition: state
-        entity_id: device_tracker.johnnysiphone
-        state: 'home'
-      - condition: state
-        entity_id: sensor.johnnys_iphone_battery_state
-        state: 'Unplugged'
-      - condition: state
         entity_id: light.bedroom_light
         state: 'on'
-  action:
-    service: scene.turn_on
-    entity_id: scene.bedroom_dimmed
-
-- alias: Lights - Dim bedroom lights when J going to bed but K up
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: sensor.johnnys_iphone_battery_state
-      from: 'Unplugged'
-      to: 'Charging'
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: '21:00:00'
-        before: '06:00:00'
-      - condition: state
-        entity_id: device_tracker.kajsasiphone
-        state: 'home'
-      - condition: state
-        entity_id: sensor.kajsas_iphone_battery_state
-        state: 'Unplugged'
-      - condition: state
-        entity_id: light.bedroom_light
-        state: 'on'
+      - condition: or
+        conditions:
+          - condition: and
+            conditions:
+              - condition: state
+                entity_id: sensor.johnnys_iphone_battery_state
+                state: 'Unplugged'
+              - condition: state
+                entity_id: device_tracker.johnnysiphone
+                state: 'home'
+          - condition: and
+            conditions:
+              - condition: state
+                entity_id: sensor.kajsas_iphone_battery_state
+                state: 'Unplugged'
+              - condition: state
+                entity_id: device_tracker.kajsasiphone
+                state: 'home'
   action:
     service: scene.turn_on
     entity_id: scene.bedroom_dimmed
