@@ -64,14 +64,23 @@
 - alias: Lights - Lead lights when arriving late
   initial_state: 'on'
   trigger:
-    platform: state
-    entity_id: group.all_devices
-    from: 'not_home'
-    to: 'home'
+    - platform: state
+      entity_id: device_tracker.johnnysiphone
+      from: 'not_home'
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.kajsasiphone
+      from: 'not_home'
+      to: 'home'
   condition:
-    - condition: time
-      after: '23:00:00'
-      before: '06:00:00'
+    - condition: and
+      conditions:
+        - condition: time
+          after: '23:00:00'
+          before: '06:00:00'
+        - condition: state
+          entity_id: group.all_devices
+          state: 'home'
   action:
     service: homeassistant.turn_on
     entity_id: light.dining_room_lamp
