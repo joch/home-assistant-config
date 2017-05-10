@@ -1,9 +1,12 @@
 Automations:
   - automation.fluxer_switch_on_by_default
+  - automation.alarm__notify_movement_if_no_one_is_home
+  - automation.lights__dim_bedroom_lights_when_one_person_goes_to_bed
   - automation.lights__lead_lights_when_arriving_late
+  - automation.lights__turn_off_lights_when_bright
   - automation.lights__turn_off_lights_when_everyone_are_away
   - automation.lights__turn_off_lights_when_going_to_bed
-  - automation.lights__turn_on_lights_in_the_evening_if_home
+  - automation.lights__turn_on_lights_if_home_and_dark
 
 Household:
   - device_tracker.johnnysiphone
