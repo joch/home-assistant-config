@@ -99,6 +99,9 @@ telegram_bot:
     - !secret telegram_id_johnny
     - !secret telegram_id_kajsa
 
+influxdb:
+  host: !secret influxdb_host
+
 sensor: !include_dir_merge_list sensor
 binary_sensor: !include_dir_merge_list binary_sensor
 group: !include_dir_merge_named group
