@@ -48,9 +48,9 @@ tts:
   - platform: google
 
 media_player:
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
+  # - platform: spotify
+  #   client_id: !secret spotify_client_id
+  #   client_secret: !secret spotify_client_secret
   - platform: samsungtv
     host: !secret samsungtv_host
     mac: !secret samsungtv_mac
