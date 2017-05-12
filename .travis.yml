@@ -3,6 +3,7 @@ python:
   - "3.4"
 before_install:
   - cp secrets.yaml-default secrets.yaml
+  - touch ssl.crt ssl.key
 install:
   - pip3 install homeassistant
 script:
