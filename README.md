@@ -1,5 +1,7 @@
 # Home Assistant Config
 
+[![Build Status](https://travis-ci.org/joch/home-assistant-config.svg?branch=master)](https://travis-ci.org/joch/home-assistant-config)
+
 This is my [Home Assistant](https://home-assistant.io) configuration.
 
 ## Devices
