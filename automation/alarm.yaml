@@ -1,4 +1,4 @@
-- alias: Alarm - Notify movement if no one is home
+- alias: Notify movement if no one is home
   initial_state: 'on'
   trigger:
     - platform: state

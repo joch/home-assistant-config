@@ -7,7 +7,7 @@
 #     service: homeassistant.turn_on
 #     entity_id: switch.fluxer
 
-- alias: Lights - Turn on lights if home and dark
+- alias: Turn on lights if home and dark
   initial_state: 'on'
   trigger:
     - platform: numeric_state
@@ -35,7 +35,7 @@
     service: scene.turn_on
     entity_id: scene.lights_on
 
-- alias: Lights - Turn off lights when bright
+- alias: Turn off lights when bright
   initial_state: 'on'
   trigger:
     - platform: numeric_state
@@ -51,7 +51,7 @@
     service: scene.turn_on
     entity_id: scene.lights_off
 
-- alias: Lights - Turn off lights when everyone are away
+- alias: Turn off lights when everyone are away
   initial_state: 'on'
   trigger:
     - platform: state
@@ -61,7 +61,7 @@
     - service: scene.turn_on
       entity_id: scene.lights_off
 
-- alias: Lights - Lead lights when arriving late
+- alias: Lead lights when arriving late
   initial_state: 'on'
   trigger:
     - platform: state
@@ -85,7 +85,7 @@
     service: homeassistant.turn_on
     entity_id: light.dining_room_lamp
 
-- alias: Lights - Turn off lights when going to bed
+- alias: Turn off lights when going to bed
   initial_state: 'on'
   trigger:
     - platform: state
@@ -100,7 +100,7 @@
     service: scene.turn_on
     entity_id: scene.lights_off
 
-- alias: Lights - Dim bedroom lights when one person goes to bed
+- alias: Dim bedroom lights when one person goes to bed
   initial_state: 'on'
   trigger:
     - platform: state

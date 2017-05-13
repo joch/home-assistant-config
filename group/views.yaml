@@ -37,8 +37,9 @@ automation:
   view: yes
   icon: mdi:robot
   entities:
-    - group.automations
     - group.scenes
+    - group.light_automation
+    - group.security_automation
 
 devices:
   name: Devices
