@@ -13,7 +13,6 @@ lights:
   entities:
     - group.interior_lights
     # - group.exterior_lights
-    - switch.fluxer
 
 living:
   name: Living Room
@@ -38,6 +37,7 @@ automation:
   icon: mdi:robot
   entities:
     - group.scenes
+    - switch.fluxer
     - group.light_automation
     - group.security_automation
 

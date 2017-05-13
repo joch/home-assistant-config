@@ -2,6 +2,7 @@ group.all_automations:
   hidden: false
 group.all_scenes:
   hidden: false
+
 sensor.dark_sky_temperature:
   friendly_name: 'Outdoor Temperature'
 sensor.dark_sky_summary:
@@ -65,10 +66,13 @@ sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1:
   friendly_name: 'Living Room Temperature'
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3:
   friendly_name: 'Living Room Luminance'
+sensor.jochad:
+  icon: mdi:xbox
+  friendly_name: 'XboxOne'
+
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
   friendly_name: 'Bedroom Globe Light'
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
   friendly_name: 'Unused switch'
-sensor.jochad:
-  icon: mdi:xbox
-  friendly_name: 'XboxOne'
+switch.fluxer:
+  friendly_name: 'Soften lights in the evening'
