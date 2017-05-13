@@ -1,19 +1,4 @@
-- name: Good Morning
-  entities:
-    light.bedroom_lamp:
-      state: on
-      brightness: 85
-    light.dining_room_lamp:
-      state: off
-    light.living_room_lamp:
-      state: off
-    #service: media_player.play_media
-    #  data_template:
-    #    - entity_id: media_player.spotify
-    #    - media_content_id: 'spotify:user:spotify:playlist:70uOuPx4DyXq1R222Ac3Ma'
-    #    - media_content_type: playlist
-
-- name: Day
+- name: Lights Off
   entities:
     light.bedroom_lamp:
       state: off
@@ -21,51 +6,24 @@
       state: off
     light.living_room_lamp:
       state: off
+    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
+      state: off
 
-- name: Dinner
+- name: Lights On
   entities:
     light.bedroom_lamp:
       state: on
-      brightness: 85
+      brightness: 127
     light.dining_room_lamp:
       state: on
       brightness: 127
     light.living_room_lamp:
       state: on
-      brightness: 85
-
-- name: Evening
-  entities:
-    light.bedroom_lamp:
-      state: on
-      brightness: 85
-    light.dining_room_lamp:
-      state: on
-      brightness: 85
-    light.living_room_lamp:
-      state: on
       brightness: 127
-
-- name: Good Night
-  entities:
-    light.bedroom_lamp:
+    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
       state: on
-      brightness: 1
-    light.dining_room_lamp:
-      state: off
-    light.living_room_lamp:
-      state: off
 
-- name: Night
-  entities:
-    light.bedroom_lamp:
-      state: off
-    light.dining_room_lamp:
-      state: off
-    light.living_room_lamp:
-      state: off
-
-- name: Bright
+- name: Lights Full
   entities:
     light.bedroom_lamp:
       state: on
@@ -76,12 +34,11 @@
     light.living_room_lamp:
       state: on
       brightness: 255
-
-- name: Movie
-  entities:
-    light.bedroom_lamp:
+    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
       state: on
-      brightness: 40
+
+- name: Living Room Cozy
+  entities:
     light.dining_room_lamp:
       state: on
       brightness: 40
@@ -96,3 +53,11 @@
       brightness: 1
     switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
       state: off
+
+- name: Bedroom Cozy
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 1
+    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
+      state: on

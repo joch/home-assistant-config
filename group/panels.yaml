@@ -13,15 +13,12 @@ Household:
   - device_tracker.kajsasiphone
 
 Scenes:
-  - scene.bright
-  - scene.day
-  - scene.dinner
-  - scene.evening
-  - scene.good_morning
-  - scene.good_night
-  - scene.movie
-  - scene.night
+  - scene.lights_off
+  - scene.lights_on
+  - scene.lights_full
+  - scene.living_room_cozy
   - scene.bedroom_dimmed
+  - scene.bedroom_cozy
 
 Device Status:
   - sensor.johnnys_iphone_battery_level

@@ -33,7 +33,7 @@
           below: 40
   action:
     service: scene.turn_on
-    entity_id: scene.evening
+    entity_id: scene.lights_on
 
 - alias: Lights - Turn off lights when bright
   initial_state: 'on'
@@ -49,7 +49,7 @@
           before: '23:00:00'
   action:
     service: scene.turn_on
-    entity_id: scene.day
+    entity_id: scene.lights_off
 
 - alias: Lights - Turn off lights when everyone are away
   initial_state: 'on'
@@ -58,8 +58,8 @@
       entity_id: group.all_devices
       state: 'not_home'
   action:
-    - service: light.turn_off
-      entity_id: group.all_lights
+    - service: scene.turn_on
+      entity_id: scene.lights_off
 
 - alias: Lights - Lead lights when arriving late
   initial_state: 'on'
@@ -98,7 +98,7 @@
       before: '06:00:00'
   action:
     service: scene.turn_on
-    entity_id: scene.night
+    entity_id: scene.lights_off
 
 - alias: Lights - Dim bedroom lights when one person goes to bed
   initial_state: 'on'
