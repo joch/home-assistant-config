@@ -57,6 +57,10 @@
     - platform: state
       entity_id: group.all_devices
       state: 'not_home'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_off
@@ -141,6 +145,33 @@
   action:
     service: scene.turn_on
     entity_id: scene.bedroom_dimmed
+
+# TODO: Consider including this in main light automation above
+- alias: Turn on lights when on vacation
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+  action:
+    service: scene.turn_on
+    entity_id: scene.lights_on
+
+- alias: Turn off lights when on vacation
+  initial_state: 'on'
+  trigger:
+    platform: time
+    after: '22:30:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+  action:
+    service: scene.turn_on
+    entity_id: scene.lights_off
 
 # - alias: Lights - Lead lights during the night if motion detected
 #   initial_state: 'on'
