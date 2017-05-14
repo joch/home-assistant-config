@@ -13,9 +13,10 @@
     - service: notify.all_phones
       data:
         message: "Movement detected at home!"
-        # data:
-        #   push:
-        #     badge: 1
+        data:
+          attachment:
+            url: !secret android_webcam_photo_url
+            hide-thumbnail: false
 
 # TODO: Add condition guest mode = off when implemented
 - alias: Turn on vacation mode when away for 24h
