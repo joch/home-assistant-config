@@ -1,3 +1,6 @@
+automation.notify_movement_if_no_one_is_home:
+  icon: mdi:shield-outline
+
 group.all_automations:
   hidden: false
 group.all_scenes:

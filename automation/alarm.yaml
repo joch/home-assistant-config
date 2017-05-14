@@ -16,3 +16,27 @@
         # data:
         #   push:
         #     badge: 1
+
+# TODO: Add condition guest mode = off when implemented
+- alias: Turn on vacation mode when away for 24h
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: group.household
+      state: 'no_home'
+      for:
+        hours: 24
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.vacation_mode
+
+- alias: Turn off vacation mode when coming home
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: group.household
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.vacation_mode
