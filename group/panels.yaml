@@ -1,5 +1,5 @@
 Security Automation:
-  - automation.notify_movement_if_no_one_is_home
+  - automation.notify_movement_and_turn_on_lights_if_no_one_is_home
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
 
