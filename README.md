@@ -12,3 +12,14 @@ This is my [Home Assistant](https://home-assistant.io) configuration.
 - [IKEA Trådfri Gateway](http://www.ikea.com/us/en/catalog/products/00337813/) x1
 - [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
 - [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/) x3
+
+## Screenshots
+
+![Home](images/1.png)
+![Lights](images/2.png)
+![Living Room](images/3.png)
+![Bedroom](images/4.png)
+![Automation](images/5.png)
+![Devices](images/6.png)
+![Gauges](images/7.png)
+![Weather](images/8.png)
