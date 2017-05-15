@@ -1,4 +1,4 @@
-automation.notify_movement_if_no_one_is_home:
+automation.alarm_enabled:
   icon: mdi:shield-outline
 
 group.all_automations:

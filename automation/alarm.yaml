@@ -1,4 +1,4 @@
-- alias: Notify movement and turn on lights if no one is home
+- alias: Alarm Enabled
   initial_state: 'on'
   trigger:
     - platform: state
