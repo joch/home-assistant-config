@@ -1,4 +1,4 @@
-- alias: Notify movement if no one is home
+- alias: Notify movement and turn on lights if no one is home
   initial_state: 'on'
   trigger:
     - platform: state
@@ -10,6 +10,8 @@
       entity_id: group.household
       state: 'not_home'
   action:
+    - service: scene.turn_on
+      entity_id: scene.lights_full
     - service: notify.all_phones
       data:
         message: "Movement detected at home!"
@@ -17,6 +19,28 @@
           attachment:
             url: !secret android_webcam_photo_url
             hide-thumbnail: false
+
+- alias: Turn off lights 10 minutes after last motion detected
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
+      state: 'off'
+      for:
+        minutes: 10
+  condition:
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: group.household
+        state: 'not_home'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.lights_off
+
 
 # TODO: Add condition guest mode = off when implemented
 - alias: Turn on vacation mode when away for 24h
