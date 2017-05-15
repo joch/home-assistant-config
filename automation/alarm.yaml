@@ -41,7 +41,6 @@
     - service: scene.turn_on
       entity_id: scene.lights_off
 
-
 # TODO: Add condition guest mode = off when implemented
 - alias: Turn on vacation mode when away for 24h
   initial_state: 'on'

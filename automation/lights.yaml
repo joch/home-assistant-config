@@ -7,7 +7,7 @@
 #     service: homeassistant.turn_on
 #     entity_id: switch.fluxer
 
-- alias: Turn on lights if home and dark
+- alias: Lights on when home
   initial_state: 'on'
   trigger:
     - platform: numeric_state
@@ -35,7 +35,7 @@
     service: scene.turn_on
     entity_id: scene.lights_on
 
-- alias: Turn off lights when bright
+- alias: Lights off when bright
   initial_state: 'on'
   trigger:
     - platform: numeric_state
@@ -51,7 +51,7 @@
     service: scene.turn_on
     entity_id: scene.lights_off
 
-- alias: Turn off lights when everyone are away
+- alias: Lights off when away
   initial_state: 'on'
   trigger:
     - platform: state
@@ -65,7 +65,7 @@
     - service: scene.turn_on
       entity_id: scene.lights_off
 
-- alias: Lead lights when arriving late
+- alias: Lights on when arriving late
   initial_state: 'on'
   trigger:
     - platform: state
@@ -89,7 +89,7 @@
     service: homeassistant.turn_on
     entity_id: light.dining_room_lamp
 
-- alias: Turn off lights when going to bed
+- alias: Lights off when going to bed
   initial_state: 'on'
   trigger:
     - platform: state
@@ -104,7 +104,7 @@
     service: scene.turn_on
     entity_id: scene.lights_off
 
-- alias: Dim bedroom lights when one person goes to bed
+- alias: Bedroom lights dimmed when one person goes to bed
   initial_state: 'on'
   trigger:
     - platform: state
@@ -147,7 +147,7 @@
     entity_id: scene.bedroom_dimmed
 
 # TODO: Consider including this in main light automation above
-- alias: Turn on lights when on vacation
+- alias: Lights on when on vacation
   initial_state: 'on'
   trigger:
     platform: sun

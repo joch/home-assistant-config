@@ -5,13 +5,13 @@ Security Automation:
 
 Light Automation:
   - switch.fluxer
-  - automation.fluxer_switch_on_by_default
-  - automation.dim_bedroom_lights_when_one_person_goes_to_bed
-  - automation.lead_lights_when_arriving_late
-  - automation.turn_off_lights_when_bright
-  - automation.turn_off_lights_when_everyone_are_away
-  - automation.turn_off_lights_when_going_to_bed
-  - automation.turn_on_lights_if_home_and_dark
+  # - automation.fluxer_switch_on_by_default
+  - automation.lights_on_when_home
+  - automation.lights_off_when_away
+  - automation.lights_off_when_bright
+  - automation.lights_on_when_arriving_late
+  - automation.lights_off_when_going_to_bed
+  - automation.bedroom_lights_dimmed_when_one_person_goes_to_bed
 
 Household:
   - device_tracker.johnnysiphone
