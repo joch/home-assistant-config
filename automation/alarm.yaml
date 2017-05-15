@@ -24,7 +24,7 @@
   trigger:
     - platform: state
       entity_id: group.household
-      state: 'no_home'
+      state: 'not_home'
       for:
         hours: 24
   action:
