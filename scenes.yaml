@@ -37,6 +37,21 @@
     switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
       state: on
 
+- name: Lights Vacation
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness: 127
+    light.dining_room_lamp:
+      state: on
+      brightness: 127
+    light.living_room_lamp:
+      state: on
+      brightness: 127
+    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
+      state: off
+
+
 - name: Living Room Cozy
   entities:
     light.dining_room_lamp:

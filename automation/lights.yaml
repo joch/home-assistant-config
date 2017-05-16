@@ -158,7 +158,7 @@
       state: 'on'
   action:
     service: scene.turn_on
-    entity_id: scene.lights_on
+    entity_id: scene.lights_vacation
 
 - alias: Turn off lights when on vacation
   initial_state: 'on'
