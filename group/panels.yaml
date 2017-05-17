@@ -22,6 +22,8 @@ Scenes:
   - scene.lights_on
   - scene.lights_full
   - scene.lights_vacation
+  - scene.living_room_on
+  - scene.living_room_off
   - scene.living_room_cozy
   - scene.bedroom_dimmed
   - scene.bedroom_cozy
