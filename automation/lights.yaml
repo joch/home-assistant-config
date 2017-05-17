@@ -178,7 +178,6 @@
   trigger:
     - platform: state
       entity_id: media_player.xboxone
-      from: 'idle'
       to: 'playing'
   action:
     service: scene.turn_on
@@ -190,7 +189,6 @@
     - platform: state
       entity_id: media_player.xboxone
       from: 'playing'
-      to: 'idle'
   action:
     service: scene.turn_on
     entity_id: scene.living_room_on

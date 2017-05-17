@@ -56,7 +56,7 @@ media_player:
     mac: !secret samsungtv_mac
   - platform: plex
     include_non_clients: true
-    scan_interval: 10
+    scan_interval: 5
     use_episode_art: true
 
 tradfri:
