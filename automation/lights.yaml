@@ -93,9 +93,9 @@
 - alias: Lights off when going to bed
   initial_state: 'on'
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
-      above: 0.3
+    - platform: state
+      entity_id: binary_sensor.johnny_asleep
+      state: 'on'
   condition:
     - condition: time
       after: '21:00:00'
@@ -107,14 +107,12 @@
 - alias: Bedroom lights dimmed when one person goes to bed
   initial_state: 'on'
   trigger:
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
-      above: 0.3
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
-      above: 0.3
+    - platform: state
+      entity_id: binary_sensor.kajsa_asleep
+      state: 'on'
+    - platform: state
+      entity_id: binary_sensor.johnny_asleep
+      state: 'on'
   condition:
     condition: and
     conditions:
@@ -128,17 +126,17 @@
         conditions:
           - condition: and
             conditions:
-              - condition: numeric_state
-                entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
-                above: 0.3
+              - condition: state
+                entity_id: binary_sensor.johnny_asleep
+                state: 'on'
               - condition: state
                 entity_id: device_tracker.johnnysiphone
                 state: 'home'
           - condition: and
             conditions:
-              - condition: numeric_state
-                entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
-                above: 0.3
+              - condition: state
+                entity_id: binary_sensor.kajsa_asleep
+                state: 'on'
               - condition: state
                 entity_id: device_tracker.kajsasiphone
                 state: 'home'
