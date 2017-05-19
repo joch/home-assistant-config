@@ -102,12 +102,12 @@ telegram_bot:
 influxdb:
   host: !secret influxdb_host
 
-android_ip_webcam:
-  host: !secret android_webcam_host
-  # username: !secret android_webcam_username
-  # password: !secret android_webcam_password
-  motion_sensor: true
-  name: Living Room Camera
+# android_ip_webcam:
+#   host: !secret android_webcam_host
+#   # username: !secret android_webcam_username
+#   # password: !secret android_webcam_password
+#   motion_sensor: true
+#   name: Living Room Camera
 
 input_boolean: !include input_boolean.yaml
 sensor: !include_dir_merge_list sensor
