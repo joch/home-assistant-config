@@ -144,7 +144,7 @@
                 state: 'home'
   action:
     service: scene.turn_on
-    entity_id: scene.bedroom_dimmed
+    entity_id: scene.bedroom_cozy
 
 # TODO: Consider including this in main light automation above
 - alias: Lights on when on vacation

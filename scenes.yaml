@@ -76,12 +76,15 @@
       state: on
       brightness: 40
 
-- name: Bedroom Dimmed
+- name: Bedroom On
   entities:
     light.bedroom_lamp:
       state: on
-      brightness: 1
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
+      brightness: 127
+
+- name: Bedroom Off
+  entities:
+    light.bedroom_lamp:
       state: off
 
 - name: Bedroom Cozy
@@ -89,5 +92,3 @@
     light.bedroom_lamp:
       state: on
       brightness: 1
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
-      state: on

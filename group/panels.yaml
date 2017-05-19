@@ -25,7 +25,8 @@ Scenes:
   - scene.living_room_on
   - scene.living_room_off
   - scene.living_room_cozy
-  - scene.bedroom_dimmed
+  - scene.bedroom_on
+  - scene.bedroom_off
   - scene.bedroom_cozy
 
 Device Status:
