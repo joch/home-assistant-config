@@ -5,7 +5,6 @@ Interior Lights:
 Living Room:
   - light.dining_room_lamp
   - light.living_room_lamp
-  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
   - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
   - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
   - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
@@ -17,6 +16,7 @@ Living Room:
 
 Bedroom:
   - light.bedroom_lamp
+  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
   - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
   - scene.bedroom_dimmed
   - scene.bedroom_cozy

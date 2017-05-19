@@ -74,8 +74,8 @@ sensor.jochad:
   friendly_name: 'XboxOne'
 
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
-  friendly_name: 'Bedroom Globe Light'
+  friendly_name: 'Kajsas chargers'
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
-  friendly_name: 'Unused switch'
+  friendly_name: 'Johnnys chargers'
 switch.fluxer:
   friendly_name: 'Soften lights in the evening'
