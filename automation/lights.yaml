@@ -177,6 +177,9 @@
     - platform: state
       entity_id: media_player.xboxone
       to: 'playing'
+    - platform: state
+      entity_id: media_player.tv_ue55f8000
+      to: 'playing'
   action:
     service: scene.turn_on
     entity_id: scene.living_room_cozy
@@ -187,6 +190,13 @@
     - platform: state
       entity_id: media_player.xboxone
       from: 'playing'
+    - platform: state
+      entity_id: media_player.tv_ue55f8000
+      from: 'playing'
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
+      below: 40
   action:
     service: scene.turn_on
     entity_id: scene.living_room_on
