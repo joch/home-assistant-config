@@ -5,7 +5,7 @@
       entity_id: device_tracker.johnnysiphone
       state: 'home'
   action:
-    - service: switch.turn_on
+    - service: homeassistant.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
 
 - alias: Turn off Johnnys chargers when not home
@@ -15,7 +15,7 @@
       entity_id: device_tracker.johnnysiphone
       state: 'not_home'
   action:
-    - service: switch.turn_off
+    - service: homeassistant.turn_off
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
 
 - alias: Turn on Kajsas chargers when home
@@ -25,7 +25,7 @@
       entity_id: device_tracker.kajsasiphone
       state: 'home'
   action:
-    - service: switch.turn_on
+    - service: homeassistant.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
 
 - alias: Turn off Kajsas chargers when not home
@@ -35,5 +35,5 @@
       entity_id: device_tracker.kajsasiphone
       state: 'not_home'
   action:
-    - service: switch.turn_off
+    - service: homeassistant.turn_off
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
