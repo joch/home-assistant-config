@@ -6,19 +6,24 @@
       from: 'off'
       to: 'on'
   condition:
-    - condition: state
-      entity_id: group.household
-      state: 'not_home'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: group.household
+        state: 'not_home'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_full
     - service: notify.all_phones
       data:
         message: "Movement detected at home!"
-        data:
-          attachment:
-            url: !secret android_webcam_photo_url
-            hide-thumbnail: false
+        # data:
+        #   attachment:
+        #     url: !secret android_webcam_photo_url
+        #     hide-thumbnail: false
 
 - alias: Turn off lights 10 minutes after last motion detected
   initial_state: 'on'

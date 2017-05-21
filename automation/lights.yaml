@@ -1,11 +1,11 @@
-# - alias: Fluxer switch on by default
-#   initial_state: 'on'
-#   trigger: 
-#     platform: event
-#     event: zwave.network_ready
-#   action:
-#     service: homeassistant.turn_on
-#     entity_id: switch.fluxer
+- alias: Fluxer switch on by default
+  initial_state: 'on'
+  trigger: 
+    platform: event
+    event_type: zwave.network_ready
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.fluxer
 
 - alias: Lights on when home
   initial_state: 'on'
@@ -16,14 +16,14 @@
       # for:
       #   minutes: 10
     - platform: state
-      entity_id: group.all_devices
+      entity_id: group.household
       from: 'not_home'
       to: 'home'
   condition:
     - condition: and
       conditions:
         - condition: state
-          entity_id: group.all_devices
+          entity_id: group.household
           state: 'home'
         - condition: time
           after: '06:00:00'
@@ -55,11 +55,11 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: group.all_devices
+      entity_id: group.household
       state: 'not_home'
   condition:
     - condition: state
-      entity_id: input_boolean.vacation_mode
+      entity_id: input_boolean.guest_mode
       state: 'off'
   action:
     - service: scene.turn_on

@@ -9,7 +9,7 @@ homeassistant:
 
 #introduction:
 
-#discovery:
+discovery:
 
 frontend:
 
@@ -54,6 +54,7 @@ media_player:
   - platform: samsungtv
     host: !secret samsungtv_host
     mac: !secret samsungtv_mac
+    scan_interval: 20
   - platform: plex
     include_non_clients: true
     scan_interval: 5
