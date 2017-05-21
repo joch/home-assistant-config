@@ -3,6 +3,10 @@ Security Automation:
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
 
+Cameras:
+  - camera.hallway
+  - camera.living_room
+
 Light Automation:
   - switch.fluxer
   # - automation.fluxer_switch_on_by_default

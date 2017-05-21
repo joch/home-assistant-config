@@ -42,20 +42,20 @@ automation:
     - group.light_automation
     - group.security_automation
 
-devices:
-  name: Devices
+security:
+  name: Security
   view: yes
-  icon: mdi:cellphone-link
+  icon: mdi:security-home
   entities:
-    - group.household
-    - group.ups_status
-    - group.device_status
+    - group.cameras
 
 sensors:
     name: Sensors
     view: yes
     icon: mdi:gauge
     entities:
+      - group.ups_status
+      - group.device_status
       - group.battery_levels
       - group.indoor_temperature
 
