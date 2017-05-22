@@ -110,12 +110,12 @@ influxdb:
 #   motion_sensor: true
 #   name: Living Room Camera
 
-arlo:
-  username: !secret arlo_username
-  password: !secret arlo_password
+# arlo:
+#   username: !secret arlo_username
+#   password: !secret arlo_password
 
-camera:
-  - platform: arlo
+# camera:
+#   - platform: arlo
 
 input_boolean: !include input_boolean.yaml
 sensor: !include_dir_merge_list sensor
