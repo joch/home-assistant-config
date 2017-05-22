@@ -128,7 +128,7 @@
             conditions:
               - condition: state
                 entity_id: binary_sensor.johnny_asleep
-                state: 'on'
+                state: 'off'
               - condition: state
                 entity_id: device_tracker.johnnysiphone
                 state: 'home'
@@ -136,7 +136,7 @@
             conditions:
               - condition: state
                 entity_id: binary_sensor.kajsa_asleep
-                state: 'on'
+                state: 'off'
               - condition: state
                 entity_id: device_tracker.kajsasiphone
                 state: 'home'

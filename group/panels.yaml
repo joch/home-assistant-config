@@ -3,9 +3,15 @@ Security Automation:
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
 
-Cameras:
-  - camera.hallway
-  - camera.living_room
+Hallway Camera:
+  - camera.arlo_hallway
+  - sensor.arlo_captured_today_hallway
+  - sensor.arlo_last_hallway
+
+Living Room Camera:
+  - camera.arlo_living_room
+  - sensor.arlo_captured_today_living_room
+  - sensor.arlo_last_living_room
 
 Light Automation:
   - switch.fluxer

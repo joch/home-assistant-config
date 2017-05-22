@@ -47,7 +47,8 @@ security:
   view: yes
   icon: mdi:security-home
   entities:
-    - group.cameras
+    - group.hallway_camera
+    - group.living_room_camera
 
 sensors:
     name: Sensors
