@@ -1,0 +1,10 @@
+- platform: trend
+  sensors:
+    hallway_camera_motion_detected:
+      friendly_name: 'Hallway Camera Motion Detected'
+      entity_id: sensor.arlo_captured_today_hallway
+      device_class: motion
+    living_room_camera_motion_detected:
+      friendly_name: 'Living Room Camera Motion Detected'
+      entity_id: sensor.arlo_captured_today_living_room
+      device_class: motion
