@@ -14,6 +14,8 @@ This is my [Home Assistant](https://home-assistant.io) configuration.
 - [IKEA Trådfri Gateway](http://www.ikea.com/us/en/catalog/products/00337813/) x1
 - [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
 - [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/) x3
+- [Netgear Arlo Pro VMC4030](https://www.arlo.com/en-us/products/arlo-pro/) x2
+- [Netgear Arlo Pro Base station with siren](https://www.arlo.com/en-us/products/arlo-pro/) x1
 
 ## Screenshots
 
@@ -22,6 +24,6 @@ This is my [Home Assistant](https://home-assistant.io) configuration.
 ![Living Room](images/3.png)
 ![Bedroom](images/4.png)
 ![Automation](images/5.png)
-![Devices](images/6.png)
+![Security](images/6.png)
 ![Gauges](images/7.png)
 ![Weather](images/8.png)
