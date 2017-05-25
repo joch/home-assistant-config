@@ -20,7 +20,7 @@ Light Automation:
   - automation.lights_off_when_away
   - automation.lights_off_when_bright
   - automation.lights_on_when_arriving_late
-  - automation.lights_off_when_going_to_bed
+  - automation.lights_off_when_last_person_goes_to_bed
   - automation.bedroom_lights_dimmed_when_one_person_goes_to_bed
 
 Household:
