@@ -209,8 +209,10 @@
       entity_id: light.living_room_lamp
       state: 'on'
   action:
-    service: scene.turn_on
-    entity_id: scene.living_room_cozy
+    - service: homeassistant.turn_off
+      entity_id: switch.fluxer
+    - service: scene.turn_on
+      entity_id: scene.living_room_cozy
 
 - alias: Living Room restore lights when not watching TV
   initial_state: 'on'
@@ -226,8 +228,10 @@
       entity_id: light.living_room_lamp
       state: 'on'
   action:
-    service: scene.turn_on
-    entity_id: scene.living_room_on
+    - service: homeassistant.turn_on
+      entity_id: switch.fluxer
+    - service: scene.turn_on
+      entity_id: scene.living_room_on
 
 # - alias: Lights - Lead lights during the night if motion detected
 #   initial_state: 'on'
