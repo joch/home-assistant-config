@@ -9,7 +9,7 @@ homeassistant:
 
 #introduction:
 
-discovery:
+# discovery:
 
 frontend:
 
@@ -47,6 +47,9 @@ apcupsd:
 tts:
   - platform: google
 
+ifttt:
+  key: !secret ifttt_key
+
 media_player:
   # - platform: spotify
   #   client_id: !secret spotify_client_id
@@ -79,7 +82,7 @@ switch:
   start_colortemp: 4000
   sunset_colortemp: 3000
   stop_colortemp: 1900
-  disable_brightness_adjust: True
+  # disable_brightness_adjust: True
   mode: mired
 
 device_tracker:
