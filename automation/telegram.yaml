@@ -1,61 +1,61 @@
-- alias: 'Telegram - Reply with available commands'
-  hide_entity: true
-  trigger:
-    platform: event
-    event_type: telegram_command
-    event_data:
-      command: '/help'
-  action:
-    - service: notify.telegram
-      data:
-        message: >-
-          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }}
-
-- alias: 'Telegram - Reply with pong on ping command'
-  hide_entity: true
-  trigger:
-    platform: event
-    event_type: telegram_command
-    event_data:
-      command: '/ping'
-  action:
-    - service: notify.johnny
-      data_template:
-        message: "pong {{ trigger.event.data.args|join(' ') }} plong"
-
-# - alias: 'Telegram bot scene managmement'
+# - alias: 'Telegram - Reply with available commands'
 #   hide_entity: true
 #   trigger:
 #     platform: event
 #     event_type: telegram_command
 #     event_data:
-#       command: '/scene'
+#       command: '/help'
 #   action:
-#     service: scene.turn_on
-#     entity_id: scene.{{ trigger.event.telegram_command.event_data.args }}
+#     - service: notify.telegram
+#       data:
+#         message: >-
+#           Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }}
 
-- alias: 'Telegram - Reply with who is home'
-  hide_entity: true
-  trigger:
-    platform: event
-    event_type: telegram_command
-    event_data:
-      command: '/home'
-  action:
-    - service: notify.johnny
-      data:
-        message: >-
-          Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }}
+# - alias: 'Telegram - Reply with pong on ping command'
+#   hide_entity: true
+#   trigger:
+#     platform: event
+#     event_type: telegram_command
+#     event_data:
+#       command: '/ping'
+#   action:
+#     - service: notify.johnny
+#       data_template:
+#         message: "pong {{ trigger.event.data.args|join(' ') }} plong"
 
-- alias: 'Telegram - Play Spotify playlist'
-  hide_entity: true
-  trigger:
-    platform: event
-    event_type: telegram_command
-    event_data:
-      command: '/spotify'
-  action:
-    service: media_player.play_media
-    data_template:
-      media_content_type: 'playlist'
-      media_content_id: "{{ trigger.event.data.args|join(' ') }}"
+# # - alias: 'Telegram bot scene managmement'
+# #   hide_entity: true
+# #   trigger:
+# #     platform: event
+# #     event_type: telegram_command
+# #     event_data:
+# #       command: '/scene'
+# #   action:
+# #     service: scene.turn_on
+# #     entity_id: scene.{{ trigger.event.telegram_command.event_data.args }}
+
+# - alias: 'Telegram - Reply with who is home'
+#   hide_entity: true
+#   trigger:
+#     platform: event
+#     event_type: telegram_command
+#     event_data:
+#       command: '/home'
+#   action:
+#     - service: notify.johnny
+#       data:
+#         message: >-
+#           Kajsa is {{ states("device_tracker.kajsasiphone") }} and Johnny is {{ states("device_tracker.johnnysiphone") }}
+
+# - alias: 'Telegram - Play Spotify playlist'
+#   hide_entity: true
+#   trigger:
+#     platform: event
+#     event_type: telegram_command
+#     event_data:
+#       command: '/spotify'
+#   action:
+#     service: media_player.play_media
+#     data_template:
+#       media_content_type: 'playlist'
+#       media_content_id: "{{ trigger.event.data.args|join(' ') }}"

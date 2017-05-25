@@ -96,12 +96,12 @@ device_tracker:
   #   password: !secret icloud_password
   #   account_name: !secret icloud_account_name
 
-telegram_bot:
-  platform: polling
-  api_key: !secret telegram_api_key
-  allowed_chat_ids:
-    - !secret telegram_id_johnny
-    - !secret telegram_id_kajsa
+# telegram_bot:
+#   platform: polling
+#   api_key: !secret telegram_api_key
+#   allowed_chat_ids:
+#     - !secret telegram_id_johnny
+#     - !secret telegram_id_kajsa
 
 influxdb:
   host: !secret influxdb_host

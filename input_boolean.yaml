@@ -6,12 +6,19 @@ alarm_mode:
 vacation_mode:
   name: Vacation Mode
   icon: mdi:airplane
+  initial: off
 
 guest_mode:
   name: Guest Mode
   icon: mdi:human-male-female
+  initial: off
 
 light_mode:
   name: Light Mode
   icon: mdi:lightbulb-outline
   initial: on
+
+alarm_motion_detected:
+  name: Motion detected
+  icon: mdi:run-fast
+  initial: off
