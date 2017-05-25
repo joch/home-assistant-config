@@ -1,7 +1,17 @@
+alarm_mode:
+  name: Alarm Enabled
+  icon: mdi:shield-outline
+  initial: on
+
 vacation_mode:
   name: Vacation Mode
   icon: mdi:airplane
 
 guest_mode:
-    name: Guest Mode
-    icon: mdi:human-male-female
+  name: Guest Mode
+  icon: mdi:human-male-female
+
+light_mode:
+  name: Light Mode
+  icon: mdi:lightbulb-outline
+  initial: on

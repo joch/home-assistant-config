@@ -1,50 +1,83 @@
-- alias: Alarm Enabled
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
-      from: 'off'
-      to: 'on'
-  condition:
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: group.household
-        state: 'not_home'
-      - condition: state
-        entity_id: input_boolean.guest_mode
-        state: 'off'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.lights_full
-    - service: notify.all_phones
-      data:
-        message: "Movement detected at home!"
-        # data:
-        #   attachment:
-        #     url: !secret android_webcam_photo_url
-        #     hide-thumbnail: false
+# - alias: Alarm Enabled
+#   initial_state: 'on'
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
+#       from: 'off'
+#       to: 'on'
+#   condition:
+#     - condition: and
+#       conditions:
+#       - condition: state
+#         entity_id: group.household
+#         state: 'not_home'
+#       - condition: state
+#         entity_id: input_boolean.guest_mode
+#         state: 'off'
+#   action:
+#     - service: scene.turn_on
+#       entity_id: scene.lights_full
+#     - service: notify.all_phones
+#       data:
+#         message: "Movement detected at home!"
+#         # data:
+#         #   attachment:
+#         #     url: !secret android_webcam_photo_url
+#         #     hide-thumbnail: false
 
-- alias: Turn off lights 10 minutes after last motion detected
+# - alias: Turn off lights 10 minutes after last motion detected
+#   initial_state: 'on'
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
+#       state: 'off'
+#       for:
+#         minutes: 10
+#   condition:
+#     - condition: and
+#       conditions:
+#       - condition: state
+#         entity_id: group.household
+#         state: 'not_home'
+#       - condition: state
+#         entity_id: input_boolean.guest_mode
+#         state: 'off'
+#   action:
+#     - service: scene.turn_on
+#       entity_id: scene.lights_off
+
+- alias: Arm alarm when away
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
-      state: 'off'
-      for:
-        minutes: 10
+      entity_id: group.household
+      from: 'home'
+      to: 'not_home'
   condition:
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: group.household
-        state: 'not_home'
-      - condition: state
-        entity_id: input_boolean.guest_mode
-        state: 'off'
+  - condition: state
+    entity_id: input_boolean.guest_mode
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.alarm_mode
+    state: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_off
+    - service: ifttt.trigger
+      data: {"event":"alarm_arm"}
+
+- alias: Disarm alarm when home
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: group.household
+      from: 'not_home'
+      to: 'home'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_mode
+    state: 'on'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"alarm_disarm"}
 
 - alias: Turn on vacation mode when away for 24h
   initial_state: 'on'
@@ -62,7 +95,7 @@
     - service: input_boolean.turn_on
       entity_id: input_boolean.vacation_mode
 
-- alias: Turn off vacation mode when coming home
+- alias: Turn off vacation and guest mode when coming home
   initial_state: 'on'
   trigger:
     - platform: state
@@ -72,3 +105,5 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.vacation_mode
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.guest_mode

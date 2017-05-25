@@ -1,6 +1,3 @@
-automation.alarm_enabled:
-  icon: mdi:shield-outline
-
 group.all_automations:
   hidden: false
 group.all_scenes:

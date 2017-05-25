@@ -20,20 +20,18 @@
       from: 'not_home'
       to: 'home'
   condition:
-    - condition: and
-      conditions:
-        - condition: state
-          entity_id: group.household
-          state: 'home'
-        - condition: time
-          after: '06:00:00'
-          before: '23:00:00'
-        - condition: numeric_state
-          entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
-          below: 40
+    - condition: state
+      entity_id: group.household
+      state: 'home'
+    - condition: time
+      after: '06:00:00'
+      before: '23:00:00'
+    - condition: numeric_state
+      entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
+      below: 40
   action:
-    service: scene.turn_on
-    entity_id: scene.lights_on
+    - service: scene.turn_on
+      entity_id: scene.lights_on
 
 - alias: Lights off when bright
   initial_state: 'on'
@@ -44,12 +42,12 @@
       # for:
       #   minutes: 10
   condition:
-        - condition: time
-          after: '06:00:00'
-          before: '23:00:00'
+    - condition: time
+      after: '06:00:00'
+      before: '23:00:00'
   action:
-    service: scene.turn_on
-    entity_id: scene.lights_off
+    - service: scene.turn_on
+      entity_id: scene.lights_off
 
 - alias: Lights off when away
   initial_state: 'on'

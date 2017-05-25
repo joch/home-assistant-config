@@ -1,7 +1,11 @@
 Security Automation:
-  - automation.alarm_enabled
+  - input_boolean.alarm_mode
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
+
+Light Automation:
+  - switch.fluxer
+  - input_boolean.light_mode
 
 Hallway Camera:
   - camera.arlo_hallway
@@ -12,16 +16,6 @@ Living Room Camera:
   - camera.arlo_living_room
   - sensor.arlo_captured_today_living_room
   - sensor.arlo_last_living_room
-
-Light Automation:
-  - switch.fluxer
-  # - automation.fluxer_switch_on_by_default
-  - automation.lights_on_when_home
-  - automation.lights_off_when_away
-  - automation.lights_off_when_bright
-  - automation.lights_on_when_arriving_late
-  - automation.lights_off_when_last_person_goes_to_bed
-  - automation.bedroom_lights_dimmed_when_one_person_goes_to_bed
 
 Household:
   - device_tracker.johnnysiphone
