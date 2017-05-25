@@ -9,8 +9,6 @@ sensor.dark_sky_summary:
   friendly_name: 'Summary'
 sensor.dark_sky_hourly_summary:
   friendly_name: 'Hourly Summary'
-sensor.dark_sky_minutely_summary:
-  friendly_name: 'Minute Summary'
 sensor.dark_sky_daily_summary:
   friendly_name: 'Daily Summary'
 sensor.dark_sky_apparent_temperature:
@@ -31,9 +29,6 @@ sensor.dark_sky_humidity:
 sensor.dark_sky_cloud_coverage:
   icon: mdi:weather-cloudy
   friendly_name: 'Cloud Cover'
-sensor.dark_sky_nearest_storm_distance:
-  icon: mdi:weather-lightning
-  friendly_name: 'Nearest Storm'
 sensor.dark_sky_wind_speed:
   icon: mdi:weather-windy
   friendly_name: 'Wind Speed'

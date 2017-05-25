@@ -3,12 +3,9 @@
   update_interval: '00:30:00'
   monitored_conditions:
     - summary
-    - minutely_summary
     - hourly_summary
     - daily_summary
     - icon
-    - nearest_storm_distance
-    - nearest_storm_bearing
     - precip_type
     - precip_intensity
     - precip_probability

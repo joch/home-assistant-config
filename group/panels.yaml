@@ -55,8 +55,6 @@ Weather:
   - sensor.dark_sky_dew_point
   - sensor.dark_sky_humidity
   - sensor.dark_sky_icon
-  - sensor.dark_sky_nearest_storm_bearing
-  - sensor.dark_sky_nearest_storm_distance
   - sensor.dark_sky_ozone
   - sensor.dark_sky_precip
   - sensor.dark_sky_precip_intensity
@@ -74,6 +72,5 @@ Weather:
 
 Weather Summary:
   - sensor.dark_sky_summary
-  - sensor.dark_sky_minutely_summary
   - sensor.dark_sky_hourly_summary
   - sensor.dark_sky_daily_summary
