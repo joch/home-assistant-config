@@ -1,4 +1,5 @@
 Security Automation:
+  - alarm_control_panel.ha_alarm
   - input_boolean.alarm_mode
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
