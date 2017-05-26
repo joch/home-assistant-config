@@ -104,7 +104,7 @@
         after: '21:00:00'
         before: '06:00:00'
       - condition: state
-        entity_id: light.bedroom_light
+        entity_id: light.bedroom_lamp
         state: 'on'
       - condition: or
         conditions:
@@ -144,7 +144,7 @@
         after: '21:00:00'
         before: '06:00:00'
       - condition: state
-        entity_id: light.bedroom_light
+        entity_id: light.bedroom_lamp
         state: 'on'
       - condition: or
         conditions:
@@ -209,8 +209,6 @@
       entity_id: light.living_room_lamp
       state: 'on'
   action:
-    - service: homeassistant.turn_off
-      entity_id: switch.fluxer
     - service: scene.turn_on
       entity_id: scene.living_room_cozy
 
@@ -228,8 +226,6 @@
       entity_id: light.living_room_lamp
       state: 'on'
   action:
-    - service: homeassistant.turn_on
-      entity_id: switch.fluxer
     - service: scene.turn_on
       entity_id: scene.living_room_on
 

@@ -82,7 +82,7 @@ switch:
   start_colortemp: 4000
   sunset_colortemp: 3000
   stop_colortemp: 1900
-  # disable_brightness_adjust: True
+  disable_brightness_adjust: True
   mode: mired
 
 device_tracker:
