@@ -5,7 +5,6 @@
     - summary
     - hourly_summary
     - daily_summary
-    - icon
     - precip_type
     - precip_intensity
     - precip_probability

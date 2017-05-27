@@ -57,7 +57,6 @@ Weather:
   - sensor.dark_sky_cloud_coverage
   - sensor.dark_sky_dew_point
   - sensor.dark_sky_humidity
-  - sensor.dark_sky_icon
   - sensor.dark_sky_ozone
   - sensor.dark_sky_precip
   - sensor.dark_sky_precip_intensity
