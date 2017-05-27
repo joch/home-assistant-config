@@ -1,5 +1,5 @@
 alarm_mode:
-  name: Alarm Enabled
+  name: Auto-arm Alarm
   icon: mdi:shield-outline
   initial: on
 

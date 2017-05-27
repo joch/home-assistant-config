@@ -87,7 +87,6 @@
     service: homeassistant.turn_on
     entity_id: light.dining_room_lamp
 
-# TODO: Expand logic to include two people like below
 - alias: Lights off when last person goes to bed
   initial_state: 'on'
   trigger:
@@ -98,32 +97,40 @@
       entity_id: binary_sensor.kajsa_asleep
       state: 'on'
   condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: '21:00:00'
-        before: '06:00:00'
-      - condition: state
-        entity_id: light.bedroom_lamp
-        state: 'on'
-      - condition: or
-        conditions:
+    - condition: time
+      after: '21:00:00'
+      before: '06:00:00'
+    - condition: state
+      entity_id: light.bedroom_lamp
+      state: 'on'
+    - condition: and
+      conditions:
+        - condition: or
+          conditions:
           - condition: and
             conditions:
-              - condition: state
-                entity_id: binary_sensor.johnny_asleep
-                state: 'on'
               - condition: state
                 entity_id: device_tracker.johnnysiphone
                 state: 'home'
+              - condition: state
+                entity_id: binary_sensor.johnny_asleep
+                state: 'on'
+          - condition: state
+            entity_id: device_tracker.johnnysiphone
+            state: 'not_home'
+        - condition: or
+          conditions:
           - condition: and
             conditions:
               - condition: state
-                entity_id: binary_sensor.kajsa_asleep
-                state: 'on'
-              - condition: state
                 entity_id: device_tracker.kajsasiphone
                 state: 'home'
+              - condition: state
+                entity_id: binary_sensor.kajsa_asleep
+                state: 'on'
+          - condition: state
+            entity_id: device_tracker.kajsasiphone
+            state: 'not_home'
   action:
     service: scene.turn_on
     entity_id: scene.lights_off
@@ -138,37 +145,44 @@
       entity_id: binary_sensor.johnny_asleep
       state: 'on'
   condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: '21:00:00'
-        before: '06:00:00'
-      - condition: state
-        entity_id: light.bedroom_lamp
-        state: 'on'
-      - condition: or
-        conditions:
+    - condition: time
+      after: '21:00:00'
+      before: '06:00:00'
+    - condition: state
+      entity_id: light.bedroom_lamp
+      state: 'on'
+    - condition: and
+      conditions:
+        - condition: or
+          conditions:
           - condition: and
             conditions:
-              - condition: state
-                entity_id: binary_sensor.johnny_asleep
-                state: 'off'
               - condition: state
                 entity_id: device_tracker.johnnysiphone
                 state: 'home'
+              - condition: state
+                entity_id: binary_sensor.johnny_asleep
+                state: 'off'
+          - condition: state
+            entity_id: device_tracker.johnnysiphone
+            state: 'not_home'
+        - condition: or
+          conditions:
           - condition: and
             conditions:
               - condition: state
-                entity_id: binary_sensor.kajsa_asleep
-                state: 'off'
-              - condition: state
                 entity_id: device_tracker.kajsasiphone
                 state: 'home'
+              - condition: state
+                entity_id: binary_sensor.kajsa_asleep
+                state: 'off'
+          - condition: state
+            entity_id: device_tracker.kajsasiphone
+            state: 'not_home'
   action:
     service: scene.turn_on
     entity_id: scene.bedroom_cozy
 
-# TODO: Consider including this in main light automation above
 - alias: Lights on when on vacation
   initial_state: 'on'
   trigger:

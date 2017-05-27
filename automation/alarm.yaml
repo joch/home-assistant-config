@@ -63,6 +63,10 @@
   action:
     - service: ifttt.trigger
       data: {"event":"alarm_arm"}
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.alarm
+      data:
+        code: !secret alarm_code
 
 - alias: Disarm alarm when home
   initial_state: 'on'
@@ -78,6 +82,10 @@
   action:
     - service: ifttt.trigger
       data: {"event":"alarm_disarm"}
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.alarm
+      data:
+        code: !secret alarm_code
 
 - alias: Turn on vacation mode when away for 24h
   initial_state: 'on'
@@ -108,7 +116,6 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.guest_mode
 
-
 - alias: Turn on lights and notify when motion detected
   initial_state: 'on'
   trigger:
@@ -132,6 +139,10 @@
     - service: notify.all_phones
       data:
         message: "Movement detected at home!"
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.alarm
+      data:
+        code: !secret alarm_code
 
 - alias: Turn off lights 10 minutes after motion detected
   initial_state: 'on'
