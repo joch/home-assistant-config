@@ -204,8 +204,8 @@
 - alias: Lights on when on vacation
   initial_state: 'on'
   trigger:
-    platform: sun
-    event: sunset
+    - platform: sun
+      event: sunset
   condition:
     - condition: state
       entity_id: input_boolean.vacation_mode
@@ -213,6 +213,9 @@
     - condition: state
       entity_id: input_boolean.light_mode
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
   action:
     service: scene.turn_on
     entity_id: scene.lights_vacation
@@ -220,8 +223,8 @@
 - alias: Turn off lights when on vacation
   initial_state: 'on'
   trigger:
-    platform: time
-    after: '22:30:00'
+    - platform: time
+      after: '22:30:00'
   condition:
     - condition: state
       entity_id: input_boolean.vacation_mode
@@ -229,6 +232,9 @@
     - condition: state
       entity_id: input_boolean.light_mode
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
   action:
     service: scene.turn_on
     entity_id: scene.lights_off
