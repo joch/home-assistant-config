@@ -29,6 +29,9 @@
     - condition: numeric_state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
       below: 40
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_on
@@ -45,6 +48,9 @@
     - condition: time
       after: '06:00:00'
       before: '23:00:00'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_off
@@ -59,6 +65,9 @@
     - condition: state
       entity_id: input_boolean.guest_mode
       state: 'off'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_off
@@ -83,6 +92,9 @@
         - condition: state
           entity_id: group.household
           state: 'home'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     service: homeassistant.turn_on
     entity_id: light.dining_room_lamp
@@ -102,6 +114,9 @@
       before: '06:00:00'
     - condition: state
       entity_id: light.bedroom_lamp
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_mode
       state: 'on'
     - condition: and
       conditions:
@@ -151,6 +166,9 @@
     - condition: state
       entity_id: light.bedroom_lamp
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
     - condition: and
       conditions:
         - condition: or
@@ -192,6 +210,9 @@
     - condition: state
       entity_id: input_boolean.vacation_mode
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     service: scene.turn_on
     entity_id: scene.lights_vacation
@@ -204,6 +225,9 @@
   condition:
     - condition: state
       entity_id: input_boolean.vacation_mode
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_mode
       state: 'on'
   action:
     service: scene.turn_on
@@ -222,6 +246,9 @@
     - condition: state
       entity_id: light.living_room_lamp
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_cozy
@@ -238,6 +265,9 @@
   condition:
     - condition: state
       entity_id: light.living_room_lamp
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_mode
       state: 'on'
   action:
     - service: scene.turn_on
