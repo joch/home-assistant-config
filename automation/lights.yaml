@@ -169,7 +169,7 @@
     - condition: state
       entity_id: input_boolean.light_mode
       state: 'on'
-    - condition: and
+    - condition: or
       conditions:
         - condition: or
           conditions:
