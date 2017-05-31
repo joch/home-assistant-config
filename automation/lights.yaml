@@ -22,9 +22,13 @@
     - platform: state
       entity_id: binary_sensor.kajsa_asleep
       state: 'off'
+      for:
+        minutes: 10
     - platform: state
       entity_id: binary_sensor.johnny_asleep
       state: 'off'
+      for:
+        minutes: 10
   condition:
     - condition: state
       entity_id: group.household
