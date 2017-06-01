@@ -61,6 +61,7 @@ sensors:
       - group.device_status
       - group.battery_levels
       - group.indoor_temperature
+      - group.zwave
 
 weatherdash:
   name: Weather
