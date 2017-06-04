@@ -1,10 +1,9 @@
 - alias: Notify and turn on lights when smoke detected
   initial_state: 'on'
   trigger:
-    - platform: numeric_state
+    - platform: state
       entity_id: sensor.fibaro_system_fgsd002_smoke_sensor_smoke_6_1
-      from: 0
-      to: 255
+      to: '255'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_full
