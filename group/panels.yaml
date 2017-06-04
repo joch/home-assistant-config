@@ -47,6 +47,7 @@ UPS Status:
 Battery Levels:
   - sensor.ups_battery
   - sensor.living_room_motion_sensor_battery
+  - sensor.living_room_smoke_sensor_battery
 
 Indoor Temperature:
   - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
@@ -82,3 +83,4 @@ Zwave:
   - zwave.fibaro_system_fgwpef_wall_plug_gen5_2
   - zwave.fibaro_system_fgwpef_wall_plug_gen5_3
   - zwave.fibaro_system_fgms001zw5_motion_sensor_5
+  - zwave.fibaro_system_fgsd002_smoke_sensor_6

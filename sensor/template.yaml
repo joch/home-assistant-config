@@ -11,3 +11,14 @@
           n/a
         {%- endif -%}
       unit_of_measurement: '%'
+    living_room_smoke_sensor_battery:
+      friendly_name: Living Room Smoke Sensor
+      entity_id: zwave.fibaro_system_fgsd002_smoke_sensor_6
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.zwave.fibaro_system_fgsd002_smoke_sensor_6 -%}
+          {{ states.zwave.fibaro_system_fgsd002_smoke_sensor_6.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+      unit_of_measurement: '%'
