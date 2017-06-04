@@ -31,6 +31,12 @@
         minutes: 10
   condition:
     - condition: state
+      entity_id: binary_sensor.kajsa_asleep
+      state: 'off'
+    - condition: state
+      entity_id: binary_sensor.johnny_asleep
+      state: 'off'
+    - condition: state
       entity_id: group.household
       state: 'home'
     - condition: time
