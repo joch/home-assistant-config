@@ -91,8 +91,6 @@ device_tracker:
     protocol: telnet
     username: !secret asuswrt_username
     password: !secret asuswrt_password
-    interval_seconds: 10
-    consider_home: 60
   # - platform: icloud
   #   username: !secret icloud_username
   #   password: !secret icloud_password
