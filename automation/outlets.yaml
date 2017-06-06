@@ -3,7 +3,7 @@
   trigger:
     - platform: state
       entity_id: device_tracker.johnnysiphone
-      state: 'home'
+      to: 'home'
   action:
     - service: homeassistant.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
@@ -13,7 +13,7 @@
   trigger:
     - platform: state
       entity_id: device_tracker.johnnysiphone
-      state: 'not_home'
+      to: 'not_home'
   action:
     - service: homeassistant.turn_off
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
@@ -23,7 +23,7 @@
   trigger:
     - platform: state
       entity_id: device_tracker.kajsasiphone
-      state: 'home'
+      to: 'home'
   action:
     - service: homeassistant.turn_on
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
@@ -33,7 +33,7 @@
   trigger:
     - platform: state
       entity_id: device_tracker.kajsasiphone
-      state: 'not_home'
+      to: 'not_home'
   action:
     - service: homeassistant.turn_off
       entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0

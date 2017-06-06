@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/joch/home-assistant-config.svg?branch=master)](https://travis-ci.org/joch/home-assistant-config)
 
-**Note**: Builds will fail until the next release where Arlo support is built-in.
-
 This is my [Home Assistant](https://home-assistant.io) configuration.
 
 ## Devices

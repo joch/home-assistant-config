@@ -21,12 +21,12 @@
       to: 'home'
     - platform: state
       entity_id: binary_sensor.kajsa_asleep
-      state: 'off'
+      to: 'off'
       for:
         minutes: 10
     - platform: state
       entity_id: binary_sensor.johnny_asleep
-      state: 'off'
+      to: 'off'
       for:
         minutes: 10
   condition:
@@ -76,7 +76,7 @@
   trigger:
     - platform: state
       entity_id: group.household
-      state: 'not_home'
+      to: 'not_home'
   condition:
     - condition: state
       entity_id: input_boolean.guest_mode
@@ -120,12 +120,12 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.johnny_asleep
-      state: 'on'
+      to: 'on'
       for:
         minutes: 1
     - platform: state
       entity_id: binary_sensor.kajsa_asleep
-      state: 'on'
+      to: 'on'
       for:
         minutes: 1
   condition:
@@ -175,10 +175,10 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.kajsa_asleep
-      state: 'on'
+      to: 'on'
     - platform: state
       entity_id: binary_sensor.johnny_asleep
-      state: 'on'
+      to: 'on'
   condition:
     - condition: time
       after: '21:00:00'
@@ -244,7 +244,7 @@
   initial_state: 'on'
   trigger:
     - platform: time
-      after: '22:30:00'
+      at: '22:30:00'
   condition:
     - condition: state
       entity_id: input_boolean.vacation_mode

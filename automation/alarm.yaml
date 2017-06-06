@@ -120,7 +120,7 @@
   trigger:
     - platform: state
       entity_id: input_boolean.alarm_motion_detected
-      state: 'on'
+      to: 'on'
       for:
         minutes: 10
   condition:
@@ -144,7 +144,7 @@
   trigger:
     - platform: state
       entity_id: group.household
-      state: 'not_home'
+      to: 'not_home'
       for:
         hours: 24
   condition:
