@@ -15,9 +15,13 @@
     - condition: state
       entity_id: binary_sensor.kajsa_asleep
       state: 'off'
+      for:
+        minutes: 10
     - condition: state
       entity_id: binary_sensor.johnny_asleep
       state: 'off'
+      for:
+        minutes: 10
   action:
     - service: notify.all_phones
       data:
