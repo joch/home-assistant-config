@@ -5,7 +5,7 @@
       entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
       to: 'off'
       for:
-        hours: 3
+        hours: 4
   condition:
     - condition: state
       entity_id: group.household
