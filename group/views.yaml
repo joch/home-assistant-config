@@ -58,7 +58,6 @@ sensors:
     icon: mdi:gauge
     entities:
       - group.ups_status
-      - group.device_status
       - group.battery_levels
       - group.indoor_temperature
       - group.zwave

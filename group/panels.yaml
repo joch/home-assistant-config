@@ -29,12 +29,6 @@ Scenes:
   - scene.lights_on
   - scene.lights_full
 
-Device Status:
-  - sensor.johnnys_iphone_battery_level
-  - sensor.johnnys_iphone_battery_state
-  - sensor.kajsas_iphone_battery_level
-  - sensor.kajsas_iphone_battery_state
-
 UPS Status:
   - binary_sensor.ups_online_status
   - sensor.ups_battery
