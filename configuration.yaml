@@ -69,6 +69,7 @@ tradfri:
 
 zwave:
   usb_path: /dev/ttyACM10
+  network_key: !secret zwave_network_key
 
 switch:
   platform: flux
