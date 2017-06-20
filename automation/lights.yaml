@@ -261,45 +261,45 @@
     service: scene.turn_on
     entity_id: scene.lights_off
 
-- alias: Living Room lights dimmed when watching TV
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: media_player.xboxone
-      to: 'playing'
-    - platform: state
-      entity_id: media_player.tv_ue55f8000
-      to: 'playing'
-  condition:
-    - condition: state
-      entity_id: light.living_room_lamp
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.light_mode
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_cozy
+# - alias: Living Room lights dimmed when watching TV
+#   initial_state: 'on'
+#   trigger:
+#     - platform: state
+#       entity_id: media_player.xboxone
+#       to: 'playing'
+#     - platform: state
+#       entity_id: media_player.tv_ue55f8000
+#       to: 'playing'
+#   condition:
+#     - condition: state
+#       entity_id: light.living_room_lamp
+#       state: 'on'
+#     - condition: state
+#       entity_id: input_boolean.light_mode
+#       state: 'on'
+#   action:
+#     - service: scene.turn_on
+#       entity_id: scene.living_room_cozy
 
-- alias: Living Room restore lights when not watching TV
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: media_player.xboxone
-      from: 'playing'
-    - platform: state
-      entity_id: media_player.tv_ue55f8000
-      from: 'playing'
-  condition:
-    - condition: state
-      entity_id: light.living_room_lamp
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.light_mode
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_on
+# - alias: Living Room restore lights when not watching TV
+#   initial_state: 'on'
+#   trigger:
+#     - platform: state
+#       entity_id: media_player.xboxone
+#       from: 'playing'
+#     - platform: state
+#       entity_id: media_player.tv_ue55f8000
+#       from: 'playing'
+#   condition:
+#     - condition: state
+#       entity_id: light.living_room_lamp
+#       state: 'on'
+#     - condition: state
+#       entity_id: input_boolean.light_mode
+#       state: 'on'
+#   action:
+#     - service: scene.turn_on
+#       entity_id: scene.living_room_on
 
 # - alias: Lights - Lead lights during the night if motion detected
 #   initial_state: 'on'

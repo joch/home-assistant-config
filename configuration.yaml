@@ -60,7 +60,7 @@ media_player:
     scan_interval: 20
   - platform: plex
     include_non_clients: true
-    scan_interval: 5
+    scan_interval: 10
     use_episode_art: true
 
 tradfri:
