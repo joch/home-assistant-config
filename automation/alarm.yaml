@@ -61,7 +61,8 @@
       entity_id: scene.lights_full
     - service: notify.all_phones
       data:
-        message: "Movement detected at home!"
+        title: "Movement detected at home!"
+        message: "Movement detected but nobody is home."
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.alarm
       data:
@@ -106,6 +107,10 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.vacation_mode
+    - service: notify.all_phones
+      data:
+        title: "Vacation mode enabled"
+        message: "Set Arlo to vacation mode manually to activate siren."
 
 - alias: Turn off vacation and guest mode when coming home
   initial_state: 'on'
