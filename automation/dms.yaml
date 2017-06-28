@@ -25,4 +25,5 @@
   action:
     - service: notify.all_phones
       data:
-        message: "Someone home, but no movement detected!"
+        title: "Someone home but no movement"
+        message: "No movement detected for 4 hours! Call and make sure that they are ok."
