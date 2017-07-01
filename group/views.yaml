@@ -25,6 +25,7 @@ living:
     - media_player.spotify
     - media_player.xboxone
     - media_player.tv_ue55f8000
+    - media_player.living_room_speakers
 
 bed:
   name: Bedroom
