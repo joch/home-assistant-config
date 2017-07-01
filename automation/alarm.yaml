@@ -38,6 +38,10 @@
       entity_id: alarm_control_panel.alarm
       data:
         code: !secret alarm_code
+    - service: tts.google_say
+      entity_id: media_player.living_room_speakers
+      data_template:
+        message: 'Welcome home. The alarm has been turned off.'
 
 - alias: Turn on lights and notify when motion detected
   initial_state: 'on'
