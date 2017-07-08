@@ -40,7 +40,7 @@
       entity_id: group.household
       state: 'home'
     - condition: time
-      after: '07:00:00'
+      after: '08:00:00'
       before: '23:00:00'
     - condition: numeric_state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
