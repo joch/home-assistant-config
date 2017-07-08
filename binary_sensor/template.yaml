@@ -13,13 +13,7 @@
       entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
       value_template: >
         {% if states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4 %}
-          {% if states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4.state | float > 0.0 %}
-            {{ true }}
-          {% elif (as_timestamp(now()) - as_timestamp(states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4.last_changed) > 600) %}
-            {{ false }}
-          {% else %}
-            {{ true }}
-          {% endif %}
+        {{ states('sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4') | float > 0 }}
         {% else %}
         ??
         {% endif %}
@@ -28,13 +22,8 @@
       entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
       value_template: >
         {% if states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4 %}
-          {% if states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4.state | float > 0.0 %}
-            {{ true }}
-          {% elif (as_timestamp(now()) - as_timestamp(states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4.last_changed) > 600) %}
-            {{ false }}
-          {% else %}
-            {{ true }}
-          {% endif %}
+        {{ states('sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4') | float > 0 }}
         {% else %}
         ??
         {% endif %}
+
