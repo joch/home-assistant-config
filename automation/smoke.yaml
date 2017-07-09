@@ -9,4 +9,5 @@
       entity_id: scene.lights_full
     - service: notify.all_phones
       data:
-        message: "Smoke detected at home!"
+        title: "Smoke detected at home!"
+        message: "Please contact anyone at home or fire department."
