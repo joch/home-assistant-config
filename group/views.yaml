@@ -5,6 +5,7 @@ default_view:
     - group.household
     - group.living_room
     - group.bedroom
+    - group.hallway
 
 lights:
   name: Lights
@@ -33,6 +34,13 @@ bed:
   icon: mdi:hotel
   entities:
     - group.bedroom
+
+hall:
+  name: Hallway
+  view: yes
+  icon: mdi:cube-unfolded
+  entities:
+    - group.hallway
 
 automation:
   name: Automation

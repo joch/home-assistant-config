@@ -72,3 +72,5 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
 switch.fluxer:
   icon: mdi:theme-light-dark
   friendly_name: 'Soften lights in the evening'
+sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1:
+  friendly_name: 'Hallway Temperature'
