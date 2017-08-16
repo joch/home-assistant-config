@@ -41,7 +41,7 @@
     - service: notify.all_phones
       data:
         title: "Movement detected at home!"
-        message: "Movement detected but nobody is home."
+        message: "Check camera recording immediately."
 
 # Automatically enable / disable alarm
 - alias: Automatically arm alarm when away
