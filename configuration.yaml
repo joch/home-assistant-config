@@ -94,27 +94,9 @@ device_tracker:
     protocol: telnet
     username: !secret asuswrt_username
     password: !secret asuswrt_password
-  # - platform: icloud
-  #   username: !secret icloud_username
-  #   password: !secret icloud_password
-  #   account_name: !secret icloud_account_name
-
-# telegram_bot:
-#   platform: polling
-#   api_key: !secret telegram_api_key
-#   allowed_chat_ids:
-#     - !secret telegram_id_johnny
-#     - !secret telegram_id_kajsa
 
 influxdb:
   host: !secret influxdb_host
-
-# android_ip_webcam:
-#   host: !secret android_webcam_host
-#   # username: !secret android_webcam_username
-#   # password: !secret android_webcam_password
-#   motion_sensor: true
-#   name: Living Room Camera
 
 arlo:
   username: !secret arlo_username

@@ -1,8 +1,0 @@
-# - name: johnny
-#   platform: telegram
-#   api_key: !secret telegram_api_key
-#   chat_id: !secret telegram_id_johnny
-# - name: kajsa 
-#   platform: telegram
-#   api_key: !secret telegram_api_key
-#   chat_id: !secret telegram_id_kajsa
