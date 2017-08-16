@@ -34,7 +34,7 @@
   trigger:
     - platform: state
       entity_id: alarm_control_panel.alarm
-      to: 'disarmed'
+      to: 'triggered'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_full
