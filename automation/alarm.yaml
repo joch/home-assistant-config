@@ -1,4 +1,50 @@
-- alias: Arm alarm when away
+# Actions for different alarm states
+- alias: Alarm armed away
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+  action:
+    - service: camera.enable_motion_detection
+      entity_id: camera.hallway
+    - service: scene.turn_on
+      entity_id: scene.lights_off
+
+- alias: Alarm disarmed
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'disarmed'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_mode
+    state: 'on'
+  action:
+    - service: camera.disable_motion_detection
+      entity_id: camera.hallway
+    - service: tts.google_say
+      entity_id: media_player.living_room_speakers
+      data_template:
+        message: 'Welcome home. The alarm has been turned off.'
+
+- alias: Alarm triggered
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'disarmed'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.lights_full
+    - service: notify.all_phones
+      data:
+        title: "Movement detected at home!"
+        message: "Movement detected but nobody is home."
+
+# Automatically enable / disable alarm
+- alias: Automatically arm alarm when away
   initial_state: 'on'
   trigger:
     - platform: state
@@ -13,14 +59,12 @@
     entity_id: input_boolean.alarm_mode
     state: 'on'
   action:
-    - service: camera.enable_motion_detection
-      entity_id: camera.hallway
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.alarm
       data:
         code: !secret alarm_code
 
-- alias: Disarm alarm when home
+- alias: Automatically disarm alarm when home
   initial_state: 'on'
   trigger:
     - platform: state
@@ -32,70 +76,12 @@
     entity_id: input_boolean.alarm_mode
     state: 'on'
   action:
-    - service: camera.disable_motion_detection
-      entity_id: camera.hallway
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.alarm
       data:
         code: !secret alarm_code
-    - service: tts.google_say
-      entity_id: media_player.living_room_speakers
-      data_template:
-        message: 'Welcome home. The alarm has been turned off.'
 
-- alias: Turn on lights and notify when motion detected
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: input_boolean.alarm_motion_detected
-      from: 'off'
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: group.household
-      state: 'not_home'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.alarm_mode
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.lights_full
-    - service: notify.all_phones
-      data:
-        title: "Movement detected at home!"
-        message: "Movement detected but nobody is home."
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
-      data:
-        code: !secret alarm_code
-
-- alias: Reset alarm 10 minutes after motion detected
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: input_boolean.alarm_motion_detected
-      to: 'on'
-      for:
-        minutes: 10
-  condition:
-    - condition: state
-      entity_id: group.household
-      state: 'not_home'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.alarm_mode
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.lights_off
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.alarm_motion_detected
-
+# Handle automatic vacation mode
 - alias: Turn on vacation mode when away for 24h
   initial_state: 'on'
   trigger:

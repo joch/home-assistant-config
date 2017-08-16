@@ -17,8 +17,3 @@ light_mode:
   name: Light Automation
   icon: mdi:lightbulb-outline
   initial: on
-
-alarm_motion_detected:
-  name: Motion detected
-  icon: mdi:run-fast
-  initial: off
