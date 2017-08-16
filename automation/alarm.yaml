@@ -13,8 +13,8 @@
     entity_id: input_boolean.alarm_mode
     state: 'on'
   action:
-    - service: ifttt.trigger
-      data: {"event":"alarm_arm"}
+    - service: camera.enable_motion_detection
+      entity_id: camera.hallway
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.alarm
       data:
@@ -32,8 +32,8 @@
     entity_id: input_boolean.alarm_mode
     state: 'on'
   action:
-    - service: ifttt.trigger
-      data: {"event":"alarm_disarm"}
+    - service: camera.disable_motion_detection
+      entity_id: camera.hallway
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.alarm
       data:
