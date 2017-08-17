@@ -24,3 +24,4 @@ Bedroom:
 
 Hallway:
   - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1
+  - binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_6_0

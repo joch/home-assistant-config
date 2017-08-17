@@ -55,8 +55,7 @@ sensor.dark_sky_apparent_temperature_min:
   friendly_name: 'Daily Minimum Apparent Temperature'
 sensor.dark_sky_precip_intensity_max:
   friendly_name: 'Daily Maximum Percipitation'
-binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0:
-  friendly_name: 'Living Room Motion'
+
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1:
   friendly_name: 'Living Room Temperature'
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3:
@@ -64,6 +63,11 @@ sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3:
 sensor.jochad:
   icon: mdi:xbox
   friendly_name: 'XboxOne'
+
+binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0:
+  friendly_name: 'Living Room Motion'
+binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_6_0:
+  friendly_name: 'Hallway Smoke Sensor'
 
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
   friendly_name: 'Kajsas chargers'
