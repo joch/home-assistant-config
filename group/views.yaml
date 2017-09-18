@@ -34,6 +34,7 @@ bed:
   icon: mdi:hotel
   entities:
     - group.bedroom
+    - group.sleep_status
 
 hall:
   name: Hallway

@@ -29,6 +29,10 @@ Scenes:
   - scene.lights_on
   - scene.lights_full
 
+Sleep Status:
+  - binary_sensor.johnny_asleep
+  - binary_sensor.kajsa_asleep
+
 UPS Status:
   - binary_sensor.ups_online_status
   - sensor.ups_battery
