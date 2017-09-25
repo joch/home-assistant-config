@@ -1,0 +1,47 @@
+- alias: Toggle sleep on for Johnny
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
+      above: 0
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.johnny_asleep
+
+- alias: Toggle sleep on for Kajsa
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
+      above: 0
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.kajsa_asleep
+
+- alias: Toggle sleep off for Johnny
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
+      below: 1
+      for:
+        minutes: 10
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.johnny_asleep
+
+- alias: Toggle sleep off for Kajsa
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
+      below: 1
+      for:
+        minutes: 10
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.kajsa_asleep

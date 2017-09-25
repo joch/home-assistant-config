@@ -13,12 +13,12 @@
       for:
         hours: 4
     - condition: state
-      entity_id: binary_sensor.kajsa_asleep
+      entity_id: input_boolean.kajsa_asleep
       state: 'off'
       for:
         hours: 4
     - condition: state
-      entity_id: binary_sensor.johnny_asleep
+      entity_id: input_boolean.johnny_asleep
       state: 'off'
       for:
         hours: 4

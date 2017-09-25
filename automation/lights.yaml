@@ -20,21 +20,21 @@
       from: 'not_home'
       to: 'home'
     - platform: state
-      entity_id: binary_sensor.kajsa_asleep
+      entity_id: input_boolean.kajsa_asleep
       to: 'off'
       for:
         minutes: 10
     - platform: state
-      entity_id: binary_sensor.johnny_asleep
+      entity_id: input_boolean.johnny_asleep
       to: 'off'
       for:
         minutes: 10
   condition:
     - condition: state
-      entity_id: binary_sensor.kajsa_asleep
+      entity_id: input_boolean.kajsa_asleep
       state: 'off'
     - condition: state
-      entity_id: binary_sensor.johnny_asleep
+      entity_id: input_boolean.johnny_asleep
       state: 'off'
     - condition: state
       entity_id: group.household
@@ -119,12 +119,12 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.johnny_asleep
+      entity_id: input_boolean.johnny_asleep
       to: 'on'
       for:
         minutes: 1
     - platform: state
-      entity_id: binary_sensor.kajsa_asleep
+      entity_id: input_boolean.kajsa_asleep
       to: 'on'
       for:
         minutes: 1
@@ -148,7 +148,7 @@
                 entity_id: device_tracker.johnnysiphone
                 state: 'home'
               - condition: state
-                entity_id: binary_sensor.johnny_asleep
+                entity_id: input_boolean.johnny_asleep
                 state: 'on'
           - condition: state
             entity_id: device_tracker.johnnysiphone
@@ -161,7 +161,7 @@
                 entity_id: device_tracker.kajsasiphone
                 state: 'home'
               - condition: state
-                entity_id: binary_sensor.kajsa_asleep
+                entity_id: input_boolean.kajsa_asleep
                 state: 'on'
           - condition: state
             entity_id: device_tracker.kajsasiphone
@@ -174,10 +174,10 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.kajsa_asleep
+      entity_id: input_boolean.kajsa_asleep
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.johnny_asleep
+      entity_id: input_boolean.johnny_asleep
       to: 'on'
   condition:
     - condition: time
@@ -199,7 +199,7 @@
                 entity_id: device_tracker.johnnysiphone
                 state: 'home'
               - condition: state
-                entity_id: binary_sensor.johnny_asleep
+                entity_id: input_boolean.johnny_asleep
                 state: 'off'
           - condition: state
             entity_id: device_tracker.johnnysiphone
@@ -212,7 +212,7 @@
                 entity_id: device_tracker.kajsasiphone
                 state: 'home'
               - condition: state
-                entity_id: binary_sensor.kajsa_asleep
+                entity_id: input_boolean.kajsa_asleep
                 state: 'off'
           - condition: state
             entity_id: device_tracker.kajsasiphone

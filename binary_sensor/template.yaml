@@ -8,22 +8,3 @@
         {% else %}
         ??
         {% endif %}
-    johnny_asleep:
-      friendly_name: Johnny asleep
-      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
-      value_template: >
-        {% if states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4 %}
-        {{ states('sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4') | float > 0 }}
-        {% else %}
-        ??
-        {% endif %}
-    kajsa_asleep:
-      friendly_name: Kajsa asleep
-      entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
-      value_template: >
-        {% if states.sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4 %}
-        {{ states('sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4') | float > 0 }}
-        {% else %}
-        ??
-        {% endif %}
-
