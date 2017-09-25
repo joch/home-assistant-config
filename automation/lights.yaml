@@ -13,8 +13,8 @@
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
       below: 40
-      # for:
-      #   minutes: 10
+      for:
+        minutes: 10
     - platform: state
       entity_id: group.household
       from: 'not_home'
@@ -58,8 +58,8 @@
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
       above: 40
-      # for:
-      #   minutes: 10
+      for:
+        minutes: 10
   condition:
     - condition: time
       after: '06:00:00'
