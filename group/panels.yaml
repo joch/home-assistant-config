@@ -24,6 +24,10 @@ Household:
   - device_tracker.johnnysiphone
   - device_tracker.kajsasiphone
 
+Power Usage:
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_3_0
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2_0
+
 Scenes:
   - scene.lights_off
   - scene.lights_on

@@ -73,6 +73,12 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
   friendly_name: 'Kajsas chargers'
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
   friendly_name: 'Johnnys chargers'
+
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2_0:
+  friendly_name: 'Kajsas chargers power consumption'
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_3_0:
+  friendly_name: 'Johnnys chargers power consumption'
+
 switch.fluxer:
   icon: mdi:theme-light-dark
   friendly_name: 'Soften lights in the evening'

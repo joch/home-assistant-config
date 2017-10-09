@@ -69,6 +69,7 @@ sensors:
       - group.ups_status
       - group.battery_levels
       - group.indoor_temperature
+      - group.power_usage
       - group.zwave
 
 weatherdash:
