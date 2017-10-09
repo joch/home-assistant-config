@@ -39,7 +39,8 @@ http:
 
 recorder:
   db_url: !secret recorder_db_url
-  purge_days: 2
+  purge_interval: 2
+  purge_keep_days: 2
 
 apcupsd:
   host: localhost
