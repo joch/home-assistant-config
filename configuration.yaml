@@ -96,8 +96,8 @@ device_tracker:
     username: !secret asuswrt_username
     password: !secret asuswrt_password
 
-influxdb:
-  host: !secret influxdb_host
+# influxdb:
+#   host: !secret influxdb_host
 
 arlo:
   username: !secret arlo_username
