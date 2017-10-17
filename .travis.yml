@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.4"
+  - "3.6"
 before_install:
   - cp secrets.yaml-default secrets.yaml
   - touch ssl.crt ssl.key
