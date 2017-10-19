@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
-      above: 0
+      above: 1
   action:
     - service: input_boolean.turn_on
       data:
@@ -14,7 +14,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
-      above: 0
+      above: 1
   action:
     - service: input_boolean.turn_on
       data:
