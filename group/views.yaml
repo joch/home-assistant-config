@@ -2,6 +2,7 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
+    - group.alarm
     - group.household
     - group.living_room
     - group.bedroom
