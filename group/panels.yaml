@@ -53,6 +53,7 @@ Battery Levels:
 
 Indoor Temperature:
   - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
+  - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1
 
 Weather:
   - sun.sun
