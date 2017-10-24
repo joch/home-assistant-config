@@ -4,6 +4,10 @@
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_3_4
       above: 1
+  condition:
+    - condition: state
+      entity_id: input_boolean.johnny_asleep
+      state: 'off'
   action:
     - service: input_boolean.turn_on
       data:
@@ -15,6 +19,10 @@
     - platform: numeric_state
       entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2_4
       above: 1
+  condition:
+    - condition: state
+      entity_id: input_boolean.kajsa_asleep
+      state: 'off'
   action:
     - service: input_boolean.turn_on
       data:
@@ -28,6 +36,10 @@
       below: 1
       for:
         minutes: 10
+  condition:
+    - condition: state
+      entity_id: input_boolean.johnny_asleep
+      state: 'on'
   action:
     - service: input_boolean.turn_off
       data:
@@ -41,6 +53,10 @@
       below: 1
       for:
         minutes: 10
+  condition:
+    - condition: state
+      entity_id: input_boolean.kajsa_asleep
+      state: 'on'
   action:
     - service: input_boolean.turn_off
       data:
