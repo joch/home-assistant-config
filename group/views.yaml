@@ -49,7 +49,6 @@ automation:
   view: yes
   icon: mdi:robot
   entities:
-    - switch.fluxer
     - group.alarm
     - group.light_automation
     - group.security_automation
