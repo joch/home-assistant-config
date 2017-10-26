@@ -91,3 +91,17 @@ switch.fluxer:
   friendly_name: 'Soften lights in the evening'
 sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1:
   friendly_name: 'Hallway Temperature'
+  homebridge_visible: true
+
+alarm_control_panel.alarm:
+  homebridge_visible: true
+  homebridge_alarm_code: !secret alarm_code
+
+light.bedroom_lamp:
+  homebridge_visible: true
+
+light.dining_room_lamp:
+  homebridge_visible: true
+
+light.living_room_lamp:
+  homebridge_visible: true
