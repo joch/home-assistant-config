@@ -114,6 +114,15 @@ alarm_control_panel:
     pending_time: 60
     trigger_time: 120
     disarm_after_trigger: false
+    armed_home:
+      pending_time: 0
+    armed_night:
+      pending_time: 0
+    armed_away:
+      pending_time: 30
+    triggered:
+      pending_time: 30
+
   - platform: arlo
     home_mode_name: Disarmed
     away_mode_name: Armed
