@@ -114,6 +114,9 @@ alarm_control_panel:
     pending_time: 60
     trigger_time: 120
     disarm_after_trigger: false
+  - platform: arlo
+    home_mode_name: Disarmed
+    away_mode_name: Armed
 
 input_boolean: !include input_boolean.yaml
 sensor: !include_dir_merge_list sensor

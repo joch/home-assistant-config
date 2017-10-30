@@ -6,8 +6,8 @@
       entity_id: alarm_control_panel.alarm
       to: 'armed_away'
   action:
-    - service: camera.enable_motion_detection
-      entity_id: camera.hallway
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.home
     - service: scene.turn_on
       entity_id: scene.lights_off
 
@@ -22,8 +22,8 @@
     entity_id: input_boolean.alarm_mode
     state: 'on'
   action:
-    - service: camera.disable_motion_detection
-      entity_id: camera.hallway
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.home
     - service: tts.google_say
       entity_id: media_player.living_room_speakers
       data_template:
