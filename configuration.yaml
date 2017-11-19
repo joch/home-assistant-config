@@ -67,7 +67,6 @@ media_player:
 
 tradfri:
   host: !secret tradfri_host
-  api_key: !secret tradfri_api_key
 
 zwave:
   usb_path: /dev/ttyACM10
