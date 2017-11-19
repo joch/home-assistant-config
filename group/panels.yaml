@@ -50,6 +50,11 @@ Battery Levels:
   - sensor.ups_battery
   - sensor.living_room_motion_sensor_battery
   - sensor.living_room_smoke_sensor_battery
+  - sensor.living_room_camera_battery
+  - sensor.hallway_camera_battery
+  - sensor.tradfri_remote_control
+  - sensor.johnnys_iphone_battery_level
+  - sensor.kajsas_iphone_battery_level
 
 Indoor Temperature:
   - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
