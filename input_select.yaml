@@ -1,0 +1,7 @@
+harmony:
+  name: Harmony
+  icon: mdi:monitor
+  options:
+    - PowerOff
+    - Watch TV
+    - Watch Movies

@@ -13,6 +13,7 @@ Living Room:
   - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
   - sensor.plex
   - sensor.jochad
+  - input_select.harmony
 
 Bedroom:
   - scene.bedroom_on
