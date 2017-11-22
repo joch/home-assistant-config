@@ -13,6 +13,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration.
 - [IKEA Trådfri Gateway](http://www.ikea.com/us/en/catalog/products/00337813/) x1
 - [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
 - [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/) x3
+- [Logitech Harmony Companion](https://www.logitech.com/en-us/product/harmony-companion) x1
 - [Netgear Arlo Pro VMC4030](https://www.arlo.com/en-us/products/arlo-pro/) x2
 - [Netgear Arlo Pro Base station with siren](https://www.arlo.com/en-us/products/arlo-pro/) x1
 
