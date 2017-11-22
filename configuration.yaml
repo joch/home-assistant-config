@@ -78,6 +78,11 @@ zwave:
   network_key: !secret zwave_network_key
   new_entity_ids: false
 
+emulated_hue:
+  expose_by_default: true
+  exposed_domains:
+    - light
+
 switch:
   platform: flux
   lights:
