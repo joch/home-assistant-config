@@ -97,6 +97,9 @@ alarm_control_panel.alarm:
   homebridge_visible: true
   homebridge_alarm_code: !secret alarm_code
 
+input_select.harmony:
+  homebridge_visible: true
+
 light.bedroom_lamp:
   homebridge_visible: true
 

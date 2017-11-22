@@ -8,10 +8,12 @@
     entity_id: remote.living_room
     data_template:
       activity: >
-        {% if is_state("input_select.harmony", "Watch TV") %}
+        {% if is_state("input_select.harmony", "TV") %}
           29557158
-        {% elif is_state("input_select.harmony", "Watch Movies") %}
-          29557640
+        {% elif is_state("input_select.harmony", "Movies") %}
+          29561843
+        {% elif is_state("input_select.harmony", "Music") %}
+          29561682
         {% else %}
           -1
         {% endif %}

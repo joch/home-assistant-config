@@ -3,5 +3,6 @@ harmony:
   icon: mdi:monitor
   options:
     - PowerOff
-    - Watch TV
-    - Watch Movies
+    - TV
+    - Movies
+    - Music
