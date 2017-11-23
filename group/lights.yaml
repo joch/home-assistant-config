@@ -8,3 +8,8 @@ Bedroom Lights:
   icon: mdi:hotel
   entities:
     - light.bedroom_lamp
+
+Hallway Lights:
+  icon: mdi:cube-unfolded
+  entities:
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0

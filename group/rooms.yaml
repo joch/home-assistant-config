@@ -1,6 +1,7 @@
 Interior Lights:
   - group.living_room_lights
   - group.bedroom_lights
+  - group.hallway_lights
 
 Living Room:
   - scene.living_room_on
@@ -24,5 +25,8 @@ Bedroom:
   - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
 
 Hallway:
+  - scene.hallway_on
+  - scene.hallway_off
   - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1
   - binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_6_0
+  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0

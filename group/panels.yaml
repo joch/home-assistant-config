@@ -90,5 +90,6 @@ Zwave:
   - zwave.zwaveme_zme_uzb1_usb_stick_1
   - zwave.fibaro_system_fgwpef_wall_plug_gen5_2
   - zwave.fibaro_system_fgwpef_wall_plug_gen5_3
+  - zwave.fibaro_system_fgwpef_wall_plug_gen5_7
   - zwave.fibaro_system_fgms001zw5_motion_sensor_5
   - zwave.fibaro_system_fgsd002_smoke_sensor_6

@@ -81,6 +81,10 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
   friendly_name: 'Johnnys chargers'
   homebridge_visible: true
 
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
+  friendly_name: 'Hallway Lamp'
+  homebridge_visible: true
+
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2_0:
   friendly_name: 'Kajsas chargers power consumption'
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_3_0:
