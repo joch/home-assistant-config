@@ -3,6 +3,16 @@ group.all_automations:
 group.all_scenes:
   hidden: false
 
+group.living_room_lights:
+  homebridge_visible: true
+
+group.bedroom_lights:
+  homebridge_visible: true
+
+group.hallway_lights:
+  homebridge_visible: true
+
+
 sensor.dark_sky_temperature:
   friendly_name: 'Outdoor Temperature'
   homebridge_visible: true
