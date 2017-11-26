@@ -24,20 +24,20 @@
   action:
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.home
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.harmony
-        option: 'Music'
-    - delay:
-        seconds: 5
-    - service: tts.google_say
-      entity_id: media_player.living_room_speakers
-      data:
-        message: 'Welcome home. The alarm has been turned off.'
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.harmony
-        option: 'PowerOff'
+    # - service: remote.turn_on
+    #   entity_id: remote.living_room
+    #   data:
+    #     activity: 29561682
+    # - delay:
+    #     seconds: 5
+    # - service: tts.google_say
+    #   entity_id: media_player.living_room_speakers
+    #   data:
+    #     message: 'Welcome home. The alarm has been turned off.'
+    # - service: remote.turn_on
+    #   entity_id: remote.living_room
+    #   data:
+    #     activity: -1
 
 - alias: Alarm triggered
   initial_state: 'on'
