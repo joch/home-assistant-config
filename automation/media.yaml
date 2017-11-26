@@ -1,5 +1,4 @@
 - alias: Set Harmony activity using input_select
-  hide_entity: True
   trigger:
     platform: state
     entity_id: input_select.harmony
@@ -19,7 +18,6 @@
         {% endif %}
 
 - alias: Update Harmony input_select
-  hide_entity: True
   trigger:
     platform: state
     entity_id: remote.living_room
