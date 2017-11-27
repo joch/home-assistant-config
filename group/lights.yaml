@@ -16,4 +16,4 @@ Bedroom Lights:
 Hallway Lights:
   icon: mdi:cube-unfolded
   entities:
-    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0
+    - switch.hallway_mirror_lamp_switch

@@ -1,10 +1,10 @@
 - platform: template
   sensors:
     living_room_motion_sensor_battery_low:
-      entity_id: zwave.fibaro_system_fgms001zw5_motion_sensor_5
+      entity_id: zwave.living_room_motion_sensor
       value_template: >
-        {% if states.zwave.fibaro_system_fgms001zw5_motion_sensor_5 %}
-        {{ states.zwave.fibaro_system_fgms001zw5_motion_sensor_5.attributes.battery_level < 10 }}
+        {% if states.zwave.living_room_motion_sensor %}
+        {{ states.zwave.living_room_motion_sensor.attributes.battery_level < 10 }}
         {% else %}
         ??
         {% endif %}

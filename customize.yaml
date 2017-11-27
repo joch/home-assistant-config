@@ -67,43 +67,43 @@ sensor.dark_sky_apparent_temperature_min:
 sensor.dark_sky_precip_intensity_max:
   friendly_name: 'Daily Maximum Percipitation'
 
-sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1:
+sensor.living_room_motion_sensor_temperature:
   friendly_name: 'Living Room Temperature'
   homebridge_visible: true
-sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3:
+sensor.living_room_motion_sensor_luminance:
   friendly_name: 'Living Room Luminance'
   homebridge_visible: true
 sensor.jochad:
   icon: mdi:xbox
   friendly_name: 'XboxOne'
 
-binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0:
+binary_sensor.living_room_motion_sensor_sensor:
   friendly_name: 'Living Room Motion'
   homebridge_visible: true
-binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_6_0:
+binary_sensor.hallway_smoke_sensor_sensor:
   friendly_name: 'Hallway Smoke Sensor'
   homebridge_visible: true
 
-switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0:
+switch.bedroom_kajsa_charger_switch:
   friendly_name: 'Kajsas chargers'
   homebridge_visible: true
-switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0:
+switch.bedroom_johnny_charger_switch:
   friendly_name: 'Johnnys chargers'
   homebridge_visible: true
 
-switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
+switch.hallway_mirror_lamp_switch:
   friendly_name: 'Hallway Lamp'
   homebridge_visible: true
 
-sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2_0:
+sensor.bedroom_kajsa_charger_energy:
   friendly_name: 'Kajsas chargers power consumption'
-sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_3_0:
+sensor.bedroom_johnny_charger_energy:
   friendly_name: 'Johnnys chargers power consumption'
 
 switch.fluxer:
   icon: mdi:theme-light-dark
   friendly_name: 'Soften lights in the evening'
-sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1:
+sensor.hallway_smoke_sensor_temperature:
   friendly_name: 'Hallway Temperature'
   homebridge_visible: true
 

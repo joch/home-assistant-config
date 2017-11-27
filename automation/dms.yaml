@@ -2,7 +2,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
+      entity_id: binary_sensor.living_room_motion_sensor_sensor
       to: 'off'
       for:
         hours: 4

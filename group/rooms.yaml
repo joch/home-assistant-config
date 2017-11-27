@@ -4,19 +4,19 @@ Interior Lights:
   - group.hallway_lights
 
 Living Room:
-  - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
+  - binary_sensor.living_room_motion_sensor_sensor
+  - sensor.living_room_motion_sensor_temperature
+  - sensor.living_room_motion_sensor_luminance
   - sensor.plex
   - sensor.jochad
   - input_select.harmony
 
 Bedroom:
-  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
-  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
+  - switch.bedroom_johnny_charger_switch
+  - switch.bedroom_kajsa_charger_switch
 
 Hallway:
   - scene.hallway_on
   - scene.hallway_off
-  - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1
-  - binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_6_0
+  - sensor.hallway_smoke_sensor_temperature
+  - binary_sensor.hallway_smoke_sensor_sensor

@@ -25,8 +25,8 @@ Household:
   - device_tracker.kajsasiphone
 
 Power Usage:
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_3_0
-  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2_0
+  - sensor.bedroom_johnny_charger_energy
+  - sensor.bedroom_kajsa_charger_energy
 
 Scenes:
   - scene.lights_off
@@ -58,8 +58,8 @@ Battery Levels:
   - sensor.kajsas_iphone_battery_level
 
 Indoor Temperature:
-  - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
-  - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1
+  - sensor.living_room_motion_sensor_temperature
+  - sensor.hallway_smoke_sensor_temperature
 
 Weather:
   - sun.sun
@@ -88,9 +88,9 @@ Weather Summary:
   - sensor.dark_sky_daily_summary
 
 Zwave:
-  - zwave.zwaveme_zme_uzb1_usb_stick_1
-  - zwave.fibaro_system_fgwpef_wall_plug_gen5_2
-  - zwave.fibaro_system_fgwpef_wall_plug_gen5_3
-  - zwave.fibaro_system_fgwpef_wall_plug_gen5_7
-  - zwave.fibaro_system_fgms001zw5_motion_sensor_5
-  - zwave.fibaro_system_fgsd002_smoke_sensor_6
+  - zwave.zwaveme_zme_uzb1_usb_stick
+  - zwave.living_room_motion_sensor
+  - zwave.bedroom_kajsa_charger
+  - zwave.bedroom_johnny_charger
+  - zwave.hallway_mirror_lamp
+  - zwave.hallway_smoke_sensor

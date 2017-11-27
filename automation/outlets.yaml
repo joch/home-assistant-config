@@ -6,7 +6,7 @@
       to: 'home'
   action:
     - service: homeassistant.turn_on
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+      entity_id: switch.bedroom_johnny_charger_switch
 
 - alias: Turn off Johnnys chargers when not home
   initial_state: 'on'
@@ -16,7 +16,7 @@
       to: 'not_home'
   action:
     - service: homeassistant.turn_off
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
+      entity_id: switch.bedroom_johnny_charger_switch
 
 - alias: Turn on Kajsas chargers when home
   initial_state: 'on'
@@ -26,7 +26,7 @@
       to: 'home'
   action:
     - service: homeassistant.turn_on
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
+      entity_id: switch.bedroom_kajsa_charger_switch
 
 - alias: Turn off Kajsas chargers when not home
   initial_state: 'on'
@@ -36,4 +36,4 @@
       to: 'not_home'
   action:
     - service: homeassistant.turn_off
-      entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
+      entity_id: switch.bedroom_kajsa_charger_switch

@@ -2,7 +2,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.fibaro_system_fgsd002_smoke_sensor_smoke_6_1
+      entity_id: sensor.hallway_smoke_sensor_smoke
       to: '255'
   action:
     - service: scene.turn_on
@@ -16,7 +16,7 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.fibaro_system_fgsd002_smoke_sensor_heat_6_4
+      entity_id: sensor.hallway_smoke_sensor_heat
       to: '255'
   action:
     - service: scene.turn_on

@@ -76,7 +76,7 @@ tradfri:
 zwave:
   usb_path: /dev/ttyACM10
   network_key: !secret zwave_network_key
-  new_entity_ids: false
+  new_entity_ids: true
 
 emulated_hue:
   expose_by_default: true

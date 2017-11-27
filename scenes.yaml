@@ -6,7 +6,7 @@
       state: off
     light.living_room_lamp:
       state: off
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
+    switch.hallway_mirror_lamp_switch:
       state: off
 
 - name: Lights On
@@ -20,7 +20,7 @@
     light.living_room_lamp:
       state: on
       brightness: 127
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
+    switch.hallway_mirror_lamp_switch:
       state: on
 
 - name: Lights Cozy
@@ -46,7 +46,7 @@
     light.living_room_lamp:
       state: on
       brightness: 255
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
+    switch.hallway_mirror_lamp_switch:
       state: on
 
 - name: Lights Vacation
@@ -105,10 +105,10 @@
 
 - name: Hallway On
   entities:
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
+    switch.hallway_mirror_lamp_switch:
       state: on
 
 - name: Hallway Off
   entities:
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
+    switch.hallway_mirror_lamp_switch:
       state: off
