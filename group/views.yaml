@@ -4,24 +4,16 @@ default_view:
   entities:
     - group.alarm
     - group.household
-    - group.living_room
-    - group.bedroom
-    - group.hallway
-
-lights:
-  name: Lights
-  view: yes
-  icon: mdi:lightbulb-outline
-  entities:
     - group.interior_lights
-    # - group.exterior_lights
     - group.scenes
+    - group.indoor_temperature
 
 living:
   name: Living Room
   view: yes
   icon: mdi:sofa
   entities:
+    - group.living_room_lights
     - group.living_room
     - media_player.samsung_tv_remote
     - media_player.spotify
@@ -34,6 +26,7 @@ bed:
   view: yes
   icon: mdi:hotel
   entities:
+    - group.bedroom_lights
     - group.bedroom
     - group.sleep_status
 
@@ -42,6 +35,7 @@ hall:
   view: yes
   icon: mdi:cube-unfolded
   entities:
+    - group.hallway_lights
     - group.hallway
 
 automation:
@@ -67,7 +61,6 @@ sensors:
     entities:
       - group.ups_status
       - group.battery_levels
-      - group.indoor_temperature
       - group.power_usage
       - group.zwave
 

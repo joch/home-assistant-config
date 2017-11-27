@@ -3,11 +3,13 @@ Living Room Lights:
   entities:
     - light.dining_room_lamp
     - light.living_room_lamp
+    - scene.living_room_cozy
 
 Bedroom Lights:
   icon: mdi:hotel
   entities:
     - light.bedroom_lamp
+    - scene.bedroom_cozy
 
 Hallway Lights:
   icon: mdi:cube-unfolded

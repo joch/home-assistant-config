@@ -23,6 +23,18 @@
     switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0:
       state: on
 
+- name: Lights Cozy
+  entities:
+    light.dining_room_lamp:
+      state: on
+      brightness: 40
+    light.living_room_lamp:
+      state: on
+      brightness: 40
+    light.bedroom_lamp:
+      state: on
+      brightness: 1
+
 - name: Lights Full
   entities:
     light.bedroom_lamp:

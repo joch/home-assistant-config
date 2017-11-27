@@ -4,11 +4,6 @@ Interior Lights:
   - group.hallway_lights
 
 Living Room:
-  - scene.living_room_on
-  - scene.living_room_off
-  - scene.living_room_cozy
-  - light.dining_room_lamp
-  - light.living_room_lamp
   - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor_5_0
   - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_5_1
   - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_5_3
@@ -17,10 +12,6 @@ Living Room:
   - input_select.harmony
 
 Bedroom:
-  - scene.bedroom_on
-  - scene.bedroom_off
-  - scene.bedroom_cozy
-  - light.bedroom_lamp
   - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3_0
   - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2_0
 
@@ -29,4 +20,3 @@ Hallway:
   - scene.hallway_off
   - sensor.fibaro_system_fgsd002_smoke_sensor_temperature_6_1
   - binary_sensor.fibaro_system_fgsd002_smoke_sensor_sensor_6_0
-  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_7_0
