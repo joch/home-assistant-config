@@ -2,24 +2,30 @@
   entities:
     light.bedroom_lamp:
       state: off
+      transition: 2
     light.dining_room_lamp:
       state: off
+      transition: 2
     light.living_room_lamp:
       state: off
+      transition: 2
     switch.hallway_mirror_lamp_switch:
       state: off
 
 - name: Lights On
   entities:
-    light.bedroom_lamp:
-      state: on
-      brightness: 127
     light.dining_room_lamp:
       state: on
-      brightness: 127
+      brightness_pct: 50
+      transition: 2
     light.living_room_lamp:
       state: on
-      brightness: 127
+      brightness_pct: 50
+      transition: 2
+    light.bedroom_lamp:
+      state: on
+      brightness_pct: 50
+      transition: 2
     switch.hallway_mirror_lamp_switch:
       state: on
 
@@ -27,81 +33,101 @@
   entities:
     light.dining_room_lamp:
       state: on
-      brightness: 40
+      brightness_pct: 10
+      transition: 2
     light.living_room_lamp:
       state: on
-      brightness: 40
+      brightness_pct: 10
+      transition: 2
     light.bedroom_lamp:
       state: on
-      brightness: 1
+      brightness_pct: 1
+      transition: 2
+    switch.hallway_mirror_lamp_switch:
+      state: on
 
 - name: Lights Full
   entities:
-    light.bedroom_lamp:
-      state: on
-      brightness: 255
     light.dining_room_lamp:
       state: on
-      brightness: 255
+      brightness_pct: 100
+      transition: 2
     light.living_room_lamp:
       state: on
-      brightness: 255
+      brightness_pct: 100
+      transition: 2
+    light.bedroom_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 2
     switch.hallway_mirror_lamp_switch:
       state: on
 
 - name: Lights Vacation
   entities:
-    light.bedroom_lamp:
-      state: on
-      brightness: 127
     light.dining_room_lamp:
       state: on
-      brightness: 127
+      brightness_pct: 50
+      transition: 2
     light.living_room_lamp:
       state: on
-      brightness: 127
+      brightness_pct: 50
+      transition: 2
+    light.bedroom_lamp:
+      state: on
+      brightness_pct: 50
+      transition: 2
 
 - name: Living Room On
   entities:
     light.dining_room_lamp:
       state: on
-      brightness: 127
+      brightness_pct: 50
+      transition: 2
     light.living_room_lamp:
       state: on
-      brightness: 127
+      brightness_pct: 50
+      transition: 2
 
 - name: Living Room Off
   entities:
     light.dining_room_lamp:
       state: off
+      transition: 2
     light.living_room_lamp:
       state: off
+      transition: 2
 
 - name: Living Room Cozy
   entities:
     light.dining_room_lamp:
       state: on
-      brightness: 40
+      brightness_pct: 10
+      transition: 2
     light.living_room_lamp:
       state: on
-      brightness: 40
+      brightness_pct: 10
+      transition: 2
 
 - name: Bedroom On
   entities:
     light.bedroom_lamp:
       state: on
-      brightness: 127
+      brightness_pct: 50
+      transition: 2
 
 - name: Bedroom Off
   entities:
     light.bedroom_lamp:
       state: off
+      transition: 2
 
 - name: Bedroom Cozy
   entities:
     light.bedroom_lamp:
       state: on
-      brightness: 1
+      brightness_pct: 1
+      transition: 2
 
 - name: Hallway On
   entities:
