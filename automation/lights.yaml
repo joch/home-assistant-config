@@ -271,7 +271,7 @@
       entity_id: group.interior_lights
       state: 'on'
     - condition: state
-      entitiy_id: binary_sensor.workday_sensor
+      entity_id: binary_sensor.workday_sensor
       state: 'on'
     - condition: state
       entity_id: input_boolean.vacation_mode
