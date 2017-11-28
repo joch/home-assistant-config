@@ -6,6 +6,10 @@
       entity_id: alarm_control_panel.alarm
       to: 'armed_away'
   action:
+    - service: notify.all_phones
+      data:
+        title: "Alarm has been armed"
+        message: "The alarm has been set to armed_away"
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.home
     - service: scene.turn_on
@@ -22,6 +26,11 @@
       entity_id: alarm_control_panel.alarm
       to: 'disarmed'
   action:
+    - service: notify.all_phones
+      data:
+        title: "Alarm has been disarmed"
+        message: "The alarm has been set to disarmed"
+    - service: alarm_control_panel.alarm_arm_away
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.home
     # - service: remote.turn_on
