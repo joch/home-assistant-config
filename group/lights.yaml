@@ -27,4 +27,6 @@ Hallway Lights:
   icon: mdi:cube-unfolded
   entities:
     - switch.hallway_mirror_lamp_switch
-    - scene.hallway_on
+    - scene.hallway_normal
+    - scene.hallway_cozy
+    - scene.hallway_full

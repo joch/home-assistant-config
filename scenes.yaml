@@ -147,7 +147,17 @@
       brightness_pct: 100
       transition: 2
 
-- name: Hallway On
+- name: Hallway Normal
+  entities:
+    switch.hallway_mirror_lamp_switch:
+      state: on
+
+- name: Hallway Cozy
+  entities:
+    switch.hallway_mirror_lamp_switch:
+      state: on
+
+- name: Hallway Full
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on

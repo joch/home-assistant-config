@@ -7,7 +7,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration.
 ## Devices
 
 - [zwave.me uzb](http://zwave.me/index.php?id=28) x1
-- [Fibaro FGWPF-102 ZW5 Wall Plug](https://www.fibaro.com/en/products/wall-plug/) x2
+- [Fibaro FGWPF-102 ZW5 Wall Plug](https://www.fibaro.com/en/products/wall-plug/) x3
 - [Fibaro FGMS-001 ZW5 Motion Sensor](https://www.fibaro.com/en/products/motion-sensor/) x1
 - [Fibaro Smoke Sensor FGSD-002](https://www.fibaro.com/en/products/smoke-sensor/) x1
 - [IKEA Trådfri Gateway](http://www.ikea.com/us/en/catalog/products/00337813/) x1
@@ -20,11 +20,10 @@ This is my [Home Assistant](https://home-assistant.io) configuration.
 ## Screenshots
 
 ![Home](images/1.png)
-![Lights](images/2.png)
-![Living Room](images/3.png)
-![Bedroom](images/4.png)
-![Hallway](images/5.png)
-![Automation](images/6.png)
-![Security](images/7.png)
-![Gauges](images/8.png)
-![Weather](images/9.png)
+![Living Room](images/2.png)
+![Bedroom](images/3.png)
+![Hallway](images/4.png)
+![Automation](images/5.png)
+![Security](images/6.png)
+![Gauges](images/7.png)
+![Weather](images/8.png)
