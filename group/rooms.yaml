@@ -11,7 +11,5 @@ Bedroom:
   - switch.bedroom_kajsa_charger_switch
 
 Hallway:
-  - scene.hallway_on
-  - scene.hallway_off
   - sensor.hallway_smoke_sensor_temperature
   - binary_sensor.hallway_smoke_sensor_sensor
