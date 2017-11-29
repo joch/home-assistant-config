@@ -109,6 +109,17 @@
       brightness_pct: 10
       transition: 2
 
+- name: Living Room Full
+  entities:
+    light.dining_room_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 2
+    light.living_room_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 2
+
 - name: Bedroom Normal
   entities:
     light.bedroom_lamp:
@@ -127,6 +138,13 @@
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
+      transition: 2
+
+- name: Bedroom Full
+  entities:
+    light.bedroom_lamp:
+      state: on
+      brightness_pct: 100
       transition: 2
 
 - name: Hallway On

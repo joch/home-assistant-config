@@ -1,8 +1,3 @@
-Interior Lights:
-  - group.living_room_lights
-  - group.bedroom_lights
-  - group.hallway_lights
-
 Living Room:
   - binary_sensor.living_room_motion_sensor_sensor
   - sensor.living_room_motion_sensor_temperature

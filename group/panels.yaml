@@ -28,12 +28,6 @@ Power Usage:
   - sensor.bedroom_johnny_charger_energy
   - sensor.bedroom_kajsa_charger_energy
 
-Scenes:
-  - scene.lights_off
-  - scene.lights_normal
-  - scene.lights_cozy
-  - scene.lights_full
-
 Sleep Status:
   - input_boolean.johnny_asleep
   - input_boolean.kajsa_asleep

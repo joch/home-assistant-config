@@ -1,3 +1,11 @@
+Interior Lights:
+  - group.living_room_lights
+  - group.bedroom_lights
+  - group.hallway_lights
+  - scene.lights_normal
+  - scene.lights_cozy
+  - scene.lights_full
+
 Living Room Lights:
   icon: mdi:sofa
   entities:
@@ -5,6 +13,7 @@ Living Room Lights:
     - light.living_room_lamp
     - scene.living_room_normal
     - scene.living_room_cozy
+    - scene.living_room_full
 
 Bedroom Lights:
   icon: mdi:hotel
@@ -12,6 +21,7 @@ Bedroom Lights:
     - light.bedroom_lamp
     - scene.bedroom_normal
     - scene.bedroom_cozy
+    - scene.bedroom_full
 
 Hallway Lights:
   icon: mdi:cube-unfolded
