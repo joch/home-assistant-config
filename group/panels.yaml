@@ -30,7 +30,7 @@ Power Usage:
 
 Scenes:
   - scene.lights_off
-  - scene.lights_on
+  - scene.lights_normal
   - scene.lights_cozy
   - scene.lights_full
 

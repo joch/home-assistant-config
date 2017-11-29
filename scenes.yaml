@@ -12,7 +12,7 @@
     switch.hallway_mirror_lamp_switch:
       state: off
 
-- name: Lights On
+- name: Lights Normal
   entities:
     light.dining_room_lamp:
       state: on
@@ -78,7 +78,7 @@
       brightness_pct: 50
       transition: 2
 
-- name: Living Room On
+- name: Living Room Normal
   entities:
     light.dining_room_lamp:
       state: on
@@ -109,7 +109,7 @@
       brightness_pct: 10
       transition: 2
 
-- name: Bedroom On
+- name: Bedroom Normal
   entities:
     light.bedroom_lamp:
       state: on

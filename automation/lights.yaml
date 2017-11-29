@@ -50,7 +50,7 @@
       state: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.lights_on
+      entity_id: scene.lights_normal
 
 - alias: Lights off when bright
   initial_state: 'on'
@@ -324,7 +324,7 @@
 #       state: 'on'
 #   action:
 #     - service: scene.turn_on
-#       entity_id: scene.living_room_on
+#       entity_id: scene.living_room_normal
 
 # - alias: Lights - Lead lights during the night if motion detected
 #   initial_state: 'on'
