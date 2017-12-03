@@ -35,7 +35,7 @@
       entity_id: sensor.bedroom_johnny_charger_power
       below: 1
       for:
-        minutes: 10
+        minutes: 15
   condition:
     - condition: state
       entity_id: input_boolean.johnny_asleep
@@ -52,7 +52,7 @@
       entity_id: sensor.bedroom_kajsa_charger_power
       below: 1
       for:
-        minutes: 10
+        minutes: 15
   condition:
     - condition: state
       entity_id: input_boolean.kajsa_asleep
