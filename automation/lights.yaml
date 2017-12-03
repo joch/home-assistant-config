@@ -52,6 +52,53 @@
     - service: scene.turn_on
       entity_id: scene.lights_normal
 
+- alias: Hallway lights on when coming home
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: device_tracker.johnnysiphone
+      from: 'not_home'
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.kajsasiphone
+      from: 'not_home'
+      to: 'home'
+  condition:
+    # - condition: time
+    #   after: '08:00:00'
+    #   before: '23:00:00'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: light.hallway_lamp_left
+      data:
+        brightness_pct: 100
+        transition: 5
+    - service: light.turn_on
+      entity_id: light.hallway_lamp_middle
+      data:
+        brightness_pct: 100
+        transition: 5
+    - service: light.turn_on
+      entity_id: light.hallway_lamp_right
+      data:
+        brightness_pct: 100
+        transition: 5
+    - service: light.turn_off
+      entity_id: light.hallway_lamp_left
+      data:
+        transition: 300
+    - service: light.turn_off
+      entity_id: light.hallway_lamp_middle
+      data:
+        transition: 300
+    - service: light.turn_off
+      entity_id: light.hallway_lamp_right
+      data:
+        transition: 300
+
 - alias: Lights off when bright
   initial_state: 'on'
   trigger:
