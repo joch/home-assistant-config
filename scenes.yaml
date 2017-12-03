@@ -14,8 +14,6 @@
       transition: 5
     switch.hallway_mirror_lamp_switch:
       state: off
-    switch.hallway_mirror_lamp_switch:
-      state: off
     light.hallway_lamp_left:
       state: off
       transition: 5
