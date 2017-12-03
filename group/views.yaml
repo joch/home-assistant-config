@@ -36,6 +36,7 @@ hall:
   icon: mdi:cube-unfolded
   entities:
     - group.hallway_lights
+    - group.hallway_ceiling_lamp
     - group.hallway
 
 automation:

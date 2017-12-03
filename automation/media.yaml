@@ -26,3 +26,29 @@
     data_template:
       entity_id: input_select.harmony
       option: "{{ states.remote.living_room.attributes.current_activity }}"
+
+
+# 2017-11-30 08:26:09 ERROR (SyncWorker_2) [homeassistant.components.remote.harmony] Missing required argument: device
+# - alias: Turn TV sound on when switching to TV mode
+#   trigger:
+#     platform: state
+#     entity_id: input_select.harmony
+#     to: 'TV'
+#   action:
+#     service: remote.send_command
+#     data:
+#       entity_id: remote.living_room
+#       command: VolumeUp
+#       num_repeats: 10
+
+# - alias: Turn TV sound off when switching from TV mode
+#   trigger:
+#     platform: state
+#     entity_id: input_select.harmony
+#     from: 'TV'
+#   action:
+#     service: remote.send_command
+#     data:
+#       entity_id: remote.living_room
+#       command: VolumeDown
+#       num_repeats: 30

@@ -2,13 +2,16 @@
   entities:
     light.bedroom_lamp:
       state: off
-      transition: 2
+      transition: 5
     light.dining_room_lamp:
       state: off
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: off
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: off
+      transition: 5
     switch.hallway_mirror_lamp_switch:
       state: off
 
@@ -17,15 +20,19 @@
     light.dining_room_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: on
+      brightness_pct: 50
+      transition: 5
     light.bedroom_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
     switch.hallway_mirror_lamp_switch:
       state: on
 
@@ -34,15 +41,19 @@
     light.dining_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: on
+      brightness_pct: 10
+      transition: 5
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
-      transition: 2
+      transition: 5
     switch.hallway_mirror_lamp_switch:
       state: on
 
@@ -51,15 +62,19 @@
     light.dining_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: on
+      brightness_pct: 100
+      transition: 5
     light.bedroom_lamp:
       state: on
       brightness_pct: 100
-      transition: 2
+      transition: 5
     switch.hallway_mirror_lamp_switch:
       state: on
 
@@ -68,101 +83,161 @@
     light.dining_room_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
     light.bedroom_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
 
 - name: Living Room Normal
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: on
+      brightness_pct: 50
+      transition: 5
 
 - name: Living Room Off
   entities:
     light.dining_room_lamp:
       state: off
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: off
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: off
+      transition: 5
 
 - name: Living Room Cozy
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: on
+      brightness_pct: 10
+      transition: 5
 
 - name: Living Room Full
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 2
+      transition: 5
     light.living_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 2
+      transition: 5
+    light.living_room_star:
+      state: on
+      brightness_pct: 100
+      transition: 5
 
 - name: Bedroom Normal
   entities:
     light.bedroom_lamp:
       state: on
       brightness_pct: 50
-      transition: 2
+      transition: 5
 
 - name: Bedroom Off
   entities:
     light.bedroom_lamp:
       state: off
-      transition: 2
+      transition: 5
 
 - name: Bedroom Cozy
   entities:
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
-      transition: 2
+      transition: 5
 
 - name: Bedroom Full
   entities:
     light.bedroom_lamp:
       state: on
       brightness_pct: 100
-      transition: 2
+      transition: 5
 
 - name: Hallway Normal
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
+    light.hallway_lamp_left:
+      state: on
+      brightness_pct: 50
+      transition: 5
+    light.hallway_lamp_middle:
+      state: on
+      brightness_pct: 50
+      transition: 5
+    light.hallway_lamp_right:
+      state: on
+      brightness_pct: 50
+      transition: 5
 
 - name: Hallway Cozy
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
+    light.hallway_lamp_left:
+      state: on
+      brightness_pct: 10
+      transition: 5
+    light.hallway_lamp_middle:
+      state: on
+      brightness_pct: 10
+      transition: 5
+    light.hallway_lamp_right:
+      state: on
+      brightness_pct: 10
+      transition: 5
 
 - name: Hallway Full
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
+    light.hallway_lamp_left:
+      state: on
+      brightness_pct: 100
+      transition: 5
+    light.hallway_lamp_middle:
+      state: on
+      brightness_pct: 100
+      transition: 5
+    light.hallway_lamp_right:
+      state: on
+      brightness_pct: 100
+      transition: 5
 
 - name: Hallway Off
   entities:
     switch.hallway_mirror_lamp_switch:
       state: off
+    light.hallway_lamp_left:
+      state: off
+      transition: 5
+    light.hallway_lamp_middle:
+      state: off
+      transition: 5
+    light.hallway_lamp_right:
+      state: off
+      transition: 5

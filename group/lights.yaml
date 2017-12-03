@@ -11,6 +11,7 @@ Living Room Lights:
   entities:
     - light.dining_room_lamp
     - light.living_room_lamp
+    - light.living_room_star
     - scene.living_room_normal
     - scene.living_room_cozy
     - scene.living_room_full
@@ -26,7 +27,15 @@ Bedroom Lights:
 Hallway Lights:
   icon: mdi:cube-unfolded
   entities:
+    - group.hallway_ceiling_lamp
     - switch.hallway_mirror_lamp_switch
     - scene.hallway_normal
     - scene.hallway_cozy
     - scene.hallway_full
+
+Hallway Ceiling Lamp:
+  icon: mdi:spotlight-beam
+  entities:
+    - light.hallway_lamp_left
+    - light.hallway_lamp_middle
+    - light.hallway_lamp_right
