@@ -14,13 +14,7 @@
       transition: 5
     switch.hallway_mirror_lamp_switch:
       state: off
-    light.hallway_lamp_left:
-      state: off
-      transition: 5
-    light.hallway_lamp_middle:
-      state: off
-      transition: 5
-    light.hallway_lamp_right:
+    group.hallway_ceiling_lamp:
       state: off
       transition: 5
 
@@ -44,6 +38,9 @@
       transition: 5
     switch.hallway_mirror_lamp_switch:
       state: on
+    group.hallway_ceiling_lamp:
+      state: off
+      transition: 5
 
 - name: Lights Cozy
   entities:
@@ -65,6 +62,9 @@
       transition: 5
     switch.hallway_mirror_lamp_switch:
       state: on
+    group.hallway_ceiling_lamp:
+      state: off
+      transition: 5
 
 - name: Lights Full
   entities:
@@ -86,6 +86,10 @@
       transition: 5
     switch.hallway_mirror_lamp_switch:
       state: on
+    group.hallway_ceiling_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 5
 
 - name: Lights Vacation
   entities:
@@ -190,49 +194,23 @@
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
-    light.hallway_lamp_left:
-      state: on
-      brightness_pct: 50
-      transition: 5
-    light.hallway_lamp_middle:
-      state: on
-      brightness_pct: 50
-      transition: 5
-    light.hallway_lamp_right:
-      state: on
-      brightness_pct: 50
+    group.hallway_ceiling_lamp:
+      state: off
       transition: 5
 
 - name: Hallway Cozy
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
-    light.hallway_lamp_left:
-      state: on
-      brightness_pct: 10
-      transition: 5
-    light.hallway_lamp_middle:
-      state: on
-      brightness_pct: 10
-      transition: 5
-    light.hallway_lamp_right:
-      state: on
-      brightness_pct: 10
+    group.hallway_ceiling_lamp:
+      state: off
       transition: 5
 
 - name: Hallway Full
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
-    light.hallway_lamp_left:
-      state: on
-      brightness_pct: 100
-      transition: 5
-    light.hallway_lamp_middle:
-      state: on
-      brightness_pct: 100
-      transition: 5
-    light.hallway_lamp_right:
+    group.hallway_ceiling_lamp:
       state: on
       brightness_pct: 100
       transition: 5
@@ -241,12 +219,6 @@
   entities:
     switch.hallway_mirror_lamp_switch:
       state: off
-    light.hallway_lamp_left:
-      state: off
-      transition: 5
-    light.hallway_lamp_middle:
-      state: off
-      transition: 5
-    light.hallway_lamp_right:
+    group.hallway_ceiling_lamp:
       state: off
       transition: 5

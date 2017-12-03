@@ -90,9 +90,7 @@ switch:
     - light.dining_room_lamp
     - light.living_room_lamp
     - light.living_room_star
-    - light.hallway_lamp_left
-    - light.hallway_lamp_middle
-    - light.hallway_lamp_right
+    - group.hallway_ceiling_lamp
   name: Fluxer
   start_time: '7:00'
   stop_time: '22:00'

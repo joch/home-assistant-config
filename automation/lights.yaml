@@ -72,31 +72,14 @@
       state: 'on'
   action:
     - service: light.turn_on
-      entity_id: light.hallway_lamp_left
       data:
+        entity_id: group.hallway_ceiling_lamp
         brightness_pct: 100
         transition: 5
-    - service: light.turn_on
-      entity_id: light.hallway_lamp_middle
-      data:
-        brightness_pct: 100
-        transition: 5
-    - service: light.turn_on
-      entity_id: light.hallway_lamp_right
-      data:
-        brightness_pct: 100
-        transition: 5
+    - delay: 00:01:00
     - service: light.turn_off
-      entity_id: light.hallway_lamp_left
       data:
-        transition: 300
-    - service: light.turn_off
-      entity_id: light.hallway_lamp_middle
-      data:
-        transition: 300
-    - service: light.turn_off
-      entity_id: light.hallway_lamp_right
-      data:
+        entity_id: group.hallway_ceiling_lamp
         transition: 300
 
 - alias: Lights off when bright
