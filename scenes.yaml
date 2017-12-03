@@ -14,6 +14,17 @@
       transition: 5
     switch.hallway_mirror_lamp_switch:
       state: off
+    switch.hallway_mirror_lamp_switch:
+      state: off
+    light.hallway_lamp_left:
+      state: off
+      transition: 5
+    light.hallway_lamp_middle:
+      state: off
+      transition: 5
+    light.hallway_lamp_right:
+      state: off
+      transition: 5
 
 - name: Lights Normal
   entities:
