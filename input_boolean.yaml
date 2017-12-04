@@ -26,3 +26,8 @@ kajsa_asleep:
   name: Kajsa asleep
   icon: mdi:sleep
   
+living_room_arlo_motion:
+  name: Living Room Arlo Motion
+
+hallway_arlo_motion:
+  name: Hallway Arlo Motion
