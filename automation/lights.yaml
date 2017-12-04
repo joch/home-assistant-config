@@ -20,27 +20,17 @@
       from: 'not_home'
       to: 'home'
     - platform: state
-      entity_id: input_boolean.kajsa_asleep
+      entity_id: group.sleep_status
       to: 'off'
-      for:
-        minutes: 15
-    - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'off'
-      for:
-        minutes: 15
   condition:
     - condition: state
-      entity_id: input_boolean.kajsa_asleep
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.johnny_asleep
+      entity_id: group.sleep_status
       state: 'off'
     - condition: state
       entity_id: group.household
       state: 'home'
     - condition: time
-      after: '08:00:00'
+      after: '07:00:00'
       before: '23:00:00'
     - condition: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
