@@ -62,8 +62,13 @@
         entity_id: group.hallway_ceiling_lamp
         brightness_pct: 50
         transition: 5
-    - delay: 00:00:10
+    - delay: 00:00:30
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway_ceiling_lamp
+        brightness_pct: 1
+        transition: 30
+    - delay: 00:00:30
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
-        transition: 30

@@ -66,11 +66,16 @@
         entity_id: group.hallway_ceiling_lamp
         brightness_pct: 100
         transition: 5
-    - delay: 00:01:00
+    - delay: 00:00:05
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway_ceiling_lamp
+        brightness_pct: 1
+        transition: 300
+    - delay: 00:05:00
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
-        transition: 300
 
 - alias: Lights off when bright
   initial_state: 'on'
