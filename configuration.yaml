@@ -134,8 +134,8 @@ alarm_control_panel:
     triggered:
       pending_time: 30
   - platform: arlo
-    home_mode_name: Motion
-    away_mode_name: Armed
+    home_mode_name: 'Motion'
+    away_mode_name: 'Armed'
 
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml

@@ -30,7 +30,7 @@
       data:
         title: "Alarm has been disarmed"
         message: "The alarm has been set to disarmed"
-    - service: alarm_control_panel.alarm_disarm
+    - service: alarm_control_panel.alarm_arm_home
       entity_id: alarm_control_panel.home
     # - service: remote.turn_on
     #   entity_id: remote.living_room
