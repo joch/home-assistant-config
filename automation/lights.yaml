@@ -61,13 +61,26 @@
         entity_id: group.hallway_ceiling_lamp
         brightness_pct: 75
         transition: 2
-    - delay: 00:00:30
+
+- alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.hallway_arlo_motion
+      to: 'off'
+      for:
+        seconds: 30
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
     - service: light.turn_on
       data:
         entity_id: group.hallway_ceiling_lamp
         brightness_pct: 1
-        transition: 60
-    - delay: 00:00:65
+        transition: 30
+    - delay: 00:00:35
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
