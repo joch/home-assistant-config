@@ -105,13 +105,9 @@
     - platform: state
       entity_id: input_boolean.johnny_asleep
       to: 'on'
-      for:
-        minutes: 1
     - platform: state
       entity_id: input_boolean.kajsa_asleep
       to: 'on'
-      for:
-        minutes: 1
   condition:
     - condition: time
       after: '21:00:00'
@@ -146,7 +142,7 @@
         entity_id: device_tracker.kajsasiphone
         state: 'not_home'
   action:
-    - service: alarm_control_panel.alarm_arm_home
+    - service: alarm_control_panel.alarm_arm_night
       entity_id: alarm_control_panel.alarm
       data:
         code: !secret alarm_code
