@@ -48,6 +48,13 @@
     - platform: state
       entity_id: input_boolean.hallway_arlo_motion
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+    - condition: state
+      entity_id: group.sleep_status
+      state: 'off'
   action:
     - service: light.turn_on
       data:
