@@ -74,6 +74,9 @@
     - condition: state
       entity_id: input_boolean.light_mode
       state: 'on'
+    - condition: state
+      entity_id: group.hallway_ceiling_lamp
+      state: 'on'
   action:
     - service: light.turn_on
       data:
