@@ -1,12 +1,3 @@
-- alias: Fluxer switch on by default
-  initial_state: 'on'
-  trigger: 
-    platform: event
-    event_type: zwave.network_ready
-  action:
-    service: homeassistant.turn_on
-    entity_id: switch.fluxer
-
 - alias: Lights on when home
   initial_state: 'on'
   trigger:
@@ -41,52 +32,6 @@
   action:
     - service: scene.turn_on
       entity_id: scene.lights_normal
-
-- alias: Turn on hallway ceiling lamp when Arlo detects motion in hallway
-  initial_state: on
-  trigger:
-    - platform: state
-      entity_id: input_boolean.hallway_arlo_motion
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_mode
-      state: 'on'
-    - condition: state
-      entity_id: group.sleep_status
-      state: 'off'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway_ceiling_lamp
-        brightness_pct: 75
-        transition: 2
-
-- alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway
-  initial_state: on
-  trigger:
-    - platform: state
-      entity_id: input_boolean.hallway_arlo_motion
-      to: 'off'
-      for:
-        seconds: 30
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_mode
-      state: 'on'
-    - condition: state
-      entity_id: group.hallway_ceiling_lamp
-      state: 'on'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway_ceiling_lamp
-        brightness_pct: 1
-        transition: 30
-    - delay: 00:00:35
-    - service: light.turn_off
-      data:
-        entity_id: group.hallway_ceiling_lamp
 
 - alias: Lights off when bright
   initial_state: 'on'

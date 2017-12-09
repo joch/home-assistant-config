@@ -1,0 +1,8 @@
+- alias: Fluxer switch on by default
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: zwave.network_ready
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.fluxer
