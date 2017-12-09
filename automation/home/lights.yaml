@@ -32,6 +32,8 @@
   action:
     - service: scene.turn_on
       entity_id: scene.lights_normal
+    - service: input_binary.turn_on
+      entity_id: input_binary.light_interior
 
 - alias: Lights off when bright
   initial_state: 'on'
@@ -51,6 +53,8 @@
   action:
     - service: scene.turn_on
       entity_id: scene.lights_off
+    - service: input_binary.turn_off
+      entity_id: input_binary.light_interior
 
 - alias: Lights off when away
   initial_state: 'on'
