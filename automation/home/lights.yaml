@@ -30,10 +30,8 @@
       entity_id: input_boolean.light_mode
       state: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_normal
-    - service: input_binary.turn_on
-      entity_id: input_binary.light_interior
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.light_interior
 
 - alias: Lights off when bright
   initial_state: 'on'
@@ -51,10 +49,8 @@
       entity_id: input_boolean.light_mode
       state: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_off
-    - service: input_binary.turn_off
-      entity_id: input_binary.light_interior
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.light_interior
 
 - alias: Lights off when away
   initial_state: 'on'
@@ -70,8 +66,8 @@
       entity_id: input_boolean.light_mode
       state: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_off
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.light_interior
 
 - alias: Lights on when arriving late
   initial_state: 'on'
@@ -152,59 +148,8 @@
             entity_id: device_tracker.kajsasiphone
             state: 'not_home'
   action:
-    service: scene.turn_on
-    entity_id: scene.lights_off
-
-- alias: Bedroom lights dimmed when one person goes to bed
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: input_boolean.kajsa_asleep
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'on'
-  condition:
-    - condition: time
-      after: '21:00:00'
-      before: '06:00:00'
-    - condition: state
-      entity_id: light.bedroom_lamp
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.light_mode
-      state: 'on'
-    - condition: or
-      conditions:
-        - condition: or
-          conditions:
-          - condition: and
-            conditions:
-              - condition: state
-                entity_id: device_tracker.johnnysiphone
-                state: 'home'
-              - condition: state
-                entity_id: input_boolean.johnny_asleep
-                state: 'off'
-          - condition: state
-            entity_id: device_tracker.johnnysiphone
-            state: 'not_home'
-        - condition: or
-          conditions:
-          - condition: and
-            conditions:
-              - condition: state
-                entity_id: device_tracker.kajsasiphone
-                state: 'home'
-              - condition: state
-                entity_id: input_boolean.kajsa_asleep
-                state: 'off'
-          - condition: state
-            entity_id: device_tracker.kajsasiphone
-            state: 'not_home'
-  action:
-    service: scene.turn_on
-    entity_id: scene.bedroom_cozy
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.light_interior
 
 - alias: Lights on when on vacation
   initial_state: 'on'
@@ -224,10 +169,10 @@
       entity_id: input_boolean.guest_mode
       state: 'off'
   action:
-    service: scene.turn_on
-    entity_id: scene.lights_vacation
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.light_interior
 
-- alias: Turn off lights when on vacation
+- alias: Lights off when on vacation
   initial_state: 'on'
   trigger:
     - platform: time
@@ -246,7 +191,7 @@
     service: scene.turn_on
     entity_id: scene.lights_off
 
-- alias: Set lights to cozy after 10pm if on
+- alias: Lights to cozy after 10pm if on
   initial_state: 'on'
   trigger:
     - platform: time

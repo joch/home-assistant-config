@@ -1,3 +1,23 @@
+- alias: Hallway lights on
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.light_interior
+    to: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.hallway_cozy
+
+- alias: Hallway lights off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.light_interior
+    to: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.hallway_off
+
 - alias: Turn on hallway ceiling lamp when Arlo detects motion in hallway
   initial_state: on
   trigger:

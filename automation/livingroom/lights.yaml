@@ -1,1 +1,49 @@
-# To be added
+- alias: Living room lights on
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.light_interior
+      to: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.living_room_cozy
+
+- alias: Living room lights off
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.light_interior
+      to: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.living_room_off
+
+- alias: Living room lights normal when occupied
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.living_room_motion_sensor_sensor
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_interior
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.living_room_normal
+
+- alias: Living room lights cozy when empty
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.living_room_motion_sensor_sensor
+      to: 'off'
+      for:
+        minutes: 15
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_interior
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.living_room_cozy
