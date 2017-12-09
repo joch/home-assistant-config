@@ -32,20 +32,6 @@
         message: "The alarm has been set to disarmed"
     - service: alarm_control_panel.alarm_arm_home
       entity_id: alarm_control_panel.home
-    # - service: remote.turn_on
-    #   entity_id: remote.living_room
-    #   data:
-    #     activity: 29561682
-    # - delay:
-    #     seconds: 5
-    # - service: tts.google_say
-    #   entity_id: media_player.living_room_speakers
-    #   data:
-    #     message: 'Welcome home. The alarm has been turned off.'
-    # - service: remote.turn_on
-    #   entity_id: remote.living_room
-    #   data:
-    #     activity: -1
 
 - alias: Alarm triggered
   initial_state: 'on'
