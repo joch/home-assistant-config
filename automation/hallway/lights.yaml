@@ -33,10 +33,15 @@
       state: 'off'
   action:
     - service: light.turn_on
-      data:
+      data_template:
         entity_id: group.hallway_ceiling_lamp
-        brightness_pct: 75
         transition: 2
+        brightness_pct: >-
+          {% if states.sensor.living_room_motion_sensor_luminance.state | int <= 100 %}
+          {{ states.sensor.living_room_motion_sensor_luminance.state | int }}
+          {% else %}
+          100
+          {% endif %}
 
 - alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway
   initial_state: on
@@ -58,8 +63,8 @@
       data:
         entity_id: group.hallway_ceiling_lamp
         brightness_pct: 1
-        transition: 30
-    - delay: 00:00:35
+        transition: 10
+    - delay: 00:00:15
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
