@@ -4,6 +4,10 @@
     - platform: state
       entity_id: input_boolean.light_interior
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_cozy
@@ -14,6 +18,10 @@
     - platform: state
       entity_id: input_boolean.light_interior
       to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_off
@@ -26,7 +34,13 @@
       to: 'on'
   condition:
     - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.light_interior
+      state: 'on'
+    - condition: state
+      entity_id: group.living_room_lights
       state: 'on'
   action:
     - service: scene.turn_on
@@ -42,7 +56,13 @@
         minutes: 15
   condition:
     - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.light_interior
+      state: 'on'
+    - condition: state
+      entity_id: group.living_room_lights
       state: 'on'
   action:
     - service: scene.turn_on

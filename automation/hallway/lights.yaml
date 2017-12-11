@@ -4,6 +4,10 @@
     platform: state
     entity_id: input_boolean.light_interior
     to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.hallway_cozy
@@ -14,6 +18,10 @@
     platform: state
     entity_id: input_boolean.light_interior
     to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.hallway_off
