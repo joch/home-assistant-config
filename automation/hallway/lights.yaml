@@ -127,4 +127,4 @@
     - delay: 00:00:15
     - service: light.turn_off
       data:
-        entity_id: light.hallway_lamp_left
+        entity_id: group.hallway_ceiling_lamp
