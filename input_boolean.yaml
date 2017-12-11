@@ -31,6 +31,8 @@ kajsa_asleep:
   
 living_room_arlo_motion:
   name: Living Room Arlo Motion
+  initial: off
 
 hallway_arlo_motion:
   name: Hallway Arlo Motion
+  initial: off
