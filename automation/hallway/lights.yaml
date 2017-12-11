@@ -51,6 +51,35 @@
           100
           {% endif %}
 
+- alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.hallway_arlo_motion
+      to: 'off'
+      for:
+        seconds: 30
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+    - condition: state
+      entity_id: group.hallway_ceiling_lamp
+      state: 'on'
+    - condition: state
+      entity_id: group.sleep_status
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway_ceiling_lamp
+        brightness_pct: 1
+        transition: 10
+    - delay: 00:00:15
+    - service: light.turn_off
+      data:
+        entity_id: group.hallway_ceiling_lamp
+
 - alias: Turn on left hallway ceiling lamp when Arlo detects motion in hallway at night
   initial_state: on
   trigger:
@@ -71,7 +100,7 @@
         transition: 2
         brightness_pct: 1
 
-- alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway
+- alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway at night
   initial_state: on
   trigger:
     - platform: state
@@ -84,15 +113,18 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity_id: group.hallway_ceiling_lamp
+      entity_id: light.hallway_lamp_left
+      state: 'on'
+    - condition: state
+      entity_id: group.sleep_status
       state: 'on'
   action:
     - service: light.turn_on
       data:
-        entity_id: group.hallway_ceiling_lamp
+        entity_id: light.hallway_lamp_left
         brightness_pct: 1
         transition: 10
     - delay: 00:00:15
     - service: light.turn_off
       data:
-        entity_id: group.hallway_ceiling_lamp
+        entity_id: light.hallway_lamp_left
