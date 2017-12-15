@@ -1,5 +1,4 @@
 - alias: Notify and turn on lights when smoke detected
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: sensor.hallway_smoke_sensor_smoke
@@ -13,7 +12,6 @@
         message: "Please contact anyone at home or fire department."
 
 - alias: Notify and turn on lights when excessive heat detected
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: sensor.hallway_smoke_sensor_heat

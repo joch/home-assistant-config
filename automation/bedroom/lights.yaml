@@ -1,5 +1,4 @@
 - alias: Bedroom lights on
-  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_boolean.light_interior
@@ -13,7 +12,6 @@
       entity_id: scene.bedroom_normal
 
 - alias: Bedroom lights off
-  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_boolean.light_interior
@@ -27,7 +25,6 @@
       entity_id: scene.bedroom_off
 
 - alias: Bedroom lights dimmed when one person goes to bed
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: input_boolean.kajsa_asleep

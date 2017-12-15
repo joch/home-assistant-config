@@ -1,6 +1,5 @@
 # Actions for different alarm states
 - alias: Alarm armed away
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: alarm_control_panel.alarm
@@ -20,7 +19,6 @@
         option: 'PowerOff'
 
 - alias: Alarm disarmed
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: alarm_control_panel.alarm
@@ -34,7 +32,6 @@
       entity_id: alarm_control_panel.home
 
 - alias: Alarm triggered
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: alarm_control_panel.alarm
@@ -49,7 +46,6 @@
 
 # Automatically enable / disable alarm
 - alias: Automatically arm alarm when away
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.household
@@ -69,7 +65,6 @@
         code: !secret alarm_code
 
 - alias: Automatically disarm alarm when home
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.household
@@ -86,7 +81,6 @@
         code: !secret alarm_code
 
 - alias: Automatically arm alarm home when last person goes to sleep
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: input_boolean.johnny_asleep
@@ -134,7 +128,6 @@
         code: !secret alarm_code
 
 - alias: Automatically disarm alarm when not sleeping
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: input_boolean.johnny_asleep
@@ -150,7 +143,6 @@
 
 # Handle automatic vacation mode
 - alias: Turn on vacation mode when away for 24h
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.household
@@ -170,7 +162,6 @@
         message: "Set Arlo to vacation mode manually to activate siren."
 
 - alias: Turn off vacation and guest mode when coming home
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.household

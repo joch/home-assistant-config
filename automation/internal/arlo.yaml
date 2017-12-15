@@ -1,5 +1,4 @@
 - alias: Reset living room arlo motion boolean when triggered
-  initial_state: on
   trigger:
     - platform: state
       entity_id: input_boolean.living_room_arlo_motion
@@ -11,7 +10,6 @@
       entity_id: input_boolean.living_room_arlo_motion
 
 - alias: Reset hallway arlo motion boolean when triggered
-  initial_state: on
   trigger:
     - platform: state
       entity_id: input_boolean.hallway_arlo_motion
@@ -23,7 +21,6 @@
       entity_id: input_boolean.hallway_arlo_motion
 
 - alias: Trigger alarm when Arlo detects motion in living room
-  initial_state: on
   trigger:
     - platform: state
       entity_id: input_boolean.living_room_arlo_motion
@@ -37,7 +34,6 @@
       entity_id: alarm_control_panel.alarm
 
 - alias: Trigger alarm when Arlo detects motion in hallway
-  initial_state: on
   trigger:
     - platform: state
       entity_id: input_boolean.hallway_arlo_motion

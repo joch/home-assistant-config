@@ -6,6 +6,9 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Stockholm
   customize: !include customize.yaml
+  customize_domain:
+    automation:
+      initial_state: 'on'
 
 #introduction:
 

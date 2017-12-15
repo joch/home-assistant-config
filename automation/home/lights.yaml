@@ -1,5 +1,4 @@
 - alias: Lights on when home
-  initial_state: 'on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
@@ -34,7 +33,6 @@
       entity_id: input_boolean.light_interior
 
 - alias: Lights off when bright
-  initial_state: 'on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
@@ -53,7 +51,6 @@
       entity_id: input_boolean.light_interior
 
 - alias: Lights off when away
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.household
@@ -70,7 +67,6 @@
       entity_id: input_boolean.light_interior
 
 - alias: Lights on when arriving late
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: device_tracker.johnnysiphone
@@ -97,7 +93,6 @@
     entity_id: light.dining_room_lamp
 
 - alias: Lights off when last person goes to bed
-  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: input_boolean.johnny_asleep
@@ -152,7 +147,6 @@
       entity_id: input_boolean.light_interior
 
 - alias: Lights on when on vacation
-  initial_state: 'on'
   trigger:
     - platform: sun
       event: sunset
@@ -173,7 +167,6 @@
       entity_id: input_boolean.light_interior
 
 - alias: Lights off when on vacation
-  initial_state: 'on'
   trigger:
     - platform: time
       at: '22:30:00'
@@ -192,7 +185,6 @@
     entity_id: scene.lights_off
 
 - alias: Lights to cozy after 10pm if on
-  initial_state: 'on'
   trigger:
     - platform: time
       at: '22:00:00'
