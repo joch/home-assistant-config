@@ -1,6 +1,0 @@
-living_room_motion_sensor_battery_low:
-  name: Living Room Motion Sensor Battery Low
-  entity_id: binary_sensor.living_room_motion_sensor_battery_low
-  repeat: 0
-  notifiers:
-    - all_phones

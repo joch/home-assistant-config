@@ -1,0 +1,11 @@
+- alias: Warn when batteries are below threshold
+  trigger:
+    - platform: numeric_state
+      entity_id: zwave.living_room_motion_sensor, zwave.hallway_smoke_sensor, camera.living_room, camera.hallway
+      value_template: '{{ state.attributes.battery_level if state.attributes.battery_level else 101 }}'
+      below: 10
+  action:
+    - service: notify.all_phones
+      data_template:
+        title: 'Battery Low'
+        message: 'Replace batteries in sensor {{ trigger.to_state.name|default("unknown") }}'
