@@ -4,7 +4,7 @@
       entity_id: input_boolean.living_room_arlo_motion
       to: 'on'
       for:
-        seconds: 30
+        seconds: 1
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.living_room_arlo_motion
@@ -15,7 +15,7 @@
       entity_id: input_boolean.hallway_arlo_motion
       to: 'on'
       for:
-        seconds: 30
+        seconds: 1
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.hallway_arlo_motion

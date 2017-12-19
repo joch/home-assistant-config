@@ -56,7 +56,7 @@
       entity_id: input_boolean.hallway_arlo_motion
       to: 'off'
       for:
-        seconds: 30
+        seconds: 60
   condition:
     - condition: state
       entity_id: input_boolean.light_mode
@@ -73,7 +73,7 @@
         entity_id: group.hallway_ceiling_lamp
         brightness_pct: 1
         transition: 10
-    - delay: 00:00:15
+    - delay: 00:00:10
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
@@ -103,7 +103,7 @@
       entity_id: input_boolean.hallway_arlo_motion
       to: 'off'
       for:
-        seconds: 30
+        seconds: 60
   condition:
     - condition: state
       entity_id: input_boolean.light_mode
@@ -120,7 +120,7 @@
         entity_id: light.hallway_lamp_left
         brightness_pct: 1
         transition: 10
-    - delay: 00:00:15
+    - delay: 00:00:10
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
