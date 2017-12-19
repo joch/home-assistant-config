@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/joch/home-assistant-config.svg?branch=master)](https://travis-ci.org/joch/home-assistant-config)
 
-This is my [Home Assistant](https://home-assistant.io) configuration.
+This is my [Home Assistant](https://home-assistant.io) configuration. The goal is to minimize manual control and leave as much as possible to automation. The configuration constantly evolves, so be sure to star the project to keep up with the updates.
 
 ## Devices
 
