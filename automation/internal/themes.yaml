@@ -1,0 +1,17 @@
+- alias: Automatically switch themes
+  trigger:
+    - platform: event
+      event_type: zwave.network_ready
+    - platform: sun
+      event: sunrise
+    - platform: sun
+      event: sunset
+  action:
+    service: frontend.set_theme
+    data_template:
+      name: >
+        {% if states.sun.sun.state == "above_horizon" %}
+        default
+        {% else %}
+        dark
+        {% endif %}
