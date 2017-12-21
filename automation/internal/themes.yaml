@@ -10,7 +10,7 @@
     service: frontend.set_theme
     data_template:
       name: >
-        {% if states.sun.sun.state == "above_horizon" %}
+        {% if is_state('sun.sun', 'above_horizon') %}
         default
         {% else %}
         dark
