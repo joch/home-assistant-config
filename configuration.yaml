@@ -107,6 +107,15 @@ switch:
   disable_brightness_adjust: True
   mode: mired
 
+light:
+  - platform: yeelight
+    devices:
+      10.0.0.122:
+        name: Kitchen Lightstrip
+        transition: 1000
+        use_music_mode: True
+        save_on_change: False
+
 device_tracker:
   - platform: asuswrt
     host: !secret asuswrt_host

@@ -2,6 +2,7 @@ Interior Lights:
   - group.living_room_lights
   - group.bedroom_lights
   - group.hallway_lights
+  - group.kitchen_lights
   - scene.lights_normal
   - scene.lights_cozy
   - scene.lights_full
@@ -32,6 +33,14 @@ Hallway Lights:
     - scene.hallway_normal
     - scene.hallway_cozy
     - scene.hallway_full
+
+Kitchen Lights:
+  icon: mdi:cube-unfolded
+  entities:
+    - light.kitchen_lightstrip
+    - scene.kitchen_normal
+    - scene.kitchen_cozy
+    - scene.kitchen_full
 
 Hallway Ceiling Lamp:
   icon: mdi:spotlight-beam

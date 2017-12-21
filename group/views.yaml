@@ -21,6 +21,13 @@ living:
     - media_player.tv_ue55f8000
     - media_player.living_room_speakers
 
+kitchen:
+  name: Kitchen
+  view: yes
+  icon: mdi:coffee
+  entities:
+    group.kitchen_lights
+
 bed:
   name: Bedroom
   view: yes

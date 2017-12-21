@@ -13,3 +13,5 @@ Bedroom:
 Hallway:
   - sensor.hallway_smoke_sensor_temperature
   - binary_sensor.hallway_smoke_sensor_sensor
+
+# Kitchen:
