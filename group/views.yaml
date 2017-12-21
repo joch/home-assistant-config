@@ -24,7 +24,7 @@ living:
 kitchen:
   name: Kitchen
   view: yes
-  icon: mdi:coffee
+  icon: mdi:stove
   entities:
     group.kitchen_lights
 
