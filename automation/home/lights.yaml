@@ -163,8 +163,8 @@
       entity_id: input_boolean.guest_mode
       state: 'off'
   action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.light_interior
+    - service: scene.turn_on
+      entity_id: scene.lights_vacation
 
 - alias: Lights off when on vacation
   trigger:
@@ -181,8 +181,8 @@
       entity_id: input_boolean.guest_mode
       state: 'off'
   action:
-    service: scene.turn_on
-    entity_id: scene.lights_off
+    - service: scene.turn_on
+      entity_id: scene.lights_off
 
 - alias: Lights to cozy after 10pm if on
   trigger:

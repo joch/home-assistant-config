@@ -119,6 +119,10 @@
       state: on
       brightness_pct: 50
       transition: 5
+    light.living_room_star:
+      state: on
+      brightness_pct: 50
+      transition: 5
     light.bedroom_lamp:
       state: on
       brightness_pct: 50
