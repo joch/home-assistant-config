@@ -12,6 +12,8 @@ group.bedroom_lights:
 group.hallway_lights:
   homebridge_visible: true
 
+group.hallway_ceiling_lamp:
+  homebridge_visible: true
 
 sensor.dark_sky_temperature:
   friendly_name: 'Outdoor Temperature'
@@ -112,28 +114,4 @@ alarm_control_panel.alarm:
   homebridge_alarm_code: !secret alarm_code
 
 input_select.harmony:
-  homebridge_visible: true
-
-light.bedroom_lamp:
-  homebridge_visible: true
-
-light.dining_room_lamp:
-  homebridge_visible: true
-
-light.living_room_lamp:
-  homebridge_visible: true
-
-light.living_room_star:
-  homebridge_visible: true
-
-group.hallway_ceiling_lamp:
-  homebridge_visible: true
-
-light.hallway_lamp_left:
-  homebridge_visible: true
-
-light.hallway_lamp_middle:
-  homebridge_visible: true
-
-light.hallway_lamp_right:
   homebridge_visible: true

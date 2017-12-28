@@ -9,6 +9,10 @@ homeassistant:
   customize_domain:
     automation:
       initial_state: 'on'
+    light:
+      homebridge_visible: true
+    scene:
+      homebridge_visible: true
 
 #introduction:
 
