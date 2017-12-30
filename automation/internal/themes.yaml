@@ -6,12 +6,18 @@
       event: sunrise
     - platform: sun
       event: sunset
+    - platform: numeric_state
+      entity_id: sensor.living_room_motion_sensor_luminance
+      below: 10
+    - platform: numeric_state
+      entity_id: sensor.living_room_motion_sensor_luminance
+      above: 10
   action:
     service: frontend.set_theme
     data_template:
       name: >
-        {% if is_state('sun.sun', 'above_horizon') %}
-        default
-        {% else %}
+        {% if states.sensor.living_room_motion_sensor_luminance.state | int <= 10 %}
         dark
+        {% else %}
+        default
         {% endif %}
