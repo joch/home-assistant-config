@@ -19,7 +19,6 @@ homeassistant:
 # discovery:
 
 frontend:
-  javascript_version: latest
   themes: !include themes.yaml
 
 config:
