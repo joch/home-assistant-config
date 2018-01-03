@@ -92,23 +92,23 @@ emulated_hue:
     - light
 
 switch:
-  platform: flux
-  lights:
-    - light.bedroom_lamp
-    - light.dining_room_lamp
-    - light.living_room_lamp
-    - light.living_room_star
-    - light.hallway_lamp_left
-    - light.hallway_lamp_middle
-    - light.hallway_lamp_right
-  name: Fluxer
-  start_time: '7:00'
-  stop_time: '22:00'
-  start_colortemp: 4000
-  sunset_colortemp: 3000
-  stop_colortemp: 1900
-  disable_brightness_adjust: True
-  mode: mired
+  - platform: flux
+    lights:
+      - light.bedroom_lamp
+      - light.dining_room_lamp
+      - light.living_room_lamp
+      - light.living_room_star
+      - light.hallway_lamp_left
+      - light.hallway_lamp_middle
+      - light.hallway_lamp_right
+    name: Fluxer
+    start_time: '7:00'
+    stop_time: '22:00'
+    start_colortemp: 4000
+    sunset_colortemp: 3000
+    stop_colortemp: 1900
+    disable_brightness_adjust: True
+    mode: mired
 
 light:
   - platform: yeelight
