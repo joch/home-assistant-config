@@ -64,6 +64,7 @@ security:
     - group.hallway_camera
     - group.living_room_camera
     - group.perimeter
+    - group.indoor_motion
 
 sensors:
     name: Sensors
