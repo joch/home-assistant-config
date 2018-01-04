@@ -50,6 +50,9 @@ Battery Levels:
   - sensor.tradfri_remote_control
   - sensor.johnnys_iphone_battery_level
   - sensor.kajsas_iphone_battery_level
+  - sensor.kitchen_motion_sensor_battery
+  - sensor.living_room_right_window_large_battery
+  - sensor.living_room_right_window_small_battery
 
 Indoor Temperature:
   - sensor.living_room_motion_sensor_temperature

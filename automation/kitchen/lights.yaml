@@ -23,3 +23,48 @@
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_off
+
+- alias: Kitchen lights on normal when motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'off'
+      for: '00:01:10'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_normal
+
+- alias: Kitchen lights on full when motion for a minute
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'on'
+      for: '00:01:10'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_full
+
+- alias: Kitchen lights cozy when no motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'off'
+      for: '00:03:10'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_cozy

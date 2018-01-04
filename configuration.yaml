@@ -116,7 +116,7 @@ light:
       10.0.0.122:
         name: Kitchen Lightstrip
         transition: 1000
-        use_music_mode: True
+        use_music_mode: False
         save_on_change: False
 
 device_tracker:
@@ -132,6 +132,10 @@ device_tracker:
 arlo:
   username: !secret arlo_username
   password: !secret arlo_password
+
+deconz:
+  host: !secret deconz_host
+  api_key: !secret deconz_api_key
 
 camera:
   - platform: arlo

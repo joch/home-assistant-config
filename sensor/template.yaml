@@ -44,3 +44,36 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
+    kitchen_motion_sensor_battery:
+      friendly_name: Kitchen Motion Sensor Battery
+      entity_id: binary_sensor.kitchen_motion_sensor
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.kitchen_motion_sensor -%}
+          {{ states.binary_sensor.kitchen_motion_sensor.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
+    living_room_right_window_large_battery:
+      friendly_name: Living Room Right Window Large Battery
+      entity_id: binary_sensor.living_room_right_window_large
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.living_room_right_window_large -%}
+          {{ states.binary_sensor.living_room_right_window_large.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
+    living_room_right_window_small_battery:
+      friendly_name: Living Room Right Window Small Battery
+      entity_id: binary_sensor.living_room_right_window_small
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.living_room_right_window_small -%}
+          {{ states.binary_sensor.living_room_right_window_small.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'

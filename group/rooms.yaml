@@ -1,5 +1,7 @@
 Living Room:
   - binary_sensor.living_room_motion_sensor_sensor
+  - binary_sensor.living_room_right_window_large
+  - binary_sensor.living_room_right_window_small
   - sensor.living_room_motion_sensor_temperature
   - sensor.living_room_motion_sensor_luminance
   - sensor.plex
@@ -14,4 +16,5 @@ Hallway:
   - sensor.hallway_smoke_sensor_temperature
   - binary_sensor.hallway_smoke_sensor_sensor
 
-# Kitchen:
+Kitchen:
+  - binary_sensor.kitchen_motion_sensor

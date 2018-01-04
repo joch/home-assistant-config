@@ -21,12 +21,13 @@ living:
     - media_player.tv_ue55f8000
     - media_player.living_room_speakers
 
-kitchen:
+kitch:
   name: Kitchen
   view: yes
   icon: mdi:stove
   entities:
-    group.kitchen_lights
+    - group.kitchen
+    - group.kitchen_lights
 
 bed:
   name: Bedroom
