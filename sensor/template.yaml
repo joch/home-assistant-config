@@ -55,6 +55,17 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
+    hallway_motion_sensor_battery:
+      friendly_name: Hallway Motion Sensor Battery
+      entity_id: binary_sensor.hallway_motion_sensor
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.hallway_motion_sensor -%}
+          {{ states.binary_sensor.hallway_motion_sensor.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
     living_room_right_window_large_battery:
       friendly_name: Living Room Right Window Large Battery
       entity_id: binary_sensor.living_room_right_window_large
