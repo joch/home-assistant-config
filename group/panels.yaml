@@ -58,6 +58,10 @@ Indoor Temperature:
   - sensor.living_room_motion_sensor_temperature
   - sensor.hallway_smoke_sensor_temperature
 
+Indoor Motion:
+  - binary_sensor.kitchen_motion_sensor
+  - binary_sensor.living_room_motion_sensor_sensor
+
 Weather:
   - sun.sun
   - sensor.dark_sky_apparent_temperature

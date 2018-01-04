@@ -7,6 +7,7 @@ default_view:
     - group.interior_lights
     - group.scenes
     - group.indoor_temperature
+    - group.indoor_motion
 
 living:
   name: Living Room
