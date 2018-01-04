@@ -63,6 +63,7 @@ security:
   entities:
     - group.hallway_camera
     - group.living_room_camera
+    - group.perimeter
 
 sensors:
     name: Sensors

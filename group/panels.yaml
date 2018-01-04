@@ -64,6 +64,10 @@ Indoor Motion:
   - binary_sensor.kitchen_motion_sensor
   - binary_sensor.living_room_motion_sensor_sensor
 
+Perimeter:
+  - binary_sensor.living_room_right_window_large
+  - binary_sensor.living_room_right_window_small
+
 Weather:
   - sun.sun
   - sensor.dark_sky_apparent_temperature
