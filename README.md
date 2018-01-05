@@ -24,6 +24,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 ### Switches
 
 - [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
+- [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/) x4
 
 ### Sensors
 
