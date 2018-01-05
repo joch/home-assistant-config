@@ -15,6 +15,9 @@ group.hallway_lights:
 group.hallway_ceiling_lamp:
   homebridge_visible: true
 
+light.kitchen_lightstrip:
+  icon: mdi:led-strip
+
 sensor.dark_sky_temperature:
   friendly_name: 'Outdoor Temperature'
   homebridge_visible: true
