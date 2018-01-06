@@ -56,6 +56,8 @@ Battery Levels:
   - sensor.living_room_right_window_small_battery
   - sensor.main_entrance_battery
   - sensor.patio_entrance_battery
+  - sensor.bedroom_temperature_battery
+  - sensor.bathroom_temperature_battery
 
 Indoor Temperature:
   - sensor.living_room_motion_sensor_temperature

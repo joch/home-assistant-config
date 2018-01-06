@@ -110,3 +110,25 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
+    bedroom_temperature_battery:
+      friendly_name: Bedroom Temperature Battery
+      entity_id: sensor.bedroom_environment_temperature
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.sensor.bedroom_environment_temperature -%}
+          {{ states.sensor.bedroom_environment_temperature.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
+    bathroom_temperature_battery:
+      friendly_name: Bathroom Temperature Battery
+      entity_id: sensor.bathroom_environment_temperature
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.sensor.bathroom_environment_temperature -%}
+          {{ states.sensor.bathroom_environment_temperature.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
