@@ -10,6 +10,7 @@ Living Room:
   - input_select.harmony
 
 Bedroom:
+  - binary_sensor.bedroom_motion_sensor
   - sensor.bedroom_environment_temperature
   - sensor.bedroom_environment_humidity
   - switch.bedroom_johnny_charger_switch

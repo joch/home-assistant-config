@@ -1,7 +1,7 @@
 - alias: Warn when batteries are below threshold
   trigger:
     - platform: numeric_state
-      entity_id: zwave.living_room_motion_sensor, zwave.hallway_smoke_sensor, camera.living_room, camera.hallway, binary_sensor.kitchen_motion_sensor, binary_sensor.living_room_right_window_large, binary_sensor.living_room_right_window_small, binary_sensor.hallway_motion_sensor, binary_sensor.main_entrance, binary_sensor.patio_entrance
+      entity_id: zwave.living_room_motion_sensor, zwave.hallway_smoke_sensor, camera.living_room, camera.hallway, binary_sensor.kitchen_motion_sensor, binary_sensor.living_room_right_window_large, binary_sensor.living_room_right_window_small, binary_sensor.hallway_motion_sensor, binary_sensor.main_entrance, binary_sensor.patio_entrance, binary_sensor.bedroom_motion_sensor
       value_template: '{{ state.attributes.battery_level if state.attributes.battery_level else 101 }}'
       below: 10
   action:

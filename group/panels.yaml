@@ -71,6 +71,7 @@ Indoor Motion:
   - binary_sensor.hallway_motion_sensor
   - binary_sensor.kitchen_motion_sensor
   - binary_sensor.living_room_motion_sensor_sensor
+  - binary_sensor.bedroom_motion_sensor
 
 Perimeter:
   - binary_sensor.main_entrance
