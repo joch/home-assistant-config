@@ -29,10 +29,10 @@
     - platform: state
       entity_id: binary_sensor.kitchen_motion_sensor
       to: 'on'
-    - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
-      to: 'off'
-      for: '00:01:10'
+    # - platform: state
+    #   entity_id: binary_sensor.kitchen_motion_sensor
+    #   to: 'off'
+    #   for: '00:01:10'
   condition:
     - condition: state
       entity_id: input_boolean.light_mode
@@ -46,7 +46,7 @@
     - platform: state
       entity_id: binary_sensor.kitchen_motion_sensor
       to: 'on'
-      for: '00:02:00'
+      for: '00:01:10'
   condition:
     - condition: state
       entity_id: input_boolean.light_mode
