@@ -45,30 +45,30 @@ Content-Type: application/json
 ###########
 
 # Get
-GET :root/sensors/11
+GET :root/sensors/15
 
 # Update name
-PUT :root/sensors/11
+PUT :root/sensors/15
 Content-Type: application/json
 {
   "name": "Bathroom Environment Temperature"
 }
 
 # Get
-GET :root/sensors/12
+GET :root/sensors/16
 
 # Update
-PUT :root/sensors/12
+PUT :root/sensors/16
 Content-Type: application/json
 {
   "name": "Bathroom Environment Humidity"
 }
 
 # Get
-GET :root/sensors/13
+GET :root/sensors/17
 
 # Update
-PUT :root/sensors/13
+PUT :root/sensors/17
 Content-Type: application/json
 {
   "name": "Bathroom Environment Switch"
