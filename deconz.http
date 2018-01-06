@@ -73,3 +73,6 @@ Content-Type: application/json
 {
   "name": "Bathroom Environment Switch"
 }
+
+# Get
+GET :root/sensors/20
