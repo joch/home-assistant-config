@@ -81,6 +81,21 @@ sensor.living_room_motion_sensor_luminance:
 sensor.jochad:
   icon: mdi:xbox
   friendly_name: 'XboxOne'
+sensor.bedroom_kajsa_charger_energy:
+  friendly_name: 'Kajsas chargers power consumption'
+sensor.bedroom_johnny_charger_energy:
+  friendly_name: 'Johnnys chargers power consumption'
+sensor.hallway_smoke_sensor_temperature:
+  friendly_name: 'Hallway Temperature'
+  homebridge_visible: true
+sensor.bathroom_environment_humidity:
+  friendly_name: 'Bathroom Humidity'
+sensor.bedroom_environment_humidity:
+  friendly_name: 'Bedroom Humidity'
+sensor.bathroom_environment_temperature:
+  friendly_name: 'Bathroom Temperature'
+sensor.bedroom_environment_temperature:
+  friendly_name: 'Bedroom Temperature'
 
 binary_sensor.living_room_motion_sensor_sensor:
   friendly_name: 'Living Room Motion'
@@ -101,17 +116,9 @@ switch.hallway_mirror_lamp_switch:
   friendly_name: 'Hallway Lamp'
   homebridge_visible: true
 
-sensor.bedroom_kajsa_charger_energy:
-  friendly_name: 'Kajsas chargers power consumption'
-sensor.bedroom_johnny_charger_energy:
-  friendly_name: 'Johnnys chargers power consumption'
-
 switch.fluxer:
   icon: mdi:theme-light-dark
   friendly_name: 'Soften lights in the evening'
-sensor.hallway_smoke_sensor_temperature:
-  friendly_name: 'Hallway Temperature'
-  homebridge_visible: true
 
 alarm_control_panel.alarm:
   homebridge_visible: true

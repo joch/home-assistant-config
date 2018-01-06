@@ -10,6 +10,8 @@ Living Room:
   - input_select.harmony
 
 Bedroom:
+  - sensor.bedroom_environment_temperature
+  - sensor.bedroom_environment_humidity
   - switch.bedroom_johnny_charger_switch
   - switch.bedroom_kajsa_charger_switch
 
@@ -21,3 +23,7 @@ Hallway:
 
 Kitchen:
   - binary_sensor.kitchen_motion_sensor
+
+Bathroom:
+  - sensor.bathroom_environment_temperature
+  - sensor.bathroom_environment_humidity

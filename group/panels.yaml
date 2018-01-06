@@ -60,6 +60,12 @@ Battery Levels:
 Indoor Temperature:
   - sensor.living_room_motion_sensor_temperature
   - sensor.hallway_smoke_sensor_temperature
+  - sensor.bedroom_environment_temperature
+  - sensor.bathroom_environment_temperature
+
+Indoor Humidity:
+  - sensor.bedroom_environment_humidity
+  - sensor.bathroom_environment_humidity
 
 Indoor Motion:
   - binary_sensor.hallway_motion_sensor
