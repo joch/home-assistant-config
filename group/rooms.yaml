@@ -1,4 +1,5 @@
 Living Room:
+  - binary_sensor.patio_entrance
   - binary_sensor.living_room_motion_sensor_sensor
   - binary_sensor.living_room_right_window_large
   - binary_sensor.living_room_right_window_small
@@ -13,6 +14,7 @@ Bedroom:
   - switch.bedroom_kajsa_charger_switch
 
 Hallway:
+  - binary_sensor.main_entrance
   - sensor.hallway_smoke_sensor_temperature
   - binary_sensor.hallway_smoke_sensor_sensor
   - binary_sensor.hallway_motion_sensor

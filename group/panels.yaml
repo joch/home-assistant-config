@@ -54,6 +54,8 @@ Battery Levels:
   - sensor.hallway_motion_sensor_battery
   - sensor.living_room_right_window_large_battery
   - sensor.living_room_right_window_small_battery
+  - sensor.main_entrance_battery
+  - sensor.patio_entrance_battery
 
 Indoor Temperature:
   - sensor.living_room_motion_sensor_temperature
@@ -65,6 +67,8 @@ Indoor Motion:
   - binary_sensor.living_room_motion_sensor_sensor
 
 Perimeter:
+  - binary_sensor.main_entrance
+  - binary_sensor.patio_entrance
   - binary_sensor.living_room_right_window_large
   - binary_sensor.living_room_right_window_small
 

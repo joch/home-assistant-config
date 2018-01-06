@@ -88,3 +88,25 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
+    main_entrance_battery:
+      friendly_name: Main Entrance Battery
+      entity_id: binary_sensor.main_entrance
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.main_entrance -%}
+          {{ states.binary_sensor.main_entrance.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
+    patio_entrance_battery:
+      friendly_name: Patio Entrance Battery
+      entity_id: binary_sensor.patio_entrance
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.patio_entrance -%}
+          {{ states.binary_sensor.patio_entrance.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
