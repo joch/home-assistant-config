@@ -55,6 +55,7 @@
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor
       to: 'off'
+      for: '00:01:00'
   condition:
     - condition: state
       entity_id: input_boolean.light_mode
@@ -66,15 +67,10 @@
       entity_id: group.sleep_status
       state: 'off'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway_ceiling_lamp
-        brightness_pct: 1
-        transition: 10
-    - delay: 00:00:11
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
+        transition: 10
 
 - alias: Turn on left hallway ceiling lamp when Arlo detects motion in hallway at night
   trigger:
@@ -111,12 +107,7 @@
       entity_id: group.sleep_status
       state: 'on'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.hallway_lamp_left
-        brightness_pct: 1
-        transition: 10
-    - delay: 00:00:11
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
+        transition: 10
