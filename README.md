@@ -11,7 +11,8 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 ### Hubs
 
 - [zwave.me uzb](http://zwave.me/index.php?id=28) x1
-- [IKEA Trådfri Gateway](http://www.ikea.com/us/en/catalog/products/00337813/) x1
+- ~~[IKEA Trådfri Gateway](http://www.ikea.com/us/en/catalog/products/00337813/) x1~~ all ikea hardware is paired with conbee
+- ~~[Xiaomi Mi Smart Home Gateway 2](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-gateway-2/)~~ all xiaomi hardware is paired with conbee
 - [Dresden Elektronik ConBee](https://www.dresden-elektronik.de/conbee/) x1
 - [Logitech Harmony Companion](https://www.logitech.com/en-us/product/harmony-companion) x1
 
@@ -30,7 +31,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 
 - [Fibaro FGMS-001 ZW5 Motion Sensor](https://www.fibaro.com/en/products/motion-sensor/) x1
 - [Fibaro Smoke Sensor FGSD-002](https://www.fibaro.com/en/products/smoke-sensor/) x1
-- [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/) x7
+- [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/) x5
 - [Xiaomi Mi Smart Home Door / Window Sensors](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/) x7
 - [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/) x4
 
@@ -44,6 +45,8 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 - [Netgear Arlo Pro Base station with siren](https://www.arlo.com/en-us/products/arlo-pro/) x1
 
 ## Screenshots
+
+Note that these screenshots are provided in a best-effort manner, and may not reflect the current state of the configuration.
 
 ![Home](images/1.png)
 ![Living Room](images/2.png)
