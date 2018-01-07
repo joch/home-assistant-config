@@ -9,6 +9,8 @@ homeassistant:
   customize_domain:
     automation:
       initial_state: 'on'
+    binary_sensor:
+      homebridge_visible: true
     light:
       homebridge_visible: true
     scene:
