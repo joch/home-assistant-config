@@ -87,7 +87,9 @@ sensors:
 weatherdash:
   name: Weather
   view: yes
-  icon: mdi:weather-sunset
+  icon: mdi:weather-cloudy
   entities:
+    - group.indoor_temperature
+    - group.indoor_humidity
     - group.weather_summary
     - group.weather
