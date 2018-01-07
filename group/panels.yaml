@@ -31,6 +31,7 @@ Power Usage:
 Sleep Status:
   - input_boolean.johnny_asleep
   - input_boolean.kajsa_asleep
+  - input_boolean.all_asleep
 
 UPS Status:
   - binary_sensor.ups_online_status

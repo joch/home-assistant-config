@@ -57,3 +57,56 @@
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.kajsa_asleep
+
+- alias: Toggle all asleep on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.johnny_asleep
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'on'
+  condition:
+    - condition: and
+      conditions:
+        - condition: or
+          conditions:
+          - condition: and
+            conditions:
+              - condition: state
+                entity_id: device_tracker.johnnysiphone
+                state: 'home'
+              - condition: state
+                entity_id: input_boolean.johnny_asleep
+                state: 'on'
+          - condition: state
+            entity_id: device_tracker.johnnysiphone
+            state: 'not_home'
+        - condition: or
+          conditions:
+          - condition: and
+            conditions:
+              - condition: state
+                entity_id: device_tracker.kajsasiphone
+                state: 'home'
+              - condition: state
+                entity_id: input_boolean.kajsa_asleep
+                state: 'on'
+          - condition: state
+            entity_id: device_tracker.kajsasiphone
+            state: 'not_home'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.all_asleep
+
+- alias: Toggle all asleep off
+  trigger:
+    - platform: state
+      entity_id: input_boolean.johnny_asleep
+      to: 'off'
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'off'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.all_asleep

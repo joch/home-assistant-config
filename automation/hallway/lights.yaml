@@ -34,7 +34,7 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.all_asleep
       state: 'off'
   action:
     - service: light.turn_on
@@ -64,7 +64,7 @@
       entity_id: group.hallway_ceiling_lamp
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.all_asleep
       state: 'off'
   action:
     - service: light.turn_off
@@ -86,7 +86,7 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.all_asleep
       state: 'on'
   action:
     - service: light.turn_on
@@ -108,7 +108,7 @@
       entity_id: light.hallway_lamp_left
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.all_asleep
       state: 'on'
   action:
     - service: light.turn_off

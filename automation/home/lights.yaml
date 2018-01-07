@@ -10,11 +10,11 @@
       from: 'not_home'
       to: 'home'
     - platform: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.all_asleep
       to: 'off'
   condition:
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.all_asleep
       state: 'off'
     - condition: state
       entity_id: group.household
@@ -112,53 +112,17 @@
 - alias: Lights off when last person goes to bed
   trigger:
     - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'on'
-      for:
-        minutes: 1
-    - platform: state
-      entity_id: input_boolean.kajsa_asleep
+      entity_id: input_boolean.all_asleep
       to: 'on'
       for:
         minutes: 1
   condition:
-    - condition: time
-      after: '21:00:00'
-      before: '06:00:00'
     - condition: state
       entity_id: light.bedroom_lamp
       state: 'on'
     - condition: state
       entity_id: input_boolean.light_mode
       state: 'on'
-    - condition: and
-      conditions:
-        - condition: or
-          conditions:
-          - condition: and
-            conditions:
-              - condition: state
-                entity_id: device_tracker.johnnysiphone
-                state: 'home'
-              - condition: state
-                entity_id: input_boolean.johnny_asleep
-                state: 'on'
-          - condition: state
-            entity_id: device_tracker.johnnysiphone
-            state: 'not_home'
-        - condition: or
-          conditions:
-          - condition: and
-            conditions:
-              - condition: state
-                entity_id: device_tracker.kajsasiphone
-                state: 'home'
-              - condition: state
-                entity_id: input_boolean.kajsa_asleep
-                state: 'on'
-          - condition: state
-            entity_id: device_tracker.kajsasiphone
-            state: 'not_home'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.light_interior

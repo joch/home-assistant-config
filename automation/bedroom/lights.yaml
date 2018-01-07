@@ -42,34 +42,9 @@
     - condition: state
       entity_id: input_boolean.light_mode
       state: 'on'
-    - condition: or
-      conditions:
-        - condition: or
-          conditions:
-          - condition: and
-            conditions:
-              - condition: state
-                entity_id: device_tracker.johnnysiphone
-                state: 'home'
-              - condition: state
-                entity_id: input_boolean.johnny_asleep
-                state: 'off'
-          - condition: state
-            entity_id: device_tracker.johnnysiphone
-            state: 'not_home'
-        - condition: or
-          conditions:
-          - condition: and
-            conditions:
-              - condition: state
-                entity_id: device_tracker.kajsasiphone
-                state: 'home'
-              - condition: state
-                entity_id: input_boolean.kajsa_asleep
-                state: 'off'
-          - condition: state
-            entity_id: device_tracker.kajsasiphone
-            state: 'not_home'
+    - condition: state
+      entity_id: input_boolean.all_asleep
+      state: 'off'
   action:
     service: scene.turn_on
     entity_id: scene.bedroom_cozy
