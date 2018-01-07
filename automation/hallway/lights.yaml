@@ -24,7 +24,7 @@
     - service: scene.turn_on
       entity_id: scene.hallway_off
 
-- alias: Turn on hallway ceiling lamp when Arlo detects motion in hallway
+- alias: Turn on hallway ceiling lamp when motion is detected in hallway
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor
@@ -50,7 +50,7 @@
           100
           {% endif %}
 
-- alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway
+- alias: Turn off hallway ceiling lamp when no motion is detected in hallway
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor
@@ -72,7 +72,7 @@
         entity_id: group.hallway_ceiling_lamp
         transition: 10
 
-- alias: Turn on left hallway ceiling lamp when Arlo detects motion in hallway at night
+- alias: Turn on left hallway ceiling lamp when motion is detected in hallway at night
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor
@@ -91,7 +91,7 @@
         transition: 2
         brightness_pct: 1
 
-- alias: Turn off hallway ceiling lamp when Arlo detects no motion in hallway at night
+- alias: Turn off hallway ceiling lamp when no motion is detected in hallway at night
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor
