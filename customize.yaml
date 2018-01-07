@@ -104,6 +104,7 @@ binary_sensor.living_room_motion_sensor_sensor:
   device_class: 'motion'
 binary_sensor.hallway_smoke_sensor_sensor:
   friendly_name: 'Hallway Smoke Sensor'
+  device_class: 'smoke'
 binary_sensor.living_room_left_window_large:
   icon: mdi:window-closed
 binary_sensor.living_room_right_window_small:
