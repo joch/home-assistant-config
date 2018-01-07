@@ -90,8 +90,10 @@ sensor.hallway_smoke_sensor_temperature:
   homebridge_visible: true
 sensor.bathroom_environment_humidity:
   friendly_name: 'Bathroom Humidity'
+  icon: mdi:water-percent
 sensor.bedroom_environment_humidity:
   friendly_name: 'Bedroom Humidity'
+  icon: mdi:water-percent
 sensor.bathroom_environment_temperature:
   friendly_name: 'Bathroom Temperature'
 sensor.bedroom_environment_temperature:
