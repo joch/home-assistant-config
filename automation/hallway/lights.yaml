@@ -42,8 +42,8 @@
         entity_id: group.hallway_ceiling_lamp
         transition: 2
         brightness_pct: >-
-          {% if states.sensor.living_room_motion_sensor_luminance.state | int <= 10 %}
-          10
+          {% if states.sensor.living_room_motion_sensor_luminance.state | int <= 20 %}
+          20
           {% elif states.sensor.living_room_motion_sensor_luminance.state | int <= 100 %}
           {{ states.sensor.living_room_motion_sensor_luminance.state | int }}
           {% else %}
