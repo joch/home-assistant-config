@@ -104,6 +104,12 @@ binary_sensor.living_room_motion_sensor_sensor:
 binary_sensor.hallway_smoke_sensor_sensor:
   friendly_name: 'Hallway Smoke Sensor'
   homebridge_visible: true
+binary_sensor.living_room_left_window_large:
+  icon: mdi:window-closed
+binary_sensor.living_room_right_window_small:
+  icon: mdi:window-closed
+binary_sensor.living_room_right_window_large:
+  icon: mdi:window-closed
 
 switch.bedroom_kajsa_charger_switch:
   friendly_name: 'Kajsas chargers'
