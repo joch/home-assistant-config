@@ -50,3 +50,17 @@
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_cozy
+
+- alias: Kitchen lights off when no motion for long time
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'off'
+      for: '02:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_off
