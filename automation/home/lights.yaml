@@ -46,8 +46,8 @@
       entity_id: input_boolean.guest_mode
       state: 'off'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_off
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.light_interior
 
 - alias: Lights off when bright
   trigger:
