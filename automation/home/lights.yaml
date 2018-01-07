@@ -32,6 +32,23 @@
     - service: input_boolean.turn_on
       entity_id: input_boolean.light_interior
 
+- alias: Lights off when away
+  trigger:
+    - platform: state
+      entity_id: group.household
+      from: 'home'
+      to: 'not_home'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.lights_off
+
 - alias: Lights off when bright
   trigger:
     - platform: numeric_state

@@ -11,8 +11,6 @@
         message: "The alarm has been set to armed_away"
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.home
-    - service: scene.turn_on
-      entity_id: scene.lights_off
     - service: input_select.select_option
       data:
         entity_id: input_select.harmony
