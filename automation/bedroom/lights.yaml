@@ -40,7 +40,7 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity_id: input_boolean.all_asleep
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     service: scene.turn_on

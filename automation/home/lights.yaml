@@ -10,11 +10,11 @@
       from: 'not_home'
       to: 'home'
     - platform: state
-      entity_id: input_boolean.all_asleep
+      entity_id: input_boolean.everyone_asleep
       to: 'off'
   condition:
     - condition: state
-      entity_id: input_boolean.all_asleep
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
     - condition: state
       entity_id: group.household
@@ -112,7 +112,7 @@
 - alias: Lights dimmed when last person goes to bed
   trigger:
     - platform: state
-      entity_id: input_boolean.all_asleep
+      entity_id: input_boolean.everyone_asleep
       to: 'on'
   condition:
     - condition: state
@@ -128,7 +128,7 @@
 - alias: Lights off when last person goes to bed after one minute
   trigger:
     - platform: state
-      entity_id: input_boolean.all_asleep
+      entity_id: input_boolean.everyone_asleep
       to: 'on'
       for:
         minutes: 1

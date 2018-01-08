@@ -21,8 +21,8 @@ light_mode:
 light_interior:
   name: Interior Lights
 
-all_asleep:
-  name: All asleep
+everyone_asleep:
+  name: Everyone asleep
   icon: mdi:sleep
 
 johnny_asleep:
