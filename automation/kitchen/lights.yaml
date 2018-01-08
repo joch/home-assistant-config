@@ -33,6 +33,9 @@
     - condition: state
       entity_id: input_boolean.light_mode
       state: 'on'
+    - condition: state
+      entity: input_boolean.everyone_asleep
+      state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_full
@@ -50,11 +53,44 @@
     - condition: state
       entity_id: input_boolean.light_interior
       state: 'on'
+    - condition: state
+      entity: input_boolean.everyone_asleep
+      state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_cozy
 
-- alias: Kitchen lights off when no motion in non light mode
+- alias: Kitchen lights off when no motion for long time
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'off'
+      for: '02:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_off
+
+- alias: Kitchen lights on cozy on motion during the night
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+    - condition: state
+      entity: input_boolean.everyone_asleep
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_cozy
+
+- alias: Kitchen lights off when no motion during the night
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_motion_sensor
@@ -66,20 +102,9 @@
       state: 'on'
     - condition: state
       entity_id: input_boolean.light_interior
-      state: 'off'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.kitchen_off
-
-- alias: Kitchen lights off when no motion for long time
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
-      to: 'off'
-      for: '02:00:00'
-  condition:
+      state: 'on'
     - condition: state
-      entity_id: input_boolean.light_mode
+      entity: input_boolean.everyone_asleep
       state: 'on'
   action:
     - service: scene.turn_on
