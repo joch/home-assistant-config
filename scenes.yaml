@@ -73,11 +73,6 @@
     group.hallway_ceiling_lamp:
       state: off
       transition: 5
-    light.kitchen_lightstrip:
-      state: on
-      brightness_pct: 5
-      rgb_color: [255, 150, 10]
-      transition: 5
 
 - name: Lights Full
   entities:
