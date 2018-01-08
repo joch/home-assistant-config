@@ -34,7 +34,7 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity: input_boolean.everyone_asleep
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: scene.turn_on
@@ -54,7 +54,7 @@
       entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
-      entity: input_boolean.everyone_asleep
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: scene.turn_on
@@ -84,7 +84,7 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity: input_boolean.everyone_asleep
+      entity_id: input_boolean.everyone_asleep
       state: 'on'
   action:
     - service: scene.turn_on
@@ -104,7 +104,7 @@
       entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
-      entity: input_boolean.everyone_asleep
+      entity_id: input_boolean.everyone_asleep
       state: 'on'
   action:
     - service: scene.turn_on
