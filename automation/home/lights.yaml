@@ -109,7 +109,23 @@
     service: homeassistant.turn_on
     entity_id: light.dining_room_lamp
 
-- alias: Lights off when last person goes to bed
+- alias: Lights dimmed when last person goes to bed
+  trigger:
+    - platform: state
+      entity_id: input_boolean.all_asleep
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.bedroom_lamp
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.lights_cozy
+
+- alias: Lights off when last person goes to bed after one minute
   trigger:
     - platform: state
       entity_id: input_boolean.all_asleep
