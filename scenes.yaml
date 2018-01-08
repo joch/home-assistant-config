@@ -25,19 +25,19 @@
   entities:
     light.dining_room_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.living_room_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.living_room_star:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.bedroom_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     switch.hallway_mirror_lamp_switch:
       state: on
@@ -46,7 +46,7 @@
       transition: 5
     light.kitchen_lightstrip:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       color_temp: 250
       transition: 5
 
@@ -113,34 +113,34 @@
   entities:
     light.dining_room_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.living_room_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.living_room_star:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.bedroom_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
 
 - name: Living Room Normal
   entities:
     light.dining_room_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.living_room_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
     light.living_room_star:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
 
 - name: Living Room Off
@@ -189,7 +189,7 @@
   entities:
     light.bedroom_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 5
 
 - name: Bedroom Off
@@ -249,7 +249,7 @@
   entities:
     light.kitchen_lightstrip:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       kelvin: 2700
       transition: 5
 
