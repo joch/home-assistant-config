@@ -42,26 +42,26 @@ hallway_arlo_motion:
   initial: off
 
 living_room_motion_detection_enabled:
-  name: Living Room motion detection
+  name: Living Room Motion Detection
   initial: on
   icon: mdi:eye-outline
 
 bedroom_motion_detection_enabled:
-  name: Bedroom motion detection
+  name: Bedroom Motion Detection
   initial: on
   icon: mdi:eye-outline
 
 kitchen_motion_detection_enabled:
-  name: Kitchen motion detection
+  name: Kitchen Motion Detection
   initial: on
   icon: mdi:eye-outline
 
 hallway_motion_detection_enabled:
-  name: Hallway motion detection
+  name: Hallway Motion Detection
   initial: on
   icon: mdi:eye-outline
 
 bathroom_motion_detection_enabled:
-  name: Bathroom motion detection
+  name: Bathroom Motion Detection
   initial: on
   icon: mdi:eye-outline
