@@ -10,6 +10,13 @@ Light Automation:
   - switch.fluxer
   - input_boolean.light_mode
 
+Motion Detection:
+  - input_boolean.living_room_motion_detection_enabled
+  - input_boolean.bedroom_motion_detection_enabled
+  - input_boolean.kitchen_motion_detection_enabled
+  - input_boolean.hallway_motion_detection_enabled
+  - input_boolean.bathroom_motion_detection_enabled
+
 Hallway Camera:
   - camera.hallway
   - sensor.captured_today_hallway

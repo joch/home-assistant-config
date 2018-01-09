@@ -63,6 +63,7 @@ automation:
   entities:
     - group.light_automation
     - group.security_automation
+    - group.motion_detection
 
 security:
   name: Security

@@ -59,6 +59,9 @@
       entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
       entity_id: group.sleep_status
       state: 'off'
   action:
@@ -83,7 +86,10 @@
       entity_id: group.living_room_lights
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: scene.turn_on

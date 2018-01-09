@@ -34,6 +34,9 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
+      entity_id: input_boolean.hallway_motion_detection_enabled
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
@@ -64,6 +67,9 @@
       entity_id: group.hallway_ceiling_lamp
       state: 'on'
     - condition: state
+      entity_id: input_boolean.hallway_motion_detection_enabled
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
@@ -88,6 +94,9 @@
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.hallway_motion_detection_enabled
+      state: 'on'
   action:
     - service: light.turn_on
       data:
@@ -109,6 +118,9 @@
       state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
   action:
     - service: light.turn_off

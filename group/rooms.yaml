@@ -6,6 +6,7 @@ Living Room:
   - binary_sensor.living_room_right_window_small
   - sensor.living_room_motion_sensor_temperature
   - sensor.living_room_motion_sensor_luminance
+  - input_boolean.living_room_motion_detection_enabled
   - sensor.plex
   - sensor.jochad
   - input_select.harmony
@@ -14,6 +15,7 @@ Bedroom:
   - binary_sensor.bedroom_motion_sensor
   - sensor.bedroom_environment_temperature
   - sensor.bedroom_environment_humidity
+  - input_boolean.bedroom_motion_detection_enabled
   - switch.bedroom_johnny_charger_switch
   - switch.bedroom_kajsa_charger_switch
 
@@ -22,10 +24,13 @@ Hallway:
   - sensor.hallway_smoke_sensor_temperature
   - binary_sensor.hallway_smoke_sensor_sensor
   - binary_sensor.hallway_motion_sensor
+  - input_boolean.hallway_motion_detection_enabled
 
 Kitchen:
   - binary_sensor.kitchen_motion_sensor
+  - input_boolean.kitchen_motion_detection_enabled
 
 Bathroom:
   - sensor.bathroom_environment_temperature
   - sensor.bathroom_environment_humidity
+  - input_boolean.bathroom_motion_detection_enabled

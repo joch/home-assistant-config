@@ -39,6 +39,9 @@
     - condition: state
       entity_id: group.living_room_lights
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_motion_detection_enabled
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_normal
@@ -59,6 +62,9 @@
       state: 'on'
     - condition: state
       entity_id: group.living_room_lights
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
   action:
     - service: scene.turn_on
