@@ -26,7 +26,7 @@
       data:
         title: "Alarm has been disarmed"
         message: "The alarm has been set to disarmed"
-    - service: alarm_control_panel.alarm_arm_home
+    - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.home
 
 - alias: Alarm triggered
