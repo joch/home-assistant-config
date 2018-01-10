@@ -143,6 +143,21 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.light_interior
 
+- alias: Lights on when last person wakes up
+  trigger:
+    - platform: state
+      entity_id: input_boolean.everyone_asleep
+      to: 'off'
+      for:
+        minutes: 1
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_mode
+      state: 'on'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.light_interior
+
 - alias: Lights on when on vacation
   trigger:
     - platform: sun
