@@ -37,7 +37,7 @@
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: input_boolean.everyone_asleep
+      entity_id: group.sleep_status
       state: 'off'
   action:
     - service: light.turn_on
@@ -70,10 +70,10 @@
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: input_boolean.everyone_asleep
+      entity_id: group.sleep_status
       state: 'off'
   action:
-    - service: light.turn_off
+    - service: light.turn_on
       data:
         entity_id: group.hallway_ceiling_lamp
         transition: 10
@@ -92,11 +92,14 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity_id: group.sleep_stats
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: group.sleep_status
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
   action:
     - service: light.turn_on
       data:
@@ -117,13 +120,16 @@
       entity_id: light.hallway_lamp_left
       state: 'on'
     - condition: state
-      entity_id: group.sleep_stats
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: group.sleep_status
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
   action:
-    - service: light.turn_off
+    - service: light.turn_on
       data:
         entity_id: light.hallway_lamp_left
         transition: 10
