@@ -66,7 +66,7 @@
       state: 'off'
   action:
     - service: scene.turn_on
-      entity_id: scene.living_room_normal
+      entity_id: scene.bedroom_normal
 
 - alias: Living room lights cozy when empty
   trigger:
@@ -93,4 +93,4 @@
       state: 'off'
   action:
     - service: scene.turn_on
-      entity_id: scene.living_room_cozy
+      entity_id: scene.bedroom_cozy
