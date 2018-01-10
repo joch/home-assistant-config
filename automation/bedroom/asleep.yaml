@@ -67,6 +67,9 @@
       entity_id: input_boolean.kajsa_asleep
       to: 'on'
   condition:
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
     - condition: and
       conditions:
         - condition: or
@@ -107,6 +110,10 @@
     - platform: state
       entity_id: input_boolean.kajsa_asleep
       to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.everyone_asleep
