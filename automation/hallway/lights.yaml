@@ -92,7 +92,7 @@
       entity_id: input_boolean.light_mode
       state: 'on'
     - condition: state
-      entity_id: input_boolean.everyone_asleep
+      entity_id: group.sleep_stats
       state: 'on'
     - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
@@ -117,7 +117,7 @@
       entity_id: light.hallway_lamp_left
       state: 'on'
     - condition: state
-      entity_id: input_boolean.everyone_asleep
+      entity_id: group.sleep_stats
       state: 'on'
     - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
