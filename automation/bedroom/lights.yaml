@@ -3,10 +3,6 @@
     platform: state
     entity_id: input_boolean.light_interior
     to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.bedroom_cozy
@@ -16,10 +12,6 @@
     platform: state
     entity_id: input_boolean.light_interior
     to: 'off'
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.bedroom_off
@@ -27,15 +19,10 @@
 - alias: Bedroom lights dimmed when one person goes to bed
   trigger:
     - platform: state
-      entity_id: input_boolean.kajsa_asleep
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.johnny_asleep
+      entity_id: group.sleep_status
+      state: 'off'
       to: 'on'
   condition:
-    - condition: state
-      entity_id: light.bedroom_lamp
-      state: 'on'
     - condition: state
       entity_id: input_boolean.light_interior
       state: 'on'
@@ -52,9 +39,6 @@
       entity_id: binary_sensor.bedroom_motion_sensor
       to: 'on'
   condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
     - condition: state
       entity_id: input_boolean.light_interior
       state: 'on'
@@ -78,12 +62,6 @@
   condition:
     - condition: state
       entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
-      entity_id: group.living_room_lights
       state: 'on'
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled

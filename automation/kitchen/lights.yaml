@@ -3,10 +3,6 @@
     platform: state
     entity_id: input_boolean.light_interior
     to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_cozy
@@ -16,10 +12,6 @@
     platform: state
     entity_id: input_boolean.light_interior
     to: 'off'
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_off
@@ -54,9 +46,6 @@
       entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
     - condition: state
@@ -76,6 +65,9 @@
     - condition: state
       entity_id: input_boolean.light_interior
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
@@ -109,9 +101,6 @@
       to: 'off'
       for: '00:01:00'
   condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
     - condition: state
       entity_id: input_boolean.light_interior
       state: 'on'
