@@ -68,7 +68,7 @@
     - service: scene.turn_on
       entity_id: scene.bedroom_normal
 
-- alias: Living room lights cozy when empty
+- alias: Bedroom lights cozy when empty
   trigger:
     - platform: state
       entity_id: binary_sensor.bedroom_motion_sensor
