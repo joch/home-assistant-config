@@ -5,7 +5,7 @@
     to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_automation
+      entity_id: input_boolean.light_interior
       state: 'on'
   action:
     - service: scene.turn_on
@@ -18,7 +18,7 @@
     to: 'off'
   condition:
     - condition: state
-      entity_id: input_boolean.light_automation
+      entity_id: input_boolean.light_interior
       state: 'on'
   action:
     - service: scene.turn_on
@@ -31,7 +31,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_automation
+      entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
@@ -51,7 +51,7 @@
       for: '00:03:00'
   condition:
     - condition: state
-      entity_id: input_boolean.light_automation
+      entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
       entity_id: input_boolean.light_interior
@@ -74,7 +74,7 @@
       for: '02:00:00'
   condition:
     - condition: state
-      entity_id: input_boolean.light_automation
+      entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
@@ -90,7 +90,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_automation
+      entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
@@ -110,7 +110,7 @@
       for: '00:01:00'
   condition:
     - condition: state
-      entity_id: input_boolean.light_automation
+      entity_id: input_boolean.light_interior
       state: 'on'
     - condition: state
       entity_id: input_boolean.light_interior
