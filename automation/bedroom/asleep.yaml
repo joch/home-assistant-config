@@ -30,9 +30,9 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.bedroom_johnny_charger_power
-      below: 1
+      below: 0.1
       for:
-        minutes: 20
+        minutes: 10
   condition:
     - condition: state
       entity_id: input_boolean.johnny_asleep
@@ -46,9 +46,9 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.bedroom_kajsa_charger_power
-      below: 1
+      below: 0.1
       for:
-        minutes: 20
+        minutes: 10
   condition:
     - condition: state
       entity_id: input_boolean.kajsa_asleep
