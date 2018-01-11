@@ -8,7 +8,7 @@ Security Automation:
 
 Light Automation:
   - switch.fluxer
-  - input_boolean.light_mode
+  - input_boolean.light_automation
 
 Motion Detection:
   - input_boolean.living_room_motion_detection_enabled

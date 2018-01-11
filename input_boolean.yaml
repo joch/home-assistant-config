@@ -13,7 +13,7 @@ guest_mode:
   icon: mdi:human-male-female
   initial: off
 
-light_mode:
+light_automation:
   name: Light Automation
   icon: mdi:lightbulb-outline
   initial: on
