@@ -20,7 +20,6 @@
   trigger:
     - platform: state
       entity_id: group.sleep_status
-      state: 'off'
       to: 'on'
   condition:
     - condition: state
