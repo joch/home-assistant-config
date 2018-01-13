@@ -190,6 +190,10 @@
         - binary_sensor.living_room_right_window_small
         - binary_sensor.living_room_left_window_large
       to: 'on'
+    - platform: state
+      entity_id:
+        - sensor.last_living_room
+        - sensor.last_hallway
   condition:
     - condition: state
       entity_id: alarm_control_panel.alarm
