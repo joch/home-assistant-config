@@ -29,6 +29,9 @@
     - condition: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
       below: 40
+    - condition: state
+      entity_id: input_boolean.light_interior
+      state: 'off'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.light_interior
@@ -46,6 +49,9 @@
   condition:
     - condition: state
       entity_id: input_boolean.light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.light_interior
       state: 'on'
   action:
     - service: input_boolean.turn_off
