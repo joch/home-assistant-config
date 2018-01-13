@@ -11,10 +11,6 @@
         message: "The alarm has been set to armed_away"
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.home
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.harmony
-        option: 'PowerOff'
 
 - alias: Alarm disarmed
   trigger:
