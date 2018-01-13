@@ -61,7 +61,7 @@
       entity_id: binary_sensor.bedroom_motion_sensor
       to: 'off'
       for:
-        minutes: 15
+        minutes: 10
   condition:
     - condition: state
       entity_id: input_boolean.light_interior
