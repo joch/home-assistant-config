@@ -12,6 +12,11 @@
     - platform: state
       entity_id: input_boolean.everyone_asleep
       to: 'off'
+    - platform: state
+      entity_id:
+        - binary_sensor.kitchen_motion_sensor
+        - binary_sensor.living_room_motion_sensor_sensor
+      to: 'on'
   condition:
     - condition: state
       entity_id: input_boolean.everyone_asleep
@@ -19,9 +24,6 @@
     - condition: state
       entity_id: group.household
       state: 'home'
-    - condition: time
-      after: '06:00:00'
-      before: '23:00:00'
     - condition: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
       below: 40
@@ -57,9 +59,6 @@
       for:
         minutes: 10
   condition:
-    - condition: time
-      after: '06:00:00'
-      before: '23:00:00'
     - condition: state
       entity_id: input_boolean.light_automation
       state: 'on'
@@ -82,32 +81,6 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.light_interior
-
-- alias: Lights on when arriving late
-  trigger:
-    - platform: state
-      entity_id: device_tracker.johnnysiphone
-      from: 'not_home'
-      to: 'home'
-    - platform: state
-      entity_id: device_tracker.kajsasiphone
-      from: 'not_home'
-      to: 'home'
-  condition:
-    - condition: and
-      conditions:
-        - condition: time
-          after: '23:00:00'
-          before: '06:00:00'
-        - condition: state
-          entity_id: group.household
-          state: 'home'
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
-  action:
-    service: homeassistant.turn_on
-    entity_id: light.dining_room_lamp
 
 - alias: Lights dimmed when last person goes to bed
   trigger:
@@ -138,27 +111,6 @@
       state: 'on'
   action:
     - service: input_boolean.turn_off
-      entity_id: input_boolean.light_interior
-
-- alias: Lights on when last person wakes up and walks around
-  trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.kitchen_motion_sensor
-        - binary_sensor.living_room_motion_sensor_sensor
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-  action:
-    - service: input_boolean.turn_on
       entity_id: input_boolean.light_interior
 
 - alias: Lights on when on vacation
