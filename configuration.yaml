@@ -80,6 +80,9 @@ remote:
     name: Living Room
     host: !secret harmony_host
 
+tradfri:
+  host: !secret tradfri_host
+
 zwave:
   usb_path: /dev/ttyACM10
   network_key: !secret zwave_network_key
