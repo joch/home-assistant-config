@@ -1,4 +1,4 @@
-- alias: Lights on when home
+- alias: Home lights on
   trigger:
     - platform: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
@@ -6,9 +6,8 @@
       for:
         minutes: 10
     - platform: state
-      entity_id: group.household
-      from: 'not_home'
-      to: 'home'
+      entity_id: alarm_control_panel.alarm
+      to: 'disarmed'
     - platform: state
       entity_id: input_boolean.everyone_asleep
       to: 'off'
@@ -19,62 +18,32 @@
       to: 'on'
   condition:
     - condition: state
+      entity_id: input_boolean.light_automation
+      state: 'on'
+    - condition: state
+      entity_id: alarm_control_panel.alarm
+      state: 'disarmed'
+    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
-    - condition: state
-      entity_id: group.household
-      state: 'home'
     - condition: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
       below: 40
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.light_interior
 
-- alias: Lights off when away
+- alias: Home lights off
   trigger:
     - platform: state
-      entity_id: group.household
-      from: 'home'
-      to: 'not_home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.light_interior
-
-- alias: Lights off when bright
-  trigger:
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
     - platform: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
       above: 40
       for:
         minutes: 10
   condition:
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.light_interior
-
-- alias: Lights off when away
-  trigger:
-    - platform: state
-      entity_id: group.household
-      to: 'not_home'
-  condition:
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
     - condition: state
       entity_id: input_boolean.light_automation
       state: 'on'
@@ -113,6 +82,30 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.light_interior
 
+- alias: Lights to cozy after 10pm if on
+  trigger:
+    - platform: time
+      at: '22:00:00'
+  condition:
+    - condition: state
+      entity_id: group.interior_lights
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+  action:
+    service: scene.turn_on
+    entity_id: scene.lights_cozy
+
 - alias: Lights on when on vacation
   trigger:
     - platform: sun
@@ -150,27 +143,3 @@
   action:
     - service: scene.turn_on
       entity_id: scene.lights_off
-
-- alias: Lights to cozy after 10pm if on
-  trigger:
-    - platform: time
-      at: '22:00:00'
-  condition:
-    - condition: state
-      entity_id: group.interior_lights
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.vacation_mode
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-  action:
-    service: scene.turn_on
-    entity_id: scene.lights_cozy

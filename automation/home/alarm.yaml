@@ -81,10 +81,7 @@
 - alias: Automatically arm alarm home when last person goes to sleep
   trigger:
     - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.kajsa_asleep
+      entity_id: input_boolean.everyone_asleep
       to: 'on'
   condition:
     - condition: time
@@ -128,10 +125,7 @@
 - alias: Automatically disarm alarm when not sleeping
   trigger:
     - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'off'
-    - platform: state
-      entity_id: input_boolean.kajsa_asleep
+      entity_id: input_boolean.everyone_asleep
       to: 'off'
   action:
     - service: alarm_control_panel.alarm_disarm
