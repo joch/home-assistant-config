@@ -83,7 +83,7 @@
   condition:
     - condition: state
       entity_id: input_boolean.light_interior
-      state: 'on'
+      state: 'off'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'on'
@@ -103,7 +103,7 @@
   condition:
     - condition: state
       entity_id: input_boolean.light_interior
-      state: 'on'
+      state: 'off'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'on'
