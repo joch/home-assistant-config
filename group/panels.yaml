@@ -5,6 +5,7 @@ Security Automation:
   - input_boolean.alarm_mode
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
+  - input_text.guest_device
 
 Light Automation:
   - switch.fluxer
