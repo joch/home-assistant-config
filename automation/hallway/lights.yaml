@@ -74,6 +74,58 @@
       data:
         entity_id: group.hallway_ceiling_lamp
 
+- alias: Turn on hallway ceiling lamp when main entrance is opened
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.main_entrance
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.alarm
+      state: 'armed_away'
+    - condition: state
+      entity_id: input_boolean.light_interior
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: group.hallway_ceiling_lamp
+        transition: 2
+        brightness_pct: >-
+          {% if states.sensor.living_room_motion_sensor_luminance.state | int <= 20 %}
+          20
+          {% elif states.sensor.living_room_motion_sensor_luminance.state | int <= 100 %}
+          {{ states.sensor.living_room_motion_sensor_luminance.state | int }}
+          {% else %}
+          100
+          {% endif %}
+
+- alias: Turn off hallway ceiling lamp when main entrance is closed if no light interior
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.main_entrance
+      to: 'off'
+      for: '00:03:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_interior
+      state: 'off'
+    - condition: state
+      entity_id: group.hallway_ceiling_lamp
+      state: 'on'
+    - condition: state
+      entity_id: group.sleep_status
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.hallway_ceiling_lamp
+        transition: 10
+    - delay: '00:00:10'
+    - service: light.turn_off
+      data:
+        entity_id: group.hallway_ceiling_lamp
+
 - alias: Turn on left hallway ceiling lamp when motion is detected in hallway at night
   trigger:
     - platform: state
