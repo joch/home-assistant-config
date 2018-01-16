@@ -160,7 +160,7 @@ alarm_control_panel:
     armed_away:
       pending_time: 30
     triggered:
-      pending_time: 30
+      pending_time: 60
   - platform: arlo
 
 input_boolean: !include input_boolean.yaml
