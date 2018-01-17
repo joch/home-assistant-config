@@ -219,9 +219,6 @@
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
-    group.hallway_ceiling_lamp:
-      state: off
-      transition: 5
 
 - name: Hallway Full
   entities:
