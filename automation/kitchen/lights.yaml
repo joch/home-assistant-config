@@ -70,7 +70,7 @@
       state: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.kitchen_cozy
+      entity_id: scene.kitchen_off
 
 - alias: Kitchen lights off when no motion for long time
   trigger:
