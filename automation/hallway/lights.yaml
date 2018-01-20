@@ -23,9 +23,6 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
     - condition: state
@@ -52,9 +49,6 @@
       to: 'off'
       for: '00:01:00'
   condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
     - condition: state
       entity_id: group.hallway_ceiling_lamp
       state: 'on'
