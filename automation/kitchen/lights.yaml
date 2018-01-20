@@ -23,9 +23,6 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
     - condition: state
@@ -45,6 +42,26 @@
     - condition: state
       entity_id: input_boolean.light_interior
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.kitchen_motion_detection_enabled
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_cozy
+
+- alias: Kitchen lights off when no motion and bright
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'off'
+      for: '00:03:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.light_interior
+      state: 'off'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
