@@ -22,6 +22,7 @@ Bedroom:
 Hallway:
   - binary_sensor.main_entrance
   - sensor.hallway_smoke_sensor_temperature
+  - sensor.illumination_7811dc64de1a
   - binary_sensor.hallway_smoke_sensor_sensor
   - binary_sensor.hallway_motion_sensor
   - input_boolean.hallway_motion_detection_enabled

@@ -81,6 +81,8 @@ sensor.living_room_motion_sensor_luminance:
 sensor.jochad:
   icon: mdi:xbox
   friendly_name: 'XboxOne'
+sensor.illumination_7811dc64de1a:
+  friendly_name: 'Hallway Luminance'
 sensor.bedroom_kajsa_charger_energy:
   friendly_name: 'Kajsas chargers power consumption'
 sensor.bedroom_johnny_charger_energy:
@@ -111,6 +113,9 @@ binary_sensor.living_room_right_window_small:
   icon: mdi:window-closed
 binary_sensor.living_room_right_window_large:
   icon: mdi:window-closed
+
+light.gateway_light_7811dc64de1a:
+  friendly_name: 'Hallway Mood Light'
 
 switch.bedroom_kajsa_charger_switch:
   friendly_name: 'Kajsas chargers'

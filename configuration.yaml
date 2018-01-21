@@ -142,6 +142,11 @@ deconz:
   host: !secret deconz_host
   api_key: !secret deconz_api_key
 
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xiaomi_gateway_key
+
 camera:
   - platform: arlo
     ffmpeg_arguments: '-pred 1 -q:v 2'
