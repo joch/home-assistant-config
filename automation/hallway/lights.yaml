@@ -183,9 +183,6 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
@@ -204,9 +201,6 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
       entity_id: light.gateway_light_7811dc64de1a
       state: 'on'
   action:
@@ -220,9 +214,6 @@
       entity_id: binary_sensor.hallway_motion_sensor
       to: 'on'
   condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
     - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
@@ -242,9 +233,6 @@
       entity_id: binary_sensor.hallway_motion_sensor
       to: 'off'
   condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
     - condition: state
       entity_id: light.gateway_light_7811dc64de1a
       state: 'on'
