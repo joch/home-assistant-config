@@ -7,9 +7,10 @@ Security Automation:
   - input_boolean.guest_mode
   - input_text.guest_device
 
-Light Automation:
+Automation Override:
   - switch.fluxer
   - input_boolean.light_automation
+  - input_boolean.sleep_automation
 
 Motion Detection:
   - input_boolean.living_room_motion_detection_enabled

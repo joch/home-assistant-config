@@ -18,6 +18,11 @@ light_automation:
   icon: mdi:lightbulb-outline
   initial: on
 
+sleep_automation:
+  name: Sleep Automation
+  icon: mdi:sleep
+  initial: on
+
 light_interior:
   name: Interior Lights
 

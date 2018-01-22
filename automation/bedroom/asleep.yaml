@@ -5,6 +5,9 @@
       above: 1
   condition:
     - condition: state
+      entity_id: input_boolean.sleep_automation
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.johnny_asleep
       state: 'off'
   action:
@@ -18,6 +21,9 @@
       entity_id: sensor.bedroom_kajsa_charger_power
       above: 1
   condition:
+    - condition: state
+      entity_id: input_boolean.sleep_automation
+      state: 'on'
     - condition: state
       entity_id: input_boolean.kajsa_asleep
       state: 'off'
@@ -35,6 +41,9 @@
         minutes: 20
   condition:
     - condition: state
+      entity_id: input_boolean.sleep_automation
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.johnny_asleep
       state: 'on'
   action:
@@ -50,6 +59,9 @@
       for:
         minutes: 20
   condition:
+    - condition: state
+      entity_id: input_boolean.sleep_automation
+      state: 'on'
     - condition: state
       entity_id: input_boolean.kajsa_asleep
       state: 'on'
@@ -67,6 +79,9 @@
       entity_id: input_boolean.kajsa_asleep
       to: 'on'
   condition:
+    - condition: state
+      entity_id: input_boolean.sleep_automation
+      state: 'on'
     - condition: state
       entity_id: input_boolean.guest_mode
       state: 'off'
@@ -111,6 +126,9 @@
       entity_id: input_boolean.kajsa_asleep
       to: 'off'
   condition:
+    - condition: state
+      entity_id: input_boolean.sleep_automation
+      state: 'on'
     - condition: state
       entity_id: input_boolean.guest_mode
       state: 'off'

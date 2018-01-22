@@ -61,7 +61,7 @@ automation:
   view: yes
   icon: mdi:robot
   entities:
-    - group.light_automation
+    - group.automation_override
     - group.security_automation
     - group.motion_detection
 
