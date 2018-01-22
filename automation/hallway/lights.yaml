@@ -243,11 +243,6 @@
       entity_id: input_boolean.everyone_asleep
       state: 'on'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.hallway_lamp_left
-        transition: 10
-    - delay: '00:00:10'
     - service: light.turn_off
       data:
         entity_id: light.gateway_light_7811dc64de1a
