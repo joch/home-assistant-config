@@ -20,7 +20,7 @@
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
-- alias: Bedroom lights dimmed when one person goes to bed
+- alias: Bedroom lights off when one person goes to bed
   trigger:
     - platform: state
       entity_id: group.sleep_status
@@ -34,7 +34,7 @@
       state: 'off'
   action:
     service: scene.turn_on
-    entity_id: scene.bedroom_cozy
+    entity_id: scene.bedroom_off
 
 - alias: Bedroom lights normal when occupied
   trigger:
