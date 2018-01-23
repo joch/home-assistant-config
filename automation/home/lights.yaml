@@ -106,30 +106,6 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.light_interior
 
-- alias: Lights to cozy after 10pm if on
-  trigger:
-    - platform: time
-      at: '22:00:00'
-  condition:
-    - condition: state
-      entity_id: group.interior_lights
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.vacation_mode
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-  action:
-    service: scene.turn_on
-    entity_id: scene.lights_cozy
-
 - alias: Lights on when on vacation
   trigger:
     - platform: sun
