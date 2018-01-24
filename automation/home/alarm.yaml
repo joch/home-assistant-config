@@ -53,8 +53,8 @@
       entity_id: scene.lights_full
     - service: notify.all_phones
       data:
-        title: "Movement detected at home!"
-        message: "Check camera recording immediately."
+        title: '** Home Alarm Triggered **'
+        message: 'Check camera recording immediately'
     - service: light.turn_on
       data:
         entity_id: light.gateway_light_7811dc64de1a
