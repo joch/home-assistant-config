@@ -75,10 +75,10 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: alarm_control_panel.alarm
-      state: 'armed_away'
-    - condition: state
       entity_id: input_boolean.light_interior
+      state: 'off'
+    - condition: state
+      entity_id: group.hallway_ceiling_lamp
       state: 'off'
   action:
     - service: light.turn_on
