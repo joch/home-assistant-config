@@ -11,6 +11,15 @@
         message: "The alarm has been set to armed_away"
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.home
+    - service: light.turn_on
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
+        brightness_pct: 100
+        rgb_color: [255,0,0]
+    - delay: '00:00:10'
+    - service: light.turn_off
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
 
 - alias: Alarm disarmed
   trigger:
@@ -24,6 +33,15 @@
         message: "The alarm has been set to disarmed"
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.home
+    - service: light.turn_on
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
+        brightness_pct: 100
+        rgb_color: [0,255,0]
+    - delay: '00:00:10'
+    - service: light.turn_off
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
 
 - alias: Alarm triggered
   trigger:
@@ -37,6 +55,24 @@
       data:
         title: "Movement detected at home!"
         message: "Check camera recording immediately."
+    - service: light.turn_on
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
+        brightness_pct: 100
+        rgb_color: [255,0,0]
+
+- alias: Alarm pending
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      from: 'armed_away'
+      to: 'pending'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
+        brightness_pct: 100
+        rgb_color: [255,255,0]
 
 # Automatically enable / disable alarm
 - alias: Automatically arm alarm when away
