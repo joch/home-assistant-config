@@ -14,6 +14,7 @@
         - binary_sensor.main_entrance
         - binary_sensor.patio_entrance
         - binary_sensor.bedroom_motion_sensor
+        - binary_sensor.switch_158d0001d6208c # living room light switch
       value_template: '{{ state.attributes.battery_level if state.attributes.battery_level else 101 }}'
       below: 10
   action:

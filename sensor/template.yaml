@@ -143,3 +143,14 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
+    living_room_light_switch_battery:
+      friendly_name: Living Room Light Switch Battery
+      entity_id: binary_sensor.switch_158d0001d6208c
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.switch_158d0001d6208c -%}
+          {{ states.binary_sensor.switch_158d0001d6208c.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
