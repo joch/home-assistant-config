@@ -1,0 +1,11 @@
+- alias: Warn when main entrance has been open a long time
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.main_entrance
+      to: 'on'
+      for: '00:10:00'
+  action:
+    - service: notify.all_phones
+      data:
+        title: "Main entrance open"
+        message: "The main entrance door has been open for 10 minutes"
