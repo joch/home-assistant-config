@@ -1,0 +1,34 @@
+# Fibaro wall plugs
+
+sensor.hallway_mirror_lamp_alarm_level:
+  ignored: true
+sensor.hallway_mirror_lamp_alarm_type:
+  ignored: true
+sensor.hallway_mirror_lamp_exporting:
+  ignored: true
+sensor.hallway_mirror_lamp_power_management:
+  ignored: true
+sensor.hallway_mirror_lamp_sourcenodeid:
+  ignored: true
+
+sensor.bedroom_kajsa_charger_alarm_level:
+  ignored: true
+sensor.bedroom_kajsa_charger_alarm_type:
+  ignored: true
+sensor.bedroom_kajsa_charger_exporting:
+  ignored: true
+sensor.bedroom_kajsa_charger_power_management:
+  ignored: true
+sensor.bedroom_kajsa_charger_sourcenodeid:
+  ignored: true
+
+sensor.bedroom_johnny_charger_alarm_level:
+  ignored: true
+sensor.bedroom_johnny_charger_alarm_type:
+  ignored: true
+sensor.bedroom_johnny_charger_exporting:
+  ignored: true
+sensor.bedroom_johnny_charger_power_management:
+  ignored: true
+sensor.bedroom_johnny_charger_sourcenodeid:
+  ignored: true
