@@ -15,6 +15,16 @@ homeassistant:
       homebridge_visible: true
     scene:
       homebridge_visible: true
+  customize_glob:
+    light.*:
+      custom_ui_state_card: state-card-custom-ui
+    sensor.*_humidity:
+      custom_ui_state_card: state-card-custom-ui
+    sensor.*_temperature:
+      custom_ui_state_card: state-card-custom-ui
+    binary_sensor.*_motion*:
+      custom_ui_state_card: state-card-custom-ui
+      show_last_changed: true
 
 #introduction:
 
@@ -22,6 +32,10 @@ homeassistant:
 
 frontend:
   themes: !include themes.yaml
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
 
 config:
 
