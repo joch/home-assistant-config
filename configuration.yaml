@@ -157,6 +157,7 @@ arlo:
 deconz:
   host: !secret deconz_host
   api_key: !secret deconz_api_key
+  port: !secret deconz_port
 
 xiaomi_aqara:
   discovery_retry: 5
