@@ -6,9 +6,6 @@
       for:
         minutes: 10
     - platform: state
-      entity_id: alarm_control_panel.alarm
-      to: 'disarmed'
-    - platform: state
       entity_id: input_boolean.everyone_asleep
       to: 'off'
     - platform: state
@@ -38,9 +35,6 @@
 
 - alias: Home lights off
   trigger:
-    - platform: state
-      entity_id: alarm_control_panel.alarm
-      to: 'armed_away'
     - platform: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
       above: 40
@@ -106,40 +100,20 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.light_interior
 
-- alias: Lights on when on vacation
-  trigger:
-    - platform: sun
-      event: sunset
-    - platform: time
-      at: '18:00:00'
-  condition:
-    - condition: state
-      entity_id: input_boolean.vacation_mode
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.light_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.lights_vacation
-
-- alias: Lights off when on vacation
+- alias: Lights off when at night when no one home
   trigger:
     - platform: time
       at: '22:30:00'
   condition:
     - condition: state
-      entity_id: input_boolean.vacation_mode
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.light_automation
       state: 'on'
     - condition: state
       entity_id: input_boolean.guest_mode
       state: 'off'
+    - condition: state
+      entity_id: group.household
+      state: 'not_home'
   action:
     - service: scene.turn_on
       entity_id: scene.lights_off
