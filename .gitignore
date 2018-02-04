@@ -1,5 +1,3 @@
 known_devices.yaml
 secrets.yaml
 *.conf
-deploy.sh
-Makefile
