@@ -244,7 +244,6 @@
     light.kitchen_lightstrip:
       state: on
       brightness_pct: 75
-      kelvin: 2700
       transition: 5
 
 - name: Kitchen Cozy
@@ -260,7 +259,6 @@
     light.kitchen_lightstrip:
       state: on
       brightness_pct: 100
-      kelvin: 5000
       transition: 5
 
 - name: Kitchen Off

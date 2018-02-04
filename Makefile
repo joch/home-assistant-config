@@ -8,7 +8,7 @@ preview:
 
 .PHONY: ack
 ack:
-	read -p "Press [Enter] to deploy and restart Home Assistant if this looks ok..."
+	bash -c 'read -p "Press [Enter] to deploy and restart Home Assistant if this looks ok..."'
 
 .PHONY: deploy
 deploy:
