@@ -29,9 +29,10 @@
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
   action:
-    - service: switch.flux_kitchen_update
     - service: scene.turn_on
       entity_id: scene.kitchen_full
+    - delay: '00:00:05'
+    - service: switch.flux_kitchen_update
 
 - alias: Kitchen lights cozy when no motion
   trigger:

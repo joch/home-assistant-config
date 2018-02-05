@@ -133,8 +133,8 @@ switch:
     name: Flux Kitchen
     start_time: '8:00'
     stop_time: '22:00'
-    start_colortemp: 4000
-    sunset_colortemp: 3000
+    start_colortemp: 6000
+    sunset_colortemp: 4000
     stop_colortemp: 1900
     disable_brightness_adjust: True
     mode: mired
