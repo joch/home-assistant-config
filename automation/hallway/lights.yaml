@@ -75,10 +75,10 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
+      entity_id: group.hallway_ceiling_lamp
       state: 'off'
     - condition: state
-      entity_id: group.hallway_ceiling_lamp
+      entity_id: group.sleep_status
       state: 'off'
   action:
     - service: light.turn_on
@@ -102,9 +102,6 @@
       for: '00:03:00'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'off'
-    - condition: state
       entity_id: group.hallway_ceiling_lamp
       state: 'on'
     - condition: state
@@ -127,9 +124,6 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
     - condition: state
@@ -151,9 +145,6 @@
       entity_id: binary_sensor.hallway_motion_sensor
       to: 'off'
   condition:
-    - condition: state
-      entity_id: input_boolean.light_interior
-      state: 'on'
     - condition: state
       entity_id: light.hallway_lamp_left
       state: 'on'
