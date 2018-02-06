@@ -2,210 +2,210 @@
   entities:
     light.bedroom_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.dining_room_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: off
-      transition: 5
+      transition: 1
     switch.hallway_mirror_lamp_switch:
       state: off
     group.hallway_ceiling_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.kitchen_lightstrip:
       state: off
-      transition: 5
+      transition: 1
 
 - name: Lights Normal
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.bedroom_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     switch.hallway_mirror_lamp_switch:
       state: on
     group.hallway_ceiling_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.kitchen_lightstrip:
       state: on
       brightness_pct: 75
       color_temp: 250
-      transition: 5
+      transition: 1
 
 - name: Lights Cozy
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: on
       brightness_pct: 10
-      transition: 5
+      transition: 1
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
-      transition: 5
+      transition: 1
     switch.hallway_mirror_lamp_switch:
       state: on
     group.hallway_ceiling_lamp:
       state: off
-      transition: 5
+      transition: 1
 
 - name: Lights Full
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
     light.bedroom_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
     switch.hallway_mirror_lamp_switch:
       state: on
     group.hallway_ceiling_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
     light.kitchen_lightstrip:
       state: on
       brightness_pct: 100
       rgb_color: [255, 255, 255]
-      transition: 5
+      transition: 1
 
 - name: Lights Vacation
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.bedroom_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
 
 - name: Living Room Normal
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
 
 - name: Living Room Off
   entities:
     light.dining_room_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: off
-      transition: 5
+      transition: 1
 
 - name: Living Room Cozy
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: on
       brightness_pct: 10
-      transition: 5
+      transition: 1
 
 - name: Living Room Full
   entities:
     light.dining_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
     light.living_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
     light.living_room_star:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
 
 - name: Bedroom Normal
   entities:
     light.bedroom_lamp:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
 
 - name: Bedroom Off
   entities:
     light.bedroom_lamp:
       state: off
-      transition: 5
+      transition: 1
 
 - name: Bedroom Cozy
   entities:
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
-      transition: 5
+      transition: 1
 
 - name: Bedroom Full
   entities:
     light.bedroom_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
 
 - name: Hallway Normal
   entities:
@@ -213,7 +213,7 @@
       state: on
     group.hallway_ceiling_lamp:
       state: off
-      transition: 5
+      transition: 1
 
 - name: Hallway Cozy
   entities:
@@ -227,7 +227,7 @@
     group.hallway_ceiling_lamp:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
 
 - name: Hallway Off
   entities:
@@ -235,7 +235,7 @@
       state: off
     group.hallway_ceiling_lamp:
       state: off
-      transition: 5
+      transition: 1
     light.gateway_light_7811dc64de1a:
       state: off
 
@@ -244,22 +244,22 @@
     light.kitchen_lightstrip:
       state: on
       brightness_pct: 75
-      transition: 5
+      transition: 1
 
 - name: Kitchen Cozy
   entities:
     light.kitchen_lightstrip:
       state: on
-      brightness_pct: 5
+      brightness_pct: 1
       rgb_color: [255, 150, 10]
-      transition: 5
+      transition: 1
 
 - name: Kitchen Full
   entities:
     light.kitchen_lightstrip:
       state: on
       brightness_pct: 100
-      transition: 5
+      transition: 1
 
 - name: Kitchen Off
   entities:
