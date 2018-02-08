@@ -23,8 +23,8 @@ sleep_automation:
   icon: mdi:sleep
   initial: on
 
-light_interior:
-  name: Interior Lights
+lights_needed:
+  name: Lights Needed
 
 everyone_asleep:
   name: Everyone asleep

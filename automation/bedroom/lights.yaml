@@ -1,7 +1,7 @@
 - alias: Bedroom lights on
   trigger:
     platform: state
-    entity_id: input_boolean.light_interior
+    entity_id: input_boolean.lights_needed
     to: 'on'
   condition:
     - condition: state
@@ -14,7 +14,7 @@
 - alias: Bedroom lights off
   trigger:
     platform: state
-    entity_id: input_boolean.light_interior
+    entity_id: input_boolean.lights_needed
     to: 'off'
   action:
     - service: scene.turn_on
@@ -27,7 +27,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
+      entity_id: input_boolean.lights_needed
       state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
@@ -44,7 +44,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
+      entity_id: input_boolean.lights_needed
       state: 'on'
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled
@@ -65,7 +65,7 @@
         minutes: 10
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
+      entity_id: input_boolean.lights_needed
       state: 'on'
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled

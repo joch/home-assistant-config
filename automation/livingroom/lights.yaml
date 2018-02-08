@@ -1,7 +1,7 @@
 - alias: Living room lights on
   trigger:
     - platform: state
-      entity_id: input_boolean.light_interior
+      entity_id: input_boolean.lights_needed
       to: 'on'
   action:
     - service: scene.turn_on
@@ -10,7 +10,7 @@
 - alias: Living room lights off
   trigger:
     - platform: state
-      entity_id: input_boolean.light_interior
+      entity_id: input_boolean.lights_needed
       to: 'off'
   action:
     - service: scene.turn_on
@@ -23,7 +23,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
+      entity_id: input_boolean.lights_needed
       state: 'on'
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
@@ -41,7 +41,7 @@
         minutes: 10
   condition:
     - condition: state
-      entity_id: input_boolean.light_interior
+      entity_id: input_boolean.lights_needed
       state: 'on'
     - condition: state
       entity_id: group.living_room_lights

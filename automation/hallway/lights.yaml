@@ -1,8 +1,8 @@
 - alias: Hallway lights on
   trigger:
-    platform: state
-    entity_id: input_boolean.light_interior
-    to: 'on'
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.hallway_cozy
@@ -10,7 +10,7 @@
 - alias: Hallway lights off
   trigger:
     platform: state
-    entity_id: input_boolean.light_interior
+    entity_id: input_boolean.lights_needed
     to: 'off'
   action:
     - service: scene.turn_on
