@@ -31,7 +31,7 @@
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_full
-    - delay: '00:00:05'
+    - delay: '00:00:03'
     - service: switch.flux_kitchen_update
 
 - alias: Kitchen lights cozy when no motion
@@ -100,9 +100,6 @@
       entity_id: binary_sensor.kitchen_motion_sensor
       to: 'on'
   condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'off'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'on'
