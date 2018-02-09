@@ -121,9 +121,6 @@
       for: '00:01:00'
   condition:
     - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'off'
-    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'on'
     - condition: state
