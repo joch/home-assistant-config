@@ -108,19 +108,19 @@
   entities:
     light.dining_room_lamp:
       state: on
-      brightness_pct: 75
+      brightness_pct: 10
       transition: 1
     light.living_room_lamp:
       state: on
-      brightness_pct: 75
+      brightness_pct: 10
       transition: 1
     light.living_room_star:
       state: on
-      brightness_pct: 75
+      brightness_pct: 10
       transition: 1
     light.bedroom_lamp:
       state: on
-      brightness_pct: 75
+      brightness_pct: 10
       transition: 1
 
 - name: Living Room Normal
