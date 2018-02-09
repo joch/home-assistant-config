@@ -34,10 +34,10 @@
       entity_id: input_boolean.lights_needed
 
 - alias: Home lights off
+  trigger:
     - platform: state
       entity_id: alarm_control_panel.alarm
       to: 'armed_away'
-  trigger:
     - platform: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
       above: 40
