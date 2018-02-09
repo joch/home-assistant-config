@@ -34,6 +34,9 @@
       entity_id: input_boolean.lights_needed
 
 - alias: Home lights off
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
   trigger:
     - platform: numeric_state
       entity_id: sensor.living_room_motion_sensor_luminance
@@ -117,3 +120,20 @@
   action:
     - service: scene.turn_on
       entity_id: scene.lights_off
+
+- alias: Lights on when not home
+  trigger:
+    - platform: sun
+      event: sunset
+    - platform: time
+      at: '17:30:00'
+  condition:
+    - condition: state
+      entity_id: group.household
+      state: 'not_home'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.lights_vacation
