@@ -186,10 +186,18 @@
       state: on
       brightness_pct: 75
       transition: 1
+    light.bedroom_globe:
+      state: on
+      brightness_pct: 75
+      transition: 1
+      color_temp: 255
 
 - name: Bedroom Off
   entities:
     light.bedroom_lamp:
+      state: off
+      transition: 1
+    light.bedroom_globe:
       state: off
       transition: 1
 
@@ -199,6 +207,11 @@
       state: on
       brightness_pct: 1
       transition: 1
+    light.bedroom_globe:
+      state: on
+      transition: 1
+      brightness_pct: 10
+      color_temp: 255
 
 - name: Bedroom Full
   entities:
@@ -206,6 +219,11 @@
       state: on
       brightness_pct: 100
       transition: 1
+    light.bedroom_globe:
+      state: on
+      transition: 1
+      brightness_pct: 100
+      color_temp: 1
 
 - name: Hallway Normal
   entities:

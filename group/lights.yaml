@@ -21,6 +21,7 @@ Bedroom Lights:
   icon: mdi:hotel
   entities:
     - light.bedroom_lamp
+    - light.bedroom_globe
     - scene.bedroom_normal
     - scene.bedroom_cozy
     - scene.bedroom_full
