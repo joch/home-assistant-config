@@ -17,9 +17,14 @@
     - condition: state
       entity_id: input_boolean.light_automation
       state: 'on'
-    - condition: state
-      entity_id: alarm_control_panel.alarm
-      state: 'disarmed'
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.alarm
+          state: 'disarmed'
+        - condition: state
+          entity_id: alarm_control_panel.alarm
+          state: 'armed_night'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
