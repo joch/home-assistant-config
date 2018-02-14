@@ -188,7 +188,7 @@
       transition: 1
     light.bedroom_globe:
       state: on
-      brightness_pct: 75
+      brightness_pct: 50
       transition: 1
       color_temp: 300
 
