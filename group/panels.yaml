@@ -9,7 +9,6 @@ Security Automation:
 
 Automation Override:
   - switch.flux_indoor_lights
-  - switch.flux_kitchen
   - input_boolean.light_automation
   - input_boolean.sleep_automation
 

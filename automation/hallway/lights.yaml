@@ -6,6 +6,8 @@
   action:
     - service: scene.turn_on
       entity_id: scene.hallway_cozy
+    - delay: '00:00:03'
+    - service: switch.flux_hallway_update
 
 - alias: Hallway lights off
   trigger:
@@ -41,6 +43,8 @@
           {% else %}
           100
           {% endif %}
+    - delay: '00:00:03'
+    - service: switch.flux_hallway_update
 
 - alias: Turn off hallway ceiling lamp when no motion is detected in hallway
   trigger:
@@ -93,6 +97,8 @@
           {% else %}
           100
           {% endif %}
+    - delay: '00:00:03'
+    - service: switch.flux_hallway_update
 
 - alias: Turn off hallway ceiling lamp when main entrance is closed if no light interior
   trigger:
@@ -138,6 +144,8 @@
         entity_id: light.hallway_lamp_left
         transition: 2
         brightness_pct: 1
+    - delay: '00:00:03'
+    - service: switch.flux_hallway_update
 
 - alias: Turn off hallway ceiling lamp when no motion is detected in hallway when someone asleep
   trigger:
