@@ -190,7 +190,7 @@
       state: on
       brightness_pct: 75
       transition: 1
-      color_temp: 1
+      color_temp: 300
 
 - name: Bedroom Off
   entities:
@@ -211,7 +211,7 @@
       state: on
       transition: 1
       brightness_pct: 10
-      color_temp: 1
+      color_temp: 500
 
 - name: Bedroom Full
   entities:
@@ -223,7 +223,7 @@
       state: on
       transition: 1
       brightness_pct: 100
-      color_temp: 255
+      color_temp: 1
 
 - name: Hallway Normal
   entities:
