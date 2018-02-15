@@ -51,7 +51,7 @@
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor
       to: 'off'
-      for: '00:01:00'
+      for: '00:02:00'
   condition:
     - condition: state
       entity_id: group.hallway_ceiling_lamp
@@ -63,11 +63,6 @@
       entity_id: group.sleep_status
       state: 'off'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway_ceiling_lamp
-        transition: 10
-    - delay: '00:00:10'
     - service: light.turn_off
       data:
         entity_id: group.hallway_ceiling_lamp
