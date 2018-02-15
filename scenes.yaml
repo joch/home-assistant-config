@@ -2,24 +2,18 @@
   entities:
     light.bedroom_lamp:
       state: off
-      transition: 1
     light.dining_room_lamp:
       state: off
-      transition: 1
     light.living_room_lamp:
       state: off
-      transition: 1
     light.living_room_star:
       state: off
-      transition: 1
     switch.hallway_mirror_lamp_switch:
       state: off
     group.hallway_ceiling_lamp:
       state: off
-      transition: 1
     light.kitchen_lightstrip:
       state: off
-      transition: 1
 
 - name: Lights Normal
   entities:
@@ -142,13 +136,10 @@
   entities:
     light.dining_room_lamp:
       state: off
-      transition: 1
     light.living_room_lamp:
       state: off
-      transition: 1
     light.living_room_star:
       state: off
-      transition: 1
 
 - name: Living Room Cozy
   entities:
@@ -196,10 +187,8 @@
   entities:
     light.bedroom_lamp:
       state: off
-      transition: 1
     light.bedroom_globe:
       state: off
-      transition: 1
 
 - name: Bedroom Cozy
   entities:
@@ -231,7 +220,6 @@
       state: on
     group.hallway_ceiling_lamp:
       state: off
-      transition: 1
 
 - name: Hallway Cozy
   entities:
@@ -253,7 +241,6 @@
       state: off
     group.hallway_ceiling_lamp:
       state: off
-      transition: 1
     light.gateway_light_7811dc64de1a:
       state: off
 
