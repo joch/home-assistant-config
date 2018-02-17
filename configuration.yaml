@@ -123,7 +123,7 @@ switch:
     transition: 0
   - platform: flux
     lights:
-      - light.kitchen_lightstrip
+      - light.kitchen_countertop_lightstrip
     name: Flux Kitchen
     start_time: '8:00'
     stop_time: '22:00'

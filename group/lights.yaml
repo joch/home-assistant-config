@@ -39,7 +39,7 @@ Hallway Lights:
 Kitchen Lights:
   icon: mdi:cube-unfolded
   entities:
-    - light.kitchen_lightstrip
+    - light.kitchen_countertop_lightstrip
     - scene.kitchen_normal
     - scene.kitchen_cozy
     - scene.kitchen_full

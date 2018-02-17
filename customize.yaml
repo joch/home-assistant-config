@@ -15,7 +15,7 @@ group.hallway_lights:
 group.hallway_ceiling_lamp:
   homebridge_visible: true
 
-light.kitchen_lightstrip:
+light.kitchen_countertop_lightstrip:
   icon: mdi:led-strip
 
 sensor.dark_sky_temperature:
