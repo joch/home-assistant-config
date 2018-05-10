@@ -40,6 +40,7 @@ Kitchen Lights:
   icon: mdi:cube-unfolded
   entities:
     - light.kitchen_countertop_lightstrip
+    - light.kitchen_cabinet_light
     - scene.kitchen_normal
     - scene.kitchen_cozy
     - scene.kitchen_full

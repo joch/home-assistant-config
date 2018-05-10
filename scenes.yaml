@@ -250,6 +250,10 @@
       state: on
       brightness_pct: 75
       transition: 1
+    light.kitchen_cabinet_light:
+      state: on
+      brightness_pct: 50
+      transition: 1
 
 - name: Kitchen Cozy
   entities:
@@ -258,6 +262,10 @@
       brightness_pct: 1
       rgb_color: [255, 150, 10]
       transition: 1
+    light.kitchen_cabinet_light:
+      state: on
+      brightness_pct: 10
+      transition: 1
 
 - name: Kitchen Full
   entities:
@@ -265,8 +273,14 @@
       state: on
       brightness_pct: 100
       transition: 1
+    light.kitchen_cabinet_light:
+      state: on
+      brightness_pct: 100
+      transition: 1
 
 - name: Kitchen Off
   entities:
     light.kitchen_countertop_lightstrip:
+      state: off
+    light.kitchen_cabinet_light:
       state: off
