@@ -4,7 +4,7 @@ all: preview ack deploy restart log
 
 .PHONY: preview
 preview:
-	rsync --progress --partial --exclude ".git" --dry-run -avz --no-perms --checksum --no-owner --no-group ./ root@nas:/mnt/user/appdata/home-assistant/
+	rsync --progress --partial --exclude ".git" --dry-run -avz --no-perms --checksum --no-owner --no-group ./ joch@nas:/opt/home-assistant/
 
 .PHONY: ack
 ack:
@@ -12,7 +12,7 @@ ack:
 
 .PHONY: deploy
 deploy:
-	rsync --progress --partial --exclude ".git" -avz --no-perms --checksum --no-owner --no-group ./ root@nas:/mnt/user/appdata/home-assistant/
+	rsync --progress --partial --exclude ".git" -avz --no-perms --checksum --no-owner --no-group ./ joch@nas:/opt/home-assistant/
 
 .PHONY: restart
 restart:
@@ -20,8 +20,8 @@ restart:
 
 .PHONY: log
 log:
-	ssh nas tail -f /mnt/user/appdata/home-assistant/home-assistant.log
+	ssh nas tail -f /opt/home-assistant/home-assistant.log
 
 .PHONY: ozw
 ozw:
-	ssh nas tail -f /mnt/user/appdata/home-assistant/OZW_Log.txt
+	ssh nas tail -f /opt/home-assistant/OZW_Log.txt

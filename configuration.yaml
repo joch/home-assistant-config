@@ -67,7 +67,7 @@ recorder:
   purge_keep_days: 2
 
 apcupsd:
-  host: localhost
+  host: !secret apcupsd_host
 
 tts:
   - platform: google
@@ -95,7 +95,7 @@ remote:
     host: !secret harmony_host
 
 zwave:
-  usb_path: /dev/ttyACM10
+  usb_path: /dev/ttyACM0
   network_key: !secret zwave_network_key
   device_config: !include zwave_device_config.yaml
   new_entity_ids: true
