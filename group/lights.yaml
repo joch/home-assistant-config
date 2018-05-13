@@ -10,8 +10,8 @@ Interior Lights:
 Living Room Lights:
   icon: mdi:sofa
   entities:
-    - light.dining_room_lamp
     - light.living_room_lamp
+    - light.living_room_globe
     - light.living_room_star
     - scene.living_room_normal
     - scene.living_room_cozy
@@ -21,7 +21,6 @@ Bedroom Lights:
   icon: mdi:hotel
   entities:
     - light.bedroom_lamp
-    - light.bedroom_globe
     - scene.bedroom_normal
     - scene.bedroom_cozy
     - scene.bedroom_full
@@ -41,6 +40,7 @@ Kitchen Lights:
   entities:
     - light.kitchen_countertop_lightstrip
     - light.kitchen_cabinet_light
+    - light.dining_room_lamp
     - scene.kitchen_normal
     - scene.kitchen_cozy
     - scene.kitchen_full

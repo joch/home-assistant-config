@@ -131,6 +131,11 @@
       state: on
       brightness_pct: 75
       transition: 1
+    light.living_room_globe:
+      state: on
+      brightness_pct: 50
+      transition: 1
+      color_temp: 300
 
 - name: Living Room Off
   entities:
@@ -139,6 +144,8 @@
     light.living_room_lamp:
       state: off
     light.living_room_star:
+      state: off
+    light.living_room_globe:
       state: off
 
 - name: Living Room Cozy
@@ -155,6 +162,11 @@
       state: on
       brightness_pct: 10
       transition: 1
+    light.living_room_globe:
+      state: on
+      transition: 1
+      brightness_pct: 10
+      color_temp: 500
 
 - name: Living Room Full
   entities:
@@ -177,17 +189,10 @@
       state: on
       brightness_pct: 75
       transition: 1
-    light.bedroom_globe:
-      state: on
-      brightness_pct: 50
-      transition: 1
-      color_temp: 300
 
 - name: Bedroom Off
   entities:
     light.bedroom_lamp:
-      state: off
-    light.bedroom_globe:
       state: off
 
 - name: Bedroom Cozy
@@ -196,11 +201,6 @@
       state: on
       brightness_pct: 1
       transition: 1
-    light.bedroom_globe:
-      state: on
-      transition: 1
-      brightness_pct: 10
-      color_temp: 500
 
 - name: Bedroom Full
   entities:
@@ -208,7 +208,7 @@
       state: on
       brightness_pct: 100
       transition: 1
-    light.bedroom_globe:
+    light.living_room_globe:
       state: on
       transition: 1
       brightness_pct: 100
