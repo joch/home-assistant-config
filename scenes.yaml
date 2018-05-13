@@ -6,7 +6,7 @@
       state: off
     light.living_room_lamp:
       state: off
-    light.living_room_star:
+    light.kitchen_window_lamp:
       state: off
     switch.hallway_mirror_lamp_switch:
       state: off
@@ -25,7 +25,7 @@
       state: on
       brightness_pct: 75
       transition: 1
-    light.living_room_star:
+    light.kitchen_window_lamp:
       state: on
       brightness_pct: 75
       transition: 1
@@ -54,7 +54,7 @@
       state: on
       brightness_pct: 10
       transition: 1
-    light.living_room_star:
+    light.kitchen_window_lamp:
       state: on
       brightness_pct: 10
       transition: 1
@@ -78,7 +78,7 @@
       state: on
       brightness_pct: 100
       transition: 1
-    light.living_room_star:
+    light.kitchen_window_lamp:
       state: on
       brightness_pct: 100
       transition: 1
@@ -108,7 +108,7 @@
       state: on
       brightness_pct: 10
       transition: 1
-    light.living_room_star:
+    light.kitchen_window_lamp:
       state: on
       brightness_pct: 10
       transition: 1
@@ -127,10 +127,6 @@
       state: on
       brightness_pct: 75
       transition: 1
-    light.living_room_star:
-      state: on
-      brightness_pct: 75
-      transition: 1
     light.living_room_globe:
       state: on
       brightness_pct: 50
@@ -143,8 +139,6 @@
       state: off
     light.living_room_lamp:
       state: off
-    light.living_room_star:
-      state: off
     light.living_room_globe:
       state: off
 
@@ -155,10 +149,6 @@
       brightness_pct: 10
       transition: 1
     light.living_room_lamp:
-      state: on
-      brightness_pct: 10
-      transition: 1
-    light.living_room_star:
       state: on
       brightness_pct: 10
       transition: 1
@@ -175,10 +165,6 @@
       brightness_pct: 100
       transition: 1
     light.living_room_lamp:
-      state: on
-      brightness_pct: 100
-      transition: 1
-    light.living_room_star:
       state: on
       brightness_pct: 100
       transition: 1
@@ -254,6 +240,10 @@
       state: on
       brightness_pct: 50
       transition: 1
+    light.kitchen_window_lamp:
+      state: on
+      brightness_pct: 75
+      transition: 1
 
 - name: Kitchen Cozy
   entities:
@@ -263,6 +253,10 @@
       rgb_color: [255, 150, 10]
       transition: 1
     light.kitchen_cabinet_light:
+      state: on
+      brightness_pct: 10
+      transition: 1
+    light.kitchen_window_lamp:
       state: on
       brightness_pct: 10
       transition: 1
@@ -277,10 +271,16 @@
       state: on
       brightness_pct: 100
       transition: 1
+    light.kitchen_window_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 1
 
 - name: Kitchen Off
   entities:
     light.kitchen_countertop_lightstrip:
       state: off
     light.kitchen_cabinet_light:
+      state: off
+    light.kitchen_window_lamp:
       state: off

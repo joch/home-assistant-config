@@ -12,7 +12,6 @@ Living Room Lights:
   entities:
     - light.living_room_lamp
     - light.living_room_globe
-    - light.living_room_star
     - scene.living_room_normal
     - scene.living_room_cozy
     - scene.living_room_full
@@ -40,7 +39,7 @@ Kitchen Lights:
   entities:
     - light.kitchen_countertop_lightstrip
     - light.kitchen_cabinet_light
-    - light.dining_room_lamp
+    - light.kitchen_window_lamp
     - scene.kitchen_normal
     - scene.kitchen_cozy
     - scene.kitchen_full
@@ -51,3 +50,8 @@ Hallway Ceiling Lamp:
     - light.hallway_lamp_left
     - light.hallway_lamp_middle
     - light.hallway_lamp_right
+
+Guest Bedroom Lights:
+  icon: mid:bed-empty
+  entities:
+    - light.dining_room_lamp

@@ -111,7 +111,7 @@ switch:
       - light.bedroom_lamp
       - light.dining_room_lamp
       - light.living_room_lamp
-      - light.living_room_star
+      - light.kitchen_window_lamp
     name: Flux Indoor Lights
     start_time: '8:00'
     stop_time: '22:00'
