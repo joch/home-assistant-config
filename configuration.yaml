@@ -66,8 +66,8 @@ recorder:
   purge_interval: 2
   purge_keep_days: 2
 
-apcupsd:
-  host: !secret apcupsd_host
+# apcupsd:
+#   host: !secret apcupsd_host
 
 tts:
   - platform: google
@@ -83,10 +83,10 @@ media_player:
     host: !secret samsungtv_host
     mac: !secret samsungtv_mac
     scan_interval: 20
-  - platform: plex
-    include_non_clients: true
-    scan_interval: 10
-    use_episode_art: true
+  # - platform: plex
+  #   include_non_clients: true
+  #   scan_interval: 10
+  #   use_episode_art: true
   - platform: cast
 
 remote:
