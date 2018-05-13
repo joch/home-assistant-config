@@ -59,8 +59,10 @@ kitch:
 guestbed:
   name: Guest Bedroom
   view: yes
-  icon: mdi:bed-empty
-  # entities:
+  icon: mdi:human-male-female
+  entities:
+    - group.guest_bedroom_lights
+    - group.guest_bedroom
 
 automation:
   name: Automation

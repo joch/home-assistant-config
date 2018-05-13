@@ -53,7 +53,7 @@ Hallway Ceiling Lamp:
     - light.hallway_lamp_right
 
 Guest Bedroom Lights:
-  icon: mdi:bed-empty
+  icon: mdi:human-male-female
   entities:
     - light.guest_bedroom_window_lamp
     - scene.guest_bedroom_normal
