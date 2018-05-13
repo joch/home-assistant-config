@@ -10,6 +10,15 @@ default_view:
     - group.indoor_humidity
     - group.indoor_motion
 
+masterbed:
+  name: Master Bedroom
+  view: yes
+  icon: mdi:hotel
+  entities:
+    - group.bedroom_lights
+    - group.bedroom
+    - group.sleep_status
+
 living:
   name: Living Room
   view: yes
@@ -23,22 +32,12 @@ living:
     - media_player.tv_ue55f8000
     - media_player.living_room_speakers
 
-kitch:
-  name: Kitchen
+bath:
+  name: Bathroom
   view: yes
-  icon: mdi:stove
+  icon: mdi:hot-tub
   entities:
-    - group.kitchen
-    - group.kitchen_lights
-
-bed:
-  name: Bedroom
-  view: yes
-  icon: mdi:hotel
-  entities:
-    - group.bedroom_lights
-    - group.bedroom
-    - group.sleep_status
+    - group.bathroom
 
 hall:
   name: Hallway
@@ -49,12 +48,19 @@ hall:
     - group.hallway_ceiling_lamp
     - group.hallway
 
-bath:
-  name: Bathroom
+kitch:
+  name: Kitchen
   view: yes
-  icon: mdi:hot-tub
+  icon: mdi:stove
   entities:
-    - group.bathroom
+    - group.kitchen
+    - group.kitchen_lights
+
+guestbed:
+  name: Guest Bedroom
+  view: yes
+  icon: mdi:bed-empty
+  # entities:
 
 automation:
   name: Automation
