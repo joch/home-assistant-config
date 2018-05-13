@@ -1,9 +1,9 @@
 Interior Lights:
-  - group.living_room_lights
-  - group.kitchen_lights
   - group.bedroom_lights
-  - group.guest_bedroom_lights
+  - group.living_room_lights
   - group.hallway_lights
+  - group.kitchen_lights
+  - group.guest_bedroom_lights
   - scene.lights_normal
   - scene.lights_cozy
   - scene.lights_full
