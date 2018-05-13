@@ -109,7 +109,7 @@ switch:
   - platform: flux
     lights:
       - light.bedroom_lamp
-      - light.dining_room_lamp
+      - light.guest_bedroom_window_lamp
       - light.living_room_lamp
       - light.kitchen_window_lamp
     name: Flux Indoor Lights

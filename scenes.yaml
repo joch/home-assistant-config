@@ -2,7 +2,7 @@
   entities:
     light.bedroom_lamp:
       state: off
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: off
     light.living_room_lamp:
       state: off
@@ -17,7 +17,7 @@
 
 - name: Lights Normal
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 75
       transition: 1
@@ -46,7 +46,7 @@
 
 - name: Lights Cozy
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 10
       transition: 1
@@ -70,7 +70,7 @@
 
 - name: Lights Full
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 100
       transition: 1
@@ -100,7 +100,7 @@
 
 - name: Lights Vacation
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 10
       transition: 1
@@ -119,7 +119,7 @@
 
 - name: Living Room Normal
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 75
       transition: 1
@@ -135,7 +135,7 @@
 
 - name: Living Room Off
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: off
     light.living_room_lamp:
       state: off
@@ -144,7 +144,7 @@
 
 - name: Living Room Cozy
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 10
       transition: 1
@@ -160,7 +160,7 @@
 
 - name: Living Room Full
   entities:
-    light.dining_room_lamp:
+    light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 100
       transition: 1
@@ -284,3 +284,29 @@
       state: off
     light.kitchen_window_lamp:
       state: off
+
+- name: Guest bedroom Normal
+  entities:
+    light.guest_bedroom_window_lamp:
+      state: on
+      brightness_pct: 75
+      transition: 1
+
+- name: Guest Bedroom Off
+  entities:
+    light.guest_bedroom_window_lamp:
+      state: off
+
+- name: Guest Bedroom Cozy
+  entities:
+    light.guest_bedroom_window_lamp:
+      state: on
+      brightness_pct: 10
+      transition: 1
+
+- name: Guest Bedroom Full
+  entities:
+    light.guest_bedroom_window_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 1

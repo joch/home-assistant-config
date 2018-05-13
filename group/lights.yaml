@@ -2,6 +2,7 @@ Interior Lights:
   - group.living_room_lights
   - group.kitchen_lights
   - group.bedroom_lights
+  - group.guest_bedroom_lights
   - group.hallway_lights
   - scene.lights_normal
   - scene.lights_cozy
@@ -52,6 +53,9 @@ Hallway Ceiling Lamp:
     - light.hallway_lamp_right
 
 Guest Bedroom Lights:
-  icon: mid:bed-empty
+  icon: mdi:bed-empty
   entities:
-    - light.dining_room_lamp
+    - light.guest_bedroom_window_lamp
+    - scene.guest_bedroom_normal
+    - scene.guest_bedroom_cozy
+    - scene.guest_bedroom_full
