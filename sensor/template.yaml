@@ -2,7 +2,6 @@
   sensors:
     living_room_motion_sensor_battery:
       friendly_name: Living Room Motion Sensor
-      entity_id: zwave.living_room_motion_sensor
       icon_template: mdi:battery
       value_template: >-
         {%- if states.zwave.living_room_motion_sensor -%}
@@ -13,7 +12,6 @@
       unit_of_measurement: '%'
     living_room_smoke_sensor_battery:
       friendly_name: Living Room Smoke Sensor
-      entity_id: zwave.hallway_smoke_sensor
       icon_template: mdi:battery
       value_template: >-
         {%- if states.zwave.hallway_smoke_sensor -%}
@@ -24,7 +22,6 @@
       unit_of_measurement: '%'
     living_room_camera_battery:
       friendly_name: Living Room Camera Battery
-      entity_id: camera.living_room
       icon_template: mdi:battery
       value_template: >-
         {%- if states.camera.living_room -%}
@@ -35,7 +32,6 @@
       unit_of_measurement: '%'
     hallway_camera_battery:
       friendly_name: Hallway Camera Battery
-      entity_id: camera.hallway
       icon_template: mdi:battery
       value_template: >-
         {%- if states.camera.hallway -%}
@@ -46,7 +42,6 @@
       unit_of_measurement: '%'
     kitchen_motion_sensor_battery:
       friendly_name: Kitchen Motion Sensor Battery
-      entity_id: binary_sensor.kitchen_motion_sensor
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.kitchen_motion_sensor -%}
@@ -57,7 +52,6 @@
       unit_of_measurement: '%'
     hallway_motion_sensor_battery:
       friendly_name: Hallway Motion Sensor Battery
-      entity_id: binary_sensor.hallway_motion_sensor
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.hallway_motion_sensor -%}
@@ -68,7 +62,6 @@
       unit_of_measurement: '%'
     living_room_right_window_large_battery:
       friendly_name: Living Room Right Window Large Battery
-      entity_id: binary_sensor.living_room_right_window_large
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.living_room_right_window_large -%}
@@ -79,7 +72,6 @@
       unit_of_measurement: '%'
     living_room_right_window_small_battery:
       friendly_name: Living Room Right Window Small Battery
-      entity_id: binary_sensor.living_room_right_window_small
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.living_room_right_window_small -%}
@@ -90,7 +82,6 @@
       unit_of_measurement: '%'
     living_room_left_window_large_battery:
       friendly_name: Living Room Left Window Large Battery
-      entity_id: binary_sensor.living_room_left_window_large
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.living_room_left_window_large -%}
@@ -101,7 +92,6 @@
       unit_of_measurement: '%'
     main_entrance_battery:
       friendly_name: Main Entrance Battery
-      entity_id: binary_sensor.main_entrance
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.main_entrance -%}
@@ -112,7 +102,6 @@
       unit_of_measurement: '%'
     patio_entrance_battery:
       friendly_name: Patio Entrance Battery
-      entity_id: binary_sensor.patio_entrance
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.patio_entrance -%}
@@ -123,7 +112,6 @@
       unit_of_measurement: '%'
     bedroom_temperature_battery:
       friendly_name: Bedroom Temperature Battery
-      entity_id: sensor.bedroom_environment_temperature
       icon_template: mdi:battery
       value_template: >-
         {%- if states.sensor.bedroom_environment_temperature -%}
@@ -134,7 +122,6 @@
       unit_of_measurement: '%'
     bathroom_temperature_battery:
       friendly_name: Bathroom Temperature Battery
-      entity_id: sensor.bathroom_environment_temperature
       icon_template: mdi:battery
       value_template: >-
         {%- if states.sensor.bathroom_environment_temperature -%}
@@ -145,7 +132,6 @@
       unit_of_measurement: '%'
     living_room_light_switch_battery:
       friendly_name: Living Room Light Switch Battery
-      entity_id: binary_sensor.switch_158d0001d6208c
       icon_template: mdi:battery
       value_template: >-
         {%- if states.binary_sensor.switch_158d0001d6208c -%}
