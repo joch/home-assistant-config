@@ -183,6 +183,9 @@ xiaomi_aqara:
   gateways:
     - key: !secret xiaomi_gateway_key
 
+homekit:
+  auto_start: False
+
 camera:
   - platform: arlo
     ffmpeg_arguments: '-pred 1 -q:v 2'
