@@ -111,7 +111,7 @@ binary_sensor.living_room_left_window_large:
   icon: mdi:window-closed
 binary_sensor.living_room_right_window_small:
   icon: mdi:window-closed
-binary_sensor.living_room_right_window_large:
+binary_sensor.bedroom_window:
   icon: mdi:window-closed
 
 light.gateway_light_7811dc64de1a:

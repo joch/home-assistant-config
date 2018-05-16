@@ -204,7 +204,7 @@
       entity_id:
         - binary_sensor.main_entrance
         - binary_sensor.patio_entrance
-        - binary_sensor.living_room_right_window_large
+        - binary_sensor.bedroom_window
         - binary_sensor.living_room_right_window_small
         - binary_sensor.living_room_left_window_large
       to: 'on'
@@ -222,7 +222,7 @@
       entity_id:
         - binary_sensor.main_entrance
         - binary_sensor.patio_entrance
-        - binary_sensor.living_room_right_window_large
+        - binary_sensor.bedroom_window
         - binary_sensor.living_room_right_window_small
         - binary_sensor.living_room_left_window_large
       to: 'on'

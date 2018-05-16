@@ -60,12 +60,12 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
-    living_room_right_window_large_battery:
-      friendly_name: Living Room Right Window Large Battery
+    bedroom_window_battery:
+      friendly_name: Bedroom Window Battery
       icon_template: mdi:battery
       value_template: >-
-        {%- if states.binary_sensor.living_room_right_window_large -%}
-          {{ states.binary_sensor.living_room_right_window_large.attributes.battery_level }}
+        {%- if states.binary_sensor.bedroom_window -%}
+          {{ states.binary_sensor.bedroom_window.attributes.battery_level }}
         {%- else -%}
           101
         {%- endif -%}
