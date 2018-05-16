@@ -109,7 +109,7 @@ binary_sensor.hallway_smoke_sensor_sensor:
   device_class: 'smoke'
 binary_sensor.living_room_left_window_large:
   icon: mdi:window-closed
-binary_sensor.living_room_right_window_small:
+binary_sensor.living_room_window_right:
   icon: mdi:window-closed
 binary_sensor.bedroom_window:
   icon: mdi:window-closed

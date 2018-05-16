@@ -8,7 +8,7 @@
         - camera.hallway
         - binary_sensor.kitchen_motion_sensor
         - binary_sensor.bedroom_window
-        - binary_sensor.living_room_right_window_small
+        - binary_sensor.living_room_window_right
         - binary_sensor.living_room_left_window_large
         - binary_sensor.hallway_motion_sensor
         - binary_sensor.main_entrance

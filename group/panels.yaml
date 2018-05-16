@@ -64,7 +64,7 @@ Battery Levels:
   - sensor.hallway_motion_sensor_battery
   - sensor.living_room_left_window_large_battery
   - sensor.bedroom_window_battery
-  - sensor.living_room_right_window_small_battery
+  - sensor.living_room_window_right_battery
   - sensor.main_entrance_battery
   - sensor.patio_entrance_battery
   - sensor.bedroom_temperature_battery
@@ -91,7 +91,7 @@ Perimeter:
   - binary_sensor.main_entrance
   - binary_sensor.patio_entrance
   - binary_sensor.bedroom_window
-  - binary_sensor.living_room_right_window_small
+  - binary_sensor.living_room_window_right
   - binary_sensor.living_room_left_window_large
 
 Weather:
