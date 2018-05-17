@@ -20,23 +20,6 @@
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
-- alias: Bedroom lights off when one person goes to bed
-  trigger:
-    - platform: state
-      entity_id: group.sleep_status
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-  action:
-    - delay: '00:01:00'
-    - service: scene.turn_on
-      entity_id: scene.bedroom_off
-
 - alias: Bedroom lights normal when occupied
   trigger:
     - platform: state
@@ -76,3 +59,60 @@
   action:
     - service: scene.turn_on
       entity_id: scene.bedroom_cozy
+
+- alias: Bedroom lights off when one person goes to bed
+  trigger:
+    - platform: state
+      entity_id: group.sleep_status
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - delay: '00:01:00'
+    - service: scene.turn_on
+      entity_id: scene.bedroom_off
+
+- alias: Bedside light off when Johnny goes to bed
+  trigger:
+    - platform: state
+      entity_id: input_boolean.johnny_asleep
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.johnnys_bedlight
+      state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.johnnys_bedlight
+        brightness_pct: 1
+        rgb_color: [255,0,0]
+    - delay: '00:01:00'
+    - service: light.turn_off
+      data:
+        entity_id: light.johnnys_bedlight
+
+- alias: Bedside light off when Kajsa goes to bed
+  trigger:
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.kajsas_bedlight
+      state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.kajsas_bedlight
+        brightness_pct: 1
+        rgb_color: [255,0,0]
+    - delay: '00:01:00'
+    - service: light.turn_off
+      data:
+        entity_id: light.kajsas_bedlight
