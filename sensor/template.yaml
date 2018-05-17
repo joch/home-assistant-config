@@ -120,6 +120,16 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
+    guest_bedroom_temperature_battery:
+      friendly_name: Guest Bedroom Temperature Battery
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.sensor.guest_bedroom_environment_temperature -%}
+          {{ states.sensor.guest_bedroom_environment_temperature.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
     bathroom_temperature_battery:
       friendly_name: Bathroom Temperature Battery
       icon_template: mdi:battery
