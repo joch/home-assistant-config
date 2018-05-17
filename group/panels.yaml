@@ -18,6 +18,7 @@ Motion Detection:
   - input_boolean.kitchen_motion_detection_enabled
   - input_boolean.hallway_motion_detection_enabled
   - input_boolean.bathroom_motion_detection_enabled
+  - input_boolean.guest_bedroom_motion_detection_enabled
 
 Hallway Camera:
   - camera.hallway

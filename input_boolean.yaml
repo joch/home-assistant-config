@@ -70,3 +70,8 @@ bathroom_motion_detection_enabled:
   name: Bathroom Motion Detection
   initial: on
   icon: mdi:eye-outline
+
+guest_bedroom_motion_detection_enabled:
+  name: Guest Bedroom Motion Detection
+  initial: on
+  icon: mdi:eye-outline
