@@ -19,11 +19,12 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 - [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/) x4
 - [IKEA Trådfri Lights GU10](http://www.ikea.com/se/sv/catalog/products/00318292/) x3
 - [Xiaomi Yeelight Lightstrip](https://xiaomi-mi.com/smart-lighting/xiaomi-yeelight-smart-led-lightstrip-ipl/) x1
+- [Osram Lightify LED Strip x1](https://smartplus.ledvance.com/products/index.jsp) x1
 
 ### Switches
 
-- [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
-- [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/) x4
+- [Fibaro FGWPF-102 ZW5 Wall Plug](https://www.fibaro.com/en/products/wall-plug/) x3
+- [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp) x1
 
 ### Sensors
 
@@ -32,10 +33,12 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 - [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/) x5
 - [Xiaomi Mi Smart Home Door / Window Sensors](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/) x7
 - [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/) x4
+- [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/) x2
 
-### Actors
+### Remotes
 
-- [Fibaro FGWPF-102 ZW5 Wall Plug](https://www.fibaro.com/en/products/wall-plug/) x3
+- [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
+- [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/) x4
 
 ### Cameras
 
