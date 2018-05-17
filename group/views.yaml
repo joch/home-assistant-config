@@ -53,8 +53,8 @@ kitch:
   view: yes
   icon: mdi:stove
   entities:
-    - group.kitchen
     - group.kitchen_lights
+    - group.kitchen
 
 guestbed:
   name: Guest Bedroom
