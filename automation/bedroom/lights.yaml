@@ -77,6 +77,32 @@
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
+- alias: Bedside light on when Johnny is home
+  trigger:
+    - platform: time
+      at: '21:00:00'
+    - platform: state
+      entity_id: device_tracker.johnnysiphone
+      to: 'home'
+  condition:
+    - condition: time
+      after: '21:00:00'
+    - condition: state
+      entity_id: device_tracker.johnnysiphone
+      state: 'home'
+    - condition: state
+      entity_id: light.johnnys_bedlight
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.johnny_asleep
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.johnnys_bedlight
+        brightness_pct: 1
+        rgb_color: [255,128,0]
+
 - alias: Bedside light off when Johnny goes to bed
   trigger:
     - platform: state
@@ -96,6 +122,32 @@
     - service: light.turn_off
       data:
         entity_id: light.johnnys_bedlight
+
+- alias: Bedside light on when Kajsa is home
+  trigger:
+    - platform: time
+      at: '21:00:00'
+    - platform: state
+      entity_id: device_tracker.kajsasiphone
+      to: 'home'
+  condition:
+    - condition: time
+      after: '21:00:00'
+    - condition: state
+      entity_id: device_tracker.kajsasiphone
+      state: 'home'
+    - condition: state
+      entity_id: light.kajsas_bedlight
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.kajsa_asleep
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.kajsas_bedlight
+        brightness_pct: 1
+        rgb_color: [255,128,0]
 
 - alias: Bedside light off when Kajsa goes to bed
   trigger:
