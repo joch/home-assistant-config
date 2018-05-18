@@ -234,7 +234,7 @@
   entities:
     light.kitchen_countertop_lightstrip:
       state: on
-      brightness_pct: 75
+      brightness_pct: 100
       transition: 1
     light.kitchen_cabinet_light:
       state: on
