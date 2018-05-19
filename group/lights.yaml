@@ -38,7 +38,7 @@ Hallway Lights:
     - scene.hallway_full
 
 Kitchen Lights:
-  icon: mdi:cube-unfolded
+  icon: mdi:stove
   entities:
     - light.kitchen_countertop_lightstrip
     - light.kitchen_cabinet_light

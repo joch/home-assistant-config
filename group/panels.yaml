@@ -13,11 +13,11 @@ Automation Override:
   - input_boolean.sleep_automation
 
 Motion Detection:
-  - input_boolean.living_room_motion_detection_enabled
   - input_boolean.bedroom_motion_detection_enabled
-  - input_boolean.kitchen_motion_detection_enabled
-  - input_boolean.hallway_motion_detection_enabled
+  - input_boolean.living_room_motion_detection_enabled
   - input_boolean.bathroom_motion_detection_enabled
+  - input_boolean.hallway_motion_detection_enabled
+  - input_boolean.kitchen_motion_detection_enabled
   - input_boolean.guest_bedroom_motion_detection_enabled
 
 Hallway Camera:
@@ -74,27 +74,28 @@ Battery Levels:
   - sensor.living_room_light_switch_battery
 
 Indoor Temperature:
-  - sensor.living_room_motion_sensor_temperature
-  - sensor.hallway_smoke_sensor_temperature
   - sensor.bedroom_environment_temperature
+  - sensor.living_room_motion_sensor_temperature
   - sensor.bathroom_environment_temperature
+  - sensor.hallway_smoke_sensor_temperature
 
 Indoor Humidity:
   - sensor.bedroom_environment_humidity
   - sensor.bathroom_environment_humidity
 
 Indoor Motion:
+  - binary_sensor.bedroom_motion_sensor
+  - binary_sensor.living_room_motion_sensor_sensor
   - binary_sensor.hallway_motion_sensor
   - binary_sensor.kitchen_motion_sensor
-  - binary_sensor.living_room_motion_sensor_sensor
-  - binary_sensor.bedroom_motion_sensor
+  - binary_sensor.guest_bedroom_motion_sensor
 
 Perimeter:
   - binary_sensor.main_entrance
   - binary_sensor.patio_entrance
   - binary_sensor.bedroom_window
-  - binary_sensor.living_room_window_right
   - binary_sensor.living_room_window_left
+  - binary_sensor.living_room_window_right
 
 Weather:
   - sun.sun
