@@ -9,6 +9,7 @@ default_view:
     - group.indoor_temperature
     - group.indoor_humidity
     - group.indoor_motion
+    - group.perimeter
 
 masterbed:
   name: Master Bedroom
