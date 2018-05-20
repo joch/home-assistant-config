@@ -207,6 +207,8 @@
         - binary_sensor.bedroom_window
         - binary_sensor.living_room_window_right
         - binary_sensor.living_room_window_left
+        - binary_sensor.bathroom_window
+        - binary_sensor.guest_bedroom_window
       to: 'on'
   condition:
     - condition: state
@@ -223,8 +225,10 @@
         - binary_sensor.main_entrance
         - binary_sensor.patio_entrance
         - binary_sensor.bedroom_window
-        - binary_sensor.living_room_window_right
         - binary_sensor.living_room_window_left
+        - binary_sensor.living_room_window_right
+        - binary_sensor.bathroom_window
+        - binary_sensor.guest_bedroom_window
       to: 'on'
     - platform: state
       entity_id:
@@ -254,6 +258,9 @@
     - condition: state
       entity_id: input_binary.vacation_mode
       state: 'on'
+    - condition: state
+      entity_id: input_binary.guest_mode
+      state: 'off'
   action:
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.alarm

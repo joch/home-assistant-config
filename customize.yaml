@@ -113,6 +113,14 @@ binary_sensor.living_room_window_right:
   icon: mdi:window-closed
 binary_sensor.bedroom_window:
   icon: mdi:window-closed
+binary_sensor.bathroom_window:
+  icon: mdi:window-closed
+binary_sensor.guest_bedroom_window:
+  icon: mdi:window-closed
+binary_sensor.main_entrance:
+  icon: mdi:door-closed
+binary_sensor.patio_entrance:
+  icon: mdi:door-closed
 
 light.gateway_light_7811dc64de1a:
   friendly_name: 'Hallway Mood Light'

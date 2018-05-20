@@ -70,6 +70,26 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
+    bathroom_window_battery:
+      friendly_name: Bathroom Window Battery
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.bathroom_window -%}
+          {{ states.binary_sensor.bathroom_window.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
+    guest_bedroom_window_battery:
+      friendly_name: Guest Bedroom Window Battery
+      icon_template: mdi:battery
+      value_template: >-
+        {%- if states.binary_sensor.guest_bedroom_window -%}
+          {{ states.binary_sensor.guest_bedroom_window.attributes.battery_level }}
+        {%- else -%}
+          101
+        {%- endif -%}
+      unit_of_measurement: '%'
     living_room_window_right_battery:
       friendly_name: Living Room Window Right Battery
       icon_template: mdi:battery

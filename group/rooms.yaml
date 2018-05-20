@@ -35,8 +35,10 @@ Kitchen:
 Bathroom:
   - sensor.bathroom_environment_temperature
   - sensor.bathroom_environment_humidity
+  - binary_sensor.bathroom_window
   - input_boolean.bathroom_motion_detection_enabled
 
 Guest Bedroom:
+  - binary_sensor.guest_bedroom_window
   - binary_sensor.guest_bedroom_motion_sensor
   - input_boolean.guest_bedroom_motion_detection_enabled
