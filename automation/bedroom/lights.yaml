@@ -102,7 +102,6 @@
         entity_id: light.johnnys_bedlight
         brightness_pct: 1
         rgb_color: [255,128,0]
-        color_temp: 580
 
 - alias: Bedside light off when Johnny goes to bed
   trigger:
@@ -149,7 +148,6 @@
         entity_id: light.kajsas_bedlight
         brightness_pct: 1
         rgb_color: [255,128,0]
-        color_temp: 580
 
 - alias: Bedside light off when Kajsa goes to bed
   trigger:
