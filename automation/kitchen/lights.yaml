@@ -26,6 +26,9 @@
       entity_id: input_boolean.everyone_asleep
       state: 'off'
     - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
   action:
