@@ -1,0 +1,24 @@
+- alias: Warn when leaving if windows are open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.main_entrance
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.hallway_motion_sensor
+      state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
+        brightness_pct: 100
+        rgb_color: [255,140,0]
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: !secret xiaomi_gateway_mac
+        ringtone_id: 12
+        ringtone_vol: 15
+    - delay: '00:00:10'
+    - service: light.turn_off
+      data:
+        entity_id: light.gateway_light_7811dc64de1a
