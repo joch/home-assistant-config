@@ -23,6 +23,11 @@ sleep_automation:
   icon: mdi:sleep
   initial: on
 
+perimeter_warning:
+  name: Perimeter Warning
+  icon: mdi:wall
+  initial: on
+
 lights_needed:
   name: Lights Needed
 

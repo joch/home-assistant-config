@@ -5,6 +5,9 @@
       to: 'on'
   condition:
     - condition: state
+      entity_id: input_boolean.perimeter_warning
+      state: 'on'
+    - condition: state
       entity_id: binary_sensor.hallway_motion_sensor
       state: 'on'
   action:

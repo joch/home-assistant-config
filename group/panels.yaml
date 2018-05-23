@@ -11,6 +11,7 @@ Automation Override:
   - switch.flux_indoor_lights
   - input_boolean.light_automation
   - input_boolean.sleep_automation
+  - input_boolean.perimeter_warning
 
 Motion Detection:
   - input_boolean.bedroom_motion_detection_enabled
