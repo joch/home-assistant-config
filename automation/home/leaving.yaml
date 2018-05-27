@@ -39,7 +39,7 @@
     - service: xiaomi_aqara.play_ringtone
       data:
         gw_mac: !secret xiaomi_gateway_mac
-        ringtone_id: 12
+        ringtone_id: 11
         ringtone_vol: 15
     - delay: '00:00:10'
     - service: light.turn_off
