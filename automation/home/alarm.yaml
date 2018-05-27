@@ -185,7 +185,7 @@
         title: "Vacation mode enabled"
         message: "Set Arlo to vacation mode manually to activate siren."
 
-- alias: Turn off vacation and guest mode when coming home
+- alias: Turn off vacation mode when coming home
   trigger:
     - platform: state
       entity_id: group.household
@@ -194,8 +194,6 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.vacation_mode
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.guest_mode
 
 # Alarm triggers
 - alias: Trigger alarm when perimiter breached when armed_night
