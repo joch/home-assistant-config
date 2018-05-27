@@ -1,8 +1,8 @@
 - alias: Toggle sleep on for Johnny
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.bedroom_johnny_charger_power
-      above: 1
+    - platform: state
+      entity_id: light.johnnys_bedlight
+      to: 'off'
   condition:
     - condition: state
       entity_id: input_boolean.sleep_automation
@@ -10,6 +10,9 @@
     - condition: state
       entity_id: input_boolean.johnny_asleep
       state: 'off'
+    - condition: numeric_state
+      entity_id: sensor.bedroom_johnny_charger_power
+      above: 1
   action:
     - service: input_boolean.turn_on
       data:
@@ -17,9 +20,9 @@
 
 - alias: Toggle sleep on for Kajsa
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.bedroom_kajsa_charger_power
-      above: 1
+    - platform: state
+      entity_id: light.kajsas_bedlight
+      to: 'off'
   condition:
     - condition: state
       entity_id: input_boolean.sleep_automation
@@ -27,6 +30,9 @@
     - condition: state
       entity_id: input_boolean.kajsa_asleep
       state: 'off'
+    - condition: numeric_state
+      entity_id: sensor.bedroom_kajsa_charger_power
+      above: 1
   action:
     - service: input_boolean.turn_on
       data:
