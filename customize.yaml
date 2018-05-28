@@ -61,14 +61,14 @@ sensor.dark_sky_dew_point:
   friendly_name: 'Dew Point'
 sensor.dark_sky_visibility:
   friendly_name: 'Visibility'
-sensor.dark_sky_temperature_max:
-  friendly_name: 'Daily Maximum Temperature'
-sensor.dark_sky_temperature_min:
-  friendly_name: 'Daily Minimum Temperature'
-sensor.dark_sky_apparent_temperature_max:
-  friendly_name: 'Daily Maximum Apparent Temperature'
-sensor.dark_sky_apparent_temperature_min:
-  friendly_name: 'Daily Minimum Apparent Temperature'
+sensor.dark_sky_temperature_high:
+  friendly_name: 'Daily Temperature High'
+sensor.dark_sky_temperature_low:
+  friendly_name: 'Daily Temperature Low'
+sensor.dark_sky_apparent_temperature_high:
+  friendly_name: 'Daily Apparent Temperature High'
+sensor.dark_sky_apparent_temperature_low:
+  friendly_name: 'Daily Apparent Temperature Low'
 sensor.dark_sky_precip_intensity_max:
   friendly_name: 'Daily Maximum Percipitation'
 
