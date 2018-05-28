@@ -130,7 +130,7 @@
       color_temp: 300
     light.living_room_tv_light:
       state: on
-      brightness_pct: 100
+      brightness_pct: 50
       transition: 1
       rgb_color: [255,127,0]
 
@@ -156,7 +156,7 @@
       color_temp: 500
     light.living_room_tv_light:
       state: on
-      brightness_pct: 100
+      brightness_pct: 25
       transition: 1
       rgb_color: [255,127,0]
 
