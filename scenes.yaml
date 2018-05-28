@@ -127,10 +127,10 @@
       state: on
       brightness_pct: 50
       transition: 1
-      color_temp: 300
+      rgb_color: [255,127,0]
     light.living_room_tv_light:
       state: on
-      brightness_pct: 50
+      brightness_pct: 25
       transition: 1
       rgb_color: [255,127,0]
 
@@ -152,11 +152,11 @@
     light.living_room_globe:
       state: on
       transition: 1
-      brightness_pct: 10
-      color_temp: 500
+      brightness_pct: 25
+      rgb_color: [255,127,0]
     light.living_room_tv_light:
       state: on
-      brightness_pct: 25
+      brightness_pct: 10
       transition: 1
       rgb_color: [255,127,0]
 
