@@ -28,6 +28,9 @@
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: input_select.harmony
+      state: 'PowerOff'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_normal
@@ -49,6 +52,9 @@
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: input_select.harmony
+      state: 'PowerOff'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_cozy

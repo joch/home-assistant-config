@@ -11,8 +11,6 @@
       entity_id: input_boolean.lights_needed
       state: 'on'
   action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.living_room_motion_detection_enabled
     - service: scene.turn_on
       entity_id: scene.living_room_tv
 
@@ -26,10 +24,8 @@
       entity_id: input_boolean.lights_needed
       state: 'on'
   action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.living_room_motion_detection_enabled
     - service: scene.turn_on
-      entity_id: scene.living_room_music
+      entity_id: scene.living_room_tv
 
 - alias: Living room lights in normal mode when tv off
   trigger:
@@ -41,7 +37,5 @@
       entity_id: light.living_room_lamp
       state: 'on'
   action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.living_room_motion_detection_enabled
     - service: scene.turn_on
       entity_id: scene.living_room_normal

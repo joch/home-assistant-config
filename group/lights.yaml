@@ -17,6 +17,8 @@ Living Room Lights:
     - scene.living_room_normal
     - scene.living_room_cozy
     - scene.living_room_full
+    - scene.living_room_tv
+    - scene.living_room_music
 
 Bedroom Lights:
   icon: mdi:hotel
