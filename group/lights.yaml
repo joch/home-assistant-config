@@ -13,6 +13,7 @@ Living Room Lights:
   entities:
     - light.living_room_lamp
     - light.living_room_globe
+    - light.living_room_tv_light
     - scene.living_room_normal
     - scene.living_room_cozy
     - scene.living_room_full

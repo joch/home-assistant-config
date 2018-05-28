@@ -151,7 +151,7 @@ light:
   - platform: yeelight
     devices:
       10.0.0.122:
-        name: Kitchen Lightstrip
+        name: Living Room TV Light
         transition: 1000
         use_music_mode: False
         save_on_change: False

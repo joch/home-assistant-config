@@ -1,0 +1,47 @@
+- alias: Living room lights in TV mode when tv on
+  trigger:
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'TV'
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'Movies'
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.living_room_motion_detection_enabled
+    - service: scene.turn_on
+      entity_id: scene.living_room_tv
+
+- alias: Living room lights in music mode when music on
+  trigger:
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'Music'
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.living_room_motion_detection_enabled
+    - service: scene.turn_on
+      entity_id: scene.living_room_music
+
+- alias: Living room lights in normal mode when tv off
+  trigger:
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'PowerOff'
+  condition:
+    - condition: state
+      entity_id: light.living_room_lamp
+      state: 'on'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.living_room_motion_detection_enabled
+    - service: scene.turn_on
+      entity_id: scene.living_room_normal
