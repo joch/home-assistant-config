@@ -131,8 +131,6 @@
   trigger:
     - platform: sun
       event: sunset
-    - platform: time
-      at: '17:30:00'
   condition:
     - condition: state
       entity_id: group.household
