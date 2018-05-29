@@ -194,6 +194,14 @@
       transition: 1
       kelvin: 6500
 
+- name: Living Room TV Only
+  entities:
+    light.living_room_tv_light:
+      state: on
+      brightness_pct: 100
+      transition: 1
+      kelvin: 6500
+
 - name: Living Room Music
   entities:
     light.living_room_lamp:
@@ -205,6 +213,14 @@
       transition: 1
       brightness_pct: 50
       rgb_color: [255,127,0]
+    light.living_room_tv_light:
+      state: on
+      brightness_pct: 50
+      transition: 1
+      rgb_color: [255,127,0]
+
+- name: Living Room Music Only
+  entities:
     light.living_room_tv_light:
       state: on
       brightness_pct: 50
