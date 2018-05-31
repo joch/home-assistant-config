@@ -8,6 +8,7 @@
       to: 'off'
       for:
         minutes: 10
+  condition:
     - condition: state
       entity_id: input_boolean.lights_needed
       state: 'on'
