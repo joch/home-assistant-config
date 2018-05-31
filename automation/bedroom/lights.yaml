@@ -1,11 +1,28 @@
 - alias: Bedroom lights on
   trigger:
-    platform: state
-    entity_id: input_boolean.lights_needed
-    to: 'on'
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion_sensor
+      to: 'off'
+      for:
+        minutes: 10
   condition:
     - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
       entity_id: group.sleep_status
+      state: 'off'
+    - condition: state
+      entity_id: light.johnnys_bedlight
+      state: 'off'
+    - condition: state
+      entity_id: light.kajsas_bedlight
       state: 'off'
   action:
     - service: scene.turn_on
@@ -44,33 +61,6 @@
   action:
     - service: scene.turn_on
       entity_id: scene.bedroom_normal
-
-- alias: Bedroom lights cozy when empty
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bedroom_motion_sensor
-      to: 'off'
-      for:
-        minutes: 10
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.bedroom_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: group.sleep_status
-      state: 'off'
-    - condition: state
-      entity_id: light.johnnys_bedlight
-      state: 'off'
-    - condition: state
-      entity_id: light.kajsas_bedlight
-      state: 'off'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.bedroom_cozy
 
 - alias: Bedroom lights off when one person goes to bed
   trigger:
