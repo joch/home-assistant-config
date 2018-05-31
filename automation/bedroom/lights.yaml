@@ -35,6 +35,12 @@
     - condition: state
       entity_id: group.sleep_status
       state: 'off'
+    - condition: state
+      entity_id: light.johnnys_bedlight
+      state: 'off'
+    - condition: state
+      entity_id: light.kajsas_bedlight
+      state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.bedroom_normal
@@ -55,6 +61,12 @@
       state: 'on'
     - condition: state
       entity_id: group.sleep_status
+      state: 'off'
+    - condition: state
+      entity_id: light.johnnys_bedlight
+      state: 'off'
+    - condition: state
+      entity_id: light.kajsas_bedlight
       state: 'off'
   action:
     - service: scene.turn_on
@@ -102,6 +114,8 @@
         entity_id: light.johnnys_bedlight
         brightness_pct: 1
         rgb_color: [255,128,0]
+    - service: scene.turn_on
+      entity_id: scene.bedroom_off
 
 - alias: Bedside light off when Johnny goes to bed
   trigger:
@@ -148,6 +162,8 @@
         entity_id: light.kajsas_bedlight
         brightness_pct: 1
         rgb_color: [255,128,0]
+    - service: scene.turn_on
+      entity_id: scene.bedroom_off
 
 - alias: Bedside light off when Kajsa goes to bed
   trigger:
