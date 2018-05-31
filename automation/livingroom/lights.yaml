@@ -3,6 +3,24 @@
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
+    - platform: state
+      entity_id: binary_sensor.living_room_motion_sensor_sensor
+      to: 'off'
+      for:
+        minutes: 10
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'on'
+    - condition: state
+      entity_id: group.living_room_lights
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_select.harmony
+      state: 'PowerOff'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_cozy
@@ -34,27 +52,3 @@
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_normal
-
-- alias: Living room lights cozy when empty
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor_sensor
-      to: 'off'
-      for:
-        minutes: 10
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: group.living_room_lights
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.living_room_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_select.harmony
-      state: 'PowerOff'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_cozy
