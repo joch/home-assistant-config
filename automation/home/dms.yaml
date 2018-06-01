@@ -1,7 +1,7 @@
 - alias: Check if ok if no movement but home
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor_sensor
+      entity_id: group.indoor_motion
       to: 'off'
       for:
         hours: 4
