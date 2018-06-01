@@ -312,7 +312,7 @@
       transition: 1
     light.kitchen_cabinet_light:
       state: on
-      brightness_pct: 10
+      brightness_pct: 5
       transition: 1
     light.kitchen_window_lamp:
       state: on
