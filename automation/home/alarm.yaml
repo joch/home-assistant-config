@@ -60,6 +60,11 @@
         entity_id: light.gateway_light_7811dc64de1a
         brightness_pct: 100
         rgb_color: [255,0,0]
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: !secret xiaomi_gateway_mac
+        ringtone_id: 3
+        ringtone_vol: 10
 
 - alias: Alarm pending
   trigger:
@@ -73,6 +78,11 @@
         entity_id: light.gateway_light_7811dc64de1a
         brightness_pct: 100
         rgb_color: [255,255,0]
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: !secret xiaomi_gateway_mac
+        ringtone_id: 26
+        ringtone_vol: 5
 
 # Automatically enable / disable alarm
 - alias: Automatically arm alarm when away
