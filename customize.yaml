@@ -1,26 +1,8 @@
-group.all_automations:
-  hidden: false
-group.all_scenes:
-  hidden: false
-
-group.living_room_lights:
-  homebridge_visible: true
-
-group.bedroom_lights:
-  homebridge_visible: true
-
-group.hallway_lights:
-  homebridge_visible: true
-
-group.hallway_ceiling_lamp:
-  homebridge_visible: true
-
 light.kitchen_countertop_lightstrip:
   icon: mdi:led-strip
 
 sensor.dark_sky_temperature:
   friendly_name: 'Outdoor Temperature'
-  homebridge_visible: true
 sensor.dark_sky_summary:
   friendly_name: 'Summary'
 sensor.dark_sky_hourly_summary:
@@ -74,10 +56,8 @@ sensor.dark_sky_precip_intensity_max:
 
 sensor.living_room_motion_sensor_temperature:
   friendly_name: 'Living Room Temperature'
-  homebridge_visible: true
 sensor.living_room_motion_sensor_luminance:
   friendly_name: 'Living Room Luminance'
-  homebridge_visible: true
 sensor.jochad:
   icon: mdi:xbox
   friendly_name: 'XboxOne'
@@ -89,7 +69,6 @@ sensor.bedroom_johnny_charger_energy:
   friendly_name: 'Johnnys chargers power consumption'
 sensor.hallway_smoke_sensor_temperature:
   friendly_name: 'Hallway Temperature'
-  homebridge_visible: true
 sensor.bathroom_environment_humidity:
   friendly_name: 'Bathroom Humidity'
   icon: mdi:water-percent
@@ -127,22 +106,15 @@ light.gateway_light_7811dc64de1a:
 
 switch.bedroom_kajsa_charger_switch:
   friendly_name: 'Kajsas chargers'
-  homebridge_visible: true
 switch.bedroom_johnny_charger_switch:
   friendly_name: 'Johnnys chargers'
-  homebridge_visible: true
 
 switch.hallway_mirror_lamp_switch:
   friendly_name: 'Hallway Lamp'
-  homebridge_visible: true
 
 switch.fluxer:
   icon: mdi:theme-light-dark
   friendly_name: 'Soften lights in the evening'
 
 alarm_control_panel.alarm:
-  homebridge_visible: true
   homebridge_alarm_code: !secret alarm_code
-
-input_select.harmony:
-  homebridge_visible: true
