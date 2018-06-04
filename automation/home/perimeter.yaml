@@ -46,108 +46,108 @@
       data:
         entity_id: light.gateway_light_7811dc64de1a
 
-- alias: Trigger alarm when opening bedroom window
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bedroom_window
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.perimeter_warning
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.bedroom_motion_sensor
-      state: 'off'
-  action:
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
-
-- alias: Trigger alarm when opening living room windows
-  trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.living_room_window_right
-        - binary_sensor.living_room_window_left
-        - binary_sensor.patio_entrance
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.perimeter_warning
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.living_room_motion_sensor_sensor
-      state: 'off'
-  action:
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
-
-- alias: Trigger alarm when opening living room windows
-  trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.living_room_window_right
-        - binary_sensor.living_room_window_left
-        - binary_sensor.patio_entrance
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.perimeter_warning
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.living_room_motion_sensor_sensor
-      state: 'off'
-  action:
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
-
-# Missing bathroom motion sensor
-# - alias: Trigger alarm when opening bathroom window
+# - alias: Trigger alarm when opening bedroom window
 #   trigger:
 #     - platform: state
-#       entity_id: binary_sensor.bathroom_window
+#       entity_id: binary_sensor.bedroom_window
 #       to: 'on'
 #   condition:
-    # - condition: state
-    #   entity_id: input_boolean.perimeter_warning
-    #   state: 'on'
 #     - condition: state
-#       entity_id: binary_sensor.bathroom_motion_sensor
+#       entity_id: input_boolean.perimeter_warning
+#       state: 'on'
+#     - condition: state
+#       entity_id: binary_sensor.bedroom_motion_sensor
 #       state: 'off'
 #   action:
 #     - service: alarm_control_panel.alarm_trigger
 #       entity_id: alarm_control_panel.alarm
 
-# Missing kitchen window sensors
-# - alias: Trigger alarm when opening kitchen windows
+# - alias: Trigger alarm when opening living room windows
 #   trigger:
 #     - platform: state
 #       entity_id:
-#         - binary_sensor.kitchen_window_right
-#         - binary_sensor.kitchen_window_left
+#         - binary_sensor.living_room_window_right
+#         - binary_sensor.living_room_window_left
+#         - binary_sensor.patio_entrance
 #       to: 'on'
 #   condition:
-    # - condition: state
-    #   entity_id: input_boolean.perimeter_warning
-    #   state: 'on'
 #     - condition: state
-#       entity_id: binary_sensor.kitchen_motion_sensor
+#       entity_id: input_boolean.perimeter_warning
+#       state: 'on'
+#     - condition: state
+#       entity_id: binary_sensor.living_room_motion_sensor_sensor
 #       state: 'off'
 #   action:
 #     - service: alarm_control_panel.alarm_trigger
 #       entity_id: alarm_control_panel.alarm
 
-- alias: Trigger alarm when opening guest bedroom window
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.guest_bedroom_window
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.perimeter_warning
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.guest_bedroom_motion_sensor
-      state: 'off'
-  action:
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
+# - alias: Trigger alarm when opening living room windows
+#   trigger:
+#     - platform: state
+#       entity_id:
+#         - binary_sensor.living_room_window_right
+#         - binary_sensor.living_room_window_left
+#         - binary_sensor.patio_entrance
+#       to: 'on'
+#   condition:
+#     - condition: state
+#       entity_id: input_boolean.perimeter_warning
+#       state: 'on'
+#     - condition: state
+#       entity_id: binary_sensor.living_room_motion_sensor_sensor
+#       state: 'off'
+#   action:
+#     - service: alarm_control_panel.alarm_trigger
+#       entity_id: alarm_control_panel.alarm
+
+# # Missing bathroom motion sensor
+# # - alias: Trigger alarm when opening bathroom window
+# #   trigger:
+# #     - platform: state
+# #       entity_id: binary_sensor.bathroom_window
+# #       to: 'on'
+# #   condition:
+#     # - condition: state
+#     #   entity_id: input_boolean.perimeter_warning
+#     #   state: 'on'
+# #     - condition: state
+# #       entity_id: binary_sensor.bathroom_motion_sensor
+# #       state: 'off'
+# #   action:
+# #     - service: alarm_control_panel.alarm_trigger
+# #       entity_id: alarm_control_panel.alarm
+
+# # Missing kitchen window sensors
+# # - alias: Trigger alarm when opening kitchen windows
+# #   trigger:
+# #     - platform: state
+# #       entity_id:
+# #         - binary_sensor.kitchen_window_right
+# #         - binary_sensor.kitchen_window_left
+# #       to: 'on'
+# #   condition:
+#     # - condition: state
+#     #   entity_id: input_boolean.perimeter_warning
+#     #   state: 'on'
+# #     - condition: state
+# #       entity_id: binary_sensor.kitchen_motion_sensor
+# #       state: 'off'
+# #   action:
+# #     - service: alarm_control_panel.alarm_trigger
+# #       entity_id: alarm_control_panel.alarm
+
+# - alias: Trigger alarm when opening guest bedroom window
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.guest_bedroom_window
+#       to: 'on'
+#   condition:
+#     - condition: state
+#       entity_id: input_boolean.perimeter_warning
+#       state: 'on'
+#     - condition: state
+#       entity_id: binary_sensor.guest_bedroom_motion_sensor
+#       state: 'off'
+#   action:
+#     - service: alarm_control_panel.alarm_trigger
+#       entity_id: alarm_control_panel.alarm
