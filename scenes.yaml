@@ -119,9 +119,14 @@
 
 - name: Living Room Normal
   entities:
-    light.living_room_lamp:
+    light.living_room_ceiling_lamp:
       state: on
       brightness_pct: 75
+      transition: 1
+      rgb_color: [255,127,0]
+    light.living_room_lamp:
+      state: on
+      brightness_pct: 50
       transition: 1
     light.living_room_globe:
       state: on
@@ -136,6 +141,8 @@
 
 - name: Living Room Off
   entities:
+    light.living_room_ceiling_lamp:
+      state: off
     light.living_room_lamp:
       state: off
     light.living_room_globe:
@@ -145,6 +152,11 @@
 
 - name: Living Room Cozy
   entities:
+    light.living_room_ceiling_lamp:
+      state: on
+      brightness_pct: 10
+      transition: 1
+      rgb_color: [255,127,0]
     light.living_room_lamp:
       state: on
       brightness_pct: 10
@@ -162,6 +174,11 @@
 
 - name: Living Room Full
   entities:
+    light.living_room_ceiling_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 1
+      color_temp: 300
     light.living_room_lamp:
       state: on
       brightness_pct: 100
@@ -179,6 +196,11 @@
 
 - name: Living Room TV
   entities:
+    light.living_room_ceiling_lamp:
+      state: on
+      brightness_pct: 50
+      transition: 1
+      color_temp: 500
     light.living_room_lamp:
       state: on
       brightness_pct: 1
@@ -204,6 +226,11 @@
 
 - name: Living Room Music
   entities:
+    light.living_room_ceiling_lamp:
+      state: on
+      brightness_pct: 50
+      transition: 1
+      color_temp: 500
     light.living_room_lamp:
       state: on
       brightness_pct: 25

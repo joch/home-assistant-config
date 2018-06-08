@@ -11,6 +11,7 @@ Interior Lights:
 Living Room Lights:
   icon: mdi:sofa
   entities:
+    - light.living_room_ceiling_lamp
     - light.living_room_lamp
     - light.living_room_globe
     - light.living_room_tv_light
