@@ -18,12 +18,19 @@
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: input_select.harmony
-      state: 'PowerOff'
   action:
     - service: scene.turn_on
-      entity_id: scene.living_room_cozy
+      data_template:
+        entity_id: >-
+          {% if is_state('input_select.harmony', 'PowerOff') %}
+          scene.living_room_cozy
+          {% elif is_state('input_select.harmony', 'Movies') %}
+          scene.living_room_tv
+          {% elif is_state('input_select.harmony', 'TV') %}
+          scene.living_room_tv
+          {% elif is_state('input_select.harmony', 'Music') %}
+          scene.living_room_music
+          {% endif %}
 
 - alias: Living room lights off
   trigger:
