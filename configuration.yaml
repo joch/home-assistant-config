@@ -125,7 +125,7 @@ switch:
     stop_colortemp: 1900
     disable_brightness_adjust: True
     mode: mired
-    transition: 2
+    transition: 1
   - platform: flux
     lights:
       - light.hallway_lamp_left
