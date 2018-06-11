@@ -135,7 +135,7 @@
       rgb_color: [255,127,0]
     light.living_room_tv_light:
       state: on
-      brightness_pct: 25
+      brightness_pct: 10
       transition: 1
       rgb_color: [255,127,0]
 
@@ -167,10 +167,7 @@
       brightness_pct: 25
       rgb_color: [255,127,0]
     light.living_room_tv_light:
-      state: on
-      brightness_pct: 10
-      transition: 1
-      rgb_color: [255,127,0]
+      state: off
 
 - name: Living Room Full
   entities:
