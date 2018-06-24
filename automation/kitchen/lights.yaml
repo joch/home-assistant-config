@@ -40,14 +40,17 @@
       entity_id: input_boolean.everyone_asleep
       state: 'off'
     - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.kitchen_normal
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.lights_needed', 'on') %}
+          scene.kitchen_normal
+          {% elif is_state('input_boolean.lights_needed', 'off') %}
+          scene.kitchen_normal_countertop_only
+          {% endif %}
     - delay: '00:00:03'
     - service: switch.flux_kitchen_update
 
