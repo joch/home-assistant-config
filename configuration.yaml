@@ -19,6 +19,12 @@ homeassistant:
     binary_sensor.*_motion*:
       custom_ui_state_card: state-card-custom-ui
       show_last_changed: true
+    binary_sensor.*_entrance*:
+      custom_ui_state_card: state-card-custom-ui
+      show_last_changed: true
+    binary_sensor.*_window*:
+      custom_ui_state_card: state-card-custom-ui
+      show_last_changed: true
 
 #introduction:
 
