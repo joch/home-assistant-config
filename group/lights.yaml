@@ -52,6 +52,7 @@ Kitchen Lights:
     - scene.kitchen_normal
     - scene.kitchen_cozy
     - scene.kitchen_full
+    - scene.kitchen_normal_countertop_only
 
 Hallway Ceiling Lamp:
   icon: mdi:spotlight-beam
