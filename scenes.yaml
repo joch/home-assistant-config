@@ -341,14 +341,9 @@
 - name: Kitchen Cozy
   entities:
     light.kitchen_ceiling_lamp:
-      state: on
-      brightness_pct: 1
-      transition: 1
+      state: off
     light.kitchen_countertop_lightstrip:
-      state: on
-      brightness_pct: 1
-      rgb_color: [255, 150, 10]
-      transition: 1
+      state: off
     light.kitchen_cabinet_light:
       state: on
       brightness_pct: 5
