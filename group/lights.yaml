@@ -46,6 +46,7 @@ Hallway Lights:
 Kitchen Lights:
   icon: mdi:stove
   entities:
+    - light.kitchen_ceiling_lamp
     - light.kitchen_countertop_lightstrip
     - light.kitchen_cabinet_light
     - light.kitchen_window_lamp
