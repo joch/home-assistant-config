@@ -327,7 +327,7 @@
       brightness_pct: 75
       transition: 1
 
-- name: Kitchen Normal Countertop Only
+- name: Kitchen Countertop Only
   entities:
     light.kitchen_countertop_lightstrip:
       state: on

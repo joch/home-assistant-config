@@ -60,7 +60,7 @@
           {% if is_state('input_boolean.lights_needed', 'on') %}
           scene.kitchen_normal
           {% elif is_state('input_boolean.lights_needed', 'off') %}
-          scene.kitchen_normal_countertop_only
+          scene.kitchen_countertop_only
           {% endif %}
     - delay: '00:00:03'
     - service: switch.flux_kitchen_update
