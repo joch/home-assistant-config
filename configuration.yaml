@@ -87,7 +87,6 @@ media_player:
   #   include_non_clients: true
   #   scan_interval: 10
   #   use_episode_art: true
-  - platform: cast
 
 remote:
   - platform: harmony
