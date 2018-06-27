@@ -119,7 +119,7 @@ switch:
     stop_colortemp: 1900
     disable_brightness_adjust: True
     mode: mired
-    transition: 1
+    transition: 0
   - platform: flux
     lights:
       - light.kitchen_countertop_lightstrip
