@@ -1,0 +1,24 @@
+# For now, this will toggle all asleep, but will
+# be changed to toggle a separate guest_asleep.
+- alias: Toggle guest asleep on
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: guest_asleep
+        event: 1000
+  condition:
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'on'
+  action:
+    - service: input_boolean.toggle
+      entity_id: input_boolean.everyone_asleep
+    - service: light.turn_on
+      data:
+        entity_id: light.guest_bedroom_window_lamp
+        brightness_pct: 1
+    - delay: '00:01:10'
+    - service: light.turn_off
+      data:
+        entity_id: light.guest_bedroom_window_lamp
