@@ -193,6 +193,9 @@ xiaomi_aqara:
 
 homekit:
   auto_start: False
+  filter:
+    include_domains:
+      - light
 
 camera:
   - platform: arlo
