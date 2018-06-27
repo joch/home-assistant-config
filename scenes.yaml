@@ -346,8 +346,10 @@
   entities:
     light.kitchen_ceiling_lamp:
       state: off
+      transition: 1
     light.kitchen_countertop_lightstrip:
       state: off
+      transition: 1
     light.kitchen_cabinet_light:
       state: on
       brightness_pct: 5
@@ -380,12 +382,16 @@
   entities:
     light.kitchen_ceiling_lamp:
       state: off
+      transition: 1
     light.kitchen_countertop_lightstrip:
       state: off
+      transition: 1
     light.kitchen_cabinet_light:
       state: off
+      transition: 1
     light.kitchen_window_lamp:
       state: off
+      transition: 1
 
 - name: Guest bedroom Normal
   entities:
