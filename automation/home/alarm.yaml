@@ -148,6 +148,9 @@
       to: 'home'
   condition:
   - condition: state
+    entity_id: input_boolean.guest_mode
+    state: 'on'
+  - condition: state
     entity_id: input_boolean.alarm_mode
     state: 'on'
   action:
