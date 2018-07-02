@@ -169,7 +169,7 @@ device_tracker:
     password: !secret asuswrt_password
     new_device_defaults:
       track_new_devices: False
-      hide_if_away: False
+      hide_if_away: True
 
 # influxdb:
 #   host: !secret influxdb_host
