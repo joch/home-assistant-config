@@ -4,6 +4,7 @@ default_view:
   entities:
     - group.alarm
     - group.household
+    - group.house_guests
     - group.interior_lights
     - group.scenes
     - group.indoor_temperature
