@@ -112,7 +112,6 @@ switch:
       - light.kitchen_window_lamp
       - light.kitchen_ceiling_lamp
     name: Flux Indoor Lights
-    start_time: '8:00'
     stop_time: '22:00'
     start_colortemp: 4000
     sunset_colortemp: 3000
@@ -124,7 +123,6 @@ switch:
     lights:
       - light.kitchen_countertop_lightstrip
     name: Flux Kitchen
-    start_time: '8:00'
     stop_time: '22:00'
     start_colortemp: 4000
     sunset_colortemp: 3000
@@ -138,7 +136,6 @@ switch:
       - light.hallway_lamp_middle
       - light.hallway_lamp_right
     name: Flux Hallway
-    start_time: '8:00'
     stop_time: '22:00'
     start_colortemp: 4000
     sunset_colortemp: 3000
