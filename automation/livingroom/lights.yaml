@@ -22,7 +22,9 @@
     - service: scene.turn_on
       data_template:
         entity_id: >-
-          {% if is_state('input_select.harmony', 'PowerOff') %}
+          {% if is_state('input_boolean.lights_full', 'on') %}
+          scene.living_room_full
+          {% elif is_state('input_select.harmony', 'PowerOff') %}
           scene.living_room_cozy
           {% elif is_state('input_select.harmony', 'Movies') %}
           scene.living_room_tv

@@ -60,7 +60,13 @@
       state: 'off'
   action:
     - service: scene.turn_on
-      entity_id: scene.bedroom_normal
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.lights_full', 'on') %}
+          scene.bedroom_full
+          {% elif is_state('input_boolean.lights_needed', 'on') %}
+          scene.bedroom_normal
+          {% endif %}
 
 - alias: Bedroom lights off when one person goes to bed
   trigger:

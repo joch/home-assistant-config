@@ -9,6 +9,7 @@ Security Automation:
 Automation Override:
   - switch.flux_indoor_lights
   - input_boolean.light_automation
+  - input_boolean.lights_full
   - input_boolean.sleep_automation
   - input_boolean.perimeter_warning
 

@@ -18,6 +18,11 @@ light_automation:
   icon: mdi:lightbulb-outline
   initial: on
 
+lights_full:
+  name: Lights Full
+  icon: mdi:lightbulb-on-outline
+  initial: off
+
 sleep_automation:
   name: Sleep Automation
   icon: mdi:sleep
