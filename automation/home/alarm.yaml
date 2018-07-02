@@ -251,7 +251,6 @@
       entity_id:
         - binary_sensor.main_entrance
         - binary_sensor.patio_entrance
-        - binary_sensor.bedroom_window
         - binary_sensor.living_room_window_right
         - binary_sensor.living_room_window_left
         - binary_sensor.bathroom_window
