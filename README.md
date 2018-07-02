@@ -21,6 +21,10 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 - [IKEA Trådfri 30W Transformer](https://www.ikea.com/se/sv/catalog/products/60342656/) x1
 - [Xiaomi Yeelight Lightstrip](https://xiaomi-mi.com/smart-lighting/xiaomi-yeelight-smart-led-lightstrip-ipl/) x1
 - [Osram Lightify LED Strip x1](https://smartplus.ledvance.com/products/index.jsp) x1
+- [Philips Hue Cher Suspension Light](https://www2.meethue.com/en-us/p/hue-white-ambiance-cher-suspension-light/4076130U7) x1
+- [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372) x1
+- [Philips Hue White and Color Ambiance E14](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e12/046677468903) x1
+- [Philips Hue White and Color Ambiance E27](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e26/046677464486) x1
 
 ### Switches
 
