@@ -36,7 +36,14 @@ Household:
   - device_tracker.kajsasiphone
 
 House Guests:
-  - device_tracker.rebeckasiphone
+  - !secret guest_001
+  - !secret guest_002
+  - !secret guest_003
+  - !secret guest_004
+  - !secret guest_005
+  - !secret guest_006
+  - !secret guest_007
+  - !secret guest_008
 
 Power Usage:
   - sensor.bedroom_johnny_charger_energy
