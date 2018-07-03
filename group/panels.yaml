@@ -62,6 +62,12 @@ UPS Status:
   - sensor.ups_load
   - sensor.ups_status
   - sensor.ups_time_left
+  - sensor.lotrans
+  - sensor.hitrans
+  - sensor.lastxfer
+  - sensor.numxfers
+  - sensor.xonbatt
+  - sensor.xoffbatt
 
 Battery Levels:
   - sensor.ups_battery

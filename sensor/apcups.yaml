@@ -6,3 +6,9 @@
     - bcharge
     - timeleft
     - itemp
+    - lotrans
+    - hitrans
+    - lastxfer
+    - numxfers
+    - xonbatt
+    - xoffbatt
