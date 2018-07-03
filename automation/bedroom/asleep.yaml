@@ -2,6 +2,7 @@
   trigger:
     - platform: state
       entity_id: light.johnnys_bedlight
+      from: 'on'
       to: 'off'
   condition:
     - condition: state
@@ -22,6 +23,7 @@
   trigger:
     - platform: state
       entity_id: light.kajsas_bedlight
+      from: 'on'
       to: 'off'
   condition:
     - condition: state
