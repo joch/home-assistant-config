@@ -92,7 +92,7 @@
       state: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.lights_cozy
+      entity_id: scene.lights_dim
 
 - alias: Lights off when last person goes to bed after one minute
   trigger:

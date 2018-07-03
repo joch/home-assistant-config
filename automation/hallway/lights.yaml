@@ -5,7 +5,7 @@
       to: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.hallway_cozy
+      entity_id: scene.hallway_dim
     - delay: '00:00:03'
     - service: switch.flux_hallway_update
 

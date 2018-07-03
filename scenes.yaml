@@ -44,7 +44,7 @@
       color_temp: 250
       transition: 1
 
-- name: Lights Cozy
+- name: Lights Dim
   entities:
     light.guest_bedroom_window_lamp:
       state: on
@@ -150,7 +150,7 @@
     light.living_room_tv_light:
       state: off
 
-- name: Living Room Cozy
+- name: Living Room Dim
   entities:
     light.living_room_ceiling_lamp:
       state: on
@@ -263,7 +263,7 @@
     light.bedroom_lamp:
       state: off
 
-- name: Bedroom Cozy
+- name: Bedroom Dim
   entities:
     light.bedroom_lamp:
       state: on
@@ -289,7 +289,7 @@
     group.hallway_ceiling_lamp:
       state: off
 
-- name: Hallway Cozy
+- name: Hallway Dim
   entities:
     switch.hallway_mirror_lamp_switch:
       state: on
@@ -342,7 +342,7 @@
       brightness_pct: 50
       transition: 1
 
-- name: Kitchen Cozy
+- name: Kitchen Dim
   entities:
     light.kitchen_ceiling_lamp:
       state: off
@@ -399,7 +399,7 @@
     light.guest_bedroom_window_lamp:
       state: off
 
-- name: Guest Bedroom Cozy
+- name: Guest Bedroom Dim
   entities:
     light.guest_bedroom_window_lamp:
       state: on

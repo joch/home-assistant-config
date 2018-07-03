@@ -25,7 +25,7 @@
           {% if is_state('input_boolean.lights_full', 'on') %}
           scene.living_room_full
           {% elif is_state('input_select.harmony', 'PowerOff') %}
-          scene.living_room_cozy
+          scene.living_room_dim
           {% elif is_state('input_select.harmony', 'Movies') %}
           scene.living_room_tv
           {% elif is_state('input_select.harmony', 'TV') %}

@@ -5,7 +5,7 @@ Interior Lights:
   - group.kitchen_lights
   - group.guest_bedroom_lights
   - scene.lights_normal
-  - scene.lights_cozy
+  - scene.lights_dim
   - scene.lights_full
 
 Living Room Lights:
@@ -16,7 +16,7 @@ Living Room Lights:
     - light.living_room_globe
     - light.living_room_tv_light
     - scene.living_room_normal
-    - scene.living_room_cozy
+    - scene.living_room_dim
     - scene.living_room_full
     - scene.living_room_tv
     - scene.living_room_tv_only
@@ -30,7 +30,7 @@ Bedroom Lights:
     - light.johnnys_bedlight
     - light.kajsas_bedlight
     - scene.bedroom_normal
-    - scene.bedroom_cozy
+    - scene.bedroom_dim
     - scene.bedroom_full
 
 Hallway Lights:
@@ -40,7 +40,7 @@ Hallway Lights:
     - switch.hallway_mirror_lamp_switch
     - light.gateway_light_7811dc64de1a
     - scene.hallway_normal
-    - scene.hallway_cozy
+    - scene.hallway_dim
     - scene.hallway_full
 
 Kitchen Lights:
@@ -51,7 +51,7 @@ Kitchen Lights:
     - light.kitchen_cabinet_light
     - light.kitchen_window_lamp
     - scene.kitchen_normal
-    - scene.kitchen_cozy
+    - scene.kitchen_dim
     - scene.kitchen_full
     - scene.kitchen_countertop_only
 
@@ -67,5 +67,5 @@ Guest Bedroom Lights:
   entities:
     - light.guest_bedroom_window_lamp
     - scene.guest_bedroom_normal
-    - scene.guest_bedroom_cozy
+    - scene.guest_bedroom_dim
     - scene.guest_bedroom_full

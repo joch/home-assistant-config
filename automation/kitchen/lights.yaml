@@ -1,4 +1,4 @@
-- alias: Kitchen lights cozy
+- alias: Kitchen lights dim
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
@@ -19,7 +19,7 @@
       state: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.kitchen_cozy
+      entity_id: scene.kitchen_dim
 
 - alias: Kitchen lights off
   trigger:
@@ -87,7 +87,7 @@
     - service: scene.turn_on
       entity_id: scene.kitchen_off
 
-- alias: Kitchen lights on cozy on motion during the night
+- alias: Kitchen lights on dim on motion during the night
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_motion_sensor
@@ -101,7 +101,7 @@
       state: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.kitchen_cozy
+      entity_id: scene.kitchen_dim
 
 - alias: Kitchen lights off when no motion during the night
   trigger:

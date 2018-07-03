@@ -26,7 +26,7 @@
       state: 'off'
   action:
     - service: scene.turn_on
-      entity_id: scene.bedroom_cozy
+      entity_id: scene.bedroom_dim
 
 - alias: Bedroom lights off
   trigger:
