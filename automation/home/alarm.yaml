@@ -284,6 +284,10 @@
     - condition: state
       entity_id: alarm_control_panel.alarm
       state: 'armed_away'
+    - condition: template
+      value_template: "{{ states.sensor.last_living_room.state != 'unknown' }}"
+    - condition: template
+      value_template: "{{ states.sensor.last_hallway.state != 'unknown' }}"
   action:
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.alarm
