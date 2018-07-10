@@ -65,6 +65,7 @@ guestbed:
   entities:
     - group.guest_bedroom_lights
     - group.guest_bedroom
+    - group.sleep_status
 
 automation:
   name: Automation

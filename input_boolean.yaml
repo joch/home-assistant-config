@@ -47,7 +47,11 @@ johnny_asleep:
 kajsa_asleep:
   name: Kajsa asleep
   icon: mdi:sleep
-  
+
+guest_asleep:
+  name: Guest Asleep
+  icon: mdi:sleep
+
 living_room_arlo_motion:
   name: Living Room Arlo Motion
   initial: off

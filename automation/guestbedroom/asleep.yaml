@@ -13,7 +13,7 @@
       state: 'on'
   action:
     - service: input_boolean.toggle
-      entity_id: input_boolean.everyone_asleep
+      entity_id: input_boolean.guest_asleep
     - service: light.turn_on
       data:
         entity_id: light.guest_bedroom_window_lamp
