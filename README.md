@@ -22,7 +22,6 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 - [Xiaomi Yeelight Lightstrip](https://xiaomi-mi.com/smart-lighting/xiaomi-yeelight-smart-led-lightstrip-ipl/) x1
 - [Osram Lightify LED Strip x1](https://smartplus.ledvance.com/products/index.jsp) x1
 - [Philips Hue Cher Suspension Light](https://www2.meethue.com/en-us/p/hue-white-ambiance-cher-suspension-light/4076130U7) x1
-- [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372) x1
 - [Philips Hue White and Color Ambiance E14](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e12/046677468903) x1
 - [Philips Hue White and Color Ambiance E27](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e26/046677464486) x1
 
@@ -43,6 +42,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 ### Remotes
 
 - [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
+- [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372) x1
 - [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/) x4
 
 ### Cameras
