@@ -275,19 +275,13 @@
         - binary_sensor.living_room_window_right
         - binary_sensor.bathroom_window
         - binary_sensor.guest_bedroom_window
+        - input_boolean.hallway_arlo_motion
+        - input_boolean.living_room_arlo_motion
       to: 'on'
-    - platform: state
-      entity_id:
-        - sensor.last_living_room
-        - sensor.last_hallway
   condition:
     - condition: state
       entity_id: alarm_control_panel.alarm
       state: 'armed_away'
-    - condition: template
-      value_template: "{{ states.sensor.last_living_room.state != 'unknown' }}"
-    - condition: template
-      value_template: "{{ states.sensor.last_hallway.state != 'unknown' }}"
   action:
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.alarm

@@ -19,29 +19,3 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.hallway_arlo_motion
-
-- alias: Trigger alarm when Arlo detects motion in living room
-  trigger:
-    - platform: state
-      entity_id: input_boolean.living_room_arlo_motion
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: alarm_control_panel.alarm
-      state: 'armed_away'
-  action:
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
-
-- alias: Trigger alarm when Arlo detects motion in hallway
-  trigger:
-    - platform: state
-      entity_id: input_boolean.hallway_arlo_motion
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: alarm_control_panel.alarm
-      state: 'armed_away'
-  action:
-    - service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
