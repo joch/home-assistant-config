@@ -3,6 +3,7 @@ Alarm:
 
 Security Automation:
   - input_boolean.alarm_mode
+  - input_boolean.alarm_night_mode
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
 

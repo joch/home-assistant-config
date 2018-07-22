@@ -1,5 +1,10 @@
 alarm_mode:
-  name: Auto-arm Alarm
+  name: Auto-arm Alarm Away
+  icon: mdi:shield-outline
+  initial: on
+
+alarm_night_mode:
+  name: Auto-arm Alarm Night
   icon: mdi:shield-outline
   initial: on
 

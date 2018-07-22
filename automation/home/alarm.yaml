@@ -169,7 +169,7 @@
       after: '21:00:00'
       before: '06:00:00'
     - condition: state
-      entity_id: input_boolean.alarm_mode
+      entity_id: input_boolean.alarm_night_mode
       state: 'on'
     - condition: state
       entity_id: input_boolean.guest_mode
