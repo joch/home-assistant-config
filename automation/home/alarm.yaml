@@ -159,7 +159,7 @@
       data:
         code: !secret alarm_code
 
-- alias: Automatically arm alarm home when last person goes to sleep
+- alias: Automatically arm alarm night when last person goes to sleep
   trigger:
     - platform: state
       entity_id: input_boolean.everyone_asleep
@@ -171,6 +171,9 @@
     - condition: state
       entity_id: input_boolean.alarm_mode
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
     - condition: or
       conditions:
       - condition: and
