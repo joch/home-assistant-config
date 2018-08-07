@@ -1,5 +1,3 @@
-# For now, this will toggle all asleep, but will
-# be changed to toggle a separate guest_asleep.
 - alias: Toggle guest asleep on
   trigger:
     - platform: event
