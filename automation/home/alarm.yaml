@@ -134,6 +134,9 @@
   - condition: state
     entity_id: input_boolean.alarm_mode
     state: 'on'
+  - condition: state
+    entity_id: group.household
+    state: 'not_home'
   action:
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.alarm
