@@ -40,6 +40,7 @@ perimeter_warning:
 
 lights_needed:
   name: Lights Needed
+  icon: mdi:lightbulb-outline
 
 everyone_asleep:
   name: Everyone asleep
