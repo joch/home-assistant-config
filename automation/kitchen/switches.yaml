@@ -4,17 +4,17 @@
       event_type: deconz_event
       event_data:
         id: kitchen_dimmer
-        event: 1000
-    - platform: event
-      event_type: deconz_event
-      event_data:
-        id: kitchen_dimmer
         event: 2000
     - platform: event
       event_type: deconz_event
       event_data:
         id: kitchen_dimmer
         event: 3000
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: kitchen_dimmer
+        event: 4000
   condition:
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
@@ -29,7 +29,7 @@
       event_type: deconz_event
       event_data:
         id: kitchen_dimmer
-        event: 4002
+        event: 1000
   condition:
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
