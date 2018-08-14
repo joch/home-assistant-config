@@ -35,7 +35,6 @@
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'off'
   action:
-    - delay: '00:00:10'
     - service: input_boolean.turn_on
       entity_id: input_boolean.kitchen_motion_detection_enabled
 
