@@ -1,0 +1,54 @@
+- alias: Disable kitchen motion on button click
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: kitchen_dimmer
+        event: 1000
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: kitchen_dimmer
+        event: 2000
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: kitchen_dimmer
+        event: 3000
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_motion_detection_enabled
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.kitchen_motion_detection_enabled
+
+- alias: Enable kitchen motion on button click off
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: kitchen_dimmer
+        event: 4002
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_motion_detection_enabled
+      state: 'off'
+  action:
+    - delay: '00:00:10'
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.kitchen_motion_detection_enabled
+
+- alias: Enable motion when no motion for long time
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion_sensor
+      to: 'off'
+      for: '01:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_motion_detection_enabled
+      state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.kitchen_motion_detection_enabled

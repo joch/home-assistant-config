@@ -67,26 +67,6 @@
     - delay: '00:00:03'
     - service: switch.flux_kitchen_update
 
-- alias: Kitchen lights off when no motion for long time
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
-      to: 'off'
-      for: '02:00:00'
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.kitchen_motion_detection_enabled
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.kitchen_off
-
 - alias: Kitchen lights on dim on motion during the night
   trigger:
     - platform: state
