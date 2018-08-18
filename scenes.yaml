@@ -1,5 +1,7 @@
 - name: Lights Off
   entities:
+    light.bedroom_ceiling_lamp:
+      state: off
     light.bedroom_lamp:
       state: off
     light.guest_bedroom_window_lamp:
@@ -13,6 +15,8 @@
     group.hallway_ceiling_lamp:
       state: off
     light.kitchen_countertop_lightstrip:
+      state: off
+    light.guest_bedroom_ceiling_lamp:
       state: off
 
 - name: Lights Normal
@@ -253,6 +257,10 @@
 
 - name: Bedroom Normal
   entities:
+    light.bedroom_ceiling_lamp:
+      state: on
+      brightness_pct: 1
+      transition: 1
     light.bedroom_lamp:
       state: on
       brightness_pct: 75
@@ -260,11 +268,15 @@
 
 - name: Bedroom Off
   entities:
+    light.bedroom_ceiling_lamp:
+      state: off
     light.bedroom_lamp:
       state: off
 
 - name: Bedroom Dim
   entities:
+    light.bedroom_ceiling_lamp:
+      state: off
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
@@ -272,15 +284,14 @@
 
 - name: Bedroom Full
   entities:
+    light.bedroom_ceiling_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 1
     light.bedroom_lamp:
       state: on
       brightness_pct: 100
       transition: 1
-    light.living_room_globe:
-      state: on
-      transition: 1
-      brightness_pct: 100
-      color_temp: 1
 
 - name: Hallway Normal
   entities:
@@ -389,6 +400,10 @@
 
 - name: Guest bedroom Normal
   entities:
+    light.guest_bedroom_ceiling_lamp:
+      state: on
+      brightness_pct: 1
+      transition: 1
     light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 75
@@ -396,11 +411,15 @@
 
 - name: Guest Bedroom Off
   entities:
+    light.guest_bedroom_ceiling_lamp:
+      state: off
     light.guest_bedroom_window_lamp:
       state: off
 
 - name: Guest Bedroom Dim
   entities:
+    light.guest_bedroom_ceiling_lamp:
+      state: off
     light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 10
@@ -408,6 +427,10 @@
 
 - name: Guest Bedroom Full
   entities:
+    light.guest_bedroom_ceiling_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 1
     light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 100

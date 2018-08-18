@@ -106,11 +106,13 @@ emulated_hue:
 switch:
   - platform: flux
     lights:
+      - light.bedroom_ceiling_lamp
       - light.bedroom_lamp
-      - light.guest_bedroom_window_lamp
       - light.living_room_lamp
       - light.kitchen_window_lamp
       - light.kitchen_ceiling_lamp
+      - light.guest_bedroom_ceiling_lamp
+      - light.guest_bedroom_window_lamp
     name: Flux Indoor Lights
     stop_time: '22:00'
     start_colortemp: 4000

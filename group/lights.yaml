@@ -26,6 +26,7 @@ Living Room Lights:
 Bedroom Lights:
   icon: mdi:hotel
   entities:
+    - light.bedroom_ceiling_lamp
     - light.bedroom_lamp
     - light.johnnys_bedlight
     - light.kajsas_bedlight
@@ -65,6 +66,7 @@ Hallway Ceiling Lamp:
 Guest Bedroom Lights:
   icon: mdi:human-male-female
   entities:
+    - light.guest_bedroom_ceiling_lamp
     - light.guest_bedroom_window_lamp
     - scene.guest_bedroom_normal
     - scene.guest_bedroom_dim
