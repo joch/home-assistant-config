@@ -1,0 +1,53 @@
+- alias: Disable bedroom motion on button click
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bedroom_dimmer
+        event: 2002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bedroom_dimmer
+        event: 3002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bedroom_dimmer
+        event: 4002
+  condition:
+    - condition: state
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+
+- alias: Enable bedroom motion on button click off
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bedroom_dimmer
+        event: 1002
+  condition:
+    - condition: state
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+
+- alias: Enable motion when no motion for long time
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion_sensor
+      to: 'off'
+      for: '01:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.bedroom_motion_detection_enabled
