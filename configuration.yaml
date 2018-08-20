@@ -60,6 +60,21 @@ http:
   base_url: !secret http_base_url
   ssl_certificate: !secret http_ssl_certificate
   ssl_key: !secret http_ssl_key
+  trusted_proxies:
+    - !secret trusted_proxies_001
+    - !secret trusted_proxies_002
+    - !secret trusted_proxies_003
+    - !secret trusted_proxies_004
+    - !secret trusted_proxies_005
+    - !secret trusted_proxies_006
+    - !secret trusted_proxies_007
+    - !secret trusted_proxies_008
+    - !secret trusted_proxies_009
+    - !secret trusted_proxies_010
+    - !secret trusted_proxies_011
+    - !secret trusted_proxies_012
+    - !secret trusted_proxies_013
+    - !secret trusted_proxies_014
 
 recorder:
   db_url: !secret recorder_db_url
