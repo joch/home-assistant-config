@@ -43,7 +43,7 @@
     - platform: state
       entity_id: binary_sensor.bedroom_motion_sensor
       to: 'off'
-      for: '01:00:00'
+      for: '00:30:00'
   condition:
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled
