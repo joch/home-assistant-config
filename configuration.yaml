@@ -75,6 +75,7 @@ http:
     - !secret trusted_proxies_012
     - !secret trusted_proxies_013
     - !secret trusted_proxies_014
+    - !secret trusted_proxies_015
 
 recorder:
   db_url: !secret recorder_db_url
