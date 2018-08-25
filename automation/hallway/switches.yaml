@@ -1,53 +1,53 @@
-- alias: Disable living room motion on button click
+- alias: Disable hallway motion on button click
   trigger:
     - platform: event
       event_type: deconz_event
       event_data:
-        id: living_room_dimmer
+        id: hallway_dimmer
         event: 2002
     - platform: event
       event_type: deconz_event
       event_data:
-        id: living_room_dimmer
+        id: hallway_dimmer
         event: 3002
     - platform: event
       event_type: deconz_event
       event_data:
-        id: living_room_dimmer
+        id: hallway_dimmer
         event: 4002
   condition:
     - condition: state
-      entity_id: input_boolean.living_room_motion_detection_enabled
+      entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
   action:
     - service: input_boolean.turn_off
-      entity_id: input_boolean.living_room_motion_detection_enabled
+      entity_id: input_boolean.hallway_motion_detection_enabled
 
-- alias: Enable living room motion on button click off
+- alias: Enable hallway motion on button click off
   trigger:
     - platform: event
       event_type: deconz_event
       event_data:
-        id: living_room_dimmer
+        id: hallway_dimmer
         event: 1002
   condition:
     - condition: state
-      entity_id: input_boolean.living_room_motion_detection_enabled
+      entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'off'
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.living_room_motion_detection_enabled
+      entity_id: input_boolean.hallway_motion_detection_enabled
 
-- alias: Enable living room motion when no motion for long time
+- alias: Enable hallway motion when no motion for long time
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor
+      entity_id: binary_sensor.hallway_motion_sensor
       to: 'off'
       for: '00:30:00'
   condition:
     - condition: state
-      entity_id: input_boolean.living_room_motion_detection_enabled
+      entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'off'
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.living_room_motion_detection_enabled
+      entity_id: input_boolean.hallway_motion_detection_enabled

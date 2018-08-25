@@ -4,17 +4,17 @@
       event_type: deconz_event
       event_data:
         id: guest_bedroom_dimmer
-        event: 1002
-    - platform: event
-      event_type: deconz_event
-      event_data:
-        id: guest_bedroom_dimmer
         event: 2002
     - platform: event
       event_type: deconz_event
       event_data:
         id: guest_bedroom_dimmer
         event: 3002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: guest_bedroom_dimmer
+        event: 4002
   condition:
     - condition: state
       entity_id: input_boolean.guest_bedroom_motion_detection_enabled
@@ -29,7 +29,7 @@
       event_type: deconz_event
       event_data:
         id: guest_bedroom_dimmer
-        event: 5002
+        event: 1002
   condition:
     - condition: state
       entity_id: input_boolean.guest_bedroom_motion_detection_enabled
