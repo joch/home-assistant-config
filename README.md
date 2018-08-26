@@ -17,6 +17,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 ### Lights
 
 - [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/) x4
+- [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/) x2
 - [IKEA Trådfri Lights GU10](http://www.ikea.com/se/sv/catalog/products/00318292/) x3
 - [IKEA Trådfri 30W Transformer](https://www.ikea.com/se/sv/catalog/products/60342656/) x1
 - [Xiaomi Yeelight Lightstrip](https://xiaomi-mi.com/smart-lighting/xiaomi-yeelight-smart-led-lightstrip-ipl/) x1
