@@ -41,6 +41,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 
 ### Remotes
 
+- [IKEA Trådfri Dimmer](http://www.ikea.com/us/en/catalog/products/00347831/) x4
 - [IKEA Trådfri Remote](http://www.ikea.com/us/en/catalog/products/20303317/) x1
 - [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372) x1
 - [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/) x4
