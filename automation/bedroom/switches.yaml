@@ -23,8 +23,12 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.bedroom_motion_detection_enabled
 
-- alias: Enable bedroom motion on button click off
+- alias: Enable bedroom motion
   trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion_sensor
+      to: 'off'
+      for: '00:10:00'
     - platform: event
       event_type: deconz_event
       event_data:
@@ -37,17 +41,11 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.bedroom_motion_detection_enabled
-
-- alias: Enable bedroom motion when no motion for long time
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bedroom_motion_sensor
-      to: 'off'
-      for: '00:10:00'
-  condition:
-    - condition: state
-      entity_id: input_boolean.bedroom_motion_detection_enabled
-      state: 'off'
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.bedroom_motion_detection_enabled
+    - service: scene.turn_on
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.light_mode', 'on') %}
+          scene.bedroom_idle
+          {% else %}
+          scene.bedroom_off
+          {% endif %}
