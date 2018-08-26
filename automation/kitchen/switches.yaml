@@ -43,7 +43,7 @@
     - platform: state
       entity_id: binary_sensor.kitchen_motion_sensor
       to: 'off'
-      for: '00:30:00'
+      for: '00:10:00'
   condition:
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
