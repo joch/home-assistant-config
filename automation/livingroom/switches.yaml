@@ -41,7 +41,7 @@
 - alias: Enable living room motion when no motion for long time
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor
+      entity_id: binary_sensor.living_room_motion_sensor_sensor
       to: 'off'
       for: '00:10:00'
   condition:
