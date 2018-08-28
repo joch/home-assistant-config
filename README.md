@@ -4,6 +4,27 @@
 
 This is my [Home Assistant](https://home-assistant.io) configuration. The goal is to minimize manual control and leave as much as possible to automation. The configuration constantly evolves, so be sure to star the project to keep up with the updates.
 
+## Automation
+
+Below are some of my most used automations, which make life just a bit easier and more fun. For a complete light, have a look in the `automation/` folder in the repository.
+
+### Lighting
+
+- When the light in the living room is below 40 lx, enable "light mode", which means that window lamps turn on and room lighting reacts when people are in the room
+- When everyone are asleep, enable night lights throughout the home
+- When a wall dimmer is used, it will override light automation for that room until it has been empty for 10 minutes, at which the automation resumes
+- Full light mode which, when enabled, will run the lights at 100% when motion is detected in a room, and is very useful when cleaning the home
+- Light simulation, where some lights will turn on depending on the sun even when nobody is home
+
+### Security
+
+- When someone is about to leave and a door or window is open in the home, a notice sound will be played
+- When the last family member leaves the home, the alarm will automatically arm
+- When the first family member enters the home, the alarm will automatically disarm
+- When the last family member goes to sleep, the alarm will automatically arm for night
+- When the fist family member wakes up, the alarm will automatically disarm
+- Guest mode which, when enabled, allow approved guests to be part of the alarm and sleep automation
+
 ## Hardware
 
 The list following is a list of hardware deployed in the home, grouped by room. While there are currently different types, the goal is to standardize on Zigbee.
