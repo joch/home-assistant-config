@@ -6,12 +6,12 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 
 ## Automation
 
-Below are some of my most used automations, which make life just a bit easier and more fun. For a complete light, have a look in the `automation/` folder in the repository.
+Below are some of my most used automations, which make life just a bit easier and more fun. For a complete list, have a look in the `automation/` folder of the repository.
 
 ### Lighting
 
 - When the light in the living room is below 40 lx, enable "light mode", which means that window lamps turn on and room lighting reacts when people are in the room
-- When everyone are asleep, enable night lights throughout the home
+- When everyone are asleep, enable night lights when motion is detected
 - When a wall dimmer is used, it will override light automation for that room until it has been empty for 10 minutes, at which the automation resumes
 - Full light mode which, when enabled, will run the lights at 100% when motion is detected in a room, and is very useful when cleaning the home
 - Light simulation, where some lights will turn on depending on the sun even when nobody is home
@@ -27,7 +27,7 @@ Below are some of my most used automations, which make life just a bit easier an
 
 ## Hardware
 
-The list following is a list of hardware deployed in the home, grouped by room. While there are currently different types, the goal is to standardize on Zigbee.
+The following is a list of hardware deployed in the home, grouped by room. While there are currently different types of hardware, the goal is to standardize on Zigbee.
 
 ### Home
 
@@ -88,7 +88,7 @@ The list following is a list of hardware deployed in the home, grouped by room. 
 ### Guest Bedroom
 
 - Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
-- Ceiling lamp: [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/
+- Ceiling lamp: [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/)
 - Wall dimmer: [IKEA Trådfri Dimmer](http://www.ikea.com/us/en/catalog/products/00347831/)
 - Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
 - Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
