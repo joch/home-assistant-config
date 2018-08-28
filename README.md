@@ -4,11 +4,11 @@
 
 This is my [Home Assistant](https://home-assistant.io) configuration. The goal is to minimize manual control and leave as much as possible to automation. The configuration constantly evolves, so be sure to star the project to keep up with the updates.
 
-# Hardware
+## Hardware
 
 The list following is a list of hardware deployed in the home, grouped by room. While there are currently different types, the goal is to standardize on Zigbee.
 
-## Home
+### Home
 
 - Zigbee hub: [Dresden Elektronik ConBee](https://www.dresden-elektronik.de/conbee/)
 - Z-wave hub: [zwave.me uzb](http://zwave.me/index.php?id=28)
@@ -16,7 +16,7 @@ The list following is a list of hardware deployed in the home, grouped by room. 
 - Security camera (2): [Netgear Arlo Pro VMC4030](https://www.arlo.com/en-us/products/arlo-pro/)
 - Camera base station and siren: [Netgear Arlo Pro Base station with siren](https://www.arlo.com/en-us/products/arlo-pro/)
 
-## Bedroom
+### Bedroom
 
 - Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
 - Ceiling lamp: [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/)
@@ -27,7 +27,7 @@ The list following is a list of hardware deployed in the home, grouped by room. 
 - Sleep detection (2): [Fibaro FGWPF-102 ZW5 Wall Plug](https://www.fibaro.com/en/products/wall-plug/)
 - Temperature / humidity sensor: [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
 
-## Living Room
+### Living Room
 
 - Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
 - Ceiling lamp: [Philips Hue White and Color Ambiance E27](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e26/046677464486)
@@ -38,7 +38,7 @@ The list following is a list of hardware deployed in the home, grouped by room. 
 - Window (2) and door sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Unused wall plug: [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
 
-## Hallway
+### Hallway
 
 - Ceiling lamp (3): [IKEA Trådfri Lights GU10](http://www.ikea.com/se/sv/catalog/products/00318292/)
 - Wall dimmer: [IKEA Trådfri Dimmer](http://www.ikea.com/us/en/catalog/products/00347831/)
@@ -47,13 +47,13 @@ The list following is a list of hardware deployed in the home, grouped by room. 
 - Smoke sensor: [Fibaro Smoke Sensor FGSD-002](https://www.fibaro.com/en/products/smoke-sensor/)
 - Unused wall plug: [Fibaro FGWPF-102 ZW5 Wall Plug](https://www.fibaro.com/en/products/wall-plug/)
 
-## Bathroom
+### Bathroom
 
 - Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Temperature / humidity sensor: [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
 - Washer leak sensor (to be deployed): [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/)
 
-## Kitchen
+### Kitchen
 
 - Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
 - Ceiling lamp: [Philips Hue Cher Suspension Light](https://www2.meethue.com/en-us/p/hue-white-ambiance-cher-suspension-light/4076130U7)
@@ -64,7 +64,7 @@ The list following is a list of hardware deployed in the home, grouped by room. 
 - Window sensors: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Dishwasher leak sensor (to be deployed): [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/)
 
-## Guest Bedroom
+### Guest Bedroom
 
 - Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
 - Ceiling lamp: [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/
@@ -73,7 +73,7 @@ The list following is a list of hardware deployed in the home, grouped by room. 
 - Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Guest sleep/wake button: [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/)
 
-# Screenshots
+## Screenshots
 
 Note that these screenshots are provided in a best-effort manner, and may not reflect the current state of the configuration.
 
