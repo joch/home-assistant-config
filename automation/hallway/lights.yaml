@@ -28,7 +28,7 @@
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: light.turn_on
@@ -60,7 +60,7 @@
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: light.turn_off
@@ -77,7 +77,7 @@
       entity_id: group.hallway_ceiling_lamp
       state: 'off'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: light.turn_on
@@ -106,64 +106,12 @@
       entity_id: group.hallway_ceiling_lamp
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
-      state: 'off'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: group.hallway_ceiling_lamp
-        transition: 10
-    - delay: '00:00:10'
-    - service: light.turn_off
-      data:
-        entity_id: group.hallway_ceiling_lamp
-
-- alias: Turn on left hallway ceiling lamp when motion is detected in hallway when someone asleep
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.hallway_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: group.sleep_status
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: light.turn_on
       data:
-        entity_id: light.hallway_lamp_left
-        transition: 2
-        brightness_pct: 1
-    - delay: '00:00:03'
-    - service: switch.flux_hallway_update
-
-- alias: Turn off hallway ceiling lamp when no motion is detected in hallway when someone asleep
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: light.hallway_lamp_left
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.hallway_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: group.sleep_status
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.hallway_lamp_left
+        entity_id: group.hallway_ceiling_lamp
         transition: 10
     - delay: '00:00:10'
     - service: light.turn_off
@@ -193,6 +141,9 @@
     - platform: state
       entity_id: input_boolean.everyone_asleep
       to: 'on'
+    - platform: state
+      entity_id: group.sleep_status
+      to: 'off'
   condition:
     - condition: state
       entity_id: light.gateway_light_7811dc64de1a
