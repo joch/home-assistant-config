@@ -24,6 +24,7 @@ Below are some of my most used automations, which make life just a bit easier an
 - When the last family member goes to sleep, the alarm will automatically arm for night
 - When the fist family member wakes up, the alarm will automatically disarm
 - Guest mode which, when enabled, allow approved guests to be part of the alarm and sleep automation
+- Dead man's switch, which will alert everyone in the household if someone is home, but has not moved for four hours (excluding sleep)
 
 ## Hardware
 
