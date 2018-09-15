@@ -54,6 +54,7 @@ Kitchen Lights:
     - scene.kitchen_normal
     - scene.kitchen_dim
     - scene.kitchen_full
+    - scene.kitchen_night
     - scene.kitchen_countertop_only
 
 Hallway Ceiling Lamp:

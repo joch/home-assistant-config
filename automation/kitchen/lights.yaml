@@ -81,7 +81,7 @@
       state: 'on'
   action:
     - service: scene.turn_on
-      entity_id: scene.kitchen_dim
+      entity_id: scene.kitchen_night
 
 - alias: Kitchen lights off when no motion during the night
   trigger:
