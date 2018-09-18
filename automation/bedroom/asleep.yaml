@@ -1,77 +1,29 @@
-- alias: Toggle sleep on for Johnny
+- alias: Toggle Johnny Asleep
   trigger:
-    - platform: state
-      entity_id: light.johnnys_bedlight
-      to: 'off'
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: johnny_asleep
+        event: 1000
   condition:
     - condition: state
-      entity_id: input_boolean.sleep_automation
-      state: 'on'
-    - condition: state
+      entity_id: device_tracker.johnnysiphone
+      state: 'home'
+  action:
+    - service: input_boolean.toggle
       entity_id: input_boolean.johnny_asleep
-      state: 'off'
-    - condition: numeric_state
-      entity_id: sensor.bedroom_johnny_charger_power
-      above: 1
-  action:
-    - service: input_boolean.turn_on
-      data:
-        entity_id: input_boolean.johnny_asleep
 
-- alias: Toggle sleep on for Kajsa
+- alias: Toggle Kajsa Asleep
   trigger:
-    - platform: state
-      entity_id: light.kajsas_bedlight
-      to: 'off'
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: kajsa_asleep
+        event: 1000
   condition:
     - condition: state
-      entity_id: input_boolean.sleep_automation
-      state: 'on'
-    - condition: state
+      entity_id: device_tracker.kajsasiphone
+      state: 'home'
+  action:
+    - service: input_boolean.toggle
       entity_id: input_boolean.kajsa_asleep
-      state: 'off'
-    - condition: numeric_state
-      entity_id: sensor.bedroom_kajsa_charger_power
-      above: 1
-  action:
-    - service: input_boolean.turn_on
-      data:
-        entity_id: input_boolean.kajsa_asleep
-
-- alias: Toggle sleep off for Johnny
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.bedroom_johnny_charger_power
-      below: 0.1
-      for:
-        minutes: 20
-  condition:
-    - condition: state
-      entity_id: input_boolean.sleep_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.johnny_asleep
-      state: 'on'
-  action:
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.johnny_asleep
-
-- alias: Toggle sleep off for Kajsa
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.bedroom_kajsa_charger_power
-      below: 0.1
-      for:
-        minutes: 20
-  condition:
-    - condition: state
-      entity_id: input_boolean.sleep_automation
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.kajsa_asleep
-      state: 'on'
-  action:
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.kajsa_asleep
