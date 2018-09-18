@@ -118,7 +118,7 @@
       data:
         entity_id: group.hallway_ceiling_lamp
 
-- alias: Turn on hallway mood light instead of mirror lamp when one person goes to sleep
+- alias: Turn on hallway mood light when one person goes to sleep
   trigger:
     - platform: state
       entity_id: group.sleep_status
@@ -136,7 +136,7 @@
     - service: switch.turn_off
       entity_id: switch.hallway_mirror_lamp_switch
 
-- alias: Turn off hallway mood light when everyone asleep
+- alias: Turn off hallway mood light when everyone asleep or awake
   trigger:
     - platform: state
       entity_id: input_boolean.everyone_asleep
