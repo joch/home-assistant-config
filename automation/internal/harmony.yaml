@@ -8,7 +8,7 @@
     data_template:
       activity: >
         {% if is_state("input_select.harmony", "TV") %}
-          33661228
+          35615780
         {% elif is_state("input_select.harmony", "Movies") %}
           29561843
         {% elif is_state("input_select.harmony", "Music") %}
