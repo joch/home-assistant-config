@@ -56,7 +56,7 @@
 #       entity_id: input_boolean.perimeter_warning
 #       state: 'on'
 #     - condition: state
-#       entity_id: binary_sensor.bedroom_motion_sensor
+#       entity_id: binary_sensor.bedroom_motion
 #       state: 'off'
 #   action:
 #     - service: alarm_control_panel.alarm_trigger
@@ -146,7 +146,7 @@
 #       entity_id: input_boolean.perimeter_warning
 #       state: 'on'
 #     - condition: state
-#       entity_id: binary_sensor.guest_bedroom_motion_sensor
+#       entity_id: binary_sensor.guest_bedroom_motion
 #       state: 'off'
 #   action:
 #     - service: alarm_control_panel.alarm_trigger
