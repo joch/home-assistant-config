@@ -29,7 +29,7 @@ Hallway:
   - input_boolean.hallway_motion_detection_enabled
 
 Kitchen:
-  - binary_sensor.kitchen_motion_sensor
+  - binary_sensor.kitchen_motion
   - input_boolean.kitchen_motion_detection_enabled
 
 Bathroom:

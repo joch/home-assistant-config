@@ -6,7 +6,7 @@
         - zwave.hallway_smoke_sensor
         - camera.living_room
         - camera.hallway
-        - binary_sensor.kitchen_motion_sensor
+        - binary_sensor.kitchen_motion
         - binary_sensor.bedroom_window
         - binary_sensor.guest_bedroom_window
         - binary_sensor.bathroom_window

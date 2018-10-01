@@ -4,7 +4,7 @@
       entity_id: input_boolean.lights_needed
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
+      entity_id: binary_sensor.kitchen_motion
       to: 'off'
       for: '00:03:00'
   condition:
@@ -27,7 +27,7 @@
       entity_id: input_boolean.lights_needed
       to: 'off'
     - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
+      entity_id: binary_sensor.kitchen_motion
       to: 'off'
       for: '00:03:00'
   condition:
@@ -44,7 +44,7 @@
 - alias: Kitchen lights normal when motion
   trigger:
     - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
+      entity_id: binary_sensor.kitchen_motion
       to: 'on'
   condition:
     - condition: state
@@ -70,7 +70,7 @@
 - alias: Kitchen lights on dim on motion during the night
   trigger:
     - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
+      entity_id: binary_sensor.kitchen_motion
       to: 'on'
   condition:
     - condition: state
@@ -86,7 +86,7 @@
 - alias: Kitchen lights off when no motion during the night
   trigger:
     - platform: state
-      entity_id: binary_sensor.kitchen_motion_sensor
+      entity_id: binary_sensor.kitchen_motion
       to: 'off'
       for: '00:01:00'
   condition:

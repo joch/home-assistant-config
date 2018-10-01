@@ -130,7 +130,7 @@
 #     #   entity_id: input_boolean.perimeter_warning
 #     #   state: 'on'
 # #     - condition: state
-# #       entity_id: binary_sensor.kitchen_motion_sensor
+# #       entity_id: binary_sensor.kitchen_motion
 # #       state: 'off'
 # #   action:
 # #     - service: alarm_control_panel.alarm_trigger
