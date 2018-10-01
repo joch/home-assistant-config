@@ -40,12 +40,12 @@
           101
         {%- endif -%}
       unit_of_measurement: '%'
-    hallway_motion_sensor_battery:
+    hallway_motion_battery:
       friendly_name: Hallway Motion Sensor Battery
       icon_template: mdi:battery
       value_template: >-
-        {%- if states.binary_sensor.hallway_motion_sensor -%}
-          {{ states.binary_sensor.hallway_motion_sensor.attributes.battery_level }}
+        {%- if states.binary_sensor.hallway_motion -%}
+          {{ states.binary_sensor.hallway_motion.attributes.battery_level }}
         {%- else -%}
           101
         {%- endif -%}

@@ -21,7 +21,7 @@
 - alias: Turn on hallway ceiling lamp when motion is detected in hallway
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor
+      entity_id: binary_sensor.hallway_motion
       to: 'on'
   condition:
     - condition: state
@@ -49,7 +49,7 @@
 - alias: Turn off hallway ceiling lamp when no motion is detected in hallway
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor
+      entity_id: binary_sensor.hallway_motion
       to: 'off'
       for: '00:02:00'
   condition:
@@ -156,7 +156,7 @@
 - alias: Turn on hallway mood light when motion is detected in hallway when everyone asleep
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor
+      entity_id: binary_sensor.hallway_motion
       to: 'on'
   condition:
     - condition: state
@@ -175,7 +175,7 @@
 - alias: Turn off hallway mood light when no motion is detected in hallway when everyone asleep
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor
+      entity_id: binary_sensor.hallway_motion
       to: 'off'
   condition:
     - condition: state
