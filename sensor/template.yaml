@@ -1,15 +1,5 @@
 - platform: template
   sensors:
-    living_room_motion_sensor_battery:
-      friendly_name: Living Room Motion Sensor
-      icon_template: mdi:battery
-      value_template: >-
-        {%- if states.zwave.living_room_motion_sensor -%}
-          {{ states.zwave.living_room_motion_sensor.attributes.battery_level }}
-        {%- else -%}
-          101
-        {%- endif -%}
-      unit_of_measurement: '%'
     living_room_smoke_sensor_battery:
       friendly_name: Living Room Smoke Sensor
       icon_template: mdi:battery

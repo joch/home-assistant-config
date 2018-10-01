@@ -4,7 +4,7 @@ Living Room:
   - binary_sensor.living_room_window_left
   - binary_sensor.living_room_window_right
   - sensor.living_room_motion_sensor_temperature
-  - sensor.living_room_motion_sensor_luminance
+  - sensor.living_room_motion_sensor_lightlevel
   - switch.living_room_outlet
   - input_boolean.living_room_motion_detection_enabled
   - sensor.plex
