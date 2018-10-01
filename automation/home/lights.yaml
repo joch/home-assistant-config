@@ -1,7 +1,7 @@
 - alias: Home lights on
   trigger:
     - platform: numeric_state
-      entity_id: sensor.living_room_motion_sensor_lightlevel
+      entity_id: sensor.living_room_luminance
       below: 40
       for:
         minutes: 10
@@ -30,7 +30,7 @@
       entity_id: input_boolean.everyone_asleep
       state: 'off'
     - condition: numeric_state
-      entity_id: sensor.living_room_motion_sensor_lightlevel
+      entity_id: sensor.living_room_luminance
       below: 40
     - condition: state
       entity_id: input_boolean.lights_needed
@@ -45,7 +45,7 @@
       entity_id: alarm_control_panel.alarm
       to: 'armed_away'
     - platform: numeric_state
-      entity_id: sensor.living_room_motion_sensor_lightlevel
+      entity_id: sensor.living_room_luminance
       above: 40
       for:
         minutes: 10

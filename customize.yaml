@@ -56,7 +56,7 @@ sensor.dark_sky_precip_intensity_max:
 
 sensor.living_room_motion_sensor_temperature:
   friendly_name: 'Living Room Temperature'
-sensor.living_room_motion_sensor_lightlevel:
+sensor.living_room_luminance:
   friendly_name: 'Living Room Luminance'
 sensor.jochad:
   icon: mdi:xbox

@@ -36,10 +36,10 @@
         entity_id: group.hallway_ceiling_lamp
         transition: 2
         brightness_pct: >-
-          {% if states.sensor.living_room_motion_sensor_lightlevel.state | int <= 20 %}
+          {% if states.sensor.living_room_luminance.state | int <= 20 %}
           20
-          {% elif states.sensor.living_room_motion_sensor_lightlevel.state | int <= 100 %}
-          {{ states.sensor.living_room_motion_sensor_lightlevel.state | int }}
+          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+          {{ states.sensor.living_room_luminance.state | int }}
           {% else %}
           100
           {% endif %}
@@ -85,10 +85,10 @@
         entity_id: group.hallway_ceiling_lamp
         transition: 2
         brightness_pct: >-
-          {% if states.sensor.living_room_motion_sensor_lightlevel.state | int <= 20 %}
+          {% if states.sensor.living_room_luminance.state | int <= 20 %}
           20
-          {% elif states.sensor.living_room_motion_sensor_lightlevel.state | int <= 100 %}
-          {{ states.sensor.living_room_motion_sensor_lightlevel.state | int }}
+          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+          {{ states.sensor.living_room_luminance.state | int }}
           {% else %}
           100
           {% endif %}
