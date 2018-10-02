@@ -107,7 +107,7 @@ Indoor Humidity:
 
 Indoor Motion:
   - binary_sensor.bedroom_motion
-  - binary_sensor.living_room_motion_sensor_sensor
+  - binary_sensor.living_room_motion_sensor
   - binary_sensor.hallway_motion
   - binary_sensor.kitchen_motion
   - binary_sensor.guest_bedroom_motion

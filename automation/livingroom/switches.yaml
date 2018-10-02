@@ -26,7 +26,7 @@
 - alias: Enable living room motion
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor_sensor
+      entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
       for: '00:10:00'
     - platform: event

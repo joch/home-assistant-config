@@ -4,7 +4,7 @@
       entity_id: input_boolean.lights_needed
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor_sensor
+      entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
       for:
         minutes: 10
@@ -46,7 +46,7 @@
 - alias: Living room lights normal when occupied
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor_sensor
+      entity_id: binary_sensor.living_room_motion_sensor
       to: 'on'
   condition:
     - condition: state

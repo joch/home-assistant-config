@@ -299,7 +299,7 @@
         - binary_sensor.bedroom_motion
         - binary_sensor.hallway_motion
         - binary_sensor.kitchen_motion
-        - binary_sensor.living_room_motion_sensor_sensor
+        - binary_sensor.living_room_motion_sensor
       to: 'on'
   condition:
     - condition: state

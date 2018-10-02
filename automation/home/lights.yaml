@@ -10,7 +10,7 @@
       to: 'off'
     - platform: state
       entity_id:
-        - binary_sensor.living_room_motion_sensor_sensor
+        - binary_sensor.living_room_motion_sensor
         - binary_sensor.hallway_motion
         - binary_sensor.kitchen_motion
       to: 'on'

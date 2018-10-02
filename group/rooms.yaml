@@ -1,5 +1,5 @@
 Living Room:
-  - binary_sensor.living_room_motion_sensor_sensor
+  - binary_sensor.living_room_motion_sensor
   - binary_sensor.patio_entrance
   - binary_sensor.living_room_window_left
   - binary_sensor.living_room_window_right
