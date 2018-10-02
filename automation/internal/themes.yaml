@@ -8,10 +8,10 @@
       event: sunset
     - platform: numeric_state
       entity_id: sensor.living_room_luminance
-      below: 10
+      below: 10.0
     - platform: numeric_state
       entity_id: sensor.living_room_luminance
-      above: 10
+      above: 10.0
   action:
     service: frontend.set_theme
     data_template:
