@@ -192,9 +192,9 @@ device_tracker:
 # influxdb:
 #   host: !secret influxdb_host
 
-arlo:
-  username: !secret arlo_username
-  password: !secret arlo_password
+# arlo:
+#   username: !secret arlo_username
+#   password: !secret arlo_password
 
 deconz:
   host: !secret deconz_host
@@ -216,9 +216,9 @@ homekit:
       - scene
       - switch
 
-camera:
-  - platform: arlo
-    ffmpeg_arguments: '-pred 1 -q:v 2'
+# camera:
+#   - platform: arlo
+#     ffmpeg_arguments: '-pred 1 -q:v 2'
 
 alarm_control_panel:
   - platform: manual
@@ -235,7 +235,7 @@ alarm_control_panel:
       pending_time: 30
     triggered:
       pending_time: 60
-  - platform: arlo
+  # - platform: arlo
 
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml

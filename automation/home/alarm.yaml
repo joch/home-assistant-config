@@ -9,8 +9,10 @@
       data:
         title: "Alarm has been armed"
         message: "The alarm has been set to armed_away"
-    - service: alarm_control_panel.alarm_arm_away
-      entity_id: alarm_control_panel.home
+    # - service: alarm_control_panel.alarm_arm_away
+    #   entity_id: alarm_control_panel.home
+    - service: ifttt.trigger
+      data: {"event":"alarm_arm"}
     - service: light.turn_on
       data:
         entity_id: light.gateway_light_7811dc64de1a
@@ -31,8 +33,10 @@
       data:
         title: "Alarm has been disarmed"
         message: "The alarm has been set to disarmed"
-    - service: alarm_control_panel.alarm_disarm
-      entity_id: alarm_control_panel.home
+    # - service: alarm_control_panel.alarm_disarm
+    #   entity_id: alarm_control_panel.home
+    - service: ifttt.trigger
+      data: {"event":"alarm_disarm"}
     - service: light.turn_on
       data:
         entity_id: light.gateway_light_7811dc64de1a
