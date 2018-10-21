@@ -37,7 +37,7 @@ Bedroom Lights:
 Hallway Lights:
   icon: mdi:cube-unfolded
   entities:
-    - group.hallway_ceiling_lamp
+    - light.hallway_ceiling_lamp
     - switch.hallway_mirror_lamp_switch
     - light.gateway_light_7811dc64de1a
     - scene.hallway_normal
@@ -56,13 +56,6 @@ Kitchen Lights:
     - scene.kitchen_full
     - scene.kitchen_night
     - scene.kitchen_countertop_only
-
-Hallway Ceiling Lamp:
-  icon: mdi:spotlight-beam
-  entities:
-    - light.hallway_lamp_left
-    - light.hallway_lamp_middle
-    - light.hallway_lamp_right
 
 Guest Bedroom Lights:
   icon: mdi:human-male-female

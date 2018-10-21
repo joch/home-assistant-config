@@ -33,7 +33,7 @@
   action:
     - service: light.turn_on
       data_template:
-        entity_id: group.hallway_ceiling_lamp
+        entity_id: light.hallway_ceiling_lamp
         transition: 2
         brightness_pct: >-
           {% if states.sensor.living_room_luminance.state | int <= 20 %}
@@ -54,7 +54,7 @@
       for: '00:02:00'
   condition:
     - condition: state
-      entity_id: group.hallway_ceiling_lamp
+      entity_id: light.hallway_ceiling_lamp
       state: 'on'
     - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
@@ -65,7 +65,7 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: group.hallway_ceiling_lamp
+        entity_id: light.hallway_ceiling_lamp
 
 - alias: Turn on hallway ceiling lamp when main entrance is opened
   trigger:
@@ -74,7 +74,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: group.hallway_ceiling_lamp
+      entity_id: light.hallway_ceiling_lamp
       state: 'off'
     - condition: state
       entity_id: input_boolean.everyone_asleep
@@ -82,7 +82,7 @@
   action:
     - service: light.turn_on
       data_template:
-        entity_id: group.hallway_ceiling_lamp
+        entity_id: light.hallway_ceiling_lamp
         transition: 2
         brightness_pct: >-
           {% if states.sensor.living_room_luminance.state | int <= 20 %}
@@ -103,7 +103,7 @@
       for: '00:03:00'
   condition:
     - condition: state
-      entity_id: group.hallway_ceiling_lamp
+      entity_id: light.hallway_ceiling_lamp
       state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
@@ -111,12 +111,12 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: group.hallway_ceiling_lamp
+        entity_id: light.hallway_ceiling_lamp
         transition: 10
     - delay: '00:00:10'
     - service: light.turn_off
       data:
-        entity_id: group.hallway_ceiling_lamp
+        entity_id: light.hallway_ceiling_lamp
 
 - alias: Turn on hallway mood light when one person goes to sleep
   trigger:
