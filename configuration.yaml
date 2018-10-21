@@ -243,7 +243,7 @@ input_select: !include input_select.yaml
 sensor: !include_dir_merge_list sensor
 binary_sensor: !include_dir_merge_list binary_sensor
 group: !include_dir_merge_named group
-scene: !include scenes.yaml
+scene: !include_dir_merge_list scene
 automation: !include_dir_merge_list automation
 alert: !include_dir_merge_list alert
 notify: !include_dir_merge_list notify

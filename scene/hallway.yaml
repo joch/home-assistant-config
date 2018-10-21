@@ -1,0 +1,29 @@
+- name: Hallway Normal
+  entities:
+    switch.hallway_mirror_lamp_switch:
+      state: on
+    light.hallway_ceiling_lamp:
+      state: off
+
+- name: Hallway Dim
+  entities:
+    switch.hallway_mirror_lamp_switch:
+      state: on
+
+- name: Hallway Full
+  entities:
+    switch.hallway_mirror_lamp_switch:
+      state: on
+    light.hallway_ceiling_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 1
+
+- name: Hallway Off
+  entities:
+    switch.hallway_mirror_lamp_switch:
+      state: off
+    light.hallway_ceiling_lamp:
+      state: off
+    light.gateway_light_7811dc64de1a:
+      state: off
