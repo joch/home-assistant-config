@@ -13,9 +13,6 @@
       entity_id: input_boolean.lights_needed
       state: 'on'
     - condition: state
-      entity_id: group.living_room_lights
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
   action:
