@@ -75,9 +75,7 @@
       rgb_color: [255,100,0]
       transition: 2
     light.kitchen_cabinet_light:
-      state: on
-      brightness_pct: 5
-      transition: 2
+      state: off
     light.kitchen_window_lamp:
       state: off
 
