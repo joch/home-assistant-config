@@ -3,73 +3,78 @@
     light.living_room_ceiling_lamp:
       state: on
       brightness_pct: 75
-      transition: 1
+      transition: 2
       rgb_color: [255,127,0]
     light.living_room_lamp:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
     light.living_room_globe:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
       rgb_color: [255,127,0]
     light.living_room_tv_light:
       state: on
       brightness_pct: 10
-      transition: 1
+      transition: 2
       rgb_color: [255,127,0]
 
 - name: Living Room Off
   entities:
     light.living_room_ceiling_lamp:
       state: off
+      transition: 10
     light.living_room_lamp:
       state: off
+      transition: 10
     light.living_room_globe:
       state: off
+      transition: 10
     light.living_room_tv_light:
       state: off
+      transition: 10
 
 - name: Living Room Dim
   entities:
     light.living_room_ceiling_lamp:
       state: on
       brightness_pct: 10
-      transition: 1
+      transition: 10
       rgb_color: [255,127,0]
     light.living_room_lamp:
       state: on
       brightness_pct: 10
-      transition: 1
+      transition: 10
     light.living_room_globe:
       state: on
-      transition: 1
+      transition: 10
       brightness_pct: 25
       rgb_color: [255,127,0]
     light.living_room_tv_light:
       state: off
+      transition: 10
 
 - name: Living Room Full
   entities:
     light.living_room_ceiling_lamp:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
       color_temp: 300
     light.living_room_lamp:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
     light.living_room_globe:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
       color_temp: 300
     light.living_room_tv_light:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
       color_temp: 300
 
 - name: Living Room TV
@@ -77,21 +82,21 @@
     light.living_room_ceiling_lamp:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
       color_temp: 500
     light.living_room_lamp:
       state: on
       brightness_pct: 1
-      transition: 1
+      transition: 2
     light.living_room_globe:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
       color_temp: 500
     light.living_room_tv_light:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
       kelvin: 6500
 
 - name: Living Room TV Only
@@ -99,7 +104,7 @@
     light.living_room_tv_light:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
       kelvin: 6500
 
 - name: Living Room Music
@@ -107,21 +112,21 @@
     light.living_room_ceiling_lamp:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
       color_temp: 500
     light.living_room_lamp:
       state: on
       brightness_pct: 25
-      transition: 1
+      transition: 2
     light.living_room_globe:
       state: on
-      transition: 1
+      transition: 2
       brightness_pct: 50
       rgb_color: [255,127,0]
     light.living_room_tv_light:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
       rgb_color: [255,127,0]
 
 - name: Living Room Music Only
@@ -129,5 +134,5 @@
     light.living_room_tv_light:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
       rgb_color: [255,127,0]

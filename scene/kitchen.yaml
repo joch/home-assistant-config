@@ -3,90 +3,95 @@
     light.kitchen_ceiling_lamp:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
     light.kitchen_countertop_lightstrip:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
     light.kitchen_cabinet_light:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
     light.kitchen_window_lamp:
       state: on
       brightness_pct: 75
-      transition: 1
+      transition: 2
 
 - name: Kitchen Countertop Only
   entities:
     light.kitchen_countertop_lightstrip:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
     light.kitchen_ceiling_lamp:
       state: on
       brightness_pct: 50
-      transition: 1
+      transition: 2
 
 - name: Kitchen Dim
   entities:
     light.kitchen_ceiling_lamp:
       state: off
+      transition: 10
     light.kitchen_countertop_lightstrip:
       state: off
+      transition: 10
     light.kitchen_cabinet_light:
       state: on
       brightness_pct: 5
-      transition: 1
+      transition: 10
     light.kitchen_window_lamp:
       state: on
       brightness_pct: 10
-      transition: 1
+      transition: 10
 
 - name: Kitchen Full
   entities:
     light.kitchen_ceiling_lamp:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
     light.kitchen_countertop_lightstrip:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
     light.kitchen_cabinet_light:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
     light.kitchen_window_lamp:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
 
 - name: Kitchen Night
   entities:
     light.kitchen_ceiling_lamp:
       state: off
+      transition: 10
     light.kitchen_countertop_lightstrip:
       state: on
       brightness_pct: 1
       rgb_color: [255,100,0]
-      transition: 1
+      transition: 2
     light.kitchen_cabinet_light:
       state: on
       brightness_pct: 5
-      transition: 1
+      transition: 2
     light.kitchen_window_lamp:
-      state: on
-      brightness_pct: 10
-      transition: 1
+      state: off
 
 - name: Kitchen Off
   entities:
     light.kitchen_ceiling_lamp:
       state: off
+      transition: 10
     light.kitchen_countertop_lightstrip:
       state: off
+      transition: 10
     light.kitchen_cabinet_light:
       state: off
+      transition: 10
     light.kitchen_window_lamp:
       state: off
+      transition: 10

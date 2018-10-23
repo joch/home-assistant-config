@@ -17,7 +17,7 @@
     light.hallway_ceiling_lamp:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
 
 - name: Hallway Off
   entities:
@@ -25,5 +25,6 @@
       state: off
     light.hallway_ceiling_lamp:
       state: off
+      transition: 10
     light.gateway_light_7811dc64de1a:
       state: off

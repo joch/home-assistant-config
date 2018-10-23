@@ -3,35 +3,38 @@
     light.bedroom_ceiling_lamp:
       state: on
       brightness_pct: 1
-      transition: 1
+      transition: 2
     light.bedroom_lamp:
       state: on
       brightness_pct: 75
-      transition: 1
+      transition: 2
 
 - name: Bedroom Off
   entities:
     light.bedroom_ceiling_lamp:
       state: off
+      transition: 10
     light.bedroom_lamp:
       state: off
+      transition: 10
 
 - name: Bedroom Dim
   entities:
     light.bedroom_ceiling_lamp:
       state: off
+      transition: 10
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
-      transition: 1
+      transition: 10
 
 - name: Bedroom Full
   entities:
     light.bedroom_ceiling_lamp:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
     light.bedroom_lamp:
       state: on
       brightness_pct: 100
-      transition: 1
+      transition: 2
