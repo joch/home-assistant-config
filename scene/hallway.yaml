@@ -25,6 +25,6 @@
       state: off
     light.hallway_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.gateway_light_7811dc64de1a:
       state: off

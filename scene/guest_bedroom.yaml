@@ -13,20 +13,20 @@
   entities:
     light.guest_bedroom_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.guest_bedroom_window_lamp:
       state: off
-      transition: 10
+      transition: 5
 
 - name: Guest Bedroom Dim
   entities:
     light.guest_bedroom_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.guest_bedroom_window_lamp:
       state: on
       brightness_pct: 10
-      transition: 10
+      transition: 5
 
 - name: Guest Bedroom Full
   entities:

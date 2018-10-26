@@ -13,20 +13,20 @@
   entities:
     light.bedroom_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.bedroom_lamp:
       state: off
-      transition: 10
+      transition: 5
 
 - name: Bedroom Dim
   entities:
     light.bedroom_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.bedroom_lamp:
       state: on
       brightness_pct: 1
-      transition: 10
+      transition: 5
 
 - name: Bedroom Full
   entities:

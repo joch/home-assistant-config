@@ -32,18 +32,18 @@
   entities:
     light.kitchen_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.kitchen_countertop_lightstrip:
       state: off
-      transition: 10
+      transition: 5
     light.kitchen_cabinet_light:
       state: on
       brightness_pct: 5
-      transition: 10
+      transition: 5
     light.kitchen_window_lamp:
       state: on
       brightness_pct: 10
-      transition: 10
+      transition: 5
 
 - name: Kitchen Full
   entities:
@@ -68,7 +68,7 @@
   entities:
     light.kitchen_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.kitchen_countertop_lightstrip:
       state: on
       brightness_pct: 1
@@ -83,13 +83,13 @@
   entities:
     light.kitchen_ceiling_lamp:
       state: off
-      transition: 10
+      transition: 5
     light.kitchen_countertop_lightstrip:
       state: off
-      transition: 10
+      transition: 5
     light.kitchen_cabinet_light:
       state: off
-      transition: 10
+      transition: 5
     light.kitchen_window_lamp:
       state: off
-      transition: 10
+      transition: 5
