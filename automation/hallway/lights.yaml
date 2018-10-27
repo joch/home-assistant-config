@@ -169,9 +169,9 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.gateway_light_7811dc64de1a
-        brightness_pct: 20
-        rgb_color: [255,37,0]
+        entity_id: light.hallway_lamp_middle
+        brightness_pct: 1
+        transition: 2
 
 - alias: Turn off hallway mood light when no motion is detected in hallway when everyone asleep
   trigger:
@@ -191,4 +191,5 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.gateway_light_7811dc64de1a
+        entity_id: light.hallway_lamp_middle
+        transition: 5
