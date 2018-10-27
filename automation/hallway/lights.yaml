@@ -180,7 +180,7 @@
       to: 'off'
   condition:
     - condition: state
-      entity_id: light.gateway_light_7811dc64de1a
+      entity_id: light.hallway_lamp_middle
       state: 'on'
     - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
