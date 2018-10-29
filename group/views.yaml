@@ -41,6 +41,13 @@ bath:
   entities:
     - group.bathroom
 
+clos:
+  name: Closet
+  view: yes
+  icon: mdi:hanger
+  entities:
+    - group.closet
+
 hall:
   name: Hallway
   view: yes

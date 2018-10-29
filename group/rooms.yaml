@@ -5,7 +5,6 @@ Living Room:
   - binary_sensor.living_room_window_right
   - sensor.living_room_motion_sensor_temperature
   - sensor.living_room_luminance
-  - switch.living_room_outlet
   - input_boolean.living_room_motion_detection_enabled
   - sensor.plex
   - sensor.jochad
@@ -19,6 +18,11 @@ Bedroom:
   - input_boolean.bedroom_motion_detection_enabled
   - switch.bedroom_johnny_charger_switch
   - switch.bedroom_kajsa_charger_switch
+
+Closet:
+  - sensor.bedroom_environment_temperature
+  - sensor.bedroom_environment_humidity
+  - switch.living_room_outlet
 
 Hallway:
   - binary_sensor.main_entrance
