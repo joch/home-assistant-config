@@ -12,11 +12,3 @@
   action:
     - service: input_boolean.toggle
       entity_id: input_boolean.guest_asleep
-    - service: light.turn_on
-      data:
-        entity_id: light.guest_bedroom_window_lamp
-        brightness_pct: 1
-    - delay: '00:01:10'
-    - service: light.turn_off
-      data:
-        entity_id: light.guest_bedroom_window_lamp
