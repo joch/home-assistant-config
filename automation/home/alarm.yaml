@@ -22,6 +22,11 @@
     - service: light.turn_off
       data:
         entity_id: light.gateway_light_7811dc64de1a
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.johnny_asleep
+        - input_boolean.kajsa_asleep
+        - input_boolean.guest_asleep
 
 - alias: Alarm disarmed
   trigger:
