@@ -14,6 +14,9 @@
         minutes: 10
   condition:
     - condition: state
+      entity_id: input_boolean.closet_ventilation_fan_automation
+      state: 'on'
+    - condition: state
       entity_id: switch.living_room_outlet
       state: 'off'
     - condition: numeric_state
@@ -39,6 +42,9 @@
       for:
         minutes: 10
   condition:
+    - condition: state
+      entity_id: input_boolean.closet_ventilation_fan_automation
+      state: 'on'
     - condition: state
       entity_id: switch.living_room_outlet
       state: 'on'

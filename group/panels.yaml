@@ -14,6 +14,7 @@ Automation Override:
   - input_boolean.lights_full
   - input_boolean.sleep_automation
   - input_boolean.perimeter_warning
+  - input_boolean.closet_ventilation_fan_automation
 
 Motion Detection:
   - input_boolean.bedroom_motion_detection_enabled

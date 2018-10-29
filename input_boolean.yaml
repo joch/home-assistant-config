@@ -58,6 +58,10 @@ guest_asleep:
   name: Guest Asleep
   icon: mdi:sleep
 
+closet_ventilation_fan_automation:
+  name: Closet Ventilation Fan Automation
+  icon: mdi:fan
+
 living_room_arlo_motion:
   name: Living Room Arlo Motion
   initial: off
