@@ -66,8 +66,12 @@
       entity_id: input_boolean.lights_needed
       state: 'on'
   action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.guest_bedroom_motion_detection_enabled
     - service: scene.turn_on
       entity_id: scene.guest_bedroom_idle
     - delay: '00:01:00'
     - service: scene.turn_on
       entity_id: scene.guest_bedroom_off
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.guest_bedroom_motion_detection_enabled

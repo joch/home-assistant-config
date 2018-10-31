@@ -5,10 +5,6 @@
       event_data:
         id: guest_asleep
         event: 1000
-  condition:
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'on'
   action:
     - service: input_boolean.toggle
       entity_id: input_boolean.guest_asleep
