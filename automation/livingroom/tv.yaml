@@ -42,6 +42,7 @@
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_music
+    - service: switch.flux_living_room_update
 
 - alias: Living room lights in music mode when music on and lights not needed
   trigger:
@@ -68,6 +69,7 @@
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_normal
+    - service: switch.flux_living_room_update
 
 - alias: Living room lights in normal mode when tv off
   trigger:

@@ -58,3 +58,4 @@
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_normal
+    - service: switch.flux_living_room_update
