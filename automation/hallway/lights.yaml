@@ -171,7 +171,6 @@
       data:
         entity_id: light.hallway_lamp_middle
         brightness_pct: 1
-        transition: 2
 
 - alias: Turn off hallway mood light when no motion is detected in hallway when everyone asleep
   trigger:
@@ -192,4 +191,3 @@
     - service: light.turn_off
       data:
         entity_id: light.hallway_lamp_middle
-        transition: 5
