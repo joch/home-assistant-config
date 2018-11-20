@@ -47,6 +47,8 @@ clos:
   icon: mdi:hanger
   entities:
     - group.closet
+    - group.ups_status
+    - group.zwave
 
 hall:
   name: Hallway
@@ -92,16 +94,6 @@ security:
     - group.living_room_camera
     - group.perimeter
     - group.indoor_motion
-
-sensors:
-    name: Sensors
-    view: yes
-    icon: mdi:gauge
-    entities:
-      - group.ups_status
-      - group.battery_levels
-      - group.power_usage
-      - group.zwave
 
 weatherdash:
   name: Weather
