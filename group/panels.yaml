@@ -73,29 +73,6 @@ UPS Status:
   - sensor.xonbatt
   - sensor.xoffbatt
 
-Battery Levels:
-  - sensor.ups_battery
-  - sensor.living_room_motion_sensor_battery
-  - sensor.living_room_smoke_sensor_battery
-  - sensor.living_room_camera_battery
-  - sensor.hallway_camera_battery
-  - sensor.round_remote_control_battery_level
-  - sensor.johnnys_iphone_battery_level
-  - sensor.kajsas_iphone_battery_level
-  - sensor.kitchen_motion_battery
-  - sensor.hallway_motion_battery
-  - sensor.living_room_window_left_battery
-  - sensor.bedroom_window_battery
-  - sensor.living_room_window_right_battery
-  - sensor.main_entrance_battery
-  - sensor.patio_entrance_battery
-  - sensor.bedroom_temperature_battery
-  - sensor.guest_bedroom_temperature_battery
-  - sensor.bathroom_temperature_battery
-  - sensor.living_room_light_switch_battery
-  - sensor.bathroom_window_battery
-  - sensor.guest_bedroom_window_battery
-
 Indoor Temperature:
   - sensor.bedroom_environment_temperature
   - sensor.living_room_motion_sensor_temperature
