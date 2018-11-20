@@ -5,6 +5,7 @@ homeassistant:
   elevation: 20
   unit_system: metric
   time_zone: Europe/Stockholm
+  packages: !include_dir_named package
   customize: !include customize.yaml
   customize_domain:
     automation:
