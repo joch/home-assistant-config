@@ -28,7 +28,7 @@
     - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
-      for: '00:10:00'
+      for: '01:00:00'
     - platform: event
       event_type: deconz_event
       event_data:
