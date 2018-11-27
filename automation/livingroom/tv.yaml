@@ -26,6 +26,9 @@
     - condition: state
       entity_id: input_boolean.lights_needed
       state: 'off'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_tv_only
@@ -52,6 +55,9 @@
   condition:
     - condition: state
       entity_id: input_boolean.lights_needed
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
     - service: scene.turn_on
