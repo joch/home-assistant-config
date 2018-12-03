@@ -134,8 +134,6 @@
         entity_id: light.gateway_light_7811dc64de1a
         brightness_pct: 40
         rgb_color: [255,37,0]
-    - service: switch.turn_off
-      entity_id: switch.hallway_mirror_lamp_switch
 
 - alias: Turn off hallway mood light when everyone asleep or awake
   trigger:
