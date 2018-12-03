@@ -1,0 +1,17 @@
+- alias: Balcony lights on
+  trigger:
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.balcony_normal
+
+- alias: Balcony lights off
+  trigger:
+    platform: state
+    entity_id: input_boolean.lights_needed
+    to: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.balcony_off
