@@ -16,6 +16,8 @@
       state: on
       brightness_pct: 75
       transition: 2
+    switch.kitchen_switch:
+      state: on
 
 - name: Kitchen Countertop Only
   entities:
@@ -44,6 +46,8 @@
       state: on
       brightness_pct: 10
       transition: 5
+    switch.kitchen_switch:
+      state: on
 
 - name: Kitchen Full
   entities:
@@ -63,6 +67,8 @@
       state: on
       brightness_pct: 100
       transition: 2
+    switch.kitchen_switch:
+      state: on
 
 - name: Kitchen Night
   entities:
@@ -93,3 +99,5 @@
     light.kitchen_window_lamp:
       state: off
       transition: 5
+    switch.kitchen_switch:
+      state: off

@@ -51,6 +51,7 @@ Kitchen Lights:
     - light.kitchen_countertop_lightstrip
     - light.kitchen_cabinet_light
     - light.kitchen_window_lamp
+    - switch.kitchen_switch
     - scene.kitchen_normal
     - scene.kitchen_dim
     - scene.kitchen_full
