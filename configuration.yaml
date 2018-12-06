@@ -219,6 +219,11 @@ xiaomi_aqara:
   gateways:
     - key: !secret xiaomi_gateway_key
 
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret vacuum_xiaomi_host
+    token: !secret vacuum_xiaomi_token
+
 homekit:
   auto_start: False
   filter:
