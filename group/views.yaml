@@ -28,6 +28,7 @@ living:
   entities:
     - group.living_room_lights
     - group.living_room
+    - vacuum.greta
     - media_player.samsung_tv_remote
     - media_player.spotify
     - media_player.xboxone
