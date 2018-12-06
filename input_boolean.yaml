@@ -1,42 +1,34 @@
 alarm_mode:
   name: Auto-arm Alarm Away
   icon: mdi:shield-outline
-  initial: on
 
 alarm_night_mode:
   name: Auto-arm Alarm Night
   icon: mdi:shield-outline
-  initial: on
 
 vacation_mode:
   name: Vacation Mode
   icon: mdi:airplane
-  initial: off
 
 guest_mode:
   name: Guest Mode
   icon: mdi:human-male-female
-  initial: off
 
 light_automation:
   name: Light Automation
   icon: mdi:lightbulb-outline
-  initial: on
 
 lights_full:
   name: Lights Full
   icon: mdi:lightbulb-on-outline
-  initial: off
 
 sleep_automation:
   name: Sleep Automation
   icon: mdi:sleep
-  initial: on
 
 perimeter_warning:
   name: Perimeter Warning
   icon: mdi:wall
-  initial: on
 
 lights_needed:
   name: Lights Needed
