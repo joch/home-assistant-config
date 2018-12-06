@@ -54,6 +54,10 @@ closet_ventilation_fan_automation:
   name: Closet Ventilation Fan Automation
   icon: mdi:fan
 
+vacuum_automation:
+  name: Vacuum Automation
+  icon: mdi:robot-vacuum
+
 living_room_arlo_motion:
   name: Living Room Arlo Motion
   initial: off

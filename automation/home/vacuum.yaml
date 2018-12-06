@@ -1,0 +1,47 @@
+- alias: Turn on vacuum when alarm is armed
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+      for: '00:10:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacuum_automation
+      state: 'on'
+    - condition: template
+      value_template: '{{ (as_timestamp(now()) - as_timestamp(states.automation.turn_on_vacuum_when_alarm_is_armed.attributes.last_triggered | default(0)) | int > 36000)}}'
+    - condition: time
+      after: '08:00:00'
+      before: '20:00:00'
+  action:
+    - service: vacuum.start
+      data:
+        entity_id: vacuum.greta
+
+- alias: Turn off vacuum when alarm is disarmed
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'disarmed'
+  condition:
+    - condition: state
+      entity_id: vacuum.greta
+      state: 'cleaning'
+    - condition: state
+      entity_id: input_boolean.vacuum_automation
+      state: 'on'
+  action:
+    - service: vacuum.return_to_base
+      data:
+        entity_id: vacuum.greta
+
+- alias: Notify when there is a vacuum issue
+  trigger:
+    - platform: state
+      entity_id: vacuum.greta
+      to: 'error'
+  action:
+    - service: notify.all_phones
+      data:
+        title: "Greta is stuck"
+        message: "Greta has reported an error. Make sure that she is not stuck."
