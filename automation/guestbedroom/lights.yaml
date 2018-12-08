@@ -69,7 +69,7 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.guest_bedroom_motion_detection_enabled
     - service: scene.turn_on
-      entity_id: scene.guest_bedroom_idle
+      entity_id: scene.guest_bedroom_dim
     - delay: '00:01:00'
     - service: scene.turn_on
       entity_id: scene.guest_bedroom_off
