@@ -45,7 +45,7 @@
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.light_mode', 'on') %}
-          scene.bedroom_idle
+          scene.bedroom_dim
           {% else %}
           scene.bedroom_off
           {% endif %}
