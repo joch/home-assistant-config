@@ -4,6 +4,18 @@
       entity_id: alarm_control_panel.alarm
       to: 'armed_away'
       for: '00:10:00'
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+      for: '01:00:00'
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+      for: '02:00:00'
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+      for: '04:00:00'
   condition:
     - condition: state
       entity_id: input_boolean.vacuum_automation
