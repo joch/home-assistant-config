@@ -194,13 +194,17 @@ light:
 
 device_tracker:
   - platform: asuswrt
-    host: !secret asuswrt_host
-    protocol: telnet
-    username: !secret asuswrt_username
-    password: !secret asuswrt_password
     new_device_defaults:
       track_new_devices: False
       hide_if_away: True
+
+asuswrt:
+  host: !secret asuswrt_host
+  protocol: telnet
+  port: 23
+  username: !secret asuswrt_username
+  password: !secret asuswrt_password
+
 
 # influxdb:
 #   host: !secret influxdb_host
@@ -264,6 +268,5 @@ binary_sensor: !include_dir_merge_list binary_sensor
 group: !include_dir_merge_named group
 scene: !include_dir_merge_list scene
 automation: !include_dir_merge_list automation
-alert: !include_dir_merge_list alert
 notify: !include_dir_merge_list notify
 script: !include scripts.yaml
