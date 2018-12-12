@@ -13,7 +13,7 @@
     - condition: or
       conditions:
       - condition: state
-        entity_id: binary_sensor.patio_entrance
+        entity_id: binary_sensor.balcony_entrance
         state: 'on'
       - condition: state
         entity_id: binary_sensor.bedroom_window
@@ -68,7 +68,7 @@
 #       entity_id:
 #         - binary_sensor.living_room_window_right
 #         - binary_sensor.living_room_window_left
-#         - binary_sensor.patio_entrance
+#         - binary_sensor.balcony_entrance
 #       to: 'on'
 #   condition:
 #     - condition: state
@@ -87,7 +87,7 @@
 #       entity_id:
 #         - binary_sensor.living_room_window_right
 #         - binary_sensor.living_room_window_left
-#         - binary_sensor.patio_entrance
+#         - binary_sensor.balcony_entrance
 #       to: 'on'
 #   condition:
 #     - condition: state
