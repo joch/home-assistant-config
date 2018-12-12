@@ -96,8 +96,9 @@ automation:
 security:
   name: Security
   view: yes
-  icon: mdi:cctv
+  icon: mdi:shield-home
   entities:
+    - group.alarm
     - group.hallway_camera
     - group.living_room_camera
     - group.perimeter
