@@ -35,6 +35,13 @@ living:
     - media_player.tv_ue55f8000
     - media_player.living_room_speakers
 
+balc:
+  name: Balcony
+  view: yes
+  icon: mdi:door-open
+  entities:
+    group.balcony
+
 bath:
   name: Bathroom
   view: yes

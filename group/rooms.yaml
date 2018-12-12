@@ -1,6 +1,5 @@
 Living Room:
   - binary_sensor.living_room_motion_sensor
-  - binary_sensor.patio_entrance
   - binary_sensor.living_room_window_left
   - binary_sensor.living_room_window_right
   - sensor.living_room_motion_sensor_temperature
@@ -9,6 +8,10 @@ Living Room:
   - sensor.plex
   - sensor.jochad
   - input_select.harmony
+
+Balcony:
+  - binary_sensor.patio_entrance
+  - switch.balcony_switch
 
 Bedroom:
   - binary_sensor.bedroom_motion
