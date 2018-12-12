@@ -19,6 +19,18 @@
       brightness_pct: 100
       transition: 2
 
+- name: Hallway Night
+  entities:
+    switch.hallway_mirror_lamp_switch:
+      state: off
+    light.hallway_ceiling_lamp:
+      state: off
+    light.gateway_light_7811dc64de1a:
+      state: on
+      entity_id: light.gateway_light_7811dc64de1a
+      brightness_pct: 10
+      rgb_color: [255,37,0]
+
 - name: Hallway Off
   entities:
     switch.hallway_mirror_lamp_switch:
