@@ -43,6 +43,7 @@ Hallway Lights:
     - scene.hallway_normal
     - scene.hallway_dim
     - scene.hallway_full
+    - scene.hallway_night
 
 Kitchen Lights:
   icon: mdi:stove
