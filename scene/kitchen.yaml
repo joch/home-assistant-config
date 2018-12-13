@@ -74,12 +74,10 @@
   entities:
     light.kitchen_ceiling_lamp:
       state: off
-      transition: 5
     light.kitchen_countertop_lightstrip:
       state: on
       brightness_pct: 1
       rgb_color: [255,100,0]
-      transition: 2
     light.kitchen_cabinet_light:
       state: off
     light.kitchen_window_lamp:
