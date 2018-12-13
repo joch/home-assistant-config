@@ -79,6 +79,9 @@
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.lights_night
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_night
@@ -95,6 +98,9 @@
       state: 'on'
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.lights_night
       state: 'on'
   action:
     - service: scene.turn_on

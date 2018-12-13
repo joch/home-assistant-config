@@ -164,6 +164,9 @@
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.lights_night
+      state: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.hallway_night
@@ -182,6 +185,9 @@
       state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.lights_night
       state: 'on'
   action:
     - service: scene.turn_on

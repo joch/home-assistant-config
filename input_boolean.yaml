@@ -18,6 +18,10 @@ light_automation:
   name: Light Automation
   icon: mdi:lightbulb-outline
 
+lights_night:
+  name: Lights Night
+  icon: mdi:lightbulb-on
+
 lights_full:
   name: Lights Full
   icon: mdi:lightbulb-on-outline
