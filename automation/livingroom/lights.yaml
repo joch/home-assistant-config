@@ -59,3 +59,48 @@
     - service: scene.turn_on
       entity_id: scene.living_room_normal
     - service: switch.flux_living_room_update
+
+- alias: Living room lights on when motion during night
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.living_room_motion_sensor
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_select.harmony
+      state: 'PowerOff'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.lights_night
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.living_room_night
+
+- alias: Living room lights off when no motion during the night
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_motion
+      to: 'off'
+      for: '00:01:00'
+  condition:
+    - condition: state
+      entity_id: input_select.harmony
+      state: 'PowerOff'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.lights_night
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.living_room_off

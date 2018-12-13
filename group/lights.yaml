@@ -18,6 +18,7 @@ Living Room Lights:
     - scene.living_room_normal
     - scene.living_room_dim
     - scene.living_room_full
+    - scene.living_room_night
     - scene.living_room_tv
     - scene.living_room_tv_only
     - scene.living_room_music

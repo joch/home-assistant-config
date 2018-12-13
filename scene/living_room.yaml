@@ -75,6 +75,19 @@
       transition: 2
       color_temp: 300
 
+- name: Living Room Night
+  entities:
+    light.living_room_ceiling_lamp:
+      state: on
+      brightness_pct: 1
+      rgb_color: [255,0,0]
+    light.living_room_lamp:
+      state: off
+    light.living_room_globe:
+      state: off
+    light.living_room_tv_light:
+      state: off
+
 - name: Living Room TV
   entities:
     light.living_room_ceiling_lamp:
