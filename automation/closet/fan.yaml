@@ -9,7 +9,7 @@
         minutes: 10
     - platform: numeric_state
       entity_id: sensor.bedroom_environment_temperature
-      above: 22
+      above: 20
       for:
         minutes: 10
   condition:
@@ -24,7 +24,7 @@
       below: 40
     - condition: numeric_state
       entity_id: sensor.bedroom_environment_temperature
-      above: 22
+      above: 20
   action:
     - service: switch.turn_on
       entity_id: switch.living_room_outlet
@@ -38,7 +38,7 @@
         minutes: 10
     - platform: numeric_state
       entity_id: sensor.bedroom_environment_temperature
-      below: 22
+      below: 20
       for:
         minutes: 10
   condition:
@@ -53,7 +53,7 @@
       above: 40
     - condition: numeric_state
       entity_id: sensor.bedroom_environment_temperature
-      below: 22
+      below: 20
   action:
-    - service: switch.turn_on
+    - service: switch.turn_off
       entity_id: switch.living_room_outlet
