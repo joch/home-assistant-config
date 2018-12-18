@@ -52,6 +52,8 @@ sun:
 
 ios:
 
+api:
+
 http:
   api_password: !secret http_password
   server_port: !secret http_server_port
@@ -77,6 +79,17 @@ http:
     - !secret trusted_proxies_013
     - !secret trusted_proxies_014
     - !secret trusted_proxies_015
+
+alexa:
+  smart_home:
+    filter:
+      include_domains:
+        - light
+        - sensor
+        - switch
+        - scene
+        - binary_sensor
+        - vacuum
 
 recorder:
   db_url: !secret recorder_db_url
