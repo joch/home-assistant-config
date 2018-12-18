@@ -176,6 +176,7 @@
     - platform: state
       entity_id: binary_sensor.hallway_motion
       to: 'off'
+      for: '00:01:00'
   condition:
     - condition: state
       entity_id: light.gateway_light_7811dc64de1a
