@@ -78,29 +78,11 @@
     - service: scene.turn_on
       entity_id: scene.lights_off
 
-- alias: Lights dimmed when last person goes to bed
-  trigger:
-    - platform: state
-      entity_id: input_boolean.everyone_asleep
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: light.bedroom_lamp
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.lights_dim
-
 - alias: Lights off when last person goes to bed after one minute
   trigger:
     - platform: state
       entity_id: input_boolean.everyone_asleep
       to: 'on'
-      for:
-        minutes: 1
   condition:
     - condition: state
       entity_id: input_boolean.lights_needed
