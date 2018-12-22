@@ -101,22 +101,3 @@
       brightness: 255
       color_temp: 288
       transition: 1
-
-- name: Lights Vacation
-  entities:
-    light.guest_bedroom_window_lamp:
-      state: on
-      brightness_pct: 10
-      transition: 1
-    light.living_room_lamp:
-      state: on
-      brightness_pct: 10
-      transition: 1
-    light.kitchen_window_lamp:
-      state: on
-      brightness_pct: 10
-      transition: 1
-    light.bedroom_lamp:
-      state: on
-      brightness_pct: 10
-      transition: 1

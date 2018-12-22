@@ -100,14 +100,11 @@
       entity_id: input_boolean.light_automation
       state: 'on'
     - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-    - condition: state
-      entity_id: group.household
-      state: 'not_home'
+      entity_id: alarm_control_panel.alarm
+      state: 'armed_away'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_off
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.lights_needed
 
 - alias: Lights on when not home
   trigger:
@@ -115,11 +112,11 @@
       event: sunset
   condition:
     - condition: state
-      entity_id: group.household
-      state: 'not_home'
+      entity_id: input_boolean.light_automation
+      state: 'on'
     - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
+      entity_id: alarm_control_panel.alarm
+      state: 'armed_away'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_vacation
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.lights_needed
