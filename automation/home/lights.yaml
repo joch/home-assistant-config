@@ -78,7 +78,7 @@
     - service: scene.turn_on
       entity_id: scene.lights_off
 
-- alias: Lights off when last person goes to bed after one minute
+- alias: Lights off when last person goes to bed
   trigger:
     - platform: state
       entity_id: input_boolean.everyone_asleep
@@ -91,7 +91,7 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.lights_needed
 
-- alias: Lights off when at night when no one home
+- alias: Lights off when not home
   trigger:
     - platform: time
       at: '22:30:00'
