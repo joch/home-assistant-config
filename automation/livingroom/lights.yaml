@@ -85,7 +85,7 @@
 - alias: Living room lights off when no motion during the night
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion
+      entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
       for: '00:01:00'
   condition:
