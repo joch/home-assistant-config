@@ -58,6 +58,10 @@
       entity_id: alarm_control_panel.alarm
       to: 'triggered'
   action:
+    - service: ifttt.trigger
+      data: {"event":"record_hallway"}
+    - service: ifttt.trigger
+      data: {"event":"record_living_room"}
     - service: scene.turn_on
       entity_id: scene.lights_full
     - service: notify.all_phones
