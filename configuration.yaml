@@ -106,6 +106,13 @@ tts:
 ifttt:
   key: !secret ifttt_key
 
+asuswrt:
+  host: !secret asuswrt_host
+  protocol: telnet
+  port: 23
+  username: !secret asuswrt_username
+  password: !secret asuswrt_password
+
 # media_player:
 #   - platform: spotify
 #     client_id: !secret spotify_client_id
@@ -205,17 +212,6 @@ light:
         name: Kajsas Bedlight
         use_music_mode: False
         save_on_change: False
-
-device_tracker:
-  - platform: asuswrt
-    host: !secret asuswrt_host
-    protocol: telnet
-    port: 23
-    username: !secret asuswrt_username
-    password: !secret asuswrt_password
-    new_device_defaults:
-      track_new_devices: False
-      hide_if_away: True
 
 # influxdb:
 #   host: !secret influxdb_host
