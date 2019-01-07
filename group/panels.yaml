@@ -75,7 +75,6 @@ Indoor Temperature:
   - sensor.bedroom_environment_temperature
   - sensor.living_room_motion_sensor_temperature
   - sensor.bathroom_environment_temperature
-  - sensor.hallway_smoke_sensor_temperature
 
 Indoor Humidity:
   - sensor.bedroom_environment_humidity

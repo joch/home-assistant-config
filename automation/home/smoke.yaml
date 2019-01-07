@@ -1,25 +1,26 @@
-- alias: Notify and turn on lights when smoke detected
-  trigger:
-    - platform: state
-      entity_id: sensor.hallway_smoke_sensor_smoke
-      to: '255'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.lights_full
-    - service: notify.all_phones
-      data:
-        title: "Smoke detected at home!"
-        message: "Please contact anyone at home or fire department."
+# Readded when new smoke sensors are installed
+# - alias: Notify and turn on lights when smoke detected
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.hallway_smoke_sensor_smoke
+#       to: '255'
+#   action:
+#     - service: scene.turn_on
+#       entity_id: scene.lights_full
+#     - service: notify.all_phones
+#       data:
+#         title: "Smoke detected at home!"
+#         message: "Please contact anyone at home or fire department."
 
-- alias: Notify and turn on lights when excessive heat detected
-  trigger:
-    - platform: state
-      entity_id: sensor.hallway_smoke_sensor_heat
-      to: '255'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.lights_full
-    - service: notify.all_phones
-      data:
-        title: "Excessive heat detected at home!"
-        message: "Please contact anyone at home or fire department."
+# - alias: Notify and turn on lights when excessive heat detected
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.hallway_smoke_sensor_heat
+#       to: '255'
+#   action:
+#     - service: scene.turn_on
+#       entity_id: scene.lights_full
+#     - service: notify.all_phones
+#       data:
+#         title: "Excessive heat detected at home!"
+#         message: "Please contact anyone at home or fire department."
