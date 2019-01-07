@@ -1,0 +1,23 @@
+- alias: Notify and turn on lights when water detected in kitchen
+  trigger:
+    - platform: state
+      entity_id: sensor.kitchen_water
+      to: 'water'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_full
+    - service: notify.all_phones
+      data:
+        title: "** Water detected **"
+        message: "Water detected in the kitchen!"
+
+- alias: Notify and turn on lights when water detected in bathroom
+  trigger:
+    - platform: state
+      entity_id: sensor.bathroom_water
+      to: 'water'
+  action:
+    - service: notify.all_phones
+      data:
+        title: "** Water detected **"
+        message: "Water detected in the bathroom!"
