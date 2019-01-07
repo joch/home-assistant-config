@@ -97,6 +97,10 @@ Perimeter:
   - binary_sensor.bathroom_window
   - binary_sensor.guest_bedroom_window
 
+Water:
+  - binary_sensor.bathroom_water
+  - binary_sensor.kitchen_water
+
 Weather:
   - sun.sun
   - sensor.dark_sky_apparent_temperature

@@ -34,13 +34,15 @@ Hallway:
   - input_boolean.hallway_motion_detection_enabled
 
 Kitchen:
+  - binary_sensor.kitchen_water
   - binary_sensor.kitchen_motion
   - input_boolean.kitchen_motion_detection_enabled
 
 Bathroom:
+  - binary_sensor.bathroom_window
   - sensor.bathroom_environment_temperature
   - sensor.bathroom_environment_humidity
-  - binary_sensor.bathroom_window
+  - binary_sensor.bathroom_water
   - input_boolean.bathroom_motion_detection_enabled
 
 Guest Bedroom:
