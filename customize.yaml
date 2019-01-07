@@ -63,12 +63,6 @@ sensor.jochad:
   friendly_name: 'XboxOne'
 sensor.illumination_7811dc64de1a:
   friendly_name: 'Hallway Luminance'
-sensor.bedroom_kajsa_charger_energy:
-  friendly_name: 'Kajsas chargers power consumption'
-sensor.bedroom_johnny_charger_energy:
-  friendly_name: 'Johnnys chargers power consumption'
-sensor.hallway_smoke_sensor_temperature:
-  friendly_name: 'Hallway Temperature'
 sensor.bathroom_environment_humidity:
   friendly_name: 'Bathroom Humidity'
   icon: mdi:water-percent
@@ -80,12 +74,6 @@ sensor.bathroom_environment_temperature:
 sensor.bedroom_environment_temperature:
   friendly_name: 'Bedroom Temperature'
 
-binary_sensor.living_room_motion_sensor_sensor:
-  friendly_name: 'Living Room Motion'
-  device_class: 'motion'
-binary_sensor.hallway_smoke_sensor_sensor:
-  friendly_name: 'Hallway Smoke Sensor'
-  device_class: 'smoke'
 binary_sensor.living_room_window_left:
   icon: mdi:window-closed
 binary_sensor.living_room_window_right:
@@ -103,14 +91,6 @@ binary_sensor.balcony_entrance:
 
 light.gateway_light_7811dc64de1a:
   friendly_name: 'Hallway Mood Light'
-
-switch.bedroom_kajsa_charger_switch:
-  friendly_name: 'Kajsas chargers'
-switch.bedroom_johnny_charger_switch:
-  friendly_name: 'Johnnys chargers'
-
-switch.hallway_mirror_lamp_switch:
-  friendly_name: 'Hallway Lamp'
 
 switch.fluxer:
   icon: mdi:theme-light-dark

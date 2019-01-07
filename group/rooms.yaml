@@ -19,8 +19,6 @@ Bedroom:
   - sensor.bedroom_environment_temperature
   - sensor.bedroom_environment_humidity
   - input_boolean.bedroom_motion_detection_enabled
-  - switch.bedroom_johnny_charger_switch
-  - switch.bedroom_kajsa_charger_switch
 
 Closet:
   - sensor.bedroom_environment_temperature

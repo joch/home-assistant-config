@@ -131,10 +131,10 @@ remote:
     name: Living Room
     host: !secret harmony_host
 
-zwave:
-  usb_path: /dev/ttyACM0
-  network_key: !secret zwave_network_key
-  device_config: !include zwave_device_config.yaml
+# Disabled
+# zwave:
+#   usb_path: /dev/ttyACM0
+#   network_key: !secret zwave_network_key
 
 emulated_hue:
   expose_by_default: true
@@ -237,7 +237,7 @@ vacuum:
     name: !secret vacuum_xiaomi_name
 
 homekit:
-  auto_start: False
+  auto_start: True
   filter:
     include_domains:
       - binary_sensor

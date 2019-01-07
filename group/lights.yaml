@@ -39,7 +39,7 @@ Hallway Lights:
   icon: mdi:cube-unfolded
   entities:
     - light.hallway_ceiling_lamp
-    - switch.hallway_mirror_lamp_switch
+    - switch.hallway_switch
     - light.gateway_light_7811dc64de1a
     - scene.hallway_normal
     - scene.hallway_dim

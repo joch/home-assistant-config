@@ -10,7 +10,7 @@
       state: off
     light.kitchen_window_lamp:
       state: off
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: off
     light.hallway_ceiling_lamp:
       state: off
@@ -37,7 +37,7 @@
       state: on
       brightness_pct: 75
       transition: 1
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: on
     light.hallway_ceiling_lamp:
       state: off
@@ -66,7 +66,7 @@
       state: on
       brightness_pct: 1
       transition: 1
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: on
     light.hallway_ceiling_lamp:
       state: off
@@ -90,7 +90,7 @@
       state: on
       brightness_pct: 100
       transition: 1
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: on
     light.hallway_ceiling_lamp:
       state: on

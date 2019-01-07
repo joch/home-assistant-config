@@ -1,7 +1,7 @@
 - alias: Automatically switch themes
   trigger:
-    - platform: event
-      event_type: zwave.network_ready
+    - platform: homeassistant
+      event: start
     - platform: sun
       event: sunrise
     - platform: sun

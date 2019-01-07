@@ -1,18 +1,18 @@
 - name: Hallway Normal
   entities:
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: on
     light.hallway_ceiling_lamp:
       state: off
 
 - name: Hallway Dim
   entities:
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: on
 
 - name: Hallway Full
   entities:
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: on
     light.hallway_ceiling_lamp:
       state: on
@@ -21,7 +21,7 @@
 
 - name: Hallway Night
   entities:
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: off
     light.hallway_ceiling_lamp:
       state: off
@@ -33,7 +33,7 @@
 
 - name: Hallway Off
   entities:
-    switch.hallway_mirror_lamp_switch:
+    switch.hallway_switch:
       state: off
     light.hallway_ceiling_lamp:
       state: off
