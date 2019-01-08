@@ -60,6 +60,7 @@ The following is a list of hardware deployed in the home, grouped by room. While
 - Motion sensor: [Philips Hue Motion Sensor](https://www2.meethue.com/en-us/p/hue-motion-sensor/046677473389)
 - Window and door sensor (3): [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - TV remote: [Logitech Harmony Companion](https://www.logitech.com/en-us/product/harmony-companion)
+- Robot Vacuum: [Xiaomi Roborock S50](https://www.aliexpress.com/item/International-Version-Xiaomi-Roborock-S50-Robot-Vacuum-Cleaner-2-WIFI-APP-Control-Wet-Mop-Smart-Planned/32837327014.html)
 
 ### Hallway
 
