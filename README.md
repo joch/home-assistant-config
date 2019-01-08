@@ -26,7 +26,12 @@ Below are some of my most used automations, which make life just a bit easier an
 - Guest mode which, when enabled, allow approved guests to be part of the alarm and sleep automation
 - Dead man's switch, which will alert everyone in the household if someone is home, but has not moved for four hours (excluding sleep)
 - If water is detected under the kitchen sink/dishwasher/dryer, an alert is sent to my phone
+
+### Convenience
+
 - When it starts to rain and a window is open, an alert is sent to my phone
+- When the last person leaves and the alarm is turned on, the robot vacuum automatically starts
+- If someone comes home as the robot vacuum is cleaning, it goes back to the dock
 
 ## Hardware
 
