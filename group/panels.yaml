@@ -80,6 +80,9 @@ Indoor Environment:
   - sensor.closet_pressure
   - sensor.bathroom_temperature
   - sensor.bathroom_humidity
+  - sensor.guest_bedroom_temperature
+  - sensor.guest_bedroom_humidity
+  - sensor.guest_bedroom_pressure
 
 Indoor Motion:
   - binary_sensor.bedroom_motion
