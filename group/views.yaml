@@ -7,8 +7,7 @@ default_view:
     - group.house_guests
     - group.interior_lights
     - group.scenes
-    - group.indoor_temperature
-    - group.indoor_humidity
+    - group.indoor_environment
     - group.indoor_motion
     - group.perimeter
 
@@ -110,7 +109,6 @@ weatherdash:
   view: yes
   icon: mdi:weather-cloudy
   entities:
-    - group.indoor_temperature
-    - group.indoor_humidity
+    - group.indoor_environment
     - group.weather_summary
     - group.weather
