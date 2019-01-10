@@ -63,15 +63,15 @@ sensor.jochad:
   friendly_name: 'XboxOne'
 sensor.illumination_7811dc64de1a:
   friendly_name: 'Hallway Luminance'
-sensor.bathroom_environment_humidity:
+sensor.bathroom_humidity:
   friendly_name: 'Bathroom Humidity'
   icon: mdi:water-percent
-sensor.bedroom_environment_humidity:
+sensor.bedroom_humidity:
   friendly_name: 'Bedroom Humidity'
   icon: mdi:water-percent
-sensor.bathroom_environment_temperature:
+sensor.bathroom_temperature:
   friendly_name: 'Bathroom Temperature'
-sensor.bedroom_environment_temperature:
+sensor.bedroom_temperature:
   friendly_name: 'Bedroom Temperature'
 
 binary_sensor.living_room_window_left:

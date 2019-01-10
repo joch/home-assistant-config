@@ -72,14 +72,14 @@ UPS Status:
   - sensor.xoffbatt
 
 Indoor Environment:
-  - sensor.bedroom_environment_temperature
-  - sensor.bedroom_environment_humidity
+  - sensor.bedroom_temperature
+  - sensor.bedroom_humidity
   - sensor.living_room_motion_sensor_temperature
   - sensor.closet_temperature
   - sensor.closet_humidity
   - sensor.closet_pressure
-  - sensor.bathroom_environment_temperature
-  - sensor.bathroom_environment_humidity
+  - sensor.bathroom_temperature
+  - sensor.bathroom_humidity
 
 Indoor Motion:
   - binary_sensor.bedroom_motion

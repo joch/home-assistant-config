@@ -16,13 +16,13 @@ Balcony:
 Bedroom:
   - binary_sensor.bedroom_motion
   - binary_sensor.bedroom_window
-  - sensor.bedroom_environment_temperature
-  - sensor.bedroom_environment_humidity
+  - sensor.bedroom_temperature
+  - sensor.bedroom_humidity
   - input_boolean.bedroom_motion_detection_enabled
 
 Closet:
-  - sensor.bedroom_environment_temperature
-  - sensor.bedroom_environment_humidity
+  - sensor.bedroom_temperature
+  - sensor.bedroom_humidity
   - switch.living_room_outlet
 
 Hallway:
@@ -38,8 +38,8 @@ Kitchen:
 
 Bathroom:
   - binary_sensor.bathroom_window
-  - sensor.bathroom_environment_temperature
-  - sensor.bathroom_environment_humidity
+  - sensor.bathroom_temperature
+  - sensor.bathroom_humidity
   - binary_sensor.bathroom_water
   - input_boolean.bathroom_motion_detection_enabled
 
