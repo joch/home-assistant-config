@@ -75,13 +75,13 @@ Content-Type: application/json
 }
 
 # Get
-GET :root/sensors/21
+GET :root/sensors/44
 
 # Update
-PUT :root/sensors/21
+PUT :root/sensors/44
 Content-Type: application/json
 {
-  "name": "Bathroom Environment Switch 2"
+  "name": "Hallway Smoke"
 }
 
 # Get

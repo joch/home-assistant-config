@@ -27,6 +27,7 @@ Closet:
 
 Hallway:
   - binary_sensor.main_entrance
+  - binary_sensor.hallway_smoke
   - sensor.illumination_7811dc64de1a
   - binary_sensor.hallway_motion
   - input_boolean.hallway_motion_detection_enabled

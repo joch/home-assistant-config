@@ -103,6 +103,7 @@ security:
     - group.perimeter
     - group.indoor_motion
     - group.water
+    - group.smoke
 
 weatherdash:
   name: Weather
