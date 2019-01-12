@@ -14,10 +14,11 @@ Balcony:
   - switch.balcony_switch
 
 Bedroom:
-  - binary_sensor.bedroom_motion
   - binary_sensor.bedroom_window
   - sensor.bedroom_temperature
   - sensor.bedroom_humidity
+  - binary_sensor.bedroom_smoke
+  - binary_sensor.bedroom_motion
   - input_boolean.bedroom_motion_detection_enabled
 
 Closet:
@@ -46,5 +47,6 @@ Bathroom:
 
 Guest Bedroom:
   - binary_sensor.guest_bedroom_window
+  - binary_sensor.bedroom_smoke
   - binary_sensor.guest_bedroom_motion
   - input_boolean.guest_bedroom_motion_detection_enabled

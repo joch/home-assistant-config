@@ -57,7 +57,9 @@ Sleep Status:
   - input_boolean.everyone_asleep
 
 Smoke:
+  - binary_sensor.bedroom_smoke
   - binary_sensor.hallway_smoke
+  - binary_sensor.guest_bedroom_smoke
 
 UPS Status:
   - binary_sensor.ups_online_status
