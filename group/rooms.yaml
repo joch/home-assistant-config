@@ -22,8 +22,9 @@ Bedroom:
   - input_boolean.bedroom_motion_detection_enabled
 
 Closet:
-  - sensor.bedroom_temperature
-  - sensor.bedroom_humidity
+  - sensor.closet_temperature
+  - sensor.closet_humidity
+  - sensor.closet_pressure
   - switch.living_room_outlet
 
 Hallway:
