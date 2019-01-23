@@ -55,16 +55,23 @@
       entity_id: binary_sensor.bathroom_motion
       to: 'off'
       for: '00:02:00'
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      below: 60
   condition:
-    - condition: state
-      entity_id: light.bathroom_ceiling_lamp
-      state: 'on'
     - condition: state
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
+    - condition: numeric_state
+      entity_id: sensor.bathroom_humidity
+      below: 60
+    - condition: state
+      entity_id: binary_sensor.bathroom_motion
+      state: 'off'
+      for: '00:02:00'
   action:
     - service: scene.turn_on
       entity_id: scene.bathroom_dim
