@@ -49,7 +49,7 @@
     - service: scene.turn_on
       entity_id: scene.bathroom_normal
 
-- alias: Bathroom lights idle when no motion is detected
+- alias: Bathroom lights dim when no motion is detected
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
