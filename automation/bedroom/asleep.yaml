@@ -27,3 +27,14 @@
   action:
     - service: input_boolean.toggle
       entity_id: input_boolean.kajsa_asleep
+
+- alias: Toggle Lea Asleep
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: lea_asleep
+        event: 1000
+  action:
+    - service: input_boolean.toggle
+      entity_id: input_boolean.lea_asleep

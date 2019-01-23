@@ -107,6 +107,9 @@
     - condition: state
       entity_id: input_boolean.kajsa_asleep
       state: 'off'
+    - condition: state
+      entity_id: input_boolean.lea_asleep
+      state: 'off'
   action:
     - service: light.turn_on
       data:
@@ -157,6 +160,9 @@
       state: 'off'
     - condition: state
       entity_id: input_boolean.johnny_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.lea_asleep
       state: 'off'
   action:
     - service: light.turn_on

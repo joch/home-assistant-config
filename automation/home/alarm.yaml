@@ -26,6 +26,7 @@
       entity_id:
         - input_boolean.johnny_asleep
         - input_boolean.kajsa_asleep
+        - input_boolean.lea_asleep
         - input_boolean.guest_asleep
 
 - alias: Alarm disarmed
