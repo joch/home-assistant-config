@@ -1,0 +1,49 @@
+- alias: Turn on bathroom ceiling lamp when motion is detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.bathroom_ceiling_lamp
+        transition: 2
+        brightness_pct: >-
+          {% if states.sensor.living_room_luminance.state | int <= 20 %}
+          20
+          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+          {{ states.sensor.living_room_luminance.state | int }}
+          {% else %}
+          100
+          {% endif %}
+    - delay: '00:00:03'
+    - service: switch.flux_bathroom_update
+
+- alias: Turn off bathroom ceiling lamp when no motion is detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'off'
+      for: '00:02:00'
+  condition:
+    - condition: state
+      entity_id: light.bathroom_ceiling_lamp
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.bathroom_ceiling_lamp
+        transition: 5

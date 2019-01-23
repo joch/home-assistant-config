@@ -172,9 +172,7 @@ switch:
     transition: 2
   - platform: flux
     lights:
-      - light.hallway_lamp_left
-      - light.hallway_lamp_middle
-      - light.hallway_lamp_right
+      - light.bathroom_ceiling_lamp
     name: Flux Hallway
     stop_time: '22:00'
     start_colortemp: 4000
