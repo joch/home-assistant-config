@@ -1,0 +1,51 @@
+- alias: Disable bathroom motion on button click
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bathroom_dimmer
+        event: 2002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bathroom_dimmer
+        event: 3002
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bathroom_dimmer
+        event: 4002
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+
+- alias: Enable bathroom motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'off'
+      for: '01:00:00'
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: bathroom_dimmer
+        event: 1002
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+    - service: scene.turn_on
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.light_mode', 'on') %}
+          scene.bathroom_dim
+          {% else %}
+          scene.bathroom_off
+          {% endif %}

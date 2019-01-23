@@ -17,6 +17,8 @@
       entity_id: binary_sensor.bathroom_water
       to: 'on'
   action:
+    - service: scene.turn_on
+      entity_id: scene.bathroom_full
     - service: notify.all_phones
       data:
         title: "** Water detected **"
