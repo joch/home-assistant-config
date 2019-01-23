@@ -75,3 +75,36 @@
   action:
     - service: scene.turn_on
       entity_id: scene.bathroom_dim
+
+- alias: Bathroom lights night when motion is detected when asleep
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.bathroom_night
+
+- alias: Bathroom lights off when no motion is detected when asleep
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'off'
+      for: '00:04:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.bathroom_off
