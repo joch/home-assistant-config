@@ -1,4 +1,39 @@
-- alias: Turn on bathroom ceiling lamp when motion is detected
+- alias: Bathroom lights dim
+  trigger:
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.bathroom_dim
+
+- alias: Bathroom lights off
+  trigger:
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.lights_needed
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.bathroom_off
+
+- alias: Bathroom lights normal when motion is detected
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
@@ -11,22 +46,10 @@
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
-    - service: light.turn_on
-      data_template:
-        entity_id: light.bathroom_ceiling_lamp
-        transition: 2
-        brightness_pct: >-
-          {% if states.sensor.living_room_luminance.state | int <= 20 %}
-          20
-          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
-          {{ states.sensor.living_room_luminance.state | int }}
-          {% else %}
-          100
-          {% endif %}
-    - delay: '00:00:03'
-    - service: switch.flux_bathroom_update
+    - service: scene.turn_on
+      entity_id: scene.bathroom_normal
 
-- alias: Turn off bathroom ceiling lamp when no motion is detected
+- alias: Bathroom lights idle when no motion is detected
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
@@ -43,7 +66,5 @@
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
-    - service: light.turn_off
-      data:
-        entity_id: light.bathroom_ceiling_lamp
-        transition: 5
+    - service: scene.turn_on
+      entity_id: scene.bathroom_dim

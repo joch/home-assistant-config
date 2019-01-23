@@ -1,0 +1,31 @@
+- name: Bathroom Normal
+  entities:
+    light.bathroom_ceiling_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 2
+
+- name: Bathroom Dim
+  entities:
+    light.bathroom_ceiling_lamp:
+      state: off
+
+- name: Bathroom Full
+  entities:
+    light.bathroom_ceiling_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 2
+
+- name: Bathroom Night
+  entities:
+    light.bathroom_ceiling_lamp:
+      state: on
+      brightness_pct: 1
+      transition: 2
+
+- name: Bathroom Off
+  entities:
+    light.bathroom_ceiling_lamp:
+      state: off
+      transition: 5

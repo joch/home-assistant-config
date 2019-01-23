@@ -11,7 +11,7 @@ default_view:
     - group.indoor_motion
     - group.perimeter
 
-masterbed:
+view_bedroom:
   name: Master Bedroom
   view: yes
   icon: mdi:hotel
@@ -20,7 +20,7 @@ masterbed:
     - group.bedroom
     - group.sleep_status
 
-living:
+view_living_room:
   name: Living Room
   view: yes
   icon: mdi:sofa
@@ -34,21 +34,14 @@ living:
     - media_player.tv_ue55f8000
     - media_player.living_room_speakers
 
-balc:
+view_balcony:
   name: Balcony
   view: yes
   icon: mdi:door-open
   entities:
     group.balcony
 
-bath:
-  name: Bathroom
-  view: yes
-  icon: mdi:hot-tub
-  entities:
-    - group.bathroom
-
-clos:
+view_closet:
   name: Closet
   view: yes
   icon: mdi:hanger
@@ -57,7 +50,15 @@ clos:
     - group.ups_status
     - group.zwave
 
-hall:
+view_bathroom:
+  name: Bathroom
+  view: yes
+  icon: mdi:hot-tub
+  entities:
+    - group.bathroom_lights
+    - group.bathroom
+
+view_hallway:
   name: Hallway
   view: yes
   icon: mdi:cube-unfolded
@@ -66,7 +67,7 @@ hall:
     - light.hallway_ceiling_lamp
     - group.hallway
 
-kitch:
+view_kitchen:
   name: Kitchen
   view: yes
   icon: mdi:stove
@@ -74,7 +75,7 @@ kitch:
     - group.kitchen_lights
     - group.kitchen
 
-guestbed:
+view_guest_bedroom:
   name: Guest Bedroom
   view: yes
   icon: mdi:human-male-female
@@ -83,7 +84,7 @@ guestbed:
     - group.guest_bedroom
     - group.sleep_status
 
-automation:
+view_automation:
   name: Automation
   view: yes
   icon: mdi:robot
@@ -92,7 +93,7 @@ automation:
     - group.security_automation
     - group.motion_detection
 
-security:
+view_security:
   name: Security
   view: yes
   icon: mdi:cctv
@@ -105,7 +106,7 @@ security:
     - group.water
     - group.smoke
 
-weatherdash:
+view_weather:
   name: Weather
   view: yes
   icon: mdi:weather-cloudy
