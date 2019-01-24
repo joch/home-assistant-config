@@ -18,106 +18,106 @@
     - service: scene.turn_on
       entity_id: scene.hallway_off
 
-# - alias: Turn on hallway ceiling lamp when motion is detected in hallway
-#   trigger:
-#     - platform: state
-#       entity_id: binary_sensor.hallway_motion
-#       to: 'on'
-#   condition:
-#     - condition: state
-#       entity_id: input_boolean.hallway_motion_detection_enabled
-#       state: 'on'
-#     - condition: state
-#       entity_id: input_boolean.everyone_asleep
-#       state: 'off'
-#   action:
-#     - service: light.turn_on
-#       data_template:
-#         entity_id: light.hallway_ceiling_lamp
-#         transition: 2
-#         brightness_pct: >-
-#           {% if states.sensor.living_room_luminance.state | int <= 20 %}
-#           20
-#           {% elif states.sensor.living_room_luminance.state | int <= 100 %}
-#           {{ states.sensor.living_room_luminance.state | int }}
-#           {% else %}
-#           100
-#           {% endif %}
-#     - delay: '00:00:03'
-#     - service: switch.flux_hallway_update
+- alias: Turn on hallway ceiling lamp when motion is detected in hallway
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hallway_motion
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.hallway_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.hallway_ceiling_lamp
+        transition: 2
+        brightness_pct: >-
+          {% if states.sensor.living_room_luminance.state | int <= 20 %}
+          20
+          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+          {{ states.sensor.living_room_luminance.state | int }}
+          {% else %}
+          100
+          {% endif %}
+    - delay: '00:00:03'
+    - service: switch.flux_hallway_update
 
-# - alias: Turn off hallway ceiling lamp when no motion is detected in hallway
-#   trigger:
-#     - platform: state
-#       entity_id: binary_sensor.hallway_motion
-#       to: 'off'
-#       for: '00:02:00'
-#   condition:
-#     - condition: state
-#       entity_id: light.hallway_ceiling_lamp
-#       state: 'on'
-#     - condition: state
-#       entity_id: input_boolean.hallway_motion_detection_enabled
-#       state: 'on'
-#     - condition: state
-#       entity_id: input_boolean.everyone_asleep
-#       state: 'off'
-#   action:
-#     - service: light.turn_off
-#       data:
-#         entity_id: light.hallway_ceiling_lamp
-#         transition: 5
+- alias: Turn off hallway ceiling lamp when no motion is detected in hallway
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hallway_motion
+      to: 'off'
+      for: '00:02:00'
+  condition:
+    - condition: state
+      entity_id: light.hallway_ceiling_lamp
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.hallway_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.hallway_ceiling_lamp
+        transition: 5
 
-# - alias: Turn on hallway ceiling lamp when main entrance is opened
-#   trigger:
-#     - platform: state
-#       entity_id: binary_sensor.main_entrance
-#       to: 'on'
-#   condition:
-#     - condition: state
-#       entity_id: light.hallway_ceiling_lamp
-#       state: 'off'
-#     - condition: state
-#       entity_id: input_boolean.everyone_asleep
-#       state: 'off'
-#   action:
-#     - service: light.turn_on
-#       data_template:
-#         entity_id: light.hallway_ceiling_lamp
-#         transition: 2
-#         brightness_pct: >-
-#           {% if states.sensor.living_room_luminance.state | int <= 20 %}
-#           20
-#           {% elif states.sensor.living_room_luminance.state | int <= 100 %}
-#           {{ states.sensor.living_room_luminance.state | int }}
-#           {% else %}
-#           100
-#           {% endif %}
-#     - delay: '00:00:03'
-#     - service: switch.flux_hallway_update
+- alias: Turn on hallway ceiling lamp when main entrance is opened
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.main_entrance
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.hallway_ceiling_lamp
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.hallway_ceiling_lamp
+        transition: 2
+        brightness_pct: >-
+          {% if states.sensor.living_room_luminance.state | int <= 20 %}
+          20
+          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+          {{ states.sensor.living_room_luminance.state | int }}
+          {% else %}
+          100
+          {% endif %}
+    - delay: '00:00:03'
+    - service: switch.flux_hallway_update
 
-# - alias: Turn off hallway ceiling lamp when main entrance is closed if no light interior
-#   trigger:
-#     - platform: state
-#       entity_id: binary_sensor.main_entrance
-#       to: 'off'
-#       for: '00:03:00'
-#   condition:
-#     - condition: state
-#       entity_id: light.hallway_ceiling_lamp
-#       state: 'on'
-#     - condition: state
-#       entity_id: input_boolean.everyone_asleep
-#       state: 'off'
-#   action:
-#     - service: light.turn_on
-#       data:
-#         entity_id: light.hallway_ceiling_lamp
-#         transition: 5
-#     - delay: '00:00:10'
-#     - service: light.turn_off
-#       data:
-#         entity_id: light.hallway_ceiling_lamp
+- alias: Turn off hallway ceiling lamp when main entrance is closed if no light interior
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.main_entrance
+      to: 'off'
+      for: '00:03:00'
+  condition:
+    - condition: state
+      entity_id: light.hallway_ceiling_lamp
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.hallway_ceiling_lamp
+        transition: 5
+    - delay: '00:00:10'
+    - service: light.turn_off
+      data:
+        entity_id: light.hallway_ceiling_lamp
 
 - alias: Turn on hallway mood light when one person goes to sleep
   trigger:

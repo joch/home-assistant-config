@@ -171,17 +171,17 @@ switch:
     disable_brightness_adjust: True
     mode: mired
     transition: 2
-  # - platform: flux
-  #   lights:
-  #     - light.bathroom_ceiling_lamp
-  #   name: Flux Hallway
-  #   stop_time: '22:00'
-  #   start_colortemp: 4000
-  #   sunset_colortemp: 3000
-  #   stop_colortemp: 1900
-  #   disable_brightness_adjust: True
-  #   mode: mired
-  #   transition: 2
+  - platform: flux
+    lights:
+      - light.bathroom_ceiling_lamp
+    name: Flux Hallway
+    stop_time: '22:00'
+    start_colortemp: 4000
+    sunset_colortemp: 3000
+    stop_colortemp: 1900
+    disable_brightness_adjust: True
+    mode: mired
+    transition: 2
   - platform: flux
     lights:
       - light.living_room_ceiling_lamp
