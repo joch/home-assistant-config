@@ -81,7 +81,6 @@
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
-    - delay: '00:01:00'
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
