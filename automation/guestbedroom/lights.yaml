@@ -6,8 +6,7 @@
     - platform: state
       entity_id: binary_sensor.guest_bedroom_motion
       to: 'off'
-      for:
-        minutes: 10
+      for: '00:10:00'
   condition:
     - condition: state
       entity_id: input_boolean.lights_needed

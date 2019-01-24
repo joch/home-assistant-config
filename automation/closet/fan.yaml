@@ -5,13 +5,11 @@
     - platform: numeric_state
       entity_id: sensor.closet_humidity
       below: 40
-      for:
-        minutes: 10
+      for: '00:10:00'
     - platform: numeric_state
       entity_id: sensor.closet_temperature
       above: 20
-      for:
-        minutes: 10
+      for: '00:10:00'
   condition:
     - condition: state
       entity_id: input_boolean.closet_ventilation_fan_automation
@@ -34,13 +32,11 @@
     - platform: numeric_state
       entity_id: sensor.closet_humidity
       above: 40
-      for:
-        minutes: 10
+      for: '00:10:00'
     - platform: numeric_state
       entity_id: sensor.closet_temperature
       below: 20
-      for:
-        minutes: 10
+      for: '00:10:00'
   condition:
     - condition: state
       entity_id: input_boolean.closet_ventilation_fan_automation

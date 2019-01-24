@@ -355,7 +355,7 @@ automation:
 - alias: battery_notification
   initial_state: 'on'
   trigger:
-    - platform: time
+    - platform: time_pattern
       minutes: '/15'
       seconds: 00
     - platform: state
@@ -418,7 +418,7 @@ automation:
 - alias: battery_notification_clear
   initial_state: 'on'
   trigger:
-    - platform: time
+    - platform: time_pattern
       minutes: '/15'
       seconds: 00
     - platform: state
@@ -619,7 +619,7 @@ automation:
   trigger:
     - platform: homeassistant
       event: start
-    - platform: time
+    - platform: time_pattern
       minutes: '/5'
       seconds: 00
   action:

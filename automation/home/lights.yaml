@@ -3,8 +3,7 @@
     - platform: numeric_state
       entity_id: sensor.living_room_luminance
       below: 40
-      for:
-        minutes: 10
+      for: '00:10:00'
     - platform: state
       entity_id: input_boolean.everyone_asleep
       to: 'off'
@@ -47,8 +46,7 @@
     - platform: numeric_state
       entity_id: sensor.living_room_luminance
       above: 40
-      for:
-        minutes: 10
+      for: '00:10:00'
   condition:
     - condition: state
       entity_id: input_boolean.light_automation
