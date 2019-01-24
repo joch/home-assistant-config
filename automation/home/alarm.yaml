@@ -240,8 +240,7 @@
     - platform: state
       entity_id: group.household
       to: 'not_home'
-      for:
-        hours: 24
+      for: '24:00:00'
   condition:
     - condition: state
       entity_id: input_boolean.guest_mode

@@ -3,24 +3,20 @@
     - platform: state
       entity_id: group.indoor_motion
       to: 'off'
-      for:
-        hours: 4
+      for: '04:00:00'
   condition:
     - condition: state
       entity_id: group.household
       state: 'home'
-      for:
-        hours: 4
+      for: '04:00:00'
     - condition: state
       entity_id: input_boolean.kajsa_asleep
       state: 'off'
-      for:
-        hours: 4
+      for: '04:00:00'
     - condition: state
       entity_id: input_boolean.johnny_asleep
       state: 'off'
-      for:
-        hours: 4
+      for: '04:00:00'
   action:
     - service: notify.all_phones
       data:
