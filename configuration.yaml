@@ -209,11 +209,7 @@ homekit:
   auto_start: True
   filter:
     include_domains:
-      - binary_sensor
-      - camera
       - light
-      - scene
-      - switch
 
 # camera:
 #   - platform: arlo
