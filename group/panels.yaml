@@ -19,19 +19,6 @@ Sleep Status:
   - input_boolean.guest_asleep
   - input_boolean.everyone_asleep
 
-Indoor Environment:
-  - sensor.bedroom_temperature
-  - sensor.bedroom_humidity
-  - sensor.living_room_motion_sensor_temperature
-  - sensor.closet_temperature
-  - sensor.closet_humidity
-  - sensor.closet_pressure
-  - sensor.bathroom_temperature
-  - sensor.bathroom_humidity
-  - sensor.guest_bedroom_temperature
-  - sensor.guest_bedroom_humidity
-  - sensor.guest_bedroom_pressure
-
 Indoor Motion:
   - binary_sensor.bedroom_motion
   - binary_sensor.living_room_motion_sensor
@@ -39,16 +26,3 @@ Indoor Motion:
   - binary_sensor.bathroom_motion
   - binary_sensor.kitchen_motion
   - binary_sensor.guest_bedroom_motion
-
-Perimeter:
-  - binary_sensor.main_entrance
-  - binary_sensor.balcony_entrance
-  - binary_sensor.bedroom_window
-  - binary_sensor.living_room_window_left
-  - binary_sensor.living_room_window_right
-  - binary_sensor.bathroom_window
-  - binary_sensor.guest_bedroom_window
-
-Water:
-  - binary_sensor.bathroom_water
-  - binary_sensor.kitchen_water
