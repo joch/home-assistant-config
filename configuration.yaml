@@ -147,16 +147,46 @@ switch:
       - light.bedroom_ceiling_lamp
       - light.bedroom_lamp
       - light.living_room_window_lamp
-      - light.living_room_ceiling_lamp
-      - light.living_room_globe
       - light.bathroom_ceiling_lamp
-      - light.hallway_ceiling_lamp
       - light.kitchen_window_lamp
       - light.kitchen_ceiling_lamp
-      - light.kitchen_countertop_lightstrip
       - light.guest_bedroom_ceiling_lamp
       - light.guest_bedroom_window_lamp
     name: Flux Indoor Lights
+    stop_time: '22:00'
+    start_colortemp: 4000
+    sunset_colortemp: 3000
+    stop_colortemp: 1900
+    disable_brightness_adjust: True
+    mode: mired
+    transition: 2
+  - platform: flux
+    lights:
+      - light.kitchen_countertop_lightstrip
+    name: Flux Kitchen
+    stop_time: '22:00'
+    start_colortemp: 4000
+    sunset_colortemp: 3000
+    stop_colortemp: 1900
+    disable_brightness_adjust: True
+    mode: mired
+    transition: 2
+  - platform: flux
+    lights:
+      - light.hallway_ceiling_lamp
+    name: Flux Hallway
+    stop_time: '22:00'
+    start_colortemp: 4000
+    sunset_colortemp: 3000
+    stop_colortemp: 1900
+    disable_brightness_adjust: True
+    mode: mired
+    transition: 2
+  - platform: flux
+    lights:
+      - light.living_room_ceiling_lamp
+      - light.living_room_globe
+    name: Flux Living Room
     stop_time: '22:00'
     start_colortemp: 4000
     sunset_colortemp: 3000

@@ -65,7 +65,7 @@
           scene.kitchen_countertop_only
           {% endif %}
     - delay: '00:00:03'
-    - service: switch.flux_indoor_lights_update
+    - service: switch.flux_kitchen_update
 
 - alias: Kitchen lights on dim on motion during the night
   trigger:
