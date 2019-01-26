@@ -4,7 +4,7 @@
       state: on
       brightness_pct: 50
       transition: 2
-    light.living_room_lamp:
+    light.living_room_window_lamp:
       state: on
       brightness_pct: 50
       transition: 2
@@ -23,7 +23,7 @@
     light.living_room_ceiling_lamp:
       state: off
       transition: 5
-    light.living_room_lamp:
+    light.living_room_window_lamp:
       state: off
       transition: 5
     light.living_room_globe:
@@ -40,7 +40,7 @@
       brightness_pct: 10
       transition: 5
       rgb_color: [255,127,0]
-    light.living_room_lamp:
+    light.living_room_window_lamp:
       state: on
       brightness_pct: 10
       transition: 5
@@ -60,7 +60,7 @@
       brightness_pct: 100
       transition: 2
       color_temp: 300
-    light.living_room_lamp:
+    light.living_room_window_lamp:
       state: on
       brightness_pct: 100
       transition: 2
@@ -81,7 +81,7 @@
       state: on
       brightness_pct: 1
       rgb_color: [255,0,0]
-    light.living_room_lamp:
+    light.living_room_window_lamp:
       state: off
     light.living_room_globe:
       state: off
@@ -95,7 +95,7 @@
       brightness_pct: 50
       transition: 2
       color_temp: 500
-    light.living_room_lamp:
+    light.living_room_window_lamp:
       state: on
       brightness_pct: 1
       transition: 2
@@ -125,7 +125,7 @@
       brightness_pct: 50
       transition: 2
       color_temp: 500
-    light.living_room_lamp:
+    light.living_room_window_lamp:
       state: on
       brightness_pct: 25
       transition: 2

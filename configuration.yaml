@@ -146,7 +146,7 @@ switch:
     lights:
       - light.bedroom_ceiling_lamp
       - light.bedroom_lamp
-      - light.living_room_lamp
+      - light.living_room_window_lamp
       - light.living_room_ceiling_lamp
       - light.living_room_globe
       - light.bathroom_ceiling_lamp
