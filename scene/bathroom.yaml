@@ -28,4 +28,3 @@
   entities:
     light.bathroom_ceiling_lamp:
       state: off
-      transition: 5
