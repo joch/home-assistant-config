@@ -34,7 +34,7 @@
     - service: scene.turn_on
       data_template:
         entity_id: >-
-          {% if is_state('input_boolean.light_mode', 'on') %}
+          {% if is_state('input_boolean.light_automation', 'on') %}
           scene.guest_bedroom_dim
           {% else %}
           scene.guest_bedroom_off
