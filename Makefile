@@ -14,6 +14,10 @@ ack:
 deploy:
 	rsync --progress --partial --exclude ".git" -avz --no-perms --checksum --no-owner --no-group ./ joch@nas:/opt/home-assistant/
 
+.PHONY: back
+back:
+	rsync --progress --partial --exclude ".git" -avz --no-perms --checksum --no-owner --no-group joch@nas:/opt/home-assistant/customize.yaml ./customize.yaml
+
 .PHONY: restart
 restart:
 	ssh nas docker restart home-assistant

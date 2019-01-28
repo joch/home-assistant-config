@@ -1,0 +1,20 @@
+binary_sensor.balcony_entrance:
+  device_class: door
+binary_sensor.bathroom_window:
+  device_class: window
+binary_sensor.bedroom_window:
+  device_class: window
+binary_sensor.guest_bedroom_window:
+  device_class: window
+binary_sensor.kitchen_window_left:
+  device_class: window
+binary_sensor.kitchen_window_right:
+  device_class: window
+binary_sensor.living_room_window_left:
+  device_class: window
+binary_sensor.living_room_window_right:
+  device_class: window
+binary_sensor.main_entrance:
+  device_class: door
+sensor.living_room_luminance:
+  device_class: illuminance
