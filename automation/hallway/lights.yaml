@@ -30,6 +30,9 @@
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
+    - condition: state
+      entity_id: light.hallway_ceiling_lamp
+      state: 'off'
   action:
     - service: light.turn_on
       data_template:

@@ -45,6 +45,9 @@
     - condition: state
       entity_id: input_boolean.guest_asleep
       state: 'off'
+    - condition: state
+      entity_id: light.guest_bedroom_ceiling_lamp
+      state: 'off'
   action:
     - service: scene.turn_on
       data_template:

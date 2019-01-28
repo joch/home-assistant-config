@@ -57,6 +57,9 @@
     - condition: state
       entity_id: light.kajsas_bedlight
       state: 'off'
+    - condition: state
+      entity_id: light.bedroom_ceiling_lamp
+      state: 'off'
   action:
     - service: scene.turn_on
       data_template:
