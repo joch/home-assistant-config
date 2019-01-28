@@ -4,17 +4,7 @@
       event_type: deconz_event
       event_data:
         id: bedroom_dimmer
-        event: 2002
-    - platform: event
-      event_type: deconz_event
-      event_data:
-        id: bedroom_dimmer
-        event: 3002
-    - platform: event
-      event_type: deconz_event
-      event_data:
-        id: bedroom_dimmer
-        event: 4002
+        event: 4003
   condition:
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled
@@ -33,7 +23,7 @@
       event_type: deconz_event
       event_data:
         id: bedroom_dimmer
-        event: 1002
+        event: 1003
   condition:
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled
