@@ -1,0 +1,975 @@
+{
+    "data": {
+        "config": {
+            "resources": [
+                {
+                    "type": "js",
+                    "url": "/local/monster-card.js?v=1"
+                }
+            ],
+            "title": "Honn\u00f6rsgatan",
+            "views": [
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "alarm_control_panel.alarm",
+                            "states": [
+                                "arm_night",
+                                "arm_away"
+                            ],
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.bedroom_motion",
+                                "binary_sensor.living_room_motion_sensor",
+                                "binary_sensor.hallway_motion",
+                                "binary_sensor.bathroom_motion",
+                                "binary_sensor.kitchen_motion",
+                                "binary_sensor.guest_bedroom_motion"
+                            ],
+                            "format": "relative",
+                            "secondary_info": "last-changed",
+                            "show_header_toggle": false,
+                            "title": "Indoor Motion",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "device_tracker.johnnysiphone",
+                                "device_tracker.kajsasiphone"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Household",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.bedroom_temperature",
+                                "sensor.living_room_motion_sensor_temperature",
+                                "sensor.closet_temperature",
+                                "sensor.bathroom_temperature",
+                                "sensor.guest_bedroom_temperature"
+                            ],
+                            "title": "Indoor Temperature",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.main_entrance"
+                                },
+                                {
+                                    "entity": "binary_sensor.balcony_entrance"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_window"
+                                },
+                                {
+                                    "entity": "binary_sensor.living_room_window_left"
+                                },
+                                {
+                                    "entity": "binary_sensor.living_room_window_right"
+                                },
+                                {
+                                    "entity": "binary_sensor.bathroom_window"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_window_left"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_window_right"
+                                },
+                                {
+                                    "entity": "binary_sensor.guest_bedroom_window"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Perimeter",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:home",
+                    "path": "default_view",
+                    "title": "default_view"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.bedroom_window"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_smoke"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_motion"
+                                },
+                                {
+                                    "entity": "input_boolean.bedroom_motion_detection_enabled"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Bedroom",
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.bedroom_temperature",
+                                    "graph": "line",
+                                    "name": "Temperature",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_humidity",
+                                    "graph": "line",
+                                    "name": "Humidity",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.bedroom_ceiling_lamp"
+                                },
+                                {
+                                    "entity": "light.bedroom_lamp"
+                                },
+                                {
+                                    "entity": "light.johnnys_bedlight"
+                                },
+                                {
+                                    "entity": "light.kajsas_bedlight"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.bedroom_off"
+                                },
+                                {
+                                    "entity": "scene.bedroom_normal"
+                                },
+                                {
+                                    "entity": "scene.bedroom_dim"
+                                },
+                                {
+                                    "entity": "scene.bedroom_full"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_boolean.johnny_asleep",
+                                "input_boolean.kajsa_asleep",
+                                "input_boolean.lea_asleep",
+                                "input_boolean.guest_asleep",
+                                "input_boolean.everyone_asleep"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Sleep Status",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:hotel",
+                    "path": "view_bedroom",
+                    "title": "Master Bedroom"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.living_room_window_left"
+                                },
+                                {
+                                    "entity": "binary_sensor.living_room_window_right"
+                                },
+                                {
+                                    "entity": "binary_sensor.living_room_motion_sensor"
+                                },
+                                {
+                                    "entity": "input_boolean.living_room_motion_detection_enabled"
+                                },
+                                {
+                                    "entity": "sensor.plex"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Living Room",
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.living_room_motion_sensor_temperature",
+                                    "graph": "line",
+                                    "name": "Temperature",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.living_room_luminance",
+                                    "graph": "line",
+                                    "name": "Luminance",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.living_room_ceiling_lamp"
+                                },
+                                {
+                                    "entity": "light.living_room_window_lamp"
+                                },
+                                {
+                                    "entity": "light.living_room_globe"
+                                },
+                                {
+                                    "entity": "light.living_room_tv_light"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "vacuum.greta"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Vacuum",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_select.harmony"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.living_room_off"
+                                },
+                                {
+                                    "entity": "scene.living_room_normal"
+                                },
+                                {
+                                    "entity": "scene.living_room_dim"
+                                },
+                                {
+                                    "entity": "scene.living_room_full"
+                                },
+                                {
+                                    "entity": "scene.living_room_tv"
+                                },
+                                {
+                                    "entity": "scene.living_room_tv_only"
+                                },
+                                {
+                                    "entity": "scene.living_room_music"
+                                },
+                                {
+                                    "entity": "scene.living_room_music_only"
+                                },
+                                {
+                                    "entity": "scene.living_room_night"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:sofa",
+                    "path": "view_living_room",
+                    "title": "Living Room"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "binary_sensor.balcony_entrance",
+                                "switch.balcony_switch"
+                            ],
+                            "show_name": false,
+                            "title": "Balcony",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.balcony_off"
+                                },
+                                {
+                                    "entity": "scene.balcony_normal"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:door-open",
+                    "path": "view_balcony",
+                    "title": "Balcony"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.living_room_outlet"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Closet",
+                            "type": "entities"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.closet_temperature",
+                                    "graph": "line",
+                                    "name": "Temperature",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.closet_humidity",
+                                    "graph": "line",
+                                    "name": "Humidity",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.closet_pressure",
+                                    "graph": "line",
+                                    "name": "Pressure",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.ups_online_status"
+                                },
+                                {
+                                    "entity": "sensor.ups_battery"
+                                },
+                                {
+                                    "entity": "sensor.ups_input_voltage"
+                                },
+                                {
+                                    "entity": "sensor.ups_internal_temperature"
+                                },
+                                {
+                                    "entity": "sensor.ups_load"
+                                },
+                                {
+                                    "entity": "sensor.ups_status"
+                                },
+                                {
+                                    "entity": "sensor.ups_time_left"
+                                },
+                                {
+                                    "entity": "sensor.ups_last_transfer"
+                                },
+                                {
+                                    "entity": "sensor.ups_transfer_count"
+                                },
+                                {
+                                    "entity": "sensor.ups_transfer_high"
+                                },
+                                {
+                                    "entity": "sensor.ups_transfer_low"
+                                },
+                                {
+                                    "entity": "sensor.ups_transfer_to_battery"
+                                },
+                                {
+                                    "entity": "sensor.ups_transfer_from_battery"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "UPS Status",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:hanger",
+                    "path": "view_closet",
+                    "title": "Closet"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.bathroom_window"
+                                },
+                                {
+                                    "entity": "binary_sensor.bathroom_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.bathroom_motion"
+                                },
+                                {
+                                    "entity": "input_boolean.bathroom_motion_detection_enabled"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Bathroom",
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.bathroom_temperature",
+                                    "graph": "line",
+                                    "name": "Temperature",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.bathroom_humidity",
+                                    "graph": "line",
+                                    "name": "Humidity",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.bathroom_ceiling_lamp"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.bathroom_off"
+                                },
+                                {
+                                    "entity": "scene.bathroom_normal"
+                                },
+                                {
+                                    "entity": "scene.bathroom_dim"
+                                },
+                                {
+                                    "entity": "scene.bathroom_full"
+                                },
+                                {
+                                    "entity": "scene.bathroom_night"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:hot-tub",
+                    "path": "view_bathroom",
+                    "title": "Bathroom"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.main_entrance"
+                                },
+                                {
+                                    "entity": "binary_sensor.hallway_smoke"
+                                },
+                                {
+                                    "entity": "binary_sensor.hallway_motion"
+                                },
+                                {
+                                    "entity": "input_boolean.hallway_motion_detection_enabled"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Hallway",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.hallway_ceiling_lamp"
+                                },
+                                {
+                                    "entity": "switch.hallway_switch"
+                                },
+                                {
+                                    "entity": "light.gateway_light_7811dc64de1a"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.hallway_off"
+                                },
+                                {
+                                    "entity": "scene.hallway_normal"
+                                },
+                                {
+                                    "entity": "scene.hallway_dim"
+                                },
+                                {
+                                    "entity": "scene.hallway_full"
+                                },
+                                {
+                                    "entity": "scene.hallway_night"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "sensor.illumination_7811dc64de1a",
+                            "graph": "line",
+                            "name": "Luminance",
+                            "type": "sensor"
+                        }
+                    ],
+                    "icon": "mdi:cube-unfolded",
+                    "path": "view_hallway",
+                    "title": "Hallway"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.kitchen_window_left"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_window_right"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_motion"
+                                },
+                                {
+                                    "entity": "input_boolean.kitchen_motion_detection_enabled"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Kitchen",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.kitchen_ceiling_lamp"
+                                },
+                                {
+                                    "entity": "light.kitchen_countertop_lightstrip"
+                                },
+                                {
+                                    "entity": "light.kitchen_cabinet_light"
+                                },
+                                {
+                                    "entity": "light.kitchen_window_lamp"
+                                },
+                                {
+                                    "entity": "switch.kitchen_switch"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.kitchen_off"
+                                },
+                                {
+                                    "entity": "scene.kitchen_normal"
+                                },
+                                {
+                                    "entity": "scene.kitchen_dim"
+                                },
+                                {
+                                    "entity": "scene.kitchen_full"
+                                },
+                                {
+                                    "entity": "scene.kitchen_countertop_only"
+                                },
+                                {
+                                    "entity": "scene.kitchen_night"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:stove",
+                    "path": "view_kitchen",
+                    "title": "Kitchen"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "binary_sensor.guest_bedroom_window",
+                                "binary_sensor.bedroom_smoke",
+                                "binary_sensor.guest_bedroom_motion",
+                                "input_boolean.guest_bedroom_motion_detection_enabled"
+                            ],
+                            "show_name": false,
+                            "title": "Guest Bedroom",
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.guest_bedroom_temperature",
+                                    "graph": "line",
+                                    "name": "Temperature",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.guest_bedroom_humidity",
+                                    "graph": "line",
+                                    "name": "Humidity",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.guest_bedroom_pressure",
+                                    "graph": "line",
+                                    "name": "Pressure",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.guest_bedroom_ceiling_lamp"
+                                },
+                                {
+                                    "entity": "light.guest_bedroom_window_lamp"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_boolean.johnny_asleep",
+                                "input_boolean.kajsa_asleep",
+                                "input_boolean.lea_asleep",
+                                "input_boolean.guest_asleep",
+                                "input_boolean.everyone_asleep"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Sleep Status",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.guest_bedroom_off"
+                                },
+                                {
+                                    "entity": "scene.guest_bedroom_normal"
+                                },
+                                {
+                                    "entity": "scene.guest_bedroom_dim"
+                                },
+                                {
+                                    "entity": "scene.guest_bedroom_full"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:human-male-female",
+                    "path": "view_guest_bedroom",
+                    "title": "Guest Bedroom"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "switch.flux_indoor_lights",
+                                "input_boolean.light_automation",
+                                "input_boolean.lights_needed",
+                                "input_boolean.lights_night",
+                                "input_boolean.lights_full",
+                                "input_boolean.sleep_automation",
+                                "input_boolean.perimeter_warning",
+                                "input_boolean.closet_ventilation_fan_automation",
+                                "input_boolean.vacuum_automation"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Automation Override",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_boolean.alarm_mode",
+                                "input_boolean.alarm_night_mode",
+                                "input_boolean.vacation_mode",
+                                "input_boolean.guest_mode"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Security Automation",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_boolean.bedroom_motion_detection_enabled",
+                                "input_boolean.living_room_motion_detection_enabled",
+                                "input_boolean.bathroom_motion_detection_enabled",
+                                "input_boolean.hallway_motion_detection_enabled",
+                                "input_boolean.kitchen_motion_detection_enabled",
+                                "input_boolean.guest_bedroom_motion_detection_enabled"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Motion Detection",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:robot",
+                    "path": "view_automation",
+                    "title": "Automation"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "alarm_control_panel.alarm",
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.main_entrance",
+                                "binary_sensor.balcony_entrance",
+                                "binary_sensor.bedroom_window",
+                                "binary_sensor.living_room_window_left",
+                                "binary_sensor.living_room_window_right",
+                                "binary_sensor.bathroom_window",
+                                "binary_sensor.guest_bedroom_window"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Perimeter",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.bedroom_motion",
+                                "binary_sensor.living_room_motion_sensor",
+                                "binary_sensor.hallway_motion",
+                                "binary_sensor.bathroom_motion",
+                                "binary_sensor.kitchen_motion",
+                                "binary_sensor.guest_bedroom_motion"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Indoor Motion",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.bathroom_water",
+                                "binary_sensor.kitchen_water"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Water",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.bedroom_smoke",
+                                "binary_sensor.hallway_smoke",
+                                "binary_sensor.guest_bedroom_smoke"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Smoke",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:cctv",
+                    "path": "view_security",
+                    "title": "Security"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "sensor.bedroom_temperature",
+                                "sensor.bedroom_humidity",
+                                "sensor.living_room_motion_sensor_temperature",
+                                "sensor.closet_temperature",
+                                "sensor.closet_humidity",
+                                "sensor.closet_pressure",
+                                "sensor.bathroom_temperature",
+                                "sensor.bathroom_humidity",
+                                "sensor.guest_bedroom_temperature",
+                                "sensor.guest_bedroom_humidity",
+                                "sensor.guest_bedroom_pressure"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Indoor Environment",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.dark_sky_summary",
+                                "sensor.dark_sky_hourly_summary",
+                                "sensor.dark_sky_daily_summary"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Weather Summary",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sun.sun",
+                                "sensor.dark_sky_apparent_temperature",
+                                "sensor.dark_sky_cloud_coverage",
+                                "sensor.dark_sky_dew_point",
+                                "sensor.dark_sky_humidity",
+                                "sensor.dark_sky_ozone",
+                                "sensor.dark_sky_precip",
+                                "sensor.dark_sky_precip_intensity",
+                                "sensor.dark_sky_precip_probability",
+                                "sensor.dark_sky_pressure",
+                                "sensor.dark_sky_temperature",
+                                "sensor.dark_sky_visibility",
+                                "sensor.dark_sky_wind_bearing",
+                                "sensor.dark_sky_wind_speed",
+                                "sensor.dark_sky_temperature_high",
+                                "sensor.dark_sky_temperature_low",
+                                "sensor.dark_sky_apparent_temperature_high",
+                                "sensor.dark_sky_apparent_temperature_low",
+                                "sensor.dark_sky_precip_intensity_max"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Weather",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "weather.smhi_home",
+                            "name": "Weather",
+                            "type": "weather-forecast"
+                        }
+                    ],
+                    "icon": "mdi:weather-cloudy",
+                    "path": "view_weather",
+                    "title": "Weather"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "sensor.bathroom_environment_battery_level",
+                                "sensor.bathroom_environment_battery_level_2",
+                                "sensor.bedroom_dimmer_battery_level",
+                                "sensor.bedroom_environment_battery_level",
+                                "sensor.bedroom_environment_battery_level_2",
+                                "sensor.dimmer_switch_battery_level",
+                                "sensor.guest_asleep_battery_level",
+                                "sensor.guest_bedroom_dimmer_battery_level",
+                                "sensor.guest_bedroom_dimmer_battery_level_2",
+                                "sensor.hallway_dimmer_battery_level",
+                                "sensor.hallway_dimmer_battery_level_2",
+                                "sensor.johnny_asleep_battery_level",
+                                "sensor.johnnys_iphone_battery_level",
+                                "sensor.johnnys_iphone_battery_level_2",
+                                "sensor.kajsa_asleep_battery_level",
+                                "sensor.kajsas_iphone_battery_level",
+                                "sensor.living_room_dimmer_battery_level",
+                                "sensor.switch_48_battery_level",
+                                "sensor.ups_battery"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Battery Status",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_number.battery_alert_threshold_min"
+                                },
+                                {
+                                    "entity": "input_number.battery_alert_threshold_max"
+                                },
+                                {
+                                    "entity": "input_text.clear_mqtt_topic"
+                                },
+                                {
+                                    "entity": "automation.battery_notification"
+                                },
+                                {
+                                    "entity": "automation.battery_notification_clear"
+                                },
+                                {
+                                    "entity": "automation.battery_sensor_from_attributes"
+                                },
+                                {
+                                    "entity": "automation.update_battery_status_group_members"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Battery Alert",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:battery-alert",
+                    "path": "battery_view",
+                    "title": "Batteries"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

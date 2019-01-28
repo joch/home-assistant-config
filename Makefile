@@ -4,7 +4,7 @@ all: preview ack deploy restart log
 
 .PHONY: preview
 preview:
-	rsync --progress --partial --exclude ".git" --dry-run -avz --no-perms --checksum --no-owner --no-group ./ joch@nas:/opt/home-assistant/
+	rsync --progress --partial --exclude ".git" --exclude "customize.yaml" --exclude "ui-lovelace.yaml" --dry-run -avz --no-perms --checksum --no-owner --no-group ./ joch@nas:/opt/home-assistant/
 
 .PHONY: ack
 ack:
@@ -12,11 +12,12 @@ ack:
 
 .PHONY: deploy
 deploy:
-	rsync --progress --partial --exclude ".git" -avz --no-perms --checksum --no-owner --no-group ./ joch@nas:/opt/home-assistant/
+	rsync --progress --partial --exclude ".git" --exclude "customize.yaml" --exclude "ui-lovelace.yaml" -avz --no-perms --checksum --no-owner --no-group ./ joch@nas:/opt/home-assistant/
 
 .PHONY: back
 back:
 	rsync --progress --partial --exclude ".git" -avz --no-perms --checksum --no-owner --no-group joch@nas:/opt/home-assistant/customize.yaml ./customize.yaml
+	rsync --progress --partial --exclude ".git" -avz --no-perms --checksum --no-owner --no-group joch@nas:/opt/home-assistant/.storage/lovelace ./ui-lovelace.yaml
 
 .PHONY: restart
 restart:
