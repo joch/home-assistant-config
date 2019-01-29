@@ -204,9 +204,6 @@
                                 },
                                 {
                                     "entity": "input_boolean.living_room_motion_detection_enabled"
-                                },
-                                {
-                                    "entity": "sensor.plex"
                                 }
                             ],
                             "show_name": false,
@@ -261,9 +258,13 @@
                             "entities": [
                                 {
                                     "entity": "input_select.harmony"
+                                },
+                                {
+                                    "entity": "sensor.plex"
                                 }
                             ],
                             "show_header_toggle": false,
+                            "title": "Media",
                             "type": "entities"
                         },
                         {
@@ -521,6 +522,17 @@
                             "type": "glance"
                         },
                         {
+                            "cards": [
+                                {
+                                    "entity": "sensor.illumination_7811dc64de1a",
+                                    "graph": "line",
+                                    "name": "Luminance",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
                             "entities": [
                                 {
                                     "entity": "light.hallway_ceiling_lamp"
@@ -557,12 +569,6 @@
                             "show_header_toggle": false,
                             "title": "Scenes",
                             "type": "entities"
-                        },
-                        {
-                            "entity": "sensor.illumination_7811dc64de1a",
-                            "graph": "line",
-                            "name": "Luminance",
-                            "type": "sensor"
                         }
                     ],
                     "icon": "mdi:cube-unfolded",
