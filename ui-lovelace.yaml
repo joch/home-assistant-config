@@ -111,6 +111,25 @@
                             "show_header_toggle": false,
                             "title": "Indoor Environment",
                             "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.bathroom_water",
+                                "binary_sensor.kitchen_water"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Water",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.bedroom_smoke",
+                                "binary_sensor.hallway_smoke",
+                                "binary_sensor.guest_bedroom_smoke"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Smoke",
+                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:home",
@@ -808,64 +827,6 @@
                     "icon": "mdi:robot",
                     "path": "view_automation",
                     "title": "Automation"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entity": "alarm_control_panel.alarm",
-                            "type": "alarm-panel"
-                        },
-                        {
-                            "entities": [
-                                "binary_sensor.main_entrance",
-                                "binary_sensor.balcony_entrance",
-                                "binary_sensor.bedroom_window",
-                                "binary_sensor.living_room_window_left",
-                                "binary_sensor.living_room_window_right",
-                                "binary_sensor.bathroom_window",
-                                "binary_sensor.guest_bedroom_window"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Perimeter",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "binary_sensor.bedroom_motion",
-                                "binary_sensor.living_room_motion_sensor",
-                                "binary_sensor.hallway_motion",
-                                "binary_sensor.bathroom_motion",
-                                "binary_sensor.kitchen_motion",
-                                "binary_sensor.guest_bedroom_motion"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Indoor Motion",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "binary_sensor.bathroom_water",
-                                "binary_sensor.kitchen_water"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Water",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "binary_sensor.bedroom_smoke",
-                                "binary_sensor.hallway_smoke",
-                                "binary_sensor.guest_bedroom_smoke"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Smoke",
-                            "type": "entities"
-                        }
-                    ],
-                    "icon": "mdi:cctv",
-                    "path": "view_security",
-                    "title": "Security"
                 },
                 {
                     "badges": [],
