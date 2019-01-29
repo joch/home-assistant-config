@@ -46,14 +46,14 @@
       data:
         entity_id: light.gateway_light_7811dc64de1a
 
-- alias: Notify if windows are open when it starts to rain
+- alias: Notify if windows are open when it starts to rain or snow
   trigger:
     - platform: state
-      entity_id: sensor.dark_sky_precip
-      to: 'rain'
+      entity_id: weather.smhi_home
+      to: 'rainy'
     - platform: state
-      entity_id: sensor.dark_sky_precip
-      to: 'snow'
+      entity_id: weather.smhi_home
+      to: 'snowy'
   condition:
     condition: or
     conditions:
@@ -71,6 +71,12 @@
         state: 'on'
       - condition: state
         entity_id: binary_sensor.bathroom_window
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.kitchen_window_left
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.kitchen_window_right
         state: 'on'
       - condition: state
         entity_id: binary_sensor.guest_bedroom_window
