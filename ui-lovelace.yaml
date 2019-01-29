@@ -88,6 +88,29 @@
                             "show_header_toggle": false,
                             "title": "Perimeter",
                             "type": "entities"
+                        },
+                        {
+                            "entity": "weather.smhi_home",
+                            "name": "Weather",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entities": [
+                                "sensor.bedroom_temperature",
+                                "sensor.bedroom_humidity",
+                                "sensor.living_room_motion_sensor_temperature",
+                                "sensor.closet_temperature",
+                                "sensor.closet_humidity",
+                                "sensor.closet_pressure",
+                                "sensor.bathroom_temperature",
+                                "sensor.bathroom_humidity",
+                                "sensor.guest_bedroom_temperature",
+                                "sensor.guest_bedroom_humidity",
+                                "sensor.guest_bedroom_pressure"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Indoor Environment",
+                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:home",
@@ -843,73 +866,6 @@
                     "icon": "mdi:cctv",
                     "path": "view_security",
                     "title": "Security"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                "sensor.bedroom_temperature",
-                                "sensor.bedroom_humidity",
-                                "sensor.living_room_motion_sensor_temperature",
-                                "sensor.closet_temperature",
-                                "sensor.closet_humidity",
-                                "sensor.closet_pressure",
-                                "sensor.bathroom_temperature",
-                                "sensor.bathroom_humidity",
-                                "sensor.guest_bedroom_temperature",
-                                "sensor.guest_bedroom_humidity",
-                                "sensor.guest_bedroom_pressure"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Indoor Environment",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "sensor.dark_sky_summary",
-                                "sensor.dark_sky_hourly_summary",
-                                "sensor.dark_sky_daily_summary"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Weather Summary",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "sun.sun",
-                                "sensor.dark_sky_apparent_temperature",
-                                "sensor.dark_sky_cloud_coverage",
-                                "sensor.dark_sky_dew_point",
-                                "sensor.dark_sky_humidity",
-                                "sensor.dark_sky_ozone",
-                                "sensor.dark_sky_precip",
-                                "sensor.dark_sky_precip_intensity",
-                                "sensor.dark_sky_precip_probability",
-                                "sensor.dark_sky_pressure",
-                                "sensor.dark_sky_temperature",
-                                "sensor.dark_sky_visibility",
-                                "sensor.dark_sky_wind_bearing",
-                                "sensor.dark_sky_wind_speed",
-                                "sensor.dark_sky_temperature_high",
-                                "sensor.dark_sky_temperature_low",
-                                "sensor.dark_sky_apparent_temperature_high",
-                                "sensor.dark_sky_apparent_temperature_low",
-                                "sensor.dark_sky_precip_intensity_max"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Weather",
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "weather.smhi_home",
-                            "name": "Weather",
-                            "type": "weather-forecast"
-                        }
-                    ],
-                    "icon": "mdi:weather-cloudy",
-                    "path": "view_weather",
-                    "title": "Weather"
                 },
                 {
                     "badges": [],
