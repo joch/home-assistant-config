@@ -12,8 +12,8 @@ homeassistant:
       initial_state: 'on'
 
 #introduction:
-
 # discovery:
+# updater:
 
 frontend:
   themes: !include themes.yaml
@@ -23,8 +23,6 @@ frontend:
   #   - /local/custom_ui/state-card-custom-ui-es5.html
 
 config:
-
-updater:
 
 conversation:
 
