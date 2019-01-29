@@ -19,7 +19,7 @@
 
 - name: Bathroom Night
   entities:
-    light.bathroom_ceiling_lamp:
+    light.bathroom_ceiling_lamp_middle:
       state: on
       brightness_pct: 1
       transition: 2
