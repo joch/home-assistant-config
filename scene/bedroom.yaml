@@ -2,7 +2,7 @@
   entities:
     light.bedroom_ceiling_lamp:
       state: on
-      brightness_pct: 1
+      brightness_pct: 25
       transition: 2
     light.bedroom_lamp:
       state: on
