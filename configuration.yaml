@@ -129,7 +129,9 @@ switch:
       - light.bedroom_ceiling_lamp
       - light.bedroom_lamp
       - light.living_room_window_lamp
-      - light.bathroom_ceiling_lamp
+      - light.bathroom_ceiling_lamp_left
+      - light.bathroom_ceiling_lamp_middle
+      - light.bathroom_ceiling_lamp_right
       - light.kitchen_window_lamp
       - light.kitchen_ceiling_lamp
       - light.guest_bedroom_ceiling_lamp
