@@ -23,9 +23,12 @@
 
 - alias: Guest Bedroom lights off
   trigger:
-    platform: state
-    entity_id: input_boolean.lights_needed
-    to: 'off'
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'off'
+    - platform: state
+      entity_id: input_boolean.guest_asleep
+      to: 'on'
   action:
     - service: scene.turn_on
       entity_id: scene.guest_bedroom_off
@@ -57,23 +60,3 @@
           {% elif is_state('input_boolean.lights_needed', 'on') %}
           scene.guest_bedroom_normal
           {% endif %}
-
-- alias: Guest Bedroom lights off when guest goes to bed
-  trigger:
-    - platform: state
-      entity_id: input_boolean.guest_asleep
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.guest_bedroom_motion_detection_enabled
-    - service: scene.turn_on
-      entity_id: scene.guest_bedroom_dim
-    - delay: '00:01:00'
-    - service: scene.turn_on
-      entity_id: scene.guest_bedroom_off
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.guest_bedroom_motion_detection_enabled
