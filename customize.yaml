@@ -22,3 +22,9 @@ switch.living_room_outlet:
   icon: mdi:fan
 sensor.plex:
   icon: mdi:filmstrip
+binary_sensor.bedroom_smoke:
+  icon: mdi:smoke-detector
+binary_sensor.guest_bedroom_smoke:
+  icon: mdi:smoke-detector
+binary_sensor.hallway_smoke:
+  icon: mdi:smoke-detector

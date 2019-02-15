@@ -774,29 +774,35 @@
                     "cards": [
                         {
                             "entities": [
-                                "switch.flux_indoor_lights",
-                                "input_boolean.light_automation",
-                                "input_boolean.lights_needed",
-                                "input_boolean.lights_night",
-                                "input_boolean.lights_full",
-                                "input_boolean.sleep_automation",
-                                "input_boolean.perimeter_warning",
-                                "input_boolean.closet_ventilation_fan_automation",
-                                "input_boolean.vacuum_automation"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Automation Override",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
                                 "input_boolean.alarm_mode",
                                 "input_boolean.alarm_night_mode",
                                 "input_boolean.vacation_mode",
                                 "input_boolean.guest_mode"
                             ],
                             "show_header_toggle": false,
-                            "title": "Security Automation",
+                            "title": "Security",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "switch.flux_indoor_lights",
+                                "input_boolean.light_automation",
+                                "input_boolean.lights_needed",
+                                "input_boolean.lights_night",
+                                "input_boolean.lights_full"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_boolean.sleep_automation",
+                                "input_boolean.perimeter_warning",
+                                "input_boolean.closet_ventilation_fan_automation",
+                                "input_boolean.vacuum_automation"
+                            ],
+                            "title": "Automation",
                             "type": "entities"
                         },
                         {
