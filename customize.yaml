@@ -20,3 +20,5 @@ sensor.living_room_luminance:
   device_class: illuminance
 switch.living_room_outlet:
   icon: mdi:fan
+sensor.plex:
+  icon: mdi:filmstrip
