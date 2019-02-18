@@ -152,7 +152,10 @@
                                     "entity": "binary_sensor.bedroom_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.bedroom_motion_detection_enabled"
+                                    "entity": "input_boolean.bedroom_motion_detection_enabled",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_name": false,
@@ -246,7 +249,10 @@
                                     "entity": "binary_sensor.living_room_motion_sensor"
                                 },
                                 {
-                                    "entity": "input_boolean.living_room_motion_detection_enabled"
+                                    "entity": "input_boolean.living_room_motion_detection_enabled",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_name": false,
@@ -354,8 +360,15 @@
                     "cards": [
                         {
                             "entities": [
-                                "binary_sensor.balcony_entrance",
-                                "switch.balcony_switch"
+                                {
+                                    "entity": "binary_sensor.balcony_entrance"
+                                },
+                                {
+                                    "entity": "switch.balcony_switch",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                }
                             ],
                             "show_name": false,
                             "title": "Balcony",
@@ -481,7 +494,10 @@
                                     "entity": "binary_sensor.bathroom_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.bathroom_motion_detection_enabled"
+                                    "entity": "input_boolean.bathroom_motion_detection_enabled",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_name": false,
@@ -557,7 +573,10 @@
                                     "entity": "binary_sensor.hallway_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.hallway_motion_detection_enabled"
+                                    "entity": "input_boolean.hallway_motion_detection_enabled",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_name": false,
@@ -636,7 +655,10 @@
                                     "entity": "binary_sensor.kitchen_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.kitchen_motion_detection_enabled"
+                                    "entity": "input_boolean.kitchen_motion_detection_enabled",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_name": false,
@@ -700,10 +722,21 @@
                     "cards": [
                         {
                             "entities": [
-                                "binary_sensor.guest_bedroom_window",
-                                "binary_sensor.bedroom_smoke",
-                                "binary_sensor.guest_bedroom_motion",
-                                "input_boolean.guest_bedroom_motion_detection_enabled"
+                                {
+                                    "entity": "binary_sensor.guest_bedroom_window"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_smoke"
+                                },
+                                {
+                                    "entity": "binary_sensor.guest_bedroom_motion"
+                                },
+                                {
+                                    "entity": "input_boolean.guest_bedroom_motion_detection_enabled",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                }
                             ],
                             "show_name": false,
                             "title": "Guest Bedroom",
