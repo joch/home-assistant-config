@@ -26,8 +26,6 @@
       for: '00:04:00'
   action:
     - service: scene.turn_on
-      entity_id: scene.bathroom_dim
-    - service: scene.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.lights_needed', 'on') %}
