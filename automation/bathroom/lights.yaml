@@ -1,59 +1,11 @@
-- alias: Bathroom lights dim
+- alias: Bathroom lights dim or off
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.bathroom_dim
-
-- alias: Bathroom lights off
-  trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'off'
-  condition:
-    - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'off'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.bathroom_off
-
-- alias: Bathroom lights normal when motion is detected
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bathroom_motion
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-    - condition: state
-      entity_id: light.bathroom_ceiling_lamp
-      state: 'off'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.bathroom_normal
-
-- alias: Bathroom lights dim when no motion is detected
-  trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'off'
@@ -65,9 +17,6 @@
     - condition: state
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
     - condition: numeric_state
       entity_id: sensor.bathroom_humidity
       below: 60
@@ -78,8 +27,16 @@
   action:
     - service: scene.turn_on
       entity_id: scene.bathroom_dim
+    - service: scene.turn_on
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.lights_needed', 'on') %}
+          scene.bathroom_dim
+          {% else %}
+          scene.bathroom_off
+          {% endif %}
 
-- alias: Bathroom lights night when motion is detected when asleep
+- alias: Bathroom lights normal or night
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
@@ -89,25 +46,16 @@
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
+      entity_id: light.bathroom_ceiling_lamp
+      state: 'off'
   action:
     - service: scene.turn_on
-      entity_id: scene.bathroom_night
-
-- alias: Bathroom lights off when no motion is detected when asleep
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bathroom_motion
-      to: 'off'
-      for: '00:04:00'
-  condition:
-    - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.bathroom_off
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.everyone_asleep', 'on') %}
+          scene.bathroom_night
+          {% elif is_state('input_boolean.lights_full', 'on') %}
+          scene.bathroom_full
+          {% else %}
+          scene.bathroom_normal
+          {% endif %}
