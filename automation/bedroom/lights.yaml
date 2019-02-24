@@ -133,8 +133,6 @@
     - service: light.turn_on
       data:
         entity_id: light.johnnys_bedlight
-        brightness_pct: 1
-        rgb_color: [255,128,0]
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
@@ -151,7 +149,6 @@
     - service: light.turn_on
       data:
         entity_id: light.johnnys_bedlight
-        brightness_pct: 1
         rgb_color: [255,0,0]
     - delay: '00:01:00'
     - service: light.turn_off
@@ -187,8 +184,6 @@
     - service: light.turn_on
       data:
         entity_id: light.kajsas_bedlight
-        brightness_pct: 1
-        rgb_color: [255,128,0]
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
@@ -205,7 +200,6 @@
     - service: light.turn_on
       data:
         entity_id: light.kajsas_bedlight
-        brightness_pct: 1
         rgb_color: [255,0,0]
     - delay: '00:01:00'
     - service: light.turn_off
