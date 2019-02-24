@@ -66,6 +66,10 @@ vacuum_automation:
   name: Vacuum Automation
   icon: mdi:robot-vacuum
 
+bedroom_wakeup_light:
+  name: Bedroom Wakeup Light
+  icon: mdi:alarm-check
+
 living_room_arlo_motion:
   name: Living Room Arlo Motion
   initial: off

@@ -205,3 +205,18 @@
     - service: light.turn_off
       data:
         entity_id: light.kajsas_bedlight
+
+- alias: Bedroom wakeup light
+  trigger:
+    - platform: time
+      at: '06:45:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bedroom_wakeup_state
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.workday
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.bedroom_wakeup

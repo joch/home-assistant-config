@@ -246,7 +246,6 @@ alarm_control_panel:
 
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
-# input_text: !include input_text.yaml
 sensor: !include_dir_merge_list sensor
 binary_sensor: !include_dir_merge_list binary_sensor
 group: !include_dir_merge_named group

@@ -38,3 +38,16 @@
       state: on
       brightness_pct: 100
       transition: 2
+
+- name: Bedroom Wakeup
+  entities:
+    light.johnnys_bedlight:
+      state: on
+      brightness_pct: 100
+      transition: 180
+      rgb_color: [255,160,39]
+    light.kajsas_bedlight:
+      state: on
+      brightness_pct: 100
+      transition: 180
+      rgb_color: [255,160,39]
