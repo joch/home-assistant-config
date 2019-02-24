@@ -32,6 +32,8 @@ ios:
 
 api:
 
+system_health:
+
 http:
   api_password: !secret http_password
   server_port: !secret http_server_port
