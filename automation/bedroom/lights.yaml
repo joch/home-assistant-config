@@ -15,7 +15,13 @@
       entity_id: input_boolean.bedroom_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.johnny_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.kajsa_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.lea_asleep
       state: 'off'
     - condition: state
       entity_id: light.johnnys_bedlight
@@ -49,7 +55,13 @@
       entity_id: input_boolean.bedroom_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.johnny_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.kajsa_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.lea_asleep
       state: 'off'
     - condition: state
       entity_id: light.johnnys_bedlight
@@ -73,7 +85,13 @@
 - alias: Bedroom lights off when one person goes to bed
   trigger:
     - platform: state
-      entity_id: group.sleep_status
+      entity_id: input_boolean.johnny_asleep
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.lea_asleep
       to: 'on'
   condition:
     - condition: state
