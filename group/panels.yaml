@@ -15,7 +15,6 @@ House Guests:
 Sleep Status:
   - input_boolean.johnny_asleep
   - input_boolean.kajsa_asleep
-  - input_boolean.lea_asleep
   - input_boolean.guest_asleep
   - input_boolean.everyone_asleep
 

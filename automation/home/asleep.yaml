@@ -7,9 +7,6 @@
       entity_id: input_boolean.kajsa_asleep
       to: 'on'
     - platform: state
-      entity_id: input_boolean.lea_asleep
-      to: 'on'
-    - platform: state
       entity_id: input_boolean.guest_asleep
       to: 'on'
   condition:
@@ -57,9 +54,6 @@
           - condition: state
             entity_id: input_boolean.guest_mode
             state: 'off'
-        - condition: state
-          entity_id: input_boolean.lea_asleep
-          state: 'on'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.everyone_asleep
@@ -71,9 +65,6 @@
       to: 'off'
     - platform: state
       entity_id: input_boolean.kajsa_asleep
-      to: 'off'
-    - platform: state
-      entity_id: input_boolean.lea_asleep
       to: 'off'
     - platform: state
       entity_id: input_boolean.guest_asleep
