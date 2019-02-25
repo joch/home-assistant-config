@@ -31,11 +31,18 @@
                         },
                         {
                             "entities": [
-                                "input_boolean.johnny_asleep",
-                                "input_boolean.kajsa_asleep",
-                                "input_boolean.lea_asleep",
-                                "input_boolean.guest_asleep",
-                                "input_boolean.everyone_asleep"
+                                {
+                                    "entity": "input_boolean.johnny_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.kajsa_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.guest_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.everyone_asleep"
+                                }
                             ],
                             "show_header_toggle": true,
                             "title": "Sleep Status",
@@ -211,6 +218,9 @@
                                 },
                                 {
                                     "entity": "scene.bedroom_full"
+                                },
+                                {
+                                    "entity": "scene.bedroom_wakeup"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -219,14 +229,34 @@
                         },
                         {
                             "entities": [
-                                "input_boolean.johnny_asleep",
-                                "input_boolean.kajsa_asleep",
-                                "input_boolean.lea_asleep",
-                                "input_boolean.guest_asleep",
-                                "input_boolean.everyone_asleep"
+                                {
+                                    "entity": "input_boolean.johnny_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.kajsa_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.guest_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.everyone_asleep"
+                                }
                             ],
                             "show_header_toggle": true,
                             "title": "Sleep Status",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.bedroom_wakeup_light"
+                                },
+                                {
+                                    "entity": "binary_sensor.workday"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Wakeup",
                             "type": "entities"
                         }
                     ],

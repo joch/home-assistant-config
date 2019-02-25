@@ -28,3 +28,5 @@ binary_sensor.guest_bedroom_smoke:
   icon: mdi:smoke-detector
 binary_sensor.hallway_smoke:
   icon: mdi:smoke-detector
+binary_sensor.workday:
+  icon: mdi:briefcase-outline
