@@ -209,10 +209,10 @@
 - alias: Bedroom wakeup light
   trigger:
     - platform: time
-      at: '06:45:00'
+      at: '06:55:00'
   condition:
     - condition: state
-      entity_id: input_boolean.bedroom_wakeup_state
+      entity_id: input_boolean.bedroom_wakeup_light
       state: 'on'
     - condition: state
       entity_id: binary_sensor.workday
