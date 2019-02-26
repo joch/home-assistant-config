@@ -253,6 +253,9 @@
                                 },
                                 {
                                     "entity": "binary_sensor.workday"
+                                },
+                                {
+                                    "entity": "binary_sensor.workday_tomorrow"
                                 }
                             ],
                             "show_header_toggle": false,
