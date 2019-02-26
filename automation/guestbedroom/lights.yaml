@@ -38,6 +38,9 @@
     - platform: state
       entity_id: binary_sensor.guest_bedroom_motion
       to: 'on'
+    - platform: state
+      entity_id: input_boolean.guest_asleep
+      to: 'off'
   condition:
     - condition: state
       entity_id: input_boolean.lights_needed
