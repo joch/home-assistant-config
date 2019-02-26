@@ -5,6 +5,10 @@
                 {
                     "type": "js",
                     "url": "/local/monster-card.js?v=1"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/aarlo-glance.js"
                 }
             ],
             "title": "Honn\u00f6rsgatan",
@@ -888,6 +892,39 @@
                     "icon": "mdi:robot",
                     "path": "view_automation",
                     "title": "Automation"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "camera.aarlo_hallway",
+                            "name": "Hallway",
+                            "show": [
+                                "motion",
+                                "sound",
+                                "snapshot",
+                                "battery_level",
+                                "signal_strength",
+                                "captured_today"
+                            ],
+                            "type": "custom:aarlo-glance"
+                        },
+                        {
+                            "entity": "camera.aarlo_living_room",
+                            "name": "Living Room",
+                            "show": [
+                                "motion",
+                                "sound",
+                                "snapshot",
+                                "battery_level",
+                                "signal_strength",
+                                "captured_today"
+                            ],
+                            "type": "custom:aarlo-glance"
+                        }
+                    ],
+                    "icon": "mdi:cctv",
+                    "panel": false
                 },
                 {
                     "badges": [],
