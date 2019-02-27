@@ -2,19 +2,19 @@
   entities:
     light.living_room_ceiling_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 2
     light.living_room_window_lamp:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 2
     light.living_room_globe:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
       transition: 2
     light.living_room_tv_light:
       state: on
-      brightness_pct: 10
+      brightness_pct: 25
       transition: 2
       rgb_color: [255,127,0]
 
