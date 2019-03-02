@@ -3,10 +3,6 @@
 - alias: Turn on ventilation fan
   trigger:
     - platform: numeric_state
-      entity_id: sensor.closet_humidity
-      below: 40
-      for: '00:10:00'
-    - platform: numeric_state
       entity_id: sensor.closet_temperature
       above: 20
       for: '00:10:00'
@@ -17,22 +13,12 @@
     - condition: state
       entity_id: switch.living_room_outlet
       state: 'off'
-    - condition: numeric_state
-      entity_id: sensor.closet_humidity
-      below: 40
-    - condition: numeric_state
-      entity_id: sensor.closet_temperature
-      above: 20
   action:
     - service: switch.turn_on
       entity_id: switch.living_room_outlet
 
 - alias: Turn off ventilation fan
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.closet_humidity
-      above: 40
-      for: '00:10:00'
     - platform: numeric_state
       entity_id: sensor.closet_temperature
       below: 20
@@ -44,12 +30,6 @@
     - condition: state
       entity_id: switch.living_room_outlet
       state: 'on'
-    - condition: numeric_state
-      entity_id: sensor.closet_humidity
-      above: 40
-    - condition: numeric_state
-      entity_id: sensor.closet_temperature
-      below: 20
   action:
     - service: switch.turn_off
       entity_id: switch.living_room_outlet
