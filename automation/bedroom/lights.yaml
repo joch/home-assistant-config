@@ -130,21 +130,19 @@
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
-- alias: Bedside light off when Johnny goes to bed
+- alias: Bedside light off on sleep and wakeup Johnny
   trigger:
     - platform: state
       entity_id: input_boolean.johnny_asleep
       to: 'on'
+    - platform: state
+      entity_id: input_boolean.johnny_asleep
+      to: 'off'
   condition:
     - condition: state
       entity_id: light.johnnys_bedlight
       state: 'on'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.johnnys_bedlight
-        rgb_color: [255,0,0]
-    - delay: '00:01:00'
     - service: light.turn_off
       data:
         entity_id: light.johnnys_bedlight
@@ -178,21 +176,19 @@
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
-- alias: Bedside light off when Kajsa goes to bed
+- alias: Bedside light off on sleep and wakeup Kajsa
   trigger:
     - platform: state
       entity_id: input_boolean.kajsa_asleep
       to: 'on'
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'off'
   condition:
     - condition: state
       entity_id: light.kajsas_bedlight
       state: 'on'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.kajsas_bedlight
-        rgb_color: [255,0,0]
-    - delay: '00:01:00'
     - service: light.turn_off
       data:
         entity_id: light.kajsas_bedlight
