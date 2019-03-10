@@ -727,6 +727,12 @@
                                 },
                                 {
                                     "entity": "light.guest_bedroom_window_lamp"
+                                },
+                                {
+                                    "entity": "light.guest_bedroom_cloud_lamp"
+                                },
+                                {
+                                    "entity": "switch.guest_bedroom_switch"
                                 }
                             ],
                             "show_header_toggle": true,

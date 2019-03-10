@@ -8,6 +8,12 @@
       state: on
       brightness_pct: 75
       transition: 2
+    light.guest_bedroom_cloud_lamp:
+      state: on
+      brightness_pct: 25
+      transition: 2
+    light.guest_bedroom_switch:
+      state: on
 
 - name: Guest Bedroom Off
   entities:
@@ -17,6 +23,11 @@
     light.guest_bedroom_window_lamp:
       state: off
       transition: 5
+    light.guest_bedroom_cloud_lamp:
+      state: off
+      transition: 5
+    light.guest_bedroom_switch:
+      state: off
 
 - name: Guest Bedroom Dim
   entities:
@@ -27,6 +38,11 @@
       state: on
       brightness_pct: 10
       transition: 5
+    light.guest_bedroom_cloud_lamp:
+      state: off
+      transition: 5
+    light.guest_bedroom_switch:
+      state: on
 
 - name: Guest Bedroom Full
   entities:
@@ -38,3 +54,9 @@
       state: on
       brightness_pct: 100
       transition: 2
+    light.guest_bedroom_cloud_lamp:
+      state: on
+      brightness_pct: 100
+      transition: 2
+    light.guest_bedroom_switch:
+      state: on
