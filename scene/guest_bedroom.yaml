@@ -12,7 +12,7 @@
       state: on
       brightness_pct: 25
       transition: 2
-    light.guest_bedroom_switch:
+    switch.guest_bedroom_switch:
       state: on
 
 - name: Guest Bedroom Off
@@ -26,7 +26,7 @@
     light.guest_bedroom_cloud_lamp:
       state: off
       transition: 5
-    light.guest_bedroom_switch:
+    switch.guest_bedroom_switch:
       state: off
 
 - name: Guest Bedroom Dim
@@ -41,7 +41,7 @@
     light.guest_bedroom_cloud_lamp:
       state: off
       transition: 5
-    light.guest_bedroom_switch:
+    switch.guest_bedroom_switch:
       state: on
 
 - name: Guest Bedroom Full
@@ -58,5 +58,5 @@
       state: on
       brightness_pct: 100
       transition: 2
-    light.guest_bedroom_switch:
+    switch.guest_bedroom_switch:
       state: on
