@@ -10,6 +10,9 @@ homeassistant:
   customize_domain:
     automation:
       initial_state: 'on'
+  auth_providers:
+    - type: legacy_api_password
+      api_password: !secret http_password
 
 #introduction:
 # discovery:
@@ -35,7 +38,6 @@ api:
 system_health:
 
 http:
-  api_password: !secret http_password
   server_port: !secret http_server_port
   ip_ban_enabled: true
   login_attempts_threshold: 5
