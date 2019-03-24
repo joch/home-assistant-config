@@ -33,6 +33,9 @@ CONF_DB_DING_TIME   = 'db_ding_time'
 CONF_RECENT_TIME    = 'recent_time'
 CONF_LAST_FORMAT    = 'last_format'
 CONF_CONF_DIR       = 'conf_dir'
+CONF_REQ_TIMEOUT    = 'request_timeout'
+CONF_STR_TIMEOUT    = 'stream_timeout'
+CONF_USER_AGENT     = 'user_agent'
 
 SCAN_INTERVAL  = timedelta(seconds=60)
 PACKET_DUMP    = False
@@ -42,6 +45,9 @@ DB_DING_TIME   = timedelta(seconds=10)
 RECENT_TIME    = timedelta(minutes=10)
 LAST_FORMAT    = '%m-%d %H:%M'
 CONF_DIR       = ''
+REQ_TIMEOUT    = timedelta(seconds=60)
+STR_TIMEOUT    = timedelta(seconds=0)
+USER_AGENT     = 'apple'
 
 CONFIG_SCHEMA = vol.Schema({
     DOMAIN: vol.Schema({
@@ -55,6 +61,9 @@ CONFIG_SCHEMA = vol.Schema({
         vol.Optional(CONF_RECENT_TIME, default=RECENT_TIME): cv.time_period,
         vol.Optional(CONF_LAST_FORMAT, default=LAST_FORMAT): cv.string,
         vol.Optional(CONF_CONF_DIR, default=CONF_DIR): cv.string,
+        vol.Optional(CONF_REQ_TIMEOUT, default=REQ_TIMEOUT): cv.time_period,
+        vol.Optional(CONF_STR_TIMEOUT, default=STR_TIMEOUT): cv.time_period,
+        vol.Optional(CONF_USER_AGENT, default=USER_AGENT): cv.string,
     }),
 }, extra=vol.ALLOW_EXTRA)
 
@@ -73,6 +82,9 @@ def setup(hass, config):
     conf_dir     = conf.get(CONF_CONF_DIR)
     if conf_dir == '':
         conf_dir = hass.config.config_dir + '/.aarlo'
+    req_timeout  = conf.get(CONF_REQ_TIMEOUT).total_seconds()
+    str_timeout  = conf.get(CONF_STR_TIMEOUT).total_seconds()
+    user_agent   = conf.get(CONF_USER_AGENT)
 
     try:
         from custom_components.aarlo.pyaarlo import PyArlo
@@ -80,7 +92,9 @@ def setup(hass, config):
         arlo = PyArlo( username,password,
                             storage_dir=conf_dir,dump=packet_dump,
                             db_motion_time=motion_time,db_ding_time=ding_time,
-                            recent_time=recent_time,last_format=last_format )
+                            request_timeout=req_timeout,stream_timeout=str_timeout,
+                            recent_time=recent_time,last_format=last_format,
+                            user_agent=user_agent)
         if not arlo.is_connected:
             return False
 
