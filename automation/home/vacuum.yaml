@@ -42,6 +42,9 @@
     - condition: state
       entity_id: input_boolean.vacuum_automation
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.vacuum_return_on_disarm
+      state: 'on'
   action:
     - service: vacuum.return_to_base
       data:

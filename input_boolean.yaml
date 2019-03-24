@@ -62,6 +62,10 @@ vacuum_automation:
   name: Vacuum Automation
   icon: mdi:robot-vacuum
 
+vacuum_return_on_disarm:
+  name: Vacuum Return on Disarm
+  icon: mdi:robot-vacuum
+
 bedroom_wakeup_light:
   name: Bedroom Wakeup Light
   icon: mdi:alarm-check

@@ -159,9 +159,6 @@
                                 },
                                 {
                                     "entity": "scene.bedroom_full"
-                                },
-                                {
-                                    "entity": "scene.bedroom_wakeup"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -791,10 +788,21 @@
                         },
                         {
                             "entities": [
-                                "input_boolean.sleep_automation",
-                                "input_boolean.perimeter_warning",
-                                "input_boolean.closet_ventilation_fan_automation",
-                                "input_boolean.vacuum_automation"
+                                {
+                                    "entity": "input_boolean.sleep_automation"
+                                },
+                                {
+                                    "entity": "input_boolean.perimeter_warning"
+                                },
+                                {
+                                    "entity": "input_boolean.closet_ventilation_fan_automation"
+                                },
+                                {
+                                    "entity": "input_boolean.vacuum_automation"
+                                },
+                                {
+                                    "entity": "input_boolean.vacuum_return_on_disarm"
+                                }
                             ],
                             "title": "Automation",
                             "type": "entities"
