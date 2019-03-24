@@ -60,3 +60,18 @@
       data:
         title: "Greta is stuck"
         message: "Greta has reported an error. Make sure that she is not stuck."
+
+- alias: Notify when the vacuum is finished
+  trigger:
+    - platform: state
+      entity_id: vacuum.greta
+      to: 'docked'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.alarm
+      state: 'armed_away'
+  action:
+    - service: notify.all_phones
+      data:
+        title: "Greta is finished"
+        message: "Greta has finished cleaning. Make sure to empty her bin."
