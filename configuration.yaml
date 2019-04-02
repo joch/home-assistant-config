@@ -246,6 +246,8 @@ alarm_control_panel:
     triggered:
       pending_time: 60
   - platform: aarlo
+    home_mode_name: armed
+    away_mode_name: vacation
 
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml

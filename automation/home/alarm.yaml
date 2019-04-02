@@ -9,10 +9,10 @@
       data:
         title: "Alarm has been armed"
         message: "The alarm has been set to armed_away"
-    # - service: alarm_control_panel.alarm_arm_away
-    #   entity_id: alarm_control_panel.home
-    - service: ifttt.trigger
-      data: {"event":"alarm_arm"}
+    - service: alarm_control_panel.alarm_arm_home
+      entity_id: alarm_control_panel.aarlo_home
+    # - service: ifttt.trigger
+    #   data: {"event":"alarm_arm"}
     - service: light.turn_on
       data:
         entity_id: light.gateway_light_7811dc64de1a
@@ -38,10 +38,10 @@
       data:
         title: "Alarm has been disarmed"
         message: "The alarm has been set to disarmed"
-    # - service: alarm_control_panel.alarm_disarm
-    #   entity_id: alarm_control_panel.home
-    - service: ifttt.trigger
-      data: {"event":"alarm_disarm"}
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.aarlo_home
+    # - service: ifttt.trigger
+    #   data: {"event":"alarm_disarm"}
     - service: light.turn_on
       data:
         entity_id: light.gateway_light_7811dc64de1a
@@ -247,10 +247,12 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.vacation_mode
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.aarlo_home
     - service: notify.all_phones
       data:
         title: "Vacation mode enabled"
-        message: "Set Arlo to vacation mode manually to activate siren."
+        message: "Alarm siren is now activated."
 
 - alias: Turn off vacation mode when coming home
   trigger:
@@ -296,6 +298,9 @@
         - input_boolean.hallway_arlo_motion
         - input_boolean.living_room_arlo_motion
       to: 'on'
+    - platform: state
+      entity_id: alarm_control_panel.aarlo_home
+      to: 'triggered'
   condition:
     - condition: state
       entity_id: alarm_control_panel.alarm
@@ -313,6 +318,9 @@
         - binary_sensor.kitchen_motion
         - binary_sensor.living_room_motion_sensor
       to: 'on'
+    - platform: state
+      entity_id: alarm_control_panel.aarlo_home
+      to: 'triggered'
   condition:
     - condition: state
       entity_id: alarm_control_panel.alarm
