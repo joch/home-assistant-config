@@ -620,8 +620,7 @@ automation:
     - platform: homeassistant
       event: start
     - platform: time_pattern
-      minutes: '/5'
-      seconds: 00
+      minutes: 00
   action:
     - service: group.set
       data_template:
