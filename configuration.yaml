@@ -38,6 +38,8 @@ api:
 
 system_health:
 
+mobile_app:
+
 http:
   server_port: !secret http_server_port
   ip_ban_enabled: true
