@@ -6,6 +6,10 @@
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_full
+    - service: ifttt.trigger
+      data: {"event":"record_hallway"}
+    - service: ifttt.trigger
+      data: {"event":"record_living_room"}
     - service: notify.all_phones
       data:
         title: "** Water detected **"
@@ -19,6 +23,10 @@
   action:
     - service: scene.turn_on
       entity_id: scene.bathroom_full
+    - service: ifttt.trigger
+      data: {"event":"record_hallway"}
+    - service: ifttt.trigger
+      data: {"event":"record_living_room"}
     - service: notify.all_phones
       data:
         title: "** Water detected **"
