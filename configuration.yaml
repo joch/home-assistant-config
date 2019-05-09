@@ -85,9 +85,6 @@ recorder:
 apcupsd:
   host: !secret apcupsd_host
 
-tts:
-  - platform: google
-
 ifttt:
   key: !secret ifttt_key
 
