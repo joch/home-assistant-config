@@ -19,7 +19,7 @@
       state: 'off'
     - condition: state
       entity_id: binary_sensor.guest_bedroom_motion
-      to: 'off'
+      state: 'off'
       for: '00:10:00'
   action:
     - service: scene.turn_on
@@ -36,7 +36,7 @@
   condition:
     - condition: state
       entity_id: binary_sensor.guest_bedroom_motion
-      to: 'off'
+      state: 'off'
       for: '00:10:00'
   action:
     - service: scene.turn_on

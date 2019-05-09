@@ -19,7 +19,7 @@
       state: 'on'
     - condition: state
       entity_id: binary_sensor.kitchen_motion
-      to: 'off'
+      state: 'off'
       for: '00:03:00'
   action:
     - service: scene.turn_on
@@ -43,7 +43,7 @@
       state: 'off'
     - condition: state
       entity_id: binary_sensor.kitchen_motion
-      to: 'off'
+      state: 'off'
       for: '00:03:00'
   action:
     - service: scene.turn_on
