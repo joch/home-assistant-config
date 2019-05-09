@@ -658,6 +658,9 @@
                                 },
                                 {
                                     "entity": "scene.kitchen_night"
+                                },
+                                {
+                                    "entity": "scene.kitchen_evening"
                                 }
                             ],
                             "show_header_toggle": false,

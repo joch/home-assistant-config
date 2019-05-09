@@ -70,6 +70,28 @@
     switch.kitchen_switch:
       state: on
 
+- name: Kitchen Evening
+  entities:
+    light.kitchen_ceiling_lamp:
+      state: on
+      brightness_pct: 25
+      transition: 2
+    light.kitchen_countertop_lightstrip:
+      state: on
+      brightness_pct: 25
+      transition: 2
+    light.kitchen_cabinet_light:
+      state: on
+      brightness_pct: 1
+      transition: 2
+      rgb_color: [255,127,80]
+    light.kitchen_window_lamp:
+      state: on
+      brightness_pct: 25
+      transition: 2
+    switch.kitchen_switch:
+      state: on
+
 - name: Kitchen Night
   entities:
     light.kitchen_ceiling_lamp:
