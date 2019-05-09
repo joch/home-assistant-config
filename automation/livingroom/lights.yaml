@@ -14,6 +14,10 @@
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: binary_sensor.living_room_motion_sensor
+      to: 'off'
+      for: '00:10:00'
   action:
     - service: scene.turn_on
       data_template:
@@ -35,6 +39,11 @@
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'off'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.living_room_motion_sensor
+      to: 'off'
+      for: '00:10:00'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_off

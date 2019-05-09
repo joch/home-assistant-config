@@ -17,6 +17,10 @@
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: binary_sensor.kitchen_motion
+      to: 'off'
+      for: '00:03:00'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_dim
@@ -37,6 +41,10 @@
     - condition: state
       entity_id: input_boolean.lights_needed
       state: 'off'
+    - condition: state
+      entity_id: binary_sensor.kitchen_motion
+      to: 'off'
+      for: '00:03:00'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_off

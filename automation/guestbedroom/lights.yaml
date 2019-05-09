@@ -17,6 +17,10 @@
     - condition: state
       entity_id: input_boolean.guest_asleep
       state: 'off'
+    - condition: state
+      entity_id: binary_sensor.guest_bedroom_motion
+      to: 'off'
+      for: '00:10:00'
   action:
     - service: scene.turn_on
       entity_id: scene.guest_bedroom_dim
@@ -29,6 +33,11 @@
     - platform: state
       entity_id: input_boolean.guest_asleep
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.guest_bedroom_motion
+      to: 'off'
+      for: '00:10:00'
   action:
     - service: scene.turn_on
       entity_id: scene.guest_bedroom_off

@@ -26,15 +26,24 @@
     - condition: state
       entity_id: light.kajsas_bedlight
       state: 'off'
+    - condition: state
+      entity_id: binary_sensor.bedroom_motion
+      to: 'off'
+      for: '00:10:00'
   action:
     - service: scene.turn_on
       entity_id: scene.bedroom_dim
 
 - alias: Bedroom lights off
   trigger:
-    platform: state
-    entity_id: input_boolean.lights_needed
-    to: 'off'
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.bedroom_motion
+      to: 'off'
+      for: '00:10:00'
   action:
     - service: scene.turn_on
       entity_id: scene.bedroom_off
