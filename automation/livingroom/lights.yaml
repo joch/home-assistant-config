@@ -4,6 +4,9 @@
       entity_id: input_boolean.lights_needed
       to: 'off'
     - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'on'
+    - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
       for: '00:05:00'
@@ -32,9 +35,6 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.lights_needed
       to: 'on'
   condition:
     - condition: state
