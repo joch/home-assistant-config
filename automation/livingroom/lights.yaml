@@ -70,9 +70,6 @@
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_off
