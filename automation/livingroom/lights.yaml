@@ -1,62 +1,42 @@
-- alias: Living room lights on
+- alias: Living room lights dim or off
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
     - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'off'
+    - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
-      for: '00:10:00'
+      for: '00:05:00'
   condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
     - condition: state
       entity_id: binary_sensor.living_room_motion_sensor
       state: 'off'
-      for: '00:10:00'
+      for: '00:05:00'
+    - condition: state
+      entity_id: input_select.harmony
+      state: 'PowerOff'
   action:
     - service: scene.turn_on
       data_template:
         entity_id: >-
-          {% if is_state('input_boolean.lights_full', 'on') %}
-          scene.living_room_full
-          {% elif is_state('input_select.harmony', 'PowerOff') %}
+          {% if is_state('input_boolean.lights_needed', 'on') %}
           scene.living_room_dim
-          {% elif is_state('input_select.harmony', 'Movies') %}
-          scene.living_room_tv
-          {% elif is_state('input_select.harmony', 'TV') %}
-          scene.living_room_tv
-          {% elif is_state('input_select.harmony', 'Music') %}
-          scene.living_room_music
+          {% else %}
+          scene.living_room_off
           {% endif %}
 
-- alias: Living room lights off
-  trigger:
-    - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: binary_sensor.living_room_motion_sensor
-      state: 'off'
-      for: '00:10:00'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_off
-
-- alias: Living room lights normal when occupied
+- alias: Living room lights normal or night
   trigger:
     - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
       to: 'on'
   condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
       state: 'on'
@@ -65,50 +45,68 @@
       state: 'PowerOff'
   action:
     - service: scene.turn_on
-      entity_id: scene.living_room_normal
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.everyone_asleep', 'on') %}
+          scene.living_room_night
+          {% elif is_state('input_boolean.lights_full', 'on') %}
+          scene.living_room_full
+          {% else %}
+          scene.living_room_normal
+          {% endif %}
     - service: switch.flux_living_room_update
 
-- alias: Living room lights on when motion during night
+- alias: Living room TV off
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor
-      to: 'on'
+      entity_id: input_select.harmony
+      to: 'PowerOff'
   condition:
     - condition: state
-      entity_id: input_select.harmony
-      state: 'PowerOff'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.living_room_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_night
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_night
-
-- alias: Living room lights off when no motion during the night
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor
-      to: 'off'
-      for: '00:01:00'
-  condition:
-    - condition: state
-      entity_id: input_select.harmony
-      state: 'PowerOff'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.living_room_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_night
-      state: 'on'
+      entity_id: input_boolean.lights_needed
+      state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_off
+      # TODO: Handle when turning off TV but motion is idle
+    - service: scene.turn_on
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.everyone_asleep', 'on') %}
+          scene.living_room_night
+          {% elif is_state('input_boolean.lights_full', 'on') %}
+          scene.living_room_full
+          {% elif is_state('input_boolean.lights_needed', 'on') %}
+          scene.living_room_normal
+          {% else %}
+          scene.living_room_off
+          {% endif %}
+
+- alias: Living room TV on
+  trigger:
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'TV'
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'Movies'
+    - platform: state
+      entity_id: input_select.harmony
+      to: 'Music'
+  condition:
+    - condition: state
+      entity_id: input_boolean.everyone_asleep
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      data_template:
+        entity_id: >-
+          {% if (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Movies')) and is_state('input_boolean.lights_needed', 'on') %}
+          scene.living_room_tv
+          {% elif (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Movies')) and is_state('input_boolean.lights_needed', 'off') %}
+          scene.living_room_tv_only
+          {% elif is_state('input_select.harmony', 'Music') and is_state('input_boolean.lights_needed', 'on') %}
+          scene.living_room_music
+          {% elif is_state('input_select.harmony', 'Music') and is_state('input_boolean.lights_needed', 'off') %}
+          scene.living_room_music_only
+          {% endif %}
