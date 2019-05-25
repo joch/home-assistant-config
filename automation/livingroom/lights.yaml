@@ -2,9 +2,6 @@
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.lights_needed
       to: 'off'
     - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
@@ -36,6 +33,9 @@
     - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
       to: 'on'
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'on'
   condition:
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
@@ -43,6 +43,9 @@
     - condition: state
       entity_id: input_select.harmony
       state: 'PowerOff'
+    - condition: state
+      entity_id: light.living_room_tv_light
+      state: 'off'
   action:
     - service: scene.turn_on
       data_template:
@@ -51,8 +54,10 @@
           scene.living_room_night
           {% elif is_state('input_boolean.lights_full', 'on') %}
           scene.living_room_full
-          {% else %}
+          {% elif is_state('input_boolean.lights_needed', 'on') %}
           scene.living_room_normal
+          {% else %}
+          scene.living_room_off
           {% endif %}
     - service: switch.flux_living_room_update
 
@@ -62,6 +67,9 @@
       entity_id: input_select.harmony
       to: 'PowerOff'
   condition:
+    - condition: state
+      entity_id: input_boolean.living_room_motion_detection_enabled
+      state: 'on'
     - condition: state
       entity_id: input_boolean.lights_needed
       state: 'off'
@@ -94,6 +102,9 @@
       entity_id: input_select.harmony
       to: 'Music'
   condition:
+    - condition: state
+      entity_id: input_boolean.living_room_motion_detection_enabled
+      state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
