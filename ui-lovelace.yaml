@@ -477,6 +477,9 @@
                             "entities": [
                                 {
                                     "entity": "light.bathroom_ceiling_lamp"
+                                },
+                                {
+                                    "entity": "light.bathroom_mirror_lamp"
                                 }
                             ],
                             "show_header_toggle": true,

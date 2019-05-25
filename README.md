@@ -74,6 +74,7 @@ The following is a list of hardware deployed in the home, grouped by room. While
 ### Bathroom
 
 - Ceiling lamp (3): [IKEA Trådfri Lights GU10](http://www.ikea.com/se/sv/catalog/products/00318292/)
+- Mirror lamp dimmer: [Sunricher Zigbee dimmer](https://www.sunricher.com/zigbee-ac-phase-cut-dimmer-sr-zg9101sac-hp.html)
 - Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
 - Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Temperature / humidity sensor: [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
