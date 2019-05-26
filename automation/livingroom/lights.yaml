@@ -117,7 +117,7 @@
           scene.living_room_music
           {% elif is_state('input_select.harmony', 'Music') and is_state('input_boolean.lights_needed', 'off') %}
           scene.living_room_music_only
-          {% elif is_state('input_select.harmony', PowerOff') and is_state('input_boolean.lights_needed', 'on') %}
+          {% elif is_state('input_select.harmony', 'PowerOff') and is_state('input_boolean.lights_needed', 'on') %}
           scene.living_room_dim
           {% else %}
           scene.living_room_off
