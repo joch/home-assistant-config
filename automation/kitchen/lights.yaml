@@ -1,63 +1,39 @@
-- alias: Kitchen lights dim
+- alias: Kitchen lights dim or off
   trigger:
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'off'
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
     - platform: state
       entity_id: binary_sensor.kitchen_motion
       to: 'off'
-      for: '00:03:00'
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.kitchen_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.kitchen_motion
-      state: 'off'
-      for: '00:03:00'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.kitchen_dim
-
-- alias: Kitchen lights off
-  trigger:
-    - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'off'
-    - platform: state
-      entity_id: binary_sensor.kitchen_motion
-      to: 'off'
-      for: '00:03:00'
+      for: '00:05:00'
   condition:
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'off'
-    - condition: state
       entity_id: binary_sensor.kitchen_motion
       state: 'off'
-      for: '00:03:00'
+      for: '00:05:00'
   action:
     - service: scene.turn_on
-      entity_id: scene.kitchen_off
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.lights_needed', 'on') %}
+          scene.kitchen_dim
+          {% else %}
+          scene.kitchen_off
+          {% endif %}
 
-- alias: Kitchen lights normal when motion
+- alias: Kitchen lights normal or night
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_motion
       to: 'on'
   condition:
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
@@ -68,51 +44,14 @@
     - service: scene.turn_on
       data_template:
         entity_id: >-
-          {% if is_state('input_boolean.lights_full', 'on') %}
+          {% if is_state('input_boolean.everyone_asleep', 'on') %}
+          scene.kitchen_night
+          {% elif is_state('input_boolean.lights_full', 'on') %}
           scene.kitchen_full
           {% elif is_state('input_boolean.lights_needed', 'on') %}
           scene.kitchen_normal
-          {% elif is_state('input_boolean.lights_needed', 'off') %}
+          {% else %}
           scene.kitchen_countertop_only
           {% endif %}
     - delay: '00:00:03'
     - service: switch.flux_kitchen_update
-
-- alias: Kitchen lights on dim on motion during the night
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.kitchen_motion
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.kitchen_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_night
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.kitchen_night
-
-- alias: Kitchen lights off when no motion during the night
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.kitchen_motion
-      to: 'off'
-      for: '00:01:00'
-  condition:
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.kitchen_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_night
-      state: 'on'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.kitchen_off
