@@ -4,9 +4,6 @@
       entity_id: input_boolean.lights_needed
       to: 'off'
     - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'on'
-    - platform: state
       entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
       for: '00:05:00'
@@ -98,6 +95,9 @@
     - platform: state
       entity_id: input_select.harmony
       to: 'Music'
+    - platform: state
+      entity_id: input_boolean.lights_needed
+      to: 'on'
   condition:
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
@@ -117,4 +117,8 @@
           scene.living_room_music
           {% elif is_state('input_select.harmony', 'Music') and is_state('input_boolean.lights_needed', 'off') %}
           scene.living_room_music_only
+          {% elif is_state('input_select.harmony', PowerOff') and is_state('input_boolean.lights_needed', 'on') %}
+          scene.living_room_dim
+          {% else %}
+          scene.living_room_off
           {% endif %}
