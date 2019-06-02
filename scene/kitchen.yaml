@@ -21,14 +21,23 @@
 
 - name: Kitchen Countertop Only
   entities:
-    light.kitchen_countertop_lightstrip:
-      state: on
-      brightness_pct: 100
-      transition: 2
     light.kitchen_ceiling_lamp:
       state: on
       brightness_pct: 50
       transition: 2
+    light.kitchen_countertop_lightstrip:
+      state: on
+      brightness_pct: 100
+      transition: 2
+    light.kitchen_cabinet_light:
+      state: off
+      transition: 5
+    light.kitchen_window_lamp:
+      state: off
+      transition: 5
+    switch.kitchen_switch:
+      state: off
+      transition: 5
 
 - name: Kitchen Dim
   entities:
@@ -103,6 +112,8 @@
     light.kitchen_cabinet_light:
       state: off
     light.kitchen_window_lamp:
+      state: off
+    switch.kitchen_switch:
       state: off
 
 - name: Kitchen Off
