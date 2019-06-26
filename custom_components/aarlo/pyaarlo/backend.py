@@ -50,9 +50,11 @@ class ArloBackEnd(object):
     def _request( self,url,method='GET',params={},headers={},stream=False,raw=False,timeout=None ):
         if timeout is None:
             timeout = self._request_timeout
-        with self._req_lock:
-            self._arlo.debug( 'starting request=' + str(url) )
-            try:
+        try:
+            with self._req_lock:
+                self._arlo.debug( 'starting request=' + str(url) )
+                self._arlo.debug( 'starting request=' + str(params) )
+                self._arlo.debug( 'starting request=' + str(headers) )
                 if method == 'GET':
                     r = self._session.get( url,params=params,headers=headers,stream=stream,timeout=timeout )
                     if stream is True:
@@ -61,24 +63,25 @@ class ArloBackEnd(object):
                     r = self._session.put( url,json=params,headers=headers,timeout=timeout )
                 elif method == 'POST':
                     r = self._session.post( url,json=params,headers=headers,timeout=timeout )
-            except:
-                self._arlo.warning( 'timeout with backend request' )
-                if self._ev_stream is not None:
-                    #self._ev_stream.close()
-                    self._ev_stream.resp.close()
-                return None
-
-            if r.status_code != 200:
-                self._arlo.warning( 'error with request' )
-                return None
-
-            body = r.json()
-            if raw:
-                return body
-            if body['success'] == True:
-                if 'data' in body:
-                    return body['data']
+        except:
+            if self._ev_stream is not None:
+                #self._ev_stream.close()
+                self._ev_stream.resp.close()
             return None
+
+        self._arlo.debug( 'finish request=' + str(r.status_code) )
+        if r.status_code != 200:
+            return None
+
+        body = r.json()
+        if raw:
+            return body
+        if body['success'] == True:
+            if 'data' in body:
+                return body['data']
+        else:
+            self._arlo.warning( 'error in response=' + str(body) )
+        return None
 
     def _gen_trans_id( self, trans_type=TRANSID_PREFIX ):
         return trans_type + '!' + str( uuid.uuid4() )
@@ -281,7 +284,12 @@ class ArloBackEnd(object):
             self.username = username
             self.password = password
             self._session = requests.Session()
-            self._session.mount('https://',requests.adapters.HTTPAdapter(pool_connections=5, pool_maxsize=10) )
+            if self._arlo._http_connections != 0 and self._arlo._http_max_size != 0:
+                self._arlo.debug( 'custom connections {}:{}'.format( self._arlo._http_connections,self._arlo._http_max_size ) )
+                self._session.mount( 'https://',
+                        requests.adapters.HTTPAdapter(
+                                pool_connections=self._arlo._http_connections,
+                                pool_maxsize=self._arlo._http_max_size) )
             body = self.post( LOGIN_URL, { 'email':self.username,'password':self.password } )
             if body is None:
                 self._arlo.debug( 'login failed' )
@@ -296,7 +304,8 @@ class ArloBackEnd(object):
             # update sessions headers
             # XXX allow different user agent
             headers = {
-                'DNT': '1',
+                #'DNT': '1',
+                'Accept': 'application/json, text/plain, */*',
                 'schemaVersion': '1',
                 'Host': 'arlo.netgear.com',
                 'Content-Type': 'application/json; charset=utf-8;',
