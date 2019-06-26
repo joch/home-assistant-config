@@ -61,12 +61,6 @@
         entity_id: binary_sensor.bedroom_window
         state: 'on'
       - condition: state
-        entity_id: binary_sensor.living_room_window_left
-        state: 'on'
-      - condition: state
-        entity_id: binary_sensor.living_room_window_right
-        state: 'on'
-      - condition: state
         entity_id: binary_sensor.balcony_entrance
         state: 'on'
       - condition: state
