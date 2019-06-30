@@ -201,6 +201,7 @@ yeelight:
 aarlo:
   username: !secret arlo_username
   password: !secret arlo_password
+  mode_api: v1
 
 deconz:
   host: !secret deconz_host
