@@ -208,6 +208,9 @@ deconz:
   api_key: !secret deconz_api_key
   port: !secret deconz_port
 
+hacs:
+  token: !secret hacs_token
+
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
