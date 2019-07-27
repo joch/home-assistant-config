@@ -1,3 +1,18 @@
+- alias: Record when the main entrance is opened
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.main_entrance
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.perimeter_warning
+      state: 'on'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"record_hallway"}
+    - service: ifttt.trigger
+      data: {"event":"record_living_room"}
+
 - alias: Warn when leaving if windows are open
   trigger:
     - platform: state
