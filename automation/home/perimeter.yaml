@@ -51,11 +51,6 @@
         entity_id: light.gateway_light_7811dc64de1a
         brightness_pct: 100
         rgb_color: [255,140,0]
-    - service: xiaomi_aqara.play_ringtone
-      data:
-        gw_mac: !secret xiaomi_gateway_mac
-        ringtone_id: 11
-        ringtone_vol: 5
     - delay: '00:00:10'
     - service: light.turn_off
       data:
