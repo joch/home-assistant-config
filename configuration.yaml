@@ -227,6 +227,16 @@ homekit:
   filter:
     include_domains:
       - light
+    include_entities:
+      - input_boolean.johnny_asleep
+      - input_boolean.kajsa_asleep
+      - input_boolean.guest_asleep
+      - input_boolean.everyone_asleep
+      - alarm_control_panel.alarm
+      - switch.balcony_switch
+      - switch.guest_bedroom_switch
+      - switch.hallway_switch
+      - switch.kitchen_switch
 
 camera:
   - platform: aarlo
