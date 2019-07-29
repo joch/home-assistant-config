@@ -237,6 +237,9 @@ homekit:
       - switch.guest_bedroom_switch
       - switch.hallway_switch
       - switch.kitchen_switch
+  entity_config:
+    alarm_control_panel.alarm:
+      code: !secret alarm_code
 
 camera:
   - platform: aarlo
