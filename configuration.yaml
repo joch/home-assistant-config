@@ -128,7 +128,8 @@ switch:
     lights:
       - light.bedroom_ceiling_lamp
       - light.bedroom_lamp
-      - light.living_room_window_lamp
+      - light.living_room_window_left_lamp
+      - light.living_room_window_right_lamp
       - light.bathroom_ceiling_lamp_left
       - light.bathroom_ceiling_lamp_middle
       - light.bathroom_ceiling_lamp_right

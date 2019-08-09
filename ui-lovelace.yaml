@@ -234,7 +234,10 @@
                                     "entity": "light.living_room_ceiling_lamp"
                                 },
                                 {
-                                    "entity": "light.living_room_window_lamp"
+                                    "entity": "light.living_room_window_left_lamp"
+                                },
+                                {
+                                    "entity": "light.living_room_window_right_lamp"
                                 },
                                 {
                                     "entity": "light.living_room_globe"
