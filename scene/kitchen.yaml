@@ -14,7 +14,7 @@
       transition: 2
     light.kitchen_window_lamp:
       state: on
-      brightness_pct: 75
+      brightness_pct: 25
       transition: 2
     switch.kitchen_switch:
       state: on
@@ -53,7 +53,7 @@
       transition: 5
     light.kitchen_window_lamp:
       state: on
-      brightness_pct: 10
+      brightness_pct: 1
       transition: 5
     switch.kitchen_switch:
       state: on
@@ -96,7 +96,7 @@
       rgb_color: [255,127,80]
     light.kitchen_window_lamp:
       state: on
-      brightness_pct: 25
+      brightness_pct: 10
       transition: 2
     switch.kitchen_switch:
       state: on
