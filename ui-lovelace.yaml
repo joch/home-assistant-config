@@ -180,6 +180,10 @@
                             "show_header_toggle": false,
                             "title": "Wakeup",
                             "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.unnamed_room",
+                            "type": "media-control"
                         }
                     ],
                     "icon": "mdi:hotel",
@@ -265,6 +269,9 @@
                                 },
                                 {
                                     "entity": "sensor.plex"
+                                },
+                                {
+                                    "entity": "media_player.living_room"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -304,6 +311,10 @@
                             "show_header_toggle": false,
                             "title": "Scenes",
                             "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.living_room",
+                            "type": "media-control"
                         }
                     ],
                     "icon": "mdi:sofa",
@@ -672,6 +683,10 @@
                             "show_header_toggle": false,
                             "title": "Scenes",
                             "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.kitchen",
+                            "type": "media-control"
                         }
                     ],
                     "icon": "mdi:stove",
