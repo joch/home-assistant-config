@@ -64,6 +64,22 @@
                         },
                         {
                             "entities": [
+                                {
+                                    "entity": "media_player.bedroom"
+                                },
+                                {
+                                    "entity": "media_player.kitchen"
+                                },
+                                {
+                                    "entity": "media_player.living_room"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Music",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
                                 "sensor.bedroom_temperature",
                                 "sensor.bedroom_humidity",
                                 "sensor.living_room_motion_sensor_temperature",
@@ -182,7 +198,7 @@
                             "type": "entities"
                         },
                         {
-                            "entity": "media_player.unnamed_room",
+                            "entity": "media_player.bedroom",
                             "type": "media-control"
                         }
                     ],
