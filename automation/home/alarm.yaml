@@ -227,6 +227,10 @@
     - platform: state
       entity_id: input_boolean.everyone_asleep
       to: 'off'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.alarm
+      state: 'armed_night'
   action:
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.alarm
