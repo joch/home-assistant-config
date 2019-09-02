@@ -1,23 +1,23 @@
-- alias: Automatically switch themes
-  trigger:
-    - platform: homeassistant
-      event: start
-    - platform: sun
-      event: sunrise
-    - platform: sun
-      event: sunset
-    - platform: numeric_state
-      entity_id: sensor.living_room_luminance
-      below: 10.0
-    - platform: numeric_state
-      entity_id: sensor.living_room_luminance
-      above: 10.0
-  action:
-    service: frontend.set_theme
-    data_template:
-      name: >
-        {% if states.sensor.living_room_luminance.state | int <= 10 %}
-        dark
-        {% else %}
-        default
-        {% endif %}
+# - alias: Automatically switch themes
+#   trigger:
+#     - platform: homeassistant
+#       event: start
+#     - platform: sun
+#       event: sunrise
+#     - platform: sun
+#       event: sunset
+#     - platform: numeric_state
+#       entity_id: sensor.living_room_luminance
+#       below: 10.0
+#     - platform: numeric_state
+#       entity_id: sensor.living_room_luminance
+#       above: 10.0
+#   action:
+#     service: frontend.set_theme
+#     data_template:
+#       name: >
+#         {% if states.sensor.living_room_luminance.state | int <= 10 %}
+#         dark
+#         {% else %}
+#         default
+#         {% endif %}
