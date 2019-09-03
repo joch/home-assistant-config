@@ -2,6 +2,11 @@ language: python
 python:
   - "3.6"
 before_install:
+  - mkdir -p custom_components/ tmp/
+  - git clone https://github.com/custom-components/hacs.git tmp/hacs
+  - mv tmp/hacs/custom_components/hacs custom_components/
+  - git clone https://github.com/twrecked/hass-aarlo.git tmp/aarlo
+  - mv tmp/aarlo/custom_components/aarlo custom_components/
   - cp secrets.yaml-default secrets.yaml
   - touch ssl.crt ssl.key
 install:
