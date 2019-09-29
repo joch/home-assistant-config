@@ -4,7 +4,7 @@
       state: on
       brightness_pct: 25
       transition: 2
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: on
       brightness_pct: 75
       transition: 2
@@ -14,7 +14,7 @@
     light.bedroom_ceiling_lamp:
       state: off
       transition: 5
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: off
       transition: 5
 
@@ -23,7 +23,7 @@
     light.bedroom_ceiling_lamp:
       state: off
       transition: 5
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: on
       brightness_pct: 1
       transition: 5
@@ -34,7 +34,7 @@
       state: on
       brightness_pct: 100
       transition: 2
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: on
       brightness_pct: 100
       transition: 2

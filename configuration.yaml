@@ -127,7 +127,7 @@ switch:
   - platform: flux
     lights:
       - light.bedroom_ceiling_lamp
-      - light.bedroom_lamp
+      - light.bedroom_window_lamp
       - light.living_room_window_left_lamp
       - light.living_room_window_right_lamp
       - light.bathroom_ceiling_lamp_left

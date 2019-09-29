@@ -2,7 +2,7 @@
   entities:
     light.bedroom_ceiling_lamp:
       state: off
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: off
     light.guest_bedroom_window_lamp:
       state: off
@@ -43,7 +43,7 @@
       state: on
       brightness_pct: 75
       transition: 1
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: on
       brightness_pct: 75
       transition: 1
@@ -76,7 +76,7 @@
       state: on
       brightness_pct: 10
       transition: 1
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: on
       brightness_pct: 1
       transition: 1
@@ -104,7 +104,7 @@
       state: on
       brightness_pct: 100
       transition: 1
-    light.bedroom_lamp:
+    light.bedroom_window_lamp:
       state: on
       brightness_pct: 100
       transition: 1
