@@ -266,6 +266,8 @@ alarm_control_panel:
     away_mode_name: vacation
 
 timer:
+  bedroom_lights:
+    duration: '00:04:00'
   bathroom_lights:
     duration: '00:04:00'
 

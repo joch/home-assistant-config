@@ -1,114 +1,131 @@
-- alias: Bedroom lights on
+- alias: Bedroom lights dim or off
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.bedroom_motion
-      to: 'off'
-      for: '00:10:00'
-  condition:
-    - condition: state
       entity_id: input_boolean.lights_needed
-      state: 'on'
+      to: 'off'
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.bedroom_lights
+  condition:
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled
       state: 'on'
     - condition: state
-      entity_id: input_boolean.johnny_asleep
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.kajsa_asleep
-      state: 'off'
+      entity_id: timer.bedroom_lights
+      state: 'idle'
     - condition: state
       entity_id: light.johnnys_bedlight
       state: 'off'
     - condition: state
       entity_id: light.kajsas_bedlight
-      state: 'off'
-    - condition: state
-      entity_id: binary_sensor.bedroom_motion
-      state: 'off'
-      for: '00:10:00'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.bedroom_dim
-
-- alias: Bedroom lights off
-  trigger:
-    - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: binary_sensor.bedroom_motion
-      state: 'off'
-      for: '00:10:00'
-  action:
-    - service: scene.turn_on
-      entity_id: scene.bedroom_off
-
-- alias: Bedroom lights normal when occupied
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bedroom_motion
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'off'
-    - platform: state
-      entity_id: input_boolean.kajsa_asleep
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.bedroom_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.johnny_asleep
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.kajsa_asleep
-      state: 'off'
-    - condition: state
-      entity_id: light.johnnys_bedlight
-      state: 'off'
-    - condition: state
-      entity_id: light.kajsas_bedlight
-      state: 'off'
-    - condition: state
-      entity_id: light.bedroom_ceiling_lamp
       state: 'off'
   action:
     - service: scene.turn_on
       data_template:
         entity_id: >-
-          {% if is_state('input_boolean.lights_full', 'on') %}
-          scene.bedroom_full
+          {% if is_state('input_boolean.johnny_asleep', 'on') %}
+          scene.bedroom_off
+          {% elif is_state('input_boolean.kajsa_asleep', 'on') %}
+          scene.bedroom_off
           {% elif is_state('input_boolean.lights_needed', 'on') %}
+          scene.bedroom_dim
+          {% else %}
+          scene.bedroom_off
+          {% endif %}
+
+- alias: Bedroom motion detected
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.johnny_asleep
+      to: 'off'
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.johnny_asleep
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.kajsa_asleep
+      state: 'off'
+    - condition: state
+      entity_id: light.johnnys_bedlight
+      state: 'off'
+    - condition: state
+      entity_id: light.kajsas_bedlight
+      state: 'off'
+  action:
+    - service: timer.cancel
+      entity_id: timer.bedroom_lights
+    - service: scene.turn_on
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.everyone_asleep', 'on') %}
+          scene.bedroom_night
+          {% elif is_state('input_boolean.lights_full', 'on') %}
+          scene.bedroom_full
+          {% else %}
           scene.bedroom_normal
           {% endif %}
 
-- alias: Bedroom lights off when one person goes to bed
+- alias: Bedroom motion idle
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bedroom_motion_detection_enabled
+      state: 'on'
+  action:
+    - service: timer.start
+      data:
+        entity_id: timer.bedroom_lights
+        duration: '00:04:00'
+
+- alias: Bedside light off on sleep and wakeup Johnny
   trigger:
     - platform: state
       entity_id: input_boolean.johnny_asleep
       to: 'on'
     - platform: state
-      entity_id: input_boolean.kajsa_asleep
-      to: 'on'
+      entity_id: input_boolean.johnny_asleep
+      to: 'off'
   condition:
     - condition: state
-      entity_id: input_boolean.lights_needed
+      entity_id: light.johnnys_bedlight
       state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
   action:
-    - service: scene.turn_on
-      entity_id: scene.bedroom_off
+    - service: light.turn_off
+      data:
+        entity_id: light.johnnys_bedlight
+
+- alias: Bedside light off on sleep and wakeup Kajsa
+  trigger:
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.kajsa_asleep
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: light.kajsas_bedlight
+      state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.kajsas_bedlight
 
 - alias: Bedside light on when Johnny is home
   trigger:
@@ -139,23 +156,6 @@
     - service: scene.turn_on
       entity_id: scene.bedroom_off
 
-- alias: Bedside light off on sleep and wakeup Johnny
-  trigger:
-    - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.johnny_asleep
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: light.johnnys_bedlight
-      state: 'on'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.johnnys_bedlight
-
 - alias: Bedside light on when Kajsa is home
   trigger:
     - platform: time
@@ -184,23 +184,6 @@
         entity_id: light.kajsas_bedlight
     - service: scene.turn_on
       entity_id: scene.bedroom_off
-
-- alias: Bedside light off on sleep and wakeup Kajsa
-  trigger:
-    - platform: state
-      entity_id: input_boolean.kajsa_asleep
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.kajsa_asleep
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: light.kajsas_bedlight
-      state: 'on'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.kajsas_bedlight
 
 - alias: Bedroom wakeup light Johnny
   trigger:
