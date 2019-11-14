@@ -8,7 +8,7 @@
                 },
                 {
                     "type": "module",
-                    "url": "/local/aarlo-glance.js"
+                    "url": "/community_plugin/lovelace-hass-aarlo/hass-aarlo.js"
                 }
             ],
             "title": "Honn\u00f6rsgatan",
@@ -31,15 +31,6 @@
                         },
                         {
                             "entities": [
-                                "device_tracker.johnnysiphone",
-                                "device_tracker.kajsasiphone"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Household",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
                                 {
                                     "entity": "input_boolean.johnny_asleep"
                                 },
@@ -55,6 +46,15 @@
                             ],
                             "show_header_toggle": true,
                             "title": "Sleep Status",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "device_tracker.johnnysiphone",
+                                "device_tracker.kajsasiphone"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Household",
                             "type": "entities"
                         },
                         {
@@ -113,6 +113,9 @@
                                     "entity": "binary_sensor.bedroom_smoke"
                                 },
                                 {
+                                    "entity": "timer.bedroom_lights"
+                                },
+                                {
                                     "entity": "binary_sensor.bedroom_motion"
                                 },
                                 {
@@ -149,7 +152,7 @@
                                     "entity": "light.bedroom_ceiling_lamp"
                                 },
                                 {
-                                    "entity": "light.bedroom_lamp"
+                                    "entity": "light.bedroom_window_lamp"
                                 },
                                 {
                                     "entity": "light.johnnys_bedlight"
@@ -218,6 +221,9 @@
                                     "entity": "binary_sensor.living_room_window_right"
                                 },
                                 {
+                                    "entity": "timer.living_room_lights"
+                                },
+                                {
                                     "entity": "binary_sensor.living_room_motion_sensor"
                                 },
                                 {
@@ -284,7 +290,7 @@
                                     "entity": "input_select.harmony"
                                 },
                                 {
-                                    "entity": "sensor.plex"
+                                    "entity": "sensor.plex_joch"
                                 },
                                 {
                                     "entity": "media_player.living_room"
@@ -380,7 +386,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.living_room_outlet"
+                                    "entity": "switch.closet_outlet"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -471,6 +477,9 @@
                                 },
                                 {
                                     "entity": "binary_sensor.bathroom_water"
+                                },
+                                {
+                                    "entity": "timer.bathroom_lights"
                                 },
                                 {
                                     "entity": "binary_sensor.bathroom_motion"
