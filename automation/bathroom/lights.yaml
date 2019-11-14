@@ -6,24 +6,17 @@
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'off'
-    - platform: state
-      entity_id: binary_sensor.bathroom_motion
-      to: 'off'
-      for: '00:04:00'
-    - platform: numeric_state
-      entity_id: sensor.bathroom_humidity
-      below: 60
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.bathroom_lights
   condition:
     - condition: state
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
-    - condition: numeric_state
-      entity_id: sensor.bathroom_humidity
-      below: 60
     - condition: state
-      entity_id: binary_sensor.bathroom_motion
-      state: 'off'
-      for: '00:04:00'
+      entity_id: timer.bathroom_lights
+      state: 'idle'
   action:
     - service: scene.turn_on
       data_template:
@@ -34,7 +27,7 @@
           scene.bathroom_off
           {% endif %}
 
-- alias: Bathroom lights normal or night
+- alias: Bathroom motion detected
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
@@ -43,10 +36,9 @@
     - condition: state
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: light.bathroom_ceiling_lamp
-      state: 'off'
   action:
+    - service: timer.cancel
+      entity_id: timer.bathroom_lights
     - service: scene.turn_on
       data_template:
         entity_id: >-
@@ -57,3 +49,34 @@
           {% else %}
           scene.bathroom_normal
           {% endif %}
+
+- alias: Bathroom motion idle
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'off'
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      below: 45
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
+  action:
+    - service: timer.start
+      data:
+        entity_id: timer.bathroom_lights
+        duration: '00:04:00'
+
+- alias: Bathroom pause timer on high moisture
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      above: 45
+  condition:
+    - condition: state
+      entity_id: timer.bathroom_lights
+      state: 'active'
+  action:
+    - service: timer.pause
+      entity_id: timer.bathroom_lights

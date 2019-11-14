@@ -265,6 +265,10 @@ alarm_control_panel:
     home_mode_name: armed
     away_mode_name: vacation
 
+timer:
+  bathroom_lights:
+    duration: '00:04:00'
+
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
 sensor: !include_dir_merge_list sensor
@@ -274,3 +278,4 @@ scene: !include_dir_merge_list scene
 automation: !include_dir_merge_list automation
 notify: !include_dir_merge_list notify
 script: !include scripts.yaml
+#timer: !include timer.yaml
