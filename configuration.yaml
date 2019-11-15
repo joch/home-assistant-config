@@ -267,10 +267,13 @@ alarm_control_panel:
 
 timer:
   bedroom_lights:
+    name: Bedroom Lights
     duration: '00:04:00'
   living_room_lights:
+    name: Living Room Lights
     duration: '00:05:00'
   bathroom_lights:
+    name: Bathroom Lights
     duration: '00:04:00'
 
 input_boolean: !include input_boolean.yaml
