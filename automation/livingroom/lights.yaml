@@ -33,7 +33,7 @@
 - alias: Living room motion detected
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion
+      entity_id: binary_sensor.living_room_motion_sensor
       to: 'on'
     - platform: state
       entity_id: input_select.harmony
