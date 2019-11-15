@@ -1,0 +1,47 @@
+- alias: Bathroom occupied
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'on'
+  action:
+    - service: timer.cancel
+      entity_id: timer.bathroom_lights
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.bathroom_occupied
+
+- alias: Bathroom start idle timer
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'off'
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      below: 45
+  action:
+    - service: timer.start
+      data:
+        entity_id: timer.bathroom_lights
+        duration: '00:04:00'
+
+- alias: Bathroom idle
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.bathroom_lights
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.bathroom_occupied
+
+- alias: Bathroom pause timer on high moisture
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      above: 45
+  condition:
+    - condition: state
+      entity_id: timer.bathroom_lights
+      state: 'active'
+  action:
+    - service: timer.pause
+      entity_id: timer.bathroom_lights

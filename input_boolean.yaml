@@ -101,3 +101,15 @@ kitchen_motion_detection_enabled:
 guest_bedroom_motion_detection_enabled:
   name: Guest Bedroom Motion Detection
   icon: mdi:eye-outline
+
+bedroom_occupied:
+  name: Bedroom Occupied
+  icon: mdi:home-account
+
+living_room_occupied:
+  name: Living Room Occupied
+  icon: mdi:home-account
+
+bathroom_occupied:
+  name: Bathroom Occupied
+  icon: mdi:home-account

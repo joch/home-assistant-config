@@ -1,0 +1,31 @@
+- alias: Bedroom occupied
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion
+      to: 'on'
+  action:
+    - service: timer.cancel
+      entity_id: timer.bedroom_lights
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.bedroom_occupied
+
+- alias: Bedroom start idle timer
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion
+      to: 'off'
+  action:
+    - service: timer.start
+      data:
+        entity_id: timer.bedroom_lights
+        duration: '00:04:00'
+
+- alias: Bedroom idle
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.bedroom_lights
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.bedroom_occupied

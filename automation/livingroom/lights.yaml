@@ -1,4 +1,4 @@
-- alias: Living room lights dim or off
+- alias: Living room lights idle
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
@@ -6,10 +6,9 @@
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'off'
-    - platform: event
-      event_type: timer.finished
-      event_data:
-        entity_id: timer.living_room_lights
+    - platform: state
+      entity_id: input_boolean.living_room_occupied
+      to: 'off'
   condition:
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
@@ -30,10 +29,10 @@
           scene.living_room_off
           {% endif %}
 
-- alias: Living room motion detected
+- alias: Living room lights occupied
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion_sensor
+      entity_id: input_boolean.bathroom_occupied
       to: 'on'
     - platform: state
       entity_id: input_select.harmony
@@ -46,8 +45,6 @@
       entity_id: input_select.harmony
       state: 'PowerOff'
   action:
-    - service: timer.cancel
-      entity_id: timer.living_room_lights
     - service: scene.turn_on
       data_template:
         entity_id: >-
@@ -59,21 +56,6 @@
           scene.living_room_normal
           {% endif %}
     - service: switch.flux_living_room_update
-
-- alias: Living room motion idle
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.living_room_motion
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: input_boolean.living_room_motion_detection_enabled
-      state: 'on'
-  action:
-    - service: timer.start
-      data:
-        entity_id: timer.living_room_lights
-        duration: '00:05:00'
 
 - alias: Living room TV on
   trigger:

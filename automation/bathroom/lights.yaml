@@ -1,4 +1,4 @@
-- alias: Bathroom lights dim or off
+- alias: Bathroom lights idle
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
@@ -6,17 +6,13 @@
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'off'
-    - platform: event
-      event_type: timer.finished
-      event_data:
-        entity_id: timer.bathroom_lights
+    - platform: state
+      entity_id: input_boolean.bathroom_occupied
+      to: 'off'
   condition:
     - condition: state
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: timer.bathroom_lights
-      state: 'idle'
   action:
     - service: scene.turn_on
       data_template:
@@ -27,18 +23,12 @@
           scene.bathroom_off
           {% endif %}
 
-- alias: Bathroom motion detected
+- alias: Bathroom lights occupied
   trigger:
     - platform: state
-      entity_id: binary_sensor.bathroom_motion
+      entity_id: input_boolean.bathroom_occupied
       to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
-      state: 'on'
   action:
-    - service: timer.cancel
-      entity_id: timer.bathroom_lights
     - service: scene.turn_on
       data_template:
         entity_id: >-
@@ -50,33 +40,3 @@
           scene.bathroom_normal
           {% endif %}
 
-- alias: Bathroom motion idle
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.bathroom_motion
-      to: 'off'
-    - platform: numeric_state
-      entity_id: sensor.bathroom_humidity
-      below: 45
-  condition:
-    - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
-      state: 'on'
-  action:
-    - service: timer.start
-      data:
-        entity_id: timer.bathroom_lights
-        duration: '00:04:00'
-
-- alias: Bathroom pause timer on high moisture
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.bathroom_humidity
-      above: 45
-  condition:
-    - condition: state
-      entity_id: timer.bathroom_lights
-      state: 'active'
-  action:
-    - service: timer.pause
-      entity_id: timer.bathroom_lights
