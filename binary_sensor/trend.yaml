@@ -4,3 +4,19 @@
       entity_id: sensor.captured_today_hallway
     living_room_camera_motion_detected:
       entity_id: sensor.captured_today_living_room
+
+- platform: bayesian
+  name: 'Bathroom Occupied'
+  prior: 0.2
+  probability_threshold: 0.5
+  observations:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to_state: 'on'
+      prob_given_true: 0.9
+      prob_given_false: 0.1
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      above: 45
+      prob_given_true: 0.9
+      prob_given_false: 0.1
