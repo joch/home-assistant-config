@@ -12,7 +12,7 @@
 - alias: Living room start idle timer
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_motion
+      entity_id: binary_sensor.living_room_motion_sensor
       to: 'off'
   action:
     - service: timer.start
