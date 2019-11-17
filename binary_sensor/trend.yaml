@@ -7,16 +7,26 @@
 
 - platform: bayesian
   name: 'Bathroom Occupied'
-  prior: 0.2
+  prior: 0.08
   probability_threshold: 0.5
   observations:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to_state: 'on'
-      prob_given_true: 0.9
-      prob_given_false: 0.1
+      prob_given_true: 0.14
+      prob_given_false: 0.01
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to_state: 'off'
+      prob_given_true: 0.1
+      prob_given_false: 0.8
     - platform: numeric_state
       entity_id: sensor.bathroom_humidity
       above: 45
-      prob_given_true: 0.9
-      prob_given_false: 0.1
+      prob_given_true: 0.07
+      prob_given_false: 0.01
+    # - platform: numeric_state
+    #   entity_id: sensor.bathroom_humidity
+    #   below: 45
+    #   prob_given_true: 0.07
+    #   prob_given_false: 0.01
