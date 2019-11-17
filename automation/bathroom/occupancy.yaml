@@ -3,6 +3,9 @@
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'on'
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      below: 45
   action:
     - service: timer.cancel
       entity_id: timer.bathroom_lights
@@ -14,9 +17,15 @@
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'off'
-    - platform: numeric_state
-      entity_id: sensor.bathroom_humidity
-      below: 45
+  condition:
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: timer.bathroom_lights
+          state: 'idle'
+        - condition: state
+          entity_id: timer.bathroom_lights
+          state: 'active'
   action:
     - service: timer.start
       data:

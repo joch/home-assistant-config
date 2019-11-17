@@ -32,7 +32,7 @@
 - alias: Living room lights occupied
   trigger:
     - platform: state
-      entity_id: input_boolean.bathroom_occupied
+      entity_id: input_boolean.living_room_occupied
       to: 'on'
     - platform: state
       entity_id: input_select.harmony
