@@ -64,8 +64,8 @@
       entity_id: alarm_control_panel.alarm
       to: 'triggered'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_full
+    - service: script.turn_on
+      entity_id: script.scene_lights_full
 
 - alias: Home lights off after alarm triggered
   trigger:
@@ -73,8 +73,8 @@
       entity_id: alarm_control_panel.alarm
       from: 'triggered'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_off
+    - service: script.turn_on
+      entity_id: script.scene_lights_off
 
 - alias: Lights off when last person goes to bed
   trigger:

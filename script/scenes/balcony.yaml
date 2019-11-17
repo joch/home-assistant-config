@@ -1,0 +1,11 @@
+scene_balcony_normal:
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.balcony_switch
+
+scene_balcony_off:
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.balcony_switch

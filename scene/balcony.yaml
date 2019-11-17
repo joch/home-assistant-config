@@ -1,9 +1,0 @@
-- name: Balcony Normal
-  entities:
-    switch.balcony_switch:
-      state: on
-
-- name: Balcony Off
-  entities:
-    switch.balcony_switch:
-      state: off

@@ -22,8 +22,8 @@
       state: 'off'
       for: '00:10:00'
   action:
-    - service: scene.turn_on
-      entity_id: scene.guest_bedroom_dim
+    - service: script.turn_on
+      entity_id: script.scene_guest_bedroom_dim
 
 - alias: Guest Bedroom lights off
   trigger:
@@ -34,8 +34,8 @@
       entity_id: input_boolean.guest_asleep
       to: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.guest_bedroom_off
+    - service: script.turn_on
+      entity_id: script.scene_guest_bedroom_off
 
 - alias: Guest Bedroom lights normal when occupied
   trigger:
@@ -59,11 +59,11 @@
       entity_id: light.guest_bedroom_ceiling_lamp
       state: 'off'
   action:
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.lights_full', 'on') %}
-          scene.guest_bedroom_full
+          script.scene_guest_bedroom_full
           {% elif is_state('input_boolean.lights_needed', 'on') %}
-          scene.guest_bedroom_normal
+          script.scene_guest_bedroom_normal
           {% endif %}

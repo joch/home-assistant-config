@@ -14,13 +14,13 @@
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
   action:
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.lights_needed', 'on') %}
-          scene.bathroom_dim
+          script.scene_bathroom_dim
           {% else %}
-          scene.bathroom_off
+          script.scene_bathroom_off
           {% endif %}
 
 - alias: Bathroom lights occupied
@@ -29,14 +29,14 @@
       entity_id: input_boolean.bathroom_occupied
       to: 'on'
   action:
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.everyone_asleep', 'on') %}
-          scene.bathroom_night
+          script.scene_bathroom_night
           {% elif is_state('input_boolean.lights_full', 'on') %}
-          scene.bathroom_full
+          script.scene_bathroom_full
           {% else %}
-          scene.bathroom_normal
+          script.scene_bathroom_normal
           {% endif %}
 

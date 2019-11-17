@@ -4,8 +4,8 @@
       entity_id: input_boolean.lights_needed
       to: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.balcony_normal
+    - service: script.turn_on
+      entity_id: script.scene_balcony_normal
 
 - alias: Balcony lights off
   trigger:
@@ -13,5 +13,5 @@
     entity_id: input_boolean.lights_needed
     to: 'off'
   action:
-    - service: scene.turn_on
-      entity_id: scene.balcony_off
+    - service: script.turn_on
+      entity_id: script.scene_balcony_off

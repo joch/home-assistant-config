@@ -1,0 +1,48 @@
+scene_bedroom_normal:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_ceiling_lamp
+        brightness_pct: 50
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_window_lamp
+        brightness_pct: 75
+        transition: 2
+
+scene_bedroom_off:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_ceiling_lamp
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_window_lamp
+        transition: 5
+
+scene_bedroom_dim:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_ceiling_lamp
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_window_lamp
+        brightness_pct: 1
+        transition: 5
+
+scene_bedroom_full:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_ceiling_lamp
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_window_lamp
+        brightness_pct: 100
+        transition: 2

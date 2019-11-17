@@ -4,8 +4,8 @@
       entity_id: input_boolean.lights_needed
       to: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.hallway_dim
+    - service: script.turn_on
+      entity_id: script.scene_hallway_dim
     - delay: '00:00:03'
     - service: switch.flux_hallway_update
 
@@ -15,8 +15,8 @@
     entity_id: input_boolean.lights_needed
     to: 'off'
   action:
-    - service: scene.turn_on
-      entity_id: scene.hallway_off
+    - service: script.turn_on
+      entity_id: script.scene_hallway_off
 
 - alias: Turn on hallway ceiling lamp when motion is detected in hallway
   trigger:
@@ -34,20 +34,8 @@
       entity_id: light.hallway_ceiling_lamp
       state: 'off'
   action:
-    - service: light.turn_on
-      data_template:
-        entity_id: light.hallway_ceiling_lamp
-        transition: 2
-        brightness_pct: >-
-          {% if states.sensor.living_room_luminance.state | int <= 20 %}
-          20
-          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
-          {{ states.sensor.living_room_luminance.state | int }}
-          {% else %}
-          100
-          {% endif %}
-    - delay: '00:00:03'
-    - service: switch.flux_hallway_update
+    - service: script.turn_on
+      entity_id: script.scene_hallway_normal
 
 - alias: Turn off hallway ceiling lamp when no motion is detected in hallway
   trigger:
@@ -84,20 +72,8 @@
       entity_id: input_boolean.everyone_asleep
       state: 'off'
   action:
-    - service: light.turn_on
-      data_template:
-        entity_id: light.hallway_ceiling_lamp
-        transition: 2
-        brightness_pct: >-
-          {% if states.sensor.living_room_luminance.state | int <= 20 %}
-          20
-          {% elif states.sensor.living_room_luminance.state | int <= 100 %}
-          {{ states.sensor.living_room_luminance.state | int }}
-          {% else %}
-          100
-          {% endif %}
-    - delay: '00:00:03'
-    - service: switch.flux_hallway_update
+    - service: script.turn_on
+      entity_id: script.scene_hallway_normal
 
 - alias: Turn off hallway ceiling lamp when main entrance is closed if no light interior
   trigger:
@@ -171,8 +147,8 @@
       entity_id: input_boolean.lights_night
       state: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.hallway_night
+    - service: script.turn_on
+      entity_id: script.scene_hallway_night
 
 - alias: Turn off hallway mood light when no motion is detected in hallway when everyone asleep
   trigger:
@@ -194,5 +170,5 @@
       entity_id: input_boolean.lights_night
       state: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.hallway_off
+    - service: script.turn_on
+      entity_id: script.scene_hallway_off

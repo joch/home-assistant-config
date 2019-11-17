@@ -19,13 +19,13 @@
       state: 'off'
       for: '00:05:00'
   action:
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.lights_needed', 'on') %}
-          scene.kitchen_dim
+          script.scene_kitchen_dim
           {% else %}
-          scene.kitchen_off
+          script.scene_kitchen_off
           {% endif %}
 
 - alias: Kitchen lights normal or night
@@ -41,17 +41,17 @@
       entity_id: light.kitchen_ceiling_lamp
       state: 'off'
   action:
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.everyone_asleep', 'on') %}
-          scene.kitchen_night
+          script.scene_kitchen_night
           {% elif is_state('input_boolean.lights_full', 'on') %}
-          scene.kitchen_full
+          script.scene_kitchen_full
           {% elif is_state('input_boolean.lights_needed', 'on') %}
-          scene.kitchen_normal
+          script.scene_kitchen_normal
           {% else %}
-          scene.kitchen_countertop_only
+          script.scene_kitchen_countertop_only
           {% endif %}
     - delay: '00:00:03'
     - service: switch.flux_kitchen_update

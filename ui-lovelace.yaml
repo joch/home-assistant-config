@@ -168,16 +168,16 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "scene.bedroom_off"
+                                    "entity": "script.scene_bedroom_off"
                                 },
                                 {
-                                    "entity": "scene.bedroom_normal"
+                                    "entity": "script.scene_bedroom_normal"
                                 },
                                 {
-                                    "entity": "scene.bedroom_dim"
+                                    "entity": "script.scene_bedroom_dim"
                                 },
                                 {
-                                    "entity": "scene.bedroom_full"
+                                    "entity": "script.scene_bedroom_full"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -303,40 +303,36 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "scene.living_room_off"
+                                    "entity": "script.scene_living_room_off"
                                 },
                                 {
-                                    "entity": "scene.living_room_normal"
+                                    "entity": "script.scene_living_room_normal"
                                 },
                                 {
-                                    "entity": "scene.living_room_dim"
+                                    "entity": "script.scene_living_room_dim"
                                 },
                                 {
-                                    "entity": "scene.living_room_full"
+                                    "entity": "script.scene_living_room_full"
                                 },
                                 {
-                                    "entity": "scene.living_room_tv"
+                                    "entity": "script.scene_living_room_tv"
                                 },
                                 {
-                                    "entity": "scene.living_room_tv_only"
+                                    "entity": "script.scene_living_room_tv_only"
                                 },
                                 {
-                                    "entity": "scene.living_room_music"
+                                    "entity": "script.scene_living_room_music"
                                 },
                                 {
-                                    "entity": "scene.living_room_music_only"
+                                    "entity": "script.scene_living_room_music_only"
                                 },
                                 {
-                                    "entity": "scene.living_room_night"
+                                    "entity": "script.scene_living_room_night"
                                 }
                             ],
                             "show_header_toggle": false,
                             "title": "Scenes",
                             "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.living_room",
-                            "type": "media-control"
                         }
                     ],
                     "icon": "mdi:sofa",
@@ -365,10 +361,10 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "scene.balcony_off"
+                                    "entity": "script.scene_balcony_off"
                                 },
                                 {
-                                    "entity": "scene.balcony_normal"
+                                    "entity": "script.scene_balcony_normal"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -479,10 +475,10 @@
                                     "entity": "binary_sensor.bathroom_water"
                                 },
                                 {
-                                    "entity": "timer.bathroom_lights"
+                                    "entity": "binary_sensor.bathroom_motion"
                                 },
                                 {
-                                    "entity": "binary_sensor.bathroom_motion"
+                                    "entity": "input_boolean.bathroom_occupied"
                                 },
                                 {
                                     "entity": "input_boolean.bathroom_motion_detection_enabled",
@@ -494,6 +490,14 @@
                             "show_name": false,
                             "title": "Bathroom",
                             "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.bathroom_occupied"
+                                }
+                            ],
+                            "type": "entities"
                         },
                         {
                             "cards": [
@@ -528,19 +532,19 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "scene.bathroom_off"
+                                    "entity": "script.scene_bathroom_off"
                                 },
                                 {
-                                    "entity": "scene.bathroom_normal"
+                                    "entity": "script.scene_bathroom_normal"
                                 },
                                 {
-                                    "entity": "scene.bathroom_dim"
+                                    "entity": "script.scene_bathroom_dim"
                                 },
                                 {
-                                    "entity": "scene.bathroom_full"
+                                    "entity": "script.scene_bathroom_full"
                                 },
                                 {
-                                    "entity": "scene.bathroom_night"
+                                    "entity": "script.scene_bathroom_night"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -607,19 +611,19 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "scene.hallway_off"
+                                    "entity": "script.scene_hallway_off"
                                 },
                                 {
-                                    "entity": "scene.hallway_normal"
+                                    "entity": "script.scene_hallway_normal"
                                 },
                                 {
-                                    "entity": "scene.hallway_dim"
+                                    "entity": "script.scene_hallway_dim"
                                 },
                                 {
-                                    "entity": "scene.hallway_full"
+                                    "entity": "script.scene_hallway_full"
                                 },
                                 {
-                                    "entity": "scene.hallway_night"
+                                    "entity": "script.scene_hallway_night"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -684,25 +688,25 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "scene.kitchen_off"
+                                    "entity": "script.scene_kitchen_off"
                                 },
                                 {
-                                    "entity": "scene.kitchen_normal"
+                                    "entity": "script.scene_kitchen_normal"
                                 },
                                 {
-                                    "entity": "scene.kitchen_dim"
+                                    "entity": "script.scene_kitchen_dim"
                                 },
                                 {
-                                    "entity": "scene.kitchen_full"
+                                    "entity": "script.scene_kitchen_full"
                                 },
                                 {
-                                    "entity": "scene.kitchen_countertop_only"
+                                    "entity": "script.scene_kitchen_countertop_only"
                                 },
                                 {
-                                    "entity": "scene.kitchen_night"
+                                    "entity": "script.scene_kitchen_night"
                                 },
                                 {
-                                    "entity": "scene.kitchen_evening"
+                                    "entity": "script.scene_kitchen_evening"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -788,16 +792,16 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "scene.guest_bedroom_off"
+                                    "entity": "script.scene_guest_bedroom_off"
                                 },
                                 {
-                                    "entity": "scene.guest_bedroom_normal"
+                                    "entity": "script.scene_guest_bedroom_normal"
                                 },
                                 {
-                                    "entity": "scene.guest_bedroom_dim"
+                                    "entity": "script.scene_guest_bedroom_dim"
                                 },
                                 {
-                                    "entity": "scene.guest_bedroom_full"
+                                    "entity": "script.scene_guest_bedroom_full"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -942,7 +946,7 @@
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Indoor Motion",
+                            "title": "Motion",
                             "type": "entities"
                         },
                         {
@@ -953,6 +957,22 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Smoke",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.bedroom_occupied"
+                                },
+                                {
+                                    "entity": "input_boolean.living_room_occupied"
+                                },
+                                {
+                                    "entity": "input_boolean.bathroom_occupied"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Occupancy",
                             "type": "entities"
                         },
                         {
@@ -993,68 +1013,6 @@
                     "icon": "mdi:shield",
                     "panel": false,
                     "title": "Security"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                "sensor.bathroom_environment_battery_level",
-                                "sensor.bathroom_environment_battery_level_2",
-                                "sensor.bedroom_dimmer_battery_level",
-                                "sensor.bedroom_environment_battery_level",
-                                "sensor.bedroom_environment_battery_level_2",
-                                "sensor.dimmer_switch_battery_level",
-                                "sensor.guest_asleep_battery_level",
-                                "sensor.guest_bedroom_dimmer_battery_level",
-                                "sensor.guest_bedroom_dimmer_battery_level_2",
-                                "sensor.hallway_dimmer_battery_level",
-                                "sensor.hallway_dimmer_battery_level_2",
-                                "sensor.johnny_asleep_battery_level",
-                                "sensor.johnnys_iphone_battery_level",
-                                "sensor.johnnys_iphone_battery_level_2",
-                                "sensor.kajsa_asleep_battery_level",
-                                "sensor.kajsas_iphone_battery_level",
-                                "sensor.living_room_dimmer_battery_level",
-                                "sensor.switch_48_battery_level",
-                                "sensor.ups_battery"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Battery Status",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_number.battery_alert_threshold_min"
-                                },
-                                {
-                                    "entity": "input_number.battery_alert_threshold_max"
-                                },
-                                {
-                                    "entity": "input_text.clear_mqtt_topic"
-                                },
-                                {
-                                    "entity": "automation.battery_notification"
-                                },
-                                {
-                                    "entity": "automation.battery_notification_clear"
-                                },
-                                {
-                                    "entity": "automation.battery_sensor_from_attributes"
-                                },
-                                {
-                                    "entity": "automation.update_battery_status_group_members"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Battery Alert",
-                            "type": "entities"
-                        }
-                    ],
-                    "icon": "mdi:battery-alert",
-                    "path": "battery_view",
-                    "title": "Batteries"
                 }
             ]
         }

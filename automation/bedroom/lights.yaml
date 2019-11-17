@@ -20,17 +20,17 @@
       entity_id: light.kajsas_bedlight
       state: 'off'
   action:
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.johnny_asleep', 'on') %}
-          scene.bedroom_off
+          script.scene_bedroom_off
           {% elif is_state('input_boolean.kajsa_asleep', 'on') %}
-          scene.bedroom_off
+          script.scene_bedroom_off
           {% elif is_state('input_boolean.lights_needed', 'on') %}
-          scene.bedroom_dim
+          script.scene_bedroom_dim
           {% else %}
-          scene.bedroom_off
+          script.scene_bedroom_off
           {% endif %}
 
 - alias: Bedroom lights occupied
@@ -61,15 +61,15 @@
       entity_id: light.kajsas_bedlight
       state: 'off'
   action:
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.everyone_asleep', 'on') %}
-          scene.bedroom_night
+          script.scene_bedroom_night
           {% elif is_state('input_boolean.lights_full', 'on') %}
-          scene.bedroom_full
+          script.scene_bedroom_full
           {% else %}
-          scene.bedroom_normal
+          script.scene_bedroom_normal
           {% endif %}
 
 - alias: Bedside light off on sleep and wakeup Johnny
@@ -132,8 +132,8 @@
     - service: light.turn_on
       data:
         entity_id: light.johnnys_bedlight
-    - service: scene.turn_on
-      entity_id: scene.bedroom_off
+    - service: script.turn_on
+      entity_id: script.scene_bedroom_off
 
 - alias: Bedside light on when Kajsa is home
   trigger:
@@ -161,8 +161,8 @@
     - service: light.turn_on
       data:
         entity_id: light.kajsas_bedlight
-    - service: scene.turn_on
-      entity_id: scene.bedroom_off
+    - service: script.turn_on
+      entity_id: script.scene_bedroom_off
 
 - alias: Bedroom wakeup light Johnny
   trigger:

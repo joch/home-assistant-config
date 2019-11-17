@@ -10,8 +10,8 @@
       entity_id: binary_sensor.guest_bedroom_smoke
       to: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.lights_full
+    - service: script.turn_on
+      entity_id: script.scene_lights_full
     - service: ifttt.trigger
       data: {"event":"record_hallway"}
     - service: ifttt.trigger

@@ -31,11 +31,11 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.living_room_motion_detection_enabled
-    - service: scene.turn_on
+    - service: script.turn_on
       data_template:
         entity_id: >-
           {% if is_state('input_boolean.light_automation', 'on') %}
-          scene.living_room_dim
+          script.scene_living_room_dim
           {% else %}
-          scene.living_room_off
+          script.scene_living_room_off
           {% endif %}

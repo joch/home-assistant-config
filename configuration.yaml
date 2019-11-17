@@ -284,5 +284,5 @@ group: !include_dir_merge_named group
 scene: !include_dir_merge_list scene
 automation: !include_dir_merge_list automation
 notify: !include_dir_merge_list notify
-script: !include scripts.yaml
+script: !include_dir_merge_named script
 #timer: !include timer.yaml

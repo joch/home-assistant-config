@@ -1,0 +1,172 @@
+scene_kitchen_normal:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_ceiling_lamp
+        brightness_pct: 75
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_window_lamp
+        brightness_pct: 50
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_countertop_lightstrip
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_cabinet_light
+        brightness_pct: 50
+        transition: 2
+    - service: switch.turn_on
+      data:
+        entity_id: switch.kitchen_switch
+
+scene_kitchen_countertop_only:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_ceiling_lamp
+        brightness_pct: 75
+        transition: 2
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_window_lamp
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_countertop_lightstrip
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_cabinet_light
+        transition: 5
+    - service: switch.turn_off
+      data:
+        entity_id: switch.kitchen_switch
+
+scene_kitchen_dim:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_ceiling_lamp
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_window_lamp
+        brightness_pct: 1
+        transition: 2
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_countertop_lightstrip
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_cabinet_light
+        brightness_pct: 1
+        transition: 2
+    - service: switch.turn_on
+      data:
+        entity_id: switch.kitchen_switch
+
+scene_kitchen_full:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_ceiling_lamp
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_window_lamp
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_countertop_lightstrip
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_cabinet_light
+        brightness_pct: 100
+        transition: 2
+    - service: switch.turn_on
+      data:
+        entity_id: switch.kitchen_switch
+
+scene_kitchen_evening:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_ceiling_lamp
+        brightness_pct: 25
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_window_lamp
+        brightness_pct: 10
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_countertop_lightstrip
+        brightness_pct: 50
+        transition: 2
+        rgb_color: [255,127,80]
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_cabinet_light
+        brightness_pct: 1
+        transition: 2
+    - service: switch.turn_on
+      data:
+        entity_id: switch.kitchen_switch
+
+scene_kitchen_night:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_ceiling_lamp
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_window_lamp
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_countertop_lightstrip
+        brightness_pct: 1
+        transition: 2
+        rgb_color: [255,100,0]
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_cabinet_light
+        transition: 5
+    - service: switch.turn_off
+      data:
+        entity_id: switch.kitchen_switch
+
+scene_kitchen_off:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_ceiling_lamp
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_window_lamp
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_countertop_lightstrip
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_cabinet_light
+        transition: 5
+    - service: switch.turn_off
+      data:
+        entity_id: switch.kitchen_switch

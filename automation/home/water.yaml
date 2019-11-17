@@ -4,8 +4,8 @@
       entity_id: binary_sensor.kitchen_water
       to: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.kitchen_full
+    - service: script.turn_on
+      entity_id: script.scene_kitchen_full
     - service: ifttt.trigger
       data: {"event":"record_hallway"}
     - service: ifttt.trigger
@@ -21,8 +21,8 @@
       entity_id: binary_sensor.bathroom_water
       to: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.bathroom_full
+    - service: script.turn_on
+      entity_id: script.scene_bathroom_full
     - service: ifttt.trigger
       data: {"event":"record_hallway"}
     - service: ifttt.trigger
