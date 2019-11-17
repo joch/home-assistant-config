@@ -7,12 +7,12 @@ scene_living_room_normal:
         transition: 2
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         brightness_pct: 75
         transition: 2
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         brightness_pct: 75
         transition: 2
     - service: light.turn_on
@@ -35,11 +35,11 @@ scene_living_room_off:
         transition: 5
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         transition: 5
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         transition: 5
     - service: light.turn_off
       data:
@@ -60,12 +60,12 @@ scene_living_room_dim:
         rgb_color: [255,127,0]
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         brightness_pct: 1
         transition: 2
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         brightness_pct: 1
         transition: 2
     - service: light.turn_off
@@ -87,12 +87,12 @@ scene_living_room_full:
         color_temp: 300
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         brightness_pct: 100
         transition: 2
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         brightness_pct: 100
         transition: 2
     - service: light.turn_on
@@ -118,11 +118,11 @@ scene_living_room_night:
         rgb_color: [255,0,0]
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         transition: 5
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         transition: 5
     - service: light.turn_off
       data:
@@ -143,12 +143,12 @@ scene_living_room_tv:
         color_temp: 500
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         brightness_pct: 1
         transition: 2
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         brightness_pct: 1
         transition: 2
     - service: light.turn_on
@@ -172,11 +172,11 @@ scene_living_room_tv_only:
         transition: 5
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         transition: 5
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         transition: 5
     - service: light.turn_off
       data:
@@ -199,12 +199,12 @@ scene_living_room_music:
         color_temp: 500
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         brightness_pct: 25
         transition: 2
     - service: light.turn_on
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         brightness_pct: 25
         transition: 2
     - service: light.turn_on
@@ -228,11 +228,11 @@ scene_living_room_music_only:
         transition: 5
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_left
+        entity_id: light.living_room_window_left_lamp
         transition: 5
     - service: light.turn_off
       data:
-        entity_id: light.living_room_window_lamp_right
+        entity_id: light.living_room_window_right_lamp
         transition: 5
     - service: light.turn_off
       data:
