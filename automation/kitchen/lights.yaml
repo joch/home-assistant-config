@@ -1,46 +1,29 @@
-- alias: Kitchen lights dim or off
+- alias: Kitchen lights idle
   trigger:
-    - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'off'
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.kitchen_motion
+      entity_id: input_boolean.lights_needed
       to: 'off'
-      for: '00:05:00'
+    - platform: state
+      entity_id: input_boolean.kitchen_occupied
+      to: 'off'
   condition:
     - condition: state
       entity_id: input_boolean.kitchen_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: binary_sensor.kitchen_motion
-      state: 'off'
-      for: '00:05:00'
   action:
     - service: script.turn_on
       data_template:
         entity_id: script.scene_kitchen_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
-- alias: Kitchen lights normal or night
+- alias: Kitchen lights occupied
   trigger:
     - platform: state
-      entity_id: binary_sensor.kitchen_motion
+      entity_id: input_boolean.kitchen_occupied
       to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.kitchen_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: light.kitchen_ceiling_lamp
-      state: 'off'
   action:
     - service: script.turn_on
       data_template:
-        entity_id: >-
-          {% if is_state('sensor.light_mode', 'off') %}
-          script.scene_kitchen_countertop_only
-          {% else %}
-          script.scene_kitchen_{{ states('sensor.light_mode') }}
-          {% endif %}
+        entity_id: script.scene_kitchen_{{ states('sensor.light_mode') }}

@@ -279,6 +279,9 @@ timer:
   bathroom_lights:
     name: Bathroom Lights
     duration: '00:04:00'
+  kitchen_lights:
+    name: Kitchen Lights
+    duration: '00:04:00'
 
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml

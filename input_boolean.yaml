@@ -109,3 +109,8 @@ bathroom_occupied:
   name: Bathroom Occupied
   icon: mdi:home-account
   initial: off
+
+kitchen_occupied:
+  name: Kitchen Occupied
+  icon: mdi:home-account
+  initial: off
