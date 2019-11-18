@@ -1,4 +1,5 @@
 scene_bedroom_normal:
+  alias: Bedroom Normal
   sequence:
     - service: light.turn_on
       data:
@@ -12,6 +13,7 @@ scene_bedroom_normal:
         transition: 2
 
 scene_bedroom_off:
+  alias: Bedroom Off
   sequence:
     - service: light.turn_off
       data:
@@ -23,6 +25,7 @@ scene_bedroom_off:
         transition: 5
 
 scene_bedroom_dim:
+  alias: Bedroom Dim
   sequence:
     - service: light.turn_off
       data:
@@ -35,6 +38,7 @@ scene_bedroom_dim:
         transition: 5
 
 scene_bedroom_full:
+  alias: Bedroom Full
   sequence:
     - service: light.turn_on
       data:

@@ -1,10 +1,12 @@
 scene_balcony_normal:
+  alias: Balcony Normal
   sequence:
     - service: switch.turn_on
       data:
         entity_id: switch.balcony_switch
 
 scene_balcony_off:
+  alias: Balcony Off
   sequence:
     - service: switch.turn_off
       data:

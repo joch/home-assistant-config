@@ -1,4 +1,5 @@
 scene_bathroom_normal:
+  alias: Bathroom Normal
   sequence:
     - service: light.turn_on
       data:
@@ -12,6 +13,7 @@ scene_bathroom_normal:
         transition: 2
 
 scene_bathroom_dim:
+  alias: Bathroom Dim
   sequence:
     - service: light.turn_off
       data:
@@ -23,6 +25,7 @@ scene_bathroom_dim:
         transition: 5
 
 scene_bathroom_full:
+  alias: Bathroom Full
   sequence:
     - service: light.turn_on
       data:
@@ -36,6 +39,7 @@ scene_bathroom_full:
         transition: 2
 
 scene_bathroom_night:
+  alias: Bathroom Night
   sequence:
     - service: light.turn_on
       data:
@@ -49,6 +53,7 @@ scene_bathroom_night:
         transition: 2
 
 scene_bathroom_off:
+  alias: Bathroom Off
   sequence:
     - service: light.turn_off
       data:

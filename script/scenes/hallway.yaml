@@ -1,4 +1,5 @@
 scene_hallway_normal:
+  alias: Hallway Normal
   sequence:
     - service: light.turn_on
       data_template:
@@ -19,6 +20,7 @@ scene_hallway_normal:
     - service: switch.flux_hallway_update
 
 scene_hallway_dim:
+  alias: Hallway Dim
   sequence:
     - service: light.turn_off
       data:
@@ -29,6 +31,7 @@ scene_hallway_dim:
         entity_id: switch.hallway_switch
 
 scene_hallway_full:
+  alias: Hallway Full
   sequence:
     - service: light.turn_on
       data:
@@ -42,6 +45,7 @@ scene_hallway_full:
     - service: switch.flux_hallway_update
 
 scene_hallway_night:
+  alias: Hallway Night
   sequence:
     - service: light.turn_off
       data:
@@ -57,6 +61,7 @@ scene_hallway_night:
         rgb_color: [255,37,0]
 
 scene_hallway_off:
+  alias: Hallway Off
   sequence:
     - service: light.turn_off
       data:

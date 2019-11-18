@@ -1,4 +1,5 @@
 scene_guest_bedroom_normal:
+  alias: Guest Bedroom Normal
   sequence:
     - service: light.turn_on
       data:
@@ -20,6 +21,7 @@ scene_guest_bedroom_normal:
         entity_id: switch.guest_bedroom_switch
 
 scene_guest_bedroom_off:
+  alias: Guest Bedroom Off
   sequence:
     - service: light.turn_off
       data:
@@ -38,6 +40,7 @@ scene_guest_bedroom_off:
         entity_id: switch.guest_bedroom_switch
 
 scene_guest_bedroom_dim:
+  alias: Guest Bedroom Dim
   sequence:
     - service: light.turn_off
       data:
@@ -56,6 +59,7 @@ scene_guest_bedroom_dim:
         entity_id: switch.guest_bedroom_switch
 
 scene_guest_bedroom_full:
+  alias: Guest Bedroom Full
   sequence:
     - service: light.turn_on
       data:

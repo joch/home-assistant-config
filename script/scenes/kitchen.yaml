@@ -1,4 +1,5 @@
 scene_kitchen_normal:
+  alias: Kitchen Normal
   sequence:
     - service: light.turn_on
       data:
@@ -25,6 +26,7 @@ scene_kitchen_normal:
         entity_id: switch.kitchen_switch
 
 scene_kitchen_countertop_only:
+  alias: Kitchen Countertop Only
   sequence:
     - service: light.turn_on
       data:
@@ -49,6 +51,7 @@ scene_kitchen_countertop_only:
         entity_id: switch.kitchen_switch
 
 scene_kitchen_dim:
+  alias: Kitchen Dim
   sequence:
     - service: light.turn_off
       data:
@@ -73,6 +76,7 @@ scene_kitchen_dim:
         entity_id: switch.kitchen_switch
 
 scene_kitchen_full:
+  alias: Kitchen Full
   sequence:
     - service: light.turn_on
       data:
@@ -99,6 +103,7 @@ scene_kitchen_full:
         entity_id: switch.kitchen_switch
 
 scene_kitchen_evening:
+  alias: Kitchen Evening
   sequence:
     - service: light.turn_on
       data:
@@ -126,6 +131,7 @@ scene_kitchen_evening:
         entity_id: switch.kitchen_switch
 
 scene_kitchen_night:
+  alias: Kitchen Night
   sequence:
     - service: light.turn_off
       data:
@@ -150,6 +156,7 @@ scene_kitchen_night:
         entity_id: switch.kitchen_switch
 
 scene_kitchen_off:
+  alias: Kitchen Off
   sequence:
     - service: light.turn_off
       data:
