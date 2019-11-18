@@ -20,7 +20,7 @@
         {% endif %}
       attribute_templates:
         off_mode: >-
-          {% if is_state('sensor.light_mode', 'off') %}
+          {% if is_state('sensor.light_mode', 'off') or is_state('sensor.light_mode', 'night') %}
           off
           {% else %}
           dim
