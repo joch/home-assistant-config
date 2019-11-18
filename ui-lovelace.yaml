@@ -113,10 +113,10 @@
                                     "entity": "binary_sensor.bedroom_smoke"
                                 },
                                 {
-                                    "entity": "timer.bedroom_lights"
+                                    "entity": "binary_sensor.bedroom_motion"
                                 },
                                 {
-                                    "entity": "binary_sensor.bedroom_motion"
+                                    "entity": "input_boolean.bedroom_occupied"
                                 },
                                 {
                                     "entity": "input_boolean.bedroom_motion_detection_enabled",
@@ -221,10 +221,10 @@
                                     "entity": "binary_sensor.living_room_window_right"
                                 },
                                 {
-                                    "entity": "timer.living_room_lights"
+                                    "entity": "binary_sensor.living_room_motion_sensor"
                                 },
                                 {
-                                    "entity": "binary_sensor.living_room_motion_sensor"
+                                    "entity": "input_boolean.living_room_occupied"
                                 },
                                 {
                                     "entity": "input_boolean.living_room_motion_detection_enabled",
@@ -571,6 +571,9 @@
                                     "entity": "binary_sensor.hallway_motion"
                                 },
                                 {
+                                    "entity": "input_boolean.hallway_occupied"
+                                },
+                                {
                                     "entity": "input_boolean.hallway_motion_detection_enabled",
                                     "tap_action": {
                                         "action": "toggle"
@@ -651,6 +654,9 @@
                                 },
                                 {
                                     "entity": "binary_sensor.kitchen_motion"
+                                },
+                                {
+                                    "entity": "input_boolean.kitchen_occupied"
                                 },
                                 {
                                     "entity": "input_boolean.kitchen_motion_detection_enabled",
@@ -829,11 +835,12 @@
                         },
                         {
                             "entities": [
-                                "switch.flux_indoor_lights",
-                                "input_boolean.light_automation",
-                                "input_boolean.lights_needed",
-                                "input_boolean.lights_night",
-                                "input_boolean.lights_full"
+                                {
+                                    "entity": "input_boolean.light_automation"
+                                },
+                                {
+                                    "entity": "sensor.light_mode"
+                                }
                             ],
                             "show_header_toggle": false,
                             "title": "Lights",
@@ -969,6 +976,9 @@
                                 },
                                 {
                                     "entity": "input_boolean.bathroom_occupied"
+                                },
+                                {
+                                    "entity": "input_boolean.hallway_occupied"
                                 }
                             ],
                             "show_header_toggle": false,
