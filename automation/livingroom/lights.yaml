@@ -22,12 +22,7 @@
   action:
     - service: script.turn_on
       data_template:
-        entity_id: >-
-          {% if is_state('input_boolean.lights_needed', 'on') %}
-          script.scene_living_room_dim
-          {% else %}
-          script.scene_living_room_off
-          {% endif %}
+        entity_id: script.scene_living_room_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
 - alias: Living room lights occupied
   trigger:
@@ -47,15 +42,7 @@
   action:
     - service: script.turn_on
       data_template:
-        entity_id: >-
-          {% if is_state('input_boolean.everyone_asleep', 'on') %}
-          script.scene_living_room_night
-          {% elif is_state('input_boolean.lights_full', 'on') %}
-          script.scene_living_room_full
-          {% else %}
-          script.scene_living_room_normal
-          {% endif %}
-    - service: switch.flux_living_room_update
+        entity_id: script.scene_living_room_{{ states('sensor.light_mode') }}
 
 - alias: Living room TV on
   trigger:
@@ -90,8 +77,6 @@
           script.scene_living_room_music
           {% elif is_state('input_select.harmony', 'Music') and is_state('input_boolean.lights_needed', 'off') %}
           script.scene_living_room_music_only
-          {% elif is_state('input_select.harmony', 'PowerOff') and is_state('input_boolean.lights_needed', 'on') %}
-          script.scene_living_room_dim
           {% else %}
-          script.scene_living_room_off
+          script.scene_living_room_{{ states('sensor.light_mode') }}
           {% endif %}

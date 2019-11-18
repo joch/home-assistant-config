@@ -18,14 +18,6 @@ light_automation:
   name: Light Automation
   icon: mdi:lightbulb-outline
 
-lights_night:
-  name: Lights Night
-  icon: mdi:lightbulb-on
-
-lights_full:
-  name: Lights Full
-  icon: mdi:lightbulb-on-outline
-
 sleep_automation:
   name: Sleep Automation
   icon: mdi:sleep
@@ -33,10 +25,6 @@ sleep_automation:
 perimeter_warning:
   name: Perimeter Warning
   icon: mdi:wall
-
-lights_needed:
-  name: Lights Needed
-  icon: mdi:lightbulb-outline
 
 everyone_asleep:
   name: Everyone asleep

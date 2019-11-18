@@ -16,12 +16,7 @@
   action:
     - service: script.turn_on
       data_template:
-        entity_id: >-
-          {% if is_state('input_boolean.lights_needed', 'on') %}
-          script.scene_hallway_dim
-          {% else %}
-          script.scene_hallway_off
-          {% endif %}
+        entity_id: script.scene_hallway_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
 - alias: Hallway lights occupied
   trigger:
@@ -31,11 +26,4 @@
   action:
     - service: script.turn_on
       data_template:
-        entity_id: >-
-          {% if is_state('input_boolean.everyone_asleep', 'on') %}
-          script.scene_hallway_night
-          {% elif is_state('input_boolean.lights_full', 'on') %}
-          script.scene_hallway_full
-          {% else %}
-          script.scene_hallway_normal
-          {% endif %}
+        entity_id: script.scene_hallway_{{ states('sensor.light_mode') }}
