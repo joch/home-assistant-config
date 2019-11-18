@@ -18,3 +18,10 @@
         {% else %}
         off
         {% endif %}
+      attribute_templates:
+        off_mode: >-
+          {% if is_state('sensor.light_mode', 'off') %}
+          off
+          {% else %}
+          dim
+          {% endif %}
