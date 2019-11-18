@@ -286,7 +286,7 @@ sensor: !include_dir_merge_list sensor
 binary_sensor: !include_dir_merge_list binary_sensor
 group: !include_dir_merge_named group
 scene: !include_dir_merge_list scene
+script: !include_dir_merge_named script
 automation: !include_dir_merge_list automation
 notify: !include_dir_merge_list notify
-script: !include_dir_merge_named script
 #timer: !include timer.yaml

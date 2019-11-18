@@ -39,7 +39,7 @@
     - service: script.turn_on
       data_template:
         entity_id: >-
-          {% if is_state(sensor.light_mode', 'off') %}
+          {% if is_state('sensor.light_mode', 'off') %}
           script.scene_kitchen_countertop_only
           {% else %}
           script.scene_kitchen_{{ states('sensor.light_mode') }}
