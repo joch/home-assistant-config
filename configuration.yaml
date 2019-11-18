@@ -10,6 +10,9 @@ homeassistant:
   customize_domain:
     automation:
       initial_state: 'on'
+  customize_glob:
+    "script.scene_*":
+      can_cancel: false
   auth_providers:
     - type: homeassistant
     - type: legacy_api_password
