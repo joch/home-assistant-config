@@ -24,6 +24,8 @@ scene_kitchen_normal:
     - service: switch.turn_on
       data:
         entity_id: switch.kitchen_switch
+    - delay: '00:00:03'
+    - service: switch.flux_kitchen_update
 
 scene_kitchen_countertop_only:
   alias: Kitchen Countertop Only
@@ -49,6 +51,8 @@ scene_kitchen_countertop_only:
     - service: switch.turn_off
       data:
         entity_id: switch.kitchen_switch
+    - delay: '00:00:03'
+    - service: switch.flux_kitchen_update
 
 scene_kitchen_dim:
   alias: Kitchen Dim
@@ -101,6 +105,8 @@ scene_kitchen_full:
     - service: switch.turn_on
       data:
         entity_id: switch.kitchen_switch
+    - delay: '00:00:03'
+    - service: switch.flux_kitchen_update
 
 scene_kitchen_evening:
   alias: Kitchen Evening

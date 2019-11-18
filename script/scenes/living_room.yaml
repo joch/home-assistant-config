@@ -27,6 +27,7 @@ scene_living_room_normal:
         brightness_pct: 25
         transition: 2
         rgb_color: [255,127,0]
+    - service: switch.flux_living_room_update
 
 scene_living_room_evening:
   alias: Living Room Evening
@@ -58,6 +59,7 @@ scene_living_room_evening:
         brightness_pct: 25
         transition: 2
         rgb_color: [255,127,0]
+    - service: switch.flux_living_room_update
 
 scene_living_room_off:
   alias: Living Room Off
@@ -142,6 +144,7 @@ scene_living_room_full:
         brightness_pct: 100
         transition: 2
         color_temp: 300
+    - service: switch.flux_living_room_update
 
 scene_living_room_night:
   alias: Living Room Night
