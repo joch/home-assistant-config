@@ -24,6 +24,20 @@ scene_bathroom_dim:
         entity_id: light.bathroom_mirror_lamp
         transition: 5
 
+scene_bathroom_evening:
+  alias: Bathroom Evening
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_ceiling_lamp
+        brightness_pct: 75
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_mirror_lamp
+        brightness_pct: 75
+        transition: 2
+
 scene_bathroom_full:
   alias: Bathroom Full
   sequence:

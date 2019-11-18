@@ -28,6 +28,37 @@ scene_living_room_normal:
         transition: 2
         rgb_color: [255,127,0]
 
+scene_living_room_evening:
+  alias: Living Room Evening
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_ceiling_lamp
+        brightness_pct: 50
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_window_left_lamp
+        brightness_pct: 50
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_window_right_lamp
+        brightness_pct: 50
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_globe
+        brightness_pct: 75
+        transition: 2
+        rgb_color: [255,127,0]
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_tv_light
+        brightness_pct: 25
+        transition: 2
+        rgb_color: [255,127,0]
+
 scene_living_room_off:
   alias: Living Room Off
   sequence:
