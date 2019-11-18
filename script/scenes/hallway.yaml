@@ -1,7 +1,7 @@
 scene_hallway_normal:
   sequence:
     - service: light.turn_on
-      data:
+      data_template:
         entity_id: light.hallway_ceiling_lamp
         transition: 2
         brightness_pct: >-
