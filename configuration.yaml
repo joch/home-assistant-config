@@ -13,6 +13,7 @@ homeassistant:
   customize_glob:
     "script.scene_*":
       can_cancel: false
+      icon: mdi:circle-expand
   auth_providers:
     - type: homeassistant
     - type: legacy_api_password
