@@ -110,6 +110,10 @@ living_room_occupied:
   name: Living Room Occupied
   icon: mdi:home-account
 
+hallway_occupied:
+  name: Hallway Occupied
+  icon: mdi:home-account
+
 bathroom_occupied:
   name: Bathroom Occupied
   icon: mdi:home-account

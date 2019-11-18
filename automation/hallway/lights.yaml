@@ -1,174 +1,41 @@
-- alias: Hallway lights on
+- alias: Hallway lights idle
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
-  action:
-    - service: script.turn_on
-      entity_id: script.scene_hallway_dim
-    - delay: '00:00:03'
-    - service: switch.flux_hallway_update
-
-- alias: Hallway lights off
-  trigger:
-    platform: state
-    entity_id: input_boolean.lights_needed
-    to: 'off'
-  action:
-    - service: script.turn_on
-      entity_id: script.scene_hallway_off
-
-- alias: Turn on hallway ceiling lamp when motion is detected in hallway
-  trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion
-      to: 'on'
+      entity_id: input_boolean.lights_needed
+      to: 'off'
+    - platform: state
+      entity_id: input_boolean.hallway_occupied
+      to: 'off'
   condition:
     - condition: state
       entity_id: input_boolean.hallway_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-    - condition: state
-      entity_id: light.hallway_ceiling_lamp
-      state: 'off'
   action:
     - service: script.turn_on
-      entity_id: script.scene_hallway_normal
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.lights_needed', 'on') %}
+          script.scene_hallway_dim
+          {% else %}
+          script.scene_hallway_off
+          {% endif %}
 
-- alias: Turn off hallway ceiling lamp when no motion is detected in hallway
+- alias: Hallway lights occupied
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion
-      to: 'off'
-      for: '00:02:00'
-  condition:
-    - condition: state
-      entity_id: light.hallway_ceiling_lamp
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.hallway_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.hallway_ceiling_lamp
-        transition: 5
-
-- alias: Turn on hallway ceiling lamp when main entrance is opened
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.main_entrance
+      entity_id: input_boolean.hallway_occupied
       to: 'on'
-  condition:
-    - condition: state
-      entity_id: light.hallway_ceiling_lamp
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
   action:
     - service: script.turn_on
-      entity_id: script.scene_hallway_normal
-
-- alias: Turn off hallway ceiling lamp when main entrance is closed if no light interior
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.main_entrance
-      to: 'off'
-      for: '00:03:00'
-  condition:
-    - condition: state
-      entity_id: light.hallway_ceiling_lamp
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.hallway_ceiling_lamp
-        transition: 5
-    - delay: '00:00:10'
-    - service: light.turn_off
-      data:
-        entity_id: light.hallway_ceiling_lamp
-
-- alias: Turn on hallway mood light when one person goes to sleep
-  trigger:
-    - platform: state
-      entity_id: group.sleep_status
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'off'
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.gateway_light_7811dc64de1a
-        brightness_pct: 40
-        rgb_color: [255,37,0]
-
-- alias: Turn off hallway mood light when everyone asleep or awake
-  trigger:
-    - platform: state
-      entity_id: input_boolean.everyone_asleep
-      to: 'on'
-    - platform: state
-      entity_id: group.sleep_status
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: light.gateway_light_7811dc64de1a
-      state: 'on'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.gateway_light_7811dc64de1a
-
-- alias: Turn on hallway mood light when motion is detected in hallway when everyone asleep
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.hallway_motion
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.hallway_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_night
-      state: 'on'
-  action:
-    - service: script.turn_on
-      entity_id: script.scene_hallway_night
-
-- alias: Turn off hallway mood light when no motion is detected in hallway when everyone asleep
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.hallway_motion
-      to: 'off'
-      for: '00:01:00'
-  condition:
-    - condition: state
-      entity_id: light.gateway_light_7811dc64de1a
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.hallway_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.everyone_asleep
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.lights_night
-      state: 'on'
-  action:
-    - service: script.turn_on
-      entity_id: script.scene_hallway_off
+      data_template:
+        entity_id: >-
+          {% if is_state('input_boolean.everyone_asleep', 'on') %}
+          script.scene_hallway_night
+          {% elif is_state('input_boolean.lights_full', 'on') %}
+          script.scene_hallway_full
+          {% else %}
+          script.scene_hallway_normal
+          {% endif %}
