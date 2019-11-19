@@ -1,69 +1,47 @@
-- alias: Guest Bedroom lights on
+- alias: Guest Bedroom lights idle
   trigger:
     - platform: state
       entity_id: input_boolean.lights_needed
       to: 'on'
     - platform: state
-      entity_id: binary_sensor.guest_bedroom_motion
-      to: 'off'
-      for: '00:10:00'
-  condition:
-    - condition: state
       entity_id: input_boolean.lights_needed
-      state: 'on'
+      to: 'off'
+    - platform: state
+      entity_id: input_boolean.guest_bedroom_occupied
+      to: 'off'
+    - platform: state
+      entity_id: input_boolean.guest_asleep
+      to: 'on'
+  condition:
     - condition: state
       entity_id: input_boolean.guest_bedroom_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_asleep
-      state: 'off'
-    - condition: state
-      entity_id: binary_sensor.guest_bedroom_motion
-      state: 'off'
-      for: '00:10:00'
-  action:
-    - service: script.turn_on
-      entity_id: script.scene_guest_bedroom_dim
-
-- alias: Guest Bedroom lights off
-  trigger:
-    - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'off'
-    - platform: state
-      entity_id: input_boolean.guest_asleep
-      to: 'on'
-  action:
-    - service: script.turn_on
-      entity_id: script.scene_guest_bedroom_off
-
-- alias: Guest Bedroom lights normal when occupied
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.guest_bedroom_motion
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.guest_asleep
-      to: 'off'
-  condition:
-    - condition: state
-      entity_id: input_boolean.lights_needed
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_bedroom_motion_detection_enabled
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_asleep
-      state: 'off'
-    - condition: state
-      entity_id: light.guest_bedroom_ceiling_lamp
-      state: 'off'
   action:
     - service: script.turn_on
       data_template:
         entity_id: >-
-          {% if is_state('input_boolean.lights_full', 'on') %}
-          script.scene_guest_bedroom_full
-          {% elif is_state('input_boolean.lights_needed', 'on') %}
-          script.scene_guest_bedroom_normal
+          {% if is_state('input_boolean.guest_asleep', 'on') %}
+          script.scene_guest_bedroom_off
+          {% else %}
+          script.scene_guest_bedroom_{{ state_attr('sensor.light_mode', 'off_mode') }}
           {% endif %}
+
+- alias: Guest Bedroom lights occupied
+  trigger:
+    - platform: state
+      entity_id: input_boolean.guest_bedroom_occupied
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.guest_asleep
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.guest_bedroom_motion_detection_enabled
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_asleep
+      state: 'off'
+  action:
+    - service: script.turn_on
+      data_template:
+        entity_id: script.scene_guest_bedroom_{{ states('sensor.light_mode') }}
