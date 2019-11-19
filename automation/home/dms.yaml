@@ -3,22 +3,22 @@
     - platform: state
       entity_id: group.indoor_motion
       to: 'off'
-      for: '01:00:00'
+      for: '02:00:00'
   condition:
     - condition: state
       entity_id: group.household
       state: 'home'
-      for: '01:00:00'
+      for: '02:00:00'
     - condition: state
       entity_id: input_boolean.kajsa_asleep
       state: 'off'
-      for: '01:00:00'
+      for: '02:00:00'
     - condition: state
       entity_id: input_boolean.johnny_asleep
       state: 'off'
-      for: '01:00:00'
+      for: '02:00:00'
   action:
     - service: notify.all_phones
       data:
         title: "Someone home but no movement"
-        message: "No movement detected for 1 hours! Call and make sure that they are ok."
+        message: "No movement detected for 2 hours! Call and make sure that they are ok."
