@@ -32,7 +32,7 @@ scene_bedroom_evening:
     - service: light.turn_on
       data:
         entity_id: light.bedroom_window_lamp
-        brightness_pct: 25
+        brightness_pct: 5
         transition: 2
     - service: light.turn_on
       data:
