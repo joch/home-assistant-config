@@ -19,12 +19,6 @@
     - condition: state
       entity_id: input_boolean.bedroom_motion_detection_enabled
       state: 'on'
-    - condition: state
-      entity_id: light.johnnys_bedlight
-      state: 'off'
-    - condition: state
-      entity_id: light.kajsas_bedlight
-      state: 'off'
   action:
     - service: script.turn_on
       data_template:
@@ -57,12 +51,6 @@
       state: 'off'
     - condition: state
       entity_id: input_boolean.kajsa_asleep
-      state: 'off'
-    - condition: state
-      entity_id: light.johnnys_bedlight
-      state: 'off'
-    - condition: state
-      entity_id: light.kajsas_bedlight
       state: 'off'
   action:
     - service: script.turn_on
