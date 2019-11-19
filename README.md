@@ -122,4 +122,4 @@ Note that these screenshots are provided in a best-effort manner, and may not re
 ![Hallway](images/7.png)
 ![Kitchen](images/8.png)
 ![Guest Bedroom](images/9.png)
-![Automation](images/10.png)
+![Security](images/10.png)
