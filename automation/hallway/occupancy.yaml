@@ -33,7 +33,7 @@
     - service: timer.start
       data:
         entity_id: timer.hallway_lights
-        duration: '00:04:00'
+        duration: '00:01:00'
 
 - alias: Hallway idle
   trigger:
