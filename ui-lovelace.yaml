@@ -113,9 +113,6 @@
                                     "entity": "binary_sensor.bedroom_smoke"
                                 },
                                 {
-                                    "entity": "binary_sensor.bedroom_motion"
-                                },
-                                {
                                     "entity": "input_boolean.bedroom_occupied"
                                 },
                                 {
@@ -171,10 +168,13 @@
                                     "entity": "script.scene_bedroom_off"
                                 },
                                 {
+                                    "entity": "script.scene_bedroom_dim"
+                                },
+                                {
                                     "entity": "script.scene_bedroom_normal"
                                 },
                                 {
-                                    "entity": "script.scene_bedroom_dim"
+                                    "entity": "script.scene_bedroom_evening"
                                 },
                                 {
                                     "entity": "script.scene_bedroom_full"
@@ -182,22 +182,6 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Scenes",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_boolean.bedroom_wakeup_light"
-                                },
-                                {
-                                    "entity": "binary_sensor.workday"
-                                },
-                                {
-                                    "entity": "binary_sensor.workday_tomorrow"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Wakeup",
                             "type": "entities"
                         },
                         {
@@ -219,9 +203,6 @@
                                 },
                                 {
                                     "entity": "binary_sensor.living_room_window_right"
-                                },
-                                {
-                                    "entity": "binary_sensor.living_room_motion_sensor"
                                 },
                                 {
                                     "entity": "input_boolean.living_room_occupied"
@@ -306,13 +287,19 @@
                                     "entity": "script.scene_living_room_off"
                                 },
                                 {
-                                    "entity": "script.scene_living_room_normal"
-                                },
-                                {
                                     "entity": "script.scene_living_room_dim"
                                 },
                                 {
+                                    "entity": "script.scene_living_room_normal"
+                                },
+                                {
+                                    "entity": "script.scene_living_room_evening"
+                                },
+                                {
                                     "entity": "script.scene_living_room_full"
+                                },
+                                {
+                                    "entity": "script.scene_living_room_night"
                                 },
                                 {
                                     "entity": "script.scene_living_room_tv"
@@ -325,9 +312,6 @@
                                 },
                                 {
                                     "entity": "script.scene_living_room_music_only"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_night"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -475,9 +459,6 @@
                                     "entity": "binary_sensor.bathroom_water"
                                 },
                                 {
-                                    "entity": "binary_sensor.bathroom_motion"
-                                },
-                                {
                                     "entity": "input_boolean.bathroom_occupied"
                                 },
                                 {
@@ -535,10 +516,13 @@
                                     "entity": "script.scene_bathroom_off"
                                 },
                                 {
+                                    "entity": "script.scene_bathroom_dim"
+                                },
+                                {
                                     "entity": "script.scene_bathroom_normal"
                                 },
                                 {
-                                    "entity": "script.scene_bathroom_dim"
+                                    "entity": "script.scene_bathroom_evening"
                                 },
                                 {
                                     "entity": "script.scene_bathroom_full"
@@ -566,9 +550,6 @@
                                 },
                                 {
                                     "entity": "binary_sensor.hallway_smoke"
-                                },
-                                {
-                                    "entity": "binary_sensor.hallway_motion"
                                 },
                                 {
                                     "entity": "input_boolean.hallway_occupied"
@@ -617,10 +598,13 @@
                                     "entity": "script.scene_hallway_off"
                                 },
                                 {
+                                    "entity": "script.scene_hallway_dim"
+                                },
+                                {
                                     "entity": "script.scene_hallway_normal"
                                 },
                                 {
-                                    "entity": "script.scene_hallway_dim"
+                                    "entity": "script.scene_hallway_evening"
                                 },
                                 {
                                     "entity": "script.scene_hallway_full"
@@ -651,9 +635,6 @@
                                 },
                                 {
                                     "entity": "binary_sensor.kitchen_water"
-                                },
-                                {
-                                    "entity": "binary_sensor.kitchen_motion"
                                 },
                                 {
                                     "entity": "input_boolean.kitchen_occupied"
@@ -697,22 +678,22 @@
                                     "entity": "script.scene_kitchen_off"
                                 },
                                 {
+                                    "entity": "script.scene_kitchen_dim"
+                                },
+                                {
                                     "entity": "script.scene_kitchen_normal"
                                 },
                                 {
-                                    "entity": "script.scene_kitchen_dim"
+                                    "entity": "script.scene_kitchen_evening"
+                                },
+                                {
+                                    "entity": "script.scene_kitchen_night"
                                 },
                                 {
                                     "entity": "script.scene_kitchen_full"
                                 },
                                 {
                                     "entity": "script.scene_kitchen_countertop_only"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_night"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_evening"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -740,7 +721,7 @@
                                     "entity": "binary_sensor.bedroom_smoke"
                                 },
                                 {
-                                    "entity": "binary_sensor.guest_bedroom_motion"
+                                    "entity": "input_boolean.guest_bedroom_occupied"
                                 },
                                 {
                                     "entity": "input_boolean.guest_bedroom_motion_detection_enabled",
@@ -801,10 +782,13 @@
                                     "entity": "script.scene_guest_bedroom_off"
                                 },
                                 {
+                                    "entity": "script.scene_guest_bedroom_dim"
+                                },
+                                {
                                     "entity": "script.scene_guest_bedroom_normal"
                                 },
                                 {
-                                    "entity": "script.scene_guest_bedroom_dim"
+                                    "entity": "script.scene_guest_bedroom_evening"
                                 },
                                 {
                                     "entity": "script.scene_guest_bedroom_full"
@@ -835,9 +819,6 @@
                         },
                         {
                             "entities": [
-                                {
-                                    "entity": "input_boolean.light_automation"
-                                },
                                 {
                                     "entity": "sensor.light_mode"
                                 }
