@@ -92,25 +92,30 @@ guest_bedroom_motion_detection_enabled:
 
 bedroom_occupied:
   name: Bedroom Occupied
-  icon: mdi:home-account
+  icon: mdi:walk
   initial: off
 
 living_room_occupied:
   name: Living Room Occupied
-  icon: mdi:home-account
+  icon: mdi:walk
   initial: off
 
 hallway_occupied:
   name: Hallway Occupied
-  icon: mdi:home-account
+  icon: mdi:walk
   initial: off
 
 bathroom_occupied:
   name: Bathroom Occupied
-  icon: mdi:home-account
+  icon: mdi:walk
   initial: off
 
 kitchen_occupied:
   name: Kitchen Occupied
-  icon: mdi:home-account
+  icon: mdi:walk
+  initial: off
+
+guest_bedroom_occupied:
+  name: Guest Bedroom Occupied
+  icon: mdi:walk
   initial: off
