@@ -14,10 +14,6 @@ guest_mode:
   name: Guest Mode
   icon: mdi:human-male-female
 
-light_automation:
-  name: Light Automation
-  icon: mdi:lightbulb-outline
-
 sleep_automation:
   name: Sleep Automation
   icon: mdi:sleep

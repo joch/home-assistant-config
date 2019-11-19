@@ -33,9 +33,4 @@
       entity_id: input_boolean.living_room_motion_detection_enabled
     - service: script.turn_on
       data_template:
-        entity_id: >-
-          {% if is_state('input_boolean.light_automation', 'on') %}
-          script.scene_living_room_dim
-          {% else %}
-          script.scene_living_room_off
-          {% endif %}
+        entity_id: script.scene_living_room_{{ states('sensor.light_mode') }}
