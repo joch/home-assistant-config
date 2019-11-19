@@ -63,7 +63,11 @@
     - service: ifttt.trigger
       data: {"event":"record_living_room"}
     - service: script.turn_on
-      entity_id: script.scene_lights_full
+      - entity_id: script.scene_bedroom_full
+      - entity_id: script.scene_living_room_full
+      - entity_id: script.scene_hallway_full
+      - entity_id: script.scene_bathroom_full
+      - entity_id: script.scene_kitchen_full
     - service: notify.all_phones
       data:
         title: '** Home Alarm Triggered **'
