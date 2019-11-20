@@ -42,8 +42,6 @@ scene_bedroom_evening:
     - service: light.turn_on
       data:
         entity_id: light.kajsas_bedlight
-    - delay: '00:00:03'
-    - service: switch.flux_bedroom_update
 
 scene_bedroom_off:
   alias: Bedroom Off
