@@ -13,7 +13,7 @@
         full
         {% elif is_state('group.sleep_status', 'on') and now().hour >= 19  %}
         evening
-        {% elif states('sensor.living_room_luminance')|float < 40 %}
+        {% elif states('sensor.living_room_luminance')|float <= 40 %}
         normal
         {% else %}
         off
