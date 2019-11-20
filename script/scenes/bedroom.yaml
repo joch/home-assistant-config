@@ -14,12 +14,12 @@ scene_bedroom_normal:
     - service: light.turn_on
       data:
         entity_id: light.johnnys_bedlight
-        brightness_pct: 50
+        brightness_pct: 25
         transition: 2
     - service: light.turn_on
       data:
         entity_id: light.kajsas_bedlight
-        brightness_pct: 50
+        brightness_pct: 25
         transition: 2
     - delay: '00:00:03'
     - service: switch.flux_bedroom_update
