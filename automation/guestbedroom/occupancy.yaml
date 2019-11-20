@@ -18,7 +18,7 @@
     - service: timer.start
       data:
         entity_id: timer.guest_bedroom_lights
-        duration: '00:04:00'
+        duration: '00:10:00'
 
 - alias: Guest Bedroom idle
   trigger:

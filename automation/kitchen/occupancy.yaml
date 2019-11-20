@@ -27,7 +27,7 @@
     - service: timer.start
       data:
         entity_id: timer.kitchen_lights
-        duration: '00:04:00'
+        duration: '00:10:00'
 
 - alias: Kitchen idle
   trigger:

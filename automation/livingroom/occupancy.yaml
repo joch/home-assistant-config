@@ -18,7 +18,7 @@
     - service: timer.start
       data:
         entity_id: timer.living_room_lights
-        duration: '00:04:00'
+        duration: '00:10:00'
 
 - alias: Living room idle
   trigger:
