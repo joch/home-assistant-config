@@ -5,7 +5,7 @@
       to: 'on'
     - platform: numeric_state
       entity_id: sensor.bathroom_humidity
-      below: 45
+      below: 50
   action:
     - service: timer.cancel
       entity_id: timer.bathroom_lights
@@ -46,7 +46,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.bathroom_humidity
-      above: 45
+      above: 50
   condition:
     - condition: state
       entity_id: timer.bathroom_lights
