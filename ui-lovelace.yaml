@@ -32,20 +32,10 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "input_boolean.johnny_asleep"
-                                },
-                                {
-                                    "entity": "input_boolean.kajsa_asleep"
-                                },
-                                {
-                                    "entity": "input_boolean.guest_asleep"
-                                },
-                                {
-                                    "entity": "input_boolean.everyone_asleep"
+                                    "entity": "sensor.light_mode"
                                 }
                             ],
-                            "show_header_toggle": true,
-                            "title": "Sleep Status",
+                            "show_header_toggle": false,
                             "type": "entities"
                         },
                         {
@@ -58,9 +48,26 @@
                             "type": "entities"
                         },
                         {
-                            "entity": "weather.smhi_home",
-                            "name": "Weather",
-                            "type": "weather-forecast"
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.sleep_automation"
+                                },
+                                {
+                                    "entity": "input_boolean.johnny_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.kajsa_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.guest_asleep"
+                                },
+                                {
+                                    "entity": "input_boolean.everyone_asleep"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Sleep Status",
+                            "type": "entities"
                         },
                         {
                             "entities": [
@@ -79,22 +86,9 @@
                             "type": "entities"
                         },
                         {
-                            "entities": [
-                                "sensor.bedroom_temperature",
-                                "sensor.bedroom_humidity",
-                                "sensor.living_room_motion_sensor_temperature",
-                                "sensor.closet_temperature",
-                                "sensor.closet_humidity",
-                                "sensor.closet_pressure",
-                                "sensor.bathroom_temperature",
-                                "sensor.bathroom_humidity",
-                                "sensor.guest_bedroom_temperature",
-                                "sensor.guest_bedroom_humidity",
-                                "sensor.guest_bedroom_pressure"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Indoor Environment",
-                            "type": "entities"
+                            "entity": "weather.smhi_home",
+                            "name": "Weather",
+                            "type": "weather-forecast"
                         }
                     ],
                     "icon": "mdi:home",
@@ -146,6 +140,31 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "script.scene_bedroom_off"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_dim"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_normal"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_evening"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_full"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_bright"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Scenes",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
                                     "entity": "light.bedroom_ceiling_lamp"
                                 },
                                 {
@@ -165,28 +184,12 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "script.scene_bedroom_off"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_dim"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_normal"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_evening"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_full"
+                                    "entity": "media_player.bedroom"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Scenes",
+                            "title": "Media",
                             "type": "entities"
-                        },
-                        {
-                            "entity": "media_player.bedroom",
-                            "type": "media-control"
                         }
                     ],
                     "icon": "mdi:hotel",
@@ -259,7 +262,15 @@
                         },
                         {
                             "entities": [
-                                "vacuum.greta"
+                                {
+                                    "entity": "vacuum.greta"
+                                },
+                                {
+                                    "entity": "input_boolean.vacuum_automation"
+                                },
+                                {
+                                    "entity": "input_boolean.vacuum_return_on_disarm"
+                                }
                             ],
                             "show_header_toggle": false,
                             "title": "Vacuum",
@@ -269,9 +280,6 @@
                             "entities": [
                                 {
                                     "entity": "input_select.harmony"
-                                },
-                                {
-                                    "entity": "sensor.plex_joch"
                                 },
                                 {
                                     "entity": "media_player.living_room"
@@ -296,10 +304,13 @@
                                     "entity": "script.scene_living_room_evening"
                                 },
                                 {
+                                    "entity": "script.scene_living_room_night"
+                                },
+                                {
                                     "entity": "script.scene_living_room_full"
                                 },
                                 {
-                                    "entity": "script.scene_living_room_night"
+                                    "entity": "script.scene_living_room_bright"
                                 },
                                 {
                                     "entity": "script.scene_living_room_tv"
@@ -349,6 +360,9 @@
                                 },
                                 {
                                     "entity": "script.scene_balcony_normal"
+                                },
+                                {
+                                    "entity": "script.scene_balcony_bright"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -367,6 +381,9 @@
                             "entities": [
                                 {
                                     "entity": "switch.closet_outlet"
+                                },
+                                {
+                                    "entity": "input_boolean.closet_ventilation_fan_automation"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -432,9 +449,6 @@
                                     "entity": "sensor.ups_transfer_low"
                                 },
                                 {
-                                    "entity": "sensor.ups_transfer_to_battery"
-                                },
-                                {
                                     "entity": "sensor.ups_transfer_from_battery"
                                 }
                             ],
@@ -471,14 +485,6 @@
                             "show_name": false,
                             "title": "Bathroom",
                             "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.bathroom_occupied"
-                                }
-                            ],
-                            "type": "entities"
                         },
                         {
                             "cards": [
@@ -525,10 +531,13 @@
                                     "entity": "script.scene_bathroom_evening"
                                 },
                                 {
+                                    "entity": "script.scene_bathroom_night"
+                                },
+                                {
                                     "entity": "script.scene_bathroom_full"
                                 },
                                 {
-                                    "entity": "script.scene_bathroom_night"
+                                    "entity": "script.scene_bathroom_bright"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -559,6 +568,9 @@
                                     "tap_action": {
                                         "action": "toggle"
                                     }
+                                },
+                                {
+                                    "entity": "input_boolean.perimeter_warning"
                                 }
                             ],
                             "show_name": false,
@@ -607,10 +619,13 @@
                                     "entity": "script.scene_hallway_evening"
                                 },
                                 {
+                                    "entity": "script.scene_hallway_night"
+                                },
+                                {
                                     "entity": "script.scene_hallway_full"
                                 },
                                 {
-                                    "entity": "script.scene_hallway_night"
+                                    "entity": "script.scene_hallway_bright"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -693,7 +708,7 @@
                                     "entity": "script.scene_kitchen_full"
                                 },
                                 {
-                                    "entity": "script.scene_kitchen_countertop_only"
+                                    "entity": "script.scene_kitchen_bright"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -701,8 +716,14 @@
                             "type": "entities"
                         },
                         {
-                            "entity": "media_player.kitchen",
-                            "type": "media-control"
+                            "entities": [
+                                {
+                                    "entity": "media_player.kitchen"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Media",
+                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:stove",
@@ -792,6 +813,9 @@
                                 },
                                 {
                                     "entity": "script.scene_guest_bedroom_full"
+                                },
+                                {
+                                    "entity": "script.scene_guest_bedroom_bright"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -802,69 +826,6 @@
                     "icon": "mdi:human-male-female",
                     "path": "view_guest_bedroom",
                     "title": "Guest Bedroom"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                "input_boolean.alarm_mode",
-                                "input_boolean.alarm_night_mode",
-                                "input_boolean.vacation_mode",
-                                "input_boolean.guest_mode"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Security",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.light_mode"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_boolean.sleep_automation"
-                                },
-                                {
-                                    "entity": "input_boolean.perimeter_warning"
-                                },
-                                {
-                                    "entity": "input_boolean.closet_ventilation_fan_automation"
-                                },
-                                {
-                                    "entity": "input_boolean.vacuum_automation"
-                                },
-                                {
-                                    "entity": "input_boolean.vacuum_return_on_disarm"
-                                }
-                            ],
-                            "title": "Automation",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "input_boolean.bedroom_motion_detection_enabled",
-                                "input_boolean.living_room_motion_detection_enabled",
-                                "input_boolean.bathroom_motion_detection_enabled",
-                                "input_boolean.hallway_motion_detection_enabled",
-                                "input_boolean.kitchen_motion_detection_enabled",
-                                "input_boolean.guest_bedroom_motion_detection_enabled"
-                            ],
-                            "show_header_toggle": true,
-                            "title": "Motion Detection",
-                            "type": "entities"
-                        }
-                    ],
-                    "icon": "mdi:robot",
-                    "path": "view_automation",
-                    "title": "Automation"
                 },
                 {
                     "badges": [],
@@ -884,15 +845,6 @@
                             "type": "custom:aarlo-glance"
                         },
                         {
-                            "entities": [
-                                "binary_sensor.bathroom_water",
-                                "binary_sensor.kitchen_water"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Water",
-                            "type": "entities"
-                        },
-                        {
                             "door": "binary_sensor.balcony_entrance",
                             "entity": "camera.aarlo_living_room",
                             "name": "Living Room",
@@ -905,6 +857,26 @@
                                 "captured_today"
                             ],
                             "type": "custom:aarlo-glance"
+                        },
+                        {
+                            "entities": [
+                                "input_boolean.alarm_mode",
+                                "input_boolean.alarm_night_mode",
+                                "input_boolean.vacation_mode",
+                                "input_boolean.guest_mode"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Security",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.bathroom_water",
+                                "binary_sensor.kitchen_water"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Water",
+                            "type": "entities"
                         },
                         {
                             "entities": [
@@ -960,6 +932,12 @@
                                 },
                                 {
                                     "entity": "input_boolean.hallway_occupied"
+                                },
+                                {
+                                    "entity": "input_boolean.kitchen_occupied"
+                                },
+                                {
+                                    "entity": "input_boolean.guest_bedroom_occupied"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -998,6 +976,37 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Perimeter",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.bedroom_temperature",
+                                "sensor.bedroom_humidity",
+                                "sensor.living_room_motion_sensor_temperature",
+                                "sensor.closet_temperature",
+                                "sensor.closet_humidity",
+                                "sensor.closet_pressure",
+                                "sensor.bathroom_temperature",
+                                "sensor.bathroom_humidity",
+                                "sensor.guest_bedroom_temperature",
+                                "sensor.guest_bedroom_humidity",
+                                "sensor.guest_bedroom_pressure"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Indoor Environment",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_boolean.bedroom_motion_detection_enabled",
+                                "input_boolean.living_room_motion_detection_enabled",
+                                "input_boolean.bathroom_motion_detection_enabled",
+                                "input_boolean.hallway_motion_detection_enabled",
+                                "input_boolean.kitchen_motion_detection_enabled",
+                                "input_boolean.guest_bedroom_motion_detection_enabled"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Motion Detection",
                             "type": "entities"
                         }
                     ],

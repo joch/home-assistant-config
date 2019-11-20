@@ -287,3 +287,10 @@ scene_living_room_music_only:
         transition: 2
         brightness_pct: 50
         rgb_color: [255,127,0]
+
+scene_living_room_bright:
+  alias: Living Room Bright
+  sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_living_room_off

@@ -77,3 +77,10 @@ scene_bathroom_off:
       data:
         entity_id: light.bathroom_mirror_lamp
         transition: 5
+
+scene_bathroom_bright:
+  alias: Bathroom Bright
+  sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_bathroom_normal

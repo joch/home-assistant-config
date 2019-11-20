@@ -109,3 +109,27 @@ scene_bedroom_full:
         transition: 2
     - delay: '00:00:03'
     - service: switch.flux_bedroom_update
+
+scene_bedroom_bright:
+  alias: Bedroom Bright
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_ceiling_lamp
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_window_lamp
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: light.johnnys_bedlight
+        brightness_pct: 25
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kajsas_bedlight
+        brightness_pct: 25
+        transition: 2
+    - delay: '00:00:03'
+    - service: switch.flux_bedroom_update

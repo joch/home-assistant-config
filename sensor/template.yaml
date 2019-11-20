@@ -16,11 +16,11 @@
         {% elif states('sensor.living_room_luminance')|float <= 40 %}
         normal
         {% else %}
-        off
+        bright
         {% endif %}
       attribute_templates:
         off_mode: >-
-          {% if is_state('sensor.light_mode', 'off') or is_state('sensor.light_mode', 'night') %}
+          {% if is_state('sensor.light_mode', 'off') or is_state('sensor.light_mode', 'night') or is_state('sensor.light_mode', 'bright') %}
           off
           {% else %}
           dim

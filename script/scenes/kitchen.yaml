@@ -27,8 +27,8 @@ scene_kitchen_normal:
     - delay: '00:00:03'
     - service: switch.flux_kitchen_update
 
-scene_kitchen_countertop_only:
-  alias: Kitchen Countertop Only
+scene_kitchen_bright:
+  alias: Kitchen Bright
   sequence:
     - service: light.turn_on
       data:
