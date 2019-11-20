@@ -1,17 +1,20 @@
 - alias: Balcony lights on
   trigger:
     - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'on'
+      entity_id: sensor.light_mode
+      to: 'normal'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'evening'
   action:
     - service: script.turn_on
       entity_id: script.scene_balcony_normal
 
 - alias: Balcony lights off
   trigger:
-    platform: state
-    entity_id: input_boolean.lights_needed
-    to: 'off'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'off'
   action:
     - service: script.turn_on
       entity_id: script.scene_balcony_off

@@ -1,11 +1,14 @@
 - alias: Living room lights idle
   trigger:
     - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.lights_needed
+      entity_id: sensor.light_mode
       to: 'off'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'normal'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'night'
     - platform: state
       entity_id: input_boolean.living_room_occupied
       to: 'off'
@@ -55,9 +58,6 @@
     - platform: state
       entity_id: input_select.harmony
       to: 'Music'
-    - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'on'
   condition:
     - condition: state
       entity_id: input_boolean.living_room_motion_detection_enabled
@@ -69,13 +69,17 @@
     - service: script.turn_on
       data_template:
         entity_id: >-
-          {% if (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Movies')) and is_state('input_boolean.lights_needed', 'on') %}
+          {% if (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Movies')) and is_state('sensor.light_mode', 'normal') %}
           script.scene_living_room_tv
-          {% elif (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Movies')) and is_state('input_boolean.lights_needed', 'off') %}
+          {% elif (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Movies')) and is_state('sensor.light_mode', 'evening') %}
+          script.scene_living_room_tv
+          {% elif (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Movies')) and is_state('sensor.light_mode', 'off') %}
           script.scene_living_room_tv_only
-          {% elif is_state('input_select.harmony', 'Music') and is_state('input_boolean.lights_needed', 'on') %}
+          {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'normal') %}
           script.scene_living_room_music
-          {% elif is_state('input_select.harmony', 'Music') and is_state('input_boolean.lights_needed', 'off') %}
+          {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'evening') %}
+          script.scene_living_room_music
+          {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'off') %}
           script.scene_living_room_music_only
           {% else %}
           script.scene_living_room_{{ states('sensor.light_mode') }}

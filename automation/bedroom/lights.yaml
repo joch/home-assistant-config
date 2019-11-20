@@ -1,11 +1,14 @@
 - alias: Bedroom lights idle
   trigger:
     - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.lights_needed
+      entity_id: sensor.light_mode
       to: 'off'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'normal'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'night'
     - platform: state
       entity_id: input_boolean.bedroom_occupied
       to: 'off'

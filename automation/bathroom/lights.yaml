@@ -1,11 +1,14 @@
 - alias: Bathroom lights idle
   trigger:
     - platform: state
-      entity_id: input_boolean.lights_needed
-      to: 'on'
-    - platform: state
-      entity_id: input_boolean.lights_needed
+      entity_id: sensor.light_mode
       to: 'off'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'normal'
+    - platform: state
+      entity_id: sensor.light_mode
+      to: 'night'
     - platform: state
       entity_id: input_boolean.bathroom_occupied
       to: 'off'
@@ -13,6 +16,9 @@
     - condition: state
       entity_id: input_boolean.bathroom_motion_detection_enabled
       state: 'on'
+    - condition: state
+      entity_id: input_boolean.bathroom_occupied
+      state: 'off'
   action:
     - service: script.turn_on
       data_template:
@@ -23,6 +29,10 @@
     - platform: state
       entity_id: input_boolean.bathroom_occupied
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bathroom_motion_detection_enabled
+      state: 'on'
   action:
     - service: script.turn_on
       data_template:
