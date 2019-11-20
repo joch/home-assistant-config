@@ -21,6 +21,8 @@ scene_bedroom_normal:
         entity_id: light.kajsas_bedlight
         brightness_pct: 50
         transition: 2
+    - delay: '00:00:03'
+    - service: switch.flux_bedroom_update
 
 scene_bedroom_evening:
   alias: Bedroom Evening
@@ -40,6 +42,8 @@ scene_bedroom_evening:
     - service: light.turn_on
       data:
         entity_id: light.kajsas_bedlight
+    - delay: '00:00:03'
+    - service: switch.flux_bedroom_update
 
 scene_bedroom_off:
   alias: Bedroom Off
@@ -105,3 +109,5 @@ scene_bedroom_full:
         entity_id: light.kajsas_bedlight
         brightness_pct: 100
         transition: 2
+    - delay: '00:00:03'
+    - service: switch.flux_bedroom_update
