@@ -6,6 +6,15 @@
     - platform: numeric_state
       entity_id: sensor.bathroom_humidity
       below: 50
+  condition:
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: timer.bathroom_lights
+          state: 'idle'
+        - condition: state
+          entity_id: timer.bathroom_lights
+          state: 'active'
   action:
     - service: timer.cancel
       entity_id: timer.bathroom_lights
