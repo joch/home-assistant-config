@@ -24,7 +24,7 @@ homeassistant:
 # updater:
 
 frontend:
-  themes: !include themes.yaml
+  themes: !include_dir_merge_named themes
 
 config:
 
@@ -192,6 +192,7 @@ switch:
     start_colortemp: 4000
     sunset_colortemp: 3000
     stop_colortemp: 1900
+    disable_brightness_adjust: True
     mode: mired
     transition: 2
 
@@ -226,6 +227,7 @@ deconz:
 
 hacs:
   token: !secret hacs_token
+  theme: True
 
 xiaomi_aqara:
   discovery_retry: 5
