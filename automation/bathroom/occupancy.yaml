@@ -3,9 +3,6 @@
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'on'
-    - platform: numeric_state
-      entity_id: sensor.bathroom_humidity
-      below: 50
   condition:
     - condition: or
       conditions:
@@ -62,4 +59,20 @@
       state: 'active'
   action:
     - service: timer.pause
+      entity_id: timer.bathroom_lights
+
+- alias: Bathroom resume timer on low moisture
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'on'
+    - platform: numeric_state
+      entity_id: sensor.bathroom_humidity
+      below: 50
+  condition:
+    - condition: state
+      entity_id: timer.bathroom_lights
+      state: 'paused'
+  action:
+    - service: timer.start
       entity_id: timer.bathroom_lights
