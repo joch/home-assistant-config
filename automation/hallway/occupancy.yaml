@@ -17,9 +17,6 @@
     - platform: state
       entity_id: binary_sensor.hallway_motion
       to: 'off'
-    - platform: state
-      entity_id: binary_sensor.main_entrance
-      to: 'off'
   condition:
     - condition: or
       conditions:
