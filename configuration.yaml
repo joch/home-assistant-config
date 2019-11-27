@@ -224,7 +224,6 @@ yeelight:
 aarlo:
   username: !secret arlo_username
   password: !secret arlo_password
-  mode_api: v1
   refresh_devices_every: 2
 
 deconz:
@@ -318,6 +317,6 @@ binary_sensor: !include_dir_merge_list binary_sensor
 group: !include_dir_merge_named group
 scene: !include_dir_merge_list scene
 script: !include_dir_merge_named script
-automation: !include_dir_merge_list automation
 notify: !include_dir_merge_list notify
-#timer: !include timer.yaml
+automation: !include automations.yaml
+automation old: !include_dir_merge_list automation
