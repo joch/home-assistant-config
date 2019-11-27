@@ -1,0 +1,37 @@
+scene_home_full:
+  alias: Home Full
+  sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_bedroom_full
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_living_room_full
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_bathroom_full
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_hallway_full
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_kitchen_full
+
+scene_home_off:
+  alias: Home Off
+  sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_bedroom_off
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_living_room_off
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_bathroom_off
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_hallway_off
+    - service: script.turn_on
+      data:
+        entity_id: script.scene_kitchen_off
