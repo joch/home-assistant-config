@@ -11,8 +11,6 @@
         message: "The alarm has been set to armed_away"
     - service: alarm_control_panel.alarm_arm_home
       entity_id: alarm_control_panel.aarlo_home
-    # - service: ifttt.trigger
-    #   data: {"event":"alarm_arm"}
     - service: light.turn_on
       data:
         entity_id: light.gateway_light_7811dc64de1a
@@ -40,8 +38,6 @@
         message: "The alarm has been set to disarmed"
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.aarlo_home
-    # - service: ifttt.trigger
-    #   data: {"event":"alarm_disarm"}
     - service: light.turn_on
       data:
         entity_id: light.gateway_light_7811dc64de1a
@@ -58,12 +54,16 @@
       entity_id: alarm_control_panel.alarm
       to: 'triggered'
   action:
-    - service: ifttt.trigger
-      data: {"event":"record_hallway"}
-    - service: ifttt.trigger
-      data: {"event":"record_living_room"}
     - service: script.turn_on
       entity_id: script.scene_lights_full
+    - service: camera.aarlo_start_recording
+      data:
+        entity_id: camera.aarlo_hallway
+        duration: 60
+    - service: camera.aarlo_start_recording
+      data:
+        entity_id: camera.aarlo_living_room
+        duration: 60
     - service: notify.all_phones
       data:
         title: '** Home Alarm Triggered **'

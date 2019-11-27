@@ -8,10 +8,14 @@
       entity_id: input_boolean.perimeter_warning
       state: 'on'
   action:
-    - service: ifttt.trigger
-      data: {"event":"record_hallway"}
-    - service: ifttt.trigger
-      data: {"event":"record_living_room"}
+    - service: camera.aarlo_start_recording
+      data:
+        entity_id: camera.aarlo_hallway
+        duration: 60
+    - service: camera.aarlo_start_recording
+      data:
+        entity_id: camera.aarlo_living_room
+        duration: 60
 
 - alias: Warn when leaving if windows are open
   trigger:
