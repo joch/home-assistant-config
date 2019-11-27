@@ -128,6 +128,12 @@ emulated_hue:
     - light
 
 switch:
+  - platform: aarlo
+    siren: True
+    all_sirens: False
+    snapshot: True
+    siren_volume: 1
+    siren_duration: 1
   - platform: flux
     lights:
       - light.bedroom_ceiling_lamp
@@ -219,6 +225,7 @@ aarlo:
   username: !secret arlo_username
   password: !secret arlo_password
   mode_api: v1
+  refresh_devices_every: 2
 
 deconz:
   host: !secret deconz_host
@@ -281,6 +288,8 @@ alarm_control_panel:
   - platform: aarlo
     home_mode_name: armed
     away_mode_name: vacation
+    trigger_time: 1
+    alarm_volume: 1
 
 timer:
   bedroom_lights:
