@@ -9,6 +9,10 @@
                 {
                     "type": "module",
                     "url": "/community_plugin/lovelace-hass-aarlo/hass-aarlo.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/compact-custom-header/compact-custom-header.js"
                 }
             ],
             "title": "Honn\u00f6rsgatan",
@@ -18,55 +22,37 @@
                     "cards": [
                         {
                             "entities": [
+                                "device_tracker.johnnysiphone",
+                                "device_tracker.kajsasiphone"
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
                                 {
                                     "entity": "alarm_control_panel.alarm"
                                 },
                                 {
                                     "entity": "alarm_control_panel.aarlo_home"
+                                },
+                                {
+                                    "entity": "group.alarm_modes"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Alarm",
                             "type": "entities"
                         },
                         {
                             "entities": [
                                 {
                                     "entity": "sensor.light_mode"
+                                },
+                                {
+                                    "entity": "group.motion_detection"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "device_tracker.johnnysiphone",
-                                "device_tracker.kajsasiphone"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Household",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_boolean.sleep_automation"
-                                },
-                                {
-                                    "entity": "input_boolean.johnny_asleep"
-                                },
-                                {
-                                    "entity": "input_boolean.kajsa_asleep"
-                                },
-                                {
-                                    "entity": "input_boolean.guest_asleep"
-                                },
-                                {
-                                    "entity": "input_boolean.everyone_asleep"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Sleep Status",
                             "type": "entities"
                         },
                         {
@@ -82,7 +68,18 @@
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Music",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.sleep_automation"
+                                },
+                                {
+                                    "entity": "group.sleep_status"
+                                }
+                            ],
+                            "show_header_toggle": false,
                             "type": "entities"
                         },
                         {
@@ -140,26 +137,11 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "script.scene_bedroom_off"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_dim"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_normal"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_evening"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_full"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_bright"
+                                    "entity": "media_player.bedroom"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Scenes",
+                            "title": "Media",
                             "type": "entities"
                         },
                         {
@@ -184,11 +166,26 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "media_player.bedroom"
+                                    "entity": "script.scene_bedroom_off"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_dim"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_normal"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_evening"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_full"
+                                },
+                                {
+                                    "entity": "script.scene_bedroom_bright"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Media",
+                            "title": "Scenes",
                             "type": "entities"
                         }
                     ],
@@ -241,23 +238,14 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.living_room_ceiling_lamp"
+                                    "entity": "input_select.harmony"
                                 },
                                 {
-                                    "entity": "light.living_room_window_left_lamp"
-                                },
-                                {
-                                    "entity": "light.living_room_window_right_lamp"
-                                },
-                                {
-                                    "entity": "light.living_room_globe"
-                                },
-                                {
-                                    "entity": "light.living_room_tv_light"
+                                    "entity": "media_player.living_room"
                                 }
                             ],
-                            "show_header_toggle": true,
-                            "title": "Lights",
+                            "show_header_toggle": false,
+                            "title": "Media",
                             "type": "entities"
                         },
                         {
@@ -279,14 +267,23 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "input_select.harmony"
+                                    "entity": "light.living_room_ceiling_lamp"
                                 },
                                 {
-                                    "entity": "media_player.living_room"
+                                    "entity": "light.living_room_window_left_lamp"
+                                },
+                                {
+                                    "entity": "light.living_room_window_right_lamp"
+                                },
+                                {
+                                    "entity": "light.living_room_globe"
+                                },
+                                {
+                                    "entity": "light.living_room_tv_light"
                                 }
                             ],
-                            "show_header_toggle": false,
-                            "title": "Media",
+                            "show_header_toggle": true,
+                            "title": "Lights",
                             "type": "entities"
                         },
                         {
@@ -668,6 +665,16 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "media_player.kitchen"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Media",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
                                     "entity": "light.kitchen_ceiling_lamp"
                                 },
                                 {
@@ -713,16 +720,6 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Scenes",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "media_player.kitchen"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Media",
                             "type": "entities"
                         }
                     ],
@@ -860,17 +857,6 @@
                         },
                         {
                             "entities": [
-                                "input_boolean.alarm_mode",
-                                "input_boolean.alarm_night_mode",
-                                "input_boolean.vacation_mode",
-                                "input_boolean.guest_mode"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Security",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
                                 "binary_sensor.bathroom_water",
                                 "binary_sensor.kitchen_water"
                             ],
@@ -994,19 +980,6 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Indoor Environment",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "input_boolean.bedroom_motion_detection_enabled",
-                                "input_boolean.living_room_motion_detection_enabled",
-                                "input_boolean.bathroom_motion_detection_enabled",
-                                "input_boolean.hallway_motion_detection_enabled",
-                                "input_boolean.kitchen_motion_detection_enabled",
-                                "input_boolean.guest_bedroom_motion_detection_enabled"
-                            ],
-                            "show_header_toggle": true,
-                            "title": "Motion Detection",
                             "type": "entities"
                         }
                     ],
