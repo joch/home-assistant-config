@@ -44,6 +44,12 @@ system_health:
 
 mobile_app:
 
+person:
+
+cloud:
+
+map:
+
 http:
   server_port: !secret http_server_port
   ip_ban_enabled: true
