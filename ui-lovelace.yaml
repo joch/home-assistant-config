@@ -21,12 +21,27 @@
                     "badges": [],
                     "cards": [
                         {
+                            "card": {
+                                "show_name": false,
+                                "show_state": false,
+                                "type": "glance"
+                            },
                             "entities": [
                                 "device_tracker.johnnysiphone",
-                                "device_tracker.kajsasiphone"
+                                "device_tracker.kajsasiphone",
+                                "device_tracker.rebeckasiphone",
+                                "device_tracker.karinsiphone",
+                                "device_tracker.tildasiphone",
+                                "device_tracker.lukasiphone6",
+                                "device_tracker.frankiii",
+                                "device_tracker.paulsiphone",
+                                "device_tracker.mohnisiphone",
+                                "device_tracker.dalwindasiphone"
                             ],
-                            "show_header_toggle": false,
-                            "type": "entities"
+                            "state_filter": [
+                                "home"
+                            ],
+                            "type": "entity-filter"
                         },
                         {
                             "entities": [
@@ -828,32 +843,14 @@
                     "badges": [],
                     "cards": [
                         {
-                            "door": "binary_sensor.main_entrance",
-                            "entity": "camera.aarlo_hallway",
-                            "name": "Hallway",
-                            "show": [
-                                "motion",
-                                "sound",
-                                "snapshot",
-                                "battery_level",
-                                "signal_strength",
-                                "captured_today"
+                            "entities": [
+                                "binary_sensor.bedroom_smoke",
+                                "binary_sensor.hallway_smoke",
+                                "binary_sensor.guest_bedroom_smoke"
                             ],
-                            "type": "custom:aarlo-glance"
-                        },
-                        {
-                            "door": "binary_sensor.balcony_entrance",
-                            "entity": "camera.aarlo_living_room",
-                            "name": "Living Room",
-                            "show": [
-                                "motion",
-                                "sound",
-                                "snapshot",
-                                "battery_level",
-                                "signal_strength",
-                                "captured_today"
-                            ],
-                            "type": "custom:aarlo-glance"
+                            "show_header_toggle": false,
+                            "title": "Smoke",
+                            "type": "entities"
                         },
                         {
                             "entities": [
@@ -862,47 +859,6 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Water",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.bedroom_motion",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "binary_sensor.living_room_motion_sensor",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "binary_sensor.bathroom_motion",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "binary_sensor.hallway_motion",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "binary_sensor.kitchen_motion",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "binary_sensor.guest_bedroom_motion",
-                                    "secondary_info": "last-changed"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Motion",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "binary_sensor.bedroom_smoke",
-                                "binary_sensor.hallway_smoke",
-                                "binary_sensor.guest_bedroom_smoke"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Smoke",
                             "type": "entities"
                         },
                         {
@@ -928,6 +884,24 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Occupancy",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.bedroom_temperature",
+                                "sensor.bedroom_humidity",
+                                "sensor.living_room_motion_sensor_temperature",
+                                "sensor.closet_temperature",
+                                "sensor.closet_humidity",
+                                "sensor.closet_pressure",
+                                "sensor.bathroom_temperature",
+                                "sensor.bathroom_humidity",
+                                "sensor.guest_bedroom_temperature",
+                                "sensor.guest_bedroom_humidity",
+                                "sensor.guest_bedroom_pressure"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Indoor Environment",
                             "type": "entities"
                         },
                         {
@@ -963,29 +937,51 @@
                             "show_header_toggle": false,
                             "title": "Perimeter",
                             "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "sensor.bedroom_temperature",
-                                "sensor.bedroom_humidity",
-                                "sensor.living_room_motion_sensor_temperature",
-                                "sensor.closet_temperature",
-                                "sensor.closet_humidity",
-                                "sensor.closet_pressure",
-                                "sensor.bathroom_temperature",
-                                "sensor.bathroom_humidity",
-                                "sensor.guest_bedroom_temperature",
-                                "sensor.guest_bedroom_humidity",
-                                "sensor.guest_bedroom_pressure"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Indoor Environment",
-                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:shield",
                     "panel": false,
                     "title": "Security"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "door": "binary_sensor.main_entrance",
+                                    "entity": "camera.aarlo_hallway",
+                                    "name": "Hallway",
+                                    "show": [
+                                        "motion",
+                                        "sound",
+                                        "snapshot",
+                                        "battery_level",
+                                        "signal_strength",
+                                        "captured_today"
+                                    ],
+                                    "type": "custom:aarlo-glance"
+                                },
+                                {
+                                    "door": "binary_sensor.balcony_entrance",
+                                    "entity": "camera.aarlo_living_room",
+                                    "name": "Living Room",
+                                    "show": [
+                                        "motion",
+                                        "sound",
+                                        "snapshot",
+                                        "battery_level",
+                                        "signal_strength",
+                                        "captured_today"
+                                    ],
+                                    "type": "custom:aarlo-glance"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        }
+                    ],
+                    "icon": "mdi:cctv",
+                    "panel": true
                 }
             ]
         }
