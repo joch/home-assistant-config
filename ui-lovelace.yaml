@@ -65,6 +65,9 @@
                                 },
                                 {
                                     "entity": "group.motion_detection"
+                                },
+                                {
+                                    "entity": "input_select.scene"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -177,31 +180,6 @@
                             "show_header_toggle": true,
                             "title": "Lights",
                             "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.scene_bedroom_off"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_dim"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_normal"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_evening"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_full"
-                                },
-                                {
-                                    "entity": "script.scene_bedroom_bright"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:hotel",
@@ -300,46 +278,6 @@
                             "show_header_toggle": true,
                             "title": "Lights",
                             "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.scene_living_room_off"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_dim"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_normal"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_evening"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_night"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_full"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_bright"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_tv"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_tv_only"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_music"
-                                },
-                                {
-                                    "entity": "script.scene_living_room_music_only"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:sofa",
@@ -364,22 +302,6 @@
                             "show_name": false,
                             "title": "Balcony",
                             "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.scene_balcony_off"
-                                },
-                                {
-                                    "entity": "script.scene_balcony_normal"
-                                },
-                                {
-                                    "entity": "script.scene_balcony_bright"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:door-open",
@@ -527,34 +449,6 @@
                             "show_header_toggle": true,
                             "title": "Lights",
                             "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.scene_bathroom_off"
-                                },
-                                {
-                                    "entity": "script.scene_bathroom_dim"
-                                },
-                                {
-                                    "entity": "script.scene_bathroom_normal"
-                                },
-                                {
-                                    "entity": "script.scene_bathroom_evening"
-                                },
-                                {
-                                    "entity": "script.scene_bathroom_night"
-                                },
-                                {
-                                    "entity": "script.scene_bathroom_full"
-                                },
-                                {
-                                    "entity": "script.scene_bathroom_bright"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
-                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:hot-tub",
@@ -614,34 +508,6 @@
                             ],
                             "show_header_toggle": true,
                             "title": "Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.scene_hallway_off"
-                                },
-                                {
-                                    "entity": "script.scene_hallway_dim"
-                                },
-                                {
-                                    "entity": "script.scene_hallway_normal"
-                                },
-                                {
-                                    "entity": "script.scene_hallway_evening"
-                                },
-                                {
-                                    "entity": "script.scene_hallway_night"
-                                },
-                                {
-                                    "entity": "script.scene_hallway_full"
-                                },
-                                {
-                                    "entity": "script.scene_hallway_bright"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
                             "type": "entities"
                         }
                     ],
@@ -707,34 +573,6 @@
                             ],
                             "show_header_toggle": true,
                             "title": "Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.scene_kitchen_off"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_dim"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_normal"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_evening"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_night"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_full"
-                                },
-                                {
-                                    "entity": "script.scene_kitchen_bright"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
                             "type": "entities"
                         }
                     ],
@@ -807,31 +645,6 @@
                             ],
                             "show_header_toggle": true,
                             "title": "Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "script.scene_guest_bedroom_off"
-                                },
-                                {
-                                    "entity": "script.scene_guest_bedroom_dim"
-                                },
-                                {
-                                    "entity": "script.scene_guest_bedroom_normal"
-                                },
-                                {
-                                    "entity": "script.scene_guest_bedroom_evening"
-                                },
-                                {
-                                    "entity": "script.scene_guest_bedroom_full"
-                                },
-                                {
-                                    "entity": "script.scene_guest_bedroom_bright"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Scenes",
                             "type": "entities"
                         }
                     ],
@@ -947,41 +760,36 @@
                     "badges": [],
                     "cards": [
                         {
-                            "cards": [
-                                {
-                                    "door": "binary_sensor.main_entrance",
-                                    "entity": "camera.aarlo_hallway",
-                                    "name": "Hallway",
-                                    "show": [
-                                        "motion",
-                                        "sound",
-                                        "snapshot",
-                                        "battery_level",
-                                        "signal_strength",
-                                        "captured_today"
-                                    ],
-                                    "type": "custom:aarlo-glance"
-                                },
-                                {
-                                    "door": "binary_sensor.balcony_entrance",
-                                    "entity": "camera.aarlo_living_room",
-                                    "name": "Living Room",
-                                    "show": [
-                                        "motion",
-                                        "sound",
-                                        "snapshot",
-                                        "battery_level",
-                                        "signal_strength",
-                                        "captured_today"
-                                    ],
-                                    "type": "custom:aarlo-glance"
-                                }
+                            "door": "binary_sensor.main_entrance",
+                            "entity": "camera.aarlo_hallway",
+                            "name": "Hallway",
+                            "show": [
+                                "motion",
+                                "sound",
+                                "snapshot",
+                                "battery_level",
+                                "signal_strength",
+                                "captured_today"
                             ],
-                            "type": "horizontal-stack"
+                            "type": "custom:aarlo-glance"
+                        },
+                        {
+                            "door": "binary_sensor.balcony_entrance",
+                            "entity": "camera.aarlo_living_room",
+                            "name": "Living Room",
+                            "show": [
+                                "motion",
+                                "sound",
+                                "snapshot",
+                                "battery_level",
+                                "signal_strength",
+                                "captured_today"
+                            ],
+                            "type": "custom:aarlo-glance"
                         }
                     ],
                     "icon": "mdi:cctv",
-                    "panel": true
+                    "panel": false
                 }
             ]
         }
