@@ -58,6 +58,10 @@ hallway_arlo_motion:
   name: Hallway Arlo Motion
   initial: off
 
+lights_full:
+  name: Lights Full
+  icon: mdi:lightbulb-on-outline
+
 bedroom_motion_detection_enabled:
   name: Bedroom Motion Detection
   icon: mdi:eye-outline
