@@ -50,14 +50,6 @@ vacuum_return_on_disarm:
   name: Vacuum Return on Disarm
   icon: mdi:robot-vacuum
 
-living_room_arlo_motion:
-  name: Living Room Arlo Motion
-  initial: off
-
-hallway_arlo_motion:
-  name: Hallway Arlo Motion
-  initial: off
-
 lights_full:
   name: Lights Full
   icon: mdi:lightbulb-on-outline
