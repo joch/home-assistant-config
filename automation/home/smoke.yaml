@@ -11,7 +11,7 @@
       to: 'on'
   action:
     - service: script.turn_on
-      entity_id: script.scene_lights_full
+      entity_id: script.scene_home_full
     - service: camera.aarlo_start_recording
       data:
         entity_id: camera.aarlo_hallway
