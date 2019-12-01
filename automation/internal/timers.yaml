@@ -1,0 +1,19 @@
+- alias: Finish timers when everyone asleep toggles
+  trigger:
+    - platform: state
+      entity_id: input_boolean.everyone_asleep
+  action:
+    - service: timer.finish
+      entity_id: timer.bedroom_lights
+    - service: timer.finish
+      entity_id: timer.bedroom_lights
+    - service: timer.finish
+      entity_id: timer.living_room_lights
+    - service: timer.finish
+      entity_id: timer.bathroom_lights
+    - service: timer.finish
+      entity_id: timer.hallway_lights
+    - service: timer.finish
+      entity_id: timer.kitchen_lights
+    - service: timer.finish
+      entity_id: timer.guest_bedroom_lights
