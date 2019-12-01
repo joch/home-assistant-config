@@ -107,3 +107,7 @@ guest_bedroom_occupied:
   name: Guest Bedroom Occupied
   icon: mdi:walk
   initial: off
+
+music_automation:
+  name: Music Automation
+  icon: mdi:playlist-music-outline
