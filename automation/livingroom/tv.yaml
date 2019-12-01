@@ -1,0 +1,17 @@
+- alias: Turn off TV automatically
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+    - platform: state
+      entity_id: input_boolean.everyone_asleep
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.music_automation
+      state: 'on'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.harmony
+        option: 'PowerOff'

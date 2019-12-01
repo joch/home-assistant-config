@@ -52,6 +52,9 @@
                                     "entity": "alarm_control_panel.aarlo_home"
                                 },
                                 {
+                                    "type": "divider"
+                                },
+                                {
                                     "entity": "group.alarm_modes"
                                 }
                             ],
@@ -65,6 +68,9 @@
                                 },
                                 {
                                     "entity": "group.motion_detection"
+                                },
+                                {
+                                    "entity": "input_boolean.lights_full"
                                 },
                                 {
                                     "entity": "input_select.scene"
@@ -83,6 +89,12 @@
                                 },
                                 {
                                     "entity": "media_player.living_room"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "input_boolean.music_automation"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -697,24 +709,6 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Occupancy",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "sensor.bedroom_temperature",
-                                "sensor.bedroom_humidity",
-                                "sensor.living_room_motion_sensor_temperature",
-                                "sensor.closet_temperature",
-                                "sensor.closet_humidity",
-                                "sensor.closet_pressure",
-                                "sensor.bathroom_temperature",
-                                "sensor.bathroom_humidity",
-                                "sensor.guest_bedroom_temperature",
-                                "sensor.guest_bedroom_humidity",
-                                "sensor.guest_bedroom_pressure"
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Indoor Environment",
                             "type": "entities"
                         },
                         {
