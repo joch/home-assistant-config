@@ -1,0 +1,19 @@
+- alias: Pause music when away
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+  condition:
+    - condition: state
+      entity_id: input_boolean.music_automation
+      state: 'on'
+  action:
+    - service: media_player.media_pause
+      data:
+        entity_id: media_player.bedroom
+    - service: media_player.media_pause
+      data:
+        entity_id: media_player.living_room
+    - service: media_player.media_pause
+      data:
+        entity_id: media_player.kitchen
