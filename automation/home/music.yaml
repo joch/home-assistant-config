@@ -11,15 +11,15 @@
       entity_id: input_boolean.music_automation
       state: 'on'
   action:
-    - service: media_player.media_pause
+    - service: sonos.set_sleep_timer
       data:
         entity_id: media_player.bedroom
         sleep_time: 0
-    - service: media_player.media_pause
+    - service: sonos.set_sleep_timer
       data:
         entity_id: media_player.living_room
         sleep_time: 0
-    - service: media_player.media_pause
+    - service: sonos.set_sleep_timer
       data:
         entity_id: media_player.kitchen
         sleep_time: 0
