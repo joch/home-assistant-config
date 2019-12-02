@@ -16,3 +16,25 @@
       data:
         entity_id: media_player.kitchen
         source: 'P4 Stockholm'
+
+- alias: Turn on background music when baby asleep
+  trigger:
+    - platform: state
+      entity_id: input_boolean.guest_asleep
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.music_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.kitchen
+        volume_level: 0.1
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.kitchen
+        source: 'Vinyl FM'
