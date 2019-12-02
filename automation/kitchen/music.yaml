@@ -1,0 +1,18 @@
+- alias: Turn on kitchen radio when waking up
+  trigger:
+    - platform: state
+      entity_id: input_boolean.everyone_asleep
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.music_automation
+      state: 'on'
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.kitchen
+        volume_level: 0.1
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.kitchen
+        source: 'P4 Stockholm'
