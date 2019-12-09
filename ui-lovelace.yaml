@@ -13,6 +13,10 @@
                 {
                     "type": "module",
                     "url": "/community_plugin/compact-custom-header/compact-custom-header.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/lovelace-auto-entities/auto-entities.js"
                 }
             ],
             "title": "Honn\u00f6rsgatan",
@@ -20,6 +24,23 @@
                 {
                     "badges": [],
                     "cards": [
+                        {
+                            "card": {
+                                "show_header_toggle": false,
+                                "title": "Replace Battery",
+                                "type": "entities"
+                            },
+                            "filter": {
+                                "include": [
+                                    {
+                                        "entity_id": "*battery*",
+                                        "state": "< 20"
+                                    }
+                                ]
+                            },
+                            "show_empty": false,
+                            "type": "custom:auto-entities"
+                        },
                         {
                             "card": {
                                 "show_name": false,
@@ -65,6 +86,9 @@
                             "entities": [
                                 {
                                     "entity": "sensor.light_mode"
+                                },
+                                {
+                                    "type": "divider"
                                 },
                                 {
                                     "entity": "group.motion_detection"
