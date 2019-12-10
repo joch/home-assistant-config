@@ -25,7 +25,7 @@
     service: input_select.select_option
     data_template:
       entity_id: input_select.harmony
-      option: "{{ states.remote.living_room.attributes.current_activity }}"
+      option: "{{ state_attr('remote.living_room', 'current_activity') }}"
 
 - alias: PowerOff Harmony when alarm is armed_away
   trigger:
