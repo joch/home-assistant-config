@@ -1,5 +1,5 @@
 - name: all_phones
   platform: group
   services:
-    - service: ios_johnnys_iphone_x
-    - service: ios_kajsas_iphone
+    - service: mobile_app_johnnys_iphone
+    - service: mobile_app_kajsa_s_iphone
