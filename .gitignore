@@ -1,3 +1,4 @@
 known_devices.yaml
 secrets.yaml
 *.conf
+Makefile
