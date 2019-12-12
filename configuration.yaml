@@ -16,8 +16,6 @@ homeassistant:
       icon: mdi:circle-expand
   auth_providers:
     - type: homeassistant
-    - type: legacy_api_password
-      api_password: !secret http_password
 
 #introduction:
 # discovery:
