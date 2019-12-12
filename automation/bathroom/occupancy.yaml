@@ -53,10 +53,6 @@
     - platform: numeric_state
       entity_id: sensor.bathroom_humidity
       above: 50
-  condition:
-    - condition: state
-      entity_id: timer.bathroom_lights
-      state: 'active'
   action:
     - service: timer.pause
       entity_id: timer.bathroom_lights
