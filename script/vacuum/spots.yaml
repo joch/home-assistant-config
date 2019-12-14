@@ -12,4 +12,4 @@ vacuum_go_trash:
       data:
         entity_id: vacuum.greta
         command: app_goto_target
-        params: [26937,25249] #tbd
+        params: [15300,25700]
