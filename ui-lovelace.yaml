@@ -283,6 +283,12 @@
                                     "entity": "vacuum.greta"
                                 },
                                 {
+                                    "entity": "input_select.vacuum_zone"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
                                     "entity": "input_boolean.vacuum_automation"
                                 },
                                 {

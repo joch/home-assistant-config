@@ -1,0 +1,12 @@
+- alias: Activate chosen cleanup
+  trigger:
+    - platform: state
+      entity_id: input_select.vacuum_zone
+  action:
+    - service: script.turn_on
+      data_template:
+        entity_id: script.vacuum_{{ states('input_select.vacuum_zone')|lower|replace(" ", "_") }}
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.vacuum_zone
+        option: Choose

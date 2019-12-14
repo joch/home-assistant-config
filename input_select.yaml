@@ -65,3 +65,16 @@ scene:
     - Home Normal
     - Home Evening
     - Home Full
+
+vacuum_zone:
+  name: Clean Zone
+  icon: mdi:map-marker-circle
+  initial: Choose
+  options:
+    - Choose
+    - Bedroom
+    - Living Room
+    - Litterbox
+    - Hallway
+    - Kitchen
+    - Guest Bedroom
