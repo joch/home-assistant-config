@@ -443,6 +443,9 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "binary_sensor.bathroom_door"
+                                },
+                                {
                                     "entity": "binary_sensor.bathroom_window"
                                 },
                                 {

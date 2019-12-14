@@ -72,3 +72,31 @@
   action:
     - service: timer.start
       entity_id: timer.bathroom_lights
+
+- alias: Bathroom pause timer on door closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'on'
+      for: '00:02:30'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.bathroom_door
+      state: 'on'
+      for: '00:02:00'
+  action:
+    - service: timer.pause
+      entity_id: timer.bathroom_lights
+
+- alias: Bathroom resume timer on door open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_door
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.bathroom_lights
+      state: 'paused'
+  action:
+    - service: timer.cancel
+      entity_id: timer.bathroom_lights
