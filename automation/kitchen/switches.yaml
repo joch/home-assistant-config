@@ -34,3 +34,25 @@
     - service: script.turn_on
       data_template:
         entity_id: script.scene_kitchen_{{ states('sensor.light_mode') }}
+
+- alias: Kitchen send vacuum to trash
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: empty_vacuum
+        event: 1002
+  action:
+    - service: script.turn_on
+      entity_id: script.vacuum_go_trash
+
+- alias: Kitchen send vacuum home
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: empty_vacuum
+        event: 1003
+  action:
+    - service: script.turn_on
+      entity_id: script.vacuum_go_home

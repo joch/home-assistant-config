@@ -1,0 +1,15 @@
+vacuum_go_home:
+  alias: Home
+  sequence:
+    - service: vacuum.return_to_base
+      data:
+        entity_id: vacuum.greta
+
+vacuum_go_trash:
+  alias: Trash
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.greta
+        command: app_goto_target
+        params: [26937,25249] #tbd
