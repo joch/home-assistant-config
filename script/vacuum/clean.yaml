@@ -1,4 +1,4 @@
-vacuum_bedroom:
+vacuum_clean_bedroom:
   alias: Bedroom
   sequence:
     - service: vacuum.send_command
@@ -7,7 +7,7 @@ vacuum_bedroom:
         command: app_zoned_clean
         params: [[26937,25249,30387,28899,1]]
 
-vacuum_living_room:
+vacuum_clean_living_room:
   alias: Living Room
   sequence:
     - service: vacuum.send_command
@@ -16,7 +16,7 @@ vacuum_living_room:
         command: app_zoned_clean
         params: [[22012,24983,26912,28783,1]]
 
-vacuum_litterbox:
+vacuum_clean_litterbox:
   alias: Litterbox
   sequence:
     - service: vacuum.send_command
@@ -25,7 +25,7 @@ vacuum_litterbox:
         command: app_zoned_clean
         params: [[19814,25401,21864,26351,1]]
 
-vacuum_hallway:
+vacuum_clean_hallway:
   alias: Hallway
   sequence:
     - service: vacuum.send_command
@@ -34,7 +34,7 @@ vacuum_hallway:
         command: app_zoned_clean
         params: [[16188,24902,22088,26802,1]]
 
-vacuum_kitchen:
+vacuum_clean_kitchen:
   alias: Kitchen
   sequence:
     - service: vacuum.send_command
@@ -43,7 +43,7 @@ vacuum_kitchen:
         command: app_zoned_clean
         params: [[13183,25533,16233,28683,1]]
 
-vacuum_guest_bedroom:
+vacuum_clean_guest_bedroom:
   alias: Guest Bedroom
   sequence:
     - service: vacuum.send_command

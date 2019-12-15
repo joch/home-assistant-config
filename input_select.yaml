@@ -66,9 +66,9 @@ scene:
     - Home Evening
     - Home Full
 
-vacuum_zone:
+vacuum_clean:
   name: Clean Zone
-  icon: mdi:map-marker-circle
+  icon: mdi:map-marker-radius
   initial: Choose
   options:
     - Choose
@@ -81,7 +81,7 @@ vacuum_zone:
 
 vacuum_go:
   name: Go to
-  icon: mdi:map-marker-circle
+  icon: mdi:map-marker-down
   initial: Choose
   options:
     - Choose
