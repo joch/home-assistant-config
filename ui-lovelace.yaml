@@ -286,6 +286,9 @@
                                     "entity": "input_select.vacuum_zone"
                                 },
                                 {
+                                    "entity": "input_select.vacuum_go"
+                                },
+                                {
                                     "type": "divider"
                                 },
                                 {

@@ -10,3 +10,16 @@
       data_template:
         entity_id: input_select.vacuum_zone
         option: Choose
+
+- alias: Activate chosen go target
+  trigger:
+    - platform: state
+      entity_id: input_select.vacuum_go
+  action:
+    - service: script.turn_on
+      data_template:
+        entity_id: script.vacuum_go_{{ states('input_select.vacuum_go')|lower|replace(" ", "_") }}
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.vacuum_go
+        option: Choose
