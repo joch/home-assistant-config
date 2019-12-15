@@ -80,6 +80,9 @@
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'on'
+    - platform: state
+      entity_id: binary_sensor.bathroom_motion
+      to: 'on'
       for: '00:02:10'
   condition:
     - condition: state
