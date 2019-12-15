@@ -61,9 +61,6 @@
 
 - alias: Bathroom resume timer on low moisture
   trigger:
-    - platform: state
-      entity_id: binary_sensor.bathroom_motion
-      to: 'off'
     - platform: numeric_state
       entity_id: sensor.bathroom_humidity
       below: 50
