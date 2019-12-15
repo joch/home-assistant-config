@@ -31,14 +31,40 @@ Below are some of my most used automations, which make life just a bit easier an
 - When the last person leaves and the alarm is turned on, the robot vacuum automatically starts
 - If someone comes home as the robot vacuum is cleaning, it goes back to the dock
 
+## Screenshots
+
+Note that these screenshots are provided in a best-effort manner, and may not reflect the current state of the configuration.
+
+![Home](images/1.png)
+
+![Bedroom](images/2.png)
+
+![Living Room](images/3.png)
+
+![Balcony](images/4.png)
+
+![Closet](images/5.png)
+
+![Bathroom](images/6.png)
+
+![Hallway](images/7.png)
+
+![Kitchen](images/8.png)
+
+![Guest Bedroom](images/9.png)
+
+![Security](images/10.png)
+
+![Cameras](images/11.jpg)
+
+
 ## Hardware
 
-The following is a list of hardware deployed in the home, grouped by room. While there are currently different types of hardware, the goal is to standardize on Zigbee.
+The following is a list of hardware deployed in the home, grouped by room. The goal is to standardize as much as possible on Zigbee.
 
 ### Hubs
 
 - Zigbee hub: [Dresden Elektronik ConBee](https://www.dresden-elektronik.de/conbee/)
-- Z-wave hub: [zwave.me uzb](http://zwave.me/index.php?id=28)
 - Security camera (2): [Netgear Arlo Pro VMC4030](https://www.arlo.com/en-us/products/arlo-pro/)
 - Camera base station and siren: [Netgear Arlo Pro Base station with siren](https://www.arlo.com/en-us/products/arlo-pro/)
 
@@ -52,10 +78,12 @@ The following is a list of hardware deployed in the home, grouped by room. While
 - Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
 - Temperature / humidity sensor: [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
+- Smoke alarm: [Xiaomi Smoke Detector](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-honeywell-smoke-detector-white/)
+- Speaker (2): [IKEA Symfonisk bookshelf speaker](https://www.ikea.com/se/sv/p/symfonisk-wifi-bokhyllehoegtalare-svart-50357554/)
 
-### Living Room
+### Living Rooma
 
-- Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
+- Window lamp (2): [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
 - Ceiling lamp: [Philips Hue White and Color Ambiance E27](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e26/046677464486)
 - Globe lamp: [Philips Hue White and Color Ambiance E14](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e12/046677468903)
 - TV backlight: [Xiaomi Yeelight Lightstrip](https://xiaomi-mi.com/smart-lighting/xiaomi-yeelight-smart-led-lightstrip-ipl/)
@@ -64,6 +92,9 @@ The following is a list of hardware deployed in the home, grouped by room. While
 - Window and door sensor (3): [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - TV remote: [Logitech Harmony Companion](https://www.logitech.com/en-us/product/harmony-companion)
 - Robot Vacuum: [Xiaomi Roborock S50](https://www.aliexpress.com/item/International-Version-Xiaomi-Roborock-S50-Robot-Vacuum-Cleaner-2-WIFI-APP-Control-Wet-Mop-Smart-Planned/32837327014.html)
+- Sound bar: [Sonos Playbase](https://www.sonos.com/en/shop/playbase.html)
+- Sub: [Sonos Sub](https://www.sonos.com/en/shop/sub.html)
+- Speaker (2): [IKEA Symfonisk table speaker](https://www.ikea.com/se/sv/p/symfonisk-bordslampa-med-wifi-hoegtalare-vit-30435157/)
 
 ### Closet
 
@@ -75,6 +106,7 @@ The following is a list of hardware deployed in the home, grouped by room. While
 - Mirror lamp dimmer: [Sunricher Zigbee dimmer](https://www.sunricher.com/zigbee-ac-phase-cut-dimmer-sr-zg9101sac-hp.html)
 - Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
 - Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
+- Door sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Temperature / humidity sensor: [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
 - Washer water leak sensor: [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/)
 
@@ -85,6 +117,7 @@ The following is a list of hardware deployed in the home, grouped by room. While
 - Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
 - Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
 - Main entrance door sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
+- Smoke alarm: [Xiaomi Smoke Detector](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-honeywell-smoke-detector-white/)
 
 ### Kitchen
 
@@ -95,29 +128,18 @@ The following is a list of hardware deployed in the home, grouped by room. While
 - Window lighting wall plug: [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
 - Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
 - Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
-- Window sensors: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
+- Window sensor (2): [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Dishwasher / sink water leak sensor: [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/)
+- Speaker: [IKEA Symfonisk table speaker](https://www.ikea.com/se/sv/p/symfonisk-bordslampa-med-wifi-hoegtalare-vit-30435157/)
 
 ### Guest Bedroom
 
 - Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
 - Ceiling lamp: [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/)
+- Cloud lamp: [Philips Hue White and Color Ambiance E14](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e12/046677468903)
+- String light wall plug: [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
 - Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
 - Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
 - Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
 - Guest sleep/wake button: [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/)
-
-## Screenshots
-
-Note that these screenshots are provided in a best-effort manner, and may not reflect the current state of the configuration.
-
-![Home](images/1.png)
-![Bedroom](images/2.png)
-![Living Room](images/3.png)
-![Balcony](images/4.png)
-![Bathroom](images/5.png)
-![Closet](images/6.png)
-![Hallway](images/7.png)
-![Kitchen](images/8.png)
-![Guest Bedroom](images/9.png)
-![Security](images/10.png)
+- Smoke alarm: [Xiaomi Smoke Detector](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-honeywell-smoke-detector-white/)
