@@ -301,7 +301,7 @@ timer:
     duration: '00:10:00'
   bathroom_lights:
     name: Bathroom Lights
-    duration: '00:05:00'
+    duration: '00:02:00'
   hallway_lights:
     name: Hallway Lights
     duration: '00:01:00'
