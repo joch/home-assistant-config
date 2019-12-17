@@ -295,22 +295,16 @@ alarm_control_panel:
 timer:
   bedroom_lights:
     name: Bedroom Lights
-    duration: '00:10:00'
   living_room_lights:
     name: Living Room Lights
-    duration: '00:10:00'
   bathroom_lights:
     name: Bathroom Lights
-    duration: '00:02:00'
   hallway_lights:
     name: Hallway Lights
-    duration: '00:01:00'
   kitchen_lights:
     name: Kitchen Lights
-    duration: '00:10:00'
   guest_bedroom_lights:
     name: Guest Bedroom Lights
-    duration: '00:10:00'
 
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
