@@ -14,9 +14,6 @@
       to: 'off'
   condition:
     - condition: state
-      entity_id: input_boolean.bathroom_occupancy_automation
-      state: 'on'
-    - condition: state
       entity_id: input_boolean.bathroom_occupied
       state: 'off'
   action:
@@ -29,10 +26,6 @@
     - platform: state
       entity_id: input_boolean.bathroom_occupied
       to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.bathroom_occupancy_automation
-      state: 'on'
   action:
     - service: script.turn_on
       data_template:

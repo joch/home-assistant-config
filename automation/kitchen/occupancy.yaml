@@ -3,6 +3,10 @@
     - platform: state
       entity_id: binary_sensor.kitchen_motion
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_occupancy_automation
+      state: 'on'
   action:
     - service: timer.cancel
       entity_id: timer.kitchen_lights
@@ -35,6 +39,10 @@
       event_type: timer.finished
       event_data:
         entity_id: timer.kitchen_lights
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_occupancy_automation
+      state: 'on'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.kitchen_occupied

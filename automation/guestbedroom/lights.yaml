@@ -15,10 +15,6 @@
     - platform: state
       entity_id: input_boolean.guest_asleep
       to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.guest_bedroom_occupancy_automation
-      state: 'on'
   action:
     - service: script.turn_on
       data_template:
@@ -38,9 +34,6 @@
       entity_id: input_boolean.guest_asleep
       to: 'off'
   condition:
-    - condition: state
-      entity_id: input_boolean.guest_bedroom_occupancy_automation
-      state: 'on'
     - condition: state
       entity_id: input_boolean.guest_asleep
       state: 'off'

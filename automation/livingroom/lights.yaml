@@ -14,9 +14,6 @@
       to: 'off'
   condition:
     - condition: state
-      entity_id: input_boolean.living_room_occupancy_automation
-      state: 'on'
-    - condition: state
       entity_id: timer.living_room_lights
       state: 'idle'
     - condition: state
@@ -37,9 +34,6 @@
       to: 'PowerOff'
   condition:
     - condition: state
-      entity_id: input_boolean.living_room_occupancy_automation
-      state: 'on'
-    - condition: state
       entity_id: input_select.harmony
       state: 'PowerOff'
   action:
@@ -59,9 +53,6 @@
       entity_id: input_select.harmony
       to: 'Music'
   condition:
-    - condition: state
-      entity_id: input_boolean.living_room_occupancy_automation
-      state: 'on'
     - condition: state
       entity_id: input_boolean.everyone_asleep
       state: 'off'
