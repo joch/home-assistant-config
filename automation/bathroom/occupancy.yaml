@@ -36,7 +36,7 @@
     - service: timer.start
       data:
         entity_id: timer.bathroom_lights
-        duration: '00:02:00'
+        duration: '00:04:00'
 
 - alias: Bathroom idle
   trigger:
@@ -80,7 +80,7 @@
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'on'
-      for: '00:02:10'
+      for: '00:01:10'
   condition:
     - condition: state
       entity_id: binary_sensor.bathroom_door
