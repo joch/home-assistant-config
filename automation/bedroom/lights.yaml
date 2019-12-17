@@ -20,7 +20,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.bedroom_motion_detection_enabled
+      entity_id: input_boolean.bedroom_occupancy_automation
       state: 'on'
   action:
     - service: script.turn_on
@@ -47,7 +47,7 @@
       to: 'off'
   condition:
     - condition: state
-      entity_id: input_boolean.bedroom_motion_detection_enabled
+      entity_id: input_boolean.bedroom_occupancy_automation
       state: 'on'
     - condition: state
       entity_id: input_boolean.johnny_asleep

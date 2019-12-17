@@ -14,7 +14,7 @@
       to: 'off'
   condition:
     - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
+      entity_id: input_boolean.bathroom_occupancy_automation
       state: 'on'
     - condition: state
       entity_id: input_boolean.bathroom_occupied
@@ -31,7 +31,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: input_boolean.bathroom_motion_detection_enabled
+      entity_id: input_boolean.bathroom_occupancy_automation
       state: 'on'
   action:
     - service: script.turn_on

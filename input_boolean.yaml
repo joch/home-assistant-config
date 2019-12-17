@@ -54,27 +54,27 @@ lights_full:
   name: Lights Full
   icon: mdi:lightbulb-on-outline
 
-bedroom_motion_detection_enabled:
+bedroom_occupancy_automation:
   name: Bedroom Motion Detection
   icon: mdi:eye-outline
 
-living_room_motion_detection_enabled:
+living_room_occupancy_automation:
   name: Living Room Motion Detection
   icon: mdi:eye-outline
 
-bathroom_motion_detection_enabled:
+bathroom_occupancy_automation:
   name: Bathroom Motion Detection
   icon: mdi:eye-outline
 
-hallway_motion_detection_enabled:
+hallway_occupancy_automation:
   name: Hallway Motion Detection
   icon: mdi:eye-outline
 
-kitchen_motion_detection_enabled:
+kitchen_occupancy_automation:
   name: Kitchen Motion Detection
   icon: mdi:eye-outline
 
-guest_bedroom_motion_detection_enabled:
+guest_bedroom_occupancy_automation:
   name: Guest Bedroom Motion Detection
   icon: mdi:eye-outline
 

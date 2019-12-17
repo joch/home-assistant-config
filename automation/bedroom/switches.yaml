@@ -7,11 +7,11 @@
         event: 4003
   condition:
     - condition: state
-      entity_id: input_boolean.bedroom_motion_detection_enabled
+      entity_id: input_boolean.bedroom_occupancy_automation
       state: 'on'
   action:
     - service: input_boolean.turn_off
-      entity_id: input_boolean.bedroom_motion_detection_enabled
+      entity_id: input_boolean.bedroom_occupancy_automation
 
 - alias: Enable bedroom motion
   trigger:
@@ -26,11 +26,11 @@
         event: 1003
   condition:
     - condition: state
-      entity_id: input_boolean.bedroom_motion_detection_enabled
+      entity_id: input_boolean.bedroom_occupancy_automation
       state: 'off'
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.bedroom_motion_detection_enabled
+      entity_id: input_boolean.bedroom_occupancy_automation
     - service: script.turn_on
       data_template:
         entity_id: script.scene_bedroom_{{ states('sensor.light_mode') }}

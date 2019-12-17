@@ -1,6 +1,10 @@
 {
     "data": {
         "config": {
+            "custom_header": {
+                "chevrons": false,
+                "compact_mode": true
+            },
             "resources": [
                 {
                     "type": "js",
@@ -12,7 +16,7 @@
                 },
                 {
                     "type": "module",
-                    "url": "/community_plugin/compact-custom-header/compact-custom-header.js"
+                    "url": "/community_plugin/custom-header/custom-header.js"
                 },
                 {
                     "type": "module",
@@ -91,7 +95,10 @@
                                     "type": "divider"
                                 },
                                 {
-                                    "entity": "group.motion_detection"
+                                    "entity": "group.occupancy"
+                                },
+                                {
+                                    "entity": "group.occupancy_automation"
                                 },
                                 {
                                     "entity": "input_boolean.lights_full"
@@ -283,7 +290,7 @@
                                     "entity": "vacuum.greta"
                                 },
                                 {
-                                    "entity": "input_select.vacuum_zone"
+                                    "entity": "input_select.vacuum_clean"
                                 },
                                 {
                                     "entity": "input_select.vacuum_go"
