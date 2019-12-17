@@ -37,9 +37,7 @@
           state: 'active'
   action:
     - service: timer.start
-      data:
-        entity_id: timer.bathroom_lights
-        duration: '00:04:00'
+      entity_id: timer.bathroom_lights
 
 - alias: Bathroom idle
   trigger:

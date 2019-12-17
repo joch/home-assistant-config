@@ -29,9 +29,7 @@
           state: 'active'
   action:
     - service: timer.start
-      data:
-        entity_id: timer.kitchen_lights
-        duration: '00:10:00'
+      entity_id: timer.kitchen_lights
 
 - alias: Kitchen idle
   trigger:

@@ -32,9 +32,7 @@
           state: 'active'
   action:
     - service: timer.start
-      data:
-        entity_id: timer.hallway_lights
-        duration: '00:01:00'
+      entity_id: timer.hallway_lights
 
 - alias: Hallway idle
   trigger:
