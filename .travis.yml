@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.8"
+  - "3.7"
 before_install:
   - mkdir -p custom_components/ tmp/
   - git clone https://github.com/custom-components/hacs.git tmp/hacs
