@@ -81,7 +81,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
-      to: 'on'
+      to: 'off'
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'on'
@@ -89,7 +89,7 @@
   condition:
     - condition: state
       entity_id: binary_sensor.bathroom_door
-      state: 'on'
+      state: 'off'
   action:
     - service: timer.start
       entity_id: timer.bathroom_lights
@@ -100,7 +100,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_door
-      to: 'off'
+      to: 'on'
   condition:
     - condition: state
       entity_id: timer.bathroom_lights
