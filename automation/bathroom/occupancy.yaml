@@ -81,7 +81,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_motion
-      to: 'off'
+      to: 'on'
     - platform: state
       entity_id: binary_sensor.bathroom_motion
       to: 'on'
