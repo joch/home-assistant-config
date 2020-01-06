@@ -247,25 +247,105 @@ vacuum:
     host: !secret vacuum_xiaomi_host
     token: !secret vacuum_xiaomi_token
     name: !secret vacuum_xiaomi_name
-
 homekit:
   auto_start: True
   filter:
     include_domains:
+      - binary_sensor
       - light
     include_entities:
+      - alarm_control_panel.alarm
       - input_boolean.johnny_asleep
       - input_boolean.kajsa_asleep
       - input_boolean.guest_asleep
       - input_boolean.everyone_asleep
-      - alarm_control_panel.alarm
+      - sensor.bedroom_temperature
+      - sensor.living_room_motion_sensor_temperature
+      - sensor.closet_temperature
+      - sensor.bathroom_temperature
+      - sensor.guest_bedroom_temperature
       - switch.balcony_switch
       - switch.guest_bedroom_switch
       - switch.hallway_switch
       - switch.kitchen_switch
+    exclude_entities:
+      - light.bedroom
+      - light.living_room
+      - light.balcony
+      - light.closet
+      - light.hallway
+      - light.kitchen
+      - light.guest_bedroom
+      - light.bathroom
+      - light.bathroom_ceiling_lamp_left
+      - light.bathroom_ceiling_lamp_middle
+      - light.bathroom_ceiling_lamp_right
+      - light.rwl021_12
+      - light.rwl021_23
+      - light.rwl021_24
+      - light.rwl021_25
+      - light.rwl021_26
   entity_config:
     alarm_control_panel.alarm:
       code: !secret alarm_code
+    binary_sensor.balcony_entrance:
+      linked_battery_sensor: sensor.balcony_entrance_battery_level
+    binary_sensor.bathroom_door:
+      linked_battery_sensor: sensor.bathroom_door_battery_level
+    binary_sensor.bathroom_motion:
+      linked_battery_sensor: sensor.bathroom_motion_battery_level
+    binary_sensor.bathroom_water:
+      linked_battery_sensor: sensor.bathroom_water_battery_level
+    binary_sensor.bathroom_window:
+      linked_battery_sensor: sensor.bathroom_window_battery_level
+    binary_sensor.bedroom_motion:
+      linked_battery_sensor: sensor.bedroom_motion_battery_level
+    binary_sensor.bedroom_smoke:
+      linked_battery_sensor: sensor.bedroom_smoke_battery_level
+    binary_sensor.bedroom_window:
+      linked_battery_sensor: sensor.bedroom_window_battery_level
+    binary_sensor.guest_bedroom_motion:
+      linked_battery_sensor: sensor.guest_bedroom_motion_battery_level
+    binary_sensor.guest_bedroom_smoke:
+      linked_battery_sensor: sensor.guest_bedroom_smoke_battery_level
+    binary_sensor.guest_bedroom_window:
+      linked_battery_sensor: sensor.guest_bedroom_window_battery_level
+    binary_sensor.hallway_motion:
+      linked_battery_sensor: sensor.hallway_motion_battery_level
+    binary_sensor.hallway_smoke:
+      linked_battery_sensor: sensor.hallway_smoke_battery_level
+    binary_sensor.kitchen_motion:
+      linked_battery_sensor: sensor.kitchen_motion_battery_level
+    binary_sensor.kitchen_water:
+      linked_battery_sensor: sensor.kitchen_water_battery_level
+    binary_sensor.kitchen_window_left:
+      linked_battery_sensor: sensor.kitchen_window_left_battery_level
+    binary_sensor.kitchen_window_right:
+      linked_battery_sensor: sensor.kitchen_window_right_battery_level
+    binary_sensor.living_room_motion_sensor:
+      linked_battery_sensor: sensor.living_room_motion_battery_level
+    binary_sensor.living_room_window_left:
+      linked_battery_sensor: sensor.living_room_window_left_battery_level
+    binary_sensor.living_room_window_right:
+      linked_battery_sensor: sensor.living_room_window_right_battery_level
+    binary_sensor.main_entrance:
+      linked_battery_sensor: sensor.main_entrance_battery_level
+    switch.balcony_switch:
+      type: outlet
+    switch.guest_bedroom_switch:
+      type: outlet
+    switch.hallway_switch:
+      type: outlet
+    switch.kitchen_switch:
+      type: outlet
+    sensor.bedroom_temperature:
+      linked_battery_sensor: sensor.bedroom_environment_battery_level
+    sensor.closet_temperature:
+      linked_battery_sensor: sensor.closet_environment_battery_level
+    sensor.bathroom_temperature:
+      linked_battery_sensor: sensor.bathroom_environment_battery_level
+    sensor.guest_bedroom_temperature:
+      linked_battery_sensor: sensor.guest_bedroom_environment_battery_level
 
 camera:
   - platform: aarlo
