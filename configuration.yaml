@@ -247,6 +247,7 @@ vacuum:
     host: !secret vacuum_xiaomi_host
     token: !secret vacuum_xiaomi_token
     name: !secret vacuum_xiaomi_name
+
 homekit:
   auto_start: True
   filter:

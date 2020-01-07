@@ -13,3 +13,12 @@ vacuum_go_trash:
         entity_id: vacuum.greta
         command: app_goto_target
         params: [15300,25700]
+
+vacuum_go_appear:
+  alias: Appear
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.greta
+        command: app_goto_target
+        params: [25600,25850]
