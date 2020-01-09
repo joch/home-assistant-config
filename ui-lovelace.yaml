@@ -95,10 +95,10 @@
                                     "type": "divider"
                                 },
                                 {
-                                    "entity": "group.occupancy"
+                                    "entity": "group.occupancy_automation"
                                 },
                                 {
-                                    "entity": "group.occupancy_automation"
+                                    "entity": "group.occupancy"
                                 },
                                 {
                                     "entity": "input_boolean.lights_full"
@@ -123,6 +123,12 @@
                                 },
                                 {
                                     "type": "divider"
+                                },
+                                {
+                                    "entity": "switch.living_room_sonos_night_sound"
+                                },
+                                {
+                                    "entity": "switch.living_room_sonos_speech_enhance"
                                 },
                                 {
                                     "entity": "input_boolean.music_automation"
@@ -168,7 +174,7 @@
                                     "entity": "input_boolean.bedroom_occupied"
                                 },
                                 {
-                                    "entity": "input_boolean.bedroom_motion_detection_enabled",
+                                    "entity": "input_boolean.bedroom_occupancy_automation",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -244,7 +250,7 @@
                                     "entity": "input_boolean.living_room_occupied"
                                 },
                                 {
-                                    "entity": "input_boolean.living_room_motion_detection_enabled",
+                                    "entity": "input_boolean.living_room_occupancy_automation",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -278,6 +284,12 @@
                                 },
                                 {
                                     "entity": "media_player.living_room"
+                                },
+                                {
+                                    "entity": "switch.living_room_sonos_night_sound"
+                                },
+                                {
+                                    "entity": "switch.living_room_sonos_speech_enhance"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -465,7 +477,7 @@
                                     "entity": "input_boolean.bathroom_occupied"
                                 },
                                 {
-                                    "entity": "input_boolean.bathroom_motion_detection_enabled",
+                                    "entity": "input_boolean.bathroom_occupancy_automation",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -525,7 +537,7 @@
                                     "entity": "input_boolean.hallway_occupied"
                                 },
                                 {
-                                    "entity": "input_boolean.hallway_motion_detection_enabled",
+                                    "entity": "input_boolean.hallway_occupancy_automation",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -588,7 +600,7 @@
                                     "entity": "input_boolean.kitchen_occupied"
                                 },
                                 {
-                                    "entity": "input_boolean.kitchen_motion_detection_enabled",
+                                    "entity": "input_boolean.kitchen_occupancy_automation",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -650,7 +662,7 @@
                                     "entity": "input_boolean.guest_bedroom_occupied"
                                 },
                                 {
-                                    "entity": "input_boolean.guest_bedroom_motion_detection_enabled",
+                                    "entity": "input_boolean.guest_bedroom_occupancy_automation",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -732,26 +744,26 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "input_boolean.bedroom_occupied"
+                                    "entity": "binary_sensor.bedroom_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.living_room_occupied"
+                                    "entity": "binary_sensor.living_room_motion_sensor"
                                 },
                                 {
-                                    "entity": "input_boolean.bathroom_occupied"
+                                    "entity": "binary_sensor.bathroom_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.hallway_occupied"
+                                    "entity": "binary_sensor.hallway_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.kitchen_occupied"
+                                    "entity": "binary_sensor.kitchen_motion"
                                 },
                                 {
-                                    "entity": "input_boolean.guest_bedroom_occupied"
+                                    "entity": "binary_sensor.guest_bedroom_motion"
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Occupancy",
+                            "title": "Motion",
                             "type": "entities"
                         },
                         {
@@ -786,6 +798,31 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Perimeter",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "timer.bedroom_lights"
+                                },
+                                {
+                                    "entity": "timer.living_room_lights"
+                                },
+                                {
+                                    "entity": "timer.hallway_lights"
+                                },
+                                {
+                                    "entity": "timer.bathroom_lights"
+                                },
+                                {
+                                    "entity": "timer.kitchen_lights"
+                                },
+                                {
+                                    "entity": "timer.guest_bedroom_lights"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Timers",
                             "type": "entities"
                         }
                     ],
