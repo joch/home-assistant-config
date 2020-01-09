@@ -129,81 +129,6 @@ emulated_hue:
   exposed_domains:
     - light
 
-switch:
-  - platform: aarlo
-    siren: True
-    all_sirens: False
-    snapshot: True
-    siren_volume: 1
-    siren_duration: 1
-  - platform: flux
-    lights:
-      - light.bedroom_ceiling_lamp
-      - light.bedroom_window_lamp
-      - light.living_room_window_left_lamp
-      - light.living_room_window_right_lamp
-      - light.bathroom_ceiling_lamp_left
-      - light.bathroom_ceiling_lamp_middle
-      - light.bathroom_ceiling_lamp_right
-      - light.kitchen_window_lamp
-      - light.kitchen_ceiling_lamp
-      - light.guest_bedroom_ceiling_lamp
-      - light.guest_bedroom_window_lamp
-    name: Flux Indoor Lights
-    stop_time: '22:00'
-    start_colortemp: 4000
-    sunset_colortemp: 3000
-    stop_colortemp: 1900
-    disable_brightness_adjust: True
-    mode: mired
-    transition: 2
-  - platform: flux
-    lights:
-      - light.kitchen_countertop_lightstrip
-    name: Flux Kitchen
-    stop_time: '22:00'
-    start_colortemp: 4000
-    sunset_colortemp: 3000
-    stop_colortemp: 1900
-    disable_brightness_adjust: True
-    mode: mired
-    transition: 2
-  - platform: flux
-    lights:
-      - light.hallway_ceiling_lamp
-    name: Flux Hallway
-    stop_time: '22:00'
-    start_colortemp: 4000
-    sunset_colortemp: 3000
-    stop_colortemp: 1900
-    disable_brightness_adjust: True
-    mode: mired
-    transition: 2
-  - platform: flux
-    lights:
-      - light.living_room_ceiling_lamp
-      - light.living_room_globe
-    name: Flux Living Room
-    stop_time: '22:00'
-    start_colortemp: 4000
-    sunset_colortemp: 3000
-    stop_colortemp: 1900
-    disable_brightness_adjust: True
-    mode: mired
-    transition: 2
-  - platform: flux
-    lights:
-      - light.johnnys_bedlight
-      - light.kajsas_bedlight
-    name: Flux Bedroom
-    stop_time: '22:00'
-    start_colortemp: 4000
-    sunset_colortemp: 3000
-    stop_colortemp: 1900
-    disable_brightness_adjust: True
-    mode: mired
-    transition: 2
-
 yeelight:
   devices:
     10.0.0.122:
@@ -396,6 +321,7 @@ timer:
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
 sensor: !include_dir_merge_list sensor
+switch: !include_dir_merge_list switch
 binary_sensor: !include_dir_merge_list binary_sensor
 group: !include_dir_merge_named group
 scene: !include_dir_merge_list scene
