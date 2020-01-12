@@ -5,12 +5,12 @@
       value_template: "{{ state_attr('media_player.living_room', 'night_sound') }}"
       icon_template: mdi:weather-night
       turn_on:
-        service: media_player.sonos_set_option
+        service: sonos.set_option
         data:
           entity_id: media_player.living_room
           night_sound: true
       turn_off:
-        service: media_player.sonos_set_option
+        service: sonos.set_option
         data:
           entity_id: media_player.living_room
           night_sound: false
@@ -19,12 +19,12 @@
       value_template: "{{ state_attr('media_player.living_room', 'speech_enhance') }}"
       icon_template: mdi:voice
       turn_on:
-        service: media_player.sonos_set_option
+        service: sonos.set_option
         data:
           entity_id: media_player.living_room
           speech_enhance: true
       turn_off:
-        service: media_player.sonos_set_option
+        service: sonos.set_option
         data:
           entity_id: media_player.living_room
           speech_enhance: false
