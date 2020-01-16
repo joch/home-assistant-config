@@ -17,34 +17,21 @@ homeassistant:
   auth_providers:
     - type: homeassistant
 
-#introduction:
-# discovery:
-# updater:
-
 frontend:
   themes: !include_dir_merge_named themes
 
 config:
-
 conversation:
-
-history:
-
-logbook:
-
-sun:
-
 api:
-
-system_health:
-
-mobile_app:
-
-person:
-
 cloud:
-
+history:
+logbook:
 map:
+mobile_app:
+person:
+system_health:
+sun:
+updater:
 
 http:
   server_port: !secret http_server_port
@@ -101,28 +88,10 @@ asuswrt:
   username: !secret asuswrt_username
   password: !secret asuswrt_password
 
-# media_player:
-#   - platform: spotify
-#     client_id: !secret spotify_client_id
-#     client_secret: !secret spotify_client_secret
-#   - platform: samsungtv
-#     host: !secret samsungtv_host
-#     mac: !secret samsungtv_mac
-#     scan_interval: 20
-  # - platform: plex
-  #   include_non_clients: true
-  #   scan_interval: 10
-  #   use_episode_art: true
-
 remote:
   - platform: harmony
     name: Living Room
     host: !secret harmony_host
-
-# Disabled
-# zwave:
-#   usb_path: /dev/ttyACM0
-#   network_key: !secret zwave_network_key
 
 emulated_hue:
   expose_by_default: true
@@ -145,9 +114,6 @@ yeelight:
       use_music_mode: False
       save_on_change: False
 
-# influxdb:
-#   host: !secret influxdb_host
-
 aarlo:
   username: !secret arlo_username
   password: !secret arlo_password
@@ -160,7 +126,6 @@ deconz:
 
 hacs:
   token: !secret hacs_token
-  theme: True
 
 xiaomi_aqara:
   discovery_retry: 5
