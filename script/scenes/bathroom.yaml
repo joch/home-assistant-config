@@ -3,7 +3,17 @@ scene_bathroom_normal:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: light.bathroom_ceiling_lamp
+        entity_id: light.bathroom_ceiling_lamp_left
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_ceiling_lamp_middle
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_ceiling_lamp_right
         brightness_pct: 100
         transition: 2
     - service: light.turn_on
@@ -17,7 +27,15 @@ scene_bathroom_dim:
   sequence:
     - service: light.turn_off
       data:
-        entity_id: light.bathroom_ceiling_lamp
+        entity_id: light.bathroom_ceiling_lamp_left
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.bathroom_ceiling_lamp_middle
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.bathroom_ceiling_lamp_right
         transition: 5
     - service: light.turn_off
       data:
@@ -29,7 +47,17 @@ scene_bathroom_evening:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: light.bathroom_ceiling_lamp
+        entity_id: light.bathroom_ceiling_lamp_left
+        brightness_pct: 75
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_ceiling_lamp_middle
+        brightness_pct: 75
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_ceiling_lamp_right
         brightness_pct: 75
         transition: 2
     - service: light.turn_on
@@ -43,7 +71,17 @@ scene_bathroom_full:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: light.bathroom_ceiling_lamp
+        entity_id: light.bathroom_ceiling_lamp_left
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_ceiling_lamp_middle
+        brightness_pct: 100
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.bathroom_ceiling_lamp_right
         brightness_pct: 100
         transition: 2
     - service: light.turn_on
@@ -71,7 +109,15 @@ scene_bathroom_off:
   sequence:
     - service: light.turn_off
       data:
-        entity_id: light.bathroom_ceiling_lamp
+        entity_id: light.bathroom_ceiling_lamp_left
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.bathroom_ceiling_lamp_middle
+        transition: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.bathroom_ceiling_lamp_right
         transition: 5
     - service: light.turn_off
       data:
