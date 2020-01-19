@@ -1,7 +1,0 @@
-- platform: workday
-  name: Workday
-  country: SE
-- platform: workday
-  name: Workday Tomorrow
-  country: SE
-  days_offset: 1

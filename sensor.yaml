@@ -1,3 +1,7 @@
+- platform: plex
+  username: !secret plex_username
+  password: !secret plex_password
+
 - platform: template
   sensors:
     light_mode:

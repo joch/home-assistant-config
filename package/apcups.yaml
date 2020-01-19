@@ -16,4 +16,5 @@ sensor:
       - numxfers
       - xoffbatt
 
-- platform: apcupsd
+binary_sensor:
+  - platform: apcupsd

@@ -1,0 +1,36 @@
+switch:
+  - platform: template
+    switches:
+      living_room_sonos_night_sound:
+        friendly_name: "Night Sound"
+        value_template: "{{ state_attr('media_player.living_room', 'night_sound') }}"
+        icon_template: mdi:weather-night
+        turn_on:
+          service: sonos.set_option
+          data:
+            entity_id: media_player.living_room
+            night_sound: true
+        turn_off:
+          service: sonos.set_option
+          data:
+            entity_id: media_player.living_room
+            night_sound: false
+      living_room_sonos_speech_enhance:
+        friendly_name: "Speech Enhance"
+        value_template: "{{ state_attr('media_player.living_room', 'speech_enhance') }}"
+        icon_template: mdi:voice
+        turn_on:
+          service: sonos.set_option
+          data:
+            entity_id: media_player.living_room
+            speech_enhance: true
+        turn_off:
+          service: sonos.set_option
+          data:
+            entity_id: media_player.living_room
+            speech_enhance: false
+
+input_boolean:
+  music_automation:
+    name: Music Automation
+    icon: mdi:playlist-music-outline

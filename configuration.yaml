@@ -93,14 +93,14 @@ alarm_control_panel:
     triggered:
       pending_time: 60
 
-input_boolean: !include input_boolean.yaml
-input_select: !include input_select.yaml
-sensor: !include_dir_merge_list sensor
-switch: !include_dir_merge_list switch
-binary_sensor: !include_dir_merge_list binary_sensor
+automation old: !include_dir_merge_list automation
 group: !include_dir_merge_named group
+notify: !include_dir_merge_list notify
 scene: !include_dir_merge_list scene
 script: !include_dir_merge_named script
-notify: !include_dir_merge_list notify
+
 automation: !include automations.yaml
-automation old: !include_dir_merge_list automation
+binary_sensor: !include binary_sensor.yaml
+input_boolean: !include input_boolean.yaml
+input_select: !include input_select.yaml
+sensor: !include sensor.yaml
