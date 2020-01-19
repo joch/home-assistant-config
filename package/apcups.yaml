@@ -1,0 +1,19 @@
+apcupsd:
+  host: !secret apcupsd_host
+
+sensor:
+  - platform: apcupsd
+    resources:
+      - status
+      - linev
+      - loadpct
+      - bcharge
+      - timeleft
+      - itemp
+      - lotrans
+      - hitrans
+      - lastxfer
+      - numxfers
+      - xoffbatt
+
+- platform: apcupsd

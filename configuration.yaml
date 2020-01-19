@@ -38,9 +38,6 @@ recorder:
   purge_interval: 2
   purge_keep_days: 2
 
-apcupsd:
-  host: !secret apcupsd_host
-
 ifttt:
   key: !secret ifttt_key
 
