@@ -12,12 +12,6 @@ House Guests:
   - !secret guest_007
   - !secret guest_008
 
-Sleep Status:
-  - input_boolean.everyone_asleep
-  - input_boolean.johnny_asleep
-  - input_boolean.kajsa_asleep
-  - input_boolean.guest_asleep
-
 Indoor Motion:
   - binary_sensor.bedroom_motion
   - binary_sensor.living_room_motion_sensor
