@@ -26,24 +26,8 @@ Indoor Motion:
   - binary_sensor.kitchen_motion
   - binary_sensor.guest_bedroom_motion
 
-Occupancy Automation:
-  - input_boolean.bedroom_occupancy_automation
-  - input_boolean.living_room_occupancy_automation
-  - input_boolean.bathroom_occupancy_automation
-  - input_boolean.hallway_occupancy_automation
-  - input_boolean.kitchen_occupancy_automation
-  - input_boolean.guest_bedroom_occupancy_automation
-
 Alarm Modes:
   - input_boolean.alarm_mode
   - input_boolean.alarm_night_mode
   - input_boolean.vacation_mode
   - input_boolean.guest_mode
-
-Occupancy:
-  - input_boolean.bedroom_occupied
-  - input_boolean.living_room_occupied
-  - input_boolean.bathroom_occupied
-  - input_boolean.hallway_occupied
-  - input_boolean.kitchen_occupied
-  - input_boolean.guest_bedroom_occupied

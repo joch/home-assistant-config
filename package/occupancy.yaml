@@ -61,3 +61,20 @@ input_boolean:
     name: Guest Bedroom Occupied
     icon: mdi:walk
     initial: off
+
+group:
+  Occupancy Automation:
+    - input_boolean.bedroom_occupancy_automation
+    - input_boolean.living_room_occupancy_automation
+    - input_boolean.bathroom_occupancy_automation
+    - input_boolean.hallway_occupancy_automation
+    - input_boolean.kitchen_occupancy_automation
+    - input_boolean.guest_bedroom_occupancy_automation
+
+  Occupancy:
+    - input_boolean.bedroom_occupied
+    - input_boolean.living_room_occupied
+    - input_boolean.bathroom_occupied
+    - input_boolean.hallway_occupied
+    - input_boolean.kitchen_occupied
+    - input_boolean.guest_bedroom_occupied
