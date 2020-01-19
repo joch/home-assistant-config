@@ -77,22 +77,6 @@ vacuum:
     token: !secret vacuum_xiaomi_token
     name: !secret vacuum_xiaomi_name
 
-alarm_control_panel:
-  - platform: manual
-    name: 'Alarm'
-    code: !secret alarm_code
-    pending_time: 60
-    trigger_time: 120
-    disarm_after_trigger: false
-    armed_home:
-      pending_time: 0
-    armed_night:
-      pending_time: 0
-    armed_away:
-      pending_time: 30
-    triggered:
-      pending_time: 60
-
 automation old: !include_dir_merge_list automation
 group: !include_dir_merge_named group
 notify: !include_dir_merge_list notify

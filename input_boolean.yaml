@@ -1,26 +1,6 @@
-alarm_mode:
-  name: Auto-arm Alarm Away
-  icon: mdi:shield-outline
-
-alarm_night_mode:
-  name: Auto-arm Alarm Night
-  icon: mdi:shield-outline
-
-vacation_mode:
-  name: Vacation Mode
-  icon: mdi:airplane
-
-guest_mode:
-  name: Guest Mode
-  icon: mdi:human-male-female
-
 sleep_automation:
   name: Sleep Automation
   icon: mdi:sleep
-
-perimeter_warning:
-  name: Perimeter Warning
-  icon: mdi:wall
 
 everyone_asleep:
   name: Everyone asleep

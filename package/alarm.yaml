@@ -1,0 +1,43 @@
+alarm_control_panel:
+  - platform: manual
+    name: 'Alarm'
+    code: !secret alarm_code
+    pending_time: 60
+    trigger_time: 120
+    disarm_after_trigger: false
+    armed_home:
+      pending_time: 0
+    armed_night:
+      pending_time: 0
+    armed_away:
+      pending_time: 30
+    triggered:
+      pending_time: 60
+
+group:
+  Alarm Modes:
+    - input_boolean.alarm_mode
+    - input_boolean.alarm_night_mode
+    - input_boolean.vacation_mode
+    - input_boolean.guest_mode
+
+input_boolean:
+  alarm_mode:
+    name: Auto-arm Alarm Away
+    icon: mdi:shield-outline
+
+  alarm_night_mode:
+    name: Auto-arm Alarm Night
+    icon: mdi:shield-outline
+
+  vacation_mode:
+    name: Vacation Mode
+    icon: mdi:airplane
+
+  guest_mode:
+    name: Guest Mode
+    icon: mdi:human-male-female
+
+  perimeter_warning:
+    name: Perimeter Warning
+    icon: mdi:wall
