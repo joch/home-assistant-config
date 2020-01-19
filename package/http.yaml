@@ -1,0 +1,24 @@
+http:
+  server_port: !secret http_server_port
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
+  use_x_forwarded_for: True
+  base_url: !secret http_base_url
+  ssl_certificate: !secret http_ssl_certificate
+  ssl_key: !secret http_ssl_key
+  trusted_proxies:
+    - !secret trusted_proxies_001
+    - !secret trusted_proxies_002
+    - !secret trusted_proxies_003
+    - !secret trusted_proxies_004
+    - !secret trusted_proxies_005
+    - !secret trusted_proxies_006
+    - !secret trusted_proxies_007
+    - !secret trusted_proxies_008
+    - !secret trusted_proxies_009
+    - !secret trusted_proxies_010
+    - !secret trusted_proxies_011
+    - !secret trusted_proxies_012
+    - !secret trusted_proxies_013
+    - !secret trusted_proxies_014
+    - !secret trusted_proxies_015

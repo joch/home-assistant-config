@@ -1,0 +1,42 @@
+aarlo:
+  username: !secret arlo_username
+  password: !secret arlo_password
+  refresh_devices_every: 2
+
+alarm_control_panel:
+  - platform: aarlo
+    home_mode_name: armed
+    away_mode_name: vacation
+    trigger_time: 1
+    alarm_volume: 1
+
+camera:
+  - platform: aarlo
+    ffmpeg_arguments: '-pred 1 -q:v 2'
+
+homeassistant:
+  customize:
+    alarm_control_panel.aarlo_home:
+      icon: mdi:cctv
+
+switch:
+  - platform: aarlo
+    siren: True
+    all_sirens: False
+    snapshot: True
+    siren_volume: 1
+    siren_duration: 1
+
+sensor:
+  - platform: aarlo
+    monitored_conditions:
+      - last_capture
+      - battery_level
+      - captured_today
+      - signal_strength
+
+binary_sensor:
+  - platform: aarlo
+    monitored_conditions:
+      - motion
+      - sound

@@ -1,0 +1,11 @@
+alexa:
+  smart_home:
+    filter:
+      include_domains:
+        - light
+        - sensor
+        - switch
+        - scene
+        - binary_sensor
+        - vacuum
+        - input_boolean

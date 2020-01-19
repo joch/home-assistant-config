@@ -32,7 +32,5 @@ binary_sensor.workday:
   icon: mdi:briefcase-outline
 binary_sensor.workday_tomorrow:
   icon: mdi:briefcase
-alarm_control_panel.aarlo_home:
-  icon: mdi:cctv
 binary_sensor.bathroom_door:
   device_class: door

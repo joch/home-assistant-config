@@ -1,0 +1,15 @@
+yeelight:
+  devices:
+    10.0.0.122:
+      name: Living Room TV Light
+      transition: 1000
+      use_music_mode: False
+      save_on_change: False
+    10.0.0.102:
+      name: Johnnys Bedlight
+      use_music_mode: False
+      save_on_change: False
+    10.0.0.186:
+      name: Kajsas Bedlight
+      use_music_mode: False
+      save_on_change: False

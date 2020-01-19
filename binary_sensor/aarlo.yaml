@@ -1,4 +1,0 @@
-- platform: aarlo
-  monitored_conditions:
-    - motion
-    - sound

@@ -20,55 +20,18 @@ homeassistant:
 frontend:
   themes: !include_dir_merge_named themes
 
-config:
-conversation:
 api:
 cloud:
+config:
+conversation:
 history:
 logbook:
 map:
 mobile_app:
 person:
-system_health:
 sun:
+system_health:
 updater:
-
-http:
-  server_port: !secret http_server_port
-  ip_ban_enabled: true
-  login_attempts_threshold: 5
-  use_x_forwarded_for: True
-  base_url: !secret http_base_url
-  ssl_certificate: !secret http_ssl_certificate
-  ssl_key: !secret http_ssl_key
-  trusted_proxies:
-    - !secret trusted_proxies_001
-    - !secret trusted_proxies_002
-    - !secret trusted_proxies_003
-    - !secret trusted_proxies_004
-    - !secret trusted_proxies_005
-    - !secret trusted_proxies_006
-    - !secret trusted_proxies_007
-    - !secret trusted_proxies_008
-    - !secret trusted_proxies_009
-    - !secret trusted_proxies_010
-    - !secret trusted_proxies_011
-    - !secret trusted_proxies_012
-    - !secret trusted_proxies_013
-    - !secret trusted_proxies_014
-    - !secret trusted_proxies_015
-
-alexa:
-  smart_home:
-    filter:
-      include_domains:
-        - light
-        - sensor
-        - switch
-        - scene
-        - binary_sensor
-        - vacuum
-        - input_boolean
 
 recorder:
   db_url: !secret recorder_db_url
@@ -98,27 +61,6 @@ emulated_hue:
   exposed_domains:
     - light
 
-yeelight:
-  devices:
-    10.0.0.122:
-      name: Living Room TV Light
-      transition: 1000
-      use_music_mode: False
-      save_on_change: False
-    10.0.0.102:
-      name: Johnnys Bedlight
-      use_music_mode: False
-      save_on_change: False
-    10.0.0.186:
-      name: Kajsas Bedlight
-      use_music_mode: False
-      save_on_change: False
-
-aarlo:
-  username: !secret arlo_username
-  password: !secret arlo_password
-  refresh_devices_every: 2
-
 deconz:
   host: !secret deconz_host
   api_key: !secret deconz_api_key
@@ -138,110 +80,6 @@ vacuum:
     token: !secret vacuum_xiaomi_token
     name: !secret vacuum_xiaomi_name
 
-homekit:
-  auto_start: True
-  filter:
-    include_domains:
-      - binary_sensor
-      - light
-    include_entities:
-      - alarm_control_panel.alarm
-      - input_boolean.johnny_asleep
-      - input_boolean.kajsa_asleep
-      - input_boolean.guest_asleep
-      - input_boolean.everyone_asleep
-      - sensor.bedroom_temperature
-      - sensor.living_room_motion_sensor_temperature
-      - sensor.closet_temperature
-      - sensor.bathroom_temperature
-      - sensor.guest_bedroom_temperature
-      - switch.balcony_switch
-      - switch.guest_bedroom_switch
-      - switch.hallway_switch
-      - switch.kitchen_switch
-    exclude_entities:
-      - light.bedroom
-      - light.living_room
-      - light.balcony
-      - light.closet
-      - light.hallway
-      - light.kitchen
-      - light.guest_bedroom
-      - light.bathroom
-      - light.bathroom_ceiling_lamp_left
-      - light.bathroom_ceiling_lamp_middle
-      - light.bathroom_ceiling_lamp_right
-      - light.rwl021_12
-      - light.rwl021_23
-      - light.rwl021_24
-      - light.rwl021_25
-      - light.rwl021_26
-  entity_config:
-    alarm_control_panel.alarm:
-      code: !secret alarm_code
-    binary_sensor.balcony_entrance:
-      linked_battery_sensor: sensor.balcony_entrance_battery_level
-    binary_sensor.bathroom_door:
-      linked_battery_sensor: sensor.bathroom_door_battery_level
-    binary_sensor.bathroom_motion:
-      linked_battery_sensor: sensor.bathroom_motion_battery_level
-    binary_sensor.bathroom_water:
-      linked_battery_sensor: sensor.bathroom_water_battery_level
-    binary_sensor.bathroom_window:
-      linked_battery_sensor: sensor.bathroom_window_battery_level
-    binary_sensor.bedroom_motion:
-      linked_battery_sensor: sensor.bedroom_motion_battery_level
-    binary_sensor.bedroom_smoke:
-      linked_battery_sensor: sensor.bedroom_smoke_battery_level
-    binary_sensor.bedroom_window:
-      linked_battery_sensor: sensor.bedroom_window_battery_level
-    binary_sensor.guest_bedroom_motion:
-      linked_battery_sensor: sensor.guest_bedroom_motion_battery_level
-    binary_sensor.guest_bedroom_smoke:
-      linked_battery_sensor: sensor.guest_bedroom_smoke_battery_level
-    binary_sensor.guest_bedroom_window:
-      linked_battery_sensor: sensor.guest_bedroom_window_battery_level
-    binary_sensor.hallway_motion:
-      linked_battery_sensor: sensor.hallway_motion_battery_level
-    binary_sensor.hallway_smoke:
-      linked_battery_sensor: sensor.hallway_smoke_battery_level
-    binary_sensor.kitchen_motion:
-      linked_battery_sensor: sensor.kitchen_motion_battery_level
-    binary_sensor.kitchen_water:
-      linked_battery_sensor: sensor.kitchen_water_battery_level
-    binary_sensor.kitchen_window_left:
-      linked_battery_sensor: sensor.kitchen_window_left_battery_level
-    binary_sensor.kitchen_window_right:
-      linked_battery_sensor: sensor.kitchen_window_right_battery_level
-    binary_sensor.living_room_motion_sensor:
-      linked_battery_sensor: sensor.living_room_motion_battery_level
-    binary_sensor.living_room_window_left:
-      linked_battery_sensor: sensor.living_room_window_left_battery_level
-    binary_sensor.living_room_window_right:
-      linked_battery_sensor: sensor.living_room_window_right_battery_level
-    binary_sensor.main_entrance:
-      linked_battery_sensor: sensor.main_entrance_battery_level
-    switch.balcony_switch:
-      type: outlet
-    switch.guest_bedroom_switch:
-      type: outlet
-    switch.hallway_switch:
-      type: outlet
-    switch.kitchen_switch:
-      type: outlet
-    sensor.bedroom_temperature:
-      linked_battery_sensor: sensor.bedroom_environment_battery_level
-    sensor.closet_temperature:
-      linked_battery_sensor: sensor.closet_environment_battery_level
-    sensor.bathroom_temperature:
-      linked_battery_sensor: sensor.bathroom_environment_battery_level
-    sensor.guest_bedroom_temperature:
-      linked_battery_sensor: sensor.guest_bedroom_environment_battery_level
-
-camera:
-  - platform: aarlo
-    ffmpeg_arguments: '-pred 1 -q:v 2'
-
 alarm_control_panel:
   - platform: manual
     name: 'Alarm'
@@ -257,31 +95,6 @@ alarm_control_panel:
       pending_time: 30
     triggered:
       pending_time: 60
-  - platform: aarlo
-    home_mode_name: armed
-    away_mode_name: vacation
-    trigger_time: 1
-    alarm_volume: 1
-
-timer:
-  bedroom_lights:
-    name: Bedroom Lights
-    duration: '00:10:00'
-  living_room_lights:
-    name: Living Room Lights
-    duration: '00:10:00'
-  bathroom_lights:
-    name: Bathroom Lights
-    duration: '00:04:00'
-  hallway_lights:
-    name: Hallway Lights
-    duration: '00:01:00'
-  kitchen_lights:
-    name: Kitchen Lights
-    duration: '00:10:00'
-  guest_bedroom_lights:
-    name: Guest Bedroom Lights
-    duration: '00:10:00'
 
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
