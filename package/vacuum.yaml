@@ -13,6 +13,30 @@ input_boolean:
     name: Vacuum Return on Disarm
     icon: mdi:robot-vacuum
 
+input_select:
+  vacuum_clean:
+    name: Clean Zone
+    icon: mdi:map-marker-radius
+    initial: Choose
+    options:
+      - Choose
+      - Bedroom
+      - Living Room
+      - Litterbox
+      - Hallway
+      - Kitchen
+      - Guest Bedroom
+
+  vacuum_go:
+    name: Go to
+    icon: mdi:map-marker-down
+    initial: Choose
+    options:
+      - Choose
+      - Home
+      - Trash
+      - Appear
+
 automation:
   - alias: Kitchen send vacuum to trash
     trigger:
