@@ -1,0 +1,115 @@
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret vacuum_xiaomi_host
+    token: !secret vacuum_xiaomi_token
+    name: !secret vacuum_xiaomi_name
+
+input_boolean:
+  vacuum_automation:
+    name: Vacuum Automation
+    icon: mdi:robot-vacuum
+
+  vacuum_return_on_disarm:
+    name: Vacuum Return on Disarm
+    icon: mdi:robot-vacuum
+
+automation:
+  - alias: Kitchen send vacuum to trash
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: empty_vacuum
+          event: 1002
+    action:
+      - service: script.turn_on
+        entity_id: script.vacuum_go_trash
+
+  - alias: Kitchen send vacuum home
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: empty_vacuum
+          event: 1003
+    action:
+      - service: script.turn_on
+        entity_id: script.vacuum_go_home
+
+  - alias: Turn on vacuum when alarm is armed
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'armed_away'
+        for: '00:01:00'
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'armed_away'
+        for: '01:00:00'
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'armed_away'
+        for: '02:00:00'
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'armed_away'
+        for: '04:00:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.vacuum_automation
+        state: 'on'
+      - condition: template
+        value_template: '{{ (as_timestamp(now()) - as_timestamp(states.automation.turn_on_vacuum_when_alarm_is_armed.attributes.last_triggered | default(0)) | int > 36000)}}'
+      - condition: time
+        after: '08:00:00'
+        before: '20:00:00'
+    action:
+      - service: vacuum.start
+        data:
+          entity_id: vacuum.greta
+
+  - alias: Turn off vacuum when alarm is disarmed
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'disarmed'
+    condition:
+      - condition: state
+        entity_id: vacuum.greta
+        state: 'cleaning'
+      - condition: state
+        entity_id: input_boolean.vacuum_automation
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacuum_return_on_disarm
+        state: 'on'
+    action:
+      - service: vacuum.return_to_base
+        data:
+          entity_id: vacuum.greta
+
+  - alias: Notify when there is a vacuum issue
+    trigger:
+      - platform: state
+        entity_id: vacuum.greta
+        to: 'error'
+    action:
+      - service: notify.all_phones
+        data:
+          title: "Greta is stuck"
+          message: "Greta has reported an error. Make sure that she is not stuck."
+
+  - alias: Notify when the vacuum is finished
+    trigger:
+      - platform: state
+        entity_id: vacuum.greta
+        to: 'docked'
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: 'armed_away'
+    action:
+      - service: notify.all_phones
+        data:
+          title: "Greta is finished"
+          message: "Greta has finished cleaning. Make sure to empty her bin."

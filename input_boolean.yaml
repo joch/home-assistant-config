@@ -22,14 +22,6 @@ closet_ventilation_fan_automation:
   name: Closet Ventilation Fan Automation
   icon: mdi:fan
 
-vacuum_automation:
-  name: Vacuum Automation
-  icon: mdi:robot-vacuum
-
-vacuum_return_on_disarm:
-  name: Vacuum Return on Disarm
-  icon: mdi:robot-vacuum
-
 lights_full:
   name: Lights Full
   icon: mdi:lightbulb-on-outline
