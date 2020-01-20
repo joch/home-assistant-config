@@ -1,7 +1,0 @@
-- alias: Fluxer switch on by default
-  trigger:
-    - platform: homeassistant
-      event: start
-  action:
-    - service: homeassistant.turn_on
-      entity_id: switch.flux_indoor_lights

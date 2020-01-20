@@ -66,3 +66,12 @@ switch:
     disable_brightness_adjust: True
     mode: mired
     transition: 2
+
+automation:
+  - alias: Fluxer switch on by default
+    trigger:
+      - platform: homeassistant
+        event: start
+    action:
+      - service: homeassistant.turn_on
+        entity_id: switch.flux_indoor_lights
