@@ -114,6 +114,6 @@ automation:
         state: 'on'
     action:
       - service: input_boolean.turn_off
-        entity_id: living_room_sonos_night_sound
-      - service: input_boolean.turn_off
-        entity_id: living_room_sonos_speech_enhance
+        entity_id:
+          - input_boolean.living_room_sonos_night_sound
+          - input_boolean.living_room_sonos_speech_enhance
