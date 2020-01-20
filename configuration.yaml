@@ -66,10 +66,4 @@ xiaomi_aqara:
   gateways:
     - key: !secret xiaomi_gateway_key
 
-automation old: !include_dir_merge_list automation
-group: !include_dir_merge_named group
-notify: !include_dir_merge_list notify
-scene: !include_dir_merge_list scene
-script: !include_dir_merge_named script
-
 automation: !include automations.yaml
