@@ -1,0 +1,50 @@
+automation:
+  - alias: Hallway occupied
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.hallway_motion
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.main_entrance
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.hallway_occupancy_automation
+        state: 'on'
+    action:
+      - service: timer.cancel
+        entity_id: timer.hallway_lights
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.hallway_occupied
+
+  - alias: Hallway start idle timer
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.hallway_motion
+        to: 'off'
+    condition:
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: timer.hallway_lights
+            state: 'idle'
+          - condition: state
+            entity_id: timer.hallway_lights
+            state: 'active'
+    action:
+      - service: timer.start
+        entity_id: timer.hallway_lights
+
+  - alias: Hallway idle
+    trigger:
+      - platform: event
+        event_type: timer.finished
+        event_data:
+          entity_id: timer.hallway_lights
+    condition:
+      - condition: state
+        entity_id: input_boolean.hallway_occupancy_automation
+        state: 'on'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.hallway_occupied

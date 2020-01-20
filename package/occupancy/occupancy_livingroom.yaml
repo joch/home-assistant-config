@@ -1,0 +1,38 @@
+automation:
+  - alias: Living room occupied
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.living_room_motion_sensor
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.living_room_occupancy_automation
+        state: 'on'
+    action:
+      - service: timer.cancel
+        entity_id: timer.living_room_lights
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.living_room_occupied
+
+  - alias: Living room start idle timer
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.living_room_motion_sensor
+        to: 'off'
+    action:
+      - service: timer.start
+        entity_id: timer.living_room_lights
+
+  - alias: Living room idle
+    trigger:
+      - platform: event
+        event_type: timer.finished
+        event_data:
+          entity_id: timer.living_room_lights
+    condition:
+      - condition: state
+        entity_id: input_boolean.living_room_occupancy_automation
+        state: 'on'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.living_room_occupied

@@ -1,0 +1,38 @@
+automation:
+  - alias: Guest Bedroom occupied
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.guest_bedroom_motion
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.guest_bedroom_occupancy_automation
+        state: 'on'
+    action:
+      - service: timer.cancel
+        entity_id: timer.guest_bedroom_lights
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.guest_bedroom_occupied
+
+  - alias: Guest Bedroom start idle timer
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.guest_bedroom_motion
+        to: 'off'
+    action:
+      - service: timer.start
+        entity_id: timer.guest_bedroom_lights
+
+  - alias: Guest Bedroom idle
+    trigger:
+      - platform: event
+        event_type: timer.finished
+        event_data:
+          entity_id: timer.guest_bedroom_lights
+    condition:
+      - condition: state
+        entity_id: input_boolean.guest_bedroom_occupancy_automation
+        state: 'on'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.guest_bedroom_occupied
