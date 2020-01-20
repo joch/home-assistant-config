@@ -86,7 +86,7 @@ automation:
       - platform: state
         entity_id: binary_sensor.bathroom_motion
         to: 'on'
-        for: '00:01:10'
+        for: '00:01:40'
     condition:
       - condition: state
         entity_id: binary_sensor.bathroom_door
