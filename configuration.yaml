@@ -48,11 +48,6 @@ asuswrt:
   username: !secret asuswrt_username
   password: !secret asuswrt_password
 
-remote:
-  - platform: harmony
-    name: Living Room
-    host: !secret harmony_host
-
 emulated_hue:
   expose_by_default: true
   exposed_domains:

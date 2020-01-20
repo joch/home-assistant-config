@@ -1,12 +1,3 @@
-harmony:
-  name: Harmony
-  icon: mdi:monitor
-  options:
-    - PowerOff
-    - TV
-    - Apple TV
-    - Music
-
 scene:
   name: Scene
   icon: mdi:circle-expand
