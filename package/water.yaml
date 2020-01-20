@@ -1,0 +1,42 @@
+automation:
+  - alias: Notify and turn on lights when water detected in kitchen
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.kitchen_water
+        to: 'on'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_kitchen_full
+      - service: camera.aarlo_start_recording
+        data:
+          entity_id: camera.aarlo_hallway
+          duration: 60
+      - service: camera.aarlo_start_recording
+        data:
+          entity_id: camera.aarlo_living_room
+          duration: 60
+      - service: notify.all_phones
+        data:
+          title: "** Water detected **"
+          message: "Water detected in the kitchen!"
+
+  - alias: Notify and turn on lights when water detected in bathroom
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.bathroom_water
+        to: 'on'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_bathroom_full
+      - service: camera.aarlo_start_recording
+        data:
+          entity_id: camera.aarlo_hallway
+          duration: 60
+      - service: camera.aarlo_start_recording
+        data:
+          entity_id: camera.aarlo_living_room
+          duration: 60
+      - service: notify.all_phones
+        data:
+          title: "** Water detected **"
+          message: "Water detected in the bathroom!"
