@@ -63,4 +63,9 @@ xiaomi_aqara:
   gateways:
     - key: !secret xiaomi_gateway_key
 
+# For loading HACS themes
+frontend:
+  themes: !include_dir_merge_named themes
+
+# For frontend automation support
 automation: !include automations.yaml
