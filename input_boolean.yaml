@@ -1,7 +1,3 @@
-closet_ventilation_fan_automation:
-  name: Closet Ventilation Fan Automation
-  icon: mdi:fan
-
 lights_full:
   name: Lights Full
   icon: mdi:lightbulb-on-outline

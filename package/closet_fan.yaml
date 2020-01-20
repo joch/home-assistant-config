@@ -1,0 +1,39 @@
+input_boolean:
+  closet_ventilation_fan_automation:
+    name: Closet Ventilation Fan Automation
+    icon: mdi:fan
+
+automation:
+  - alias: Turn on ventilation fan
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.closet_temperature
+        above: 20
+        for: '00:10:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.closet_ventilation_fan_automation
+        state: 'on'
+      - condition: state
+        entity_id: switch.closet_outlet
+        state: 'off'
+    action:
+      - service: switch.turn_on
+        entity_id: switch.closet_outlet
+
+  - alias: Turn off ventilation fan
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.closet_temperature
+        below: 20
+        for: '00:10:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.closet_ventilation_fan_automation
+        state: 'on'
+      - condition: state
+        entity_id: switch.closet_outlet
+        state: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id: switch.closet_outlet
