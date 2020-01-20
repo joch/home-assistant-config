@@ -34,3 +34,71 @@ input_boolean:
   music_automation:
     name: Music Automation
     icon: mdi:playlist-music-outline
+
+automation:
+  - alias: Turn on kitchen radio when waking up
+    trigger:
+      - platform: state
+        entity_id: input_boolean.everyone_asleep
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+    action:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen
+          volume_level: 0.1
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.kitchen
+          source: 'P4 Stockholm'
+
+  - alias: Turn on background music when baby asleep
+    trigger:
+      - platform: state
+        entity_id: input_boolean.guest_asleep
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+    action:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen
+          volume_level: 0.1
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.kitchen
+          source: 'Vinyl FM'
+
+  - alias: Pause music automatically
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'armed_away'
+      - platform: state
+        entity_id: input_boolean.everyone_asleep
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+    action:
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.bedroom
+          sleep_time: 0
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.living_room
+          sleep_time: 0
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.kitchen
+          sleep_time: 0
