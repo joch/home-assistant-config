@@ -73,6 +73,3 @@ scene: !include_dir_merge_list scene
 script: !include_dir_merge_named script
 
 automation: !include automations.yaml
-input_boolean: !include input_boolean.yaml
-input_select: !include input_select.yaml
-sensor: !include sensor.yaml

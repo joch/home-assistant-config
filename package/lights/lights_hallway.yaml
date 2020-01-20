@@ -1,0 +1,29 @@
+automation:
+  - alias: Hallway lights idle
+    trigger:
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'off'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'normal'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'night'
+      - platform: state
+        entity_id: input_boolean.hallway_occupied
+        to: 'off'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_hallway_{{ state_attr('sensor.light_mode', 'off_mode') }}
+
+  - alias: Hallway lights occupied
+    trigger:
+      - platform: state
+        entity_id: input_boolean.hallway_occupied
+        to: 'on'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_hallway_{{ states('sensor.light_mode') }}

@@ -1,0 +1,93 @@
+input_boolean:
+  lights_full:
+    name: Lights Full
+    icon: mdi:lightbulb-on-outline
+
+input_select:
+  scene:
+    name: Scene
+    icon: mdi:circle-expand
+    initial: Choose
+    options:
+      - Choose
+      - Bedroom Off
+      - Bedroom Dim
+      - Bedroom Normal
+      - Bedroom Evening
+      - Bedroom Full
+      - Bedroom Bright
+      - Living Room Off
+      - Living Room Dim
+      - Living Room Normal
+      - Living Room Evening
+      - Living Room Night
+      - Living Room Full
+      - Living Room Bright
+      - Living Room TV
+      - Living Room TV Only
+      - Living Room Music
+      - Living Room Music Only
+      - Balcony Off
+      - Balcony Normal
+      - Balcony Bright
+      - Bathroom Off
+      - Bathroom Dim
+      - Bathroom Normal
+      - Bathroom Evening
+      - Bathroom Night
+      - Bathroom Full
+      - Bathroom Bright
+      - Hallway Off
+      - Hallway Dim
+      - Hallway Normal
+      - Hallway Evening
+      - Hallway Night
+      - Hallway Full
+      - Hallway Bright
+      - Kitchen Off
+      - Kitchen Dim
+      - Kitchen Normal
+      - Kitchen Evening
+      - Kitchen Night
+      - Kitchen Full
+      - Kitchen Bright
+      - Guest Bedroom Off
+      - Guest Bedroom Dim
+      - Guest Bedroom Normal
+      - Guest Bedroom Evening
+      - Guest Bedroom Full
+      - Guest Bedroom Bright
+      - Home Off
+      - Home Dim
+      - Home Normal
+      - Home Evening
+      - Home Full
+
+sensor:
+  - platform: template
+    sensors:
+      light_mode:
+        friendly_name: Light Mode
+        value_template: >-
+          {% if is_state('sun.sun', 'below_horizon') and now().hour >= 7 and now().hour <= 22 and is_state('alarm_control_panel.alarm', 'armed_away') %}
+          evening
+          {% elif is_state('alarm_control_panel.alarm', 'armed_away') %}
+          off
+          {% elif is_state('input_boolean.everyone_asleep', 'on') %}
+          night
+          {% elif is_state('input_boolean.lights_full', 'on') %}
+          full
+          {% elif is_state('sun.sun', 'below_horizon') and now().hour >= 19  %}
+          evening
+          {% elif states('sensor.living_room_luminance')|float <= 40 %}
+          normal
+          {% else %}
+          bright
+          {% endif %}
+        attribute_templates:
+          off_mode: >-
+            {% if is_state('sensor.light_mode', 'off') or is_state('sensor.light_mode', 'night') or is_state('sensor.light_mode', 'bright') %}
+            off
+            {% else %}
+            dim
+            {% endif %}
