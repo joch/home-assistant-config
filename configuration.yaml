@@ -17,9 +17,6 @@ homeassistant:
   auth_providers:
     - type: homeassistant
 
-frontend:
-  themes: !include_dir_merge_named themes
-
 api:
 cloud:
 config:
