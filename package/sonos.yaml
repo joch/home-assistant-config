@@ -102,3 +102,18 @@ automation:
         data:
           entity_id: media_player.kitchen
           sleep_time: 0
+
+  - alias: Disable night mode when going to bed
+    trigger:
+      - platform: state
+        entity_id: input_boolean.everyone_asleep
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: living_room_sonos_night_sound
+      - service: input_boolean.turn_off
+        entity_id: living_room_sonos_speech_enhance
