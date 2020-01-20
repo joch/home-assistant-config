@@ -1,0 +1,124 @@
+script:
+  scene_guest_bedroom_normal:
+    alias: Guest Bedroom Normal
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_ceiling_lamp
+          brightness_pct: 50
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_window_lamp
+          brightness_pct: 75
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_cloud_lamp
+          brightness_pct: 25
+          transition: 2
+      - service: switch.turn_on
+        data:
+          entity_id: switch.guest_bedroom_switch
+
+  scene_guest_bedroom_evening:
+    alias: Guest Bedroom Evening
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_ceiling_lamp
+          brightness_pct: 25
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_window_lamp
+          brightness_pct: 50
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_cloud_lamp
+          brightness_pct: 10
+          transition: 2
+      - service: switch.turn_on
+        data:
+          entity_id: switch.guest_bedroom_switch
+
+  scene_guest_bedroom_off:
+    alias: Guest Bedroom Off
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.guest_bedroom_ceiling_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.guest_bedroom_window_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.guest_bedroom_cloud_lamp
+          transition: 5
+      - service: switch.turn_off
+        data:
+          entity_id: switch.guest_bedroom_switch
+
+  scene_guest_bedroom_dim:
+    alias: Guest Bedroom Dim
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.guest_bedroom_ceiling_lamp
+          transition: 5
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_window_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.guest_bedroom_cloud_lamp
+          transition: 5
+      - service: switch.turn_on
+        data:
+          entity_id: switch.guest_bedroom_switch
+
+  scene_guest_bedroom_full:
+    alias: Guest Bedroom Full
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_ceiling_lamp
+          brightness_pct: 100
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_window_lamp
+          brightness_pct: 100
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_cloud_lamp
+          brightness_pct: 100
+          transition: 2
+      - service: switch.turn_on
+        data:
+          entity_id: switch.guest_bedroom_switch
+
+  scene_guest_bedroom_bright:
+    alias: Guest Bedroom Bright
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.guest_bedroom_ceiling_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.guest_bedroom_window_lamp
+          transition: 5
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_cloud_lamp
+          brightness_pct: 25
+          transition: 2
+      - service: switch.turn_off
+        data:
+          entity_id: switch.guest_bedroom_switch

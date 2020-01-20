@@ -1,0 +1,118 @@
+script:
+  scene_hallway_normal:
+    alias: Hallway Normal
+    sequence:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.hallway_ceiling_lamp
+          transition: 2
+          brightness_pct: >-
+            {% if states.sensor.living_room_luminance.state | int <= 20 %}
+            50
+            {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+            {{ states.sensor.living_room_luminance.state | int }}
+            {% else %}
+            100
+            {% endif %}
+      - service: switch.turn_on
+        data:
+          entity_id: switch.hallway_switch
+      - delay: '00:00:03'
+      - service: switch.flux_hallway_update
+
+  scene_hallway_evening:
+    alias: Hallway Evening
+    sequence:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.hallway_ceiling_lamp
+          transition: 2
+          brightness_pct: >-
+            {% if states.sensor.living_room_luminance.state | int <= 20 %}
+            20
+            {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+            {{ states.sensor.living_room_luminance.state | int }}
+            {% else %}
+            100
+            {% endif %}
+      - service: switch.turn_on
+        data:
+          entity_id: switch.hallway_switch
+      - delay: '00:00:03'
+      - service: switch.flux_hallway_update
+
+  scene_hallway_dim:
+    alias: Hallway Dim
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.hallway_ceiling_lamp
+          transition: 5
+      - service: switch.turn_on
+        data:
+          entity_id: switch.hallway_switch
+
+  scene_hallway_full:
+    alias: Hallway Full
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.hallway_ceiling_lamp
+          transition: 2
+          brightness_pct: 100
+      - service: switch.turn_on
+        data:
+          entity_id: switch.hallway_switch
+      - delay: '00:00:03'
+      - service: switch.flux_hallway_update
+
+  scene_hallway_night:
+    alias: Hallway Night
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.hallway_ceiling_lamp
+          transition: 5
+      - service: switch.turn_off
+        data:
+          entity_id: switch.hallway_switch
+      - service: light.turn_on
+        data:
+          entity_id: light.gateway_light_7811dc64de1a
+          brightness_pct: 10
+          rgb_color: [255,37,0]
+
+  scene_hallway_off:
+    alias: Hallway Off
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.hallway_ceiling_lamp
+          transition: 5
+      - service: switch.turn_off
+        data:
+          entity_id: switch.hallway_switch
+      - service: light.turn_off
+        data:
+          entity_id: light.gateway_light_7811dc64de1a
+
+  scene_hallway_bright:
+    alias: Hallway Bright
+    sequence:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.hallway_ceiling_lamp
+          transition: 2
+          brightness_pct: >-
+            {% if states.sensor.living_room_luminance.state | int <= 20 %}
+            50
+            {% elif states.sensor.living_room_luminance.state | int <= 100 %}
+            {{ states.sensor.living_room_luminance.state | int }}
+            {% else %}
+            100
+            {% endif %}
+      - service: switch.turn_off
+        data:
+          entity_id: switch.hallway_switch
+      - delay: '00:00:03'
+      - service: switch.flux_hallway_update

@@ -1,0 +1,95 @@
+script:
+  scene_home_dim:
+    alias: Home Dim
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bedroom_dim
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_living_room_dim
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bathroom_dim
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_hallway_dim
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_kitchen_dim
+
+  scene_home_normal:
+    alias: Home Normal
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bedroom_normal
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_living_room_normal
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bathroom_normal
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_hallway_normal
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_kitchen_normal
+
+  scene_home_evening:
+    alias: Home Evening
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bedroom_evening
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_living_room_evening
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bathroom_evening
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_hallway_evening
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_kitchen_evening
+
+  scene_home_full:
+    alias: Home Full
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bedroom_full
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_living_room_full
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bathroom_full
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_hallway_full
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_kitchen_full
+
+  scene_home_off:
+    alias: Home Off
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bedroom_off
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_living_room_off
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bathroom_off
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_hallway_off
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_kitchen_off
