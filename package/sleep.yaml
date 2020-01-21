@@ -113,7 +113,12 @@ automation:
         event_type: deconz_event
         event_data:
           id: johnny_asleep
-          event: 1000
+          event: 1002
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: johnny_asleep
+          event: 1003
     condition:
       - condition: state
         entity_id: device_tracker.johnnysiphone
@@ -128,7 +133,12 @@ automation:
         event_type: deconz_event
         event_data:
           id: kajsa_asleep
-          event: 1000
+          event: 1002
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: kajsa_asleep
+          event: 1003
     condition:
       - condition: state
         entity_id: device_tracker.kajsasiphone
@@ -143,11 +153,15 @@ automation:
         event_type: deconz_event
         event_data:
           id: guest_asleep
-          event: 1000
+          event: 1002
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: guest_asleep
+          event: 1003
     action:
       - service: input_boolean.toggle
         entity_id: input_boolean.guest_asleep
-
 
   - alias: Finish timers when everyone asleep toggles
     trigger:
