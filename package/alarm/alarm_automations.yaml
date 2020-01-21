@@ -138,7 +138,7 @@ automation:
   - alias: Automatically arm alarm when guest away
     trigger:
       - platform: state
-        entity_id: group.house_guests
+        entity_id: group.guests
         from: 'home'
         to: 'not_home'
     condition:
@@ -160,7 +160,7 @@ automation:
   - alias: Automatically disarm alarm when guest home
     trigger:
       - platform: state
-        entity_id: group.house_guests
+        entity_id: group.guests
         from: 'not_home'
         to: 'home'
     condition:

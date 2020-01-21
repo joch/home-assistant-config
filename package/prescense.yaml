@@ -10,7 +10,7 @@ group:
     - person.johnny
     - person.kajsa
 
-  House Guests:
+  Guests:
     - !secret guest_001
     - !secret guest_002
     - !secret guest_003
