@@ -49,26 +49,26 @@ automation:
             - condition: and
               conditions:
                 - condition: state
-                  entity_id: device_tracker.johnnysiphone
+                  entity_id: person.johnny
                   state: 'home'
                 - condition: state
                   entity_id: input_boolean.johnny_asleep
                   state: 'on'
             - condition: state
-              entity_id: device_tracker.johnnysiphone
+              entity_id: person.johnny
               state: 'not_home'
           - condition: or
             conditions:
             - condition: and
               conditions:
                 - condition: state
-                  entity_id: device_tracker.kajsasiphone
+                  entity_id: person.kajsa
                   state: 'home'
                 - condition: state
                   entity_id: input_boolean.kajsa_asleep
                   state: 'on'
             - condition: state
-              entity_id: device_tracker.kajsasiphone
+              entity_id: person.kajsa
               state: 'not_home'
           - condition: or
             conditions:
@@ -121,7 +121,7 @@ automation:
           event: 1003
     condition:
       - condition: state
-        entity_id: device_tracker.johnnysiphone
+        entity_id: person.johnny
         state: 'home'
     action:
       - service: input_boolean.toggle
@@ -141,7 +141,7 @@ automation:
           event: 1003
     condition:
       - condition: state
-        entity_id: device_tracker.kajsasiphone
+        entity_id: person.kajsa
         state: 'home'
     action:
       - service: input_boolean.toggle

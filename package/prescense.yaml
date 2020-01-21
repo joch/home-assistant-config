@@ -7,8 +7,8 @@ asuswrt:
 
 group:
   Household:
-    - device_tracker.johnnysiphone
-    - device_tracker.kajsasiphone
+    - person.johnny
+    - person.kajsa
 
   House Guests:
     - !secret guest_001
