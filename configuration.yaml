@@ -38,13 +38,6 @@ recorder:
 ifttt:
   key: !secret ifttt_key
 
-asuswrt:
-  host: !secret asuswrt_host
-  protocol: telnet
-  port: 23
-  username: !secret asuswrt_username
-  password: !secret asuswrt_password
-
 emulated_hue:
   expose_by_default: true
   exposed_domains:

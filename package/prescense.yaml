@@ -1,0 +1,21 @@
+asuswrt:
+  host: !secret asuswrt_host
+  protocol: telnet
+  port: 23
+  username: !secret asuswrt_username
+  password: !secret asuswrt_password
+
+group:
+  Household:
+    - device_tracker.johnnysiphone
+    - device_tracker.kajsasiphone
+
+  House Guests:
+    - !secret guest_001
+    - !secret guest_002
+    - !secret guest_003
+    - !secret guest_004
+    - !secret guest_005
+    - !secret guest_006
+    - !secret guest_007
+    - !secret guest_008
