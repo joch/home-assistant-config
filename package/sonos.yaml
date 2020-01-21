@@ -113,7 +113,7 @@ automation:
         entity_id: input_boolean.music_automation
         state: 'on'
     action:
-      - service: input_boolean.turn_off
+      - service: switch.turn_off
         entity_id:
-          - input_boolean.living_room_sonos_night_sound
-          - input_boolean.living_room_sonos_speech_enhance
+          - switch.living_room_sonos_night_sound
+          - switch.living_room_sonos_speech_enhance
