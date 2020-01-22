@@ -6,16 +6,21 @@ asuswrt:
   password: !secret asuswrt_password
 
 group:
-  Household:
-    - person.johnny
-    - person.kajsa
+  household:
+    name: Household
+    entities:
+      - person.johnny
+      - person.kajsa
 
-  Guests:
-    - !secret guest_001
-    - !secret guest_002
-    - !secret guest_003
-    - !secret guest_004
-    - !secret guest_005
-    - !secret guest_006
-    - !secret guest_007
-    - !secret guest_008
+  guests:
+    name: Guests
+    icon: mdi:account-group
+    entities:
+      - !secret guest_001
+      - !secret guest_002
+      - !secret guest_003
+      - !secret guest_004
+      - !secret guest_005
+      - !secret guest_006
+      - !secret guest_007
+      - !secret guest_008
