@@ -7,6 +7,9 @@ automation:
       - platform: state
         entity_id: sensor.light_mode
         to: 'evening'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'full'
     action:
       - service: script.turn_on
         entity_id: script.scene_balcony_normal
@@ -22,9 +25,6 @@ automation:
       - platform: state
         entity_id: sensor.light_mode
         to: 'bright'
-      - platform: state
-        entity_id: sensor.light_mode
-        to: 'full'
     action:
       - service: script.turn_on
         entity_id: script.scene_balcony_off

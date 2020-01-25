@@ -2,21 +2,17 @@ automation:
   - alias: Living room lights idle
     trigger:
       - platform: state
-        entity_id: sensor.light_mode
-        to: 'off'
-      - platform: state
-        entity_id: sensor.light_mode
-        to: 'normal'
-      - platform: state
-        entity_id: sensor.light_mode
-        to: 'night'
-      - platform: state
         entity_id: input_boolean.living_room_occupied
         to: 'off'
+      - platform: state
+        entity_id: sensor.light_mode
+      - platform: state
+        entity_id: input_select.harmony
+        to: 'PowerOff'
     condition:
       - condition: state
-        entity_id: timer.living_room_lights
-        state: 'idle'
+        entity_id: input_boolean.living_room_occupied
+        state: 'off'
       - condition: state
         entity_id: input_select.harmony
         state: 'PowerOff'
@@ -31,9 +27,21 @@ automation:
         entity_id: input_boolean.living_room_occupied
         to: 'on'
       - platform: state
+        entity_id: sensor.light_mode
+        to: 'normal'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'evening'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'full'
+      - platform: state
         entity_id: input_select.harmony
         to: 'PowerOff'
     condition:
+      - condition: state
+        entity_id: input_boolean.living_room_occupied
+        state: 'on'
       - condition: state
         entity_id: input_select.harmony
         state: 'PowerOff'

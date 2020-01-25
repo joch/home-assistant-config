@@ -2,29 +2,24 @@ automation:
   - alias: Guest Bedroom lights idle
     trigger:
       - platform: state
-        entity_id: sensor.light_mode
-        to: 'off'
-      - platform: state
-        entity_id: sensor.light_mode
-        to: 'normal'
-      - platform: state
-        entity_id: sensor.light_mode
-        to: 'night'
-      - platform: state
         entity_id: input_boolean.guest_bedroom_occupied
         to: 'off'
       - platform: state
+        entity_id: sensor.light_mode
+      - platform: state
         entity_id: input_boolean.guest_asleep
-        to: 'on'
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.guest_bedroom_occupied
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.guest_asleep
+        state: 'off'
     action:
       - service: script.turn_on
         data_template:
-          entity_id: >-
-            {% if is_state('input_boolean.guest_asleep', 'on') %}
-            script.scene_guest_bedroom_off
-            {% else %}
-            script.scene_guest_bedroom_{{ state_attr('sensor.light_mode', 'off_mode') }}
-            {% endif %}
+          entity_id: script.scene_guest_bedroom_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
   - alias: Guest Bedroom lights occupied
     trigger:
@@ -32,9 +27,21 @@ automation:
         entity_id: input_boolean.guest_bedroom_occupied
         to: 'on'
       - platform: state
+        entity_id: sensor.light_mode
+        to: 'normal'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'evening'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'full'
+      - platform: state
         entity_id: input_boolean.guest_asleep
         to: 'off'
     condition:
+      - condition: state
+        entity_id: input_boolean.guest_bedroom_occupied
+        state: 'on'
       - condition: state
         entity_id: input_boolean.guest_asleep
         state: 'off'
@@ -42,3 +49,12 @@ automation:
       - service: script.turn_on
         data_template:
           entity_id: script.scene_guest_bedroom_{{ states('sensor.light_mode') }}
+
+  - alias: Guest Bedroom lights sleep
+    trigger:
+      - platform: state
+        entity_id: input_boolean.guest_asleep
+        to: 'on'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_guest_bedroom_off
