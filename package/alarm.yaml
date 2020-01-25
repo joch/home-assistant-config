@@ -14,13 +14,6 @@ alarm_control_panel:
     triggered:
       pending_time: 60
 
-group:
-  Alarm Modes:
-    - input_boolean.alarm_mode
-    - input_boolean.alarm_night_mode
-    - input_boolean.vacation_mode
-    - input_boolean.guest_mode
-
 input_boolean:
   alarm_mode:
     name: Auto-arm Alarm Away

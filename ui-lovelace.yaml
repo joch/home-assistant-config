@@ -59,31 +59,24 @@
                             "entities": [
                                 "person.johnny",
                                 "person.kajsa",
-                                "group.guests"
+                                "input_boolean.vacation_mode"
                             ],
                             "type": "entities"
                         },
                         {
                             "card": {
                                 "show_name": false,
-                                "show_state": false,
+                                "show_state": true,
                                 "type": "glance"
                             },
                             "entities": [
-                                "device_tracker.rebeckasiphone",
-                                "device_tracker.karinsiphone",
-                                "device_tracker.tildasiphone",
-                                "device_tracker.lukasiphone6",
-                                "device_tracker.frankiii",
-                                "device_tracker.paulsiphone",
-                                "device_tracker.mohnisiphone",
-                                "device_tracker.dalwindasiphone"
+                                "group.guests",
+                                {
+                                    "type": "divider"
+                                },
+                                "input_boolean.guest_mode"
                             ],
-                            "show_empty": false,
-                            "state_filter": [
-                                "home"
-                            ],
-                            "type": "custom:auto-entities"
+                            "type": "entities"
                         },
                         {
                             "entities": [
@@ -97,7 +90,10 @@
                                     "type": "divider"
                                 },
                                 {
-                                    "entity": "group.alarm_modes"
+                                    "entity": "input_boolean.alarm_mode"
+                                },
+                                {
+                                    "entity": "input_boolean.alarm_night_mode"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -109,12 +105,6 @@
                                     "entity": "sensor.light_mode"
                                 },
                                 {
-                                    "type": "divider"
-                                },
-                                {
-                                    "entity": "group.occupancy_automation"
-                                },
-                                {
                                     "entity": "group.occupancy"
                                 },
                                 {
@@ -122,6 +112,12 @@
                                 },
                                 {
                                     "entity": "input_select.scene"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "group.occupancy_automation"
                                 }
                             ],
                             "show_header_toggle": false,
