@@ -1,9 +1,14 @@
 {
     "data": {
         "config": {
+            "background": "var(--background-image)",
             "custom_header": {
+                "background": "rgba(155, 155, 155, 0.25)",
                 "chevrons": false,
-                "compact_mode": true
+                "compact_mode": true,
+                "swipe_animate": "fade",
+                "swipe_prevent_default": true,
+                "voice_hide": true
             },
             "resources": [
                 {
@@ -48,12 +53,23 @@
                         {
                             "card": {
                                 "show_name": false,
+                                "show_state": true,
+                                "type": "glance"
+                            },
+                            "entities": [
+                                "person.johnny",
+                                "person.kajsa",
+                                "group.guests"
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "card": {
+                                "show_name": false,
                                 "show_state": false,
                                 "type": "glance"
                             },
                             "entities": [
-                                "device_tracker.johnnysiphone",
-                                "device_tracker.kajsasiphone",
                                 "device_tracker.rebeckasiphone",
                                 "device_tracker.karinsiphone",
                                 "device_tracker.tildasiphone",
@@ -63,10 +79,11 @@
                                 "device_tracker.mohnisiphone",
                                 "device_tracker.dalwindasiphone"
                             ],
+                            "show_empty": false,
                             "state_filter": [
                                 "home"
                             ],
-                            "type": "entity-filter"
+                            "type": "custom:auto-entities"
                         },
                         {
                             "entities": [
@@ -140,10 +157,13 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "input_boolean.sleep_automation"
+                                    "entity": "group.sleep_status"
                                 },
                                 {
-                                    "entity": "group.sleep_status"
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "input_boolean.sleep_automation"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -507,7 +527,13 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.bathroom_ceiling_lamp"
+                                    "entity": "light.bathroom_ceiling_lamp_left"
+                                },
+                                {
+                                    "entity": "light.bathroom_ceiling_lamp_middle"
+                                },
+                                {
+                                    "entity": "light.bathroom_ceiling_lamp_right"
                                 },
                                 {
                                     "entity": "light.bathroom_mirror_lamp"
