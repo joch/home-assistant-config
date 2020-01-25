@@ -16,11 +16,11 @@ alarm_control_panel:
 
 input_boolean:
   alarm_mode:
-    name: Auto-arm Alarm Away
+    name: Auto-arm Away
     icon: mdi:shield-outline
 
   alarm_night_mode:
-    name: Auto-arm Alarm Night
+    name: Auto-arm Night
     icon: mdi:shield-outline
 
   vacation_mode:
