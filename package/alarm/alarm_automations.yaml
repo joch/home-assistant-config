@@ -141,6 +141,10 @@ automation:
         entity_id: group.guests
         from: 'home'
         to: 'not_home'
+      - platform: state
+        entity_id: group.household
+        from: 'home'
+        to: 'not_home'
     condition:
     - condition: state
       entity_id: input_boolean.guest_mode
