@@ -1,0 +1,30 @@
+automation:
+  - alias: Turn on vacation mode when away for 24h
+    trigger:
+      - platform: state
+        entity_id: group.household
+        to: 'not_home'
+        for: '24:00:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.vacation_mode
+      - service: alarm_control_panel.alarm_arm_away
+        entity_id: alarm_control_panel.aarlo_home
+      - service: notify.all_phones
+        data:
+          title: "Vacation mode enabled"
+          message: "Alarm siren is now activated."
+
+  - alias: Turn off vacation mode when coming home
+    trigger:
+      - platform: state
+        entity_id: group.household
+        from: 'not_home'
+        to: 'home'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.vacation_mode

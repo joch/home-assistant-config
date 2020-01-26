@@ -1,0 +1,62 @@
+automation:
+  - alias: Automatically arm alarm night when last person goes to sleep
+    trigger:
+      - platform: state
+        entity_id: input_boolean.everyone_asleep
+        to: 'on'
+    condition:
+      - condition: time
+        after: '21:00:00'
+        before: '06:00:00'
+      - condition: state
+        entity_id: input_boolean.alarm_night_mode
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+      - condition: or
+        conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: person.johnny
+              state: 'home'
+            - condition: state
+              entity_id: input_boolean.johnny_asleep
+              state: 'on'
+        - condition: state
+          entity_id: person.johnny
+          state: 'not_home'
+      - condition: or
+        conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: person.kajsa
+              state: 'home'
+            - condition: state
+              entity_id: input_boolean.kajsa_asleep
+              state: 'on'
+        - condition: state
+          entity_id: person.kajsa
+          state: 'not_home'
+    action:
+      - service: alarm_control_panel.alarm_arm_night
+        entity_id: alarm_control_panel.alarm
+        data:
+          code: !secret alarm_code
+
+  - alias: Automatically disarm alarm when not sleeping
+    trigger:
+      - platform: state
+        entity_id: input_boolean.everyone_asleep
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: 'armed_night'
+    action:
+      - service: alarm_control_panel.alarm_disarm
+        entity_id: alarm_control_panel.alarm
+        data:
+          code: !secret alarm_code
