@@ -17,6 +17,9 @@ automation:
       entity_id: input_boolean.alarm_mode
       state: 'on'
     - condition: state
+      entity_id: group.guests
+      state: 'not_home'
+    - condition: state
       entity_id: group.household
       state: 'not_home'
     action:
