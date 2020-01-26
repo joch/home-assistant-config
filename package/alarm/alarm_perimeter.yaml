@@ -48,6 +48,12 @@ automation:
           entity_id: binary_sensor.bathroom_window
           state: 'on'
         - condition: state
+          entity_id: binary_sensor.kitchen_window_left
+          state: 'on'
+        - condition: state
+          entity_id: binary_sensor.kitchen_window_right
+          state: 'on'
+        - condition: state
           entity_id: binary_sensor.guest_bedroom_window
           state: 'on'
     action:
