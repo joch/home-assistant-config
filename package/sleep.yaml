@@ -1,5 +1,5 @@
 group:
-  Sleep Status:
+  Sleeping:
     - input_boolean.everyone_asleep
     - input_boolean.johnny_asleep
     - input_boolean.kajsa_asleep
