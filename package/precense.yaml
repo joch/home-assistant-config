@@ -25,3 +25,4 @@ group:
       - !secret guest_007
       - !secret guest_008
       - !secret guest_009
+      - !secret guest_010
