@@ -1,4 +1,15 @@
+custom_components/
+deps/
+ssl/
+themes/
+tts/
+www/
+.*
+*.conf
+*.log
+Makefile
+emulated_hue_ids.json
+ip_bans.yaml
 known_devices.yaml
 secrets.yaml
-*.conf
-Makefile
+ui-lovelace.yaml
