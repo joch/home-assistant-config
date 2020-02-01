@@ -1,0 +1,20 @@
+automation:
+  - alias: '[Themes] Automatically switch'
+    trigger:
+      - platform: homeassistant
+        event: start
+      - platform: state
+        entity_id: sun.sun
+        to: 'below_horizon'
+      - platform: state
+        entity_id: sun.sun
+        to: 'above_horizon'
+    action:
+      - service: frontend.set_theme
+        data_template:
+          name: >-
+            {% if is_state('sun.sun', 'below_horizon') %}
+            ios-dark-mode
+            {% else %}
+            ios-light-mode
+            {% endif %}
