@@ -6,10 +6,10 @@ yeelight:
       use_music_mode: False
       save_on_change: False
     10.0.0.102:
-      name: Johnnys Bedlight
+      name: Bedroom Table Lamp
       use_music_mode: False
       save_on_change: False
     10.0.0.186:
-      name: Kajsas Bedlight
+      name: Bedroom Sideboard Lamp
       use_music_mode: False
       save_on_change: False

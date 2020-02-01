@@ -14,12 +14,12 @@ script:
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.johnnys_bedlight
+          entity_id: light.bedroom_table_lamp
           brightness_pct: 25
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.kajsas_bedlight
+          entity_id: light.bedroom_sideboard_lamp
           brightness_pct: 25
           transition: 2
       - delay: '00:00:03'
@@ -39,10 +39,10 @@ script:
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.johnnys_bedlight
+          entity_id: light.bedroom_table_lamp
       - service: light.turn_on
         data:
-          entity_id: light.kajsas_bedlight
+          entity_id: light.bedroom_sideboard_lamp
 
   scene_bedroom_off:
     alias: Bedroom Off
@@ -57,11 +57,11 @@ script:
           transition: 5
       - service: light.turn_off
         data:
-          entity_id: light.johnnys_bedlight
+          entity_id: light.bedroom_table_lamp
           transition: 5
       - service: light.turn_off
         data:
-          entity_id: light.kajsas_bedlight
+          entity_id: light.bedroom_sideboard_lamp
           transition: 5
 
   scene_bedroom_dim:
@@ -78,11 +78,11 @@ script:
           transition: 5
       - service: light.turn_off
         data:
-          entity_id: light.johnnys_bedlight
+          entity_id: light.bedroom_table_lamp
           transition: 5
       - service: light.turn_off
         data:
-          entity_id: light.kajsas_bedlight
+          entity_id: light.bedroom_sideboard_lamp
           transition: 5
 
   scene_bedroom_full:
@@ -100,12 +100,12 @@ script:
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.johnnys_bedlight
+          entity_id: light.bedroom_table_lamp
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.kajsas_bedlight
+          entity_id: light.bedroom_sideboard_lamp
           brightness_pct: 100
           transition: 2
       - delay: '00:00:03'
@@ -124,12 +124,12 @@ script:
           transition: 5
       - service: light.turn_on
         data:
-          entity_id: light.johnnys_bedlight
+          entity_id: light.bedroom_table_lamp
           brightness_pct: 25
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.kajsas_bedlight
+          entity_id: light.bedroom_sideboard_lamp
           brightness_pct: 25
           transition: 2
       - delay: '00:00:03'
