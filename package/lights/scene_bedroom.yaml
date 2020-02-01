@@ -14,6 +14,16 @@ script:
           transition: 2
       - service: light.turn_on
         data:
+          entity_id: light.bedroom_bedside_lamp_left
+          brightness_pct: 25
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom_bedside_lamp_right
+          brightness_pct: 25
+          transition: 2
+      - service: light.turn_on
+        data:
           entity_id: light.bedroom_table_lamp
           brightness_pct: 25
           transition: 2
@@ -39,6 +49,16 @@ script:
           transition: 2
       - service: light.turn_on
         data:
+          entity_id: light.bedroom_bedside_lamp_left
+          brightness_pct: 1
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom_bedside_lamp_right
+          brightness_pct: 1
+          transition: 2
+      - service: light.turn_on
+        data:
           entity_id: light.bedroom_table_lamp
       - service: light.turn_on
         data:
@@ -54,6 +74,14 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_window_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.bedroom_bedside_lamp_left
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.bedroom_bedside_lamp_right
           transition: 5
       - service: light.turn_off
         data:
@@ -78,6 +106,14 @@ script:
           transition: 5
       - service: light.turn_off
         data:
+          entity_id: light.bedroom_bedside_lamp_left
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.bedroom_bedside_lamp_right
+          transition: 5
+      - service: light.turn_off
+        data:
           entity_id: light.bedroom_table_lamp
           transition: 5
       - service: light.turn_off
@@ -96,6 +132,16 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_window_lamp
+          brightness_pct: 100
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom_bedside_lamp_left
+          brightness_pct: 100
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom_bedside_lamp_right
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
@@ -124,13 +170,21 @@ script:
           transition: 5
       - service: light.turn_on
         data:
-          entity_id: light.bedroom_table_lamp
+          entity_id: light.bedroom_bedside_lamp_left
           brightness_pct: 25
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.bedroom_sideboard_lamp
+          entity_id: light.bedroom_bedside_lamp_right
           brightness_pct: 25
           transition: 2
+      - service: light.turn_off
+        data:
+          entity_id: light.bedroom_table_lamp
+          transition: 5
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom_sideboard_lamp
+          transition: 5
       - delay: '00:00:03'
       - service: switch.flux_bedroom_update
