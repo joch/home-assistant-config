@@ -125,7 +125,7 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.kitchen_countertop_lightstrip
-          brightness_pct: 50
+          brightness_pct: 75
           transition: 2
           rgb_color: [255,127,80]
       - service: light.turn_on
