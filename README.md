@@ -4,7 +4,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration. The goal i
 
 ## Automation
 
-Below are some of my most used automations, which make life just a bit easier and more fun. For a complete list, have a look in the `automation/` folder of the repository.
+Below are some of my most used automations, which make life just a bit easier and more fun. For a complete list, have a look in the `package/` folder of the repository for the details.
 
 ### Lighting
 
@@ -63,83 +63,46 @@ Note that these screenshots are provided in a best-effort manner, and may not re
 The following is a list of hardware deployed in the home, grouped by room. The goal is to standardize as much as possible on Zigbee.
 
 ### Hubs
+- [Dresden Elektronik ConBee](https://www.dresden-elektronik.de/conbee/)
+- [Arlo Pro VMC4030](https://www.arlo.com/en-us/products/arlo-pro/)
+- [Arlo Pro Base station with siren](https://www.arlo.com/en-us/products/arlo-pro/)
+- [Logitech Harmony Companion](https://www.logitech.com/en-us/product/harmony-companion)
 
-- Zigbee hub: [Dresden Elektronik ConBee](https://www.dresden-elektronik.de/conbee/)
-- Security camera (2): [Netgear Arlo Pro VMC4030](https://www.arlo.com/en-us/products/arlo-pro/)
-- Camera base station and siren: [Netgear Arlo Pro Base station with siren](https://www.arlo.com/en-us/products/arlo-pro/)
+### Lights
+- [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
+- [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/)
+- [IKEA Trådfri Lights GU10](http://www.ikea.com/se/sv/catalog/products/00318292/)
+- [IKEA Trådfri 30W Transformer](https://www.ikea.com/se/sv/catalog/products/60342656/)
+- [Osram Lightify LED Strip](https://smartplus.ledvance.com/products/index.jsp)
+- [Philips Hue Aurelle Round](https://www2.meethue.com/sv-se/p/hue-white-ambiance-aurelle-rund-panelbelysning/3216431P5)
+- [Philips Hue White and Color Ambiance E14](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e12/046677468903)
+- [Philips Hue White and Color Ambiance E27](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e26/046677464486)
+- [Xiaomi Mijia MJCTD01YL Yeelight Bedside Lamp](https://www.gearbest.com/smart-lighting/pp_1032313.html)
+- [Xiaomi Yeelight Lightstrip](https://xiaomi-mi.com/smart-lighting/xiaomi-yeelight-smart-led-lightstrip-ipl/)
 
-### Bedroom
+### Switches
+- [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
+- [Sunricher Zigbee dimmer](https://www.sunricher.com/zigbee-ac-phase-cut-dimmer-sr-zg9101sac-hp.html)
 
-- Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
-- Ceiling lamp: [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/)
-- Bedside lamp (2): [Xiaomi Mijia MJCTD01YL Yeelight Bedside Lamp](https://www.gearbest.com/smart-lighting/pp_1032313.html)
-- Sleep/wake button (2): [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/)
-- Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
-- Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
-- Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
-- Temperature / humidity sensor: [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
-- Smoke alarm: [Xiaomi Smoke Detector](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-honeywell-smoke-detector-white/)
-- Speaker (2): [IKEA Symfonisk bookshelf speaker](https://www.ikea.com/se/sv/p/symfonisk-wifi-bokhyllehoegtalare-svart-50357554/)
+### Sensors
+- [Philips Hue Motion Sensor](https://www2.meethue.com/en-us/p/hue-motion-sensor/046677473389)
+- [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
+- [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
+- [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
+- [Xiaomi/Honeywell Smoke Detector](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-honeywell-smoke-detector-white/)
+- [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/)
 
-### Living Rooma
+### Dimmers
+- [IKEA Trådfri Dimmer](http://www.ikea.com/us/en/catalog/products/00347831/)
+- [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
+- [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/)
 
-- Window lamp (2): [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
-- Ceiling lamp: [Philips Hue White and Color Ambiance E27](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e26/046677464486)
-- Globe lamp: [Philips Hue White and Color Ambiance E14](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e12/046677468903)
-- TV backlight: [Xiaomi Yeelight Lightstrip](https://xiaomi-mi.com/smart-lighting/xiaomi-yeelight-smart-led-lightstrip-ipl/)
-- Wall dimmer: [IKEA Trådfri Dimmer](http://www.ikea.com/us/en/catalog/products/00347831/)
-- Motion sensor: [Philips Hue Motion Sensor](https://www2.meethue.com/en-us/p/hue-motion-sensor/046677473389)
-- Window and door sensor (3): [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
-- TV remote: [Logitech Harmony Companion](https://www.logitech.com/en-us/product/harmony-companion)
-- Robot Vacuum: [Xiaomi Roborock S50](https://www.aliexpress.com/item/International-Version-Xiaomi-Roborock-S50-Robot-Vacuum-Cleaner-2-WIFI-APP-Control-Wet-Mop-Smart-Planned/32837327014.html)
-- Sound bar: [Sonos Playbase](https://www.sonos.com/en/shop/playbase.html)
-- Sub: [Sonos Sub](https://www.sonos.com/en/shop/sub.html)
-- Speaker (2): [IKEA Symfonisk table speaker](https://www.ikea.com/se/sv/p/symfonisk-bordslampa-med-wifi-hoegtalare-vit-30435157/)
+### Speakers
+- [IKEA Symfonisk bookshelf speaker](https://www.ikea.com/se/sv/p/symfonisk-wifi-bokhyllehoegtalare-svart-50357554/)
+- [IKEA Symfonisk table speaker](https://www.ikea.com/se/sv/p/symfonisk-bordslampa-med-wifi-hoegtalare-vit-30435157/)
+- [Sonos Playbase](https://www.sonos.com/en/shop/playbase.html)
+- [Sonos Sub](https://www.sonos.com/en/shop/sub.html)
 
-### Closet
+### Vacuum
+- [Xiaomi Roborock S50](https://www.aliexpress.com/item/International-Version-Xiaomi-Roborock-S50-Robot-Vacuum-Cleaner-2-WIFI-APP-Control-Wet-Mop-Smart-Planned/32837327014.html)
 
-- Air intake fan wall plug: [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
-
-### Bathroom
-
-- Ceiling lamp (3): [IKEA Trådfri Lights GU10](http://www.ikea.com/se/sv/catalog/products/00318292/)
-- Mirror lamp dimmer: [Sunricher Zigbee dimmer](https://www.sunricher.com/zigbee-ac-phase-cut-dimmer-sr-zg9101sac-hp.html)
-- Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
-- Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
-- Door sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
-- Temperature / humidity sensor: [Xiaomi Mi Smart Home Temperature / Humidity Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-temperature-humidity-sensor/)
-- Washer water leak sensor: [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/)
-
-### Hallway
-
-- Ceiling lamp: [Philips Hue Aurelle Round](https://www2.meethue.com/sv-se/p/hue-white-ambiance-aurelle-rund-panelbelysning/3216431P5)
-- Mirror light wall plug: [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
-- Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
-- Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
-- Main entrance door sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
-- Smoke alarm: [Xiaomi Smoke Detector](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-honeywell-smoke-detector-white/)
-
-### Kitchen
-
-- Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
-- Ceiling lamp: [Philips Hue Cher Suspension Light](https://www2.meethue.com/en-us/p/hue-white-ambiance-cher-suspension-light/4076130U7)
-- Cabinet lighting: [IKEA Trådfri 30W Transformer](https://www.ikea.com/se/sv/catalog/products/60342656/)
-- Countertop lighting: [Osram Lightify LED Strip](https://smartplus.ledvance.com/products/index.jsp)
-- Window lighting wall plug: [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
-- Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
-- Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
-- Window sensor (2): [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
-- Dishwasher / sink water leak sensor: [Xiaomi Mijia Aqara Water sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-aqara-water-sensor/)
-- Speaker: [IKEA Symfonisk table speaker](https://www.ikea.com/se/sv/p/symfonisk-bordslampa-med-wifi-hoegtalare-vit-30435157/)
-
-### Guest Bedroom
-
-- Window lamp: [IKEA Trådfri Lights E14](http://www.ikea.com/se/sv/catalog/products/70318284/)
-- Ceiling lamp: [IKEA Trådfri Lights E27](http://www.ikea.com/se/sv/catalog/products/10318263/)
-- Cloud lamp: [Philips Hue White and Color Ambiance E14](https://www2.meethue.com/en-us/p/hue-white-and-color-ambiance-single-bulb-e12/046677468903)
-- String light wall plug: [Osram SMART+ Plug](https://www.osram-lamps.com/ecatalog/smart-home/smart-home-components/smart-plug/index.jsp)
-- Wall dimmer: [Philips Hue Dimmer Switch](https://www2.meethue.com/en-us/p/hue-dimmer-switch/046677473372)
-- Motion sensor: [Xiaomi Mi Smart Home Occupancy Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-occupancy-sensor/)
-- Window sensor: [Xiaomi Mi Smart Home Door / Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/)
-- Guest sleep/wake button: [Xiaomi Mi Smart Home Wireless Switch](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-wireless-switch/)
-- Smoke alarm: [Xiaomi Smoke Detector](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mijia-honeywell-smoke-detector-white/)
