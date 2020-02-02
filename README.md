@@ -55,7 +55,7 @@ Note that these screenshots are provided in a best-effort manner, and may not re
 
 ![Security](images/10.png)
 
-![Cameras](images/11.jpg)
+![Cameras](images/11.png)
 
 
 ## Hardware
