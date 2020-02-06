@@ -1,15 +1,10 @@
 switch:
   - platform: flux
     lights:
-      - light.bedroom_ceiling_lamp
-      - light.bedroom_window_lamp
-      - light.bedroom_bedside_lamp_left
-      - light.bedroom_bedside_lamp_right
+      - light.bedroom
       - light.living_room_window_left_lamp
       - light.living_room_window_right_lamp
-      - light.bathroom_ceiling_lamp_left
-      - light.bathroom_ceiling_lamp_middle
-      - light.bathroom_ceiling_lamp_right
+      - light.bathroom_ceiling_lamp
       - light.kitchen_window_lamp
       - light.kitchen_ceiling_lamp
       - light.guest_bedroom_ceiling_lamp
