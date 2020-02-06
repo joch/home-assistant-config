@@ -4,22 +4,7 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.bathroom_ceiling_lamp_left
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_ceiling_lamp_middle
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_ceiling_lamp_right
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_mirror_lamp
+          entity_id: light.bathroom
           brightness_pct: 100
           transition: 2
 
@@ -28,19 +13,7 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.bathroom_ceiling_lamp_left
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.bathroom_ceiling_lamp_middle
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.bathroom_ceiling_lamp_right
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.bathroom_mirror_lamp
+          entity_id: light.bathroom
           transition: 5
 
   scene_bathroom_evening:
@@ -48,22 +21,7 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.bathroom_ceiling_lamp_left
-          brightness_pct: 75
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_ceiling_lamp_middle
-          brightness_pct: 75
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_ceiling_lamp_right
-          brightness_pct: 75
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_mirror_lamp
+          entity_id: light.bathroom
           brightness_pct: 75
           transition: 2
 
@@ -72,22 +30,7 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.bathroom_ceiling_lamp_left
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_ceiling_lamp_middle
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_ceiling_lamp_right
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bathroom_mirror_lamp
+          entity_id: light.bathroom
           brightness_pct: 100
           transition: 2
 
@@ -110,19 +53,7 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.bathroom_ceiling_lamp_left
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.bathroom_ceiling_lamp_middle
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.bathroom_ceiling_lamp_right
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.bathroom_mirror_lamp
+          entity_id: light.bathroom
           transition: 5
 
   scene_bathroom_bright:
