@@ -13,6 +13,11 @@ input_boolean:
     name: Vacuum Return on Disarm
     icon: mdi:robot-vacuum
 
+counter:
+  vacuum_runs:
+    name: Vacuum Runs
+    icon: mdi:counter
+
 input_select:
   vacuum_clean:
     name: Clean Zone
@@ -48,6 +53,8 @@ automation:
     action:
       - service: script.turn_on
         entity_id: script.vacuum_go_trash
+      - service: counter.reset
+        entity_id: counter.vacuum_runs
 
   - alias: Kitchen send vacuum home
     trigger:
@@ -91,6 +98,8 @@ automation:
       - service: vacuum.start
         data:
           entity_id: vacuum.greta
+      - service: counter.increment
+        entity_id: counter.vacuum_runs
 
   - alias: Turn off vacuum when alarm is disarmed
     trigger:
@@ -123,20 +132,20 @@ automation:
           title: "Greta is stuck"
           message: "Greta has reported an error. Make sure that she is not stuck."
 
-  - alias: Notify when the vacuum is finished
+  - alias: Notify when the vacuum needs emptying
     trigger:
       - platform: state
         entity_id: vacuum.greta
         to: 'docked'
     condition:
-      - condition: state
-        entity_id: alarm_control_panel.alarm
-        state: 'armed_away'
+      - condition: numeric_state
+        entity_id: counter.vacuum_runs
+        above: 2
     action:
       - service: notify.all_phones
         data:
-          title: "Greta is finished"
-          message: "Greta has finished cleaning. Make sure to empty her bin."
+          title: "Greta needs emptying"
+          message: "Press the vacuum button by the kitchen bin to send Greta there."
 
   - alias: Activate chosen cleanup
     trigger:
