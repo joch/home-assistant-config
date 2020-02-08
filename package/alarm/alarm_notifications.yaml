@@ -1,0 +1,38 @@
+automation:
+  # TBD: Is this needed?
+  # - alias: Alarm notify armed away
+  #   trigger:
+  #     - platform: state
+  #       entity_id: alarm_control_panel.alarm
+  #       to: 'armed_away'
+  #   action:
+  #     - service: notify.all_phones
+  #       data:
+  #         title: "Alarm has been armed"
+  #         message: "The alarm has been set to armed_away"
+
+  - alias: Alarm notify disarmed
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'disarmed'
+    condition:
+      - condition: state
+        entity_id: group.household
+        state: 'not_home'
+    action:
+      - service: notify.all_phones
+        data:
+          title: "Alarm has been disarmed"
+          message: "No household member is currently home."
+
+  - alias: Alarm notify triggered
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'triggered'
+    action:
+      - service: notify.all_phones
+        data:
+          title: '** Home Alarm Triggered **'
+          message: 'Check camera recording immediately'
