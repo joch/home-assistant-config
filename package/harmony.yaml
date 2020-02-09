@@ -24,7 +24,7 @@ automation:
       data_template:
         activity: >
           {% if is_state("input_select.harmony", "TV") %}
-            42817532
+            43340168
           {% elif is_state("input_select.harmony", "Apple TV") %}
             42807286
           {% elif is_state("input_select.harmony", "Music") %}
