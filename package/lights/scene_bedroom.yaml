@@ -142,3 +142,10 @@ script:
           transition: 5
       - delay: '00:00:03'
       - service: switch.flux_bedroom_update
+
+  scene_bedroom_night:
+    alias: Bedroom Night
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bedroom_off

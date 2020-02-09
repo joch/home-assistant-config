@@ -1,3 +1,22 @@
+homeassistant:
+  customize_glob:
+    "script.scene_*":
+      can_cancel: false
+    "script.scene_*_off":
+      icon: mdi:lightbulb-off-outline
+    "script.scene_*_dim":
+      icon: mdi:lightbulb-outline
+    "script.scene_*_normal":
+      icon: mdi:lightbulb-on-outline
+    "script.scene_*_evening":
+      icon: mdi:weather-night
+    "script.scene_*_night":
+      icon: mdi:sleep
+    "script.scene_*_bright":
+      icon: mdi:weather-sunny
+    "script.scene_*_full":
+      icon: mdi:lightbulb-on
+
 input_boolean:
   lights_full:
     name: Lights Full

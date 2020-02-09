@@ -122,3 +122,10 @@ script:
       - service: switch.turn_off
         data:
           entity_id: switch.guest_bedroom_switch
+
+  scene_guest_bedroom_night:
+    alias: Guest Bedroom Night
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_guest_bedroom_off
