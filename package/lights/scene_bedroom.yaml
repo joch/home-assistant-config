@@ -20,12 +20,12 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
-          brightness_pct: 25
+          brightness_pct: 10
           transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_sideboard_lamp
-          brightness_pct: 25
+          brightness_pct: 10
           transition: 2
       - delay: '00:00:03'
       - service: switch.flux_bedroom_update
