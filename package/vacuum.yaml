@@ -13,10 +13,14 @@ input_boolean:
     name: Vacuum Return on Disarm
     icon: mdi:robot-vacuum
 
-counter:
-  vacuum_runs:
-    name: Vacuum Runs
-    icon: mdi:counter
+input_number:
+  vacuum_time_remaining:
+    name: Vacuum Time Remaining
+    icon: mdi:history
+    mode: box
+    unit_of_measurement: min
+    min: -1000
+    max: 1000
 
 input_select:
   vacuum_clean:
@@ -53,8 +57,10 @@ automation:
     action:
       - service: script.turn_on
         entity_id: script.vacuum_go_trash
-      - service: counter.reset
-        entity_id: counter.vacuum_runs
+      - service: input_number.set_value
+        data:
+          entity_id: input_number.vacuum_time_remaining
+          value: 120
 
   - alias: Kitchen send vacuum home
     trigger:
@@ -98,8 +104,6 @@ automation:
       - service: vacuum.start
         data:
           entity_id: vacuum.greta
-      - service: counter.increment
-        entity_id: counter.vacuum_runs
 
   - alias: Turn off vacuum when alarm is disarmed
     trigger:
@@ -139,13 +143,24 @@ automation:
         to: 'docked'
     condition:
       - condition: numeric_state
-        entity_id: counter.vacuum_runs
-        above: 2
+        entity_id: input_number.vacuum_time_remaining
+        below: 0
     action:
       - service: notify.all_phones
         data:
           title: "Greta needs emptying"
           message: "Press the vacuum button by the kitchen bin to send Greta there."
+
+  - alias: Vacuum - Update time remaining
+    trigger:
+      - platform: state
+        entity_id: vacuum.greta
+        to: 'docked'
+    action:
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.vacuum_time_remaining
+          value: "{{ states('input_number.vacuum_time_remaining')|int - state_attr('vacuum.greta', 'cleaning_time')|int }}"
 
   - alias: Activate chosen cleanup
     trigger:
