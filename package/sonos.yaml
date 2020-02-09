@@ -77,6 +77,31 @@ automation:
           entity_id: media_player.kitchen
           source: 'Vinyl FM'
 
+  - alias: Turn off background music when baby wakes up
+    trigger:
+      - platform: state
+        entity_id: input_boolean.guest_asleep
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+      - condition: state
+        entity_id: media_player.kitchen
+        state: 'playing'
+    action:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen
+          volume_level: 0.1
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.kitchen
+          source: 'P4 Stockholm'
+
   - alias: Pause music automatically
     trigger:
       - platform: state
