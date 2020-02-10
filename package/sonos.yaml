@@ -71,7 +71,7 @@ automation:
       - service: media_player.volume_set
         data:
           entity_id: media_player.kitchen
-          volume_level: 0.1
+          volume_level: 0.07
       - service: media_player.select_source
         data:
           entity_id: media_player.kitchen
