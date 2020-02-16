@@ -138,12 +138,9 @@ automation:
 
   - alias: Notify when the vacuum needs emptying
     trigger:
-      - platform: state
-        entity_id: vacuum.greta
-        to: 'docked'
-    condition:
-      - condition: template
-        value_template: "{{ states('input_number.vacuum_time_remaining')|int <= 0 }}"
+      - platform: numeric_state
+        entity_id: input_number.vacuum_time_remaining
+        below: 0
     action:
       - service: notify.all_phones
         data:
