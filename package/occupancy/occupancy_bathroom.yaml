@@ -75,7 +75,7 @@ automation:
         entity_id: timer.bathroom_lights
         state: 'paused'
     action:
-      - service: timer.start
+      - service: timer.cancel
         entity_id: timer.bathroom_lights
 
   - alias: Bathroom pause timer on door closed
