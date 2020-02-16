@@ -37,15 +37,14 @@ script:
   scene_bathroom_night:
     alias: Bathroom Night
     sequence:
-      - service: light.turn_on
+      - service: light.turn_off
         data:
-          entity_id: light.bathroom_ceiling_lamp_middle
-          brightness_pct: 1
-          transition: 2
+          entity_id: light.bathroom_ceiling_lamp
+          transition: 5
       - service: light.turn_on
         data:
           entity_id: light.bathroom_mirror_lamp
-          brightness_pct: 20
+          brightness_pct: 25
           transition: 2
 
   scene_bathroom_off:
