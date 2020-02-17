@@ -16,5 +16,3 @@ sensor:
        - "42X"
        - "45"
      traffic_class: train
-   # - friendly_name: Trafikstatus
-   #   sensor_type: status
