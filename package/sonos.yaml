@@ -125,6 +125,10 @@ automation:
           sleep_time: 0
       - service: sonos.set_sleep_timer
         data:
+          entity_id: media_player.bathroom
+          sleep_time: 0
+      - service: sonos.set_sleep_timer
+        data:
           entity_id: media_player.kitchen
           sleep_time: 0
 
