@@ -159,7 +159,7 @@ automation:
     action:
       - service: media_player.volume_set
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.bathroom
           volume_level: 0.1
       - service: media_player.select_source
         data:
