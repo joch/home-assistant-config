@@ -19,6 +19,11 @@ script:
           transition: 2
       - service: light.turn_on
         data:
+          entity_id: light.living_room_shelf_lamp
+          brightness_pct: 50
+          transition: 2
+      - service: light.turn_on
+        data:
           entity_id: light.living_room_globe
           brightness_pct: 75
           transition: 2
@@ -46,6 +51,11 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_right_lamp
+          brightness_pct: 50
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_shelf_lamp
           brightness_pct: 50
           transition: 2
       - service: light.turn_on
@@ -79,6 +89,10 @@ script:
           transition: 5
       - service: light.turn_off
         data:
+          entity_id: light.living_room_shelf_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
           entity_id: light.living_room_globe
           transition: 5
       - service: light.turn_off
@@ -107,6 +121,10 @@ script:
           transition: 2
       - service: light.turn_off
         data:
+          entity_id: light.living_room_shelf_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
           entity_id: light.living_room_globe
           transition: 5
       - service: light.turn_off
@@ -131,6 +149,11 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_right_lamp
+          brightness_pct: 100
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_shelf_lamp
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
@@ -166,6 +189,10 @@ script:
           transition: 5
       - service: light.turn_off
         data:
+          entity_id: light.living_room_shelf_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
           entity_id: light.living_room_globe
           transition: 5
       - service: light.turn_off
@@ -194,6 +221,11 @@ script:
           transition: 2
       - service: light.turn_on
         data:
+          entity_id: light.living_room_shelf_lamp
+          brightness_pct: 50
+          transition: 2
+      - service: light.turn_on
+        data:
           entity_id: light.living_room_globe
           brightness_pct: 50
           transition: 2
@@ -219,6 +251,10 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.living_room_window_right_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_shelf_lamp
           transition: 5
       - service: light.turn_off
         data:
@@ -252,6 +288,11 @@ script:
           transition: 2
       - service: light.turn_on
         data:
+          entity_id: light.living_room_shelf_lamp
+          brightness_pct: 50
+          transition: 2
+      - service: light.turn_on
+        data:
           entity_id: light.living_room_globe
           brightness_pct: 50
           transition: 2
@@ -277,6 +318,10 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.living_room_window_right_lamp
+          transition: 5
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_shelf_lamp
           transition: 5
       - service: light.turn_off
         data:
