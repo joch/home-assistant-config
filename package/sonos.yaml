@@ -146,3 +146,37 @@ automation:
         entity_id:
           - switch.living_room_sonos_night_sound
           - switch.living_room_sonos_speech_enhance
+
+  - alias: Sonos - Music on when bathroom occupied
+    trigger:
+      - platform: state
+        entity_id: input_boolean.bathroom_occupied
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+    action:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen
+          volume_level: 0.1
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: 'Calming Water Consort'
+
+  - alias: Sonos - Music off when bathroom unoccupied
+    trigger:
+      - platform: state
+        entity_id: input_boolean.bathroom_occupied
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+    action:
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.bathroom
+          sleep_time: 0
