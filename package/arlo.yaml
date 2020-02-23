@@ -3,6 +3,8 @@ aarlo:
   password: !secret arlo_password
   refresh_devices_every: 2
 
+stream:
+
 alarm_control_panel:
   - platform: aarlo
     home_mode_name: armed
