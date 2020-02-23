@@ -156,11 +156,14 @@ automation:
       - condition: state
         entity_id: input_boolean.music_automation
         state: 'on'
+      - condition: state
+        entity_id: input_boolean.everyone_asleep
+        state: 'off'
     action:
       - service: media_player.volume_set
         data:
           entity_id: media_player.bathroom
-          volume_level: 0.1
+          volume_level: 0.08
       - service: media_player.select_source
         data:
           entity_id: media_player.bathroom
