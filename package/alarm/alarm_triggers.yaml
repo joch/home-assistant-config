@@ -33,8 +33,6 @@ automation:
           - binary_sensor.kitchen_window_left
           - binary_sensor.kitchen_window_right
           - binary_sensor.guest_bedroom_window
-          - input_boolean.hallway_arlo_motion
-          - input_boolean.living_room_arlo_motion
         to: 'on'
       - platform: state
         entity_id: alarm_control_panel.aarlo_home
