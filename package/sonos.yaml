@@ -132,6 +132,25 @@ automation:
           entity_id: media_player.kitchen
           sleep_time: 0
 
+  - alias: Change radio station when there is sports on
+    trigger:
+      - platform: template
+        value_template: "{{ 'sport' in state_attr('media_player.kitchen', 'media_artist')|lower }}"
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+      - condition: state
+        entity_id: media_player.kitchen
+        state: playing
+      - condition: template
+        value_template: "{{ state_attr('media_player.kitchen', 'media_title') == 'P4 Stockholm' }}"
+    action:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.kitchen
+          source: 'Vinyl FM'
+
   - alias: Disable night mode when going to bed
     trigger:
       - platform: state
