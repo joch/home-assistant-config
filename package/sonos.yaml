@@ -202,3 +202,58 @@ automation:
         data:
           entity_id: media_player.bathroom
           sleep_time: 0
+
+  - alias: Sonos - Bathroom button toogle music on and off
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: bathroom_music
+          event: 1002
+    action:
+      - service: media_player.media_play_pause
+        entity_id: media_player.bathroom
+
+  - alias: Sonos - Bathroom volume up
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: bathroom_music
+          event: 2002
+    action:
+      - service: media_player.volume_up
+        entity_id: media_player.bathroom
+
+  - alias: Sonos - Bathroom volume down
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: bathroom_music
+          event: 3002
+    action:
+      - service: media_player.volume_down
+        entity_id: media_player.bathroom
+
+  - alias: Sonos - Bathroom previous track
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: bathroom_music
+          event: 4002
+    action:
+      - service: media_player.media_previous_track
+        entity_id: media_player.bathroom
+
+  - alias: Sonos - Bathroom next track
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: bathroom_music
+          event: 5002
+    action:
+      - service: media_player.media_next_track
+        entity_id: media_player.bathroom
