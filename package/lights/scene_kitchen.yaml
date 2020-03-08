@@ -25,8 +25,6 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.kitchen_switch
-      - delay: '00:00:03'
-      - service: switch.flux_kitchen_update
 
   scene_kitchen_bright:
     alias: Kitchen Bright
@@ -52,8 +50,6 @@ script:
       - service: switch.turn_off
         data:
           entity_id: switch.kitchen_switch
-      - delay: '00:00:03'
-      - service: switch.flux_kitchen_update
 
   scene_kitchen_dim:
     alias: Kitchen Dim
@@ -106,8 +102,6 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.kitchen_switch
-      - delay: '00:00:03'
-      - service: switch.flux_kitchen_update
 
   scene_kitchen_evening:
     alias: Kitchen Evening
