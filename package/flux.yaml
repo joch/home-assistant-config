@@ -20,7 +20,7 @@ switch:
     stop_colortemp: 1900
     disable_brightness_adjust: True
     mode: mired
-    transition: 2
+    transition: 0
   - platform: flux
     lights:
       - light.hallway_ceiling_lamp
@@ -31,7 +31,7 @@ switch:
     stop_colortemp: 1900
     disable_brightness_adjust: True
     mode: mired
-    transition: 2
+    transition: 0
   - platform: flux
     lights:
       - light.living_room_ceiling_lamp
@@ -43,7 +43,7 @@ switch:
     stop_colortemp: 1900
     disable_brightness_adjust: True
     mode: mired
-    transition: 2
+    transition: 0
   - platform: flux
     lights:
       - light.bedroom_table_lamp
@@ -55,7 +55,7 @@ switch:
     stop_colortemp: 1900
     disable_brightness_adjust: True
     mode: mired
-    transition: 2
+    transition: 0
 
 automation:
   - alias: Fluxer switch on by default
