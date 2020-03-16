@@ -47,11 +47,6 @@ deconz:
 hacs:
   token: !secret hacs_token
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - key: !secret xiaomi_gateway_key
-
 # For loading HACS themes
 frontend:
   themes: !include_dir_merge_named themes
