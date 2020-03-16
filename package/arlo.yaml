@@ -27,7 +27,7 @@ switch:
     all_sirens: False
     snapshot: True
     siren_volume: 1
-    siren_duration: 1
+    siren_duration: 60
 
 sensor:
   - platform: aarlo
