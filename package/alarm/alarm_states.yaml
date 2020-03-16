@@ -7,15 +7,6 @@ automation:
     action:
       - service: alarm_control_panel.alarm_arm_home
         entity_id: alarm_control_panel.aarlo_home
-      - service: light.turn_on
-        data:
-          entity_id: light.gateway_light_7811dc64de1a
-          brightness_pct: 100
-          rgb_color: [255,0,0]
-      - delay: '00:00:10'
-      - service: light.turn_off
-        data:
-          entity_id: light.gateway_light_7811dc64de1a
       - service: input_boolean.turn_off
         entity_id:
           - input_boolean.johnny_asleep
@@ -28,17 +19,10 @@ automation:
         entity_id: alarm_control_panel.alarm
         to: 'disarmed'
     action:
+      - service: switch.turn_off
+        entity_id: switch.aarlo_home_siren
       - service: alarm_control_panel.alarm_disarm
         entity_id: alarm_control_panel.aarlo_home
-      - service: light.turn_on
-        data:
-          entity_id: light.gateway_light_7811dc64de1a
-          brightness_pct: 100
-          rgb_color: [0,255,0]
-      - delay: '00:00:10'
-      - service: light.turn_off
-        data:
-          entity_id: light.gateway_light_7811dc64de1a
 
   - alias: Alarm triggered
     trigger:
@@ -56,16 +40,8 @@ automation:
         data:
           entity_id: camera.aarlo_living_room
           duration: 60
-      - service: light.turn_on
-        data:
-          entity_id: light.gateway_light_7811dc64de1a
-          brightness_pct: 100
-          rgb_color: [255,0,0]
-      - service: xiaomi_aqara.play_ringtone
-        data:
-          gw_mac: !secret xiaomi_gateway_mac
-          ringtone_id: 3
-          ringtone_vol: 10
+      - service: switch.turn_on
+        entity_id: switch.aarlo_home_siren
 
   - alias: Alarm pending
     trigger:
@@ -74,13 +50,5 @@ automation:
         from: 'armed_away'
         to: 'pending'
     action:
-      - service: light.turn_on
-        data:
-          entity_id: light.gateway_light_7811dc64de1a
-          brightness_pct: 100
-          rgb_color: [255,255,0]
-      - service: xiaomi_aqara.play_ringtone
-        data:
-          gw_mac: !secret xiaomi_gateway_mac
-          ringtone_id: 26
-          ringtone_vol: 5
+      - service: switch.turn_on
+        entity_id: switch.aarlo_home_siren
