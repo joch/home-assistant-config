@@ -12,8 +12,6 @@ automation:
     action:
       - service: input_boolean.turn_on
         entity_id: input_boolean.vacation_mode
-      - service: alarm_control_panel.alarm_arm_away
-        entity_id: alarm_control_panel.aarlo_home
       - service: notify.all_phones
         data:
           title: "Vacation mode enabled"
@@ -28,3 +26,26 @@ automation:
     action:
       - service: input_boolean.turn_off
         entity_id: input_boolean.vacation_mode
+
+  - alias: Set Arlo vacation when vacation mode on
+    trigger:
+      - platform: state
+        entity_id: input_boolean.vacation_mode
+        to: 'on'
+    action:
+      - service: alarm_control_panel.alarm_arm_away
+        entity_id: alarm_control_panel.aarlo_home
+
+  - alias: Set Arlo vacation when vacation mode off
+    trigger:
+      - platform: state
+        entity_id: input_boolean.vacation_mode
+        to: 'off'
+    action:
+      - entity_id: alarm_control_panel.aarlo_home
+        service_template: >-
+          {% if is_state('alarm_control_panel.alarm', 'armed_away') %}
+          alarm_control_panel.alarm_arm_home
+          {% else %}
+          alarm_control_panel.alarm_disarm
+          {% endif %}
