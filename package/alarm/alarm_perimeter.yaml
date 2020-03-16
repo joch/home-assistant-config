@@ -57,15 +57,10 @@ automation:
           entity_id: binary_sensor.guest_bedroom_window
           state: 'on'
     action:
-      - service: light.turn_on
+      - service: notify.all_phones
         data:
-          entity_id: light.gateway_light_7811dc64de1a
-          brightness_pct: 100
-          rgb_color: [255,140,0]
-      - delay: '00:00:10'
-      - service: light.turn_off
-        data:
-          entity_id: light.gateway_light_7811dc64de1a
+          title: "Window open"
+          message: "Someone is leaving and a window is open"
 
   - alias: Notify if windows are open when it starts to rain or snow
     trigger:
