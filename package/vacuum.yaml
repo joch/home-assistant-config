@@ -100,6 +100,9 @@ automation:
       - condition: time
         after: '08:00:00'
         before: '20:00:00'
+      - condition: numeric_state
+        entity_id: input_number.vacuum_time_remaining
+        above: -60
     action:
       - service: vacuum.start
         data:
