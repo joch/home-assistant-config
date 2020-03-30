@@ -258,6 +258,32 @@ automation:
       - service: media_player.media_next_track
         entity_id: media_player.bathroom
 
+  - alias: Sonos - Bathroom up station
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: bathroom_music
+          event: 2003
+    action:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: 'News'
+
+  - alias: Sonos - Bathroom down station
+    trigger:
+      - platform: event
+        event_type: deconz_event
+        event_data:
+          id: bathroom_music
+          event: 2003
+    action:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: 'tbd'
+
   - alias: Sonos - Bathroom left station
     trigger:
       - platform: event
