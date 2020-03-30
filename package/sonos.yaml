@@ -277,7 +277,7 @@ automation:
         event_type: deconz_event
         event_data:
           id: bathroom_music
-          event: 2003
+          event: 3003
     action:
       - service: media_player.select_source
         data:
