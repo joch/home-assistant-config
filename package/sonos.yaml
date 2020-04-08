@@ -264,7 +264,7 @@ automation:
         event_type: deconz_event
         event_data:
           id: bathroom_music
-          event: 2003
+          event: 2001
     action:
       - service: media_player.select_source
         data:
@@ -277,7 +277,7 @@ automation:
         event_type: deconz_event
         event_data:
           id: bathroom_music
-          event: 3003
+          event: 3001
     action:
       - service: media_player.select_source
         data:
@@ -290,7 +290,7 @@ automation:
         event_type: deconz_event
         event_data:
           id: bathroom_music
-          event: 4003
+          event: 4001
     action:
       - service: media_player.select_source
         data:
@@ -303,7 +303,7 @@ automation:
         event_type: deconz_event
         event_data:
           id: bathroom_music
-          event: 5003
+          event: 5001
     action:
       - service: media_player.select_source
         data:
