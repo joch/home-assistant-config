@@ -79,7 +79,7 @@ automation:
             script.scene_living_room_music
             {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'evening') %}
             script.scene_living_room_music
-            {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', bright') %}
+            {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'bright') %}
             script.scene_living_room_music_only
             {% else %}
             script.scene_living_room_{{ states('sensor.light_mode') }}
