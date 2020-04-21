@@ -132,7 +132,7 @@ script:
           entity_id: light.bedroom_bedside_lamp
           brightness_pct: 50
           transition: 2
-      - service: light.turn_off
+      - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
           transition: 5
