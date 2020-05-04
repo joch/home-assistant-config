@@ -5,7 +5,7 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.guest_bedroom_ceiling_lamp
-          brightness_pct: 50
+          brightness_pct: 100
           transition: 2
       - service: light.turn_on
         data:
@@ -106,10 +106,11 @@ script:
   scene_guest_bedroom_bright:
     alias: Guest Bedroom Bright
     sequence:
-      - service: light.turn_off
+      - service: light.turn_on
         data:
           entity_id: light.guest_bedroom_ceiling_lamp
-          transition: 5
+          brightness_pct: 100
+          transition: 2
       - service: light.turn_off
         data:
           entity_id: light.guest_bedroom_window_lamp
