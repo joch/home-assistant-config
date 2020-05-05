@@ -17,6 +17,9 @@ automation:
         entity_id: input_boolean.bedroom_occupied
         state: 'off'
       - condition: state
+        entity_id: input_boolean.bedroom_occupancy_automation
+        state: 'on'
+      - condition: state
         entity_id: input_boolean.johnny_asleep
         state: 'off'
       - condition: state
@@ -50,6 +53,9 @@ automation:
     condition:
       - condition: state
         entity_id: input_boolean.bedroom_occupied
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.bedroom_occupancy_automation
         state: 'on'
       - condition: state
         entity_id: input_boolean.johnny_asleep
