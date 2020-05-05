@@ -10,6 +10,9 @@ automation:
       - condition: state
         entity_id: input_boolean.kitchen_occupied
         state: 'off'
+      - condition: state
+        entity_id: input_boolean.kitchen_occupancy_automation
+        state: 'on'
     action:
       - service: script.turn_on
         data_template:
@@ -32,6 +35,9 @@ automation:
     condition:
       - condition: state
         entity_id: input_boolean.kitchen_occupied
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.kitchen_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on

@@ -14,6 +14,9 @@ automation:
         entity_id: input_boolean.living_room_occupied
         state: 'off'
       - condition: state
+        entity_id: input_boolean.living_room_occupancy_automation
+        state: 'on'
+      - condition: state
         entity_id: input_select.harmony
         state: 'PowerOff'
     action:
@@ -41,6 +44,9 @@ automation:
     condition:
       - condition: state
         entity_id: input_boolean.living_room_occupied
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
       - condition: state
         entity_id: input_select.harmony
