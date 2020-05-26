@@ -2,17 +2,20 @@ alarm_control_panel:
   - platform: manual
     name: 'Alarm'
     code: !secret alarm_code
-    pending_time: 60
     trigger_time: 120
     disarm_after_trigger: false
     armed_home:
-      pending_time: 0
+      arming_time: 0
+      delay_time: 0
+      trigger_time: 60
     armed_night:
-      pending_time: 0
+      arming_time: 0
+      delay_time: 0
+      trigger_time: 60
     armed_away:
-      pending_time: 30
-    triggered:
-      pending_time: 60
+      arming_time: 0
+      delay_time: 30
+      trigger_time: 120
 
 input_boolean:
   alarm_mode:
