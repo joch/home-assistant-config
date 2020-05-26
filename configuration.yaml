@@ -42,9 +42,6 @@ deconz:
   api_key: !secret deconz_api_key
   port: !secret deconz_port
 
-hacs:
-  token: !secret hacs_token
-
 # For loading HACS themes
 frontend:
   themes: !include_dir_merge_named themes
