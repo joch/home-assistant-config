@@ -56,7 +56,7 @@ automation:
       - service: media_player.select_source
         data:
           entity_id: media_player.kitchen
-          source: 'Vinyl FM'
+          source: 'Pure Pop Gold'
 
   - alias: Turn off background music when baby wakes up
     trigger:
@@ -124,7 +124,7 @@ automation:
       - service: media_player.select_source
         data:
           entity_id: media_player.kitchen
-          source: 'Vinyl FM'
+          source: 'Pure Pop Gold'
 
   - alias: Disable night mode when going to bed
     trigger:
@@ -161,7 +161,7 @@ automation:
       - service: media_player.select_source
         data:
           entity_id: media_player.bathroom
-          source: 'Calming Water Consort'
+          source: 'Classic Singer/Songwriter'
 
   - alias: Sonos - Music off when bathroom unoccupied
     trigger:
