@@ -1,0 +1,20 @@
+input_boolean:
+  wakeup_guest_bedroom:
+    name: Wakeup Guest Bedroom
+    icon: mdi:alarm
+
+automation:
+  - alias: Wakeup guest bedroom
+    trigger:
+      - platform: time
+        at: '07:00:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.wakeup_guest_bedroom
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.guest_bedroom_cloud_lamp
+          brightness_pct: 100
+          transition: 600
