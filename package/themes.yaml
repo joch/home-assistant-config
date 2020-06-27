@@ -14,7 +14,7 @@ automation:
         data_template:
           name: >-
             {% if is_state('sun.sun', 'below_horizon') %}
-            ios-dark-mode
+            ios-dark-mode-blue-red
             {% else %}
-            ios-light-mode
+            ios-light-mode-light-green
             {% endif %}
