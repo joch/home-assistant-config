@@ -96,7 +96,7 @@ sensor:
           night
           {% elif is_state('input_boolean.lights_full', 'on') %}
           full
-          {% elif is_state('sun.sun', 'below_horizon') and now().hour >= 19  %}
+          {% elif (is_state('sun.sun', 'below_horizon') and now().hour >= 19) or now().hour >= 19 %}
           evening
           {% elif states('sensor.living_room_luminance')|float <= 40 %}
           normal
