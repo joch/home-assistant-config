@@ -5,6 +5,7 @@ yeelight:
       transition: 1000
       use_music_mode: False
       save_on_change: False
+      model: strip1
     10.0.0.102:
       name: Bedroom Table Lamp
       use_music_mode: False
