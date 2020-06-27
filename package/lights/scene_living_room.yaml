@@ -77,23 +77,7 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling_lamp
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_window_left_lamp
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_window_right_lamp
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_shelf_lamp
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_globe
+          entity_id: light.living_room
           transition: 5
       - service: light.turn_off
         data:
@@ -173,27 +157,9 @@ script:
   scene_living_room_night:
     alias: Living Room Night
     sequence:
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_ceiling_lamp
-          transition: 2
-          brightness_pct: 1
-          rgb_color: [255,0,0]
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_left_lamp
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_window_right_lamp
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_shelf_lamp
-          transition: 5
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_globe
+          entity_id: light.living_room
           transition: 5
       - service: light.turn_off
         data:
