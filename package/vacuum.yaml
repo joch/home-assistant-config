@@ -95,6 +95,9 @@ automation:
       - condition: state
         entity_id: input_boolean.vacuum_automation
         state: 'on'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
       - condition: template
         value_template: '{{ (as_timestamp(now()) - as_timestamp(states.automation.turn_on_vacuum_when_alarm_is_armed.attributes.last_triggered | default(0)) | int > 36000)}}'
       - condition: time
