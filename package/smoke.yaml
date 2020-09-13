@@ -1,5 +1,6 @@
 automation:
   - alias: Notify and turn on lights when smoke detected
+    id: b0d75a6e-3c31-4ef0-8576-e9e03ffd9bed
     trigger:
       - platform: state
         entity_id: binary_sensor.bedroom_smoke

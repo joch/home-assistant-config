@@ -1,5 +1,6 @@
 automation:
   - alias: Turn on vacation mode when away for 24h
+    id: 4e1201ad-7f30-432e-bb39-2a6e776a59ef
     trigger:
       - platform: state
         entity_id: group.household
@@ -21,6 +22,7 @@ automation:
           message: "Alarm siren is now activated."
 
   - alias: Turn off vacation mode when coming home
+    id: 3edbbe86-9b66-44a1-8443-02fc4d2b811b
     trigger:
       - platform: state
         entity_id: group.household

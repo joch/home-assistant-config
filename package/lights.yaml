@@ -113,6 +113,7 @@ sensor:
 
 automation:
   - alias: Activate chosen scene
+    id: fc6d3e4f-cdc1-480d-af7e-ef75be4d5704
     trigger:
       - platform: state
         entity_id: input_select.scene

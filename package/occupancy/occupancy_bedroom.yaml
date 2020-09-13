@@ -1,5 +1,6 @@
 automation:
   - alias: Bedroom occupied
+    id: fe305138-78af-443e-a7b7-695201244635
     trigger:
       - platform: state
         entity_id: binary_sensor.bedroom_motion
@@ -15,6 +16,7 @@ automation:
         entity_id: input_boolean.bedroom_occupied
 
   - alias: Bedroom start idle timer
+    id: 418a7fba-7123-473e-a1b2-29739c191e15
     trigger:
       - platform: state
         entity_id: binary_sensor.bedroom_motion
@@ -24,6 +26,7 @@ automation:
         entity_id: timer.bedroom_lights
 
   - alias: Bedroom idle
+    id: c3bb9f78-9792-41f9-ad3f-5a52029680e9
     trigger:
       - platform: event
         event_type: timer.finished
@@ -38,6 +41,7 @@ automation:
         entity_id: input_boolean.bedroom_occupied
 
   - alias: Disable bedroom motion on button click
+    id: d3848152-6764-4c0e-8491-ebfe52bda41a
     trigger:
       - platform: event
         event_type: deconz_event
@@ -53,6 +57,7 @@ automation:
         entity_id: input_boolean.bedroom_occupancy_automation
 
   - alias: Enable bedroom motion
+    id: 254d8b44-344b-4a1f-94a0-9eed56cb2e29
     trigger:
       - platform: state
         entity_id: binary_sensor.bedroom_motion

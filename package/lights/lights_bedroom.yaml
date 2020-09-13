@@ -1,5 +1,6 @@
 automation:
   - alias: Bedroom lights idle
+    id: 1f5b223e-7d8f-4ccf-bf0c-2a770fefcf96
     trigger:
       - platform: state
         entity_id: input_boolean.bedroom_occupied
@@ -31,6 +32,7 @@ automation:
           entity_id: script.scene_bedroom_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
   - alias: Bedroom lights occupied
+    id: 8b3577c0-c303-41cc-90bd-40fc9e988410
     trigger:
       - platform: state
         entity_id: input_boolean.bedroom_occupied
@@ -69,6 +71,7 @@ automation:
           entity_id: script.scene_bedroom_{{ states('sensor.light_mode') }}
 
   - alias: Bedroom lights sleep
+    id: e0bcf4be-e10c-49c9-bfed-8e0263c83066
     trigger:
       - platform: state
         entity_id: input_boolean.johnny_asleep

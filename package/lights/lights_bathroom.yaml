@@ -1,5 +1,6 @@
 automation:
   - alias: Bathroom lights idle
+    id: 4c728cce-f061-4c5a-9fa8-ce64e5f9e725
     trigger:
       - platform: state
         entity_id: input_boolean.bathroom_occupied
@@ -19,6 +20,7 @@ automation:
           entity_id: script.scene_bathroom_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
   - alias: Bathroom lights occupied
+    id: 725ea4f5-2cca-4f38-ad55-2164a50877aa
     trigger:
       - platform: state
         entity_id: input_boolean.bathroom_occupied

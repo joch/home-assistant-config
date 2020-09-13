@@ -1,5 +1,6 @@
 automation:
   - alias: Automatically arm alarm night when last person goes to sleep
+    id: 36071d3f-8e25-4b82-ae88-7734dad9a23e
     trigger:
       - platform: state
         entity_id: input_boolean.everyone_asleep
@@ -47,6 +48,7 @@ automation:
           code: !secret alarm_code
 
   - alias: Automatically disarm alarm when not sleeping
+    id: 0c4e93de-8a66-40e3-8ea7-e548c9660bf4
     trigger:
       - platform: state
         entity_id: input_boolean.everyone_asleep

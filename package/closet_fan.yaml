@@ -5,6 +5,7 @@ input_boolean:
 
 automation:
   - alias: Turn on ventilation fan
+    id: 49e8bb06-7dcf-4443-b7e0-832318d35736
     trigger:
       - platform: numeric_state
         entity_id: sensor.closet_temperature
@@ -22,6 +23,7 @@ automation:
         entity_id: switch.closet_outlet
 
   - alias: Turn off ventilation fan
+    id: ebe50d0b-736b-4584-95d4-1d1849a73690
     trigger:
       - platform: numeric_state
         entity_id: sensor.closet_temperature

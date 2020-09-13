@@ -1,5 +1,6 @@
 automation:
   - alias: Record when the main entrance is opened
+    id: 792ac673-c2c5-4419-8f06-81b1de567e56
     trigger:
       - platform: state
         entity_id: binary_sensor.main_entrance
@@ -19,6 +20,7 @@ automation:
           duration: 60
 
   - alias: Warn when leaving if windows are open
+    id: 518f6cc7-fb96-4b5b-b472-98c0a2ccced5
     trigger:
       - platform: state
         entity_id: binary_sensor.main_entrance
@@ -63,6 +65,7 @@ automation:
           message: "Someone is leaving and a window is open"
 
   - alias: Notify if windows are open when it starts to rain or snow
+    id: 2bfe720e-529a-4acd-ac45-12f1ef35b78f
     trigger:
       - platform: state
         entity_id: weather.smhi_home

@@ -1,5 +1,6 @@
 automation:
   - alias: Alarm armed away
+    id: feb2e477-d1ce-4731-af54-970cf4cdab04
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
@@ -14,6 +15,7 @@ automation:
           - input_boolean.guest_asleep
 
   - alias: Alarm disarmed
+    id: a437755a-1718-4610-9d64-1ee60b0319db
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
@@ -25,6 +27,7 @@ automation:
         entity_id: alarm_control_panel.aarlo_home
 
   - alias: Alarm triggered
+    id: 5b8c70a0-fe14-4f7f-9ae7-70372eede85a
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
@@ -44,6 +47,7 @@ automation:
         entity_id: switch.aarlo_home_siren
 
   - alias: Alarm pending
+    id: 96bfc88d-e039-4716-926b-e6b9df9a5957
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm

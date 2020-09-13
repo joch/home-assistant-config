@@ -1,5 +1,6 @@
 automation:
   - alias: Automatically arm alarm when guest away
+    id: 6a0c30a4-2b29-4b8f-a17e-d4c74a0ae5f2
     trigger:
       - platform: state
         entity_id: group.guests
@@ -29,6 +30,7 @@ automation:
           code: !secret alarm_code
 
   - alias: Automatically disarm alarm when guest home
+    id: 642a6224-42a6-4bab-9ef6-852ceffccfaa
     trigger:
       - platform: state
         entity_id: group.guests

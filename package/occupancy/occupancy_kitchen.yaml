@@ -1,5 +1,6 @@
 automation:
   - alias: Kitchen occupied
+    id: b1db264d-e7d4-414e-be11-0394535f26e3
     trigger:
       - platform: state
         entity_id: binary_sensor.kitchen_motion
@@ -15,6 +16,7 @@ automation:
         entity_id: input_boolean.kitchen_occupied
 
   - alias: Kitchen start idle timer
+    id: 463d05c2-d6dd-4c06-9e40-c65ccd1ce803
     trigger:
       - platform: state
         entity_id: binary_sensor.kitchen_motion
@@ -33,6 +35,7 @@ automation:
         entity_id: timer.kitchen_lights
 
   - alias: Kitchen idle
+    id: 48b17165-ec2a-4d71-9b26-d61298dfcb57
     trigger:
       - platform: event
         event_type: timer.finished
@@ -47,6 +50,7 @@ automation:
         entity_id: input_boolean.kitchen_occupied
 
   - alias: Disable kitchen motion on button click
+    id: b3a60494-bd68-44a8-acaa-f2f2a5d02dbf
     trigger:
       - platform: event
         event_type: deconz_event
@@ -62,6 +66,7 @@ automation:
         entity_id: input_boolean.kitchen_occupancy_automation
 
   - alias: Enable kitchen motion
+    id: 2b8eba9f-7240-4d7a-8ace-1d5644fbaba9
     trigger:
       - platform: state
         entity_id: binary_sensor.kitchen_motion

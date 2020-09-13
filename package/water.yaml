@@ -1,5 +1,6 @@
 automation:
   - alias: Notify and turn on lights when water detected in kitchen
+    id: 10331dc8-b2c3-4cc1-afbb-d86249b6d1fa
     trigger:
       - platform: state
         entity_id: binary_sensor.kitchen_water
@@ -21,6 +22,7 @@ automation:
           message: "Water detected in the kitchen!"
 
   - alias: Notify and turn on lights when water detected in bathroom
+    id: d24359f4-698b-4ad2-aca7-c320303a92e4
     trigger:
       - platform: state
         entity_id: binary_sensor.bathroom_water

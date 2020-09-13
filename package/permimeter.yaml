@@ -1,5 +1,6 @@
 automation:
   - alias: Warn when main entrance has been open a long time
+    id: 092a289a-4a68-45e8-b45b-aabd10cee285
     trigger:
       - platform: state
         entity_id: binary_sensor.main_entrance

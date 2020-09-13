@@ -37,6 +37,7 @@ input_boolean:
 
 automation:
   - alias: Turn on background music when baby asleep
+    id: c6daf5b4-998a-46b7-b8b9-152c674c1ee7
     trigger:
       - platform: state
         entity_id: input_boolean.guest_asleep
@@ -59,6 +60,7 @@ automation:
           source: 'Pure Pop Gold'
 
   - alias: Turn off background music when baby wakes up
+    id: be1efed4-511e-46f5-96d9-828a57773a40
     trigger:
       - platform: state
         entity_id: input_boolean.guest_asleep
@@ -78,6 +80,7 @@ automation:
           source: 'P4 Stockholm'
 
   - alias: Pause music automatically
+    id: db29b1a6-c6bd-46d0-b99e-66635cf77386
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
@@ -108,6 +111,7 @@ automation:
           sleep_time: 0
 
   - alias: Change radio station when there is sports on
+    id: 50258570-5a46-4299-a9c8-a32c0fff14ca
     trigger:
       - platform: template
         value_template: "{{ 'sport' in state_attr('media_player.kitchen', 'media_artist')|lower }}"
@@ -127,6 +131,7 @@ automation:
           source: 'Pure Pop Gold'
 
   - alias: Disable night mode when going to bed
+    id: c18548d5-8673-48e0-b10c-c24445289ec2
     trigger:
       - platform: state
         entity_id: input_boolean.everyone_asleep
@@ -142,6 +147,7 @@ automation:
           - switch.living_room_sonos_speech_enhance
 
   - alias: Sonos - Music on when bathroom occupied
+    id: 739f8302-e70b-41dc-80b3-fe58d0263abe
     trigger:
       - platform: state
         entity_id: input_boolean.bathroom_occupied
@@ -164,6 +170,7 @@ automation:
           source: 'Classic Singer/Songwriter'
 
   - alias: Sonos - Music off when bathroom unoccupied
+    id: 990151c5-4deb-4a69-a654-28daa3b040c1
     trigger:
       - platform: state
         entity_id: input_boolean.bathroom_occupied
@@ -179,6 +186,7 @@ automation:
           sleep_time: 0
 
   - alias: Sonos - Bathroom button toogle music on and off
+    id: c264c674-739b-4c4e-8250-723edf9a91d8
     trigger:
       - platform: event
         event_type: deconz_event
@@ -190,6 +198,7 @@ automation:
         entity_id: media_player.bathroom
 
   - alias: Sonos - Bathroom volume up
+    id: bc504788-ada7-4a00-ace8-0549d6f086e3
     trigger:
       - platform: event
         event_type: deconz_event
@@ -201,6 +210,7 @@ automation:
         entity_id: media_player.bathroom
 
   - alias: Sonos - Bathroom volume down
+    id: 4eb67ae9-a776-4bd7-a0d2-7b7374816f18
     trigger:
       - platform: event
         event_type: deconz_event
@@ -212,6 +222,7 @@ automation:
         entity_id: media_player.bathroom
 
   - alias: Sonos - Bathroom previous track
+    id: 1fa8cdce-b4cf-40a9-af3a-36e896c93ef2
     trigger:
       - platform: event
         event_type: deconz_event
@@ -223,6 +234,7 @@ automation:
         entity_id: media_player.bathroom
 
   - alias: Sonos - Bathroom next track
+    id: b52d73cb-bf04-4901-a11e-86da9c4607be
     trigger:
       - platform: event
         event_type: deconz_event
@@ -234,6 +246,7 @@ automation:
         entity_id: media_player.bathroom
 
   - alias: Sonos - Bathroom up station
+    id: b782d292-a0ed-46f2-b2d9-f2885d325be9
     trigger:
       - platform: event
         event_type: deconz_event
@@ -247,6 +260,7 @@ automation:
           source: 'News'
 
   - alias: Sonos - Bathroom down station
+    id: 24f781d0-8b85-4e1f-811c-59ab5b4a5bda
     trigger:
       - platform: event
         event_type: deconz_event
@@ -260,6 +274,7 @@ automation:
           source: 'tbd'
 
   - alias: Sonos - Bathroom left station
+    id: 7a6af164-f3b1-405e-9a76-14cbd7f6fbc5
     trigger:
       - platform: event
         event_type: deconz_event
@@ -273,6 +288,7 @@ automation:
           source: 'FM 96 Puerto Rico'
 
   - alias: Sonos - Bathroom right station
+    id: ac584d74-97f9-4c9c-bd48-be515c215703
     trigger:
       - platform: event
         event_type: deconz_event

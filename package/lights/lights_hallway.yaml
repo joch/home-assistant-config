@@ -1,5 +1,6 @@
 automation:
   - alias: Hallway lights idle
+    id: b2111220-3e70-4e8c-b431-5b536219f698
     trigger:
       - platform: state
         entity_id: input_boolean.hallway_occupied
@@ -19,6 +20,7 @@ automation:
           entity_id: script.scene_hallway_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
   - alias: Hallway lights occupied
+    id: 62fa7f2a-8273-4b27-8eda-25cb770ac20c
     trigger:
       - platform: state
         entity_id: input_boolean.hallway_occupied

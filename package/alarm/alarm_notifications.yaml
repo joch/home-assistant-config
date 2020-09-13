@@ -12,6 +12,7 @@ automation:
   #         message: "The alarm has been set to armed_away"
 
   - alias: Alarm notify disarmed
+    id: 7909f6c0-738b-4627-b4ce-36abe280a572
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
@@ -27,6 +28,7 @@ automation:
           message: "No household member is currently home."
 
   - alias: Alarm notify triggered
+    id: b8c09f57-fdfd-46cd-bbf4-24359a8d62d5
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm

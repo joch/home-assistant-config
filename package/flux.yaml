@@ -59,6 +59,7 @@ switch:
 
 automation:
   - alias: Fluxer switch on by default
+    id: 5d1f6b70-9fc9-4570-87c9-ed1a95165bb1
     trigger:
       - platform: homeassistant
         event: start

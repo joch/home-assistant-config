@@ -1,5 +1,6 @@
 automation:
   - alias: Balcony lights on
+    id: a1abda74-ba18-4e06-a7c8-2241f15156af
     trigger:
       - platform: state
         entity_id: sensor.light_mode
@@ -15,6 +16,7 @@ automation:
         entity_id: script.scene_balcony_normal
 
   - alias: Balcony lights off
+    id: 1bdb9f40-3e73-41a1-9021-fb031a56bcc7
     trigger:
       - platform: state
         entity_id: sensor.light_mode

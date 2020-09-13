@@ -1,5 +1,6 @@
 automation:
   - alias: '[Themes] Automatically switch'
+    id: 8a3f510a-a0de-47c6-984d-9b66e1094690
     trigger:
       - platform: homeassistant
         event: start

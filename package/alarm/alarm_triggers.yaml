@@ -1,5 +1,6 @@
 automation:
   - alias: Trigger alarm when perimiter breached when armed_night
+    id: a5480762-5d61-4b30-a611-aec9931313e4
     trigger:
       - platform: state
         entity_id:
@@ -21,6 +22,7 @@ automation:
         entity_id: alarm_control_panel.alarm
 
   - alias: Trigger alarm when perimiter breached when armed_away
+    id: 7c61b57a-3cfd-4927-b6dd-516b308e511f
     trigger:
       - platform: state
         entity_id:
@@ -46,6 +48,7 @@ automation:
         entity_id: alarm_control_panel.alarm
 
   - alias: Trigger alarm when motion detected when armed_away and vacation
+    id: 1d2cf426-72a5-4bbd-a2f1-4f18ce108a2c
     trigger:
       - platform: state
         entity_id:

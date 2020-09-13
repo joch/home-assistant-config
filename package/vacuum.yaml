@@ -48,6 +48,7 @@ input_select:
 
 automation:
   - alias: Kitchen send vacuum to trash
+    id: 4c460640-8d90-44a4-b134-0b93e3c93a06
     trigger:
       - platform: event
         event_type: deconz_event
@@ -63,6 +64,7 @@ automation:
           value: 120
 
   - alias: Kitchen send vacuum home
+    id: cb778c1f-50ae-4587-8815-885393fbcb5f
     trigger:
       - platform: event
         event_type: deconz_event
@@ -74,6 +76,7 @@ automation:
         entity_id: script.vacuum_go_home
 
   - alias: Turn on vacuum when alarm is armed
+    id: 9c00a656-8992-48dc-8bd3-351552bac64e
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
@@ -112,6 +115,7 @@ automation:
           entity_id: vacuum.greta
 
   - alias: Turn off vacuum when alarm is disarmed
+    id: 008dc98e-0bb8-492b-9e3a-f439be1f3398
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
@@ -132,6 +136,7 @@ automation:
           entity_id: vacuum.greta
 
   - alias: Notify when there is a vacuum issue
+    id: ee19ed8b-8c7a-4a10-ab4e-c2bf6a86e40c
     trigger:
       - platform: state
         entity_id: vacuum.greta
@@ -143,6 +148,7 @@ automation:
           message: "Greta has reported an error. Make sure that she is not stuck."
 
   - alias: Notify when the vacuum needs emptying
+    id: b2cd92cb-a73f-4646-b173-c61f54041cd7
     trigger:
       - platform: numeric_state
         entity_id: input_number.vacuum_time_remaining
@@ -154,6 +160,7 @@ automation:
           message: "Press the vacuum button by the kitchen bin to send Greta there."
 
   - alias: Vacuum - Update time remaining
+    id: 47f91809-4154-4d6f-80a8-acdda1c304e7
     trigger:
       - platform: state
         entity_id: vacuum.greta
@@ -165,6 +172,7 @@ automation:
           value: "{{ states('input_number.vacuum_time_remaining')|int - state_attr('vacuum.greta', 'cleaning_time')|int }}"
 
   - alias: Activate chosen cleanup
+    id: 5f67fa62-011b-4d26-943d-9f9b135043ac
     trigger:
       - platform: state
         entity_id: input_select.vacuum_clean
@@ -178,6 +186,7 @@ automation:
           option: Choose
 
   - alias: Activate chosen go target
+    id: 2b3ecc49-1b3e-4277-a238-6945c2d8e126
     trigger:
       - platform: state
         entity_id: input_select.vacuum_go

@@ -1,5 +1,6 @@
 automation:
   - alias: Kitchen lights idle
+    id: 0141f12b-a6a0-4a76-b702-45cef40905b9
     trigger:
       - platform: state
         entity_id: input_boolean.kitchen_occupied
@@ -19,6 +20,7 @@ automation:
           entity_id: script.scene_kitchen_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
   - alias: Kitchen lights occupied
+    id: fc18f98a-2b1b-4c4c-8e42-650968011c30
     trigger:
       - platform: state
         entity_id: input_boolean.kitchen_occupied

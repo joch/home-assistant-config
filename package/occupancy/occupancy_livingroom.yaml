@@ -1,5 +1,6 @@
 automation:
   - alias: Living room occupied
+    id: d8cc01f0-0068-4c0a-936d-5e5975022c71
     trigger:
       - platform: state
         entity_id: binary_sensor.living_room_motion_sensor
@@ -15,6 +16,7 @@ automation:
         entity_id: input_boolean.living_room_occupied
 
   - alias: Living room start idle timer
+    id: adcfa3bb-a9c4-4330-8c22-be28c8250f7c
     trigger:
       - platform: state
         entity_id: binary_sensor.living_room_motion_sensor
@@ -24,6 +26,7 @@ automation:
         entity_id: timer.living_room_lights
 
   - alias: Living room idle
+    id: 28508037-f269-4f8d-96d7-f3f6752a5831
     trigger:
       - platform: event
         event_type: timer.finished
@@ -38,6 +41,7 @@ automation:
         entity_id: input_boolean.living_room_occupied
 
   - alias: Disable living room motion on button click
+    id: 5072937c-1825-4ce4-bcf3-f1c752f284da
     trigger:
       - platform: event
         event_type: deconz_event
@@ -53,6 +57,7 @@ automation:
         entity_id: input_boolean.living_room_occupancy_automation
 
   - alias: Enable living room motion
+    id: c7cb55ca-5451-4385-a68d-36fc6bcfe9f2
     trigger:
       - platform: state
         entity_id: binary_sensor.living_room_motion_sensor

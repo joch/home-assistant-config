@@ -9,6 +9,7 @@ group:
 
 automation:
   - alias: Check if ok if no movement but home
+    id: 58be4c64-a53c-44f2-a13c-31f78648c883
     trigger:
       - platform: state
         entity_id: group.indoor_motion

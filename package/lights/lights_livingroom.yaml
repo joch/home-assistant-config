@@ -1,5 +1,6 @@
 automation:
   - alias: Living room lights idle
+    id: dd0680dd-fe71-443c-ae24-de514b59f8c6
     trigger:
       - platform: state
         entity_id: input_boolean.living_room_occupied
@@ -25,6 +26,7 @@ automation:
           entity_id: script.scene_living_room_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
   - alias: Living room lights occupied
+    id: 03406399-9a26-4729-87d2-7e0ca59eccac
     trigger:
       - platform: state
         entity_id: input_boolean.living_room_occupied
@@ -57,6 +59,7 @@ automation:
           entity_id: script.scene_living_room_{{ states('sensor.light_mode') }}
 
   - alias: Living room TV on
+    id: c4aac76a-3987-410c-904a-0da30579a2fc
     trigger:
       - platform: state
         entity_id: input_select.harmony

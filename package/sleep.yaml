@@ -28,6 +28,7 @@ input_boolean:
 
 automation:
   - alias: Toggle all asleep on
+    id: ba22f811-2003-4435-be56-60ae59fb9611
     trigger:
       - platform: state
         entity_id: input_boolean.johnny_asleep
@@ -88,6 +89,7 @@ automation:
         entity_id: input_boolean.everyone_asleep
 
   - alias: Toggle all asleep off
+    id: b7fe69fa-411e-481f-bb18-5018a81e7818
     trigger:
       - platform: state
         entity_id: input_boolean.johnny_asleep
@@ -108,6 +110,7 @@ automation:
 
 ## Button ##
   - alias: Toggle Johnny Asleep
+    id: 3d33de83-5d45-4f6d-b6e2-856a9c243d5c
     trigger:
       - platform: event
         event_type: deconz_event
@@ -128,6 +131,7 @@ automation:
         entity_id: input_boolean.johnny_asleep
 
   - alias: Toggle Kajsa Asleep
+    id: 2d442f2e-ac11-40be-a7fd-c0d29b551e63
     trigger:
       - platform: event
         event_type: deconz_event
@@ -148,6 +152,7 @@ automation:
         entity_id: input_boolean.kajsa_asleep
 
   - alias: Toggle guest asleep on
+    id: b3ebc39c-526a-4be7-bc90-fafc95ad44fd
     trigger:
       - platform: event
         event_type: deconz_event
@@ -164,6 +169,7 @@ automation:
         entity_id: input_boolean.guest_asleep
 
   - alias: Finish timers when everyone asleep toggles
+    id: d30bff6d-af53-4c40-a3f9-a7009bc5f0d0
     trigger:
       - platform: state
         entity_id: input_boolean.everyone_asleep
