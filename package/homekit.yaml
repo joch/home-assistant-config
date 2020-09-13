@@ -36,6 +36,8 @@ homekit:
       - light.rwl021_24
       - light.rwl021_25
       - light.rwl021_26
+    exclude_entity_globs:
+      - binary_sensor.nas_drive_*
   entity_config:
     alarm_control_panel.alarm:
       code: !secret alarm_code
