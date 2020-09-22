@@ -21,3 +21,4 @@ http:
     - !secret trusted_proxies_013
     - !secret trusted_proxies_014
     - !secret trusted_proxies_015
+    - !secret trusted_proxies_016
