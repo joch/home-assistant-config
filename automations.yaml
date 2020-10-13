@@ -1,0 +1,80 @@
+- id: '1602618124075'
+  alias: 'Music button #bathroom #sonos'
+  description: ''
+  trigger:
+  - platform: event
+    event_type: deconz_event
+    event_data:
+      id: bathroom_music
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 1002 }}'
+      sequence:
+      - service: media_player.media_play_pause
+        data: {}
+        entity_id: media_player.bathroom
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 2002 }}'
+      sequence:
+      - service: media_player.volume_up
+        data: {}
+        entity_id: media_player.bathroom
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 3002 }}'
+      sequence:
+      - service: media_player.volume_down
+        data: {}
+        entity_id: media_player.bathroom
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 4002 }}'
+      sequence:
+      - service: media_player.media_previous_track
+        data: {}
+        entity_id: media_player.bathroom
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 5002 }}'
+      sequence:
+      - service: media_player.media_next_track
+        data: {}
+        entity_id: media_player.bathroom
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 2001 }}'
+      sequence:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: News
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 3001 }}'
+      sequence:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: tbd
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 4001 }}'
+      sequence:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: FM 96 Puerto Rico
+    - conditions:
+      - condition: template
+        value_template: '{{ trigger.event.data.event == 5001 }}'
+      sequence:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: Johnny Chadda's Station
+    default: []
+  mode: single
