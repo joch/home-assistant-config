@@ -3,17 +3,14 @@ automation:
     id: b2111220-3e70-4e8c-b431-5b536219f698
     trigger:
       - platform: state
-        entity_id: input_boolean.hallway_occupied
+        entity_id: binary_sensor.hallway_occupied
         to: 'off'
       - platform: state
         entity_id: sensor.light_mode
     condition:
       - condition: state
-        entity_id: input_boolean.hallway_occupied
+        entity_id: binary_sensor.hallway_occupied
         state: 'off'
-      - condition: state
-        entity_id: input_boolean.hallway_occupancy_automation
-        state: 'on'
     action:
       - service: script.turn_on
         data_template:
@@ -23,7 +20,7 @@ automation:
     id: 62fa7f2a-8273-4b27-8eda-25cb770ac20c
     trigger:
       - platform: state
-        entity_id: input_boolean.hallway_occupied
+        entity_id: binary_sensor.hallway_occupied
         to: 'on'
       - platform: state
         entity_id: sensor.light_mode
@@ -36,10 +33,7 @@ automation:
         to: 'full'
     condition:
       - condition: state
-        entity_id: input_boolean.hallway_occupied
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.hallway_occupancy_automation
+        entity_id: binary_sensor.hallway_occupied
         state: 'on'
     action:
       - service: script.turn_on

@@ -3,23 +3,14 @@ automation:
     id: dd0680dd-fe71-443c-ae24-de514b59f8c6
     trigger:
       - platform: state
-        entity_id: input_boolean.living_room_occupied
+        entity_id: binary_sensor.living_room_occupied
         to: 'off'
       - platform: state
         entity_id: sensor.light_mode
-      - platform: state
-        entity_id: input_select.harmony
-        to: 'PowerOff'
     condition:
       - condition: state
-        entity_id: input_boolean.living_room_occupied
+        entity_id: binary_sensor.living_room_occupied
         state: 'off'
-      - condition: state
-        entity_id: input_boolean.living_room_occupancy_automation
-        state: 'on'
-      - condition: state
-        entity_id: input_select.harmony
-        state: 'PowerOff'
     action:
       - service: script.turn_on
         data_template:
@@ -29,7 +20,7 @@ automation:
     id: 03406399-9a26-4729-87d2-7e0ca59eccac
     trigger:
       - platform: state
-        entity_id: input_boolean.living_room_occupied
+        entity_id: binary_sensor.living_room_occupied
         to: 'on'
       - platform: state
         entity_id: sensor.light_mode
@@ -45,10 +36,7 @@ automation:
         to: 'PowerOff'
     condition:
       - condition: state
-        entity_id: input_boolean.living_room_occupied
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.living_room_occupancy_automation
+        entity_id: binary_sensor.living_room_occupied
         state: 'on'
       - condition: state
         entity_id: input_select.harmony

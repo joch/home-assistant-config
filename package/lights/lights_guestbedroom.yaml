@@ -3,22 +3,13 @@ automation:
     id: 1e66b3fe-785e-4039-a1b5-93c526e83d6c
     trigger:
       - platform: state
-        entity_id: input_boolean.guest_bedroom_occupied
+        entity_id: binary_sensor.guest_bedroom_occupied
         to: 'off'
       - platform: state
         entity_id: sensor.light_mode
-      - platform: state
-        entity_id: input_boolean.guest_asleep
-        to: 'off'
     condition:
       - condition: state
-        entity_id: input_boolean.guest_bedroom_occupied
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.guest_bedroom_occupancy_automation
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: binary_sensor.guest_bedroom_occupied
         state: 'off'
     action:
       - service: script.turn_on
@@ -29,7 +20,7 @@ automation:
     id: 90ab0af2-cec8-42c6-b7fb-27725e361b58
     trigger:
       - platform: state
-        entity_id: input_boolean.guest_bedroom_occupied
+        entity_id: binary_sensor.guest_bedroom_occupied
         to: 'on'
       - platform: state
         entity_id: sensor.light_mode
@@ -40,19 +31,10 @@ automation:
       - platform: state
         entity_id: sensor.light_mode
         to: 'full'
-      - platform: state
-        entity_id: input_boolean.guest_asleep
-        to: 'off'
     condition:
       - condition: state
-        entity_id: input_boolean.guest_bedroom_occupied
+        entity_id: binary_sensor.guest_bedroom_occupied
         state: 'on'
-      - condition: state
-        entity_id: input_boolean.guest_bedroom_occupancy_automation
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.guest_asleep
-        state: 'off'
     action:
       - service: script.turn_on
         data_template:

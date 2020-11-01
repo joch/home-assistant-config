@@ -3,28 +3,13 @@ automation:
     id: 1f5b223e-7d8f-4ccf-bf0c-2a770fefcf96
     trigger:
       - platform: state
-        entity_id: input_boolean.bedroom_occupied
+        entity_id: binary_sensor.bedroom_occupied
         to: 'off'
       - platform: state
         entity_id: sensor.light_mode
-      - platform: state
-        entity_id: input_boolean.johnny_asleep
-        to: 'off'
-      - platform: state
-        entity_id: input_boolean.kajsa_asleep
-        to: 'off'
     condition:
       - condition: state
-        entity_id: input_boolean.bedroom_occupied
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.bedroom_occupancy_automation
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.johnny_asleep
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.kajsa_asleep
+        entity_id: binary_sensor.bedroom_occupied
         state: 'off'
     action:
       - service: script.turn_on
@@ -35,7 +20,7 @@ automation:
     id: 8b3577c0-c303-41cc-90bd-40fc9e988410
     trigger:
       - platform: state
-        entity_id: input_boolean.bedroom_occupied
+        entity_id: binary_sensor.bedroom_occupied
         to: 'on'
       - platform: state
         entity_id: sensor.light_mode
@@ -46,25 +31,10 @@ automation:
       - platform: state
         entity_id: sensor.light_mode
         to: 'full'
-      - platform: state
-        entity_id: input_boolean.johnny_asleep
-        to: 'off'
-      - platform: state
-        entity_id: input_boolean.kajsa_asleep
-        to: 'off'
     condition:
       - condition: state
-        entity_id: input_boolean.bedroom_occupied
+        entity_id: binary_sensor.bedroom_occupied
         state: 'on'
-      - condition: state
-        entity_id: input_boolean.bedroom_occupancy_automation
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.johnny_asleep
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.kajsa_asleep
-        state: 'off'
     action:
       - service: script.turn_on
         data_template:
