@@ -14,9 +14,6 @@ script:
             {% else %}
             100
             {% endif %}
-      - service: switch.turn_on
-        data:
-          entity_id: switch.hallway_switch
       - delay: '00:00:03'
       - service: switch.flux_hallway_update
 
@@ -35,9 +32,6 @@ script:
             {% else %}
             100
             {% endif %}
-      - service: switch.turn_on
-        data:
-          entity_id: switch.hallway_switch
       - delay: '00:00:03'
       - service: switch.flux_hallway_update
 
@@ -48,9 +42,6 @@ script:
         data:
           entity_id: light.hallway_ceiling_lamp
           transition: 5
-      - service: switch.turn_on
-        data:
-          entity_id: switch.hallway_switch
 
   scene_hallway_full:
     alias: Hallway Full
@@ -60,9 +51,6 @@ script:
           entity_id: light.hallway_ceiling_lamp
           transition: 2
           brightness_pct: 100
-      - service: switch.turn_on
-        data:
-          entity_id: switch.hallway_switch
       - delay: '00:00:03'
       - service: switch.flux_hallway_update
 
@@ -73,9 +61,6 @@ script:
         data:
           entity_id: light.hallway_ceiling_lamp
           transition: 5
-      - service: switch.turn_off
-        data:
-          entity_id: switch.hallway_switch
 
   scene_hallway_off:
     alias: Hallway Off
@@ -84,9 +69,6 @@ script:
         data:
           entity_id: light.hallway_ceiling_lamp
           transition: 5
-      - service: switch.turn_off
-        data:
-          entity_id: switch.hallway_switch
 
   scene_hallway_bright:
     alias: Hallway Bright
@@ -103,8 +85,5 @@ script:
             {% else %}
             100
             {% endif %}
-      - service: switch.turn_off
-        data:
-          entity_id: switch.hallway_switch
       - delay: '00:00:03'
       - service: switch.flux_hallway_update

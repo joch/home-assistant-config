@@ -17,7 +17,6 @@ homekit:
       - sensor.guest_bedroom_temperature
       - switch.balcony_switch
       - switch.guest_bedroom_switch
-      - switch.hallway_switch
       - switch.kitchen_switch
     exclude_entities:
       - light.bedroom
