@@ -28,12 +28,12 @@ group:
     - input_boolean.guest_bedroom_occupancy_automation
 
   Occupancy:
-    - sensor.bedroom_occupied
-    - sensor.living_room_occupied
-    - sensor.bathroom_occupied
-    - sensor.hallway_occupied
-    - sensor.kitchen_occupied
-    - sensor.guest_bedroom_occupied
+    - binary_sensor.bedroom_occupied
+    - binary_sensor.living_room_occupied
+    - binary_sensor.bathroom_occupied
+    - binary_sensor.hallway_occupied
+    - binary_sensor.kitchen_occupied
+    - binary_sensor.guest_bedroom_occupied
 
 binary_sensor:
   - platform: template
