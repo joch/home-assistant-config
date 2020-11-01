@@ -5,7 +5,7 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_ceiling_lamp
-          brightness_pct: 50
+          # brightness_pct: 50
           transition: 2
       - service: light.turn_on
         data:
