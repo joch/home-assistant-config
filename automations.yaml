@@ -78,3 +78,67 @@
           source: Johnny Chadda's Station
     default: []
   mode: single
+- id: '1604215062341'
+  alias: 'Party button #leasroom #button'
+  description: ''
+  trigger:
+  - device_id: 93dadd13aea802b3214c9a2669a1fe95
+    domain: deconz
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: device
+        type: is_off
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_room_disco_lamp
+        domain: switch
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.guest_bedroom_occupancy_automation
+      - type: turn_on
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_room_disco_lamp
+        domain: switch
+      - type: turn_off
+        device_id: 0e5e376f69d94bb9a07bea653820fc76
+        entity_id: light.guest_bedroom_ceiling_lamp
+        domain: light
+      - type: turn_off
+        device_id: 3b8017dacb4b411fa7de8fd01302d2a5
+        entity_id: light.guest_bedroom_window_lamp
+        domain: light
+    - conditions:
+      - condition: device
+        type: is_on
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_room_disco_lamp
+        domain: switch
+        for:
+          hours: 0
+          minutes: 0
+          seconds: 10
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.guest_bedroom_occupancy_automation
+      - type: turn_off
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_room_disco_lamp
+        domain: switch
+      - type: turn_on
+        device_id: 0e5e376f69d94bb9a07bea653820fc76
+        entity_id: light.guest_bedroom_ceiling_lamp
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: 3b8017dacb4b411fa7de8fd01302d2a5
+        entity_id: light.guest_bedroom_window_lamp
+        domain: light
+        brightness_pct: 100
+    default: []
+  mode: single
