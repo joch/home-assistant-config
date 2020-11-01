@@ -97,7 +97,7 @@ binary_sensor:
 
 automation:
   - alias: Occupancy - Bedroom sleep on
-    id: e0bcf4be-e10c-49c9-bfed-8e0263c83066
+    id: ffa9b5a5-db81-44a1-810b-cfde7bd745f0
     trigger:
       - platform: state
         entity_id: input_boolean.johnny_asleep
