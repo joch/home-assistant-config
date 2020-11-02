@@ -12,11 +12,8 @@ automation:
         entity_id: binary_sensor.bedroom_occupied
         state: 'off'
       - condition: state
-        entity_id: input_boolean.johnny_asleep
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.kajsa_asleep
-        state: 'off'
+        entity_id: input_boolean.bedroom_occupancy_automation
+        state: 'on'
     action:
       - service: script.turn_on
         data_template:
@@ -42,11 +39,8 @@ automation:
         entity_id: binary_sensor.bedroom_occupied
         state: 'on'
       - condition: state
-        entity_id: input_boolean.johnny_asleep
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.kajsa_asleep
-        state: 'off'
+        entity_id: input_boolean.bedroom_occupancy_automation
+        state: 'on'
     action:
       - service: script.turn_on
         data_template:

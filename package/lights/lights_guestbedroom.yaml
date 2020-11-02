@@ -12,8 +12,8 @@ automation:
         entity_id: binary_sensor.guest_bedroom_occupied
         state: 'off'
       - condition: state
-        entity_id: input_boolean.guest_asleep
-        state: 'off'
+        entity_id: input_boolean.guest_bedroom_occupancy_automation
+        state: 'on'
     action:
       - service: script.turn_on
         data_template:
@@ -39,8 +39,8 @@ automation:
         entity_id: binary_sensor.guest_bedroom_occupied
         state: 'on'
       - condition: state
-        entity_id: input_boolean.guest_asleep
-        state: 'off'
+        entity_id: input_boolean.guest_bedroom_occupancy_automation
+        state: 'on'
     action:
       - service: script.turn_on
         data_template:
