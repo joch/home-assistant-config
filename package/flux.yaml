@@ -1,10 +1,10 @@
 switch:
   - platform: flux
     lights:
-      - light.bedroom_ceiling_lamp
-      - light.bedroom_window_lamp
-      - light.bedroom_bedside_lamp_left
-      - light.bedroom_bedside_lamp_right
+      # - light.bedroom_ceiling_lamp
+      # - light.bedroom_window_lamp
+      # - light.bedroom_bedside_lamp_left
+      # - light.bedroom_bedside_lamp_right
       - light.living_room_window_left_lamp
       - light.living_room_window_right_lamp
       - light.bathroom_ceiling_lamp
@@ -44,18 +44,18 @@ switch:
     disable_brightness_adjust: True
     mode: mired
     transition: 0
-  - platform: flux
-    lights:
-      - light.bedroom_table_lamp
-      - light.bedroom_sideboard_lamp
-    name: Flux Bedroom
-    stop_time: '22:00'
-    start_colortemp: 4000
-    sunset_colortemp: 3000
-    stop_colortemp: 1900
-    disable_brightness_adjust: True
-    mode: mired
-    transition: 0
+  # - platform: flux
+  #   lights:
+  #     - light.bedroom_table_lamp
+  #     - light.bedroom_sideboard_lamp
+  #   name: Flux Bedroom
+  #   stop_time: '22:00'
+  #   start_colortemp: 4000
+  #   sunset_colortemp: 3000
+  #   stop_colortemp: 1900
+  #   disable_brightness_adjust: True
+  #   mode: mired
+  #   transition: 0
 
 automation:
   - alias: Fluxer switch on by default
