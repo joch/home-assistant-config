@@ -1,0 +1,35 @@
+binary_sensor:
+  - platform: workday
+    country: SE
+    name: Workday Today
+  - platform: workday
+    country: SE
+    name: Workday Tomorrow
+    days_offset: 1
+  - platform: template
+    sensors:
+      working:
+        friendly_name: Working
+        value_template: >
+          {{ is_state("binary_sensor.workday_today", "on") and
+            states('sensor.time') >= states('input_datetime.workday_start')  and
+            states('sensor.time') <= states('input_datetime.workday_end') }}
+
+input_datetime:
+  workday_start:
+    name: Workday Start
+    has_time: true
+  workday_end:
+    name: Workday End
+    has_time: true
+
+sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
+      # - 'date'
+      # - 'date_time'
+      # - 'date_time_utc'
+      # - 'date_time_iso'
+      # - 'time_date'
+      # - 'time_utc'
