@@ -42,8 +42,9 @@ automation:
             - camera.aarlo_living_room
           duration: 60
       - service: aarlo.siren_on
-        entity_id: switch.aarlo_siren_home
-        volume: 8
+        data:
+          entity_id: switch.aarlo_siren_home
+          volume: 8
 
   - alias: Alarm pending
     id: 96bfc88d-e039-4716-926b-e6b9df9a5957
@@ -54,5 +55,6 @@ automation:
         to: 'pending'
     action:
       - service: aarlo.siren_on
-        entity_id: switch.aarlo_siren_home
-        volume: 1
+        data:
+          entity_id: switch.aarlo_siren_home
+          volume: 1
