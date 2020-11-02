@@ -93,7 +93,7 @@ binary_sensor:
       bathroom_shower:
         friendly_name: Bathroom Shower
         value_template: >
-          {{ states("sensor.bathroom_humidity") | float(0) > 50 }}
+          {{ states("sensor.bathroom_humidity") | float(0) > 60 }}
 
 automation:
   - alias: Occupancy - Bedroom sleep on
