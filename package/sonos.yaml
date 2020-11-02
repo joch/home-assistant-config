@@ -150,7 +150,7 @@ automation:
     id: 739f8302-e70b-41dc-80b3-fe58d0263abe
     trigger:
       - platform: state
-        entity_id: input_boolean.bathroom_occupied
+        entity_id: binary_sensor.bathroom_occupied
         to: 'on'
     condition:
       - condition: state
@@ -173,7 +173,7 @@ automation:
     id: 990151c5-4deb-4a69-a654-28daa3b040c1
     trigger:
       - platform: state
-        entity_id: input_boolean.bathroom_occupied
+        entity_id: binary_sensor.bathroom_occupied
         to: 'off'
     condition:
       - condition: state
