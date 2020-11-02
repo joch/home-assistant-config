@@ -10,13 +10,11 @@ automation:
         entity_id: input_boolean.perimeter_warning
         state: 'on'
     action:
-      - service: camera.aarlo_start_recording
+      - service: aarlo.camera_start_recording
         data:
-          entity_id: camera.aarlo_hallway
-          duration: 60
-      - service: camera.aarlo_start_recording
-        data:
-          entity_id: camera.aarlo_living_room
+          entity_id:
+            - camera.aarlo_hallway
+            - camera.aarlo_living_room
           duration: 60
 
   - alias: Warn when leaving if windows are open

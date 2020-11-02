@@ -42,3 +42,4 @@ binary_sensor:
     monitored_conditions:
       - motion
       - sound
+      - connectivity
