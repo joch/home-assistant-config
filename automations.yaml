@@ -96,6 +96,10 @@
         device_id: 2d91173638c24315896b956b8b519d1a
         entity_id: switch.leas_room_disco_lamp
         domain: switch
+        for:
+          hours: 0
+          minutes: 0
+          seconds: 10
       sequence:
       - service: input_boolean.turn_off
         data: {}
@@ -108,6 +112,10 @@
         device_id: 0e5e376f69d94bb9a07bea653820fc76
         entity_id: light.guest_bedroom_ceiling_lamp
         domain: light
+      - service: light.turn_on
+        data:
+          effect: colorloop
+        entity_id: light.guest_bedroom_cloud_lamp
       - type: turn_off
         device_id: 3b8017dacb4b411fa7de8fd01302d2a5
         entity_id: light.guest_bedroom_window_lamp
@@ -140,5 +148,9 @@
         entity_id: light.guest_bedroom_window_lamp
         domain: light
         brightness_pct: 100
+      - service: light.turn_on
+        data:
+          effect: stop
+        entity_id: light.guest_bedroom_cloud_lamp
     default: []
   mode: single
