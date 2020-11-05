@@ -5,8 +5,6 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bathroom
-          brightness_pct: 100
-          transition: 2
 
   scene_bathroom_dim:
     alias: Bathroom Dim
@@ -14,7 +12,6 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bathroom
-          transition: 5
 
   scene_bathroom_evening:
     alias: Bathroom Evening
@@ -22,8 +19,6 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bathroom
-          brightness_pct: 75
-          transition: 2
 
   scene_bathroom_full:
     alias: Bathroom Full
@@ -37,15 +32,12 @@ script:
   scene_bathroom_night:
     alias: Bathroom Night
     sequence:
-      - service: light.turn_off
+      - service: light.turn_on
         data:
           entity_id: light.bathroom_ceiling_lamp
-          transition: 5
       - service: light.turn_on
         data:
           entity_id: light.bathroom_mirror_lamp
-          brightness_pct: 25
-          transition: 2
 
   scene_bathroom_off:
     alias: Bathroom Off
@@ -53,7 +45,6 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bathroom
-          transition: 5
 
   scene_bathroom_bright:
     alias: Bathroom Bright

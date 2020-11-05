@@ -5,30 +5,18 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_ceiling_lamp
-          # brightness_pct: 50
-          # transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_window_lamp
-          # brightness_pct: 75
-          # transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_lamp
-          # brightness_pct: 25
-          # transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
-          # brightness_pct: 10
-          # transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_sideboard_lamp
-          # brightness_pct: 10
-          # transition: 2
-      # - delay: '00:00:03'
-      # - service: switch.flux_bedroom_update
 
   scene_bedroom_evening:
     alias: Bedroom Evening
@@ -36,17 +24,12 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_ceiling_lamp
-          # transition: 5
       - service: light.turn_on
         data:
           entity_id: light.bedroom_window_lamp
-          # brightness_pct: 5
-          # transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_lamp
-          # brightness_pct: 1
-          # transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
@@ -60,15 +43,12 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom
-          # transition: 5
       - service: light.turn_off
         data:
           entity_id: light.bedroom_table_lamp
-          # transition: 5
       - service: light.turn_off
         data:
           entity_id: light.bedroom_sideboard_lamp
-          # transition: 5
 
   scene_bedroom_dim:
     alias: Bedroom Dim
@@ -76,24 +56,18 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_ceiling_lamp
-          # transition: 5
       - service: light.turn_on
         data:
           entity_id: light.bedroom_window_lamp
-          # brightness_pct: 1
-          # transition: 5
       - service: light.turn_off
         data:
           entity_id: light.bedroom_bedside_lamp
-          # transition: 5
       - service: light.turn_off
         data:
           entity_id: light.bedroom_table_lamp
-          # transition: 5
       - service: light.turn_off
         data:
           entity_id: light.bedroom_sideboard_lamp
-          # transition: 5
 
   scene_bedroom_full:
     alias: Bedroom Full
@@ -102,19 +76,17 @@ script:
         data:
           entity_id: light.bedroom
           brightness_pct: 100
-          # transition: 2
+          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
           brightness_pct: 100
-          # transition: 2
+          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_sideboard_lamp
           brightness_pct: 100
-          # transition: 2
-      # - delay: '00:00:03'
-      # - service: switch.flux_bedroom_update
+          transition: 2
 
   scene_bedroom_bright:
     alias: Bedroom Bright
@@ -122,26 +94,18 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_ceiling_lamp
-          # transition: 5
       - service: light.turn_off
         data:
           entity_id: light.bedroom_window_lamp
-          # transition: 5
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_lamp
-          # brightness_pct: 50
-          # transition: 2
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
-          # transition: 5
       - service: light.turn_on
         data:
           entity_id: light.bedroom_sideboard_lamp
-          # transition: 5
-      # - delay: '00:00:03'
-      # - service: switch.flux_bedroom_update
 
   scene_bedroom_night:
     alias: Bedroom Night

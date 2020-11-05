@@ -5,35 +5,21 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.living_room_ceiling_lamp
-          brightness_pct: 75
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_left_lamp
-          brightness_pct: 75
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_right_lamp
-          brightness_pct: 75
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_shelf_lamp
-          brightness_pct: 50
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_globe
-          brightness_pct: 75
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_tv_light
-          brightness_pct: 25
-          transition: 2
-          rgb_color: [255,127,0]
-      - service: switch.flux_living_room_update
 
   scene_living_room_evening:
     alias: Living Room Evening
@@ -41,36 +27,21 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.living_room_ceiling_lamp
-          brightness_pct: 50
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_left_lamp
-          brightness_pct: 50
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_right_lamp
-          brightness_pct: 50
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_shelf_lamp
-          brightness_pct: 50
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_globe
-          brightness_pct: 75
-          transition: 2
-          rgb_color: [255,127,0]
       - service: light.turn_on
         data:
           entity_id: light.living_room_tv_light
-          brightness_pct: 25
-          transition: 2
-          rgb_color: [255,127,0]
-      - service: switch.flux_living_room_update
 
   scene_living_room_off:
     alias: Living Room Off
@@ -78,43 +49,31 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.living_room
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_tv_light
-          transition: 5
 
   scene_living_room_dim:
     alias: Living Room Dim
     sequence:
-      - service: light.turn_on
+      - service: light.turn_off
         data:
           entity_id: light.living_room_ceiling_lamp
-          brightness_pct: 10
-          transition: 2
-          rgb_color: [255,127,0]
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_left_lamp
-          brightness_pct: 1
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_right_lamp
-          brightness_pct: 1
-          transition: 2
       - service: light.turn_off
         data:
           entity_id: light.living_room_shelf_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_globe
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_tv_light
-          transition: 5
 
   scene_living_room_full:
     alias: Living Room Full
@@ -160,11 +119,9 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.living_room
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_tv_light
-          transition: 5
 
   scene_living_room_tv:
     alias: Living Room TV
@@ -173,34 +130,28 @@ script:
         data:
           entity_id: light.living_room_ceiling_lamp
           brightness_pct: 75
-          transition: 2
           color_temp: 500
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_left_lamp
           brightness_pct: 1
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_right_lamp
           brightness_pct: 1
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_shelf_lamp
           brightness_pct: 50
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_globe
           brightness_pct: 50
-          transition: 2
           color_temp: 500
       - service: light.turn_on
         data:
           entity_id: light.living_room_tv_light
           brightness_pct: 100
-          transition: 2
           kelvin: 6500
 
   scene_living_room_tv_only:
@@ -209,27 +160,21 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.living_room_ceiling_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_window_left_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_window_right_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_shelf_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_globe
-          transition: 5
       - service: light.turn_on
         data:
           entity_id: light.living_room_tv_light
-          transition: 2
           brightness_pct: 100
           kelvin: 6500
 
@@ -239,35 +184,21 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.living_room_ceiling_lamp
-          brightness_pct: 50
-          transition: 2
-          color_temp: 500
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_left_lamp
-          brightness_pct: 25
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_window_right_lamp
-          brightness_pct: 25
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_shelf_lamp
-          brightness_pct: 50
-          transition: 2
       - service: light.turn_on
         data:
           entity_id: light.living_room_globe
-          brightness_pct: 50
-          transition: 2
-          rgb_color: [255,127,0]
       - service: light.turn_on
         data:
           entity_id: light.living_room_tv_light
-          brightness_pct: 50
-          transition: 2
           rgb_color: [255,127,0]
 
   scene_living_room_music_only:
@@ -276,28 +207,21 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.living_room_ceiling_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_window_left_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_window_right_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_shelf_lamp
-          transition: 5
       - service: light.turn_off
         data:
           entity_id: light.living_room_globe
-          transition: 5
       - service: light.turn_on
         data:
           entity_id: light.living_room_tv_light
-          transition: 2
-          brightness_pct: 50
           rgb_color: [255,127,0]
 
   scene_living_room_bright:
