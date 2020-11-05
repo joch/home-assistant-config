@@ -154,3 +154,44 @@
         entity_id: light.guest_bedroom_cloud_lamp
     default: []
   mode: single
+- id: '1604563974905'
+  alias: 'Reading light #bedroom'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: device_tracker.kindle_oasis
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_boolean.johnny_asleep
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.kajsa_asleep
+      state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: device
+        device_id: 11413fb848b72b4ec6328f429b000918
+        domain: device_tracker
+        entity_id: device_tracker.kindle_oasis
+        type: is_home
+      sequence:
+      - type: turn_on
+        device_id: 7931a092fb7411ea893c2dd9e2dd854b
+        entity_id: light.bedroom_sideboard_lamp
+        domain: light
+    - conditions:
+      - condition: device
+        device_id: 11413fb848b72b4ec6328f429b000918
+        domain: device_tracker
+        entity_id: device_tracker.kindle_oasis
+        type: is_not_home
+      sequence:
+      - type: turn_off
+        device_id: 7931a092fb7411ea893c2dd9e2dd854b
+        entity_id: light.bedroom_sideboard_lamp
+        domain: light
+    default: []
+  mode: single
