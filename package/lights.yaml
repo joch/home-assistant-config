@@ -125,3 +125,28 @@ automation:
         data_template:
           entity_id: input_select.scene
           option: Choose
+  - alias: Turn on and off night lights
+    id: b9da9c0a-0d2c-41fa-b468-611b9a729ac5
+    trigger:
+      - platform: state
+        entity_id: input_boolean.everyone_asleep
+    action:
+      - choose:
+          - conditions:
+              - condition: state
+                entity_id: input_boolean.everyone_asleep
+                state: 'on'
+            sequence:
+              - service: switch.turn_on
+                entity_id: switch.adaptive_lighting_sleep_mode_main
+              - service: switch.turn_on
+                entity_id: switch.adaptive_lighting_sleep_mode_brighter
+          - conditions:
+              - condition: state
+                entity_id: input_boolean.everyone_asleep
+                state: 'off'
+            sequence:
+              - service: switch.turn_off
+                entity_id: switch.adaptive_lighting_sleep_mode_main
+              - service: switch.turn_off
+                entity_id: switch.adaptive_lighting_sleep_mode_brighter
