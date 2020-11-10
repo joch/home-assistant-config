@@ -31,9 +31,6 @@ automation:
       - platform: state
         entity_id: sensor.light_mode
         to: 'full'
-      - platform: state
-        entity_id: input_select.harmony
-        to: 'PowerOff'
     condition:
       - condition: state
         entity_id: binary_sensor.living_room_occupied
@@ -81,3 +78,21 @@ automation:
             {% else %}
             script.scene_living_room_{{ states('sensor.light_mode') }}
             {% endif %}
+
+  - alias: Living room TV off
+    id: 46f8e97e-d7ea-407a-8ee9-5cb4f2ef6c99
+    trigger:
+      - platform: state
+        entity_id: input_select.harmony
+        to: 'PowerOff'
+    condition:
+      - condition: state
+        entity_id: input_boolean.everyone_asleep
+        state: 'off'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_living_room_off
+      - delay: 2
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_living_room_{{ states('sensor.light_mode') }}
