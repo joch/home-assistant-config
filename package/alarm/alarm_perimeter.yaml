@@ -10,7 +10,7 @@ automation:
         entity_id: input_boolean.perimeter_warning
         state: 'on'
     action:
-      - service: aarlo.camera_start_recording
+      - service: camera.aarlo_start_recording
         data:
           entity_id:
             - camera.aarlo_hallway
