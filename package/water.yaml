@@ -8,7 +8,7 @@ automation:
     action:
       - service: script.turn_on
         entity_id: script.scene_kitchen_full
-      - service: camera.aarlo_start_recording
+      - service: aarlo.camera_start_recording
         data:
           entity_id:
             - camera.aarlo_hallway
@@ -28,7 +28,7 @@ automation:
     action:
       - service: script.turn_on
         entity_id: script.scene_bathroom_full
-      - service: camera.aarlo_start_recording
+      - service: aarlo.camera_start_recording
         data:
           entity_id:
             - camera.aarlo_hallway
