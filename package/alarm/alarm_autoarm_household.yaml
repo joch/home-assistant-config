@@ -3,7 +3,11 @@ automation:
     id: bbda9bf1-762e-4c91-896e-e89243b96769
     trigger:
       - platform: state
-        entity_id: group.household
+        entity_id: person.johnny
+        from: 'home'
+        to: 'not_home'
+      - platform: state
+        entity_id: person.kajsa
         from: 'home'
         to: 'not_home'
     condition:
@@ -13,6 +17,9 @@ automation:
     - condition: state
       entity_id: input_boolean.alarm_mode
       state: 'on'
+    - condition: state
+      entity_id: group.household
+      state: 'not_home'
     action:
       - service: alarm_control_panel.alarm_arm_away
         entity_id: alarm_control_panel.alarm
@@ -23,7 +30,11 @@ automation:
     id: 25bcdb92-7a84-4fc8-b636-674696384c1d
     trigger:
       - platform: state
-        entity_id: group.household
+        entity_id: person.johnny
+        from: 'not_home'
+        to: 'home'
+      - platform: state
+        entity_id: person.kajsa
         from: 'not_home'
         to: 'home'
     condition:
