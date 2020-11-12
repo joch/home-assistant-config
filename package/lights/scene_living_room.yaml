@@ -111,7 +111,6 @@ script:
           brightness_pct: 100
           transition: 2
           color_temp: 300
-      - service: switch.flux_living_room_update
 
   scene_living_room_night:
     alias: Living Room Night
