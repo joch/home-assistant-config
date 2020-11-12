@@ -71,7 +71,7 @@ binary_sensor:
         friendly_name: Bathroom Occupied
         icon_template: mdi:walk
         value_template: >
-          {{ is_state("input_boolean.living_room_occupancy_automation", "on") and (
+          {{ is_state("input_boolean.bathroom_occupancy_automation", "on") and (
               is_state("binary_sensor.bathroom_motion", "on") or
               is_state("binary_sensor.bathroom_shower", "on") or
               is_state("bathroom_door_closed_inside", "on"))
@@ -104,7 +104,7 @@ binary_sensor:
         value_template: >
           {{ (as_timestamp(states.binary_sensor.bathroom_motion.last_changed) > as_timestamp(states.binary_sensor.bathroom_door.last_changed) or
               as_timestamp(states.binary_sensor.bathroom_shower.last_changed) > as_timestamp(states.binary_sensor.bathroom_door.last_changed)) and
-              is_state("binary_sensor.bathroom_door", "on") }}
+              is_state("binary_sensor.bathroom_door", "off") }}
 
 automation:
   - alias: Occupancy - Bedroom sleep on
