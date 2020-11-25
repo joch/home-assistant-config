@@ -8,8 +8,8 @@ script:
           manual_control: false
           lights:
             - light.living_room_ceiling_lamp
-            - light.living_room_window_lamp_left
-            - light.living_room_window_lamp_right
+            - light.living_room_window_left_lamp
+            - light.living_room_window_right_lamp
             - light.living_room_shelf_lamp
             - light.living_room_globe
             - light.living_room_tv_light
@@ -40,7 +40,7 @@ script:
           entity_id: light.living_room_tv_light
       - service: light.turn_on
         data:
-          entity_id: light.living_room_switch
+          entity_id: switch.living_room_switch
 
   scene_living_room_evening:
     alias: Living Room Evening
@@ -68,7 +68,7 @@ script:
           entity_id: light.living_room_tv_light
       - service: light.turn_on
         data:
-          entity_id: light.living_room_switch
+          entity_id: switch.living_room_switch
 
   scene_living_room_off:
     alias: Living Room Off
@@ -106,7 +106,7 @@ script:
           entity_id: light.living_room_tv_light
       - service: light.turn_on
         data:
-          entity_id: light.living_room_switch
+          entity_id: switch.living_room_switch
 
   scene_living_room_full:
     alias: Living Room Full
@@ -146,7 +146,7 @@ script:
           color_temp: 300
       - service: light.turn_on
         data:
-          entity_id: light.living_room_switch
+          entity_id: switch.living_room_switch
 
   scene_living_room_night:
     alias: Living Room Night
@@ -190,7 +190,7 @@ script:
           kelvin: 6500
       - service: light.turn_on
         data:
-          entity_id: light.living_room_switch
+          entity_id: switch.living_room_switch
 
   scene_living_room_tv_only:
     alias: Living Room TV Only
@@ -240,7 +240,7 @@ script:
           rgb_color: [255,127,0]
       - service: light.turn_on
         data:
-          entity_id: light.living_room_switch
+          entity_id: switch.living_room_switch
 
   scene_living_room_music_only:
     alias: Living Room Music Only
