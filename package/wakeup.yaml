@@ -19,3 +19,4 @@ automation:
           entity_id: light.guest_bedroom_cloud_lamp
           brightness_pct: 100
           transition: 600
+          kelvin: 1000
