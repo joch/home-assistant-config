@@ -41,6 +41,9 @@ script:
       - service: light.turn_on
         data:
           entity_id: switch.living_room_switch
+      - service: light.turn_on
+        data:
+          entity_id: switch.living_room_switch_2
 
   scene_living_room_evening:
     alias: Living Room Evening
@@ -66,9 +69,12 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.living_room_tv_light
-      - service: light.turn_on
+      - service: light.turn_off
         data:
           entity_id: switch.living_room_switch
+      - service: light.turn_on
+        data:
+          entity_id: switch.living_room_switch_2
 
   scene_living_room_off:
     alias: Living Room Off
@@ -107,6 +113,9 @@ script:
       - service: light.turn_on
         data:
           entity_id: switch.living_room_switch
+      - service: light.turn_on
+        data:
+          entity_id: switch.living_room_switch_2
 
   scene_living_room_full:
     alias: Living Room Full
@@ -147,6 +156,9 @@ script:
       - service: light.turn_on
         data:
           entity_id: switch.living_room_switch
+      - service: light.turn_on
+        data:
+          entity_id: switch.living_room_switch_2
 
   scene_living_room_night:
     alias: Living Room Night
@@ -188,9 +200,12 @@ script:
           entity_id: light.living_room_tv_light
           brightness_pct: 100
           kelvin: 6500
-      - service: light.turn_on
+      - service: light.turn_off
         data:
           entity_id: switch.living_room_switch
+      - service: light.turn_on
+        data:
+          entity_id: switch.living_room_switch_2
 
   scene_living_room_tv_only:
     alias: Living Room TV Only
@@ -241,6 +256,9 @@ script:
       - service: light.turn_on
         data:
           entity_id: switch.living_room_switch
+      - service: light.turn_on
+        data:
+          entity_id: switch.living_room_switch_2
 
   scene_living_room_music_only:
     alias: Living Room Music Only
