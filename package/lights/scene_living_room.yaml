@@ -141,10 +141,10 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.living_room_tv_light
-      - service: switch.turn_on
+      - service: switch.turn_off
         data:
           entity_id: switch.living_room_switch
-      - service: switch.turn_off
+      - service: switch.turn_on
         data:
           entity_id: switch.living_room_switch_2
 
