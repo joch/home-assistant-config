@@ -20,6 +20,13 @@ script:
         data:
           entity_id: light.hallway_ceiling_lamp
 
+  scene_hallway_dim_evening:
+    alias: Hallway Dim Evening
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_hallway_dim
+
   scene_hallway_full:
     alias: Hallway Full
     sequence:

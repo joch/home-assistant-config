@@ -63,6 +63,13 @@ script:
         data:
           entity_id: switch.guest_bedroom_switch
 
+  scene_guest_bedroom_dim_evening:
+    alias: Guest Bedroom Dim Evening
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_guest_bedroom_dim
+
   scene_guest_bedroom_full:
     alias: Guest Bedroom Full
     sequence:

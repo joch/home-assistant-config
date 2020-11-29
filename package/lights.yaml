@@ -107,6 +107,8 @@ sensor:
           off_mode: >-
             {% if is_state('sensor.light_mode', 'off') or is_state('sensor.light_mode', 'night') or is_state('sensor.light_mode', 'bright') %}
             off
+            {% elif is_state('sensor.light_mode', 'evening') %}
+            dim_evening
             {% else %}
             dim
             {% endif %}

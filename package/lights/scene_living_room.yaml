@@ -117,6 +117,37 @@ script:
         data:
           entity_id: switch.living_room_switch_2
 
+  scene_living_room_dim_evening:
+    alias: Living Room Dim Evening
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_living_room_reset_adaptive_lighting
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_ceiling_lamp
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_window_left_lamp
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_window_right_lamp
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_shelf_lamp
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_globe
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_tv_light
+      - service: switch.turn_on
+        data:
+          entity_id: switch.living_room_switch
+      - service: switch.turn_off
+        data:
+          entity_id: switch.living_room_switch_2
+
   scene_living_room_full:
     alias: Living Room Full
     sequence:

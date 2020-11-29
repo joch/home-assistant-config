@@ -69,6 +69,13 @@ script:
         data:
           entity_id: light.bedroom_sideboard_lamp
 
+  scene_bedroom_dim_evening:
+    alias: Bedroom Dim Evening
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_bedroom_dim
+
   scene_bedroom_full:
     alias: Bedroom Full
     sequence:

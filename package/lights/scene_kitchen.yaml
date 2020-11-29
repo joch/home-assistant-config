@@ -54,6 +54,25 @@ script:
           entity_id: light.kitchen_cabinet_light
       - service: switch.turn_on
         data:
+         entity_id: switch.kitchen_switch
+
+  scene_kitchen_dim_evening:
+    alias: Kitchen Dim Evening
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.kitchen_ceiling_lamp
+      - service: light.turn_on
+        data:
+          entity_id: light.kitchen_window_lamp
+      - service: light.turn_off
+        data:
+          entity_id: light.kitchen_countertop_lightstrip
+      - service: light.turn_off
+        data:
+          entity_id: light.kitchen_cabinet_light
+      - service: switch.turn_on
+        data:
           entity_id: switch.kitchen_switch
 
   scene_kitchen_full:
