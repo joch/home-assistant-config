@@ -74,7 +74,6 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-        data:
           entity_id: switch.living_room_switch_2
 
   scene_living_room_off:
