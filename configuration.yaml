@@ -25,6 +25,7 @@ person:
 sun:
 system_health:
 updater:
+default_config:
 
 recorder:
   db_url: !secret recorder_db_url
