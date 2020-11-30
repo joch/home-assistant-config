@@ -231,9 +231,19 @@ script:
           entity_id: light.living_room_tv_light
           brightness_pct: 100
           kelvin: 6500
-      - service: switch.turn_off
-        data:
-          entity_id: switch.living_room_switch
+      - choose:
+          - conditions:
+              - condition: state
+                entity_id: sensor.light_mode
+                state: 'evening'
+            sequence:
+              - service: switch.turn_off
+                data:
+                  entity_id: switch.living_room_switch
+        default:
+          - service: switch.turn_on
+            data:
+              entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
           entity_id: switch.living_room_switch_2
