@@ -12,6 +12,7 @@ binary_sensor:
         friendly_name: Working
         value_template: >
           {{ is_state("binary_sensor.workday_today", "on") and
+             is_state('input_boolean.workday_enabled', 'on') and
              is_state('group.household', 'home') and
              states('sensor.time') >= states('input_datetime.workday_start')  and
              states('sensor.time') <= states('input_datetime.workday_end') }}
@@ -23,6 +24,10 @@ input_datetime:
   workday_end:
     name: Workday End
     has_time: true
+
+input_boolean:
+  workday_enabled:
+    name: Workday Enabled
 
 sensor:
   - platform: time_date
