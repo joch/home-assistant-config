@@ -12,6 +12,8 @@ homeassistant:
       initial_state: 'on'
   auth_providers:
     - type: homeassistant
+  allowlist_external_dirs:
+    - /tmp
 
 api:
 cloud:
