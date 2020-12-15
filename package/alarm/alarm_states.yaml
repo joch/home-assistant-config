@@ -58,3 +58,4 @@ automation:
         data:
           entity_id: switch.aarlo_siren_home
           volume: 1
+          duration: 30
