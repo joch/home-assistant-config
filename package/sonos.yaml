@@ -50,6 +50,9 @@ automation:
         entity_id: input_boolean.guest_mode
         state: 'off'
     action:
+      - service: sonos.unjoin
+        data:
+          entity_id: media_player.leas_room
       - service: media_player.volume_set
         data:
           entity_id: media_player.kitchen
