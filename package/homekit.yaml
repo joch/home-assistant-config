@@ -1,5 +1,4 @@
 homekit:
-  auto_start: True
   filter:
     include_domains:
       - binary_sensor
