@@ -1,9 +1,3 @@
-vacuum:
-  - platform: xiaomi_miio
-    host: !secret vacuum_xiaomi_host
-    token: !secret vacuum_xiaomi_token
-    name: !secret vacuum_xiaomi_name
-
 input_boolean:
   vacuum_automation:
     name: Vacuum Automation
