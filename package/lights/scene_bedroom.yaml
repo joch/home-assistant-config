@@ -14,9 +14,6 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_sideboard_lamp
 
   scene_bedroom_evening:
     alias: Bedroom Evening
@@ -33,9 +30,6 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_sideboard_lamp
 
   scene_bedroom_off:
     alias: Bedroom Off
@@ -46,9 +40,6 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_table_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_sideboard_lamp
 
   scene_bedroom_dim:
     alias: Bedroom Dim
@@ -65,9 +56,6 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_table_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_sideboard_lamp
 
   scene_bedroom_dim_evening:
     alias: Bedroom Dim Evening
@@ -89,11 +77,6 @@ script:
           entity_id: light.bedroom_table_lamp
           brightness_pct: 100
           transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_sideboard_lamp
-          brightness_pct: 100
-          transition: 2
 
   scene_bedroom_bright:
     alias: Bedroom Bright
@@ -110,9 +93,6 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_table_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_sideboard_lamp
 
   scene_bedroom_night:
     alias: Bedroom Night
