@@ -158,6 +158,7 @@ automation:
     trigger:
       - platform: state
         entity_id: vacuum.greta
+        from: 'returning'
         to: 'docked'
     action:
       - service: input_number.set_value
