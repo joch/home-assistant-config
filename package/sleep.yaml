@@ -78,9 +78,14 @@ automation:
                 - condition: state
                   entity_id: input_boolean.guest_mode
                   state: 'on'
-                - condition: state
-                  entity_id: input_boolean.guest_asleep
-                  state: 'on'
+                - condition: or
+                  conditions:
+                    - condition: state
+                      entity_id: input_boolean.johnny_asleep
+                      state: 'on'
+                    - condition: state
+                      entity_id: input_boolean.kajsa_asleep
+                      state: 'on'
             - condition: state
               entity_id: input_boolean.guest_mode
               state: 'off'
