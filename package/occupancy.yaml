@@ -160,6 +160,22 @@ automation:
       - service: input_boolean.turn_on
         entity_id: input_boolean.guest_bedroom_occupancy_automation
 
+  - alias: Occupancy - Enable occupancy automation when away
+    id: 52671c90-3f85-4cd3-b834-31fc92b7a726
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        to: 'armed_away'
+    action:
+      - service: input_boolean.turn_on
+        entity_id:
+          - input_boolean.bedroom_occupancy_automation
+          - input_boolean.living_room_occupancy_automation
+          - input_boolean.hallway_occupancy_automation
+          - input_boolean.bathroom_occupancy_automation
+          - input_boolean.kitchen_occupancy_automation
+          - input_boolean.guest_bedroom_occupancy_automation
+
   - alias: Occupancy - Disable automation when turning lights off
     id: 5f7169f5-9c13-46c6-9af4-e03ea4ecba02
     trigger:
