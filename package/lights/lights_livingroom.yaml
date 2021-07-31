@@ -12,7 +12,7 @@ automation:
         entity_id: binary_sensor.living_room_occupied
         state: 'off'
       - condition: state
-        entity_id: binary_sensor.living_room_occupancy_automation
+        entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on
@@ -39,7 +39,7 @@ automation:
         entity_id: binary_sensor.living_room_occupied
         state: 'on'
       - condition: state
-        entity_id: binary_sensor.living_room_occupancy_automation
+        entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
       - condition: state
         entity_id: input_select.harmony
@@ -66,7 +66,7 @@ automation:
         entity_id: input_boolean.everyone_asleep
         state: 'off'
       - condition: state
-        entity_id: binary_sensor.living_room_occupancy_automation
+        entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on
@@ -99,7 +99,7 @@ automation:
         entity_id: input_boolean.everyone_asleep
         state: 'off'
       - condition: state
-        entity_id: binary_sensor.living_room_occupancy_automation
+        entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on

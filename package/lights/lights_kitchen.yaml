@@ -12,7 +12,7 @@ automation:
         entity_id: binary_sensor.kitchen_occupied
         state: 'off'
       - condition: state
-        entity_id: binary_sensor.kitchen_occupancy_automation
+        entity_id: input_boolean.kitchen_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on
@@ -39,7 +39,7 @@ automation:
         entity_id: binary_sensor.kitchen_occupied
         state: 'on'
       - condition: state
-        entity_id: binary_sensor.kitchen_occupancy_automation
+        entity_id: input_boolean.kitchen_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on
