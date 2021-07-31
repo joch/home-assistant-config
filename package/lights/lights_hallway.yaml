@@ -11,6 +11,9 @@ automation:
       - condition: state
         entity_id: binary_sensor.hallway_occupied
         state: 'off'
+      - condition: state
+        entity_id: binary_sensor.hallway_occupancy_automation
+        state: 'on'
     action:
       - service: script.turn_on
         data_template:
@@ -34,6 +37,9 @@ automation:
     condition:
       - condition: state
         entity_id: binary_sensor.hallway_occupied
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.hallway_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on
