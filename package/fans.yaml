@@ -1,3 +1,9 @@
+fan:
+  - platform: xiaomi_miio_fan
+    name: Bedroom Fan
+    host: !secret miio_fan_bedroom_host
+    token: !secret miio_fan_bedroom_token
+
 input_boolean:
   closet_ventilation_fan_automation:
     name: Closet Ventilation Fan Automation
