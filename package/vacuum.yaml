@@ -1,3 +1,13 @@
+camera:
+  - platform: xiaomi_cloud_map_extractor
+    host: !secret vacuum_xiaomi_host
+    token: !secret vacuum_xiaomi_token
+    username: !secret xiaomi_cloud_username
+    password: !secret xiaomi_cloud_password
+    draw: ['all']
+    attributes:
+      - calibration_points
+
 input_boolean:
   vacuum_automation:
     name: Vacuum Automation
