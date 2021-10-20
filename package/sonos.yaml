@@ -167,21 +167,10 @@ automation:
         data:
           entity_id: media_player.bathroom
           volume_level: 0.08
-      - choose:
-          - conditions:
-              - condition: state
-                entity_id: media_player.living_room
-                state: 'playing'
-            sequence:
-              - service: sonos.join
-                data:
-                  master: media_player.living_room
-                  entity_id: media_player.bathroom
-        default:
-          - service: media_player.select_source
-            data:
-              entity_id: media_player.bathroom
-              source: 'Classic Singer/Songwriter'
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: 'Classic Singer/Songwriter'
 
   - alias: Sonos - Music off when bathroom unoccupied
     id: 990151c5-4deb-4a69-a654-28daa3b040c1
@@ -194,9 +183,6 @@ automation:
         entity_id: input_boolean.music_automation
         state: 'on'
     action:
-      - service: sonos.unjoin
-        data:
-          entity_id: media_player.bathroom
       - service: sonos.set_sleep_timer
         data:
           entity_id: media_player.bathroom
