@@ -1,0 +1,47 @@
+automation:
+  - alias: Office lights idle
+    id: 8c4d484a-ffb9-4804-b016-2b80a0bc433e
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.office_occupied
+        to: 'off'
+      - platform: state
+        entity_id: sensor.light_mode
+    condition:
+      - condition: state
+        entity_id: binary_sensor.office_occupied
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.office_occupancy_automation
+        state: 'on'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_office_{{ state_attr('sensor.light_mode', 'off_mode') }}
+
+  - alias: Office lights occupied
+    id: a362c710-e1eb-4e13-8be7-a178aa22880c
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.office_occupied
+        to: 'on'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'normal'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'evening'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'full'
+    condition:
+      - condition: state
+        entity_id: binary_sensor.office_occupied
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.office_occupancy_automation
+        state: 'on'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_office_{{ states('sensor.light_mode') }}

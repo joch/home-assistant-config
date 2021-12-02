@@ -1,0 +1,116 @@
+script:
+  scene_leas_normal:
+    alias: Leas Normal
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_ceiling
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_window
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_cloud
+      - service: switch.turn_on
+        data:
+          entity_id: switch.leas_switch
+
+  scene_leas_evening:
+    alias: Leas Evening
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_ceiling
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_window
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_cloud
+      - service: switch.turn_on
+        data:
+          entity_id: switch.leas_switch
+
+  scene_leas_off:
+    alias: Leas Off
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.leas_ceiling
+      - service: light.turn_off
+        data:
+          entity_id: light.leas_window
+      - service: light.turn_off
+        data:
+          entity_id: light.leas_cloud
+      - service: switch.turn_off
+        data:
+          entity_id: switch.leas_switch
+
+  scene_leas_dim:
+    alias: Leas Dim
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.leas_ceiling
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_window
+      - service: light.turn_off
+        data:
+          entity_id: light.leas_cloud
+      - service: switch.turn_on
+        data:
+          entity_id: switch.leas_switch
+
+  scene_leas_dim_evening:
+    alias: Leas Dim Evening
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_leas_dim
+
+  scene_leas_full:
+    alias: Leas Full
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_ceiling
+          brightness_pct: 100
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_window
+          brightness_pct: 100
+          transition: 2
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_cloud
+          brightness_pct: 100
+          transition: 2
+      - service: switch.turn_on
+        data:
+          entity_id: switch.leas_switch
+
+  scene_leas_bright:
+    alias: Leas Bright
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_ceiling
+      - service: light.turn_off
+        data:
+          entity_id: light.leas_window
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_cloud
+      - service: switch.turn_off
+        data:
+          entity_id: switch.leas_switch
+
+  scene_leas_night:
+    alias: Leas Night
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_leas_off
