@@ -7,12 +7,12 @@ script:
           entity_id: switch.adaptive_lighting_main
           manual_control: false
           lights:
-            - light.living_room_ceiling_lamp
-            - light.living_room_window_left_lamp
-            - light.living_room_window_right_lamp
-            - light.living_room_shelf_lamp
+            - light.living_room_ceiling
+            - light.living_room_window_left
+            - light.living_room_window_right
+            - light.living_room_shelf
             - light.living_room_globe
-            - light.living_room_tv_light
+            - light.living_room_tv
 
   scene_living_room_normal:
     alias: Living Room Normal
@@ -22,22 +22,22 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
       - service: light.turn_on
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
       - service: light.turn_on
         data:
           entity_id: light.living_room_globe
       - service: light.turn_on
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
       - service: switch.turn_on
         data:
           entity_id: switch.living_room_switch
@@ -46,7 +46,7 @@ script:
           entity_id: switch.living_room_switch_2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_evening:
     alias: Living Room Evening
@@ -56,22 +56,22 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
       - service: light.turn_on
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
       - service: light.turn_on
         data:
           entity_id: light.living_room_globe
       - service: light.turn_on
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
       - service: switch.turn_off
         data:
           entity_id: switch.living_room_switch
@@ -80,7 +80,7 @@ script:
           entity_id: switch.living_room_switch_2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_off:
     alias: Living Room Off
@@ -90,10 +90,10 @@ script:
           entity_id: light.living_room
       - service: light.turn_off
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
       - service: light.turn_off
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_dim:
     alias: Living Room Dim
@@ -103,22 +103,22 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
       - service: light.turn_off
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
       - service: light.turn_off
         data:
           entity_id: light.living_room_globe
       - service: light.turn_off
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
       - service: switch.turn_on
         data:
           entity_id: switch.living_room_switch
@@ -127,7 +127,7 @@ script:
           entity_id: switch.living_room_switch_2
       - service: light.turn_off
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_dim_evening:
     alias: Living Room Dim Evening
@@ -137,22 +137,22 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
       - service: light.turn_off
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
       - service: light.turn_off
         data:
           entity_id: light.living_room_globe
       - service: light.turn_off
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
       - service: switch.turn_off
         data:
           entity_id: switch.living_room_switch
@@ -161,30 +161,30 @@ script:
           entity_id: switch.living_room_switch_2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_full:
     alias: Living Room Full
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
           brightness_pct: 100
           transition: 2
           color_temp: 300
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
@@ -195,7 +195,7 @@ script:
           color_temp: 300
       - service: light.turn_on
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
           brightness_pct: 100
           transition: 2
           color_temp: 300
@@ -207,7 +207,7 @@ script:
           entity_id: switch.living_room_switch_2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_night:
     alias: Living Room Night
@@ -217,30 +217,30 @@ script:
           entity_id: light.living_room
       - service: light.turn_off
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
       - service: light.turn_off
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_tv:
     alias: Living Room TV
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
           brightness_pct: 75
           color_temp: 500
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
           brightness_pct: 1
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
           brightness_pct: 1
       - service: light.turn_on
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
           brightness_pct: 50
       - service: light.turn_on
         data:
@@ -249,7 +249,7 @@ script:
           color_temp: 500
       - service: light.turn_on
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
           brightness_pct: 100
           kelvin: 6500
       - choose:
@@ -270,56 +270,56 @@ script:
           entity_id: switch.living_room_switch_2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_tv_only:
     alias: Living Room TV Only
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
       - service: light.turn_off
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
       - service: light.turn_off
         data:
           entity_id: light.living_room_globe
       - service: light.turn_on
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
           brightness_pct: 100
           kelvin: 6500
       - service: light.turn_off
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_music:
     alias: Living Room Music
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
       - service: light.turn_on
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
       - service: light.turn_on
         data:
           entity_id: light.living_room_globe
       - service: light.turn_on
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
           rgb_color: [255,127,0]
       - service: switch.turn_on
         data:
@@ -329,33 +329,33 @@ script:
           entity_id: switch.living_room_switch_2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_music_only:
     alias: Living Room Music Only
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling_lamp
+          entity_id: light.living_room_ceiling
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_left_lamp
+          entity_id: light.living_room_window_left
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_right_lamp
+          entity_id: light.living_room_window_right
       - service: light.turn_off
         data:
-          entity_id: light.living_room_shelf_lamp
+          entity_id: light.living_room_shelf
       - service: light.turn_off
         data:
           entity_id: light.living_room_globe
       - service: light.turn_on
         data:
-          entity_id: light.living_room_tv_light
+          entity_id: light.living_room_tv
           rgb_color: [255,127,0]
       - service: light.turn_off
         data:
-          entity_id: light.living_room_sideboard_lamp
+          entity_id: light.living_room_sideboard
 
   scene_living_room_bright:
     alias: Living Room Bright
