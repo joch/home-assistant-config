@@ -83,8 +83,7 @@ binary_sensor:
         value_template: >
           {{ is_state("input_boolean.bathroom_occupancy_automation", "on") and (
               is_state("binary_sensor.bathroom_motion", "on") or
-              is_state("binary_sensor.bathroom_shower", "on") or
-              is_state("bathroom_door_closed_inside", "on"))
+              is_state("binary_sensor.bathroom_shower", "on"))
           }}
         delay_off: "00:05:00"
 
@@ -109,12 +108,13 @@ binary_sensor:
         value_template: >
           {{ states("sensor.bathroom_humidity") | float(0) > 60 }}
 
-      bathroom_door_closed_inside:
-        friendly_name: Bathroom Door Closed Inside
-        value_template: >
-          {{ (as_timestamp(states.binary_sensor.bathroom_motion.last_changed) > as_timestamp(states.binary_sensor.bathroom_door.last_changed) or
-              as_timestamp(states.binary_sensor.bathroom_shower.last_changed) > as_timestamp(states.binary_sensor.bathroom_door.last_changed)) and
-              is_state("binary_sensor.bathroom_door", "off") }}
+      # is_state("bathroom_door_closed_inside", "on"))
+      # bathroom_door_closed_inside:
+      #   friendly_name: Bathroom Door Closed Inside
+      #   value_template: >
+      #     {{ (as_timestamp(states.binary_sensor.bathroom_motion.last_changed) > as_timestamp(states.binary_sensor.bathroom_door.last_changed) or
+      #         as_timestamp(states.binary_sensor.bathroom_shower.last_changed) > as_timestamp(states.binary_sensor.bathroom_door.last_changed)) and
+      #         is_state("binary_sensor.bathroom_door", "off") }}
 
       office_occupied:
         friendly_name: Office Occupied
