@@ -13,7 +13,7 @@ script:
           entity_id: light.leas_cloud
       - service: switch.turn_on
         data:
-          entity_id: switch.leas_switch
+          entity_id: switch.leas_dots
 
   scene_leas_evening:
     alias: Leas Evening
@@ -29,7 +29,7 @@ script:
           entity_id: light.leas_cloud
       - service: switch.turn_on
         data:
-          entity_id: switch.leas_switch
+          entity_id: switch.leas_dots
 
   scene_leas_off:
     alias: Leas Off
@@ -45,7 +45,7 @@ script:
           entity_id: light.leas_cloud
       - service: switch.turn_off
         data:
-          entity_id: switch.leas_switch
+          entity_id: switch.leas_dots
 
   scene_leas_dim:
     alias: Leas Dim
@@ -61,7 +61,7 @@ script:
           entity_id: light.leas_cloud
       - service: switch.turn_on
         data:
-          entity_id: switch.leas_switch
+          entity_id: switch.leas_dots
 
   scene_leas_dim_evening:
     alias: Leas Dim Evening
@@ -90,7 +90,7 @@ script:
           transition: 2
       - service: switch.turn_on
         data:
-          entity_id: switch.leas_switch
+          entity_id: switch.leas_dots
 
   scene_leas_bright:
     alias: Leas Bright
@@ -106,7 +106,7 @@ script:
           entity_id: light.leas_cloud
       - service: switch.turn_off
         data:
-          entity_id: switch.leas_switch
+          entity_id: switch.leas_dots
 
   scene_leas_night:
     alias: Leas Night

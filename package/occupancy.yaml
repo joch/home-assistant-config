@@ -20,6 +20,9 @@ input_boolean:
   office_occupancy_automation:
     name: Office Motion Detection
     icon: mdi:eye-outline
+  leas_occupancy_automation:
+    name: Office Motion Detection
+    icon: mdi:eye-outline
 
 group:
   Occupancy Automation:
@@ -30,6 +33,7 @@ group:
     - input_boolean.kitchen_occupancy_automation
     - input_boolean.guest_bedroom_occupancy_automation
     - input_boolean.office_occupancy_automation
+    - input_boolean.leas_occupancy_automation
 
   Occupancy:
     - binary_sensor.bedroom_occupied
@@ -39,6 +43,7 @@ group:
     - binary_sensor.kitchen_occupied
     - binary_sensor.guest_bedroom_occupied
     - binary_sensor.office_occupied
+    - binary_sensor.leas_occupied
 
 binary_sensor:
   - platform: template
@@ -120,6 +125,15 @@ binary_sensor:
           }}
         delay_off: "00:10:00"
 
+      leas_occupied:
+        friendly_name: Leas Occupied
+        icon_template: mdi:walk
+        value_template: >
+          {{ is_state("input_boolean.leas_occupancy_automation", "on") and
+              is_state("binary_sensor.leas_motion_ias_zone", "on")
+          }}
+        delay_off: "00:10:00"
+
 automation:
   - alias: Occupancy - Bedroom sleep on
     id: ffa9b5a5-db81-44a1-810b-cfde7bd745f0
@@ -188,7 +202,8 @@ automation:
           - input_boolean.hallway_occupancy_automation
           - input_boolean.bathroom_occupancy_automation
           - input_boolean.kitchen_occupancy_automation
-          - input_boolean.guest_bedroom_occupancy_automation
+          - input_boolean.office_occupancy_automation
+          - input_boolean.leas_occupancy_automation
 
   - alias: Occupancy - Enable occupancy automation when waking up
     id: 60cb22d8-43a7-48bc-b825-7acc1086c986
