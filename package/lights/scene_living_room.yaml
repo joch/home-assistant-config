@@ -8,8 +8,8 @@ script:
           manual_control: false
           lights:
             - light.living_room_ceiling
-            - light.living_room_window_left
-            - light.living_room_window_right
+            - light.living_room_left
+            - light.living_room_right
             - light.living_room_shelf
             - light.living_room_globe
             - light.living_room_tv
@@ -25,10 +25,10 @@ script:
           entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
       - service: light.turn_on
         data:
           entity_id: light.living_room_shelf
@@ -59,10 +59,10 @@ script:
           entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
       - service: light.turn_on
         data:
           entity_id: light.living_room_shelf
@@ -87,10 +87,28 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.living_room
+          entity_id: light.living_room_ceiling
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_left
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_right
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_shelf
+      - service: light.turn_off
+        data:
+          entity_id: light.living_room_globe
       - service: light.turn_off
         data:
           entity_id: light.living_room_tv
+      - service: switch.turn_off
+        data:
+          entity_id: switch.living_room_switch
+      - service: switch.turn_off
+        data:
+          entity_id: switch.living_room_switch_2
       - service: light.turn_off
         data:
           entity_id: light.living_room_sideboard
@@ -106,10 +124,10 @@ script:
           entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
       - service: light.turn_off
         data:
           entity_id: light.living_room_shelf
@@ -140,10 +158,10 @@ script:
           entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
       - service: light.turn_off
         data:
           entity_id: light.living_room_shelf
@@ -174,12 +192,12 @@ script:
           color_temp: 300
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
           brightness_pct: 100
           transition: 2
       - service: light.turn_on
@@ -232,11 +250,11 @@ script:
           color_temp: 500
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
           brightness_pct: 1
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
           brightness_pct: 1
       - service: light.turn_on
         data:
@@ -280,10 +298,10 @@ script:
           entity_id: light.living_room_ceiling
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
       - service: light.turn_off
         data:
           entity_id: light.living_room_shelf
@@ -307,10 +325,10 @@ script:
           entity_id: light.living_room_ceiling
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
       - service: light.turn_on
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
       - service: light.turn_on
         data:
           entity_id: light.living_room_shelf
@@ -339,10 +357,10 @@ script:
           entity_id: light.living_room_ceiling
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_left
+          entity_id: light.living_room_left
       - service: light.turn_off
         data:
-          entity_id: light.living_room_window_right
+          entity_id: light.living_room_right
       - service: light.turn_off
         data:
           entity_id: light.living_room_shelf
