@@ -3,7 +3,7 @@ group:
     - input_boolean.everyone_asleep
     - input_boolean.johnny_asleep
     - input_boolean.kajsa_asleep
-    - input_boolean.guest_asleep
+    - input_boolean.lea_asleep
 
 input_boolean:
   sleep_automation:
@@ -22,8 +22,8 @@ input_boolean:
     name: Kajsa asleep
     icon: mdi:sleep
 
-  guest_asleep:
-    name: Guest Asleep
+  lea_asleep:
+    name: Lea Asleep
     icon: mdi:sleep
 
 automation:
@@ -37,7 +37,7 @@ automation:
         entity_id: input_boolean.kajsa_asleep
         to: 'on'
       - platform: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep
         to: 'on'
     condition:
       - condition: state
@@ -103,7 +103,7 @@ automation:
         entity_id: input_boolean.kajsa_asleep
         to: 'off'
       - platform: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep
         to: 'off'
     condition:
       - condition: state
@@ -162,13 +162,13 @@ automation:
       - platform: event
         event_type: deconz_event
         event_data:
-          id: guest_asleep
+          id: lea_asleep
           event: 1002
       - platform: event
         event_type: deconz_event
         event_data:
-          id: guest_asleep
+          id: lea_asleep
           event: 1003
     action:
       - service: input_boolean.toggle
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep

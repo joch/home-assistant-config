@@ -40,7 +40,7 @@ automation:
     id: c6daf5b4-998a-46b7-b8b9-152c674c1ee7
     trigger:
       - platform: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep
         to: 'on'
     condition:
       - condition: state
@@ -66,7 +66,7 @@ automation:
     id: be1efed4-511e-46f5-96d9-828a57773a40
     trigger:
       - platform: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep
         to: 'off'
     condition:
       - condition: state

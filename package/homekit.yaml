@@ -7,7 +7,7 @@ homekit:
       - alarm_control_panel.alarm
       - input_boolean.johnny_asleep
       - input_boolean.kajsa_asleep
-      - input_boolean.guest_asleep
+      - input_boolean.lea_asleep
       - input_boolean.everyone_asleep
       - sensor.bedroom_temperature
       - sensor.living_room_motion_sensor_temperature

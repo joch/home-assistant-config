@@ -12,7 +12,7 @@ automation:
         entity_id:
           - input_boolean.johnny_asleep
           - input_boolean.kajsa_asleep
-          - input_boolean.guest_asleep
+          - input_boolean.lea_asleep
 
   - alias: Alarm disarmed
     id: a437755a-1718-4610-9d64-1ee60b0319db

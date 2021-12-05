@@ -183,25 +183,25 @@ automation:
       - service: input_boolean.turn_on
         entity_id: input_boolean.bedroom_occupancy_automation
 
-  - alias: Occupancy - Guest bedroom sleep on
+  - alias: Occupancy - Leas sleep on
     id: 87ade7db-c8df-40b3-adef-5e55050adf82
     trigger:
       - platform: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep
         to: 'on'
     action:
       - service: input_boolean.turn_off
-        entity_id: input_boolean.guest_bedroom_occupancy_automation
+        entity_id: input_boolean.leas_occupancy_automation
 
-  - alias: Occupancy - Guest bedroom sleep off
+  - alias: Occupancy - Leas sleep off
     id: 63131733-159f-4640-9c99-eb89a03dfb89
     trigger:
       - platform: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep
         to: 'off'
     action:
       - service: input_boolean.turn_on
-        entity_id: input_boolean.guest_bedroom_occupancy_automation
+        entity_id: input_boolean.leas_occupancy_automation
 
   - alias: Occupancy - Enable occupancy automation when away
     id: 52671c90-3f85-4cd3-b834-31fc92b7a726

@@ -50,7 +50,7 @@ automation:
     id: 01637112-1968-4fac-b934-20114b5e4d6c
     trigger:
       - platform: state
-        entity_id: input_boolean.guest_asleep
+        entity_id: input_boolean.lea_asleep
         to: 'on'
     action:
       - service: script.turn_on
