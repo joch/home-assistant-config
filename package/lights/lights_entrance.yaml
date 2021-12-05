@@ -20,7 +20,7 @@ automation:
           entity_id: script.scene_entrance_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
   - alias: Entrance lights occupied
-    id: 4dff0b66-aab3-428d-903c-9fc12154c277
+    id: 2ad23d90-1701-4801-a5ad-2507c0b796b7
     trigger:
       - platform: state
         entity_id: binary_sensor.entrance_occupied
