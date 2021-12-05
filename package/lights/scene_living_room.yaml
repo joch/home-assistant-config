@@ -43,7 +43,7 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_on
         data:
           entity_id: light.living_room_sideboard
@@ -77,7 +77,7 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_on
         data:
           entity_id: light.living_room_sideboard
@@ -108,7 +108,7 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_off
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_off
         data:
           entity_id: light.living_room_sideboard
@@ -142,7 +142,7 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_off
         data:
           entity_id: light.living_room_sideboard
@@ -176,7 +176,7 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_on
         data:
           entity_id: light.living_room_sideboard
@@ -222,7 +222,7 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_on
         data:
           entity_id: light.living_room_sideboard
@@ -285,7 +285,7 @@ script:
               entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_on
         data:
           entity_id: light.living_room_sideboard
@@ -344,7 +344,7 @@ script:
           entity_id: switch.living_room_switch
       - service: switch.turn_on
         data:
-          entity_id: switch.living_room_switch_2
+          entity_id: switch.living_room_christmas_tree
       - service: light.turn_on
         data:
           entity_id: light.living_room_sideboard
