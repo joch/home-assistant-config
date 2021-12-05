@@ -23,6 +23,9 @@ input_boolean:
   entrance_occupancy_automation:
     name: Entrance Motion Detection
     icon: mdi:eye-outline
+  dining_room_occupancy_automation:
+    name: Dining Room Motion Detection
+    icon: mdi:eye-outline
 
 group:
   Occupancy Automation:
@@ -34,6 +37,7 @@ group:
     - input_boolean.office_occupancy_automation
     - input_boolean.leas_occupancy_automation
     - input_boolean.entrance_occupancy_automation
+    - input_boolean.dining_room_occupancy_automation
 
   Occupancy:
     - binary_sensor.bedroom_occupied
@@ -44,6 +48,7 @@ group:
     - binary_sensor.office_occupied
     - binary_sensor.leas_occupied
     - binary_sensor.entrance_occupied
+    - binary_sensor.dining_room_occupied
 
 binary_sensor:
   - platform: template
@@ -135,6 +140,14 @@ binary_sensor:
           }}
         delay_off: "00:10:00"
 
+      dining_room_occupied:
+        friendly_name: Dining Room Occupied
+        icon_template: mdi:walk
+        value_template: >
+          {{ is_state("input_boolean.dining_room_occupancy_automation", "on") and
+              is_state("binary_sensor.dining_room_motion_ias_zone", "on")
+          }}
+        delay_off: "00:10:00"
 
 automation:
   - alias: Occupancy - Bedroom sleep on
