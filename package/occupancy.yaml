@@ -138,7 +138,7 @@ binary_sensor:
           {{ is_state("input_boolean.entrance_occupancy_automation", "on") and
               is_state("binary_sensor.entrance_motion_ias_zone", "on")
           }}
-        delay_off: "00:10:00"
+        delay_off: "00:01:00"
 
       dining_room_occupied:
         friendly_name: Dining Room Occupied
