@@ -1,0 +1,58 @@
+script:
+  scene_office_hallway_normal:
+    alias: Office hallway Normal
+    sequence:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.office_hallway_table
+
+  scene_office_hallway_evening:
+    alias: Office hallway Evening
+    sequence:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.office_hallway_table
+
+  scene_office_hallway_dim:
+    alias: Office hallway Dim
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.office_hallway_table
+
+  scene_office_hallway_dim_evening:
+    alias: Office hallway Dim Evening
+    sequence:
+      - service: script.turn_on
+        data:
+          entity_id: script.scene_office_hallway_dim
+
+  scene_office_hallway_full:
+    alias: Office hallway Full
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.office_hallway_table
+          transition: 2
+          brightness_pct: 100
+
+  scene_office_hallway_night:
+    alias: Office hallway Night
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.office_hallway_table
+
+  scene_office_hallway_off:
+    alias: Office hallway Off
+    sequence:
+      - service: light.turn_off
+        data:
+          entity_id: light.office_hallway_table
+
+  scene_office_hallway_bright:
+    alias: Office hallway Bright
+    sequence:
+      - service: light.turn_off
+        data_template:
+          entity_id: light.office_hallway_table
