@@ -35,11 +35,6 @@ recorder:
 ifttt:
   key: !secret ifttt_key
 
-emulated_hue:
-  expose_by_default: true
-  exposed_domains:
-    - light
-
 # For loading HACS themes
 frontend:
   themes: !include_dir_merge_named themes
