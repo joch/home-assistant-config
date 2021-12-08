@@ -2,7 +2,7 @@ homeassistant:
   name: !secret homeassistant_name
   latitude: !secret latitude
   longitude: !secret longitude
-  elevation: 20
+  elevation: 17
   unit_system: metric
   time_zone: Europe/Stockholm
   packages: !include_dir_named package
@@ -39,11 +39,6 @@ emulated_hue:
   expose_by_default: true
   exposed_domains:
     - light
-
-deconz:
-  host: !secret deconz_host
-  api_key: !secret deconz_api_key
-  port: !secret deconz_port
 
 # For loading HACS themes
 frontend:
