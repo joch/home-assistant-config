@@ -174,7 +174,7 @@ automation:
       - service: input_number.set_value
         data_template:
           entity_id: input_number.vacuum_time_remaining
-          value: "{{ states('input_number.vacuum_time_remaining')|int - states('sensor.greta_last_clean_duration')|int / 60 }}"
+          value: "{{ states('input_number.vacuum_time_remaining')|int - states('sensor.greta_last_clean_duration')|int / 60|int }}"
 
   - alias: Activate chosen cleanup
     id: 5f67fa62-011b-4d26-943d-9f9b135043ac
