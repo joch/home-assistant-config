@@ -5,9 +5,9 @@ script:
       - service: light.turn_on
         data_template:
           entity_id: light.dining_room_window
-      - service: light.turn_on
+      - service: switch.turn_on
         data_template:
-          entity_id: light.dining_room_advent_candle
+          entity_id: switch.dining_room_advent_candle
 
   scene_dining_room_evening:
     alias: Dining Room Evening
@@ -15,9 +15,9 @@ script:
       - service: light.turn_on
         data_template:
           entity_id: light.dining_room_window
-      - service: light.turn_on
+      - service: switch.turn_on
         data_template:
-          entity_id: light.dining_room_advent_candle
+          entity_id: switch.dining_room_advent_candle
 
   scene_dining_room_dim:
     alias: Dining Room Dim
@@ -25,9 +25,9 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.dining_room_window
-      - service: light.turn_on
+      - service: switch.turn_on
         data_template:
-          entity_id: light.dining_room_advent_candle
+          entity_id: switch.dining_room_advent_candle
 
   scene_dining_room_dim_evening:
     alias: Dining Room Dim Evening
@@ -44,9 +44,9 @@ script:
           entity_id: light.dining_room_window
           transition: 2
           brightness_pct: 100
-      - service: light.turn_on
+      - service: switch.turn_on
         data_template:
-          entity_id: light.dining_room_advent_candle
+          entity_id: switch.dining_room_advent_candle
 
   scene_dining_room_night:
     alias: Dining Room Night
@@ -54,9 +54,9 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.dining_room_window
-      - service: light.turn_off
+      - service: switch.turn_off
         data_template:
-          entity_id: light.dining_room_advent_candle
+          entity_id: switch.dining_room_advent_candle
 
   scene_dining_room_off:
     alias: Dining Room Off
@@ -64,9 +64,9 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.dining_room_window
-      - service: light.turn_off
+      - service: switch.turn_off
         data_template:
-          entity_id: light.dining_room_advent_candle
+          entity_id: switch.dining_room_advent_candle
 
   scene_dining_room_bright:
     alias: Dining Room Bright
@@ -74,6 +74,6 @@ script:
       - service: light.turn_off
         data_template:
           entity_id: light.dining_room_window
-      - service: light.turn_on
+      - service: switch.turn_on
         data_template:
-          entity_id: light.dining_room_advent_candle
+          entity_id: switch.dining_room_advent_candle
