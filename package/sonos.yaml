@@ -187,3 +187,19 @@ automation:
         data:
           entity_id: media_player.bathroom
           sleep_time: 0
+
+  - alias: Sonos - Turn off kitchen speaker when tv on
+    id: 9484ba64-10c9-4da0-93ef-fe275cc7fbfe
+    trigger:
+      - platform: state
+        entity_id: media_player.living_room
+        to: 'playing'
+    condition:
+      - condition: state
+        entity_id: input_boolean.music_automation
+        state: 'on'
+    action:
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.kitchen
+          sleep_time: 0
