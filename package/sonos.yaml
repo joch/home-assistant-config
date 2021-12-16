@@ -114,8 +114,8 @@ automation:
     action:
       - service: switch.turn_off
         entity_id:
-          - switch.living_room_sonos_night_sound
-          - switch.living_room_sonos_speech_enhance
+          - switch.sonos_living_room_night_sound
+          - switch.sonos_living_room_speech_enhancement
 
   - alias: Sonos - Music on when bathroom occupied
     id: 739f8302-e70b-41dc-80b3-fe58d0263abe
