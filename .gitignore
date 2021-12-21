@@ -1,3 +1,4 @@
+blueprints/
 custom_components/
 deps/
 ssl/
@@ -6,10 +7,11 @@ tts/
 www/
 .*
 *.conf
-*.log
+*.log*
 Makefile
 emulated_hue_ids.json
 ip_bans.yaml
 known_devices.yaml
 secrets.yaml
 ui-lovelace.yaml
+zigbee.db*
