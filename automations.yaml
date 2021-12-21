@@ -11,3 +11,97 @@
     entity_id: light.bedroom_window_lamp
     domain: light
   mode: single
+- id: '1639819489445'
+  alias: 'Party button #leasroom #button'
+  description: ''
+  trigger:
+  - device_id: 93dadd13aea802b3214c9a2669a1fe95
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition:
+  - condition: state
+    entity_id: input_boolean.lea_asleep
+    state: 'off'
+  action:
+  - choose:
+    - conditions:
+      - condition: device
+        type: is_off
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_disco
+        domain: switch
+        for:
+          hours: 0
+          minutes: 0
+          seconds: 10
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        entity_id: input_boolean.leas_occupancy_automation
+      - type: turn_on
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_disco
+        domain: switch
+      - type: turn_off
+        device_id: 0e5e376f69d94bb9a07bea653820fc76
+        entity_id: light.leas_ceiling
+        domain: light
+      - service: light.turn_on
+        data:
+          effect: colorloop
+          brightness_pct: 100
+        target:
+          entity_id: light.leas_cloud
+      - type: turn_off
+        device_id: 3b8017dacb4b411fa7de8fd01302d2a5
+        entity_id: light.leas_window
+        domain: light
+      - service: media_player.select_source
+        data:
+          source: Lea Barnmusik
+        entity_id: media_player.leas_room
+      - service: media_player.shuffle_set
+        data:
+          shuffle: true
+        entity_id: media_player.leas_room
+    - conditions:
+      - condition: device
+        type: is_on
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_disco
+        domain: switch
+        for:
+          hours: 0
+          minutes: 0
+          seconds: 10
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        entity_id: input_boolean.leas_occupancy_automation
+      - type: turn_off
+        device_id: 2d91173638c24315896b956b8b519d1a
+        entity_id: switch.leas_disco
+        domain: switch
+      - type: turn_on
+        device_id: 0e5e376f69d94bb9a07bea653820fc76
+        entity_id: light.leas_ceiling
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: 3b8017dacb4b411fa7de8fd01302d2a5
+        entity_id: light.leas_window
+        domain: light
+        brightness_pct: 100
+      - service: light.turn_on
+        data:
+          effect: stop
+          brightness_pct: 50
+        target:
+          entity_id: light.leas_cloud
+      - service: media_player.media_pause
+        data: {}
+        entity_id: media_player.leas_room
+    default: []
+  mode: single
