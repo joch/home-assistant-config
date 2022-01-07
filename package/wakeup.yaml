@@ -1,22 +1,22 @@
 input_boolean:
-  wakeup_guest_bedroom:
-    name: Wakeup Guest Bedroom
+  wakeup_leas:
+    name: Wakeup Leas
     icon: mdi:alarm
 
 automation:
-  - alias: Wakeup guest bedroom
-    id: a087120b-834c-4fd4-98d0-43df6fa2b69e
+  - alias: Wakeup Leas
+    id: a087120b-834c-4fd4-98d0-43df6fa2b69d
     trigger:
       - platform: time
         at: '07:00:00'
     condition:
       - condition: state
-        entity_id: input_boolean.wakeup_guest_bedroom
+        entity_id: input_boolean.wakeup_leas
         state: 'on'
     action:
       - service: light.turn_on
         data:
-          entity_id: light.guest_bedroom_cloud_lamp
+          entity_id: light.leas_cloud
           brightness_pct: 100
           transition: 600
           kelvin: 1000
