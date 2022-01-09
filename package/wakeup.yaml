@@ -8,7 +8,7 @@ automation:
     id: a087120b-834c-4fd4-98d0-43df6fa2b69d
     trigger:
       - platform: time
-        at: '07:00:00'
+        at: '07:30:00'
     condition:
       - condition: state
         entity_id: input_boolean.wakeup_leas
