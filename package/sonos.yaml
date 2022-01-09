@@ -23,11 +23,11 @@ automation:
           entity_id: media_player.leas_room
       - service: media_player.volume_set
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.dining_room
           volume_level: 0.04
       - service: media_player.select_source
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.dining_room
           source: 'Pure Pop Gold'
 
   - alias: Turn off background music when baby wakes up
@@ -43,11 +43,11 @@ automation:
     action:
       - service: media_player.volume_set
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.dining_room
           volume_level: 0.1
       - service: media_player.select_source
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.dining_room
           source: 'P4 Stockholm'
 
   - alias: Pause music automatically
@@ -78,27 +78,27 @@ automation:
           sleep_time: 0
       - service: sonos.set_sleep_timer
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.dining_room
           sleep_time: 0
 
   - alias: Change radio station when there is sports on
     id: 50258570-5a46-4299-a9c8-a32c0fff14ca
     trigger:
       - platform: template
-        value_template: "{{ 'sport' in state_attr('media_player.kitchen', 'media_artist')|lower }}"
+        value_template: "{{ 'sport' in state_attr('media_player.dining_room', 'media_artist')|lower }}"
     condition:
       - condition: state
         entity_id: input_boolean.music_automation
         state: 'on'
       - condition: state
-        entity_id: media_player.kitchen
+        entity_id: media_player.dining_room
         state: playing
       - condition: template
-        value_template: "{{ state_attr('media_player.kitchen', 'media_title') == 'P4 Stockholm' }}"
+        value_template: "{{ state_attr('media_player.dining_room', 'media_title') == 'P4 Stockholm' }}"
     action:
       - service: media_player.select_source
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.dining_room
           source: 'Pure Pop Gold'
 
   - alias: Disable night mode when going to bed
@@ -156,7 +156,7 @@ automation:
           entity_id: media_player.bathroom
           sleep_time: 0
 
-  - alias: Sonos - Turn off kitchen speaker when tv on
+  - alias: Sonos - Turn off dining_room speaker when tv on
     id: 9484ba64-10c9-4da0-93ef-fe275cc7fbfe
     trigger:
       - platform: state
@@ -169,5 +169,5 @@ automation:
     action:
       - service: sonos.set_sleep_timer
         data:
-          entity_id: media_player.kitchen
+          entity_id: media_player.dining_room
           sleep_time: 0
