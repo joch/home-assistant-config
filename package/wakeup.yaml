@@ -4,6 +4,22 @@ input_boolean:
     icon: mdi:alarm
 
 automation:
+  - alias: Morning Leas
+    id: 4f63ca73-4d62-46f7-87b1-be2987dd34a0
+    trigger:
+      - platform: time
+        at: '07:00:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.wakeup_leas
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_cloud
+          brightness_pct: 1
+          color_name: red
+
   - alias: Wakeup Leas
     id: a087120b-834c-4fd4-98d0-43df6fa2b69d
     trigger:
