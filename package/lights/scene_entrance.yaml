@@ -5,6 +5,8 @@ script:
       - service: light.turn_on
         data_template:
           entity_id: light.entrance_ceiling
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
   scene_entrance_evening:
     alias: Entrance Evening
@@ -12,6 +14,8 @@ script:
       - service: light.turn_on
         data_template:
           entity_id: light.entrance_ceiling
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
   scene_entrance_dim:
     alias: Entrance Dim
@@ -56,3 +60,5 @@ script:
       - service: light.turn_on
         data_template:
           entity_id: light.entrance_ceiling
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"

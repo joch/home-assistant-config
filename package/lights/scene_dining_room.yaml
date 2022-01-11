@@ -5,6 +5,8 @@ script:
       - service: light.turn_on
         data_template:
           entity_id: light.dining_room_window
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data_template:
           entity_id: switch.dining_room_advent_candle
@@ -15,6 +17,8 @@ script:
       - service: light.turn_on
         data_template:
           entity_id: light.dining_room_window
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data_template:
           entity_id: switch.dining_room_advent_candle
@@ -25,6 +29,8 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.dining_room_window
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data_template:
           entity_id: switch.dining_room_advent_candle

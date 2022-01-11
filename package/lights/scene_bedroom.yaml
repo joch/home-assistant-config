@@ -5,18 +5,28 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_ceiling
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
         data:
           entity_id: light.bedroom_window
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_left
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_right
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
         data:
           entity_id: light.bedroom_sideboard
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
   scene_bedroom_evening:
     alias: Bedroom Evening
@@ -27,6 +37,8 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_window
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off
         data:
           entity_id: light.bedroom_bedside_left
@@ -36,6 +48,8 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_sideboard
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
   scene_bedroom_off:
     alias: Bedroom Off
@@ -65,6 +79,8 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_window
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off
         data:
           entity_id: light.bedroom_bedside_left
@@ -103,9 +119,13 @@ script:
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_left
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_right
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
   scene_bedroom_night:
     alias: Bedroom Night
