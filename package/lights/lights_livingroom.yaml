@@ -53,14 +53,8 @@ automation:
     id: c4aac76a-3987-410c-904a-0da30579a2fc
     trigger:
       - platform: state
-        entity_id: input_select.harmony
-        to: 'TV'
-      - platform: state
-        entity_id: input_select.harmony
-        to: 'Apple TV'
-      - platform: state
-        entity_id: input_select.harmony
-        to: 'Music'
+        entity_id: media_player.living_room_apple_tv
+        to: 'playing'
     condition:
       - condition: state
         entity_id: input_boolean.everyone_asleep
@@ -69,39 +63,26 @@ automation:
         entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
     action:
-      - service: script.turn_on
-        data_template:
-          entity_id: >-
-            {% if (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Apple TV')) and is_state('sensor.light_mode', 'normal') %}
-            script.scene_living_room_tv
-            {% elif (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Apple TV')) and is_state('sensor.light_mode', 'evening') %}
-            script.scene_living_room_tv
-            {% elif (is_state('input_select.harmony', 'TV') or is_state('input_select.harmony', 'Apple TV')) and is_state('sensor.light_mode', 'bright') %}
-            script.scene_living_room_tv_only
-            {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'normal') %}
-            script.scene_living_room_music
-            {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'evening') %}
-            script.scene_living_room_music
-            {% elif is_state('input_select.harmony', 'Music') and is_state('sensor.light_mode', 'bright') %}
-            script.scene_living_room_music_only
-            {% else %}
-            script.scene_living_room_{{ states('sensor.light_mode') }}
-            {% endif %}
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_tv
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: 6500
 
   - alias: Living room TV off
     id: 46f8e97e-d7ea-407a-8ee9-5cb4f2ef6c99
     trigger:
       - platform: state
-        entity_id: input_select.harmony
-        to: 'PowerOff'
+        entity_id: media_player.living_room_apple_tv
+        to: 'paused'
     condition:
-      - condition: state
-        entity_id: input_boolean.everyone_asleep
-        state: 'off'
       - condition: state
         entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
     action:
-      - service: script.turn_on
-        data_template:
-          entity_id: script.scene_living_room_{{ states('sensor.light_mode') }}
+      - service: adaptive_lighting.set_manual_control
+        data:
+          entity_id: switch.adaptive_lighting_main
+          manual_control: false
+          lights:
+            - light.living_room_tv
