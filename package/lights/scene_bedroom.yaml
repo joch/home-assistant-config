@@ -9,11 +9,6 @@ script:
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
         data:
-          entity_id: light.bedroom_window
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
           entity_id: light.bedroom_bedside_left
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
@@ -34,11 +29,6 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_ceiling
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_window
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off
         data:
           entity_id: light.bedroom_bedside_left
@@ -59,9 +49,6 @@ script:
           entity_id: light.bedroom_ceiling
       - service: light.turn_off
         data:
-          entity_id: light.bedroom_window
-      - service: light.turn_off
-        data:
           entity_id: light.bedroom_bedside_left
       - service: light.turn_off
         data:
@@ -76,11 +63,6 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_ceiling
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_window
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off
         data:
           entity_id: light.bedroom_bedside_left
@@ -113,9 +95,6 @@ script:
       - service: light.turn_off
         data:
           entity_id: light.bedroom_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_window
       - service: light.turn_on
         data:
           entity_id: light.bedroom_bedside_left
