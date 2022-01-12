@@ -4,22 +4,11 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.bedroom_ceiling
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_bedside_left
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_bedside_right
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_sideboard
+          entity_id:
+            - light.bedroom_ceiling
+            - light.bedroom_bedside_left
+            - light.bedroom_bedside_right
+            - light.bedroom_sideboard
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
@@ -28,13 +17,10 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.bedroom_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_bedside_left
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_bedside_right
+          entity_id:
+            - light.bedroom_ceiling
+            - light.bedroom_bedside_left
+            - light.bedroom_bedside_right
       - service: light.turn_on
         data:
           entity_id: light.bedroom_sideboard
@@ -46,32 +32,22 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.bedroom_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_bedside_left
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_bedside_right
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_sideboard
+          entity_id:
+            - light.bedroom_ceiling
+            - light.bedroom_bedside_left
+            - light.bedroom_bedside_right
+            - light.bedroom_sideboard
 
   scene_bedroom_dim:
     alias: Bedroom Dim
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.bedroom_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_bedside_left
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_bedside_right
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom_sideboard
+          entity_id:
+            - light.bedroom_ceiling
+            - light.bedroom_bedside_left
+            - light.bedroom_bedside_right
+            - light.bedroom_sideboard
 
   scene_bedroom_dim_evening:
     alias: Bedroom Dim Evening
@@ -85,24 +61,27 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.bedroom
+          entity_id:
+            - light.bedroom_ceiling
+            - light.bedroom_bedside_left
+            - light.bedroom_bedside_right
+            - light.bedroom_sideboard
           brightness_pct: 100
-          transition: 2
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
   scene_bedroom_bright:
     alias: Bedroom Bright
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.bedroom_ceiling
+          entity_id:
+            - light.bedroom_ceiling
+            - light.bedroom_sideboard
       - service: light.turn_on
         data:
-          entity_id: light.bedroom_bedside_left
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom_bedside_right
+          entity_id:
+            - light.bedroom_bedside_left
+            - light.bedroom_bedside_right
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 

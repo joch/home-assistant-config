@@ -4,12 +4,9 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.office_ceiling
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.office_window
+          entity_id:
+            - light.office_ceiling
+            - light.office_window
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
@@ -18,12 +15,9 @@ script:
     sequence:
       - service: light.turn_on
         data_template:
-          entity_id: light.office_ceiling
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.office_window
+          entity_id:
+            - light.office_ceiling
+            - light.office_window
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
@@ -51,12 +45,9 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.office_ceiling
-          transition: 2
-          brightness_pct: 100
-      - service: light.turn_on
-        data:
-          entity_id: light.office_window
+          entity_id:
+            - light.office_ceiling
+            - light.office_window
           transition: 2
           brightness_pct: 100
 
@@ -65,20 +56,18 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.office_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.office_window
+          entity_id:
+            - light.office_ceiling
+            - light.office_window
 
   scene_office_off:
     alias: Office Off
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.office_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.office_window
+          entity_id:
+            - light.office_ceiling
+            - light.office_window
 
   scene_office_bright:
     alias: Office Bright

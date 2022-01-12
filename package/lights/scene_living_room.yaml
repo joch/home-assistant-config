@@ -21,27 +21,12 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_left
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_right
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_globe
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_tv
+          entity_id:
+            - light.living_room_ceiling
+            - light.living_room_left
+            - light.living_room_right
+            - light.living_room_globe
+            - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
@@ -56,25 +41,12 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_left
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_right
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_globe
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_tv
+          entity_id:
+            - light.living_room_ceiling
+            - light.living_room_left
+            - light.living_room_right
+            - light.living_room_globe
+            - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
@@ -86,19 +58,12 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_left
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_right
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_globe
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_tv
+          entity_id:
+            - light.living_room_ceiling
+            - light.living_room_left
+            - light.living_room_right
+            - light.living_room_globe
+            - light.living_room_tv
       - service: switch.turn_off
         data:
           entity_id: switch.living_room_christmas_tree
@@ -111,23 +76,17 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling
+          entity_id:
+            - light.living_room_ceiling
+            - light.living_room_globe
+            - light.living_room_tv
       - service: light.turn_on
         data:
-          entity_id: light.living_room_left
+          entity_id:
+            - light.living_room_left
+            - light.living_room_right
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_right
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_globe
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_tv
       - service: switch.turn_on
         data:
           entity_id: switch.living_room_christmas_tree
@@ -140,23 +99,17 @@ script:
           entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_off
         data:
-          entity_id: light.living_room_ceiling
+          entity_id:
+            - light.living_room_ceiling
+            - light.living_room_globe
+            - light.living_room_tv
       - service: light.turn_on
         data:
-          entity_id: light.living_room_left
+          entity_id:
+            - light.living_room_left
+            - light.living_room_right
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_right
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_globe
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_tv
       - service: switch.turn_on
         data:
           entity_id: switch.living_room_christmas_tree
@@ -166,32 +119,14 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.living_room_ceiling
-          brightness_pct: 100
-          transition: 2
-          color_temp: 300
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_left
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_right
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_globe
-          brightness_pct: 100
-          transition: 2
-          color_temp: 300
-      - service: light.turn_on
-        data:
-          entity_id: light.living_room_tv
-          brightness_pct: 100
-          transition: 2
-          color_temp: 300
+          entity_id:
+            - light.living_room_ceiling
+            - light.living_room_left
+            - light.living_room_right
+            - light.living_room_globe
+            - light.living_room_tv
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data:
           entity_id: switch.living_room_christmas_tree
@@ -201,10 +136,12 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.living_room
-      - service: light.turn_off
-        data:
-          entity_id: light.living_room_tv
+          entity_id:
+            - light.living_room_ceiling
+            - light.living_room_left
+            - light.living_room_right
+            - light.living_room_globe
+            - light.living_room_tv
 
   # scene_living_room_tv:
   #   alias: Living Room TV

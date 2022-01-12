@@ -4,12 +4,9 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.leas_ceiling
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.leas_window
+          entity_id:
+            - light.leas_ceiling
+            - light.leas_window
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
@@ -24,12 +21,9 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.leas_ceiling
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_on
-        data:
-          entity_id: light.leas_window
+          entity_id:
+            - light.leas_ceiling
+            - light.leas_window
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_on
@@ -44,13 +38,10 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.leas_ceiling
-      - service: light.turn_off
-        data:
-          entity_id: light.leas_window
-      - service: light.turn_off
-        data:
-          entity_id: light.leas_cloud
+          entity_id:
+            - light.leas_ceiling
+            - light.leas_window
+            - light.leas_cloud
       - service: switch.turn_off
         data:
           entity_id: switch.leas_dots
@@ -60,15 +51,14 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.leas_ceiling
+          entity_id:
+            - light.leas_ceiling
+            - light.leas_cloud
       - service: light.turn_on
         data:
           entity_id: light.leas_window
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: light.turn_off
-        data:
-          entity_id: light.leas_cloud
       - service: switch.turn_on
         data:
           entity_id: switch.leas_dots
@@ -85,19 +75,12 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.leas_ceiling
+          entity_id:
+            - light.leas_ceiling
+            - light.leas_window
+            - light.leas_cloud
           brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.leas_window
-          brightness_pct: 100
-          transition: 2
-      - service: light.turn_on
-        data:
-          entity_id: light.leas_cloud
-          brightness_pct: 100
-          transition: 2
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data:
           entity_id: switch.leas_dots
@@ -107,13 +90,14 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.leas_ceiling
+          entity_id:
+            - light.leas_ceiling
+            - light.leas_cloud
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off
         data:
           entity_id: light.leas_window
-      - service: light.turn_on
-        data:
-          entity_id: light.leas_cloud
       - service: switch.turn_off
         data:
           entity_id: switch.leas_dots
