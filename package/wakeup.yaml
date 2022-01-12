@@ -13,6 +13,9 @@ automation:
       - condition: state
         entity_id: input_boolean.wakeup_leas
         state: 'on'
+      - condition: state
+        entity_id: input_boolean.lea_asleep
+        state: 'on'
     action:
       - service: light.turn_on
         data:
@@ -28,6 +31,9 @@ automation:
     condition:
       - condition: state
         entity_id: input_boolean.wakeup_leas
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.lea_asleep
         state: 'on'
     action:
       - service: light.turn_on
