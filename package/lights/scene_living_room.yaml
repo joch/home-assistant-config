@@ -1,24 +1,7 @@
 script:
-  scene_living_room_reset_adaptive_lighting:
-    alias: Living Room Reset Adaptive Lighting
-    sequence:
-      - service: adaptive_lighting.set_manual_control
-        data:
-          entity_id: switch.adaptive_lighting_main
-          manual_control: false
-          lights:
-            - light.living_room_ceiling
-            - light.living_room_left
-            - light.living_room_right
-            - light.living_room_globe
-            - light.living_room_tv
-
   scene_living_room_normal:
     alias: Living Room Normal
     sequence:
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_on
         data:
           entity_id:
@@ -36,9 +19,6 @@ script:
   scene_living_room_evening:
     alias: Living Room Evening
     sequence:
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_on
         data:
           entity_id:
@@ -71,9 +51,6 @@ script:
   scene_living_room_dim:
     alias: Living Room Dim
     sequence:
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_off
         data:
           entity_id:
@@ -94,9 +71,6 @@ script:
   scene_living_room_dim_evening:
     alias: Living Room Dim Evening
     sequence:
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_reset_adaptive_lighting
       - service: light.turn_off
         data:
           entity_id:
