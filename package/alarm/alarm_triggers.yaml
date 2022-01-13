@@ -20,7 +20,7 @@ automation:
       - service: alarm_control_panel.alarm_trigger
         entity_id: alarm_control_panel.alarm
 
-  - alias: Trigger alarm when perimeter breached or motion detected when armed_away
+  - alias: Trigger alarm when perimeter breached when armed_away
     id: 7c61b57a-3cfd-4927-b6dd-516b308e511f
     trigger:
       - platform: state
@@ -32,11 +32,6 @@ automation:
           - binary_sensor.dining_room_window
           - binary_sensor.living_room_window
           - binary_sensor.office_window
-          - binary_sensor.bedroom_motion
-          - binary_sensor.leas_motion
-          - binary_sensor.entrance_motion
-          - binary_sensor.living_room_motion
-          - binary_sensor.office_motion
         to: 'on'
       - platform: state
         entity_id: alarm_control_panel.aarlo_home
@@ -45,6 +40,28 @@ automation:
       - condition: state
         entity_id: alarm_control_panel.alarm
         state: 'armed_away'
+    action:
+      - service: alarm_control_panel.alarm_trigger
+        entity_id: alarm_control_panel.alarm
+
+  - alias: Trigger alarm when motion detected when armed_away
+    id: e0980299-d2a4-4ee9-99ae-90b2b994d458
+    trigger:
+      - platform: state
+        entity_id:
+          - binary_sensor.bedroom_motion
+          - binary_sensor.leas_motion
+          - binary_sensor.entrance_motion
+          - binary_sensor.living_room_motion
+          - binary_sensor.office_motion
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: 'armed_away'
+      - condition: state
+        entity_id: vacuum.greta
+        state: docked
     action:
       - service: alarm_control_panel.alarm_trigger
         entity_id: alarm_control_panel.alarm
