@@ -4,37 +4,11 @@ input_boolean:
     icon: mdi:playlist-music-outline
 
 automation:
-  - alias: Turn on background music when baby asleep
-    id: c6daf5b4-998a-46b7-b8b9-152c674c1ee7
-    trigger:
-      - platform: state
-        entity_id: input_boolean.lea_asleep
-        to: 'on'
-    condition:
-      - condition: state
-        entity_id: input_boolean.music_automation
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.guest_mode
-        state: 'off'
-    action:
-      - service: sonos.unjoin
-        data:
-          entity_id: media_player.leas_room
-      - service: media_player.volume_set
-        data:
-          entity_id: media_player.dining_room
-          volume_level: 0.04
-      - service: media_player.select_source
-        data:
-          entity_id: media_player.dining_room
-          source: 'Pure Pop Gold'
-
-  - alias: Turn off background music when baby wakes up
+  - alias: Turn on radio in the morning
     id: be1efed4-511e-46f5-96d9-828a57773a40
     trigger:
       - platform: state
-        entity_id: input_boolean.lea_asleep
+        entity_id: input_boolean.everyone_asleep
         to: 'off'
     condition:
       - condition: state
