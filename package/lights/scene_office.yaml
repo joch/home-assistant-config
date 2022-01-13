@@ -7,6 +7,7 @@ script:
           entity_id:
             - light.office_ceiling
             - light.office_window
+            - light.office_monitor
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
@@ -18,6 +19,7 @@ script:
           entity_id:
             - light.office_ceiling
             - light.office_window
+            - light.office_monitor
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
@@ -26,7 +28,9 @@ script:
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.office_ceiling
+          entity_id:
+            - light.office_ceiling
+            - light.office_monitor
       - service: light.turn_on
         data:
           entity_id: light.office_window
@@ -48,6 +52,7 @@ script:
           entity_id:
             - light.office_ceiling
             - light.office_window
+            - light.office_monitor
           transition: 2
           brightness_pct: 100
 
@@ -59,6 +64,7 @@ script:
           entity_id:
             - light.office_ceiling
             - light.office_window
+            - light.office_monitor
 
   scene_office_off:
     alias: Office Off
@@ -68,13 +74,16 @@ script:
           entity_id:
             - light.office_ceiling
             - light.office_window
+            - light.office_monitor
 
   scene_office_bright:
     alias: Office Bright
     sequence:
       - service: light.turn_on
         data_template:
-          entity_id: light.office_ceiling
+          entity_id:
+            - light.office_ceiling
+            - light.office_monitor
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off

@@ -45,3 +45,38 @@ automation:
       - service: script.turn_on
         data_template:
           entity_id: script.scene_office_{{ states('sensor.light_mode') }}
+
+  - alias: Office video meeting on
+    id: 5fc5ecd4-e275-423b-bbd4-9c3abc13d80a
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.stk_jchadda_camera_in_use
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.office_occupancy_automation
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.office_monitor
+          brightness_pct: 100
+          kelvin: 5500
+
+  - alias: Office video meeting off
+    id: 1d291257-79fc-4e6f-94a2-4845aa466798
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.stk_jchadda_camera_in_use
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.office_occupancy_automation
+        state: 'on'
+    action:
+      - service: adaptive_lighting.set_manual_control
+        data:
+          entity_id: switch.adaptive_lighting_main
+          manual_control: false
+          lights:
+            - light.office_monitor
