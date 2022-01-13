@@ -1,3 +1,7 @@
+sonos_cloud:
+  client_id: !secret sonos_cloud_client_id
+  client_secret: !secret sonos_cloud_client_secret
+
 input_boolean:
   music_automation:
     name: Music Automation
