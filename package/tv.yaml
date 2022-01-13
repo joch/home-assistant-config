@@ -1,0 +1,20 @@
+automation:
+  - alias: Turn on Apple TV when Sonos input changes
+    id: 17dc9e93-f707-487f-a763-746e3f3bbd79
+    trigger:
+      - platform: state
+        entity_id: device_tracker.samsung_tv
+        to: home
+    action:
+      - service: remote.turn_on
+        entity_id: remote.living_room_apple_tv
+
+  - alias: Turn off Apple TV when Sonos input changes
+    id: 73edaf08-710c-4e37-a04d-b4b92e818a36
+    trigger:
+      - platform: state
+        entity_id: device_tracker.samsung_tv
+        to: not_home
+    action:
+      - service: remote.turn_off
+        entity_id: remote.living_room_apple_tv
