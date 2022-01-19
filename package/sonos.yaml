@@ -44,7 +44,15 @@ automation:
     action:
       - service: sonos.set_sleep_timer
         data:
+          entity_id: media_player.bathroom
+          sleep_time: 0
+      - service: sonos.set_sleep_timer
+        data:
           entity_id: media_player.bedroom
+          sleep_time: 0
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.dining_room
           sleep_time: 0
       - service: sonos.set_sleep_timer
         data:
@@ -52,11 +60,7 @@ automation:
           sleep_time: 0
       - service: sonos.set_sleep_timer
         data:
-          entity_id: media_player.bathroom
-          sleep_time: 0
-      - service: sonos.set_sleep_timer
-        data:
-          entity_id: media_player.dining_room
+          entity_id: media_player.office
           sleep_time: 0
 
   - alias: Change radio station when there is sports on
