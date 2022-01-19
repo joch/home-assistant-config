@@ -26,11 +26,48 @@ automation:
       - service: alarm_control_panel.alarm_disarm
         entity_id: alarm_control_panel.aarlo_home
 
+  - alias: Alarm triggered while home
+    id: 74ff92b7-4523-407d-bdad-3e5556c6608a
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        from: 'armed_night'
+        to: 'triggered'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_home_full
+      - service: aarlo.camera_start_recording
+        data:
+          entity_id:
+            - camera.aarlo_hallway
+            - camera.aarlo_living_room
+          duration: 60
+      - service: aarlo.siren_on
+        data:
+          entity_id: switch.aarlo_siren_home
+          volume: 1
+          duration: 10
+      - service: tts.google_translate_say
+        data:
+          entity_id: media_player.bedroom_tts
+          message: >-
+            Alarm triggered!
+            {%- for state in states.binary_sensor -%}
+              {% set type = state.name.split(' ') | last -%}
+              {% if type == 'Window' and state.state_with_unit == 'on' %}
+                {{- state.name }} is open.
+              {%- endif -%}
+              {% if type == 'Door' and state.state_with_unit == 'on' %}
+                {{- state.name }} is open.
+              {%- endif -%}
+            {%- endfor %}
+
   - alias: Alarm triggered
     id: 5b8c70a0-fe14-4f7f-9ae7-70372eede85a
     trigger:
       - platform: state
         entity_id: alarm_control_panel.alarm
+        from: 'pending'
         to: 'triggered'
     action:
       - service: script.turn_on
@@ -45,6 +82,7 @@ automation:
         data:
           entity_id: switch.aarlo_siren_home
           volume: 8
+          duration: 30
 
   - alias: Alarm pending
     id: 96bfc88d-e039-4716-926b-e6b9df9a5957
@@ -58,4 +96,4 @@ automation:
         data:
           entity_id: switch.aarlo_siren_home
           volume: 1
-          duration: 30
+          duration: 10
