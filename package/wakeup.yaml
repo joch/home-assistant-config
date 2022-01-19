@@ -1,4 +1,7 @@
 input_boolean:
+  morning_leas:
+    name: Morning Leas
+    icon: mdi:alarm
   wakeup_leas:
     name: Wakeup Leas
     icon: mdi:alarm
@@ -11,7 +14,7 @@ automation:
         at: '07:00:00'
     condition:
       - condition: state
-        entity_id: input_boolean.wakeup_leas
+        entity_id: input_boolean.morning_leas
         state: 'on'
       - condition: state
         entity_id: input_boolean.lea_asleep
