@@ -108,3 +108,30 @@ script:
       - service: script.turn_on
         data:
           entity_id: script.scene_leas_off
+
+  scene_leas_disco:
+    alias: Leas Disco
+    sequence:
+      # - service: input_boolean.turn_off
+      #   entity_id: input_boolean.leas_occupancy_automation
+      - service: switch.turn_on
+        entity_id:
+          - switch.leas_disco
+          - switch.leas_dots
+      - service: light.turn_off
+        entity_id:
+          - light.leas_ceiling
+          - light.leas_window
+      - service: light.turn_on
+        entity_id: light.leas_cloud
+        data:
+          effect: colorloop
+          brightness_pct: 100
+      - service: media_player.select_source
+        entity_id: media_player.leas_room
+        data:
+          source: Lea Barnmusik
+      - service: media_player.shuffle_set
+        entity_id: media_player.leas_room
+        data:
+          shuffle: true
