@@ -12,9 +12,6 @@ script:
             - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: switch.turn_on
-        data:
-          entity_id: switch.living_room_christmas_tree
 
   scene_living_room_evening:
     alias: Living Room Evening
@@ -29,9 +26,6 @@ script:
             - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: switch.turn_on
-        data:
-          entity_id: switch.living_room_christmas_tree
 
   scene_living_room_off:
     alias: Living Room Off
@@ -44,9 +38,6 @@ script:
             - light.living_room_right
             - light.living_room_globe
             - light.living_room_tv
-      - service: switch.turn_off
-        data:
-          entity_id: switch.living_room_christmas_tree
 
   scene_living_room_dim:
     alias: Living Room Dim
@@ -64,9 +55,6 @@ script:
             - light.living_room_right
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: switch.turn_on
-        data:
-          entity_id: switch.living_room_christmas_tree
 
   scene_living_room_dim_evening:
     alias: Living Room Dim Evening
@@ -84,9 +72,6 @@ script:
             - light.living_room_right
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: switch.turn_on
-        data:
-          entity_id: switch.living_room_christmas_tree
 
   scene_living_room_full:
     alias: Living Room Full
@@ -101,9 +86,6 @@ script:
             - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
-      - service: switch.turn_on
-        data:
-          entity_id: switch.living_room_christmas_tree
 
   scene_living_room_night:
     alias: Living Room Night
