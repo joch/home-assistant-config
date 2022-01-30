@@ -9,7 +9,7 @@ script:
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data_template:
-          entity_id: switch.dining_room_advent_candle
+          entity_id: switch.dining_room_lantern
 
   scene_dining_room_evening:
     alias: Dining Room Evening
@@ -21,7 +21,7 @@ script:
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data_template:
-          entity_id: switch.dining_room_advent_candle
+          entity_id: switch.dining_room_lantern
 
   scene_dining_room_dim:
     alias: Dining Room Dim
@@ -33,7 +33,7 @@ script:
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
         data_template:
-          entity_id: switch.dining_room_advent_candle
+          entity_id: switch.dining_room_lantern
 
   scene_dining_room_dim_evening:
     alias: Dining Room Dim Evening
@@ -52,7 +52,7 @@ script:
           brightness_pct: 100
       - service: switch.turn_on
         data_template:
-          entity_id: switch.dining_room_advent_candle
+          entity_id: switch.dining_room_lantern
 
   scene_dining_room_night:
     alias: Dining Room Night
@@ -62,7 +62,7 @@ script:
           entity_id: light.dining_room_window
       - service: switch.turn_off
         data_template:
-          entity_id: switch.dining_room_advent_candle
+          entity_id: switch.dining_room_lantern
 
   scene_dining_room_off:
     alias: Dining Room Off
@@ -72,7 +72,7 @@ script:
           entity_id: light.dining_room_window
       - service: switch.turn_off
         data_template:
-          entity_id: switch.dining_room_advent_candle
+          entity_id: switch.dining_room_lantern
 
   scene_dining_room_bright:
     alias: Dining Room Bright
@@ -82,4 +82,4 @@ script:
           entity_id: light.dining_room_window
       - service: switch.turn_on
         data_template:
-          entity_id: switch.dining_room_advent_candle
+          entity_id: switch.dining_room_lantern
