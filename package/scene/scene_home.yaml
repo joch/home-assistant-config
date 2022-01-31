@@ -4,92 +4,63 @@ script:
     sequence:
       - service: script.turn_on
         data:
-          entity_id: script.scene_bedroom_dim
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_dim
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_bathroom_dim
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_hallway_dim
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_kitchen_dim
+          entity_id:
+            - script.scene_bathroom_dim
+            - script.scene_bedroom_dim
+            - script.scene_entrance_dim
+            - script.scene_dining_room_dim
+            - script.scene_living_room_dim
+            - script.scene_office_dim
 
   scene_home_normal:
     alias: Home Normal
     sequence:
       - service: script.turn_on
         data:
-          entity_id: script.scene_bedroom_normal
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_normal
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_bathroom_normal
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_hallway_normal
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_kitchen_normal
+          entity_id:
+            - script.scene_bathroom_normal
+            - script.scene_bedroom_normal
+            - script.scene_entrance_normal
+            - script.scene_dining_room_normal
+            - script.scene_living_room_normal
+            - script.scene_office_normal
 
   scene_home_evening:
     alias: Home Evening
     sequence:
       - service: script.turn_on
         data:
-          entity_id: script.scene_bedroom_evening
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_evening
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_bathroom_evening
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_hallway_evening
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_kitchen_evening
+          entity_id:
+            - script.scene_bathroom_evening
+            - script.scene_bedroom_evening
+            - script.scene_entrance_evening
+            - script.scene_dining_room_evening
+            - script.scene_living_room_evening
+            - script.scene_office_evening
 
   scene_home_full:
     alias: Home Full
     sequence:
       - service: script.turn_on
         data:
-          entity_id: script.scene_bedroom_full
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_full
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_bathroom_full
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_hallway_full
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_kitchen_full
+          entity_id:
+            - script.scene_bathroom_full
+            - script.scene_bedroom_full
+            - script.scene_entrance_full
+            - script.scene_dining_room_full
+            - script.scene_living_room_full
+            - script.scene_office_full
 
   scene_home_off:
     alias: Home Off
     sequence:
       - service: script.turn_on
         data:
-          entity_id: script.scene_bedroom_off
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_living_room_off
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_bathroom_off
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_hallway_off
-      - service: script.turn_on
-        data:
-          entity_id: script.scene_kitchen_off
+          entity_id:
+            - script.scene_bathroom_off
+            - script.scene_bedroom_off
+            - script.scene_entrance_off
+            - script.scene_dining_room_off
+            - script.scene_living_room_off
+            - script.scene_leas_off
+            - script.scene_office_off
