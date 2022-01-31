@@ -42,11 +42,6 @@ automation:
             - camera.aarlo_hallway
             - camera.aarlo_living_room
           duration: 60
-      - service: aarlo.siren_on
-        data:
-          entity_id: switch.aarlo_siren_home
-          volume: 1
-          duration: 10
       - service: tts.google_translate_say
         data:
           entity_id: media_player.bedroom_tts
