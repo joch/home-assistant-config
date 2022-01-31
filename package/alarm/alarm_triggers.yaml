@@ -13,9 +13,14 @@ automation:
           - binary_sensor.office_window
         to: 'on'
     condition:
-      - condition: state
-        entity_id: alarm_control_panel.alarm
-        state: 'armed_night'
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.alarm
+          state: 'armed_night'
+        - condition: state
+          entity_id: alarm_control_panel.alarm
+          state: 'armed_home'
     action:
       - service: alarm_control_panel.alarm_trigger
         entity_id: alarm_control_panel.alarm

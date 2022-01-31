@@ -26,7 +26,7 @@ automation:
       - service: alarm_control_panel.alarm_disarm
         entity_id: alarm_control_panel.aarlo_home
 
-  - alias: Alarm triggered while home
+  - alias: Alarm triggered while armed_night
     id: 74ff92b7-4523-407d-bdad-3e5556c6608a
     trigger:
       - platform: state
@@ -45,6 +45,40 @@ automation:
       - service: tts.google_translate_say
         data:
           entity_id: media_player.bedroom_tts
+          message: >-
+            Alarm triggered!
+            {%- for state in states.binary_sensor -%}
+              {% set type = state.name.split(' ') | last -%}
+              {% if type == 'Window' and state.state_with_unit == 'on' %}
+                {{- state.name }} is open.
+              {%- endif -%}
+              {% if type == 'Door' and state.state_with_unit == 'on' %}
+                {{- state.name }} is open.
+              {%- endif -%}
+            {%- endfor %}
+
+  - alias: Alarm triggered while armed_home
+    id: b27c94e0-9a82-4ff7-9a2d-a0c3372b1a29
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm
+        from: 'armed_home'
+        to: 'triggered'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_home_full
+      - service: aarlo.camera_start_recording
+        data:
+          entity_id:
+            - camera.aarlo_hallway
+            - camera.aarlo_living_room
+          duration: 60
+      - service: tts.google_translate_say
+        data:
+          entity_id:
+            - media_player.bedroom_tts
+            - media_player.office_tts
+            - media_player.living_room_tts
           message: >-
             Alarm triggered!
             {%- for state in states.binary_sensor -%}
