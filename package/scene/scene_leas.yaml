@@ -15,6 +15,9 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.leas_dots
+      - service: switch.turn_off
+        data:
+          entity_id: switch.leas_disco
 
   scene_leas_evening:
     alias: Leas Evening
@@ -32,6 +35,9 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.leas_dots
+      - service: switch.turn_off
+        data:
+          entity_id: switch.leas_disco
 
   scene_leas_off:
     alias: Leas Off
@@ -44,7 +50,9 @@ script:
             - light.leas_cloud
       - service: switch.turn_off
         data:
-          entity_id: switch.leas_dots
+          entity_id:
+            - switch.leas_dots
+            - switch.leas_disco
 
   scene_leas_dim:
     alias: Leas Dim
@@ -62,6 +70,9 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.leas_dots
+      - service: switch.turn_off
+        data:
+          entity_id: switch.leas_disco
 
   scene_leas_dim_evening:
     alias: Leas Dim Evening
@@ -84,6 +95,9 @@ script:
       - service: switch.turn_on
         data:
           entity_id: switch.leas_dots
+      - service: switch.turn_off
+        data:
+          entity_id: switch.leas_disco
 
   scene_leas_bright:
     alias: Leas Bright
@@ -100,7 +114,9 @@ script:
           entity_id: light.leas_window
       - service: switch.turn_off
         data:
-          entity_id: switch.leas_dots
+          entity_id:
+            - switch.leas_dots
+            - switch.leas_disco
 
   scene_leas_night:
     alias: Leas Night
@@ -112,21 +128,21 @@ script:
   scene_leas_disco:
     alias: Leas Disco
     sequence:
-      # - service: input_boolean.turn_off
-      #   entity_id: input_boolean.leas_occupancy_automation
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.leas_occupancy_automation
       - service: switch.turn_on
         entity_id:
           - switch.leas_disco
           - switch.leas_dots
-      - service: light.turn_off
-        entity_id:
-          - light.leas_ceiling
-          - light.leas_window
       - service: light.turn_on
         entity_id: light.leas_cloud
         data:
           effect: colorloop
           brightness_pct: 100
+      - service: light.turn_off
+        entity_id:
+          - light.leas_ceiling
+          - light.leas_window
       - service: media_player.select_source
         entity_id: media_player.leas_room
         data:
@@ -135,3 +151,13 @@ script:
         entity_id: media_player.leas_room
         data:
           shuffle: true
+      - wait_template: "{{ is_state('switch.leas_disco', 'off') }}"
+      - service: media_player.media_pause
+        entity_id: media_player.leas_room
+      - service: light.turn_on
+        data:
+          entity_id: light.leas_cloud
+          effect: stop
+          brightness_pct: 50
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.leas_occupancy_automation
