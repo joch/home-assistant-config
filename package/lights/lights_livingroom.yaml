@@ -41,9 +41,6 @@ automation:
       - condition: state
         entity_id: input_boolean.living_room_occupancy_automation
         state: 'on'
-      - condition: state
-        entity_id: input_select.harmony
-        state: 'PowerOff'
     action:
       - service: script.turn_on
         data_template:
