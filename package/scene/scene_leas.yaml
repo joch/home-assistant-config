@@ -146,7 +146,7 @@ script:
       - service: media_player.select_source
         entity_id: media_player.leas_room
         data:
-          source: Lea Barnmusik
+          source: Lea Partyknapp
       - service: media_player.shuffle_set
         entity_id: media_player.leas_room
         data:
@@ -159,5 +159,6 @@ script:
           entity_id: light.leas_cloud
           effect: stop
           brightness_pct: 50
+          color_name: purple
       - service: input_boolean.turn_on
         entity_id: input_boolean.leas_occupancy_automation
