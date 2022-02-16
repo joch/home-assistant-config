@@ -18,6 +18,9 @@ automation:
       - condition: state
         entity_id: input_boolean.music_automation
         state: 'on'
+      - condition: state
+        entity_id: remote.living_room_apple_tv
+        state: 'off'
     action:
       - service: media_player.volume_set
         data:
