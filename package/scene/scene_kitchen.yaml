@@ -4,76 +4,28 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.kitchen_ceiling_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_window_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_countertop_lightstrip
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_cabinet_light
-      - service: switch.turn_on
-        data:
-          entity_id: switch.kitchen_switch
+          entity_id: light.kitchen_counter
 
   scene_kitchen_bright:
     alias: Kitchen Bright
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.kitchen_ceiling_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_window_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_countertop_lightstrip
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_cabinet_light
-      - service: switch.turn_off
-        data:
-          entity_id: switch.kitchen_switch
+          entity_id: light.kitchen_counter
 
   scene_kitchen_dim:
     alias: Kitchen Dim
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.kitchen_ceiling_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_window_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_countertop_lightstrip
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_cabinet_light
-      - service: switch.turn_on
-        data:
-         entity_id: switch.kitchen_switch
+          entity_id: light.kitchen_counter
 
   scene_kitchen_dim_evening:
     alias: Kitchen Dim Evening
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.kitchen_ceiling_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_window_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_countertop_lightstrip
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_cabinet_light
-      - service: switch.turn_on
-        data:
-          entity_id: switch.kitchen_switch
+          entity_id: light.kitchen_counter
 
   scene_kitchen_full:
     alias: Kitchen Full
@@ -107,54 +59,18 @@ script:
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.kitchen_ceiling_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_window_lamp
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_countertop_lightstrip
-      - service: light.turn_on
-        data:
-          entity_id: light.kitchen_cabinet_light
-      - service: switch.turn_on
-        data:
-          entity_id: switch.kitchen_switch
+          entity_id: light.kitchen_counter
 
   scene_kitchen_night:
     alias: Kitchen Night
     sequence:
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_ceiling_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_window_lamp
       - service: light.turn_on
         data:
-          entity_id: light.kitchen_countertop_lightstrip
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_cabinet_light
-      - service: switch.turn_off
-        data:
-          entity_id: switch.kitchen_switch
+          entity_id: light.kitchen_counter
 
   scene_kitchen_off:
     alias: Kitchen Off
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.kitchen_ceiling_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_window_lamp
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_countertop_lightstrip
-      - service: light.turn_off
-        data:
-          entity_id: light.kitchen_cabinet_light
-      - service: switch.turn_off
-        data:
-          entity_id: switch.kitchen_switch
+          entity_id: light.kitchen_counter
