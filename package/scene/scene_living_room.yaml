@@ -8,7 +8,6 @@ script:
             - light.living_room_ceiling
             - light.living_room_left
             - light.living_room_right
-            - light.living_room_globe
             - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
@@ -22,7 +21,6 @@ script:
             - light.living_room_ceiling
             - light.living_room_left
             - light.living_room_right
-            - light.living_room_globe
             - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
@@ -36,7 +34,6 @@ script:
             - light.living_room_ceiling
             - light.living_room_left
             - light.living_room_right
-            - light.living_room_globe
             - light.living_room_tv
 
   scene_living_room_dim:
@@ -46,7 +43,6 @@ script:
         data:
           entity_id:
             - light.living_room_ceiling
-            - light.living_room_globe
             - light.living_room_tv
       - service: light.turn_on
         data:
@@ -63,7 +59,6 @@ script:
         data:
           entity_id:
             - light.living_room_ceiling
-            - light.living_room_globe
             - light.living_room_tv
       - service: light.turn_on
         data:
@@ -82,7 +77,6 @@ script:
             - light.living_room_ceiling
             - light.living_room_left
             - light.living_room_right
-            - light.living_room_globe
             - light.living_room_tv
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
@@ -96,7 +90,6 @@ script:
             - light.living_room_ceiling
             - light.living_room_left
             - light.living_room_right
-            - light.living_room_globe
             - light.living_room_tv
 
   scene_living_room_bright:
