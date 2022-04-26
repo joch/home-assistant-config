@@ -26,7 +26,6 @@ mobile_app:
 person:
 sun:
 system_health:
-updater:
 default_config:
 
 recorder:
