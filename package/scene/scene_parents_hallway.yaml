@@ -1,64 +1,64 @@
 script:
-  scene_office_hallway_normal:
-    alias: Office hallway Normal
+  scene_parents_hallway_normal:
+    alias: Parents hallway Normal
     sequence:
       - service: light.turn_on
         data_template:
-          entity_id: light.office_hallway_table
+          entity_id: light.parents_hallway_table
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
-  scene_office_hallway_evening:
-    alias: Office hallway Evening
+  scene_parents_hallway_evening:
+    alias: Parents hallway Evening
     sequence:
       - service: light.turn_on
         data_template:
-          entity_id: light.office_hallway_table
+          entity_id: light.parents_hallway_table
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
-  scene_office_hallway_dim:
-    alias: Office hallway Dim
+  scene_parents_hallway_dim:
+    alias: Parents hallway Dim
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.office_hallway_table
+          entity_id: light.parents_hallway_table
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
-  scene_office_hallway_dim_evening:
-    alias: Office hallway Dim Evening
+  scene_parents_hallway_dim_evening:
+    alias: Parents hallway Dim Evening
     sequence:
       - service: script.turn_on
         data:
-          entity_id: script.scene_office_hallway_dim
+          entity_id: script.scene_parents_hallway_dim
 
-  scene_office_hallway_full:
-    alias: Office hallway Full
+  scene_parents_hallway_full:
+    alias: Parents hallway Full
     sequence:
       - service: light.turn_on
         data:
-          entity_id: light.office_hallway_table
+          entity_id: light.parents_hallway_table
           transition: 2
           brightness_pct: 100
 
-  scene_office_hallway_night:
-    alias: Office hallway Night
+  scene_parents_hallway_night:
+    alias: Parents hallway Night
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.office_hallway_table
+          entity_id: light.parents_hallway_table
 
-  scene_office_hallway_off:
-    alias: Office hallway Off
+  scene_parents_hallway_off:
+    alias: Parents hallway Off
     sequence:
       - service: light.turn_off
         data:
-          entity_id: light.office_hallway_table
+          entity_id: light.parents_hallway_table
 
-  scene_office_hallway_bright:
-    alias: Office hallway Bright
+  scene_parents_hallway_bright:
+    alias: Parents hallway Bright
     sequence:
       - service: light.turn_off
         data_template:
-          entity_id: light.office_hallway_table
+          entity_id: light.parents_hallway_table

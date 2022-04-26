@@ -155,8 +155,8 @@ binary_sensor:
           }}
         delay_off: "00:10:00"
 
-      office_hallway_occupied:
-        friendly_name: Office Hallway Occupied
+      parents_hallway_occupied:
+        friendly_name: Parents Hallway Occupied
         icon_template: mdi:walk
         value_template: >
           {{ false }}
