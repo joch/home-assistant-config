@@ -1,47 +1,47 @@
 automation:
-  - alias: Office hallway lights idle
+  - alias: Parents hallway lights idle
     id: 6bf63a5c-1ef7-4ee3-8850-fef27149c5fe
     trigger:
       - platform: state
-        entity_id: binary_sensor.office_hallway_occupied
+        entity_id: binary_sensor.parents_hallway_occupied
         to: 'off'
       - platform: state
         entity_id: sensor.light_mode
     condition:
       - condition: state
-        entity_id: binary_sensor.office_hallway_occupied
+        entity_id: binary_sensor.parents_hallway_occupied
         state: 'off'
       - condition: state
-        entity_id: input_boolean.office_hallway_occupancy_automation
+        entity_id: input_boolean.parents_hallway_occupancy_automation
         state: 'on'
     action:
       - service: script.turn_on
         data_template:
-          entity_id: script.scene_office_hallway_{{ state_attr('sensor.light_mode', 'off_mode') }}
+          entity_id: script.scene_parents_hallway_{{ state_attr('sensor.light_mode', 'off_mode') }}
 
-  - alias: Office hallway lights occupied
+  - alias: Parents hallway lights occupied
     id: f9f98ae9-aefc-4f82-80e0-dc543629861e
     trigger:
       - platform: state
-        entity_id: binary_sensor.office_hallway_occupied
+        entity_id: binary_sensor.parents_hallway_occupied
         to: 'on'
       - platform: state
         entity_id: sensor.light_mode
-        to: 'normal'
-      - platform: state
-        entity_id: sensor.light_mode
-        to: 'evening'
-      - platform: state
-        entity_id: sensor.light_mode
-        to: 'full'
-    condition:
-      - condition: state
-        entity_id: binary_sensor.office_hallway_occupied
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.office_hallway_occupancy_automation
-        state: 'on'
-    action:
-      - service: script.turn_on
-        data_template:
-          entity_id: script.scene_office_hallway_{{ states('sensor.light_mode') }}
+          to: 'normal'
+        - platform: state
+          entity_id: sensor.light_mode
+          to: 'evening'
+        - platform: state
+          entity_id: sensor.light_mode
+          to: 'full'
+      condition:
+        - condition: state
+          entity_id: binary_sensor.parents_hallway_occupied
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.parents_hallway_occupancy_automation
+          state: 'on'
+      action:
+        - service: script.turn_on
+          data_template:
+            entity_id: script.scene_parents_hallway_{{ states('sensor.light_mode') }}
