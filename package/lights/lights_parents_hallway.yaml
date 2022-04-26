@@ -27,13 +27,13 @@ automation:
         to: 'on'
       - platform: state
         entity_id: sensor.light_mode
-          to: 'normal'
-        - platform: state
-          entity_id: sensor.light_mode
-          to: 'evening'
-        - platform: state
-          entity_id: sensor.light_mode
-          to: 'full'
+        to: 'normal'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'evening'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'full'
       condition:
         - condition: state
           entity_id: binary_sensor.parents_hallway_occupied
