@@ -38,7 +38,7 @@ sensor:
           full
           {% elif (is_state('sun.sun', 'below_horizon') and now().hour >= 20) or now().hour >= 20 %}
           evening
-          {% elif states('sensor.living_room_motion_illuminance')|float <= 50 %}
+          {% elif states('sensor.living_room_motion_illuminance')|float <= 150 %}
           normal
           {% else %}
           bright
