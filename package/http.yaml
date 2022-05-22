@@ -1,7 +1,7 @@
 http:
   server_port: !secret http_server_port
   ip_ban_enabled: true
-  login_attempts_threshold: 10
+  login_attempts_threshold: 100
   use_x_forwarded_for: True
   ssl_certificate: !secret http_ssl_certificate
   ssl_key: !secret http_ssl_key
