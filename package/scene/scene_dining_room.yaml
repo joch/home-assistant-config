@@ -72,12 +72,17 @@ script:
   scene_dining_room_night:
     alias: Dining Room Night
     sequence:
+      - service: light.turn_on
+        data:
+          entity_id:
+            - light.dining_room_ceiling_left
+            - light.dining_room_ceiling_right
+          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
+          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off
         data:
           entity_id:
             - light.dining_room_window
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
       - service: switch.turn_off
         data_template:
           entity_id: switch.dining_room_lantern
