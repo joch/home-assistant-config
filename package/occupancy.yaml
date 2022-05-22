@@ -26,8 +26,8 @@ input_boolean:
   dining_room_occupancy_automation:
     name: Dining Room Motion Detection
     icon: mdi:eye-outline
-  office_hallway_occupancy_automation:
-    name: Office Hallway Motion Detection
+  parents_hallway_occupancy_automation:
+    name: Parents Hallway Motion Detection
     icon: mdi:eye-outline
 
 group:
@@ -153,7 +153,7 @@ binary_sensor:
           {{ is_state("input_boolean.dining_room_occupancy_automation", "on") and
               is_state("binary_sensor.dining_room_motion_ias_zone", "on")
           }}
-        delay_off: "00:10:00"
+        delay_off: "00:01:00"
 
       parents_hallway_occupied:
         friendly_name: Parents Hallway Occupied
