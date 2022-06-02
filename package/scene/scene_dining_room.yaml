@@ -6,8 +6,7 @@ script:
         data_template:
           entity_id:
             - light.dining_room_window
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
+            - light.dining_room_ceiling_zha_group_0x000a
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
@@ -21,8 +20,7 @@ script:
         data_template:
           entity_id:
             - light.dining_room_window
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
+            - light.dining_room_ceiling_zha_group_0x000a
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: switch.turn_on
@@ -41,8 +39,7 @@ script:
       - service: light.turn_off
         data:
           entity_id:
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
+            - light.dining_room_ceiling_zha_group_0x000a
       - service: switch.turn_on
         data_template:
           entity_id: switch.dining_room_lantern
@@ -61,8 +58,7 @@ script:
         data:
           entity_id:
             - light.dining_room_window
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
+            - light.dining_room_ceiling_zha_group_0x000a
           transition: 2
           brightness_pct: 100
       - service: switch.turn_on
@@ -75,8 +71,7 @@ script:
       - service: light.turn_on
         data:
           entity_id:
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
+            - light.dining_room_ceiling_zha_group_0x000a
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
       - service: light.turn_off
@@ -94,8 +89,7 @@ script:
         data:
           entity_id:
             - light.dining_room_window
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
+            - light.dining_room_ceiling_zha_group_0x000a
       - service: switch.turn_off
         data_template:
           entity_id: switch.dining_room_lantern
@@ -109,8 +103,7 @@ script:
       - service: light.turn_on
         data:
           entity_id:
-            - light.dining_room_ceiling_left
-            - light.dining_room_ceiling_right
+            - light.dining_room_ceiling_zha_group_0x000a
       - service: switch.turn_on
         data_template:
           entity_id: switch.dining_room_lantern
