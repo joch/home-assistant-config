@@ -80,3 +80,24 @@ automation:
           manual_control: false
           lights:
             - light.office_monitor
+
+  - alias: Office lights sleep
+    id: 988ae927-3368-4479-8391-8ef5c340d7ce
+    trigger:
+      - platform: state
+        entity_id: input_boolean.guest_asleep
+        to: 'on'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_office_off
+
+  - alias: Office lights sleep off
+    id: 14a467b4-9fe9-4ce2-8772-7080ab58d2c8
+    trigger:
+      - platform: state
+        entity_id: input_boolean.guest_asleep
+        to: 'off'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_office_{{ states('sensor.light_mode') }}
