@@ -7,8 +7,6 @@ script:
           entity_id:
             - light.bedroom_ceiling
             - light.bedroom_window
-            - light.bedroom_bedside_left
-            - light.bedroom_bedside_right
             - light.bedroom_sideboard
           brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
           kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
@@ -21,8 +19,6 @@ script:
           entity_id:
             - light.bedroom_ceiling
             - light.bedroom_window
-            - light.bedroom_bedside_left
-            - light.bedroom_bedside_right
       - service: light.turn_on
         data:
           entity_id:
@@ -39,8 +35,6 @@ script:
           entity_id:
             - light.bedroom_ceiling
             - light.bedroom_window
-            - light.bedroom_bedside_left
-            - light.bedroom_bedside_right
             - light.bedroom_sideboard
 
   scene_bedroom_dim:
@@ -50,8 +44,6 @@ script:
         data:
           entity_id:
             - light.bedroom_ceiling
-            - light.bedroom_bedside_left
-            - light.bedroom_bedside_right
             - light.bedroom_sideboard
       - service: light.turn_on
         data:
@@ -90,13 +82,6 @@ script:
             - light.bedroom_ceiling
             - light.bedroom_window
             - light.bedroom_sideboard
-      - service: light.turn_on
-        data:
-          entity_id:
-            - light.bedroom_bedside_left
-            - light.bedroom_bedside_right
-          brightness_pct: "{{ state_attr('switch.adaptive_lighting_main', 'brightness_pct') }}"
-          kelvin: "{{ state_attr('switch.adaptive_lighting_main', 'color_temp_kelvin') }}"
 
   scene_bedroom_night:
     alias: Bedroom Night
