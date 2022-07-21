@@ -55,3 +55,14 @@ automation:
     action:
       - service: script.turn_on
         entity_id: script.scene_leas_off
+
+  - alias: Leas lights sleep off
+    id: df736021-1508-4b34-bb81-99aece772e1c
+    trigger:
+      - platform: state
+        entity_id: input_boolean.lea_asleep
+        to: 'off'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_lea_{{ states('sensor.light_mode') }}
