@@ -59,16 +59,23 @@ automation:
       - service: script.turn_on
         entity_id: script.scene_bedroom_off
 
-  # - alias: Bedroom lights sleep off
-  #   id: f4e6a694-bebf-4634-8238-8ff92334b751
-  #   trigger:
-  #     - platform: state
-  #       entity_id: input_boolean.johnny_asleep
-  #       to: 'off'
-  #     - platform: state
-  #       entity_id: input_boolean.kajsa_asleep
-  #       to: 'off'
-  #   action:
-  #     - service: script.turn_on
-  #       data_template:
-  #         entity_id: script.scene_bedroom_{{ states('sensor.light_mode') }}
+  - alias: Bedroom lights sleep off
+    id: f4e6a694-bebf-4634-8238-8ff92334b751
+    trigger:
+      - platform: state
+        entity_id: input_boolean.johnny_asleep
+        to: 'off'
+      - platform: state
+        entity_id: input_boolean.kajsa_asleep
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.johnny_asleep
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.kajsa_asleep
+        state: 'off'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_bedroom_{{ states('sensor.light_mode') }}
