@@ -45,12 +45,20 @@ sensor:
           {% endif %}
         attribute_templates:
           off_mode: >-
-            {% if is_state('sensor.light_mode', 'off') or is_state('sensor.light_mode', 'night') or is_state('sensor.light_mode', 'bright') %}
+            {% if is_state('sun.sun', 'below_horizon') and now().hour >= 7 and now().hour <= 20 and is_state('alarm_control_panel.alarm', 'armed_away') %}
             off
-            {% elif is_state('sensor.light_mode', 'evening') %}
-            dim_evening
-            {% else %}
+            {% elif is_state('alarm_control_panel.alarm', 'armed_away') %}
+            off
+            {% elif is_state('input_boolean.everyone_asleep', 'on') %}
+            off
+            {% elif is_state('input_boolean.lights_full', 'on') %}
             dim
+            {% elif (is_state('sun.sun', 'below_horizon') and now().hour >= 20) or now().hour >= 20 %}
+            dim_evening
+            {% elif states('sensor.living_room_motion_illuminance')|float <= 150 %}
+            dim
+            {% else %}
+            off
             {% endif %}
 
 automation:
