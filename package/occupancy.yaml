@@ -20,6 +20,9 @@ input_boolean:
   leas_occupancy_automation:
     name: Leas Motion Detection
     icon: mdi:eye-outline
+  claras_occupancy_automation:
+    name: Claras Motion Detection
+    icon: mdi:eye-outline
   entrance_occupancy_automation:
     name: Entrance Motion Detection
     icon: mdi:eye-outline
@@ -39,6 +42,7 @@ group:
     - input_boolean.kitchen_occupancy_automation
     - input_boolean.office_occupancy_automation
     - input_boolean.leas_occupancy_automation
+    - input_boolean.claras_occupancy_automation
     - input_boolean.entrance_occupancy_automation
     - input_boolean.dining_room_occupancy_automation
     - input_boolean.office_hallway_occupancy_automation
@@ -51,6 +55,7 @@ group:
     - binary_sensor.kitchen_occupied
     - binary_sensor.office_occupied
     - binary_sensor.leas_occupied
+    - binary_sensor.claras_occupied
     - binary_sensor.entrance_occupied
     - binary_sensor.dining_room_occupied
     - binary_sensor.office_hallway_occupied
@@ -139,6 +144,15 @@ binary_sensor:
           }}
         delay_off: "00:10:00"
 
+      claras_occupied:
+        friendly_name: Claras Occupied
+        icon_template: mdi:walk
+        value_template: >
+          {{ is_state("input_boolean.claras_occupancy_automation", "on") and
+              is_state("binary_sensor.claras_motion_ias_zone", "on")
+          }}
+        delay_off: "00:10:00"
+
       entrance_occupied:
         friendly_name: Entrance Occupied
         icon_template: mdi:walk
@@ -222,6 +236,26 @@ automation:
       - service: input_boolean.turn_on
         entity_id: input_boolean.leas_occupancy_automation
 
+  - alias: Occupancy - Claras sleep on
+    id: 87ade7db-c8df-40b3-adef-6e55050adf82
+    trigger:
+      - platform: state
+        entity_id: input_boolean.clara_asleep
+        to: 'on'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.claras_occupancy_automation
+
+  - alias: Occupancy - Claras sleep off
+    id: 63131733-159f-4640-9b99-eb89a03dfb89
+    trigger:
+      - platform: state
+        entity_id: input_boolean.clara_asleep
+        to: 'off'
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.claras_occupancy_automation
+
   - alias: Occupancy - Guest sleep on
     id: 4da5d764-7a6e-406e-bc6f-8306bbfbf79f
     trigger:
@@ -258,6 +292,7 @@ automation:
           - input_boolean.kitchen_occupancy_automation
           - input_boolean.office_occupancy_automation
           - input_boolean.leas_occupancy_automation
+          - input_boolean.claras_occupancy_automation
           - input_boolean.entrance_occupancy_automation
 
   - alias: Occupancy - Enable occupancy automation when waking up

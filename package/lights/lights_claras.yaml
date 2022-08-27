@@ -1,0 +1,68 @@
+automation:
+  - alias: Claras lights idle
+    id: a5274d00-6ddd-435d-b427-108f447b4c35
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.claras_occupied
+        to: 'off'
+      - platform: state
+        entity_id: sensor.light_mode
+    condition:
+      - condition: state
+        entity_id: binary_sensor.claras_occupied
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.claras_occupancy_automation
+        state: 'on'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_claras_{{ state_attr('sensor.light_mode', 'off_mode') }}
+
+  - alias: Claras lights occupied
+    id: 5efa609e-4b61-4f1f-98ca-18343bab595a
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.claras_occupied
+        to: 'on'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'normal'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'evening'
+      - platform: state
+        entity_id: sensor.light_mode
+        to: 'full'
+    condition:
+      - condition: state
+        entity_id: binary_sensor.claras_occupied
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.claras_occupancy_automation
+        state: 'on'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_claras_{{ states('sensor.light_mode') }}
+
+  - alias: Claras lights sleep
+    id: 04800579-8675-4a63-b40a-e66a49db722b
+    trigger:
+      - platform: state
+        entity_id: input_boolean.clara_asleep
+        to: 'on'
+    action:
+      - service: script.turn_on
+        entity_id: script.scene_claras_off
+
+  - alias: Claras lights sleep off
+    id: 7716b082-ca62-4c5c-8357-a1c759f2c4ae
+    trigger:
+      - platform: state
+        entity_id: input_boolean.clara_asleep
+        to: 'off'
+    action:
+      - service: script.turn_on
+        data_template:
+          entity_id: script.scene_claras_{{ states('sensor.light_mode') }}

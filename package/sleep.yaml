@@ -26,6 +26,10 @@ input_boolean:
     name: Lea Asleep
     icon: mdi:sleep
 
+  clara_asleep:
+    name: Clara Asleep
+    icon: mdi:sleep
+
   guest_asleep:
     name: Guest Asleep
     icon: mdi:sleep
@@ -42,6 +46,9 @@ automation:
         to: 'on'
       - platform: state
         entity_id: input_boolean.lea_asleep
+        to: 'on'
+      - platform: state
+        entity_id: input_boolean.clara_asleep
         to: 'on'
       - platform: state
         entity_id: input_boolean.guest_asleep
@@ -108,6 +115,9 @@ automation:
         to: 'off'
       - platform: state
         entity_id: input_boolean.lea_asleep
+        to: 'off'
+      - platform: state
+        entity_id: input_boolean.clara_asleep
         to: 'off'
       - platform: state
         entity_id: input_boolean.guest_asleep
