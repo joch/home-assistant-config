@@ -65,4 +65,4 @@ automation:
     action:
       - service: script.turn_on
         data_template:
-          entity_id: script.scene_lea_{{ states('sensor.light_mode') }}
+          entity_id: script.scene_leas_{{ states('sensor.light_mode') }}
