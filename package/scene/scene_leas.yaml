@@ -144,13 +144,15 @@ script:
           - switch.leas_disco
           - switch.leas_dots
       - service: light.turn_on
-        entity_id: light.leas_cloud
+        entity_id:
+          - light.leas_cloud
+          - light.leas_ceiling
+          - light.leas_desk
         data:
           effect: colorloop
           brightness_pct: 100
       - service: light.turn_off
         entity_id:
-          - light.leas_ceiling
           - light.leas_window
       - service: media_player.select_source
         entity_id: media_player.leas_room
@@ -165,9 +167,10 @@ script:
         entity_id: media_player.leas_room
       - service: light.turn_on
         data:
-          entity_id: light.leas_cloud
+          entity_id:
+            - light.leas_cloud
+            - light.leas_ceiling
+            - light.leas_desk
           effect: stop
-          brightness_pct: 50
-          color_name: purple
       - service: input_boolean.turn_on
         entity_id: input_boolean.leas_occupancy_automation
