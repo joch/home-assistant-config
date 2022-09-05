@@ -13,6 +13,8 @@ automation:
           - input_boolean.johnny_asleep
           - input_boolean.kajsa_asleep
           - input_boolean.lea_asleep
+          - input_boolean.clara_asleep
+          - input_boolean.guest_asleep
 
   - alias: Alarm disarmed
     id: a437755a-1718-4610-9d64-1ee60b0319db
