@@ -6,8 +6,8 @@ automation:
         entity_id: alarm_control_panel.alarm
         to: 'armed_away'
     action:
-      - service: alarm_control_panel.alarm_arm_home
-        entity_id: alarm_control_panel.aarlo_home
+      # - service: alarm_control_panel.alarm_arm_home
+      #   entity_id: alarm_control_panel.aarlo_home
       - service: input_boolean.turn_off
         entity_id:
           - input_boolean.johnny_asleep
@@ -25,8 +25,8 @@ automation:
     action:
       - service: aarlo.siren_off
         entity_id: switch.aarlo_siren_home
-      - service: alarm_control_panel.alarm_disarm
-        entity_id: alarm_control_panel.aarlo_home
+      # - service: alarm_control_panel.alarm_disarm
+      #   entity_id: alarm_control_panel.aarlo_home
 
   - alias: Alarm triggered while armed_night
     id: 74ff92b7-4523-407d-bdad-3e5556c6608a
