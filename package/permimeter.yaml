@@ -1,35 +1,4 @@
 automation:
-  - alias: Warn when main entrance has been open a long time
-    id: 092a289a-4a68-45e8-b45b-aabd10cee285
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.main_entrance
-        to: 'on'
-        for: '00:10:00'
-    action:
-      - service: notify.all_phones
-        data:
-          title: "Main entrance open"
-          message: "The main entrance door has been open for 10 minutes"
-
-  - alias: Record when the main entrance is opened
-    id: 792ac673-c2c5-4419-8f06-81b1de567e56
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.main_entrance
-        to: 'on'
-    condition:
-      - condition: state
-        entity_id: input_boolean.perimeter_warning
-        state: 'on'
-    action:
-      - service: aarlo.camera_start_recording
-        data:
-          entity_id:
-            - camera.aarlo_hallway
-            - camera.aarlo_living_room
-          duration: 60
-
   - alias: Warn when leaving if windows are open
     id: 518f6cc7-fb96-4b5b-b472-98c0a2ccced5
     trigger:
