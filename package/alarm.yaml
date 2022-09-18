@@ -1,7 +1,6 @@
 alarm_control_panel:
   - platform: manual
     name: 'Alarm'
-    code: !secret alarm_code
     trigger_time: 120
     disarm_after_trigger: false
     armed_home:
