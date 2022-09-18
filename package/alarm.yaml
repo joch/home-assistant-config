@@ -15,24 +15,3 @@ alarm_control_panel:
       arming_time: 0
       delay_time: 30
       trigger_time: 120
-
-input_boolean:
-  alarm_mode:
-    name: Auto-arm Away
-    icon: mdi:shield-outline
-
-  alarm_night_mode:
-    name: Auto-arm Night
-    icon: mdi:shield-outline
-
-  vacation_mode:
-    name: Vacation Mode
-    icon: mdi:airplane
-
-  guest_mode:
-    name: Guest Mode
-    icon: mdi:human-male-female
-
-  perimeter_warning:
-    name: Perimeter Warning
-    icon: mdi:wall

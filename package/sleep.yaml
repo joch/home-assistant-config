@@ -1,10 +1,4 @@
 group:
-  Sleeping:
-    - input_boolean.everyone_asleep
-    - input_boolean.johnny_asleep
-    - input_boolean.kajsa_asleep
-    - input_boolean.lea_asleep
-
 input_boolean:
   sleep_automation:
     name: Sleep Automation
