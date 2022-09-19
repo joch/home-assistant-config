@@ -33,33 +33,6 @@ input_boolean:
     name: Parents Hallway Motion Detection
     icon: mdi:eye-outline
 
-group:
-  Occupancy Automation:
-    - input_boolean.bedroom_occupancy_automation
-    - input_boolean.living_room_occupancy_automation
-    - input_boolean.bathroom_occupancy_automation
-    - input_boolean.hallway_occupancy_automation
-    - input_boolean.kitchen_occupancy_automation
-    - input_boolean.office_occupancy_automation
-    - input_boolean.leas_occupancy_automation
-    - input_boolean.claras_occupancy_automation
-    - input_boolean.entrance_occupancy_automation
-    - input_boolean.dining_room_occupancy_automation
-    - input_boolean.office_hallway_occupancy_automation
-
-  Occupancy:
-    - binary_sensor.bedroom_occupied
-    - binary_sensor.living_room_occupied
-    - binary_sensor.bathroom_occupied
-    - binary_sensor.hallway_occupied
-    - binary_sensor.kitchen_occupied
-    - binary_sensor.office_occupied
-    - binary_sensor.leas_occupied
-    - binary_sensor.claras_occupied
-    - binary_sensor.entrance_occupied
-    - binary_sensor.dining_room_occupied
-    - binary_sensor.office_hallway_occupied
-
 binary_sensor:
   - platform: template
     sensors:
@@ -174,38 +147,3 @@ binary_sensor:
         #       is_state("binary_sensor.entrance_motion_ias_zone", "on")
         #   }}
         delay_off: "00:01:00"
-
-automation:
-  - alias: Occupancy - Enable occupancy automation when away
-    id: 52671c90-3f85-4cd3-b834-31fc92b7a726
-    trigger:
-      - platform: state
-        entity_id: alarm_control_panel.alarm
-        to: 'armed_away'
-    action:
-      - service: input_boolean.turn_on
-        entity_id:
-          - input_boolean.bedroom_occupancy_automation
-          - input_boolean.living_room_occupancy_automation
-          - input_boolean.hallway_occupancy_automation
-          - input_boolean.bathroom_occupancy_automation
-          - input_boolean.kitchen_occupancy_automation
-          - input_boolean.office_occupancy_automation
-          - input_boolean.leas_occupancy_automation
-          - input_boolean.claras_occupancy_automation
-          - input_boolean.entrance_occupancy_automation
-
-  - alias: Occupancy - Enable occupancy automation when waking up
-    id: 60cb22d8-43a7-48bc-b825-7acc1086c986
-    trigger:
-      - platform: state
-        entity_id: input_boolean.everyone_asleep
-        to: 'off'
-    action:
-      - service: input_boolean.turn_on
-        entity_id:
-          - input_boolean.living_room_occupancy_automation
-          - input_boolean.hallway_occupancy_automation
-          - input_boolean.bathroom_occupancy_automation
-          - input_boolean.kitchen_occupancy_automation
-          - input_boolean.entrance_occupancy_automation
