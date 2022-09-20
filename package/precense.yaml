@@ -1,10 +1,4 @@
 group:
-  household:
-    name: Household
-    entities:
-      - person.johnny
-      - person.kajsa
-
   guests:
     name: Guests
     icon: mdi:account-group
