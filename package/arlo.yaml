@@ -2,6 +2,7 @@ aarlo:
   username: !secret arlo_username
   password: !secret arlo_password
   refresh_devices_every: 2
+  backend: sse
 
 stream:
 
