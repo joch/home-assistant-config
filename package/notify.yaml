@@ -2,5 +2,5 @@ notify:
   - name: all_phones
     platform: group
     services:
-      - service: notify.mobile_app_iphone
-      - service: notify.mobile_app_kajsa_s_iphone
+      - service: notify_mobile_app_iphone
+      - service: notify_mobile_app_kajsa_s_iphone
