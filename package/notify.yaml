@@ -1,6 +1,0 @@
-notify:
-  - name: all_phones
-    platform: group
-    services:
-      - service: notify_mobile_app_iphone
-      - service: notify_mobile_app_kajsa_s_iphone
