@@ -1,18 +1,73 @@
-- id: '1606748199081'
-  alias: Tag White card 1 is scanned
+- id: '1641924293067'
+  alias: Bedroom Toggle Johnny Asleep
   description: ''
   trigger:
-  - platform: tag
-    tag_id: C3-4D-74-40
+  - device_id: 80eedb22c1b407b3899f8026e7580efa
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
   condition: []
   action:
-  - type: toggle
-    device_id: 8b622aadc79b455cb42dcc931faf8af1
-    entity_id: light.bedroom_window_lamp
-    domain: light
+  - service: input_boolean.toggle
+    target:
+      entity_id: input_boolean.johnny_asleep
+    data: {}
   mode: single
-- id: '1639819489445'
-  alias: 'Party button #leasroom #button'
+- id: '1641924371330'
+  alias: Bedroom Toggle Kajsa Asleep
+  description: ''
+  trigger:
+  - device_id: f14c912df614bac37bd2d261ef5919cd
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
+  action:
+  - service: input_boolean.toggle
+    target:
+      entity_id: input_boolean.kajsa_asleep
+    data: {}
+  mode: single
+- id: '1642025711606'
+  alias: Bedroom Bedside Buttons
+  description: ''
+  trigger:
+  - device_id: 80eedb22c1b407b3899f8026e7580efa
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+    id: left-button
+  - device_id: f14c912df614bac37bd2d261ef5919cd
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+    id: right-button
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: left-button
+      sequence:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.bedroom_bedside_left
+    - conditions:
+      - condition: trigger
+        id: right-button
+      sequence:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.bedroom_bedside_right
+  mode: single
+- id: '1643660307472'
+  alias: Leas Disco Lights
   description: ''
   trigger:
   - device_id: 93dadd13aea802b3214c9a2669a1fe95
@@ -20,88 +75,1733 @@
     platform: device
     type: remote_button_short_press
     subtype: remote_button_short_press
+    id: Disco
   condition:
   - condition: state
     entity_id: input_boolean.lea_asleep
     state: 'off'
   action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.leas_occupancy_automation
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.leas_disco
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.leas_cloud
+      - light.leas_ceiling
+      - light.leas_desk
+    data:
+      effect: colorloop
+      brightness_pct: 70
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.leas_window
+  - service: media_player.select_source
+    entity_id: media_player.leas_room
+    data:
+      source: Lea Partyknapp
+  - service: media_player.shuffle_set
+    entity_id: media_player.leas_room
+    data:
+      shuffle: true
+  - delay: 00:00:10
+  - wait_for_trigger:
+    - device_id: 93dadd13aea802b3214c9a2669a1fe95
+      domain: zha
+      platform: device
+      type: remote_button_short_press
+      subtype: remote_button_short_press
+    continue_on_timeout: false
+  - service: media_player.media_pause
+    entity_id: media_player.leas_room
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.leas_disco
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.leas_cloud
+      - light.leas_ceiling
+      - light.leas_desk
+      - light.leas_window
+    data:
+      effect: stop
+  - service: adaptive_lighting.set_manual_control
+    data:
+      entity_id: switch.adaptive_lighting_main
+      manual_control: false
+      lights:
+      - light.leas_ceiling
+      - light.leas_desk
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.leas_occupancy_automation
+  - delay: 00:00:10
+  mode: single
+- id: '1659718576943'
+  alias: Leas Dimmer
+  description: ''
+  use_blueprint:
+    path: mannerisms/zha-philips-hue-dimmer-switch-individual-buttons-with-long-presses.yaml
+    input:
+      remote: 21dd6ae37a5bbb90269847a0a303f023
+      button_1_single_press:
+      - if:
+        - condition: state
+          entity_id: switch.leas_disco
+          state: 'off'
+        then:
+        - service: input_boolean.turn_off
+          data: {}
+          target:
+            entity_id: input_boolean.lea_asleep
+      button_4_single_press:
+      - if:
+        - condition: state
+          entity_id: switch.leas_disco
+          state: 'off'
+        then:
+        - service: input_boolean.turn_on
+          data: {}
+          target:
+            entity_id: input_boolean.lea_asleep
+      button_3_single_press:
+      - service: switch.toggle
+        data: {}
+        target:
+          entity_id: switch.leas_dots
+- id: '1662406786449'
+  alias: Dining Room Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.dining_room_occupied
+  condition:
+  - condition: state
+    entity_id: input_boolean.dining_room_occupancy_automation
+    state: 'on'
+  action:
   - choose:
     - conditions:
-      - condition: device
-        type: is_off
-        device_id: 2d91173638c24315896b956b8b519d1a
-        entity_id: switch.leas_disco
-        domain: switch
-        for:
-          hours: 0
-          minutes: 0
-          seconds: 10
+      - condition: state
+        entity_id: binary_sensor.dining_room_occupied
+        state: 'on'
       sequence:
-      - service: input_boolean.turn_off
-        data: {}
-        entity_id: input_boolean.leas_occupancy_automation
-      - type: turn_on
-        device_id: 2d91173638c24315896b956b8b519d1a
-        entity_id: switch.leas_disco
-        domain: switch
-      - type: turn_off
-        device_id: 0e5e376f69d94bb9a07bea653820fc76
-        entity_id: light.leas_ceiling
-        domain: light
       - service: light.turn_on
-        data:
-          effect: colorloop
-          brightness_pct: 100
+        data: {}
         target:
-          entity_id: light.leas_cloud
-      - type: turn_off
-        device_id: 3b8017dacb4b411fa7de8fd01302d2a5
-        entity_id: light.leas_window
-        domain: light
-      - service: media_player.select_source
-        data:
-          source: Lea Barnmusik
-        entity_id: media_player.leas_room
-      - service: media_player.shuffle_set
-        data:
-          shuffle: true
-        entity_id: media_player.leas_room
+          entity_id:
+          - light.dining_room_ceiling_zha_group_0x000a
     - conditions:
-      - condition: device
-        type: is_on
-        device_id: 2d91173638c24315896b956b8b519d1a
-        entity_id: switch.leas_disco
-        domain: switch
-        for:
-          hours: 0
-          minutes: 0
-          seconds: 10
+      - condition: state
+        entity_id: binary_sensor.dining_room_occupied
+        state: 'off'
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.dining_room_ceiling_zha_group_0x000a
+  mode: single
+- id: '1662494423008'
+  alias: Living Room Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.living_room_occupied
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_room_occupancy_automation
+    state: 'on'
+  - condition: state
+    entity_id: alarm_control_panel.alarm
+    state: disarmed
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.living_room_occupied
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id:
+          - light.living_room_tv
+          - light.living_room_ceiling
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.living_room_occupied
+        state: 'off'
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.living_room_tv
+          - light.living_room_ceiling
+  mode: single
+- id: '1662495004005'
+  alias: Living Room TV Light
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.living_room_apple_tv
+    to: playing
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_room_occupancy_automation
+    state: 'on'
+  - condition: state
+    entity_id: alarm_control_panel.alarm
+    state: disarmed
+  action:
+  - service: light.turn_on
+    data:
+      kelvin: 6500
+      brightness_pct: '{{ state_attr(''switch.adaptive_lighting_main'', ''brightness_pct'')
+        }}'
+    target:
+      entity_id:
+      - light.living_room_tv
+  - wait_for_trigger:
+    - platform: state
+      entity_id:
+      - media_player.living_room_apple_tv
+      to: paused
+    continue_on_timeout: false
+  - service: adaptive_lighting.set_manual_control
+    data:
+      entity_id: switch.adaptive_lighting_main
+      manual_control: false
+      lights:
+      - light.living_room_tv
+  mode: single
+- id: '1662495737466'
+  alias: Office Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.office_occupied
+  condition:
+  - condition: state
+    entity_id: input_boolean.office_occupancy_automation
+    state: 'on'
+  - condition: state
+    entity_id: alarm_control_panel.alarm
+    state: disarmed
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.office_occupied
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id:
+          - light.office_ceiling
+          - light.office_monitor
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.office_occupied
+        state: 'off'
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.office_ceiling
+          - light.office_monitor
+  mode: single
+- id: '1662495940886'
+  alias: Office Meeting Light
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.stk_jchadda_camera_in_use
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.office_occupancy_automation
+    state: 'on'
+  - condition: state
+    entity_id: binary_sensor.office_occupied
+    state: 'on'
+  action:
+  - service: light.turn_on
+    data:
+      kelvin: 5500
+      brightness_pct: 100
+    target:
+      entity_id:
+      - light.office_monitor
+  - wait_for_trigger:
+    - platform: state
+      entity_id:
+      - binary_sensor.stk_jchadda_camera_in_use
+      to: 'off'
+    continue_on_timeout: false
+  - service: adaptive_lighting.set_manual_control
+    data:
+      entity_id: switch.adaptive_lighting_main
+      manual_control: false
+      lights:
+      - light.office_monitor
+  mode: single
+- id: '1662496146005'
+  alias: Office Sleep
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.guest_asleep
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.guest_asleep
+        state: 'off'
       sequence:
       - service: input_boolean.turn_on
         data: {}
-        entity_id: input_boolean.leas_occupancy_automation
-      - type: turn_off
-        device_id: 2d91173638c24315896b956b8b519d1a
-        entity_id: switch.leas_disco
-        domain: switch
-      - type: turn_on
-        device_id: 0e5e376f69d94bb9a07bea653820fc76
-        entity_id: light.leas_ceiling
-        domain: light
-        brightness_pct: 100
-      - type: turn_on
-        device_id: 3b8017dacb4b411fa7de8fd01302d2a5
-        entity_id: light.leas_window
-        domain: light
-        brightness_pct: 100
-      - service: light.turn_on
-        data:
-          effect: stop
-          brightness_pct: 50
         target:
-          entity_id: light.leas_cloud
-      - service: media_player.media_pause
+          entity_id: input_boolean.office_occupancy_automation
+      - service: light.turn_on
         data: {}
-        entity_id: media_player.leas_room
+        target:
+          entity_id: light.office_window
+      - if:
+        - condition: state
+          entity_id: binary_sensor.office_occupied
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id:
+            - light.office_ceiling
+            - light.office_monitor
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.guest_asleep
+        state: 'on'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.office_occupancy_automation
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.office_ceiling
+          - light.office_monitor
+          - light.office_window
     default: []
   mode: single
+- id: '1662577180994'
+  alias: Kitchen Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.kitchen_occupied
+  condition:
+  - condition: state
+    entity_id: input_boolean.kitchen_occupancy_automation
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.kitchen_occupied
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id:
+          - light.kitchen_counter
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.kitchen_occupied
+        state: 'off'
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.kitchen_counter
+  mode: single
+- id: '1662577519917'
+  alias: Entrance Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.entrance_occupied
+  - platform: state
+    entity_id:
+    - binary_sensor.entrance_door
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.entrance_occupancy_automation
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.entrance_occupied
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id:
+          - light.entrance_ceiling
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.entrance_occupied
+        state: 'off'
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.entrance_ceiling
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.entrance_door
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id: light.entrance_ceiling
+      - service: aarlo.camera_start_recording
+        data:
+          entity_id: camera.aarlo_hallway
+          duration: 60
+  mode: single
+- id: '1662578144605'
+  alias: Bathroom Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.bathroom_occupied
+    id: Occupancy
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: armed_night
+    id: Sleep
+  condition:
+  - condition: state
+    entity_id: input_boolean.bathroom_occupancy_automation
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.bathroom_occupied
+        state: 'on'
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: disarmed
+      sequence:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.bathroom
+          volume_level: 0.08
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.bathroom
+          source: Classic Singer/Songwriter
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: trigger
+          id: Sleep
+        - condition: state
+          entity_id: binary_sensor.bathroom_occupied
+          state: 'off'
+      sequence:
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.bathroom
+          sleep_time: 0
+  mode: single
+- id: '1662579290986'
+  alias: Bedroom Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.bedroom_occupied
+  condition:
+  - condition: state
+    entity_id: input_boolean.bedroom_occupancy_automation
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.bedroom_occupied
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id:
+          - light.bedroom_ceiling
+          - light.bedroom_sideboard
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.bedroom_occupied
+        state: 'off'
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.bedroom_ceiling
+          - light.bedroom_sideboard
+  mode: single
+- id: '1662579429578'
+  alias: Bedroom Sleep
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.johnny_asleep
+  - platform: state
+    entity_id:
+    - input_boolean.kajsa_asleep
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.johnny_asleep
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.kajsa_asleep
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id: input_boolean.bedroom_occupancy_automation
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id: light.bedroom_window
+      - if:
+        - condition: state
+          entity_id: binary_sensor.bedroom_occupied
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id:
+            - light.bedroom_sideboard
+            - light.bedroom_ceiling
+            - light.bedroom_window
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: input_boolean.johnny_asleep
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.kajsa_asleep
+          state: 'on'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.bedroom_occupancy_automation
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.bedroom_sideboard
+          - light.bedroom_ceiling
+          - light.bedroom_window
+    default: []
+  mode: single
+- id: '1662580751644'
+  alias: Claras Sleep
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.clara_asleep
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.clara_asleep
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id: input_boolean.claras_occupancy_automation
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id: light.claras_window
+      - if:
+        - condition: state
+          entity_id: binary_sensor.claras_occupied
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id:
+            - light.claras_ceiling
+            - light.claras_globe
+            - light.claras_window
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.clara_asleep
+        state: 'on'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.claras_occupancy_automation
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.claras_ceiling
+          - light.claras_globe
+          - light.claras_window
+    default: []
+  mode: single
+- id: '1662581103228'
+  alias: Claras Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.claras_occupied
+  condition:
+  - condition: state
+    entity_id: input_boolean.claras_occupancy_automation
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.claras_occupied
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id:
+          - light.claras_ceiling
+          - light.claras_globe
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.claras_occupied
+        state: 'off'
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.claras_ceiling
+          - light.claras_globe
+  mode: single
+- id: '1662581458889'
+  alias: Leas Sleep
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.lea_asleep
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.lea_asleep
+        state: 'off'
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id: input_boolean.leas_occupancy_automation
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.leas_dots
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id: light.leas_window
+      - if:
+        - condition: state
+          entity_id: binary_sensor.leas_occupied
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id:
+            - light.leas_ceiling
+            - light.leas_cloud
+            - light.leas_desk
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.lea_asleep
+        state: 'on'
+      sequence:
+      - service: input_boolean.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.leas_occupancy_automation
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.leas_ceiling
+          - light.leas_cloud
+          - light.leas_desk
+          - light.leas_window
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.leas_dots
+    default: []
+  mode: single
+- id: '1662581652177'
+  alias: Leas Motion Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.leas_occupied
+  condition:
+  - condition: state
+    entity_id: input_boolean.leas_occupancy_automation
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        state: 'off'
+        entity_id: binary_sensor.leas_occupied
+      sequence:
+      - service: light.turn_off
+        data: {}
+        target:
+          entity_id:
+          - light.leas_ceiling
+          - light.leas_cloud
+          - light.leas_desk
+    - conditions:
+      - condition: state
+        state: 'on'
+        entity_id: binary_sensor.leas_occupied
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id:
+          - light.leas_ceiling
+          - light.leas_cloud
+          - light.leas_desk
+  mode: single
+- id: '1662751062130'
+  alias: Dining Room Music
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.living_room
+    to: playing
+    id: Living Room On
+  - platform: state
+    entity_id:
+    - sensor.living_room_audio_input_format
+    to: No input connected
+    id: Living Room Off
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: armed_night
+    id: Alarm night
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: disarmed
+    id: Alarm disarmed
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Living Room Off
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: disarmed
+      sequence:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.dining_room
+          volume_level: 0.08
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.dining_room
+          source: P4 Stockholm
+    - conditions:
+      - condition: trigger
+        id: Living Room On
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: disarmed
+      sequence:
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.dining_room
+          sleep_time: 0
+    - conditions:
+      - condition: trigger
+        id: Alarm night
+      sequence:
+      - service: sonos.set_sleep_timer
+        data:
+          entity_id: media_player.dining_room
+          sleep_time: 0
+    - conditions:
+      - condition: trigger
+        id: Alarm disarmed
+      sequence:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.dining_room
+          volume_level: 0.08
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.dining_room
+          source: P4 Stockholm
+  mode: single
+- id: '1663006396804'
+  alias: Living Room Sonos Night Sound
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: armed_night
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.living_room_night_sound
+      - switch.living_room_speech_enhancement
+  mode: single
+- id: '1663097346896'
+  alias: Home Night Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    from: disarmed
+    to: armed_night
+    id: Alarm night
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    from: armed_night
+    to: disarmed
+    id: Alarm disarmed
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Alarm night
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id:
+          - switch.adaptive_lighting_sleep_mode_main
+          - switch.adaptive_lighting_sleep_mode_brighter
+    - conditions:
+      - condition: trigger
+        id: Alarm disarmed
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id:
+          - switch.adaptive_lighting_sleep_mode_main
+          - switch.adaptive_lighting_sleep_mode_brighter
+  mode: single
+- id: '1663097870408'
+  alias: Living Room Apple TV
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - device_tracker.samsung_tv
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: device_tracker.samsung_tv
+        state: home
+      sequence:
+      - service: remote.turn_on
+        data: {}
+        target:
+          entity_id: remote.living_room_apple_tv
+    - conditions:
+      - condition: state
+        entity_id: device_tracker.samsung_tv
+        state: not_home
+      sequence:
+      - service: remote.turn_off
+        data: {}
+        target:
+          entity_id: remote.living_room_apple_tv
+  mode: single
+- id: '1663098113924'
+  alias: Leas Morning
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:00:00
+  condition:
+  - condition: state
+    entity_id: input_boolean.lea_asleep
+    state: 'on'
+  action:
+  - service: light.turn_on
+    data:
+      color_name: red
+      brightness_pct: 1
+    target:
+      entity_id: light.leas_cloud
+  mode: single
+- id: '1663441107303'
+  alias: Entrance Record Door
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.entrance_door
+    to: 'on'
+  condition: []
+  action:
+  - service: aarlo.camera_start_recording
+    data:
+      entity_id: camera.aarlo_hallway
+      duration: 60
+  mode: single
+- id: '1663442508179'
+  alias: Home Alarm Triggers
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.bathroom_motion_sensor
+    - binary_sensor.bedroom_motion_sensor
+    - binary_sensor.claras_motion_sensor
+    - binary_sensor.dining_room_motion_sensor
+    - binary_sensor.entrance_motion_sensor
+    - binary_sensor.kitchen_motion_sensor
+    - binary_sensor.leas_motion_sensor
+    - binary_sensor.living_room_motion_occupancy
+    - binary_sensor.office_motion_sensor
+    to: 'on'
+    id: motion
+  - platform: state
+    entity_id:
+    - binary_sensor.balcony_door
+    - binary_sensor.entrance_door
+    - binary_sensor.patio_door
+    - binary_sensor.bedroom_window
+    - binary_sensor.dining_room_window
+    - binary_sensor.living_room_window
+    - binary_sensor.office_window
+    to: 'on'
+    id: perimeter
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: alarm_control_panel.alarm
+      state: armed_home
+    - condition: state
+      entity_id: alarm_control_panel.alarm
+      state: armed_night
+    - condition: state
+      entity_id: alarm_control_panel.alarm
+      state: armed_away
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: armed_away
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: vacuum.greta
+          state: cleaning
+        - condition: state
+          entity_id: vacuum.greta
+          state: returning
+      - condition: trigger
+        id: perimeter
+      sequence:
+      - service: alarm_control_panel.alarm_trigger
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+    - conditions:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: armed_away
+      - condition: state
+        entity_id: vacuum.greta
+        state: docked
+      sequence:
+      - service: alarm_control_panel.alarm_trigger
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+    - conditions:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: armed_night
+      - condition: trigger
+        id: perimeter
+      sequence:
+      - service: alarm_control_panel.alarm_trigger
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+  mode: single
+- id: '1663444193865'
+  alias: Home Alarm Actions
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: pending
+    id: pending
+    from: armed_away
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: triggered
+    from: pending
+    id: triggered-away
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    from: armed_night
+    to: triggered
+    id: triggered-night
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: disarmed
+    id: disarmed
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: armed_away
+    id: armed_away
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: pending
+      sequence:
+      - service: aarlo.siren_on
+        data:
+          entity_id: switch.aarlo_siren_home
+          volume: 1
+          duration: 10
+    - conditions:
+      - condition: trigger
+        id: triggered-away
+      sequence:
+      - service: aarlo.siren_on
+        data:
+          entity_id: switch.aarlo_siren_home
+          volume: 8
+          duration: 30
+      - service: aarlo.camera_start_recording
+        data:
+          entity_id:
+          - camera.aarlo_hallway
+          - camera.aarlo_living_room
+          duration: 60
+      - service: notify.mobile_app_johnnys_iphone
+        data:
+          title: Home Alarm Triggered
+          message: Check camera recording.
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 1
+      - service: notify.mobile_app_kajsas_iphone
+        data:
+          title: Home Alarm Triggered
+          message: Check camera recording.
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 1
+    - conditions:
+      - condition: trigger
+        id: triggered-night
+      sequence:
+      - service: notify.mobile_app_johnnys_iphone
+        data:
+          title: Home Alarm Triggered
+          message: Check camera recording.
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 0.1
+      - service: notify.mobile_app_kajsas_iphone
+        data:
+          title: Home Alarm Triggered
+          message: Check camera recording.
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 0.1
+      - service: aarlo.camera_start_recording
+        data:
+          entity_id:
+          - camera.aarlo_hallway
+          - camera.aarlo_living_room
+          duration: 60
+      - service: tts.google_translate_say
+        data:
+          entity_id:
+          - media_player.bathroom_tts
+          - media_player.bedroom_tts
+          - media_player.office_tts
+          - media_player.living_room_tts
+          message: "Alarm triggered! {%- for state in states.binary_sensor -%}\n  {%
+            set type = state.name.split(' ') | last -%}\n  {% if type == 'Window'
+            and state.state_with_unit == 'on' %}\n    {{- state.name }} is open.\n
+            \ {%- endif -%}\n  {% if type == 'Door' and state.state_with_unit == 'on'
+            %}\n    {{- state.name }} is open.\n  {%- endif -%}\n{%- endfor %}"
+    - conditions:
+      - condition: trigger
+        id: disarmed
+      sequence:
+      - service: aarlo.siren_off
+        data:
+          entity_id: switch.aarlo_siren_home
+    - conditions:
+      - condition: trigger
+        id: armed_away
+      sequence:
+      - service: sonos.set_sleep_timer
+        data:
+          sleep_time: 0
+        target:
+          entity_id:
+          - media_player.bathroom
+          - media_player.bedroom
+          - media_player.dining_room
+          - media_player.leas_room
+          - media_player.living_room
+          - media_player.office
+  mode: single
+- id: '1663497485898'
+  alias: Home Alarm Auto-Arm
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.johnny
+    - person.kajsa
+    id: household
+  - platform: state
+    entity_id:
+    - group.guests
+    id: guests
+  - platform: state
+    entity_id:
+    - input_boolean.clara_asleep
+    - input_boolean.guest_asleep
+    - input_boolean.johnny_asleep
+    - input_boolean.kajsa_asleep
+    - input_boolean.lea_asleep
+    to: 'on'
+    id: Sleep on
+  - platform: state
+    entity_id:
+    - input_boolean.johnny_asleep
+    - input_boolean.kajsa_asleep
+    - input_boolean.guest_asleep
+    to: 'off'
+    id: Sleep off
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: household
+      - condition: state
+        entity_id: person.johnny
+        state: not_home
+      - condition: state
+        entity_id: person.kajsa
+        state: not_home
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+      sequence:
+      - service: alarm_control_panel.alarm_arm_away
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+    - conditions:
+      - condition: trigger
+        id: household
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: person.johnny
+          state: home
+        - condition: state
+          entity_id: person.kajsa
+          state: home
+      sequence:
+      - service: alarm_control_panel.alarm_disarm
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+    - conditions:
+      - condition: trigger
+        id: guests
+      - condition: state
+        entity_id: group.guests
+        state: not_home
+      - condition: state
+        entity_id: person.johnny
+        state: not_home
+      - condition: state
+        entity_id: person.kajsa
+        state: not_home
+      sequence:
+      - service: alarm_control_panel.alarm_arm_away
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+    - conditions:
+      - condition: trigger
+        id: guests
+      - condition: state
+        entity_id: group.guests
+        state: home
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'on'
+      sequence:
+      - service: alarm_control_panel.alarm_disarm
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+    - conditions:
+      - condition: trigger
+        id: Sleep on
+      - condition: or
+        conditions:
+        - condition: and
+          conditions:
+          - condition: state
+            entity_id: person.johnny
+            state: home
+          - condition: state
+            entity_id: input_boolean.johnny_asleep
+            state: 'on'
+        - condition: state
+          entity_id: person.johnny
+          state: not_home
+      - condition: or
+        conditions:
+        - condition: and
+          conditions:
+          - condition: state
+            entity_id: person.kajsa
+            state: home
+          - condition: state
+            entity_id: input_boolean.kajsa_asleep
+            state: 'on'
+        - condition: state
+          entity_id: person.kajsa
+          state: not_home
+      - condition: or
+        conditions:
+        - condition: and
+          conditions:
+          - condition: state
+            entity_id: input_boolean.guest_mode
+            state: 'on'
+          - condition: state
+            entity_id: input_boolean.guest_asleep
+            state: 'on'
+        - condition: state
+          entity_id: input_boolean.guest_mode
+          state: 'off'
+      sequence:
+      - service: alarm_control_panel.alarm_arm_night
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+    - conditions:
+      - condition: trigger
+        id: Sleep off
+      sequence:
+      - service: alarm_control_panel.alarm_disarm
+        data: {}
+        target:
+          entity_id: alarm_control_panel.alarm
+  mode: single
+- id: '1663525442993'
+  alias: Home Perimeter Warning
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.entrance_door
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.entrance_occupied
+    state: 'on'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.entrance_door
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.balcony_door
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.patio_door
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.bedroom_window
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.office_window
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.dining_room_window
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.living_room_window
+      state: 'on'
+  action:
+  - service: notify.all_phones
+    data:
+      title: Window open
+      message: Someone is leaving and there is a window open
+  mode: single
+- id: '1663526399510'
+  alias: Home Weather Warning
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - weather.smhi_home
+    to: rainy
+  - platform: state
+    entity_id:
+    - weather.smhi_home
+    to: snowy
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.entrance_door
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.balcony_door
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.patio_door
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.bedroom_window
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.office_window
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.dining_room_window
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.living_room_window
+      state: 'on'
+  action:
+  - service: notify.mobile_app_johnnys_iphone
+    data:
+      title: Weather Warning
+      message: Rain or snow is coming and there are windows open.
+  - service: notify.mobile_app_kajsas_iphone
+    data:
+      title: Weather Warning
+      message: Rain or snow is coming and there are windows open.
+  mode: single
+- id: '1663527344597'
+  alias: Home Notify Smoke
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.kids_hallway_smoke_sensor
+    to: 'on'
+  - platform: state
+    entity_id:
+    - binary_sensor.lumi_lumi_sensor_smoke_sensor
+    to: 'on'
+  condition: []
+  action:
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id:
+      - light.entrance_ceiling
+      - light.living_room_ceiling
+  - service: aarlo.camera_start_recording
+    data:
+      entity_id:
+      - camera.aarlo_hallway
+      - camera.aarlo_living_room
+      duration: 60
+  - service: notify.mobile_app_johnnys_iphone
+    data:
+      title: Smoke detected
+      message: Smoke detected by {{ trigger.entity_id }}.
+      push:
+        sound:
+          name: default
+          critical: 1
+          volume: 1
+  - service: notify.mobile_app_kajsas_iphone
+    data:
+      title: Smoke detected
+      message: Smoke detected by {{ trigger.entity_id }}.
+      push:
+        sound:
+          name: default
+          critical: 1
+          volume: 1
+  mode: single
+- id: '1663606921387'
+  alias: Claras Dimmer
+  description: ''
+  use_blueprint:
+    path: mannerisms/zha-philips-hue-dimmer-switch-individual-buttons-with-long-presses.yaml
+    input:
+      remote: 686bc0a27c0b9eca74512fc22fd630e6
+      button_1_single_press:
+      - service: input_boolean.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.clara_asleep
+      button_4_single_press:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id: input_boolean.clara_asleep
+      button_3_single_press:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.claras_window_nightlight
+- id: '1663613065364'
+  alias: Home Reset Occupancy
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: armed_away
+    id: away
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    from: armed_night
+    to: disarmed
+    id: sleep
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: away
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id:
+          - input_boolean.bathroom_occupancy_automation
+          - input_boolean.bedroom_occupancy_automation
+          - input_boolean.claras_occupancy_automation
+          - input_boolean.dining_room_occupancy_automation
+          - input_boolean.entrance_occupancy_automation
+          - input_boolean.hallway_occupancy_automation
+          - input_boolean.kitchen_occupancy_automation
+          - input_boolean.leas_occupancy_automation
+          - input_boolean.living_room_occupancy_automation
+          - input_boolean.office_occupancy_automation
+          - input_boolean.parents_hallway_occupancy_automation
+    - conditions:
+      - condition: trigger
+        id: sleep
+      sequence:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id:
+          - input_boolean.bathroom_occupancy_automation
+          - input_boolean.dining_room_occupancy_automation
+          - input_boolean.entrance_occupancy_automation
+          - input_boolean.hallway_occupancy_automation
+          - input_boolean.kitchen_occupancy_automation
+          - input_boolean.living_room_occupancy_automation
+          - input_boolean.parents_hallway_occupancy_automation
+  mode: single
+- id: '1663784567668'
+  alias: Home Ambient Lights
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: armed_night
+    id: Alarm night
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarm
+    to: disarmed
+    id: Alarm disarmed
+  - platform: sun
+    event: sunset
+    offset: 0
+    id: Sunset
+  - platform: time
+    at: '19:00:00'
+    id: Evening
+  - platform: time
+    at: '22:30:00'
+    id: Night
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: trigger
+          id: Alarm night
+        - condition: and
+          conditions:
+          - condition: trigger
+            id: Night
+          - condition: state
+            entity_id: alarm_control_panel.alarm
+            state: armed_away
+      sequence:
+      - if:
+        - condition: state
+          entity_id: input_boolean.bedroom_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_off
+          data: {}
+          target:
+            entity_id: light.bedroom_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.leas_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_off
+          data: {}
+          target:
+            entity_id: light.leas_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.claras_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_off
+          data: {}
+          target:
+            entity_id: light.claras_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.office_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_off
+          data: {}
+          target:
+            entity_id: light.office_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.dining_room_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_off
+          data: {}
+          target:
+            entity_id: light.dining_room_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.living_room_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_off
+          data: {}
+          target:
+            entity_id:
+            - light.living_room_left
+            - light.living_room_right
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: trigger
+          id: Alarm disarmed
+        - condition: and
+          conditions:
+          - condition: trigger
+            id: Sunset
+          - condition: state
+            entity_id: alarm_control_panel.alarm
+            state: armed_away
+        - condition: and
+          conditions:
+          - condition: trigger
+            id: Evening
+          - condition: state
+            entity_id: alarm_control_panel.alarm
+            state: armed_away
+      sequence:
+      - if:
+        - condition: state
+          entity_id: input_boolean.bedroom_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id: light.bedroom_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.leas_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id: light.leas_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.claras_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id: light.claras_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.office_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id: light.office_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.dining_room_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id: light.dining_room_window
+      - if:
+        - condition: state
+          entity_id: input_boolean.living_room_occupancy_automation
+          state: 'on'
+        then:
+        - service: light.turn_on
+          data: {}
+          target:
+            entity_id:
+            - light.living_room_left
+            - light.living_room_right
+  mode: single
+- id: '1663866728942'
+  alias: Office Dimmer
+  description: ''
+  use_blueprint:
+    path: mannerisms/zha-philips-hue-dimmer-switch-individual-buttons-with-long-presses.yaml
+    input:
+      remote: 605dd32a6df845dda76ec3bcf15015fe
+      button_1_single_press:
+      - service: input_boolean.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.guest_asleep
+      button_4_single_press:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id: input_boolean.guest_asleep
