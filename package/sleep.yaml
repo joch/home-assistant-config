@@ -1,9 +1,5 @@
 group:
 input_boolean:
-  sleep_automation:
-    name: Sleep Automation
-    icon: mdi:sleep
-
   everyone_asleep:
     name: Everyone asleep
     icon: mdi:sleep
@@ -48,9 +44,6 @@ automation:
         entity_id: input_boolean.guest_asleep
         to: 'on'
     condition:
-      - condition: state
-        entity_id: input_boolean.sleep_automation
-        state: 'on'
       - condition: and
         conditions:
           - condition: or
@@ -116,10 +109,6 @@ automation:
       - platform: state
         entity_id: input_boolean.guest_asleep
         to: 'off'
-    condition:
-      - condition: state
-        entity_id: input_boolean.sleep_automation
-        state: 'on'
     action:
       - service: input_boolean.turn_off
         entity_id: input_boolean.everyone_asleep
