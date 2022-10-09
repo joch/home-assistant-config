@@ -3,3 +3,4 @@ zha:
     ota:
       ikea_provider: true
       ledvance_provider: true
+      otau_directory: /config/zigbee_ota

@@ -10,6 +10,7 @@ homeassistant:
     - type: homeassistant
   allowlist_external_dirs:
     - /tmp
+  external_url: !secret homeassistant_external_url
 
 api:
 cloud:
@@ -23,6 +24,12 @@ person:
 sun:
 system_health:
 default_config:
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.zha: debug
+    zigpy: debug
 
 recorder:
   db_url: !secret recorder_db_url
