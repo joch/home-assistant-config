@@ -2,10 +2,6 @@ homeassistant:
   latitude: !secret latitude
   longitude: !secret longitude
   packages: !include_dir_named package
-  customize: !include customize.yaml
-  customize_domain:
-    automation:
-      initial_state: 'on'
   auth_providers:
     - type: homeassistant
   allowlist_external_dirs:
