@@ -32,6 +32,9 @@ input_boolean:
   parents_hallway_occupancy_automation:
     name: Parents Hallway Motion Detection
     icon: mdi:eye-outline
+  kids_hallway_occupancy_automation:
+    name: Kids Hallway Motion Detection
+    icon: mdi:eye-outline
 
 binary_sensor:
   - platform: template
@@ -141,9 +144,14 @@ binary_sensor:
         friendly_name: Parents Hallway Occupied
         icon_template: mdi:walk
         value_template: >
-          {{ false }}
-        # value_template: >
-        #   {{ is_state("input_boolean.entrance_occupancy_automation", "on") and
-        #       is_state("binary_sensor.entrance_motion_ias_zone", "on")
-        #   }}
-        delay_off: "00:01:00"
+          {{ is_state("input_boolean.parents_hallway_occupancy_automation", "on") and
+              is_state("binary_sensor.parents_hallway_motion_sensor", "on")
+          }}
+
+      kids_hallway_occupied:
+        friendly_name: Kids Hallway Occupied
+        icon_template: mdi:walk
+        value_template: >
+          {{ is_state("input_boolean.kids_hallway_occupancy_automation", "on") and
+              is_state("binary_sensor.kids_hallway_motion_sensor", "on")
+          }}
