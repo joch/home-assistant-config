@@ -5,6 +5,7 @@ camera:
     username: !secret xiaomi_cloud_username
     password: !secret xiaomi_cloud_password
     draw: ['all']
+    scan_interval: 14400
     attributes:
       - calibration_points
       - rooms

@@ -2,6 +2,7 @@ homeassistant:
   latitude: !secret latitude
   longitude: !secret longitude
   packages: !include_dir_named package
+  country: SE
   auth_providers:
     - type: homeassistant
   allowlist_external_dirs:
@@ -14,7 +15,6 @@ config:
 conversation:
 history:
 logbook:
-map:
 mobile_app:
 person:
 sun:
@@ -23,9 +23,9 @@ default_config:
 
 logger:
   default: info
-  logs:
-    homeassistant.components.zha: debug
-    zigpy: debug
+  # logs:
+  #   homeassistant.components.zha: debug
+  #   zigpy: debug
 
 recorder:
   db_url: !secret recorder_db_url

@@ -1,0 +1,13 @@
+prometheus:
+  filter:
+    include_domains:
+      - alarm_control_panel
+      - light
+    include_entity_globs:
+      - binary_sensor.*_occupied
+      - sensor.*_temperature
+      - sensor.*_humidity
+      - sensor.*_illuminance
+      - sensor.*_geocoded_location
+    # exclude_entities:
+    #   - light.kitchen_light
