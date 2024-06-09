@@ -3,6 +3,7 @@ alarm_control_panel:
     name: 'Alarm'
     trigger_time: 120
     disarm_after_trigger: false
+    code_arm_required: false
     armed_home:
       arming_time: 0
       delay_time: 0
